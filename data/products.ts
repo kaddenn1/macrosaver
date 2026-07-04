@@ -1,29 +1,11 @@
-export type AffiliateOffer = {
-  retailer: string;
-  price: number;
-  affiliateLink: string;
-};
-
-export type Product = {
-  id: string;
-  brand: string;
-  name: string;
-  category: "Protein" | "Creatine" | "Pre-Workout" | "Electrolytes" | "Other";
-  imagePlaceholder: string;
-  servings: number; 
-  nutrition: {
-    proteinGrams: number;
-    servingsPerContainer: number;
-  };
-  offers: AffiliateOffer[];
-};
+import { Product } from "./types";
 
 export const products: Product[] = [
   {
     id: "prod_001",
     brand: "Nutricost",
     name: "Clear Whey Isolate Protein Powder",
-    category: "Protein",
+    category: "protein", // 👈 Lowercase to match your system's SupplementCategory
     imagePlaceholder: "", 
     servings: 30,
     nutrition: {
@@ -42,7 +24,7 @@ export const products: Product[] = [
     id: "prod_002",
     brand: "Transparent Labs",
     name: "100% Grass-Fed Whey Protein Isolate",
-    category: "Protein",
+    category: "protein",
     imagePlaceholder: "", 
     servings: 30,
     nutrition: {
@@ -61,7 +43,7 @@ export const products: Product[] = [
     id: "prod_003",
     brand: "Optimum Nutrition",
     name: "Micronized Creatine Monohydrate",
-    category: "Creatine",
+    category: "creatine",
     imagePlaceholder: "", 
     servings: 120,
     nutrition: {
