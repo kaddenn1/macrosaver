@@ -1,74 +1,33 @@
 import React from 'react';
 
 export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="pt-16 border-t border-neutral-900">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div>
-          <p className="text-3xl font-black tracking-tight text-white">
-            Macro<span className="text-lime-500">Saver</span>
-          </p>
-          <p className="text-xs font-semibold text-neutral-500 mt-1">
-            Know Where Every Dollar Goes.
-          </p>
-          <p className="mt-4 max-w-xs text-xs leading-relaxed text-neutral-400">
-            We do the math so you don't have to. Compare. Save. Buy smart.
+    <footer className="w-full bg-[#0a0a0a] border-t border-[#1a1a1a] py-8 px-4 mt-auto">
+      <div className="max-w-6xl mx-auto flex flex-col items-center justify-center space-y-4">
+        
+        {/* Navigation Links / Brand */}
+        <div className="flex items-center space-x-6 text-sm text-gray-400">
+          <span className="font-semibold text-white tracking-wide">MacroSaver</span>
+          <a href="/" className="hover:text-white transition-colors">Dashboard</a>
+          <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+        </div>
+
+        {/* Copyright */}
+        <p className="text-xs text-gray-500">
+          &copy; {currentYear} MacroSaver. All rights reserved.
+        </p>
+
+        {/* Mandatory Amazon Affiliate Disclosure */}
+        <div className="w-full max-w-2xl border-t border-[#151515] pt-4 mt-2">
+          <p className="text-[11px] text-gray-600 text-center leading-relaxed">
+            <strong>Disclaimer:</strong> As an Amazon Associate, I earn from qualifying purchases. 
+            Product prices, descriptions, and availability are pulled dynamically and are subject to change. 
+            All links to external retail platforms may generate a small referral commission at absolutely no extra cost to you.
           </p>
         </div>
 
-        <div className="border-neutral-900 lg:border-x lg:px-12">
-          <p className="text-base font-black text-white">
-            Get the best supplement deals in your inbox.
-          </p>
-          <form className="mt-4 flex max-w-md overflow-hidden rounded-xl border border-neutral-800 bg-neutral-950">
-            <input
-              className="min-w-0 flex-1 bg-transparent px-4 py-3 text-xs text-white outline-none placeholder:text-neutral-700"
-              placeholder="Enter your email"
-              type="email"
-            />
-            <button
-              className="bg-lime-500 px-5 py-3 text-xs font-black text-black transition hover:bg-lime-400"
-              type="button"
-            >
-              Subscribe
-            </button>
-          </form>
-        </div>
-
-        <div className="grid grid-cols-3 gap-8 text-xs">
-          <div>
-            <p className="font-bold tracking-wide uppercase text-[10px] text-neutral-500">Categories</p>
-            <div className="mt-4 grid gap-2 font-medium text-neutral-400">
-              <a href="#protein" className="hover:text-lime-500 transition">Protein</a>
-              <a href="#creatine" className="hover:text-cyan-400 transition">Creatine</a>
-              <a href="#pre-workout" className="hover:text-purple-400 transition">Pre-Workout</a>
-              <a href="#electrolytes" className="hover:text-sky-400 transition">Electrolytes</a>
-              <a href="#recovery" className="hover:text-orange-400 transition">Recovery</a>
-            </div>
-          </div>
-
-          <div>
-            <p className="font-bold tracking-wide uppercase text-[10px] text-neutral-500">Company</p>
-            <div className="mt-4 grid gap-2 font-medium text-neutral-400">
-              <a href="#" className="hover:text-white transition">About Us</a>
-              <a href="#" className="hover:text-white transition">How It Works</a>
-              <a href="#" className="hover:text-white transition">Contact</a>
-            </div>
-          </div>
-
-          <div>
-            <p className="font-bold tracking-wide uppercase text-[10px] text-neutral-500">Legal</p>
-            <div className="mt-4 grid gap-2 font-medium text-neutral-400">
-              <a href="#" className="hover:text-white transition">Terms of Use</a>
-              <a href="#" className="hover:text-white transition">Privacy Policy</a>
-              <a href="#" className="hover:text-lime-500 transition">Affiliate Disclosure</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="mt-12 border-t border-neutral-900 py-6 text-center text-xs text-neutral-600">
-        © 2026 MacroSaver. All rights reserved.
       </div>
     </footer>
   );
