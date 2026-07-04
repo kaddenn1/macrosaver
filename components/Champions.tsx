@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from "react";
 import { products } from "@/data/products";
 import {
   getBestOffer,
@@ -7,6 +10,47 @@ import {
 
 function formatCurrency(value: number | null): string {
   return value === null ? "N/A" : `$${value.toFixed(2)}`;
+}
+
+// Custom inner component to handle broken or missing image paths gracefully
+function ProductImage({ 
+  src, 
+  alt, 
+  accentText, 
+  label 
+}: { 
+  src: string; 
+  alt: string; 
+  accentText: string; 
+  label: string; 
+}) {
+  const [imgError, setImgError] = useState(false);
+
+  // If image string is missing, blank, or fails to load, render this premium asset box
+  if (!src || imgError) {
+    return (
+      <div className="w-full h-36 rounded-xl bg-neutral-900/40 border border-neutral-800/80 flex flex-col items-center justify-center p-4 text-center select-none group relative overflow-hidden shadow-inner">
+        <div className="text-3xl mb-1.5 opacity-60 group-hover:scale-110 transition-transform duration-300">
+          {label === "Protein" ? "🥛" : label === "Creatine" ? "⚡" : label === "Pre-Workout" ? "💥" : "💊"}
+        </div>
+        <span className={`text-[10px] font-black uppercase tracking-widest ${accentText}`}>
+          {label}
+        </span>
+        <span className="text-[9px] text-neutral-600 font-extrabold mt-1 uppercase tracking-wider">
+          Asset Pending
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img 
+      src={src} 
+      alt={alt} 
+      onError={() => setImgError(true)}
+      className="max-h-36 object-contain filter drop-shadow-[0_15px_20px_rgba(0,0,0,0.7)]"
+    />
+  );
 }
 
 const categoryAccents: Record<
@@ -67,7 +111,7 @@ export default function Champions() {
     <section id="categories" className="w-full bg-black py-6 text-white flex flex-col items-center">
       <div className="w-full max-w-[1400px]">
         
-        <div className="flex justify-between items-center mb-6 border-b border-neutral-900 pb-4">
+        <div className="flex justify-between items-center mb-6 border-b border-neutral-900 pb-4 px-2 sm:px-0">
           <div className="flex items-center gap-2">
             <span className="text-lime-500 text-xl">🔥</span>
             <h2 className="text-xl font-black uppercase tracking-wider">Best Deals Right Now</h2>
@@ -77,7 +121,7 @@ export default function Champions() {
           </a>
         </div>
 
-        <div className="flex flex-wrap justify-center xl:grid xl:grid-cols-5 gap-5">
+        <div className="flex flex-wrap justify-center xl:grid xl:grid-cols-5 gap-5 px-2 sm:px-0">
           {products.map((item) => {
             const bestOffer = getBestOffer(item);
             const costPerServing = getCostPerServing(item);
@@ -109,12 +153,13 @@ export default function Champions() {
                     )}
                   </div>
 
-                  {/* Upgraded Container Rendering Crisp Transparent Supplement Tubs */}
+                  {/* Dynamic Custom-Safe Image Fallback Container */}
                   <div className="w-full h-44 flex items-center justify-center mb-4 transition-transform duration-300 hover:scale-105">
-                    <img 
+                    <ProductImage 
                       src={item.imagePlaceholder} 
                       alt={item.name} 
-                      className="max-h-36 object-contain filter drop-shadow-[0_15px_20px_rgba(0,0,0,0.7)]"
+                      accentText={accent.text}
+                      label={accent.label}
                     />
                   </div>
 
