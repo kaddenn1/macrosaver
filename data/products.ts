@@ -5,12 +5,12 @@ export const products: Product[] = [
     id: "prod_001",
     brand: "Nutricost",
     name: "Clear Whey Isolate Protein Powder",
-    category: "protein", // 👈 Lowercase to match your system's SupplementCategory
+    category: "protein", 
     imagePlaceholder: "", 
     servings: 30,
     nutrition: {
-      proteinGrams: 20,
-      servingsPerContainer: 30,
+      proteinGrams: 20
+      // Removed the redundant servingsPerContainer here!
     },
     offers: [
       {
@@ -28,8 +28,7 @@ export const products: Product[] = [
     imagePlaceholder: "", 
     servings: 30,
     nutrition: {
-      proteinGrams: 28,
-      servingsPerContainer: 30,
+      proteinGrams: 28
     },
     offers: [
       {
@@ -47,8 +46,7 @@ export const products: Product[] = [
     imagePlaceholder: "", 
     servings: 120,
     nutrition: {
-      proteinGrams: 0, 
-      servingsPerContainer: 120,
+      proteinGrams: 0
     },
     offers: [
       {
