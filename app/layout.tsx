@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "MacroSaver | Performance Nutrition Price Tracker",
   description: "Automated macro calculation and price tracking dashboard for fitness supplements, clear whey isolates, and workout gear.",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.png",
   },
 };
 
