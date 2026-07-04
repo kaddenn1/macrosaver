@@ -9,7 +9,8 @@ export type Product = {
   brand: string;
   name: string;
   category: "Protein" | "Creatine" | "Pre-Workout" | "Electrolytes" | "Other";
-  imagePlaceholder: string; // The URL to the product image
+  imagePlaceholder: string;
+  servings: number; 
   nutrition: {
     proteinGrams: number;
     servingsPerContainer: number;
@@ -23,7 +24,8 @@ export const products: Product[] = [
     brand: "Nutricost",
     name: "Clear Whey Isolate Protein Powder",
     category: "Protein",
-    imagePlaceholder: "", // Leave blank for now to trigger our dynamic shield fallback!
+    imagePlaceholder: "", 
+    servings: 30,
     nutrition: {
       proteinGrams: 20,
       servingsPerContainer: 30,
@@ -42,6 +44,7 @@ export const products: Product[] = [
     name: "100% Grass-Fed Whey Protein Isolate",
     category: "Protein",
     imagePlaceholder: "", 
+    servings: 30,
     nutrition: {
       proteinGrams: 28,
       servingsPerContainer: 30,
@@ -60,8 +63,9 @@ export const products: Product[] = [
     name: "Micronized Creatine Monohydrate",
     category: "Creatine",
     imagePlaceholder: "", 
+    servings: 120,
     nutrition: {
-      proteinGrams: 0, // Creatine doesn't use protein macros
+      proteinGrams: 0, 
       servingsPerContainer: 120,
     },
     offers: [
