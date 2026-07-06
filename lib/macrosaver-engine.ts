@@ -1,6 +1,7 @@
 import type { Product, RetailerOffer } from "@/data/types";
 
 const VALUE_SCORE_MAX = 100;
+const GRAMS_PER_OZ = 28.3495;
 
 function roundToTwo(value: number): number {
   return Math.round(value * 100) / 100;
@@ -36,6 +37,25 @@ export function getProteinPerDollar(product: Product): number | null {
   const totalProtein = product.nutrition.proteinGrams * product.servings;
 
   return roundToTwo(totalProtein / bestOffer.price);
+}
+
+// This is the metric you specifically wanted: what you actually pay per
+// ounce of protein you get, regardless of tub size or serving count tricks.
+export function getCostPerOzProtein(product: Product): number | null {
+  const bestOffer = getBestOffer(product);
+
+  if (!bestOffer || bestOffer.price <= 0 || product.nutrition.proteinGrams <= 0) {
+    return null;
+  }
+
+  const totalProteinGrams = product.nutrition.proteinGrams * product.servings;
+  const totalProteinOz = totalProteinGrams / GRAMS_PER_OZ;
+
+  if (totalProteinOz <= 0) {
+    return null;
+  }
+
+  return roundToTwo(bestOffer.price / totalProteinOz);
 }
 
 export function getSavingsVsHighestOffer(product: Product): number | null {

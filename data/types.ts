@@ -9,11 +9,13 @@ export type SupplementCategory =
 export type RetailerOffer = {
   retailer: string;
   price: number;
-  affiliateLink: string;
+  url: string;
+  /** Amazon Standard Identification Number, used to build the tagged affiliate link. */
+  asin?: string;
 };
 
 export type NutritionFacts = {
-  servingSize: string;
+  servingSize?: string;
   calories?: number;
   proteinGrams: number;
   carbsGrams?: number;
@@ -29,7 +31,7 @@ export type Product = {
   name: string;
   brand: string;
   category: SupplementCategory;
-  imagePlaceholder: string;
+  image?: string;
   nutrition: NutritionFacts;
   servings: number;
   offers: RetailerOffer[];
@@ -39,6 +41,7 @@ export type ProductWithValueMetrics = Product & {
   bestOffer: RetailerOffer | null;
   costPerServing: number | null;
   proteinPerDollar: number | null;
+  costPerOzProtein: number | null;
   valueScore: number;
   savingsVsHighestOffer: number | null;
 };

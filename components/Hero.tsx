@@ -2,111 +2,92 @@ import React from 'react';
 
 export default function Hero() {
   return (
-    <section className="relative w-full bg-black text-white pt-12 pb-12 overflow-hidden flex justify-center">
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-lime-500/[0.03] blur-[120px] rounded-full pointer-events-none"></div>
+    <div className="relative w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 overflow-hidden">
 
-      <div className="w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      {/* Background ambient glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] lg:w-[600px] lg:h-[600px] bg-[#a3e635] opacity-[0.15] blur-[120px] rounded-full pointer-events-none"></div>
+
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
         
-        <div className="lg:col-span-4 space-y-6 z-10">
-          <div className="space-y-4">
-            <h1 className="text-5xl sm:text-6xl xl:text-7xl font-black tracking-tight leading-[1.02] text-white">
-              Know <br /> 
-              Where <br /> 
-              <span className="text-lime-500 drop-shadow-[0_0_30px_rgba(132,204,22,0.15)]">Every <br /> Dollar</span> <br /> 
-              Goes.
-            </h1>
-            <p className="text-xl font-extrabold text-neutral-300 tracking-tight">
-              Stop Overpaying for Supplements.
+        {/* Left Column: Huge Typography */}
+        <div className="flex-1 text-center lg:text-left">
+          <h1 className="text-6xl sm:text-7xl lg:text-[90px] font-black text-white leading-[0.9] tracking-tight mb-6">
+            Know<br />
+            Where<br />
+            <span className="text-[#a3e635]">Every</span><br />
+            <span className="text-[#a3e635]">Dollar</span><br />
+            Goes.
+          </h1>
+          <p className="text-xl sm:text-2xl font-bold text-gray-300 mb-8">
+            Stop Overpaying<br />for Supplements.
+          </p>
+        </div>
+
+        {/* Center Column: The Product Showcase (CSS Placeholder until you have the image) */}
+        <div className="flex-1 flex justify-center relative w-full max-w-[400px]">
+          <div className="relative w-full aspect-[3/4] flex flex-col items-center justify-end pb-8">
+            {/* The Glowing Base/Pedestal */}
+            <div className="absolute bottom-0 w-[120%] h-12 bg-gradient-to-t from-[#a3e635]/40 to-transparent blur-md rounded-[100%]"></div>
+            <div className="absolute bottom-4 w-full h-2 bg-[#a3e635] blur-[2px] rounded-[100%] shadow-[0_0_30px_#a3e635]"></div>
+            
+            {/* The Jar Placeholder */}
+            <div className="relative z-10 w-3/4 h-[80%] bg-gradient-to-b from-[#222] to-[#0a0a0a] border border-gray-800 rounded-t-3xl rounded-b-xl flex flex-col items-center justify-center shadow-2xl overflow-hidden">
+               {/* Jar Cap */}
+               <div className="absolute top-0 w-[110%] h-12 bg-[#111] border-b border-gray-900 rounded-t-2xl -ml-[5%]"></div>
+               <div className="z-10 text-center mt-8">
+                 <div className="text-4xl font-black text-white uppercase tracking-tighter">WHEY</div>
+                 <div className="text-xl font-bold text-[#a3e635] uppercase tracking-widest">PROTEIN</div>
+                 <div className="text-sm font-bold text-gray-400 uppercase tracking-widest mt-1 mb-4">ISOLATE</div>
+                 <div className="w-16 h-1 mx-auto bg-gray-800 mb-4"></div>
+                 <div className="text-[10px] text-gray-500 uppercase tracking-widest">Asset Pending</div>
+               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Right Column: Savings Card */}
+        <div className="flex-1 flex justify-center lg:justify-end w-full">
+          <div className="bg-[#0a0a0a]/80 backdrop-blur-md border border-[#a3e635]/30 rounded-2xl p-8 w-full max-w-[360px] shadow-[0_0_40px_rgba(163,230,53,0.15)] transform transition-transform hover:scale-105">
+            <h3 className="text-xl font-bold text-white mb-2">Average Savings</h3>
+            <p className="text-sm font-bold text-gray-400 uppercase tracking-wider mb-4">with MacroSaver</p>
+            <div className="text-6xl font-black text-[#a3e635] tracking-tighter mb-2">$18.47</div>
+            <div className="text-sm font-bold text-white uppercase tracking-widest mb-6">Per Order</div>
+            
+            <div className="flex items-center gap-1 mb-2">
+              {[1, 2, 3, 4, 5].map((star) => (
+                <svg key={star} className="w-5 h-5 text-[#a3e635]" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <p className="text-xs text-gray-400">
+              <span className="text-white font-bold">4.9/5</span> from 2,400+ Verified Users
             </p>
-          </div>
-          
-          <div className="grid grid-cols-2 gap-3 pt-2">
-            <div className="flex items-center gap-2.5 bg-neutral-950/60 border border-neutral-900/80 rounded-xl p-3">
-              <span className="text-lime-500 text-lg">🏷️</span> 
-              <div>
-                <p className="text-[11px] font-black uppercase text-white tracking-wider">Lowest Price</p>
-                <p className="text-[10px] text-neutral-500 font-medium mt-0.5">We find it.</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2.5 bg-neutral-950/60 border border-neutral-900/80 rounded-xl p-3">
-              <span className="text-lime-500 text-lg">🧮</span> 
-              <div>
-                <p className="text-[11px] font-black uppercase text-white tracking-wider">Cost Per Serving</p>
-                <p className="text-[10px] text-neutral-500 font-medium mt-0.5">We calculate it.</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2.5 bg-neutral-950/60 border border-neutral-900/80 rounded-xl p-3">
-              <span className="text-lime-500 text-lg">💲</span> 
-              <div>
-                <p className="text-[11px] font-black uppercase text-white tracking-wider">Protein Per Dollar</p>
-                <p className="text-[10px] text-neutral-500 font-medium mt-0.5">We compare it.</p>
-              </div>
-            </div>
-            <div className="flex items-center gap-2.5 bg-neutral-950/60 border border-neutral-900/80 rounded-xl p-3">
-              <span className="text-lime-500 text-lg">📊</span> 
-              <div>
-                <p className="text-[11px] font-black uppercase text-white tracking-wider">Value Score</p>
-                <p className="text-[10px] text-neutral-500 font-medium mt-0.5">We rank it.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="lg:col-span-5 flex flex-col items-center justify-center relative min-h-[420px]">
-          <div className="absolute bottom-16 w-72 h-16 bg-lime-500/20 blur-[50px] rounded-full pointer-events-none"></div>
-          
-          <div className="w-68 h-88 bg-gradient-to-b from-neutral-900 to-neutral-950 border border-neutral-800/80 rounded-3xl flex flex-col items-center justify-center relative z-10 shadow-[0_30px_70px_rgba(0,0,0,0.9)] border-t-neutral-700/50 p-6">
-            {/* Real asset image render on center pedestal */}
-            <img 
-              src="https://s3.images-iherb.com/tlb/tlb00322/v/10.jpg" 
-              alt="Whey Protein Isolate" 
-              className="max-h-44 object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.8)] transition-transform duration-300 hover:scale-105"
-            />
-            <div className="text-center mt-5 px-6 space-y-1">
-              <span className="text-[9px] font-black uppercase tracking-widest text-lime-400 bg-lime-500/10 border border-lime-500/20 px-2.5 py-0.5 rounded-md inline-block">
-                LIVE CHAMPION PICK
-              </span>
-              <h4 className="text-base font-black text-white tracking-tight pt-1">
-                Whey Protein Isolate
-              </h4>
-              <p className="text-xs font-bold text-neutral-500 uppercase tracking-widest">30 Servings</p>
-            </div>
-          </div>
-
-          <div className="w-80 h-5 border-2 border-lime-500/40 rounded-full mt-4 bg-neutral-950 shadow-[0_0_30px_rgba(132,204,22,0.25)] flex items-center justify-center">
-            <div className="w-[97%] h-[50%] border border-lime-500/20 rounded-full bg-lime-500/5"></div>
-          </div>
-          <div className="w-88 h-3 border border-neutral-900 rounded-full mt-1 bg-black/60 shadow-inner"></div>
-        </div>
-
-        <div className="lg:col-span-3 z-10">
-          <div className="bg-neutral-950/90 border border-lime-500/20 rounded-2xl p-6 space-y-6 shadow-2xl backdrop-blur-md relative overflow-hidden group hover:border-lime-500/40 transition-all duration-300">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-lime-500/[0.02] to-transparent rounded-bl-full pointer-events-none"></div>
-
-            <div className="space-y-1.5">
-              <p className="text-[10px] text-neutral-400 font-extrabold uppercase tracking-widest leading-none">
-                Average Savings with MacroSaver
-              </p>
-              <h2 className="text-5xl font-black text-lime-500 tracking-tighter drop-shadow-[0_0_15px_rgba(132,204,22,0.25)] leading-none pt-1">
-                $18.47
-              </h2>
-              <p className="text-[10px] font-black tracking-widest text-neutral-200 uppercase pt-0.5">
-                PER ORDER
-              </p>
-            </div>
-
-            <div className="border-t border-neutral-900 pt-5 space-y-3">
-              <div className="flex items-center gap-1 text-lime-500 text-xs tracking-wider font-black">
-                <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
-              </div>
-              <p className="text-xs text-neutral-400 font-bold leading-relaxed">
-                4.9/5 from <span className="text-white font-black">2,400+ Verified Users</span> tracking supplement macros this week.
-              </p>
-            </div>
           </div>
         </div>
 
       </div>
-    </section>
+
+      {/* 4 Feature Icons Row */}
+      <div className="relative z-10 grid grid-cols-2 lg:grid-cols-4 gap-4 mt-16 border-t border-gray-800 pt-8">
+        {[
+          { title: "Lowest Price", desc: "We find it." },
+          { title: "Cost Per Serving", desc: "We calculate it." },
+          { title: "Protein Per Dollar", desc: "We compare it." },
+          { title: "Value Score", desc: "We rank it." }
+        ].map((feature, idx) => (
+          <div key={idx} className="flex items-center gap-3">
+            <div className="w-10 h-10 border border-[#a3e635] text-[#a3e635] flex items-center justify-center rounded shadow-[0_0_15px_rgba(163,230,53,0.2)]">
+              {/* Fake Icon Box */}
+              <div className="w-4 h-4 border-2 border-current rounded-sm"></div>
+            </div>
+            <div>
+              <div className="text-sm font-bold text-white leading-tight">{feature.title}</div>
+              <div className="text-xs text-gray-500">{feature.desc}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
   );
 }

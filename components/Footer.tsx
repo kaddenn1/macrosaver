@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto flex flex-col items-center justify-center space-y-4">
         
         {/* Navigation Links / Brand */}
-        <div className="flex items-center space-x-6 text-sm text-gray-400">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-400">
           <span className="font-semibold text-white tracking-wide">MacroSaver</span>
           <a href="/" className="hover:text-white transition-colors">Dashboard</a>
           <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
