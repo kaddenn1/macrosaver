@@ -1,7 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { products } from "@/data/products";
+import ProductImageLightbox from "@/components/ProductImageLightbox";
 import {
   getBestOffer,
   getCostPerServing,
@@ -50,14 +50,7 @@ export default async function ProductPage({
           <div className="w-full lg:w-[320px] shrink-0">
             <div className="h-72 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center relative overflow-hidden">
               {product.image ? (
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-contain p-6"
-                  sizes="320px"
-                  priority
-                />
+                <ProductImageLightbox src={product.image} alt={product.name} />
               ) : (
                 <div className="text-center opacity-50">
                   <div className={`w-10 h-12 mx-auto mb-2 border-2 rounded-sm ${theme.border}`}>
@@ -182,6 +175,25 @@ export default async function ProductPage({
               <div className="flex flex-col gap-2">
                 {sortedOffers.map((offer) => {
                   const isBest = bestOffer?.retailer === offer.retailer && bestOffer?.price === offer.price;
+                  const isOutOfStock = offer.inStock === false;
+
+                  if (isOutOfStock) {
+                    return (
+                      <div
+                        key={offer.retailer}
+                        className="flex items-center justify-between px-4 py-3 rounded-lg border border-gray-800 bg-[#0d0d0d] opacity-50"
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="font-bold text-white text-sm">{offer.retailer}</span>
+                          <span className="text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-gray-700 text-gray-300">
+                            Out of Stock
+                          </span>
+                        </div>
+                        <span className="text-lg font-black text-gray-500">${offer.price.toFixed(2)}</span>
+                      </div>
+                    );
+                  }
+
                   return (
                     <a
                       key={offer.retailer}

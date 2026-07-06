@@ -1,9 +1,10 @@
 export type SupplementCategory =
   | "protein"
   | "creatine"
-  | "electrolytes"
   | "pre-workout"
-  | "vitamins"
+  | "weight-management"
+  | "food-drink"
+  | "gut-health"
   | "other";
 
 export type RetailerOffer = {
@@ -12,6 +13,8 @@ export type RetailerOffer = {
   url: string;
   /** Amazon Standard Identification Number, used to build the tagged affiliate link. */
   asin?: string;
+  /** Defaults to true. Set to false when the retailer has temporarily sold out. */
+  inStock?: boolean;
 };
 
 export type NutritionFacts = {

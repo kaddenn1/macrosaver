@@ -11,9 +11,17 @@ export const themeMap: Record<string, any> = {
     text: 'text-[#c084fc]', border: 'border-[#c084fc]', hoverBorder: 'hover:border-[#c084fc]',
     bg: 'bg-[#c084fc]', hoverBg: 'hover:bg-[#9333ea]', glow: 'group-hover:shadow-[0_0_30px_rgba(192,132,252,0.15)]'
   },
-  electrolytes: {
+  "weight-management": {
+    text: 'text-[#fb7185]', border: 'border-[#fb7185]', hoverBorder: 'hover:border-[#fb7185]',
+    bg: 'bg-[#fb7185]', hoverBg: 'hover:bg-[#e11d48]', glow: 'group-hover:shadow-[0_0_30px_rgba(251,113,133,0.15)]'
+  },
+  "food-drink": {
     text: 'text-[#2dd4bf]', border: 'border-[#2dd4bf]', hoverBorder: 'hover:border-[#2dd4bf]',
     bg: 'bg-[#2dd4bf]', hoverBg: 'hover:bg-[#0d9488]', glow: 'group-hover:shadow-[0_0_30px_rgba(45,212,191,0.15)]'
+  },
+  "gut-health": {
+    text: 'text-[#818cf8]', border: 'border-[#818cf8]', hoverBorder: 'hover:border-[#818cf8]',
+    bg: 'bg-[#818cf8]', hoverBg: 'hover:bg-[#4f46e5]', glow: 'group-hover:shadow-[0_0_30px_rgba(129,140,248,0.15)]'
   },
   other: {
     text: 'text-[#fb923c]', border: 'border-[#fb923c]', hoverBorder: 'hover:border-[#fb923c]',

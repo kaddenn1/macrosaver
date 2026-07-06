@@ -51,7 +51,7 @@ export const products = [
   },
   {
     id: "1",
-    name: "Gold Standard 100% Whey (5 lb)",
+    name: "Gold Standard 100% Whey - Double Rich Chocolate (5 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
     image: "/products/1.jpg",
@@ -194,15 +194,135 @@ export const products = [
     ]
   },
   {
-    id: "2",
-    name: "Creatine Monohydrate",
+    id: "21",
+    name: "Creatine Monohydrate - Unflavored (500g)",
     brand: "Nutricost",
     category: "creatine",
+    image: "/products/nutricost-creatine-unflavored.jpg",
     servings: 100,
-    nutrition: { calories: 0, proteinGrams: 0 },
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
     offers: [
-      { retailer: "Amazon", price: 29.95, url: "#" },
-      { retailer: "Walmart", price: 31.00, url: "#" }
+      { retailer: "Amazon", price: 21.50, url: amazonUrl("B00GL2HMES"), asin: "B00GL2HMES" }
+    ]
+  },
+  {
+    id: "22",
+    name: "Creatine Monohydrate - Fruit Punch (500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-fruit-punch.jpg",
+    servings: 76,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 23.25, url: amazonUrl("B01M3SO70X"), asin: "B01M3SO70X" }
+    ]
+  },
+  {
+    id: "23",
+    name: "Creatine Monohydrate - Blue Raspberry (500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-blue-raspberry.jpg",
+    servings: 76,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 23.95, url: amazonUrl("B01MA6LPQR"), asin: "B01MA6LPQR" }
+    ]
+  },
+  {
+    id: "24",
+    name: "Creatine Monohydrate - Watermelon (500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-watermelon.jpg",
+    servings: 77,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 23.95, url: amazonUrl("B0CDJ2XTQB"), asin: "B0CDJ2XTQB" }
+    ]
+  },
+  {
+    id: "25",
+    name: "Creatine Monohydrate - Pineapple Mango (500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-pineapple-mango.jpg",
+    servings: 77,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 23.95, url: amazonUrl("B0CDFDDRCF"), asin: "B0CDFDDRCF" }
+    ]
+  },
+  {
+    id: "26",
+    name: "Creatine Monohydrate - Shaq's Berry Blast (500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-shaqs-berry-blast.jpg",
+    servings: 74,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 23.95, url: amazonUrl("B0FWDBG1QC"), asin: "B0FWDBG1QC" }
+    ]
+  },
+  {
+    id: "27",
+    name: "Creatine Monohydrate - Unflavored (1kg)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-unflavored.jpg",
+    servings: 200,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 38.95, url: amazonUrl("B01EVVQX9U"), asin: "B01EVVQX9U" }
+    ]
+  },
+  {
+    id: "28",
+    name: "Creatine Monohydrate - Fruit Punch (2 x 500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-fruit-punch.jpg",
+    servings: 152,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 47.90, url: amazonUrl("B0GGVW3BK2"), asin: "B0GGVW3BK2" }
+    ]
+  },
+  {
+    id: "29",
+    name: "Creatine Monohydrate - Blue Raspberry (2 x 500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-blue-raspberry.jpg",
+    servings: 152,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 45.50, url: amazonUrl("B0GGVC2PHT"), asin: "B0GGVC2PHT" }
+    ]
+  },
+  {
+    id: "30",
+    name: "Creatine Monohydrate - Watermelon (2 x 500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-watermelon.jpg",
+    servings: 154,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 45.50, url: amazonUrl("B0GGVNVV4K"), asin: "B0GGVNVV4K" }
+    ]
+  },
+  {
+    id: "31",
+    name: "Creatine Monohydrate - Pineapple Mango (2 x 500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    image: "/products/nutricost-creatine-pineapple-mango.jpg",
+    servings: 154,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 47.90, url: amazonUrl("B0GGVXMBS7"), asin: "B0GGVXMBS7" }
     ]
   },
   {
@@ -221,7 +341,7 @@ export const products = [
     id: "4",
     name: "Hydration Multiplier",
     brand: "Liquid I.V.",
-    category: "electrolytes",
+    category: "food-drink",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0 },
     offers: [

@@ -16,10 +16,11 @@ export default async function CategoryPage({
 
   const categoryTitles: Record<string, string> = {
     "protein": "Protein Powder",
+    "pre-workout": "Pre-Workout",
     "creatine": "Creatine",
-    "preworkout": "Pre-Workout",
-    "electrolytes": "Electrolytes",
-    "recovery": "Recovery & Sleep",
+    "weight-management": "Weight Management",
+    "food-drink": "Food & Drink",
+    "gut-health": "Gut Health",
   };
 
   const displayTitle = categoryTitles[currentSlug] || currentSlug;

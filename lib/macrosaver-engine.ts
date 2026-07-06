@@ -7,12 +7,18 @@ function roundToTwo(value: number): number {
   return Math.round(value * 100) / 100;
 }
 
+function getAvailableOffers(product: Product): RetailerOffer[] {
+  return product.offers.filter((offer) => offer.inStock !== false);
+}
+
 export function getBestOffer(product: Product): RetailerOffer | null {
-  if (product.offers.length === 0) {
+  const availableOffers = getAvailableOffers(product);
+
+  if (availableOffers.length === 0) {
     return null;
   }
 
-  return product.offers.reduce((bestOffer, offer) =>
+  return availableOffers.reduce((bestOffer, offer) =>
     offer.price < bestOffer.price ? offer : bestOffer
   );
 }
@@ -60,12 +66,13 @@ export function getCostPerOzProtein(product: Product): number | null {
 
 export function getSavingsVsHighestOffer(product: Product): number | null {
   const bestOffer = getBestOffer(product);
+  const availableOffers = getAvailableOffers(product);
 
-  if (!bestOffer || product.offers.length < 2) {
+  if (!bestOffer || availableOffers.length < 2) {
     return null;
   }
 
-  const highestOffer = product.offers.reduce((highest, offer) =>
+  const highestOffer = availableOffers.reduce((highest, offer) =>
     offer.price > highest.price ? offer : highest
   );
 

@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx tsc --noEmit*)",
+      "Bash(curl *)",
+      "Bash(curl -sIL \"https://amzn.to/4f3SLCQ\")",
+      "Bash(curl -sIL \"https://amzn.to/4y71fSk\")",
+      "Bash(curl -sIL \"https://amzn.to/4v7ozwp\")",
+      "Bash(curl -sIL \"https://amzn.to/4p7Ub3M\")",
+      "Bash(curl -sIL \"https://amzn.to/4vyfCg9\")",
+      "WebFetch(domain:www.amazon.com)",
+      "WebFetch(domain:www.gnc.com)",
+      "Skill(run)",
+      "Skill(run:*)",
+      "Bash(node -e \"require.resolve\\('playwright'\\)\")",
+      "Bash(npx --yes playwright --version)",
+      "Bash(node \"C:/Users/MACROS~1/AppData/Local/Temp/claude/c--Users-Macrosaver-Documents-GitHub-macrosaver/583d0f1b-7c87-45ca-b311-01349786ab87/scratchpad/verify.js\")",
+      "Bash(node verify-temp.js)",
+      "Bash(sed -i \"s/networkidle/load/g\" verify-temp.js)",
+      "Bash(npx tsc *)",
+      "Bash(rm -f verify-nutricost.js)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(rm -f verify-hero.js)",
+      "Bash(rm -f verify-icons.js)",
+      "Bash(rm -f verify-layout.js)",
+      "Bash(rm -f verify-mobile.js verify-mobile2.js verify-mobile3.js verify-mobile4.js verify-mobile5.js)"
+    ]
+  }
+}
