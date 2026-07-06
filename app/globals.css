@@ -54,3 +54,21 @@
     max-width: 100%;
   }
 }
+
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(40px, -30px) scale(1.08); }
+  66% { transform: translate(-30px, 35px) scale(0.95); }
+}
+
+.animate-blob-drift {
+  animation-name: blob-drift;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-blob-drift {
+    animation: none;
+  }
+}

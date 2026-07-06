@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -9,7 +10,10 @@ export default function Footer() {
         
         {/* Navigation Links / Brand */}
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm text-gray-400">
-          <span className="font-semibold text-white tracking-wide">MacroSaver</span>
+          <span className="flex items-center gap-2 font-semibold text-white tracking-wide">
+            <Image src="/logo.png" alt="" width={20} height={20} className="rounded shrink-0" />
+            MacroSaver
+          </span>
           <a href="/" className="hover:text-white transition-colors">Dashboard</a>
           <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
         </div>

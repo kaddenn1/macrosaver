@@ -20,13 +20,14 @@ export default async function CategoryPage({
     "creatine": "Creatine",
     "weight-management": "Weight Management",
     "food-drink": "Food & Drink",
+    "electrolytes": "Electrolytes",
     "gut-health": "Gut Health",
   };
 
   const displayTitle = categoryTitles[currentSlug] || currentSlug;
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans">
+    <main className="min-h-screen text-gray-100 font-sans">
       
       <div className="w-full max-w-[1600px] mx-auto pt-6 px-4 sm:px-6 lg:px-8 pb-2">
          <CategoryRow />

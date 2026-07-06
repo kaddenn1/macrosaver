@@ -1,19 +1,26 @@
 import React from 'react';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <div className="relative w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20 overflow-hidden">
-
-      {/* Background ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] lg:w-[600px] lg:h-[600px] bg-[#a3e635] opacity-[0.15] blur-[120px] rounded-full pointer-events-none"></div>
+    <div className="relative w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-20">
 
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
 
         {/* Left Column: The MacroSaver Wordmark */}
         <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[120px] font-black leading-[0.85] tracking-tighter mb-6">
-            <span className="text-[#a3e635]">Macro</span><span className="text-white">Saver</span>
-          </h1>
+          <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 mb-6">
+            <Image
+              src="/logo.png"
+              alt=""
+              width={110}
+              height={110}
+              className="rounded-2xl w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 shrink-0"
+            />
+            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[120px] font-black leading-[0.85] tracking-tighter">
+              <span className="text-[#a3e635]">Macro</span><span className="text-white">Saver</span>
+            </h1>
+          </div>
           <p className="text-2xl sm:text-3xl font-bold text-gray-300 mb-4">
             Know Where Every Dollar Goes.
           </p>
@@ -22,8 +29,8 @@ export default function Hero() {
           </p>
         </div>
 
-        {/* Right Column: Feature List */}
-        <div className="flex flex-col gap-6 w-full lg:w-auto lg:min-w-[340px]">
+        {/* Right Column: Feature List (desktop only, cramped/redundant on mobile) */}
+        <div className="hidden lg:flex flex-col gap-6 w-full lg:w-auto lg:min-w-[340px]">
           {[
             {
               title: "Lowest Price",

@@ -23,7 +23,9 @@
       "Bash(rm -f verify-hero.js)",
       "Bash(rm -f verify-icons.js)",
       "Bash(rm -f verify-layout.js)",
-      "Bash(rm -f verify-mobile.js verify-mobile2.js verify-mobile3.js verify-mobile4.js verify-mobile5.js)"
+      "Bash(rm -f verify-mobile.js verify-mobile2.js verify-mobile3.js verify-mobile4.js verify-mobile5.js)",
+      "Bash(node verify-filters.js)",
+      "Bash(node -e \"console.log\\(require\\('./node_modules/next/package.json'\\).version\\)\")"
     ]
   }
 }

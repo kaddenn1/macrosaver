@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navLinks = [
   { href: "/category/protein", label: "Protein" },
@@ -9,6 +10,7 @@ const navLinks = [
   { href: "/category/creatine", label: "Creatine" },
   { href: "/category/weight-management", label: "Weight Management" },
   { href: "/category/food-drink", label: "Food & Drink" },
+  { href: "/category/electrolytes", label: "Electrolytes" },
   { href: "/category/gut-health", label: "Gut Health" },
 ];
 
@@ -20,13 +22,16 @@ export default function Navbar() {
       <div className="w-full max-w-[1400px] px-4 sm:px-6 lg:px-8 h-20 flex justify-between items-center">
 
         {/* LOGO IDENTITY */}
-        <Link href="/" className="flex flex-col" onClick={() => setMenuOpen(false)}>
-          <span className="text-3xl sm:text-4xl font-black text-lime-500 tracking-tight leading-none">
-            Macro<span className="text-white">Saver</span>
-          </span>
-          <span className="text-[9px] font-bold text-lime-500/80 tracking-widest uppercase mt-1 hidden sm:block">
-            Know Where Every Dollar Goes
-          </span>
+        <Link href="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
+          <Image src="/logo.png" alt="" width={40} height={40} className="rounded-lg shrink-0" />
+          <div className="flex flex-col">
+            <span className="text-3xl sm:text-4xl font-black text-lime-500 tracking-tight leading-none">
+              Macro<span className="text-white">Saver</span>
+            </span>
+            <span className="text-[9px] font-bold text-lime-500/80 tracking-widest uppercase mt-1 hidden sm:block">
+              Know Where Every Dollar Goes
+            </span>
+          </div>
         </Link>
 
         {/* NAVIGATION LINKS - DESKTOP ONLY */}

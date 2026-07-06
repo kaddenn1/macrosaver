@@ -30,12 +30,11 @@ export default function Champions({ filterCategory, searchParams }: ChampionsPro
     displayProducts = displayProducts.filter((p) => (p.nutrition?.proteinGrams || 0) >= minProtein);
   }
 
-  if (searchParams?.diet) {
-    const dietWanted = searchParams.diet as string;
+  if (searchParams?.maxPrice) {
+    const maxPrice = parseFloat(searchParams.maxPrice as string);
     displayProducts = displayProducts.filter((p) => {
-      if (dietWanted === 'grass-fed') return p.name.toLowerCase().includes('grass-fed');
-      if (dietWanted === 'low-lactose') return p.name.toLowerCase().includes('isolate');
-      return true;
+      const cost = getCostPerServing(p);
+      return cost !== null && cost <= maxPrice;
     });
   }
 

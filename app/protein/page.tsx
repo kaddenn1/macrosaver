@@ -3,7 +3,7 @@ import Champions from "@/components/Champions";
 
 export default function ProteinCategoryPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans">
+    <main className="min-h-screen text-gray-100 font-sans">
       
       {/* 1. Page Header Area */}
       <div className="w-full max-w-[1600px] mx-auto pt-10 px-4 sm:px-6 lg:px-8">

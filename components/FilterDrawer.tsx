@@ -28,7 +28,7 @@ export default function FilterDrawer() {
       {/* The Drawer (Slide out on mobile, standard block on desktop) */}
       <div className={`
         fixed inset-y-0 left-0 z-50 w-[85vw] max-w-[320px] bg-[#0a0a0a] border-r border-gray-800 p-6 transform transition-transform duration-300 ease-in-out overflow-y-auto shadow-2xl
-        lg:relative lg:transform-none lg:w-full lg:p-0 lg:border-none lg:bg-transparent lg:z-auto lg:overflow-visible lg:shadow-none
+        lg:relative lg:transform-none lg:translate-x-0 lg:w-full lg:p-0 lg:border-none lg:bg-transparent lg:z-auto lg:overflow-visible lg:shadow-none
         ${isOpen ? "translate-x-0" : "-translate-x-full"}
       `}>
         

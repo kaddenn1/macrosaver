@@ -50,6 +50,30 @@ export const products = [
     ]
   },
   {
+    id: "32",
+    name: "Premier Protein Powder Indulgence, Salted Caramel Truffle",
+    brand: "Premier Protein",
+    category: "protein",
+    image: "/products/premier-protein-salted-caramel-truffle.jpg",
+    servings: 17,
+    nutrition: { calories: 160, proteinGrams: 30, sugarGrams: 2 },
+    offers: [
+      { retailer: "Amazon", price: 38.48, url: amazonUrl("B0DLPCJ4BZ"), asin: "B0DLPCJ4BZ" }
+    ]
+  },
+  {
+    id: "33",
+    name: "Premier Protein Powder, Chocolate Milkshake (24.5 oz)",
+    brand: "Premier Protein",
+    category: "protein",
+    image: "/products/premier-protein-chocolate-milkshake.jpg",
+    servings: 17,
+    nutrition: { calories: 150, proteinGrams: 30, sugarGrams: 1 },
+    offers: [
+      { retailer: "Amazon", price: 25.97, url: amazonUrl("B06Y5ZG66K"), asin: "B06Y5ZG66K" }
+    ]
+  },
+  {
     id: "1",
     name: "Gold Standard 100% Whey - Double Rich Chocolate (5 lb)",
     brand: "Optimum Nutrition",
@@ -154,7 +178,7 @@ export const products = [
     servings: 29,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
-      { retailer: "Amazon", price: 45.32, url: amazonUrl("B002DYIZHQ"), asin: "B002DYIZHQ" }
+      { retailer: "Amazon", price: 45.32, url: amazonUrl("B002DYIZHQ"), asin: "B002DYIZHQ", inStock: false }
     ]
   },
   {
@@ -326,27 +350,207 @@ export const products = [
     ]
   },
   {
-    id: "3",
-    name: "Legend Pre-Workout",
+    id: "34",
+    name: "Legend Pre-Workout - Blue Raspberry",
     brand: "Ghost",
     category: "pre-workout",
+    image: "/products/ghost-legend-blue-raspberry.jpg",
     servings: 30,
     nutrition: { calories: 10, proteinGrams: 0 },
     offers: [
-      { retailer: "Vitamin Shoppe", price: 44.99, url: "#" },
-      { retailer: "Amazon", price: 42.50, url: "#" }
+      { retailer: "Amazon", price: 44.99, url: amazonUrl("B0D9NFTNQL"), asin: "B0D9NFTNQL" }
     ]
   },
   {
-    id: "4",
-    name: "Hydration Multiplier",
+    id: "36",
+    name: "Legend Pre-Workout - Sonic Cherry Limeade",
+    brand: "Ghost",
+    category: "pre-workout",
+    image: "/products/ghost-legend-sonic-cherry-limeade.jpg",
+    servings: 30,
+    nutrition: { calories: 10, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 44.99, url: amazonUrl("B0D9NKPH6Q"), asin: "B0D9NKPH6Q" }
+    ]
+  },
+  {
+    id: "37",
+    name: "Legend Pre-Workout - Welch's Grape",
+    brand: "Ghost",
+    category: "pre-workout",
+    image: "/products/ghost-legend-welchs-grape.jpg",
+    servings: 30,
+    nutrition: { calories: 10, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 44.99, url: amazonUrl("B0CS7KYSYZ"), asin: "B0CS7KYSYZ" }
+    ]
+  },
+  {
+    id: "38",
+    name: "Legend Pre-Workout - Warheads Sour Watermelon",
+    brand: "Ghost",
+    category: "pre-workout",
+    image: "/products/ghost-legend-warheads-sour-watermelon.jpg",
+    servings: 30,
+    nutrition: { calories: 10, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 44.99, url: amazonUrl("B0D9NLF8Z3"), asin: "B0D9NLF8Z3" }
+    ]
+  },
+  {
+    id: "39",
+    name: "Legend Pre-Workout - Orange Cream",
+    brand: "Ghost",
+    category: "pre-workout",
+    image: "/products/ghost-legend-orange-cream.jpg",
+    servings: 30,
+    nutrition: { calories: 10, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 44.99, url: amazonUrl("B0D9NKCBFR"), asin: "B0D9NKCBFR" }
+    ]
+  },
+  {
+    id: "40",
+    name: "Legend Pre-Workout - Sour Strips Rainbow",
+    brand: "Ghost",
+    category: "pre-workout",
+    image: "/products/ghost-legend-sour-strips-rainbow.jpg",
+    servings: 30,
+    nutrition: { calories: 10, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 44.99, url: amazonUrl("B0FPPP1SGH"), asin: "B0FPPP1SGH" }
+    ]
+  },
+  {
+    id: "41",
+    name: "Legend Pre-Workout - Bubblicious Strawberry Splash",
+    brand: "Ghost",
+    category: "pre-workout",
+    image: "/products/ghost-legend-bubblicious-strawberry-splash.jpg",
+    servings: 30,
+    nutrition: { calories: 10, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 44.99, url: amazonUrl("B0FB1TLP3P"), asin: "B0FB1TLP3P" }
+    ]
+  },
+  {
+    id: "42",
+    name: "Legend Pre-Workout - Sonic Ocean Water",
+    brand: "Ghost",
+    category: "pre-workout",
+    image: "/products/ghost-legend-sonic-ocean-water.jpg",
+    servings: 30,
+    nutrition: { calories: 10, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 44.99, url: amazonUrl("B0FB1XGNB9"), asin: "B0FB1XGNB9" }
+    ]
+  },
+  {
+    id: "43",
+    name: "Hydration Multiplier - Lemon Lime",
     brand: "Liquid I.V.",
-    category: "food-drink",
+    category: "electrolytes",
+    image: "/products/liquidiv-lemon-lime.jpg",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0 },
     offers: [
-      { retailer: "Costco", price: 23.99, url: "#" },
-      { retailer: "Amazon", price: 25.99, url: "#" }
+      { retailer: "Amazon", price: 23.28, url: amazonUrl("B01IT9NLHW"), asin: "B01IT9NLHW" }
+    ]
+  },
+  {
+    id: "44",
+    name: "Hydration Multiplier - Passion Fruit",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    image: "/products/liquidiv-passion-fruit.jpg",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 23.30, url: amazonUrl("B07HCNM7KQ"), asin: "B07HCNM7KQ" }
+    ]
+  },
+  {
+    id: "45",
+    name: "Hydration Multiplier - Watermelon",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    image: "/products/liquidiv-watermelon.jpg",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 24.17, url: amazonUrl("B08ZYNSZZT"), asin: "B08ZYNSZZT" }
+    ]
+  },
+  {
+    id: "46",
+    name: "Hydration Multiplier - Strawberry Lemonade",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    image: "/products/liquidiv-strawberry-lemonade.jpg",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 23.27, url: amazonUrl("B0BQ51S5BL"), asin: "B0BQ51S5BL" }
+    ]
+  },
+  {
+    id: "47",
+    name: "Hydration Multiplier - Tropical Punch",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    image: "/products/liquidiv-tropical-punch.jpg",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 22.68, url: amazonUrl("B0B177N8VP"), asin: "B0B177N8VP" }
+    ]
+  },
+  {
+    id: "49",
+    name: "Hydration Multiplier - Concord Grape",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    image: "/products/liquidiv-concord-grape.jpg",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 24.00, url: amazonUrl("B09VCS1YM1"), asin: "B09VCS1YM1" }
+    ]
+  },
+  {
+    id: "50",
+    name: "Hydration Multiplier - Popsicle Firecracker",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    image: "/products/liquidiv-firecracker.jpg",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 23.28, url: amazonUrl("B0CHN5D13P"), asin: "B0CHN5D13P" }
+    ]
+  },
+  {
+    id: "51",
+    name: "Hydration Multiplier - Golden Cherry",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    image: "/products/liquidiv-golden-cherry.jpg",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 23.46, url: amazonUrl("B0B1LN467K"), asin: "B0B1LN467K" }
+    ]
+  },
+  {
+    id: "52",
+    name: "Hydration Multiplier - Arctic Raspberry",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    image: "/products/liquidiv-arctic-raspberry.jpg",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 23.96, url: amazonUrl("B0DNNMR2CD"), asin: "B0DNNMR2CD" }
     ]
   },
   {

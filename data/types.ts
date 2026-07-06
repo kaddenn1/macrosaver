@@ -4,6 +4,7 @@ export type SupplementCategory =
   | "pre-workout"
   | "weight-management"
   | "food-drink"
+  | "electrolytes"
   | "gut-health"
   | "other";
 

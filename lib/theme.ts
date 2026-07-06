@@ -19,6 +19,10 @@ export const themeMap: Record<string, any> = {
     text: 'text-[#2dd4bf]', border: 'border-[#2dd4bf]', hoverBorder: 'hover:border-[#2dd4bf]',
     bg: 'bg-[#2dd4bf]', hoverBg: 'hover:bg-[#0d9488]', glow: 'group-hover:shadow-[0_0_30px_rgba(45,212,191,0.15)]'
   },
+  electrolytes: {
+    text: 'text-[#22d3ee]', border: 'border-[#22d3ee]', hoverBorder: 'hover:border-[#22d3ee]',
+    bg: 'bg-[#22d3ee]', hoverBg: 'hover:bg-[#0891b2]', glow: 'group-hover:shadow-[0_0_30px_rgba(34,211,238,0.15)]'
+  },
   "gut-health": {
     text: 'text-[#818cf8]', border: 'border-[#818cf8]', hoverBorder: 'hover:border-[#818cf8]',
     bg: 'bg-[#818cf8]', hoverBg: 'hover:bg-[#4f46e5]', glow: 'group-hover:shadow-[0_0_30px_rgba(129,140,248,0.15)]'

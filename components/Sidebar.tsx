@@ -1,99 +1,116 @@
 "use client";
 
+import { useRef, useState } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
+import { products } from "@/data/products";
+import { getCostPerServing } from "@/lib/macrosaver-engine";
+import type { Product } from "@/data/types";
+
+const PROTEIN_THRESHOLDS = [20, 25, 30];
 
 function SidebarInner() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  // This function handles the checkbox clicks and updates the URL!
+  // Derive the active category (if any) so counts reflect what's actually on screen.
+  const categoryMatch = pathname.match(/^\/category\/([^/]+)/);
+  const activeCategory = categoryMatch ? categoryMatch[1] : null;
+  const allProducts = products as Product[];
+  const baseProducts = activeCategory
+    ? allProducts.filter((p) => p.category === activeCategory)
+    : allProducts;
+
+  const costs = baseProducts
+    .map((p) => getCostPerServing(p))
+    .filter((c): c is number => c !== null);
+  const minCost = costs.length ? Math.min(...costs) : 0.1;
+  const maxCost = costs.length ? Math.max(...costs) : 2.0;
+
+  const proteinCounts = PROTEIN_THRESHOLDS.map(
+    (threshold) => baseProducts.filter((p) => (p.nutrition?.proteinGrams || 0) >= threshold).length
+  );
+
   const handleCheck = (key: string, value: string) => {
-    // 1. Grab the current URL parameters
     const params = new URLSearchParams(searchParams.toString());
-    
-    // 2. If it's already checked, uncheck it (remove from URL)
     if (params.get(key) === value) {
       params.delete(key);
-    } 
-    // 3. Otherwise, check it (add to URL)
-    else {
+    } else {
       params.set(key, value);
     }
-    
-    // 4. Push the new URL to the browser without reloading the page
     router.push(`${pathname}?${params.toString()}`);
   };
 
-  // Helper to check if a box should be ticked based on the URL
   const isChecked = (key: string, value: string) => searchParams.get(key) === value;
+
+  // Price slider: local state drives the visual drag, committed to the URL (debounced) so
+  // navigation doesn't fire on every pixel of movement.
+  const urlMaxPrice = searchParams.get("maxPrice");
+  const [sliderValue, setSliderValue] = useState(
+    urlMaxPrice ? parseFloat(urlMaxPrice) : maxCost
+  );
+  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const handleSliderChange = (value: number) => {
+    setSliderValue(value);
+    if (debounceRef.current) clearTimeout(debounceRef.current);
+    debounceRef.current = setTimeout(() => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (value >= maxCost) {
+        params.delete("maxPrice");
+      } else {
+        params.set("maxPrice", value.toFixed(2));
+      }
+      router.push(`${pathname}?${params.toString()}`);
+    }, 250);
+  };
 
   return (
     <div className="w-full flex flex-col gap-6">
-      
-      {/* Sidebar Header */}
       <div>
         <h3 className="text-[10px] font-black uppercase tracking-widest text-white mb-4">
           Refine Results
         </h3>
-        
-        {/* Fake Price Slider (Visual Only for now) */}
+
+        {/* Price Per Serving Slider */}
         <div className="mb-6">
           <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Price Per Serving</div>
-          <div className="w-full h-1 bg-gray-800 rounded-full relative mb-2">
-             <div className="absolute left-0 w-full h-full bg-[#a3e635] rounded-full opacity-30"></div>
-             <div className="absolute left-0 w-4 h-4 bg-[#a3e635] rounded-full -mt-1.5 shadow-[0_0_10px_rgba(163,230,53,0.5)]"></div>
-             <div className="absolute right-0 w-4 h-4 bg-[#a3e635] rounded-full -mt-1.5 shadow-[0_0_10px_rgba(163,230,53,0.5)]"></div>
+          <input
+            type="range"
+            min={minCost}
+            max={maxCost}
+            step={0.01}
+            value={sliderValue}
+            onChange={(e) => handleSliderChange(parseFloat(e.target.value))}
+            className="w-full accent-[#a3e635]"
+            disabled={minCost === maxCost}
+          />
+          <div className="flex justify-between text-[10px] text-[#a3e635] font-bold mt-1">
+            <span>${minCost.toFixed(2)}</span>
+            <span>Up to ${sliderValue.toFixed(2)}</span>
           </div>
-          <div className="flex justify-between text-[10px] text-[#a3e635] font-bold">
-            <span>$0.10</span>
-            <span>$2.00+</span>
-          </div>
-        </div>{/* Protein Per Serving Filter */}
-        <div className="mb-6">
+        </div>
+
+        {/* Protein Per Serving Filter */}
+        <div className="mb-2">
           <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-3">Protein Per Serving</div>
           <div className="flex flex-col gap-2">
-            {[
-              { label: '20g+', value: '20', count: '412' },
-              { label: '25g+', value: '25', count: '287' },
-              { label: '30g+', value: '30', count: '156' },
-            ].map((item) => (
-              <div key={item.value} className="flex items-center gap-2 group cursor-pointer" onClick={() => handleCheck('protein', item.value)}>
-                <div className={`w-3 h-3 rounded-[2px] border flex items-center justify-center transition-colors ${isChecked('protein', item.value) ? 'bg-[#a3e635] border-[#a3e635]' : 'bg-[#111] border-gray-700 group-hover:border-gray-500'}`}>
-                  {isChecked('protein', item.value) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
+            {PROTEIN_THRESHOLDS.map((threshold, idx) => (
+              <div
+                key={threshold}
+                className="flex items-center gap-2 group cursor-pointer"
+                onClick={() => handleCheck('protein', String(threshold))}
+              >
+                <div className={`w-3 h-3 rounded-[2px] border flex items-center justify-center transition-colors ${isChecked('protein', String(threshold)) ? 'bg-[#a3e635] border-[#a3e635]' : 'bg-[#111] border-gray-700 group-hover:border-gray-500'}`}>
+                  {isChecked('protein', String(threshold)) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
                 </div>
-                <span className={`text-xs ${isChecked('protein', item.value) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{item.label}</span>
-                <span className="text-[9px] text-gray-600 ml-auto">({item.count})</span>
+                <span className={`text-xs ${isChecked('protein', String(threshold)) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{threshold}g+</span>
+                <span className="text-[9px] text-gray-600 ml-auto">({proteinCounts[idx]})</span>
               </div>
             ))}
           </div>
         </div>
-
-        {/* Dietary Preference Filter */}
-        <div className="mb-4">
-          <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-3">Dietary Preference</div>
-          <div className="flex flex-col gap-2">
-            {[
-              { label: 'Grass-Fed', value: 'grass-fed', count: '198' },
-              { label: 'Low Lactose', value: 'low-lactose', count: '241' },
-              { label: 'Gluten Free', value: 'gluten-free', count: '412' },
-            ].map((item) => (
-              <div key={item.value} className="flex items-center gap-2 group cursor-pointer" onClick={() => handleCheck('diet', item.value)}>
-                <div className={`w-3 h-3 rounded-[2px] border flex items-center justify-center transition-colors ${isChecked('diet', item.value) ? 'bg-[#a3e635] border-[#a3e635]' : 'bg-[#111] border-gray-700 group-hover:border-gray-500'}`}>
-                  {isChecked('diet', item.value) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
-                </div>
-                <span className={`text-xs ${isChecked('diet', item.value) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{item.label}</span>
-                <span className="text-[9px] text-gray-600 ml-auto">({item.count})</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <button className="w-full py-1.5 border border-gray-800 rounded text-[10px] text-gray-400 uppercase tracking-widest hover:bg-gray-900 transition-colors">
-          Show More Filters ∨
-        </button>
-
       </div>
     </div>
   );

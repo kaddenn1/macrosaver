@@ -5,13 +5,15 @@ import Champions from "@/components/Champions";
 import SortDropdown from "@/components/SortDropdown";
 import SearchBar from "@/components/SearchBar"; 
 
-export default function Home({
+export default async function Home({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
+  const resolvedSearchParams = await searchParams;
+
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans">
+    <main className="min-h-screen text-gray-100 font-sans">
       
       {/* 1. The Brand New Hero Section! */}
       <Hero />
@@ -49,7 +51,7 @@ export default function Home({
         </div>
 
         <div className="flex-1 w-full min-w-0">
-          <Champions searchParams={searchParams} />
+          <Champions searchParams={resolvedSearchParams} />
         </div>
         
       </div>

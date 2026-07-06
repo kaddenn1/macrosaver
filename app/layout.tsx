@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import AmbientBackground from "@/components/AmbientBackground";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,7 +16,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <body className="bg-[#0a0a0a] text-gray-100 antialiased min-h-screen flex flex-col">
+      <body className="relative bg-[#0a0a0a] text-gray-100 antialiased min-h-screen flex flex-col">
+        <AmbientBackground />
         <Navbar />
         <div className="flex-1 flex flex-col">
           {children}

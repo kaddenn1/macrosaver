@@ -36,7 +36,7 @@ export default async function ProductPage({
   const sortedOffers = [...product.offers].sort((a, b) => a.price - b.price);
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-gray-100 font-sans">
+    <main className="min-h-screen text-gray-100 font-sans">
       <div className="w-full max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24">
         <Link
           href="/"
