@@ -8,9 +8,10 @@ const navLinks = [
   { href: "/category/protein", label: "Protein" },
   { href: "/category/pre-workout", label: "Pre-Workout" },
   { href: "/category/creatine", label: "Creatine" },
-  { href: "/category/weight-management", label: "Weight Management" },
-  { href: "/category/food-drink", label: "Food & Drink" },
   { href: "/category/electrolytes", label: "Electrolytes" },
+  { href: "/category/weight-management", label: "Weight Management" },
+  { href: "/category/bariatric", label: "Bariatric Support" },
+  { href: "/category/food-drink", label: "Food & Drink" },
   { href: "/category/gut-health", label: "Gut Health" },
 ];
 
@@ -23,7 +24,7 @@ export default function Navbar() {
 
         {/* LOGO IDENTITY */}
         <Link href="/" className="flex items-center gap-2" onClick={() => setMenuOpen(false)}>
-          <Image src="/logo.png" alt="" width={40} height={40} className="rounded-lg shrink-0" />
+          <Image src="/logo.png" alt="" width={48} height={48} className="rounded-lg shrink-0" />
           <div className="flex flex-col">
             <span className="text-3xl sm:text-4xl font-black text-lime-500 tracking-tight leading-none">
               Macro<span className="text-white">Saver</span>

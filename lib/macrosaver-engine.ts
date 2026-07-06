@@ -7,6 +7,14 @@ function roundToTwo(value: number): number {
   return Math.round(value * 100) / 100;
 }
 
+// Product names follow "Brand/Line - Flavor (size)" or "Brand/Line, Flavor (size)".
+// Pulls the flavor out of either pattern; returns null for single-variant products
+// (e.g. "Casein Protein") that have no flavor segment at all.
+export function extractFlavor(name: string): string | null {
+  const match = name.match(/(?:-|,)\s*([^()]+?)\s*(?:\([^)]*\))?$/);
+  return match ? match[1].trim() : null;
+}
+
 function getAvailableOffers(product: Product): RetailerOffer[] {
   return product.offers.filter((offer) => offer.inStock !== false);
 }

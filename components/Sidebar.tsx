@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { products } from "@/data/products";
-import { getCostPerServing } from "@/lib/macrosaver-engine";
+import { getCostPerServing, extractFlavor } from "@/lib/macrosaver-engine";
 import type { Product } from "@/data/types";
 
 const PROTEIN_THRESHOLDS = [20, 25, 30];
@@ -17,6 +17,7 @@ function SidebarInner() {
   // Derive the active category (if any) so counts reflect what's actually on screen.
   const categoryMatch = pathname.match(/^\/category\/([^/]+)/);
   const activeCategory = categoryMatch ? categoryMatch[1] : null;
+  const isProteinCategory = activeCategory === "protein";
   const allProducts = products as Product[];
   const baseProducts = activeCategory
     ? allProducts.filter((p) => p.category === activeCategory)
@@ -31,6 +32,17 @@ function SidebarInner() {
   const proteinCounts = PROTEIN_THRESHOLDS.map(
     (threshold) => baseProducts.filter((p) => (p.nutrition?.proteinGrams || 0) >= threshold).length
   );
+
+  const clearProteinCount = baseProducts.filter((p) => p.name.toLowerCase().includes("clear")).length;
+
+  // Flavors present among the current category's products (skips single-variant products
+  // like "Casein Protein" that have no flavor segment in their name).
+  const flavorCounts = new Map<string, number>();
+  baseProducts.forEach((p) => {
+    const flavor = extractFlavor(p.name);
+    if (flavor) flavorCounts.set(flavor, (flavorCounts.get(flavor) || 0) + 1);
+  });
+  const flavors = Array.from(flavorCounts.keys()).sort();
 
   const handleCheck = (key: string, value: string) => {
     const params = new URLSearchParams(searchParams.toString());
@@ -92,25 +104,66 @@ function SidebarInner() {
           </div>
         </div>
 
-        {/* Protein Per Serving Filter */}
-        <div className="mb-2">
-          <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-3">Protein Per Serving</div>
-          <div className="flex flex-col gap-2">
-            {PROTEIN_THRESHOLDS.map((threshold, idx) => (
-              <div
-                key={threshold}
-                className="flex items-center gap-2 group cursor-pointer"
-                onClick={() => handleCheck('protein', String(threshold))}
-              >
-                <div className={`w-3 h-3 rounded-[2px] border flex items-center justify-center transition-colors ${isChecked('protein', String(threshold)) ? 'bg-[#a3e635] border-[#a3e635]' : 'bg-[#111] border-gray-700 group-hover:border-gray-500'}`}>
-                  {isChecked('protein', String(threshold)) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
+        {/* Protein Per Serving Filter - only relevant when browsing Protein */}
+        {isProteinCategory && (
+          <div className="mb-6">
+            <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-3">Protein Per Serving</div>
+            <div className="flex flex-col gap-2">
+              {PROTEIN_THRESHOLDS.map((threshold, idx) => (
+                <div
+                  key={threshold}
+                  className="flex items-center gap-2 group cursor-pointer"
+                  onClick={() => handleCheck('protein', String(threshold))}
+                >
+                  <div className={`w-3 h-3 rounded-[2px] border flex items-center justify-center transition-colors ${isChecked('protein', String(threshold)) ? 'bg-[#a3e635] border-[#a3e635]' : 'bg-[#111] border-gray-700 group-hover:border-gray-500'}`}>
+                    {isChecked('protein', String(threshold)) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
+                  </div>
+                  <span className={`text-xs ${isChecked('protein', String(threshold)) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{threshold}g+</span>
+                  <span className="text-[9px] text-gray-600 ml-auto">({proteinCounts[idx]})</span>
                 </div>
-                <span className={`text-xs ${isChecked('protein', String(threshold)) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{threshold}g+</span>
-                <span className="text-[9px] text-gray-600 ml-auto">({proteinCounts[idx]})</span>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* Clear Protein - only relevant when browsing Protein */}
+        {isProteinCategory && clearProteinCount > 0 && (
+          <div className="mb-6">
+            <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-3">Protein Type</div>
+            <div
+              className="flex items-center gap-2 group cursor-pointer"
+              onClick={() => handleCheck('type', 'clear')}
+            >
+              <div className={`w-3 h-3 rounded-[2px] border flex items-center justify-center transition-colors ${isChecked('type', 'clear') ? 'bg-[#a3e635] border-[#a3e635]' : 'bg-[#111] border-gray-700 group-hover:border-gray-500'}`}>
+                {isChecked('type', 'clear') && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
+              </div>
+              <span className={`text-xs ${isChecked('type', 'clear') ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>Clear Protein</span>
+              <span className="text-[9px] text-gray-600 ml-auto">({clearProteinCount})</span>
+            </div>
+          </div>
+        )}
+
+        {/* Flavor Filter - shows whenever the current category has more than one flavor */}
+        {flavors.length > 1 && (
+          <div className="mb-2">
+            <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-3">Flavor</div>
+            <div className="flex flex-col gap-2 max-h-64 overflow-y-auto pr-1">
+              {flavors.map((flavor) => (
+                <div
+                  key={flavor}
+                  className="flex items-center gap-2 group cursor-pointer"
+                  onClick={() => handleCheck('flavor', flavor)}
+                >
+                  <div className={`w-3 h-3 rounded-[2px] border flex items-center justify-center shrink-0 transition-colors ${isChecked('flavor', flavor) ? 'bg-[#a3e635] border-[#a3e635]' : 'bg-[#111] border-gray-700 group-hover:border-gray-500'}`}>
+                    {isChecked('flavor', flavor) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
+                  </div>
+                  <span className={`text-xs ${isChecked('flavor', flavor) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{flavor}</span>
+                  <span className="text-[9px] text-gray-600 ml-auto">({flavorCounts.get(flavor)})</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

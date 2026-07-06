@@ -22,6 +22,7 @@ export default async function CategoryPage({
     "food-drink": "Food & Drink",
     "electrolytes": "Electrolytes",
     "gut-health": "Gut Health",
+    "bariatric": "Bariatric Support",
   };
 
   const displayTitle = categoryTitles[currentSlug] || currentSlug;

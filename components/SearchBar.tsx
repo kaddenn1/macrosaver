@@ -22,7 +22,11 @@ function SearchBarInner() {
     }, 300);
 
     return () => clearTimeout(delayDebounceFn);
-  }, [searchTerm, pathname, router, searchParams]);
+    // Only re-run when the user actually types. Including pathname/router/searchParams
+    // here would refire this effect on every router.push (searchParams gets a new
+    // object identity on every navigation), creating an infinite push loop.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm]);
 
   return (
     <div className="relative w-full sm:w-[300px]">

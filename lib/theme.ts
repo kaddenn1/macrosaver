@@ -27,6 +27,10 @@ export const themeMap: Record<string, any> = {
     text: 'text-[#818cf8]', border: 'border-[#818cf8]', hoverBorder: 'hover:border-[#818cf8]',
     bg: 'bg-[#818cf8]', hoverBg: 'hover:bg-[#4f46e5]', glow: 'group-hover:shadow-[0_0_30px_rgba(129,140,248,0.15)]'
   },
+  bariatric: {
+    text: 'text-[#facc15]', border: 'border-[#facc15]', hoverBorder: 'hover:border-[#facc15]',
+    bg: 'bg-[#facc15]', hoverBg: 'hover:bg-[#ca8a04]', glow: 'group-hover:shadow-[0_0_30px_rgba(250,204,21,0.15)]'
+  },
   other: {
     text: 'text-[#fb923c]', border: 'border-[#fb923c]', hoverBorder: 'hover:border-[#fb923c]',
     bg: 'bg-[#fb923c]', hoverBg: 'hover:bg-[#ea580c]', glow: 'group-hover:shadow-[0_0_30px_rgba(251,146,60,0.15)]'

@@ -9,6 +9,7 @@ import {
   getCostPerOzProtein,
   getValueScore,
   getSavingsVsHighestOffer,
+  extractFlavor,
 } from "@/lib/macrosaver-engine";
 import type { Product } from "@/data/types";
 import { getTheme } from "@/lib/theme";
@@ -36,6 +37,15 @@ export default function Champions({ filterCategory, searchParams }: ChampionsPro
       const cost = getCostPerServing(p);
       return cost !== null && cost <= maxPrice;
     });
+  }
+
+  if (searchParams?.flavor) {
+    const flavor = searchParams.flavor as string;
+    displayProducts = displayProducts.filter((p) => extractFlavor(p.name) === flavor);
+  }
+
+  if (searchParams?.type === "clear") {
+    displayProducts = displayProducts.filter((p) => p.name.toLowerCase().includes("clear"));
   }
 
   if (searchParams?.q) {
