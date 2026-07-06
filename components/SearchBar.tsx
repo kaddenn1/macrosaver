@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 
-export default function SearchBar() {
+function SearchBarInner() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -46,5 +46,13 @@ export default function SearchBar() {
         </button>
       )}
     </div>
+  );
+}
+
+export default function SearchBar() {
+  return (
+    <Suspense fallback={<div className="w-full sm:w-[300px] h-[42px] bg-[#111] border border-gray-800 rounded-lg" />}>
+      <SearchBarInner />
+    </Suspense>
   );
 }

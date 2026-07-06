@@ -1,8 +1,9 @@
 "use client";
 
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-export default function Sidebar() {
+function SidebarInner() {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
@@ -95,5 +96,13 @@ export default function Sidebar() {
 
       </div>
     </div>
+  );
+}
+
+export default function Sidebar() {
+  return (
+    <Suspense fallback={<div className="w-full h-64" />}>
+      <SidebarInner />
+    </Suspense>
   );
 }
