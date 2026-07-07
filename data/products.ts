@@ -711,6 +711,223 @@ export const products = [
     ]
   },
   {
+    id: "66",
+    name: "BariatricPal Calcium Citrate Soft Chews, Tropical Punch (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-tropical-punch.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B0D54PQPJQ"), asin: "B0D54PQPJQ" }
+    ]
+  },
+  {
+    id: "67",
+    name: "BariatricPal Calcium Citrate Soft Chews, Belgian Chocolate Caramel (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-belgian-chocolate-caramel.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B08J1D53VM"), asin: "B08J1D53VM" }
+    ]
+  },
+  {
+    id: "68",
+    name: "BariatricPal Calcium Citrate Soft Chews, Butterscotch (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-butterscotch.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B0D54MNCH2"), asin: "B0D54MNCH2" }
+    ]
+  },
+  {
+    id: "69",
+    name: "BariatricPal Calcium Citrate Soft Chews, Caramel Apple (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-caramel-apple.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B09KG9ZJT6"), asin: "B09KG9ZJT6" }
+    ]
+  },
+  {
+    id: "70",
+    name: "BariatricPal Calcium Citrate Soft Chews, Chocolate Mint (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-chocolate-mint.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B0985RY58P"), asin: "B0985RY58P" }
+    ]
+  },
+  {
+    id: "71",
+    name: "BariatricPal Calcium Citrate Soft Chews, French Caramel Vanilla (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-french-caramel-vanilla.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B07ZDF528Q"), asin: "B07ZDF528Q" }
+    ]
+  },
+  {
+    id: "72",
+    name: "BariatricPal Calcium Citrate Soft Chews, Piña Colada (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-pina-colada.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B09KGCMS3M"), asin: "B09KGCMS3M" }
+    ]
+  },
+  {
+    id: "73",
+    name: "BariatricPal Calcium Citrate Soft Chews, Strawberry Twist (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-strawberry-twist.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B089MFTWF3"), asin: "B089MFTWF3" }
+    ]
+  },
+  {
+    id: "74",
+    name: "BariatricPal Calcium Citrate Soft Chews, Blue Raspberry (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-blue-raspberry.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B0BRTG147X"), asin: "B0BRTG147X" }
+    ]
+  },
+  {
+    id: "75",
+    name: "BariatricPal Calcium Citrate Soft Chews, Orange Creamsicle (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-orange-creamsicle.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B0985QG3SH"), asin: "B0985QG3SH" }
+    ]
+  },
+  {
+    id: "76",
+    name: "BariatricPal Calcium Citrate Soft Chews, Wild Grape (90 Count)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-calcium-citrate-chews-wild-grape.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B08HJRVBNY"), asin: "B08HJRVBNY" }
+    ]
+  },
+  {
+    id: "77",
+    name: "Bariatric Fusion Calcium Citrate Soft Chews, Caramel (60 Count)",
+    brand: "Bariatric Fusion",
+    category: "bariatric",
+    image: "/products/bariatric-fusion-calcium-citrate-chews-caramel.jpg",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 26.99, url: amazonUrl("B07FTNZBZQ"), asin: "B07FTNZBZQ" }
+    ]
+  },
+  {
+    id: "78",
+    name: "Bariatric Fusion Calcium Citrate Soft Chews, Cranberry Grape (60 Count)",
+    brand: "Bariatric Fusion",
+    category: "bariatric",
+    image: "/products/bariatric-fusion-calcium-citrate-chews-cranberry-grape.jpg",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 26.99, url: amazonUrl("B0817NBQKK"), asin: "B0817NBQKK" }
+    ]
+  },
+  {
+    id: "79",
+    name: "Bariatric Fusion Calcium Citrate Soft Chews, Fruit Punch (60 Count)",
+    brand: "Bariatric Fusion",
+    category: "bariatric",
+    image: "/products/bariatric-fusion-calcium-citrate-chews-fruit-punch.jpg",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 26.99, url: amazonUrl("B077THPMG6"), asin: "B077THPMG6" }
+    ]
+  },
+  {
+    id: "80",
+    name: "Bariatric Fusion Calcium Citrate Soft Chews, Lemon (60 Count)",
+    brand: "Bariatric Fusion",
+    category: "bariatric",
+    image: "/products/bariatric-fusion-calcium-citrate-chews-lemon.jpg",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 26.99, url: amazonUrl("B0D3FRR547"), asin: "B0D3FRR547" }
+    ]
+  },
+  {
+    id: "81",
+    name: "Bariatric Fusion Calcium Citrate Soft Chews, Strawberry (60 Count)",
+    brand: "Bariatric Fusion",
+    category: "bariatric",
+    image: "/products/bariatric-fusion-calcium-citrate-chews-strawberry.jpg",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 26.99, url: amazonUrl("B08HG1Y3YB"), asin: "B08HG1Y3YB" }
+    ]
+  },
+  {
+    id: "82",
+    name: "Bariatric Fusion Calcium Citrate Soft Chews, Vanilla (60 Count)",
+    brand: "Bariatric Fusion",
+    category: "bariatric",
+    image: "/products/bariatric-fusion-calcium-citrate-chews-vanilla.jpg",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 26.99, url: amazonUrl("B089LRCF2K"), asin: "B089LRCF2K" }
+    ]
+  },
+  {
+    id: "83",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Caramel (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    image: "/products/bariatric-advantage-calcium-citrate-chewy-bite-caramel.jpg",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    approvedBy: ["jannette"],
+    offers: [
+      { retailer: "Amazon", price: 39.40, url: amazonUrl("B00O5O6VCS"), asin: "B00O5O6VCS" }
+    ]
+  },
+  {
     id: "5",
     name: "Casein Protein",
     brand: "Dymatize",

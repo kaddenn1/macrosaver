@@ -13,6 +13,7 @@ import {
 } from "@/lib/macrosaver-engine";
 import type { Product } from "@/data/types";
 import { getTheme } from "@/lib/theme";
+import { APPROVAL_BADGES } from "@/lib/approvals";
 
 interface ChampionsProps {
   filterCategory?: string;
@@ -142,6 +143,17 @@ export default function Champions({ filterCategory, searchParams }: ChampionsPro
                     <p className="text-[8px] text-gray-500 uppercase mt-1">Asset Pending</p>
                   </div>
                 )}
+                {item.approvedBy && item.approvedBy.length > 0 && (
+                  <div className="absolute bottom-2 left-2 z-10 flex gap-1">
+                    {item.approvedBy
+                      .filter((key) => APPROVAL_BADGES[key])
+                      .map((key) => (
+                        <div key={key} className="relative h-5 w-24 drop-shadow-md">
+                          <Image src={APPROVAL_BADGES[key]} alt={`${key} approved`} fill className="object-contain" />
+                        </div>
+                      ))}
+                  </div>
+                )}
               </div>
 
               <div className="p-4 flex-1 flex flex-col">
@@ -170,12 +182,16 @@ export default function Champions({ filterCategory, searchParams }: ChampionsPro
                      <div className="text-[9px] text-gray-500 uppercase tracking-wider mb-1">
                         {savings !== null ? `Save $${savings.toFixed(2)} vs highest` : '\u00A0'}
                      </div>
-                     <div className="text-[10px] text-gray-400 mt-2 uppercase tracking-wider text-right">
-                       Cost / Oz Protein
-                     </div>
-                     <div className={`text-sm font-bold mt-0.5 text-right ${theme.text}`}>
-                        {costPerOzProtein !== null ? `$${costPerOzProtein.toFixed(2)}` : '—'}
-                     </div>
+                     {(item.nutrition?.proteinGrams || 0) > 0 && (
+                       <>
+                         <div className="text-[10px] text-gray-400 mt-2 uppercase tracking-wider text-right">
+                           Cost / Oz Protein
+                         </div>
+                         <div className={`text-sm font-bold mt-0.5 text-right ${theme.text}`}>
+                            {costPerOzProtein !== null ? `$${costPerOzProtein.toFixed(2)}` : '—'}
+                         </div>
+                       </>
+                     )}
                    </div>
                 </div>
 

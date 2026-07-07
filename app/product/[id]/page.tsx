@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { products } from "@/data/products";
@@ -14,6 +15,7 @@ import {
 import { getTheme } from "@/lib/theme";
 import { CATEGORY_TITLES } from "@/lib/categories";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
+import { APPROVAL_BADGES } from "@/lib/approvals";
 import type { Product } from "@/data/types";
 
 export function generateStaticParams() {
@@ -70,6 +72,7 @@ export default async function ProductPage({
   const proteinPerDollar = getProteinPerDollar(product);
   const valueScore = getValueScore(product);
   const savings = getSavingsVsHighestOffer(product);
+  const hasProtein = product.nutrition.proteinGrams > 0;
 
   const sortedOffers = [...product.offers].sort((a, b) => a.price - b.price);
 
@@ -143,6 +146,18 @@ export default async function ProductPage({
             </div>
             <h1 className="text-3xl font-black text-white leading-tight mb-4">{product.name}</h1>
 
+            {product.approvedBy && product.approvedBy.length > 0 && (
+              <div className="flex flex-wrap gap-2 mb-4">
+                {product.approvedBy
+                  .filter((key) => APPROVAL_BADGES[key])
+                  .map((key) => (
+                    <div key={key} className="relative h-7 w-32">
+                      <Image src={APPROVAL_BADGES[key]} alt={`${key} approved`} fill className="object-contain" />
+                    </div>
+                  ))}
+              </div>
+            )}
+
             <div className="flex items-center gap-4 mb-6">
               <div className={`text-4xl font-black ${theme.text}`}>{valueScore}</div>
               <div className="text-xs text-gray-500 uppercase tracking-widest leading-tight">
@@ -153,7 +168,7 @@ export default async function ProductPage({
             </div>
 
             {/* Value metrics grid */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 border-y border-gray-800 py-6">
+            <div className={`grid grid-cols-2 ${hasProtein ? "sm:grid-cols-4" : "sm:grid-cols-3"} gap-4 mb-8 border-y border-gray-800 py-6`}>
               <div>
                 <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">
                   Lowest Price
@@ -170,14 +185,16 @@ export default async function ProductPage({
                   {costPerServing !== null ? `$${costPerServing.toFixed(2)}` : "—"}
                 </div>
               </div>
-              <div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">
-                  Cost / Oz Protein
+              {hasProtein && (
+                <div>
+                  <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">
+                    Cost / Oz Protein
+                  </div>
+                  <div className={`text-xl font-black ${theme.text}`}>
+                    {costPerOzProtein !== null ? `$${costPerOzProtein.toFixed(2)}` : "—"}
+                  </div>
                 </div>
-                <div className={`text-xl font-black ${theme.text}`}>
-                  {costPerOzProtein !== null ? `$${costPerOzProtein.toFixed(2)}` : "—"}
-                </div>
-              </div>
+              )}
               <div>
                 <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">
                   Protein / Dollar

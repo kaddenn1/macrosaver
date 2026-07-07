@@ -38,6 +38,8 @@ export type Product = {
   category: SupplementCategory;
   /** Extra category pages this product should also show up under, beyond its primary `category`. */
   additionalCategories?: SupplementCategory[];
+  /** Keys into APPROVAL_BADGES (lib/approvals.ts) for influencers who've endorsed this product. */
+  approvedBy?: string[];
   image?: string;
   nutrition: NutritionFacts;
   servings: number;
