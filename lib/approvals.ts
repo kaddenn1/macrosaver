@@ -1,5 +1,5 @@
 export const APPROVAL_BADGES: Record<string, string> = {
-  jannette: "/products/jannette-bariatric-approved.png",
-  al: "/products/al-bariatric-approved.png",
-  gio: "/products/gio-bariatric-approved.png",
+  jannette: "/products/JANNETTE_Bariatric_Approved.png",
+  al: "/products/AL_Bariatric_Approved.png",
+  geo: "/products/GEO_Bariatric_Approved.png",
 };

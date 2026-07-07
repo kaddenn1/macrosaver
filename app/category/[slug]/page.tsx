@@ -5,6 +5,7 @@ import Champions from "@/components/Champions";
 import SortDropdown from "@/components/SortDropdown";
 import SearchBar from "@/components/SearchBar"; // <-- New Search Import!
 import { CATEGORY_SLUGS, CATEGORY_TITLES } from "@/lib/categories";
+import { CATEGORY_BUYING_GUIDE } from "@/lib/categoryContent";
 import { SITE_URL } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -41,6 +42,7 @@ export default async function CategoryPage({
   const resolvedSearchParams = await searchParams;
 
   const displayTitle = CATEGORY_TITLES[currentSlug] || currentSlug;
+  const buyingGuide = CATEGORY_BUYING_GUIDE[currentSlug];
 
   return (
     <main className="min-h-screen text-gray-100 font-sans">
@@ -76,10 +78,21 @@ export default async function CategoryPage({
         
         <div className="flex-1 w-full min-w-0">
           <Champions filterCategory={currentSlug} searchParams={resolvedSearchParams} />
+
+          {buyingGuide && (
+            <div className="mt-12 border-t border-gray-800 pt-8">
+              <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
+                How We Rank {displayTitle} Deals
+              </h2>
+              <p className="text-sm text-gray-400 leading-relaxed max-w-[750px]">
+                {buyingGuide}
+              </p>
+            </div>
+          )}
         </div>
-        
+
       </div>
-      
+
     </main>
   );
 }

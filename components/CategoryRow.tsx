@@ -71,7 +71,7 @@ export default function CategoryRow() {
         onMouseLeave={handleMouseLeave}
         className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 [scrollbar-width:thin]"
       >
-        {categories.map((cat) => {
+        {categories.map((cat, index) => {
           const isActive = pathname === `/category/${cat.id}`;
 
           return (
@@ -86,6 +86,7 @@ export default function CategoryRow() {
                 src={cat.image}
                 alt={cat.title}
                 fill
+                priority={index === 0}
                 sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 176px"
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />

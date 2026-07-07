@@ -18,6 +18,17 @@ import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { APPROVAL_BADGES } from "@/lib/approvals";
 import type { Product } from "@/data/types";
 
+function getRelatedProducts(product: Product, limit: number): Product[] {
+  return (products as Product[])
+    .filter(
+      (p) =>
+        p.id !== product.id &&
+        (p.category === product.category || p.additionalCategories?.includes(product.category))
+    )
+    .sort((a, b) => getValueScore(b) - getValueScore(a))
+    .slice(0, limit);
+}
+
 export function generateStaticParams() {
   return products.map((product) => ({ id: product.id }));
 }
@@ -73,6 +84,8 @@ export default async function ProductPage({
   const valueScore = getValueScore(product);
   const savings = getSavingsVsHighestOffer(product);
   const hasProtein = product.nutrition.proteinGrams > 0;
+  const categoryTitle = CATEGORY_TITLES[product.category] || product.category;
+  const relatedProducts = getRelatedProducts(product, 4);
 
   const sortedOffers = [...product.offers].sort((a, b) => a.price - b.price);
 
@@ -113,10 +126,10 @@ export default async function ProductPage({
       <main className="min-h-screen text-gray-100 font-sans">
       <div className="w-full max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24">
         <Link
-          href="/"
+          href={`/category/${product.category}`}
           className="text-xs text-gray-400 hover:text-white uppercase tracking-wider transition-colors"
         >
-          ← Back to Best Deals
+          ← Back to {categoryTitle}
         </Link>
 
         <div className="mt-6 flex flex-col lg:flex-row gap-10">
@@ -322,6 +335,55 @@ export default async function ProductPage({
             </p>
           </div>
         </div>
+
+        {relatedProducts.length > 0 && (
+          <div className="mt-12 border-t border-gray-800 pt-8">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              You Might Also Like
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {relatedProducts.map((related) => {
+                const relatedBestOffer = getBestOffer(related);
+                const relatedCostPerServing = getCostPerServing(related);
+                return (
+                  <Link
+                    key={related.id}
+                    href={`/product/${related.id}`}
+                    className="block bg-[#111] border border-gray-800 rounded-lg p-3 hover:border-gray-600 transition-colors"
+                  >
+                    <div className="h-24 flex items-center justify-center mb-2">
+                      {related.image ? (
+                        <Image
+                          src={related.image}
+                          alt={related.name}
+                          width={80}
+                          height={80}
+                          className="object-contain h-full w-auto"
+                        />
+                      ) : (
+                        <span className="text-[10px] text-gray-600 uppercase">No Image</span>
+                      )}
+                    </div>
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-0.5">
+                      {related.brand}
+                    </div>
+                    <div className="text-xs text-gray-200 leading-snug line-clamp-2 mb-1">
+                      {related.name}
+                    </div>
+                    <div className="text-sm font-black text-white">
+                      {relatedBestOffer ? `$${relatedBestOffer.price.toFixed(2)}` : "—"}
+                      {relatedCostPerServing !== null && (
+                        <span className="text-[10px] font-normal text-gray-500 ml-1">
+                          (${relatedCostPerServing.toFixed(2)}/serving)
+                        </span>
+                      )}
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        )}
       </div>
       </main>
     </>
