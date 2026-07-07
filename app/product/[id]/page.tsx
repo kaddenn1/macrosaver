@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { products } from "@/data/products";
 import ProductImageLightbox from "@/components/ProductImageLightbox";
 import {
@@ -11,7 +12,44 @@ import {
   getSavingsVsHighestOffer,
 } from "@/lib/macrosaver-engine";
 import { getTheme } from "@/lib/theme";
+import { CATEGORY_TITLES } from "@/lib/categories";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 import type { Product } from "@/data/types";
+
+export function generateStaticParams() {
+  return products.map((product) => ({ id: product.id }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const product = products.find((p) => p.id === id) as Product | undefined;
+
+  if (!product) {
+    return {};
+  }
+
+  const bestOffer = getBestOffer(product);
+  const title = `Best Price for ${product.name} | ${product.brand} | Compare Deals on ${SITE_NAME}`;
+  const description = bestOffer
+    ? `Compare prices for ${product.name} from ${product.brand}. Lowest price $${bestOffer.price.toFixed(2)} — see cost per serving and value score on ${SITE_NAME}.`
+    : `Compare prices for ${product.name} from ${product.brand} across top retailers on ${SITE_NAME}.`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `${SITE_URL}/product/${product.id}` },
+    openGraph: {
+      title,
+      description,
+      url: `${SITE_URL}/product/${product.id}`,
+      images: product.image ? [product.image] : undefined,
+    },
+  };
+}
 
 export default async function ProductPage({
   params,
@@ -35,8 +73,41 @@ export default async function ProductPage({
 
   const sortedOffers = [...product.offers].sort((a, b) => a.price - b.price);
 
+  const productJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    brand: { "@type": "Brand", name: product.brand },
+    category: CATEGORY_TITLES[product.category] || product.category,
+    image: product.image ? `${SITE_URL}${product.image}` : undefined,
+    url: `${SITE_URL}/product/${product.id}`,
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "USD",
+      lowPrice: sortedOffers[0]?.price,
+      highPrice: sortedOffers[sortedOffers.length - 1]?.price,
+      offerCount: sortedOffers.length,
+      offers: sortedOffers.map((offer) => ({
+        "@type": "Offer",
+        url: offer.url,
+        priceCurrency: "USD",
+        price: offer.price,
+        availability:
+          offer.inStock === false
+            ? "https://schema.org/OutOfStock"
+            : "https://schema.org/InStock",
+        seller: { "@type": "Organization", name: offer.retailer },
+      })),
+    },
+  };
+
   return (
-    <main className="min-h-screen text-gray-100 font-sans">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <main className="min-h-screen text-gray-100 font-sans">
       <div className="w-full max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24">
         <Link
           href="/"
@@ -235,6 +306,7 @@ export default async function ProductPage({
           </div>
         </div>
       </div>
-    </main>
+      </main>
+    </>
   );
 }

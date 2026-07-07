@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AmbientBackground from "@/components/AmbientBackground";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "MacroSaver | Performance Nutrition Price Tracker",
   description: "Automated macro calculation and price tracking dashboard for fitness supplements, clear whey isolates, and workout gear.",
 };

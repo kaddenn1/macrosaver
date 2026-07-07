@@ -1,8 +1,34 @@
+import type { Metadata } from "next";
 import CategoryRow from "@/components/CategoryRow";
-import FilterDrawer from "@/components/FilterDrawer"; 
+import FilterDrawer from "@/components/FilterDrawer";
 import Champions from "@/components/Champions";
 import SortDropdown from "@/components/SortDropdown";
 import SearchBar from "@/components/SearchBar"; // <-- New Search Import!
+import { CATEGORY_SLUGS, CATEGORY_TITLES } from "@/lib/categories";
+import { SITE_URL } from "@/lib/site";
+
+export function generateStaticParams() {
+  return CATEGORY_SLUGS.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const displayTitle = CATEGORY_TITLES[slug] || slug;
+
+  const title = `Best ${displayTitle} Deals | Compare Prices on MacroSaver`;
+  const description = `Compare ${displayTitle.toLowerCase()} prices across top retailers and find the best cost per serving. Updated pricing, value scores, and savings on MacroSaver.`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `${SITE_URL}/category/${slug}` },
+    openGraph: { title, description, url: `${SITE_URL}/category/${slug}` },
+  };
+}
 
 export default async function CategoryPage({
   params,
@@ -14,18 +40,7 @@ export default async function CategoryPage({
   const { slug: currentSlug } = await params;
   const resolvedSearchParams = await searchParams;
 
-  const categoryTitles: Record<string, string> = {
-    "protein": "Protein Powder",
-    "pre-workout": "Pre-Workout",
-    "creatine": "Creatine",
-    "weight-management": "Weight Management",
-    "food-drink": "Food & Drink",
-    "electrolytes": "Electrolytes",
-    "gut-health": "Gut Health",
-    "bariatric": "Bariatric Support",
-  };
-
-  const displayTitle = categoryTitles[currentSlug] || currentSlug;
+  const displayTitle = CATEGORY_TITLES[currentSlug] || currentSlug;
 
   return (
     <main className="min-h-screen text-gray-100 font-sans">
