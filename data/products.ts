@@ -554,6 +554,163 @@ export const products = [
     ]
   },
   {
+    id: "53",
+    name: "Mr. Hyde Signature Pre-Workout, Blue Razz (30 Servings)",
+    brand: "ProSupps",
+    category: "pre-workout",
+    image: "/products/prosupps-mr-hyde-signature-blue-razz-30srv.jpg",
+    servings: 30,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 15, url: amazonUrl("B07HNFF75B"), asin: "B07HNFF75B" }
+    ]
+  },
+  {
+    id: "54",
+    name: "Mr. Hyde Signature Pre-Workout, Blue Razz (12 Stick Packs)",
+    brand: "ProSupps",
+    category: "pre-workout",
+    image: "/products/prosupps-mr-hyde-signature-blue-razz-12pack.jpg",
+    servings: 12,
+    nutrition: { proteinGrams: 0, sodiumMilligrams: 75, creatineGrams: 2.5 },
+    offers: [
+      { retailer: "Amazon", price: 17, url: amazonUrl("B0F4M38KVX"), asin: "B0F4M38KVX" }
+    ]
+  },
+  {
+    id: "55",
+    name: "Mr. Hyde Signature Pre-Workout, Blue Razz (60 Servings)",
+    brand: "ProSupps",
+    category: "pre-workout",
+    image: "/products/prosupps-mr-hyde-signature-blue-razz-60srv.jpg",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 38, url: amazonUrl("B07X375B4M"), asin: "B07X375B4M" }
+    ]
+  },
+  {
+    id: "56",
+    name: "Sweet Sweat Workout Enhancer Gel, Original (13.5 oz)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sweet-sweat-original.jpg",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 39.95, url: amazonUrl("B00TDELNCS"), asin: "B00TDELNCS" }
+    ]
+  },
+  {
+    id: "57",
+    name: "Sweet Sweat Workout Enhancer Gel, Tropical (13.5 oz)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sweet-sweat-tropical.jpg",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 39.95, url: amazonUrl("B099KPFN1B"), asin: "B099KPFN1B" }
+    ]
+  },
+  {
+    id: "58",
+    name: "Sweet Sweat Workout Enhancer Gel, Coconut (13.5 oz)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sweet-sweat-coconut.jpg",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 39.95, url: amazonUrl("B00Q5CIL4Y"), asin: "B00Q5CIL4Y" }
+    ]
+  },
+  {
+    id: "59",
+    name: "Sweet Sweat Workout Enhancer Gel, Citrus Mint (13.5 oz)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sweet-sweat-citrus-mint.jpg",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 39.95, url: amazonUrl("B099KP14NL"), asin: "B099KP14NL" }
+    ]
+  },
+  {
+    id: "60",
+    name: "Sweet Sweat Workout Enhancer Gel, Unscented (13.5 oz)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sweet-sweat-unscented.jpg",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 39.95, url: amazonUrl("B00RC7PV5I"), asin: "B00RC7PV5I" }
+    ]
+  },
+  {
+    id: "61",
+    name: "Benefiber Daily Prebiotic Fiber Supplement, Unflavored (250 Teaspoons)",
+    brand: "Benefiber",
+    category: "bariatric",
+    image: "/products/benefiber-prebiotic-fiber-unflavored.jpg",
+    servings: 250,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 26.99, url: amazonUrl("B00CX3ASFE"), asin: "B00CX3ASFE" }
+    ]
+  },
+  {
+    id: "62",
+    name: "Vital Proteins Collagen Peptides, Unflavored (9.33 oz)",
+    brand: "Vital Proteins",
+    category: "protein",
+    additionalCategories: ["weight-management", "bariatric"],
+    image: "/products/vital-proteins-collagen-peptides-unflavored.jpg",
+    servings: 13,
+    nutrition: { proteinGrams: 20 },
+    offers: [
+      { retailer: "Amazon", price: 18.65, url: amazonUrl("B09RQBHRCT"), asin: "B09RQBHRCT" }
+    ]
+  },
+  {
+    id: "63",
+    name: "Vital Proteins Collagen Peptides Advanced, Unflavored (20 oz)",
+    brand: "Vital Proteins",
+    category: "protein",
+    image: "/products/vital-proteins-collagen-peptides-advanced-unflavored.jpg",
+    servings: 27,
+    nutrition: { proteinGrams: 20 },
+    offers: [
+      { retailer: "Amazon", price: 42.99, url: amazonUrl("B00K6JUG4K"), asin: "B00K6JUG4K" }
+    ]
+  },
+  {
+    id: "64",
+    name: "BariatricPal Multivitamin ONE, Mixed Berry (30 Chewable Tablets)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-multivitamin-one-mixed-berry.jpg",
+    servings: 30,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 16.99, url: amazonUrl("B07RVK8FXW"), asin: "B07RVK8FXW" }
+    ]
+  },
+  {
+    id: "65",
+    name: "BariatricPal Multivitamin ONE, Orange Citrus (30 Chewable Tablets)",
+    brand: "BariatricPal",
+    category: "bariatric",
+    image: "/products/bariatricpal-multivitamin-one-orange-citrus.jpg",
+    servings: 30,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 16.99, url: amazonUrl("B08VZ5V1FV"), asin: "B08VZ5V1FV" }
+    ]
+  },
+  {
     id: "5",
     name: "Casein Protein",
     brand: "Dymatize",

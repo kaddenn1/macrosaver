@@ -36,6 +36,8 @@ export type Product = {
   name: string;
   brand: string;
   category: SupplementCategory;
+  /** Extra category pages this product should also show up under, beyond its primary `category`. */
+  additionalCategories?: SupplementCategory[];
   image?: string;
   nutrition: NutritionFacts;
   servings: number;

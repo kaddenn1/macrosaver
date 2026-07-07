@@ -23,7 +23,12 @@ export default function Champions({ filterCategory, searchParams }: ChampionsPro
   let displayProducts = [...products] as Product[];
 
   if (filterCategory) {
-    displayProducts = displayProducts.filter((p) => p.category.toLowerCase() === filterCategory.toLowerCase());
+    const target = filterCategory.toLowerCase();
+    displayProducts = displayProducts.filter(
+      (p) =>
+        p.category.toLowerCase() === target ||
+        p.additionalCategories?.some((c) => c.toLowerCase() === target)
+    );
   }
 
   if (searchParams?.protein) {
