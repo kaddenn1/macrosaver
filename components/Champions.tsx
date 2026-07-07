@@ -18,9 +18,19 @@ import { APPROVAL_BADGES } from "@/lib/approvals";
 interface ChampionsProps {
   filterCategory?: string;
   searchParams?: { [key: string]: string | string[] | undefined };
+  /** Caps how many products are shown (e.g. a 4-up homepage preview row). */
+  limit?: number;
+  title?: string;
+  viewAllHref?: string;
 }
 
-export default function Champions({ filterCategory, searchParams }: ChampionsProps) {
+export default function Champions({
+  filterCategory,
+  searchParams,
+  limit,
+  title = "🔥 Best Deals Right Now",
+  viewAllHref = "#",
+}: ChampionsProps) {
   let displayProducts = [...products] as Product[];
 
   if (filterCategory) {
@@ -74,18 +84,22 @@ export default function Champions({ filterCategory, searchParams }: ChampionsPro
     return getValueScore(b) - getValueScore(a);
   });
 
+  if (limit) {
+    displayProducts = displayProducts.slice(0, limit);
+  }
+
   return (
     <div className="w-full">
       <div className="mb-6 flex justify-between items-end border-b border-gray-800 pb-2">
         <h2 className="text-xl font-bold text-white uppercase tracking-wide flex items-center gap-2">
-          🔥 Best Deals Right Now
+          {title}
         </h2>
-        <a href="#" className="text-xs text-gray-400 hover:text-white uppercase tracking-wider transition-colors">
-          View All Best Deals →
-        </a>
+        <Link href={viewAllHref} className="text-xs text-gray-400 hover:text-white uppercase tracking-wider transition-colors">
+          View All →
+        </Link>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {displayProducts.length === 0 && (
           <div className="col-span-full py-12 text-center text-gray-500 text-sm border-2 border-dashed border-gray-800 rounded-xl">
             No products found matching those filters. Try adjusting your selections!

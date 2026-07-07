@@ -928,15 +928,39 @@ export const products = [
     ]
   },
   {
-    id: "5",
-    name: "Casein Protein",
+    id: "84",
+    name: "Dymatize Elite Casein, Chocolate (4 lb)",
     brand: "Dymatize",
     category: "protein",
-    servings: 52,
-    nutrition: { calories: 120, proteinGrams: 25 },
+    image: "/products/dymatize-elite-casein-chocolate.jpg",
+    servings: 50,
+    nutrition: { proteinGrams: 25 },
     offers: [
-      { retailer: "iHerb", price: 54.99, url: "#" },
-      { retailer: "Amazon", price: 58.00, url: "#" }
+      { retailer: "Amazon", price: 77.94, url: amazonUrl("B00JT8470S"), asin: "B00JT8470S" }
+    ]
+  },
+  {
+    id: "85",
+    name: "Dymatize Elite Casein, Cookies & Cream (4 lb)",
+    brand: "Dymatize",
+    category: "protein",
+    image: "/products/dymatize-elite-casein-cookies-cream.jpg",
+    servings: 53,
+    nutrition: { proteinGrams: 25 },
+    offers: [
+      { retailer: "Amazon", price: 69.98, url: amazonUrl("B007L4QMGO"), asin: "B007L4QMGO" }
+    ]
+  },
+  {
+    id: "86",
+    name: "Dymatize Elite Casein, Vanilla (4 lb)",
+    brand: "Dymatize",
+    category: "protein",
+    image: "/products/dymatize-elite-casein-vanilla.jpg",
+    servings: 55,
+    nutrition: { proteinGrams: 25 },
+    offers: [
+      { retailer: "Amazon", price: 83.31, url: amazonUrl("B00JXP38MU"), asin: "B00JXP38MU" }
     ]
   }
 ];

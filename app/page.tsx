@@ -3,7 +3,12 @@ import CategoryRow from "@/components/CategoryRow";
 import FilterDrawer from "@/components/FilterDrawer";
 import Champions from "@/components/Champions";
 import SortDropdown from "@/components/SortDropdown";
-import SearchBar from "@/components/SearchBar"; 
+import SearchBar from "@/components/SearchBar";
+import { products } from "@/data/products";
+import { CATEGORY_SLUGS, CATEGORY_TITLES } from "@/lib/categories";
+
+const HOMEPAGE_PREVIEW_COUNT = 4;
+const ACTIVE_FILTER_KEYS = ["q", "protein", "maxPrice", "flavor", "type"];
 
 export default async function Home({
   searchParams,
@@ -11,6 +16,12 @@ export default async function Home({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const resolvedSearchParams = await searchParams;
+
+  const hasActiveFilters = ACTIVE_FILTER_KEYS.some((key) => resolvedSearchParams[key]);
+
+  const categoriesWithProducts = CATEGORY_SLUGS.filter((slug) =>
+    products.some((p) => p.category === slug || p.additionalCategories?.includes(slug))
+  );
 
   return (
     <main className="min-h-screen text-gray-100 font-sans">
@@ -51,9 +62,23 @@ export default async function Home({
         </div>
 
         <div className="flex-1 w-full min-w-0">
-          <Champions searchParams={resolvedSearchParams} />
+          {hasActiveFilters ? (
+            <Champions searchParams={resolvedSearchParams} />
+          ) : (
+            <div className="flex flex-col gap-16">
+              {categoriesWithProducts.map((slug) => (
+                <Champions
+                  key={slug}
+                  filterCategory={slug}
+                  limit={HOMEPAGE_PREVIEW_COUNT}
+                  title={CATEGORY_TITLES[slug] || slug}
+                  viewAllHref={`/category/${slug}`}
+                />
+              ))}
+            </div>
+          )}
         </div>
-        
+
       </div>
     </main>
   );
