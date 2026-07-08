@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "MacroSaver | Performance Nutrition Price Tracker",
   description: "Automated macro calculation and price tracking dashboard for fitness supplements, clear whey isolates, and workout gear.",
+  verification: {
+    google: "HVBqnvFCZN2ebssSR01qGiPu9iollfp8N_1zlEQk9OI",
+  },
 };
 
 export default function RootLayout({
