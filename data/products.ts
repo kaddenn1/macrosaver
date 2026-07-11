@@ -19,6 +19,7 @@ export const products = [
     brand: "Protein2o",
     category: "protein",
     additionalCategories: ["electrolytes"],
+    image: "/products/protein2o-strawberry-watermelon.png",
     servings: 12,
     nutrition: { proteinGrams: 20 },
     offers: [
@@ -31,6 +32,7 @@ export const products = [
     brand: "Protein2o",
     category: "protein",
     additionalCategories: ["electrolytes"],
+    image: "/products/protein2o-orange-mango.png",
     servings: 12,
     nutrition: { proteinGrams: 20 },
     offers: [
@@ -43,6 +45,7 @@ export const products = [
     brand: "Protein2o",
     category: "protein",
     additionalCategories: ["electrolytes"],
+    image: "/products/protein2o-mixed-berry.png",
     servings: 12,
     nutrition: { proteinGrams: 20 },
     offers: [
