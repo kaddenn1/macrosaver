@@ -105,7 +105,7 @@ export const products = [
     name: "Premier Protein Powder, Vanilla Milkshake (1.46 lb)",
     brand: "Premier Protein",
     category: "protein",
-    image: "/products/7.jpg",
+    image: "/products/premier-protein-vanilla-milkshake-146lb-transparent.png",
     servings: 17,
     nutrition: { calories: 150, proteinGrams: 30 },
     offers: [
@@ -117,7 +117,7 @@ export const products = [
     name: "Premier Protein Powder, Vanilla Milkshake (2.51 lb)",
     brand: "Premier Protein",
     category: "protein",
-    image: "/products/8.jpg",
+    image: "/products/premier-protein-vanilla-milkshake-251lb-transparent.png",
     servings: 29,
     nutrition: { calories: 150, proteinGrams: 30 },
     offers: [
@@ -129,7 +129,7 @@ export const products = [
     name: "Premier Protein Powder Indulgence, Salted Caramel Truffle",
     brand: "Premier Protein",
     category: "protein",
-    image: "/products/premier-protein-salted-caramel-truffle.jpg",
+    image: "/products/premier-protein-salted-caramel-truffle-transparent.png",
     servings: 17,
     nutrition: { calories: 160, proteinGrams: 30, sugarGrams: 2 },
     offers: [
@@ -141,7 +141,7 @@ export const products = [
     name: "Premier Protein Powder, Chocolate Milkshake (24.5 oz)",
     brand: "Premier Protein",
     category: "protein",
-    image: "/products/premier-protein-chocolate-milkshake.jpg",
+    image: "/products/premier-protein-chocolate-milkshake-transparent.png",
     servings: 17,
     nutrition: { calories: 150, proteinGrams: 30, sugarGrams: 1 },
     offers: [
