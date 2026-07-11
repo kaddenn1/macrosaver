@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero"; // <-- The Glow Up!
 import CategoryRow from "@/components/CategoryRow";
 import FilterDrawer from "@/components/FilterDrawer";
@@ -6,9 +7,23 @@ import SortDropdown from "@/components/SortDropdown";
 import SearchBar from "@/components/SearchBar";
 import { products } from "@/data/products";
 import { CATEGORY_SLUGS, CATEGORY_TITLES } from "@/lib/categories";
+import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 const HOMEPAGE_PREVIEW_COUNT = 4;
 const ACTIVE_FILTER_KEYS = ["q", "protein", "maxPrice", "flavor", "type"];
+
+export const metadata: Metadata = {
+  title: `${SITE_NAME} | Compare Supplement & Protein Powder Prices`,
+  description:
+    "Compare prices for protein powder, pre-workout, creatine, and more across top retailers. See cost per serving and find the lowest price on every product.",
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: `${SITE_NAME} | Compare Supplement & Protein Powder Prices`,
+    description:
+      "Compare prices for protein powder, pre-workout, creatine, and more across top retailers. See cost per serving and find the lowest price on every product.",
+    url: SITE_URL,
+  },
+};
 
 export default async function Home({
   searchParams,

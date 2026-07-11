@@ -92,6 +92,26 @@ export default async function ProductPage({
 
   const sortedOffers = [...product.offers].sort((a, b) => a.price - b.price);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: categoryTitle,
+        item: `${SITE_URL}/category/${product.category}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: product.name,
+        item: `${SITE_URL}/product/${product.id}`,
+      },
+    ],
+  };
+
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -148,6 +168,10 @@ export default async function ProductPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <main className="min-h-screen text-gray-100 font-sans">
       <div className="w-full max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24">
