@@ -699,6 +699,134 @@ export const products = [
     ]
   },
   {
+    id: "108",
+    name: "Whey Protein Isolate, Dutch Chocolate (36.32 oz)",
+    brand: "Sports Research",
+    category: "protein",
+    image: "/products/sports-research-whey-protein-isolate.png",
+    servings: 30,
+    nutrition: { proteinGrams: 25 },
+    offers: [
+      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate" }
+    ]
+  },
+  {
+    id: "109",
+    name: "Organic Collagen Peptides, Unflavored (30 Servings)",
+    brand: "Sports Research",
+    category: "protein",
+    additionalCategories: ["bariatric"],
+    image: "/products/sports-research-organic-collagen.png",
+    servings: 30,
+    nutrition: { proteinGrams: 9 },
+    offers: [
+      { retailer: "Sports Research", price: 35.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-collagen" }
+    ]
+  },
+  {
+    id: "110",
+    name: "Collagen Peptides, Dark Chocolate (22 oz)",
+    brand: "Sports Research",
+    category: "protein",
+    additionalCategories: ["bariatric"],
+    image: "/products/sports-research-collagen-peptides-naturally-flavored.png",
+    servings: 30,
+    nutrition: { proteinGrams: 11 },
+    offers: [
+      { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-naturally-flavored" }
+    ]
+  },
+  {
+    id: "111",
+    name: "Multi Collagen Powder, 5 Types, Unflavored (10.58 oz)",
+    brand: "Sports Research",
+    category: "protein",
+    additionalCategories: ["bariatric"],
+    image: "/products/sports-research-multi-collagen-complex.png",
+    servings: 30,
+    nutrition: { proteinGrams: 8 },
+    offers: [
+      { retailer: "Sports Research", price: 33.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmulti-collagen-complex" }
+    ]
+  },
+  {
+    id: "112",
+    name: "Iron + Liposomal Vitamin C (90 Liquid Veggie Capsules)",
+    brand: "Sports Research",
+    category: "other",
+    additionalCategories: ["multivitamin", "bariatric"],
+    image: "/products/sports-research-iron-liposomal-vitamin-c.png",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Firon-liposomal-vitamin-c" }
+    ]
+  },
+  {
+    id: "113",
+    name: "Organic Fiber, Unflavored (8.47 oz)",
+    brand: "Sports Research",
+    category: "gut-health",
+    additionalCategories: ["bariatric"],
+    image: "/products/sports-research-organic-fiber.png",
+    servings: 30,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-fiber" }
+    ]
+  },
+  {
+    id: "114",
+    name: "Daily Women's Probiotics 65 Billion CFU (30 Veggie Capsules)",
+    brand: "Sports Research",
+    category: "gut-health",
+    image: "/products/sports-research-womens-probiotics.png",
+    servings: 30,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics" }
+    ]
+  },
+  {
+    id: "115",
+    name: "MCT C8 Oil Organic (16 oz)",
+    brand: "Sports Research",
+    category: "weight-management",
+    additionalCategories: ["food-drink"],
+    image: "/products/sports-research-keto-c8-mct-oil.png",
+    servings: 32,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fketo-c8-mct-oil" }
+    ]
+  },
+  {
+    id: "116",
+    name: "Magnesium Oxide, 420mg (90 Softgels)",
+    brand: "Sports Research",
+    category: "other",
+    additionalCategories: ["gut-health", "multivitamin"],
+    image: "/products/sports-research-magnesium-oxide.png",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 18.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide" }
+    ]
+  },
+  {
+    id: "117",
+    name: "Magnesium L-Threonate (Magtein), 2000mg (90 Veggie Capsules)",
+    brand: "Sports Research",
+    category: "other",
+    additionalCategories: ["multivitamin"],
+    image: "/products/sports-research-mag-lt-with-magtein-magnesium-l-threonate.png",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmag-lt-with-magtein-magnesium-l-threonate" }
+    ]
+  },
+  {
     id: "92",
     name: "Flavored Creatine Monohydrate, Fruit Punch (25 Servings)",
     brand: "Sports Research",
