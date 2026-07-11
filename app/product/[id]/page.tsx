@@ -172,7 +172,7 @@ export default async function ProductPage({
             {/* Value metrics grid */}
             <div className={`grid grid-cols-2 ${hasProtein ? "sm:grid-cols-4" : "sm:grid-cols-3"} gap-4 mb-8 border-y border-gray-800 py-6`}>
               <div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">
+                <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                   Lowest Price
                 </div>
                 <div className="text-xl font-black text-white">

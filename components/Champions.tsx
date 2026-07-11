@@ -159,7 +159,7 @@ export default function Champions({
 
                 <div className="grid grid-cols-2 gap-2 mt-auto">
                    <div>
-                     <div className="text-[9px] text-gray-500 uppercase tracking-wider mb-1">Lowest Price</div>
+                     <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">Lowest Price</div>
                      <div className="text-xl font-black text-white">
                         ${bestOffer ? bestOffer.price.toFixed(2) : '---'}
                      </div>
