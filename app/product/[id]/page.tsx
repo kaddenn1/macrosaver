@@ -15,7 +15,11 @@ import { getTheme } from "@/lib/theme";
 import { CATEGORY_TITLES } from "@/lib/categories";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { APPROVAL_BADGES } from "@/lib/approvals";
+import { getReviewSummary } from "@/lib/reviews";
+import ProductReviews from "@/components/ProductReviews";
 import type { Product } from "@/data/types";
+
+export const revalidate = 3600;
 
 function getRelatedProducts(product: Product, limit: number): Product[] {
   return (products as Product[])
@@ -47,7 +51,7 @@ export async function generateMetadata({
   const bestOffer = getBestOffer(product);
   const title = `Best Price for ${product.name} | ${product.brand} | Compare Deals on ${SITE_NAME}`;
   const description = bestOffer
-    ? `Compare prices for ${product.name} from ${product.brand}. Lowest price $${bestOffer.price.toFixed(2)} — see cost per serving and value score on ${SITE_NAME}.`
+    ? `Compare prices for ${product.name} from ${product.brand}. Lowest price $${bestOffer.price.toFixed(2)} — see cost per serving on ${SITE_NAME}.`
     : `Compare prices for ${product.name} from ${product.brand} across top retailers on ${SITE_NAME}.`;
 
   return {
@@ -84,6 +88,7 @@ export default async function ProductPage({
   const hasProtein = product.nutrition.proteinGrams > 0;
   const categoryTitle = CATEGORY_TITLES[product.category] || product.category;
   const relatedProducts = getRelatedProducts(product, 4);
+  const reviewSummary = await getReviewSummary(product.id);
 
   const sortedOffers = [...product.offers].sort((a, b) => a.price - b.price);
 
@@ -113,6 +118,29 @@ export default async function ProductPage({
         seller: { "@type": "Organization", name: offer.retailer },
       })),
     },
+    ...(reviewSummary.reviewCount > 0 && {
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: reviewSummary.averageRating,
+        reviewCount: reviewSummary.reviewCount,
+        bestRating: 5,
+        worstRating: 1,
+      },
+      review: reviewSummary.reviews
+        .filter((r) => r.comment)
+        .map((r) => ({
+          "@type": "Review",
+          author: { "@type": "Person", name: r.reviewerName || "Anonymous" },
+          datePublished: r.createdAt,
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: r.rating,
+            bestRating: 5,
+            worstRating: 1,
+          },
+          reviewBody: r.comment,
+        })),
+    }),
   };
 
   return (
@@ -324,6 +352,8 @@ export default async function ProductPage({
             </p>
           </div>
         </div>
+
+        <ProductReviews productId={product.id} summary={reviewSummary} />
 
         {relatedProducts.length > 0 && (
           <div className="mt-12 border-t border-gray-800 pt-8">
