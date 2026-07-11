@@ -1106,6 +1106,7 @@ export const products = [
     image: "/products/benefiber-prebiotic-fiber-unflavored.jpg",
     servings: 250,
     nutrition: { proteinGrams: 0 },
+    approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 26.99, url: amazonUrl("B00CX3ASFE"), asin: "B00CX3ASFE" }
     ]
@@ -1119,6 +1120,7 @@ export const products = [
     image: "/products/vital-proteins-collagen-peptides-unflavored.jpg",
     servings: 13,
     nutrition: { proteinGrams: 20 },
+    approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 18.65, url: amazonUrl("B09RQBHRCT"), asin: "B09RQBHRCT" }
     ]
@@ -1131,6 +1133,7 @@ export const products = [
     image: "/products/vital-proteins-collagen-peptides-advanced-unflavored.jpg",
     servings: 27,
     nutrition: { proteinGrams: 20 },
+    approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 42.99, url: amazonUrl("B00K6JUG4K"), asin: "B00K6JUG4K" }
     ]
@@ -1412,6 +1415,396 @@ export const products = [
     nutrition: { proteinGrams: 25 },
     offers: [
       { retailer: "Amazon", price: 83.31, url: amazonUrl("B00JXP38MU"), asin: "B00JXP38MU" }
+    ]
+  },
+  {
+    id: "124",
+    name: "Bari Life Just One Multivitamin with Iron (90 Tablets)",
+    brand: "Bari Life",
+    category: "multivitamin",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 44.99, url: amazonUrl("B07RNM5MZJ"), asin: "B07RNM5MZJ" }
+    ]
+  },
+  {
+    id: "130",
+    name: "Ghost Whey Protein Powder, Trix Cereal Milk (2 lb)",
+    brand: "Ghost",
+    category: "protein",
+    servings: 27,
+    nutrition: { proteinGrams: 25 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 54.99, url: amazonUrl("B0GPB1WR26"), asin: "B0GPB1WR26" }
+    ]
+  },
+  {
+    id: "132",
+    name: "Spylt High Protein Milk, Chocolate (12 Pack)",
+    brand: "Spylt",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0CS2L66H6"), asin: "B0CS2L66H6" }
+    ]
+  },
+  {
+    id: "133",
+    name: "Spylt High Protein Milk, Max Chocolate with Caffeine (12 Pack)",
+    brand: "Spylt",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0CS2D278X"), asin: "B0CS2D278X" }
+    ]
+  },
+  {
+    id: "134",
+    name: "Spylt High Protein Milk, Vanilla Milkshake (12 Pack)",
+    brand: "Spylt",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0CS24964G"), asin: "B0CS24964G" }
+    ]
+  },
+  {
+    id: "135",
+    name: "Spylt High Protein Milk, Cookies & Cream (12 Pack)",
+    brand: "Spylt",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0DQVP36RZ"), asin: "B0DQVP36RZ" }
+    ]
+  },
+  {
+    id: "136",
+    name: "Spylt High Protein Milk, Strawberry (12 Pack)",
+    brand: "Spylt",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0CS27D1B9"), asin: "B0CS27D1B9" }
+    ]
+  },
+  {
+    id: "137",
+    name: "Spylt High Protein Milk, Peanut Butter Chocolate (12 Pack)",
+    brand: "Spylt",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0DQVMT2X3"), asin: "B0DQVMT2X3" }
+    ]
+  },
+  {
+    id: "138",
+    name: "Built Puff Protein Bar, Coconut (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B09M968ZCM"), asin: "B09M968ZCM" }
+    ]
+  },
+  {
+    id: "141",
+    name: "Built Puff Protein Bar, Brownie Batter (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 26.84, url: amazonUrl("B0BFPFBGGC"), asin: "B0BFPFBGGC" }
+    ]
+  },
+  {
+    id: "142",
+    name: "Built Puff Protein Bar, Cookies 'N Cream (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0D7PS26VG"), asin: "B0D7PS26VG" }
+    ]
+  },
+  {
+    id: "143",
+    name: "Built Puff Protein Bar, Cookie Dough Chunk (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 15 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0B7P7QNK3"), asin: "B0B7P7QNK3" }
+    ]
+  },
+  {
+    id: "145",
+    name: "Built Puff Protein Bar, Salted Caramel (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0DGMFL2TV"), asin: "B0DGMFL2TV" }
+    ]
+  },
+  {
+    id: "147",
+    name: "Built Puff Protein Bar, Peanut Butter Cup (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0FQCKYNJ3"), asin: "B0FQCKYNJ3" }
+    ]
+  },
+  {
+    id: "149",
+    name: "Built Puff Protein Bar, Strawberries 'N Cream (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 15 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0D1KD323N"), asin: "B0D1KD323N" }
+    ]
+  },
+  {
+    id: "151",
+    name: "Built Sour Puff Protein Bar, Blue Razz Blast (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 16 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0G1K55M9K"), asin: "B0G1K55M9K" }
+    ]
+  },
+  {
+    id: "152",
+    name: "Built Sour Puff Protein Bar, Green Apple Crush (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 16 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0G1K9MMSJ"), asin: "B0G1K9MMSJ" }
+    ]
+  },
+  {
+    id: "153",
+    name: "Built Sour Puff Protein Bar, Sweet Peach Punch (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 16 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0G1K8X36Z"), asin: "B0G1K8X36Z" }
+    ]
+  },
+  {
+    id: "154",
+    name: "Built Sour Puff Protein Bar, Variety Pack (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 16 },
+    approvedBy: ["geo"],
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0G2K37XFK"), asin: "B0G2K37XFK" }
+    ]
+  },
+  {
+    id: "155",
+    name: "Bari Life BariBurst Calcium Citrate Chews with 1000 IU Vitamin D3, Watermelon (90 Count)",
+    brand: "Bari Life",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 38.99, url: amazonUrl("B07SV51NM6"), asin: "B07SV51NM6" }
+    ]
+  },
+  {
+    id: "156",
+    name: "Bari Life BariBurst Calcium Citrate Chews with 1000 IU Vitamin D3, Sour Grape (90 Count)",
+    brand: "Bari Life",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 37.99, url: amazonUrl("B0CHH417FR"), asin: "B0CHH417FR" }
+    ]
+  },
+  {
+    id: "157",
+    name: "Bari Life BariBurst Calcium Citrate Chews with 1000 IU Vitamin D3, Lemon Lime (90 Count)",
+    brand: "Bari Life",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 37.99, url: amazonUrl("B0DHYPHMRV"), asin: "B0DHYPHMRV" }
+    ]
+  },
+  {
+    id: "158",
+    name: "Ghost Whey Protein Powder, Cinnabon (5 lb)",
+    brand: "Ghost",
+    category: "protein",
+    servings: 67,
+    nutrition: { proteinGrams: 25 },
+    offers: [
+      { retailer: "Amazon", price: 99.99, url: amazonUrl("B0D3JDN1QF"), asin: "B0D3JDN1QF" }
+    ]
+  },
+  {
+    id: "159",
+    name: "Ghost Whey Protein Powder, Coffee Ice Cream (2 lb)",
+    brand: "Ghost",
+    category: "protein",
+    servings: 27,
+    nutrition: { proteinGrams: 25 },
+    offers: [
+      { retailer: "Amazon", price: 54.99, url: amazonUrl("B07FQPCZ77"), asin: "B07FQPCZ77" }
+    ]
+  },
+  {
+    id: "160",
+    name: "Ghost Whey Protein Powder, Lucky Charms Cereal Milk (2 lb)",
+    brand: "Ghost",
+    category: "protein",
+    servings: 27,
+    nutrition: { proteinGrams: 25 },
+    offers: [
+      { retailer: "Amazon", price: 54.99, url: amazonUrl("B0GPB91TRB"), asin: "B0GPB91TRB" }
+    ]
+  },
+  {
+    id: "161",
+    name: "Ghost Whey Protein Powder, Milk Chocolate (2 lb)",
+    brand: "Ghost",
+    category: "protein",
+    servings: 27,
+    nutrition: { proteinGrams: 25 },
+    offers: [
+      { retailer: "Amazon", price: 54.99, url: amazonUrl("B01MQQ4RFA"), asin: "B01MQQ4RFA" }
+    ]
+  },
+  {
+    id: "162",
+    name: "Ghost Whey Protein Powder, Peanut Butter Cereal Milk (2 lb)",
+    brand: "Ghost",
+    category: "protein",
+    servings: 26,
+    nutrition: { proteinGrams: 26 },
+    offers: [
+      { retailer: "Amazon", price: 54.99, url: amazonUrl("B07FLJYP5M"), asin: "B07FLJYP5M" }
+    ]
+  },
+  {
+    id: "163",
+    name: "Ghost Whey Protein Powder, Cereal Milk (2 lb)",
+    brand: "Ghost",
+    category: "protein",
+    servings: 27,
+    nutrition: { proteinGrams: 25 },
+    offers: [
+      { retailer: "Amazon", price: 54.99, url: amazonUrl("B01N9BO3SE"), asin: "B01N9BO3SE" }
+    ]
+  },
+  {
+    id: "164",
+    name: "Ghost Whey Protein Powder, Count Chocula (2.12 lb)",
+    brand: "Ghost",
+    category: "protein",
+    servings: 27,
+    nutrition: { proteinGrams: 25 },
+    offers: [
+      { retailer: "Amazon", price: 54.99, url: amazonUrl("B0FQM88VDM"), asin: "B0FQM88VDM" }
+    ]
+  },
+  {
+    id: "165",
+    name: "Built Bar Puff Variety Pack, Minions & Monsters Limited Edition (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 16 },
+    offers: [
+      { retailer: "Amazon", price: 26.84, url: amazonUrl("B0H47VP41X"), asin: "B0H47VP41X" }
+    ]
+  },
+  {
+    id: "166",
+    name: "Built Puff Protein Bar, Churro (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17 },
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B09M95V187"), asin: "B09M95V187" }
+    ]
+  },
+  {
+    id: "167",
+    name: "Pin Up Girl Magnesium Glycinate for Women, 150mg Chelated (60 Capsules)",
+    brand: "Pin Up Girl",
+    category: "other",
+    servings: 30,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 17.95, url: amazonUrl("B0GNP37Q1C"), asin: "B0GNP37Q1C" }
     ]
   }
 ];
