@@ -12,7 +12,7 @@ const categories = [
   { id: "electrolytes", title: "Electrolytes", image: "/categories/electrolytes.png" },
   { id: "weight-management", title: "Weight Management", image: "/categories/weight-management.png" },
   { id: "bariatric", title: "Bariatric Support", image: "/categories/bariatric.png" },
-  { id: "multivitamin", title: "Multivitamin", image: "/categories/multivitamin.png" },
+  { id: "multivitamin", title: "Multivitamin", image: "/categories/multivitamin-v2.png" },
   { id: "food-drink", title: "Food & Drink", image: "/categories/food-drink.png" },
   { id: "gut-health", title: "Gut Health", image: "/categories/gut-health.png" },
 ];
