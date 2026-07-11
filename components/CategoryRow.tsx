@@ -70,7 +70,8 @@ export default function CategoryRow() {
         ref={scrollerRef}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 [scrollbar-width:thin]"
+        style={{ ["--cat-count" as string]: categories.length }}
+        className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 [scrollbar-width:thin] lg:grid lg:overflow-visible lg:pb-0 lg:[grid-template-columns:repeat(var(--cat-count),minmax(0,1fr))]"
       >
         {categories.map((cat, index) => {
           const isActive = pathname === `/category/${cat.id}`;
@@ -79,7 +80,7 @@ export default function CategoryRow() {
             <Link
               href={`/category/${cat.id}`}
               key={cat.id}
-              className={`group relative block rounded-xl overflow-hidden border transition-all duration-300 aspect-[7/20] w-32 sm:w-40 lg:w-44 shrink-0 ${
+              className={`group relative block rounded-xl overflow-hidden border transition-all duration-300 aspect-[7/20] w-32 sm:w-40 shrink-0 lg:w-auto lg:shrink ${
                 isActive ? "border-[#a3e635]" : "border-gray-800 hover:border-gray-600"
               }`}
             >
@@ -88,7 +89,7 @@ export default function CategoryRow() {
                 alt={cat.title}
                 fill
                 priority={index === 0}
-                sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 176px"
+                sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 11vw"
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
