@@ -14,6 +14,78 @@ export const products = [
     ]
   },
   {
+    id: "118",
+    name: "Protein2o Whey Protein Isolate Hydration Drink, Strawberry Watermelon (16.9 oz, 12-Pack)",
+    brand: "Protein2o",
+    category: "protein",
+    additionalCategories: ["electrolytes"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    offers: [
+      { retailer: "Amazon", price: 23.91, url: amazonUrl("B0985TJ4HF"), asin: "B0985TJ4HF" }
+    ]
+  },
+  {
+    id: "119",
+    name: "Protein2o Whey Protein Isolate Hydration Drink, Orange Mango (16.9 oz, 12-Pack)",
+    brand: "Protein2o",
+    category: "protein",
+    additionalCategories: ["electrolytes"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    offers: [
+      { retailer: "Amazon", price: 30.60, url: amazonUrl("B0985S4S42"), asin: "B0985S4S42" }
+    ]
+  },
+  {
+    id: "120",
+    name: "Protein2o Whey Protein Isolate Hydration Drink, Mixed Berry (16.9 oz, 12-Pack)",
+    brand: "Protein2o",
+    category: "protein",
+    additionalCategories: ["electrolytes"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    offers: [
+      { retailer: "Amazon", price: 32.29, url: amazonUrl("B0DT7K3LXM"), asin: "B0DT7K3LXM" }
+    ]
+  },
+  {
+    id: "121",
+    name: "Protein2o Whey Protein Isolate Hydration Drink, Variety Pack (16.9 oz, 12-Pack)",
+    brand: "Protein2o",
+    category: "protein",
+    additionalCategories: ["electrolytes"],
+    servings: 12,
+    nutrition: { proteinGrams: 20 },
+    offers: [
+      { retailer: "Amazon", price: 33.56, url: amazonUrl("B0966FG8MB"), asin: "B0966FG8MB" }
+    ]
+  },
+  {
+    id: "122",
+    name: "Protein2o Whey Protein Isolate Hydration Drink, Orange Mango + Strawberry Watermelon Bundle (16.9 oz, 24-Pack)",
+    brand: "Protein2o",
+    category: "protein",
+    additionalCategories: ["electrolytes"],
+    servings: 24,
+    nutrition: { proteinGrams: 20 },
+    offers: [
+      { retailer: "Amazon", price: 54.51, url: amazonUrl("B0F6YVBGX6"), asin: "B0F6YVBGX6" }
+    ]
+  },
+  {
+    id: "123",
+    name: "Protein2o Whey Protein Isolate Hydration Drink, Mixed Berry + Strawberry Watermelon Bundle (16.9 oz, 24-Pack)",
+    brand: "Protein2o",
+    category: "protein",
+    additionalCategories: ["electrolytes"],
+    servings: 24,
+    nutrition: { proteinGrams: 20 },
+    offers: [
+      { retailer: "Amazon", price: 56.20, url: amazonUrl("B0F6Z9F4MG"), asin: "B0F6Z9F4MG" }
+    ]
+  },
+  {
     id: "9",
     name: "100% Clear Whey Protein Isolate - Orange Mango",
     brand: "Ascent",
