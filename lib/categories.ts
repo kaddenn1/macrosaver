@@ -7,6 +7,7 @@ export const CATEGORY_TITLES: Record<string, string> = {
   "electrolytes": "Electrolytes",
   "gut-health": "Gut Health",
   "bariatric": "Bariatric Support",
+  "multivitamin": "Multivitamin",
 };
 
 export const CATEGORY_SLUGS = Object.keys(CATEGORY_TITLES);

@@ -7,6 +7,7 @@ export type SupplementCategory =
   | "electrolytes"
   | "gut-health"
   | "bariatric"
+  | "multivitamin"
   | "other";
 
 export type RetailerOffer = {

@@ -60,7 +60,7 @@ export const products: Product[] = [
     },
     offers: [
       { retailer: "Amazon", price: ${livePrices["nutricost-creatine-monohydrate"].Amazon}, affiliateLink: "https://amzn.to/your-amazon-tag" },
-      { retailer: "Walmart", price: ${livePrices["nutricost-creatine-monohydrate"].Walmart}, affiliateLink: "https://walmart.impactradius.com/your-tag" }
+      { retailer: "Walmart", price: ${livePrices["nutricost-creatine-monohydrate"].Walmart}, affiliateLink: "https://walmart.com?affsiteid=your-walmart-tag" }
     ]
   },
   {

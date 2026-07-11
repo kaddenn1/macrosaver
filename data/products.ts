@@ -650,6 +650,236 @@ export const products = [
     ]
   },
   {
+    id: "88",
+    name: "Sweet Sweat Toned Bundle with Waist Trimmer, Quartz/Vanilla (Medium)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sports-research-toned-waist-trimmer-bundle.png",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800" }
+    ]
+  },
+  {
+    id: "89",
+    name: "Sweet Sweat Toned Bundle with Waist Trimmer, Clay/Vanilla (Medium)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sports-research-toned-waist-trimmer-bundle-clay.png",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624" }
+    ]
+  },
+  {
+    id: "90",
+    name: "Sweet Sweat Core Bundle with Waist Trimmer, Pink/Tropical (Medium)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sports-research-sweet-sweat-core-bundle-pink-tropical.png",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200" }
+    ]
+  },
+  {
+    id: "91",
+    name: "MCT Oil from Coconut, 3000mg (120 Softgels)",
+    brand: "Sports Research",
+    category: "weight-management",
+    additionalCategories: ["food-drink"],
+    image: "/products/sports-research-mct-oil-120-softgels.png",
+    servings: 120,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129959949573030687149&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fmct-oil-120-softgels%3fvariant%3d42500072505544" }
+    ]
+  },
+  {
+    id: "92",
+    name: "Flavored Creatine Monohydrate, Fruit Punch (25 Servings)",
+    brand: "Sports Research",
+    category: "creatine",
+    image: "/products/sports-research-flavored-creatine-monohydrate.png",
+    servings: 25,
+    nutrition: { proteinGrams: 0, creatineGrams: 5 },
+    offers: [
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate" }
+    ]
+  },
+  {
+    id: "93",
+    name: "Creatine Monohydrate Capsules (120 Capsules)",
+    brand: "Sports Research",
+    category: "creatine",
+    image: "/products/sports-research-creatine-monohydrate-veggie-capsules.png",
+    servings: 120,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcreatine-monohydrate-veggie-capsules" }
+    ]
+  },
+  {
+    id: "94",
+    name: "Hydrate Electrolytes Packets, Cherry Pomegranate (16 ct)",
+    brand: "Sports Research",
+    category: "electrolytes",
+    image: "/products/sports-research-hydrate-electrolytes-packets.png",
+    servings: 16,
+    nutrition: { proteinGrams: 0, sodiumMilligrams: 400 },
+    offers: [
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets" }
+    ]
+  },
+  {
+    id: "95",
+    name: "Digestive Enzymes + Probiotic (90 Veggie Capsules)",
+    brand: "Sports Research",
+    category: "gut-health",
+    image: "/products/sports-research-digestive-enzymes.png",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes" }
+    ]
+  },
+  {
+    id: "96",
+    name: "Daily Probiotic 60 Billion CFU (30 Veggie Capsules)",
+    brand: "Sports Research",
+    category: "gut-health",
+    image: "/products/sports-research-daily-probiotics.png",
+    servings: 30,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics" }
+    ]
+  },
+  {
+    id: "97",
+    name: "L-Theanine + Caffeine (60 Softgels)",
+    brand: "Sports Research",
+    category: "pre-workout",
+    image: "/products/sports-research-l-theanine-and-caffeine.png",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine" }
+    ]
+  },
+  {
+    id: "98",
+    name: "Garcinia Cambogia 60% 500mg (90 Softgels)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sports-research-garcinia-cambogia-65-500mg.png",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 17.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fgarcinia-cambogia-65-500mg" }
+    ]
+  },
+  {
+    id: "99",
+    name: "Magnesium Glycinate, 160mg (60 Softgels)",
+    brand: "Sports Research",
+    category: "other",
+    image: "/products/sports-research-magnesium-glycinate.png",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate" }
+    ]
+  },
+  {
+    id: "100",
+    name: "Triple Magnesium Complex, 300mg (120 Veggie Capsules)",
+    brand: "Sports Research",
+    category: "other",
+    image: "/products/sports-research-triple-magnesium-complex.png",
+    servings: 120,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Ftriple-magnesium-complex" }
+    ]
+  },
+  {
+    id: "101",
+    name: "Organic Ashwagandha KSM-66, 600mg (90 Veggie Capsules)",
+    brand: "Sports Research",
+    category: "other",
+    image: "/products/sports-research-organic-ashwagandha.png",
+    servings: 90,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 32.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha" }
+    ]
+  },
+  {
+    id: "102",
+    name: "Vitamin D3 + K2 (60 Plantgel Capsules)",
+    brand: "Sports Research",
+    category: "other",
+    image: "/products/sports-research-vitamin-d3-k2.png",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2" }
+    ]
+  },
+  {
+    id: "103",
+    name: "Organic MCT Oil Powder, Unflavored (30 Servings)",
+    brand: "Sports Research",
+    category: "weight-management",
+    additionalCategories: ["food-drink"],
+    image: "/products/sports-research-mct-oil-powder.png",
+    servings: 30,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmct-oil-powder" }
+    ]
+  },
+  {
+    id: "104",
+    name: "Sweet Sweat Arm & Thigh Trimmer Bundle (4-Piece)",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sports-research-arm-and-thigh-trimmer-bundle.png",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 48.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Farm-and-thigh-trimmer-bundle" }
+    ]
+  },
+  {
+    id: "105",
+    name: "Sweet Sweat Pro Series Waist Trimmer Bundle with Stick",
+    brand: "Sports Research",
+    category: "weight-management",
+    image: "/products/sports-research-pro-series-bundle.png",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 64.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fpro-series-bundle" }
+    ]
+  },
+  {
+    id: "106",
+    name: "Sports Research Jump Rope",
+    brand: "Sports Research",
+    category: "other",
+    image: "/products/sports-research-jump-rope.png",
+    servings: 1,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 19.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fjump-rope" }
+    ]
+  },
+  {
     id: "61",
     name: "Benefiber Daily Prebiotic Fiber Supplement, Unflavored (250 Teaspoons)",
     brand: "Benefiber",
@@ -691,6 +921,7 @@ export const products = [
     name: "BariatricPal Multivitamin ONE, Mixed Berry (30 Chewable Tablets)",
     brand: "BariatricPal",
     category: "bariatric",
+    additionalCategories: ["multivitamin"],
     image: "/products/bariatricpal-multivitamin-one-mixed-berry.jpg",
     servings: 30,
     nutrition: { proteinGrams: 0 },
@@ -703,6 +934,7 @@ export const products = [
     name: "BariatricPal Multivitamin ONE, Orange Citrus (30 Chewable Tablets)",
     brand: "BariatricPal",
     category: "bariatric",
+    additionalCategories: ["multivitamin"],
     image: "/products/bariatricpal-multivitamin-one-orange-citrus.jpg",
     servings: 30,
     nutrition: { proteinGrams: 0 },
