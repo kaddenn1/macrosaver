@@ -52,6 +52,5 @@ export type ProductWithValueMetrics = Product & {
   costPerServing: number | null;
   proteinPerDollar: number | null;
   costPerOzProtein: number | null;
-  valueScore: number;
   savingsVsHighestOffer: number | null;
 };

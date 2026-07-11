@@ -9,7 +9,6 @@ import {
   getCostPerServing,
   getCostPerOzProtein,
   getProteinPerDollar,
-  getValueScore,
   getSavingsVsHighestOffer,
 } from "@/lib/macrosaver-engine";
 import { getTheme } from "@/lib/theme";
@@ -25,7 +24,7 @@ function getRelatedProducts(product: Product, limit: number): Product[] {
         p.id !== product.id &&
         (p.category === product.category || p.additionalCategories?.includes(product.category))
     )
-    .sort((a, b) => getValueScore(b) - getValueScore(a))
+    .sort((a, b) => (getCostPerServing(a) ?? 999) - (getCostPerServing(b) ?? 999))
     .slice(0, limit);
 }
 
@@ -81,7 +80,6 @@ export default async function ProductPage({
   const costPerServing = getCostPerServing(product);
   const costPerOzProtein = getCostPerOzProtein(product);
   const proteinPerDollar = getProteinPerDollar(product);
-  const valueScore = getValueScore(product);
   const savings = getSavingsVsHighestOffer(product);
   const hasProtein = product.nutrition.proteinGrams > 0;
   const categoryTitle = CATEGORY_TITLES[product.category] || product.category;
@@ -170,15 +168,6 @@ export default async function ProductPage({
                   ))}
               </div>
             )}
-
-            <div className="flex items-center gap-4 mb-6">
-              <div className={`text-4xl font-black ${theme.text}`}>{valueScore}</div>
-              <div className="text-xs text-gray-500 uppercase tracking-widest leading-tight">
-                Value Score
-                <br />
-                out of 100
-              </div>
-            </div>
 
             {/* Value metrics grid */}
             <div className={`grid grid-cols-2 ${hasProtein ? "sm:grid-cols-4" : "sm:grid-cols-3"} gap-4 mb-8 border-y border-gray-800 py-6`}>

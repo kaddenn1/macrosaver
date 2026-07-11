@@ -1,6 +1,5 @@
 import type { Product, RetailerOffer } from "@/data/types";
 
-const VALUE_SCORE_MAX = 100;
 const GRAMS_PER_OZ = 28.3495;
 
 function roundToTwo(value: number): number {
@@ -87,26 +86,3 @@ export function getSavingsVsHighestOffer(product: Product): number | null {
   return roundToTwo(highestOffer.price - bestOffer.price);
 }
 
-export function getValueScore(product: Product): number {
-  const bestOffer = getBestOffer(product);
-  const costPerServing = getCostPerServing(product);
-  const proteinPerDollar = getProteinPerDollar(product);
-  const savingsVsHighestOffer = getSavingsVsHighestOffer(product);
-
-  if (!bestOffer || !costPerServing) {
-    return 0;
-  }
-
-  const servingEfficiency = Math.min(40, (1 / costPerServing) * 20);
-  const proteinEfficiency = proteinPerDollar
-    ? Math.min(40, proteinPerDollar * 2)
-    : 0;
-  const savingsBonus = savingsVsHighestOffer
-    ? Math.min(20, savingsVsHighestOffer * 2)
-    : 0;
-
-  return Math.min(
-    VALUE_SCORE_MAX,
-    Math.round(servingEfficiency + proteinEfficiency + savingsBonus)
-  );
-}

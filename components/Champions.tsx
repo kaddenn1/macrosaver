@@ -7,7 +7,6 @@ import {
   getBestOffer,
   getCostPerServing,
   getCostPerOzProtein,
-  getValueScore,
   getSavingsVsHighestOffer,
   extractFlavor,
 } from "@/lib/macrosaver-engine";
@@ -69,19 +68,16 @@ export default function Champions({
     displayProducts = displayProducts.filter((p) => p.name.toLowerCase().includes(query) || p.brand.toLowerCase().includes(query));
   }
 
-  const currentSort = (searchParams?.sort as string) || 'value';
+  const currentSort = (searchParams?.sort as string) || 'price-low';
   displayProducts.sort((a, b) => {
-    if (currentSort === 'price-low') {
-      const costA = getCostPerServing(a) ?? 999;
-      const costB = getCostPerServing(b) ?? 999;
-      return costA - costB;
-    }
     if (currentSort === 'protein-high') {
       const proA = a.nutrition?.proteinGrams || 0;
       const proB = b.nutrition?.proteinGrams || 0;
       return proB - proA;
     }
-    return getValueScore(b) - getValueScore(a);
+    const costA = getCostPerServing(a) ?? 999;
+    const costB = getCostPerServing(b) ?? 999;
+    return costA - costB;
   });
 
   if (limit) {
@@ -110,7 +106,6 @@ export default function Champions({
           const bestOffer = getBestOffer(item);
           const costPerServing = getCostPerServing(item);
           const costPerOzProtein = getCostPerOzProtein(item);
-          const valueScore = getValueScore(item);
           const savings = getSavingsVsHighestOffer(item);
 
           const theme = getTheme(item.category);
@@ -121,23 +116,7 @@ export default function Champions({
               className={`bg-[#111] border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 group flex flex-col relative ${theme.hoverBorder} ${theme.glow}`}
             >
 
-              <div className="flex justify-between items-center p-3 absolute w-full top-0 left-0 z-10">
-                <div className="text-center">
-                  <div className={`text-sm font-black ${valueScore > 90 ? theme.text : 'text-gray-300'}`}>
-                    {valueScore}
-                  </div>
-                  <div className="text-[9px] text-gray-500 uppercase tracking-widest leading-none">
-                    Value Score
-                  </div>
-                </div>
-                {valueScore > 90 && (
-                   <div className={`text-[10px] uppercase tracking-wider font-bold bg-[#111]/80 px-2 py-1 rounded backdrop-blur-sm ${theme.text}`}>
-                     Most Popular
-                   </div>
-                )}
-              </div>
-
-              <div className="h-48 bg-[#0a0a0a] flex items-center justify-center border-b border-gray-800 relative pt-8">
+              <div className="h-48 bg-[#0a0a0a] flex items-center justify-center border-b border-gray-800 relative">
                 {item.image ? (
                   <Image
                     src={item.image}
