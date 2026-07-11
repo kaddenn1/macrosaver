@@ -759,6 +759,19 @@ export const products = [
     ]
   },
   {
+    id: "107",
+    name: "Sleep Complex with Melatonin, 5mg (60 Veggie Capsules)",
+    brand: "Sports Research",
+    category: "other",
+    additionalCategories: ["gut-health"],
+    image: "/products/sports-research-sleep-complex-with-melatonin.png",
+    servings: 60,
+    nutrition: { proteinGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 27.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsleep-complex-with-melatonin" }
+    ]
+  },
+  {
     id: "97",
     name: "L-Theanine + Caffeine (60 Softgels)",
     brand: "Sports Research",
@@ -787,6 +800,7 @@ export const products = [
     name: "Magnesium Glycinate, 160mg (60 Softgels)",
     brand: "Sports Research",
     category: "other",
+    additionalCategories: ["gut-health"],
     image: "/products/sports-research-magnesium-glycinate.png",
     servings: 60,
     nutrition: { proteinGrams: 0 },
@@ -799,6 +813,7 @@ export const products = [
     name: "Triple Magnesium Complex, 300mg (120 Veggie Capsules)",
     brand: "Sports Research",
     category: "other",
+    additionalCategories: ["gut-health"],
     image: "/products/sports-research-triple-magnesium-complex.png",
     servings: 120,
     nutrition: { proteinGrams: 0 },
@@ -884,6 +899,7 @@ export const products = [
     name: "Benefiber Daily Prebiotic Fiber Supplement, Unflavored (250 Teaspoons)",
     brand: "Benefiber",
     category: "bariatric",
+    additionalCategories: ["gut-health"],
     image: "/products/benefiber-prebiotic-fiber-unflavored.jpg",
     servings: 250,
     nutrition: { proteinGrams: 0 },
