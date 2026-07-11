@@ -153,7 +153,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Double Rich Chocolate (5 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/1.jpg",
+    image: "/products/optimum-nutrition-double-rich-chocolate-5lb.png",
     servings: 74,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -165,7 +165,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Double Rich Chocolate (2 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/10.jpg",
+    image: "/products/optimum-nutrition-double-rich-chocolate-2lb.png",
     servings: 29,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -177,7 +177,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Extreme Milk Chocolate (2 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/11.jpg",
+    image: "/products/optimum-nutrition-extreme-milk-chocolate-2lb.png",
     servings: 28,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -189,7 +189,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Extreme Milk Chocolate (5 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/12.jpg",
+    image: "/products/optimum-nutrition-extreme-milk-chocolate-5lb.png",
     servings: 71,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -201,7 +201,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Cookies & Cream (2 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/13.jpg",
+    image: "/products/optimum-nutrition-cookies-cream-2lb.png",
     servings: 27,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -213,7 +213,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Cookies & Cream (5 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/14.jpg",
+    image: "/products/optimum-nutrition-cookies-cream-5lb.png",
     servings: 68,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -225,7 +225,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Delicious Strawberry (2 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/15.jpg",
+    image: "/products/optimum-nutrition-delicious-strawberry-2lb.png",
     servings: 29,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -237,7 +237,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Delicious Strawberry (5 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/16.jpg",
+    image: "/products/optimum-nutrition-delicious-strawberry-5lb.png",
     servings: 73,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -249,7 +249,7 @@ export const products = [
     name: "Gold Standard 100% Whey - French Vanilla Crème (2 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/17.jpg",
+    image: "/products/optimum-nutrition-french-vanilla-creme-2lb.png",
     servings: 29,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -261,7 +261,7 @@ export const products = [
     name: "Gold Standard 100% Whey - French Vanilla Crème (5 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/18.jpg",
+    image: "/products/optimum-nutrition-french-vanilla-creme-5lb.png",
     servings: 73,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -273,7 +273,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Chocolate Peanut Butter (2 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/19.jpg",
+    image: "/products/optimum-nutrition-chocolate-peanut-butter-2lb.png",
     servings: 27,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
@@ -285,7 +285,7 @@ export const products = [
     name: "Gold Standard 100% Whey - Chocolate Peanut Butter (5 lb)",
     brand: "Optimum Nutrition",
     category: "protein",
-    image: "/products/20.jpg",
+    image: "/products/optimum-nutrition-chocolate-peanut-butter-5lb.png",
     servings: 68,
     nutrition: { calories: 120, proteinGrams: 24 },
     offers: [
