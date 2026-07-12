@@ -1689,6 +1689,7 @@ export const products = [
     image: "/products/bari-life-bariburst-watermelon.png",
     servings: 90,
     nutrition: { proteinGrams: 0 },
+    approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 38.99, url: amazonUrl("B07SV51NM6"), asin: "B07SV51NM6" }
     ]
@@ -1701,6 +1702,7 @@ export const products = [
     image: "/products/bari-life-bariburst-sour-grape.png",
     servings: 90,
     nutrition: { proteinGrams: 0 },
+    approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 37.99, url: amazonUrl("B0CHH417FR"), asin: "B0CHH417FR" }
     ]
@@ -1713,6 +1715,7 @@ export const products = [
     image: "/products/bari-life-bariburst-lemon-lime.png",
     servings: 90,
     nutrition: { proteinGrams: 0 },
+    approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 37.99, url: amazonUrl("B0DHYPHMRV"), asin: "B0DHYPHMRV" }
     ]
@@ -1810,6 +1813,7 @@ export const products = [
     image: "/products/built-puff-minions-monsters.jpg",
     servings: 12,
     nutrition: { proteinGrams: 16 },
+    approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 26.84, url: amazonUrl("B0H47VP41X"), asin: "B0H47VP41X" }
     ]
@@ -1823,6 +1827,7 @@ export const products = [
     image: "/products/built-puff-churro.jpg",
     servings: 12,
     nutrition: { proteinGrams: 17 },
+    approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B09M95V187"), asin: "B09M95V187" }
     ]
@@ -1835,6 +1840,7 @@ export const products = [
     image: "/products/pin-up-girl-magnesium-glycinate.png",
     servings: 30,
     nutrition: { proteinGrams: 0 },
+    approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 17.95, url: amazonUrl("B0GNP37Q1C"), asin: "B0GNP37Q1C" }
     ]
