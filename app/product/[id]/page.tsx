@@ -17,6 +17,7 @@ import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { APPROVAL_BADGES } from "@/lib/approvals";
 import { getReviewSummary } from "@/lib/reviews";
 import ProductReviews from "@/components/ProductReviews";
+import CompareButton from "@/components/CompareButton";
 import type { Product } from "@/data/types";
 
 export const revalidate = 3600;
@@ -208,6 +209,10 @@ export default async function ProductPage({
               {product.brand}
             </div>
             <h1 className="text-3xl font-black text-white leading-tight mb-4">{product.name}</h1>
+
+            <div className="mb-4">
+              <CompareButton productId={product.id} variant="pill" />
+            </div>
 
             {product.approvedBy && product.approvedBy.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-4">

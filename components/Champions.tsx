@@ -13,6 +13,7 @@ import {
 import type { Product } from "@/data/types";
 import { getTheme } from "@/lib/theme";
 import { APPROVAL_BADGES } from "@/lib/approvals";
+import CompareButton from "@/components/CompareButton";
 
 interface ChampionsProps {
   filterCategory?: string;
@@ -110,12 +111,13 @@ export default function Champions({
 
           const theme = getTheme(item.category);
 
-          return (<Link
-              href={`/product/${item.id}`}
+          return (<div
               key={item.id}
               className={`bg-[#111] border border-gray-800 rounded-xl overflow-hidden transition-all duration-300 group flex flex-col relative ${theme.hoverBorder} ${theme.glow}`}
             >
+              <CompareButton productId={item.id} />
 
+              <Link href={`/product/${item.id}`} className="contents">
               <div className="h-48 bg-[#0a0a0a] flex items-center justify-center border-b border-gray-800 relative">
                 {item.image ? (
                   <Image
@@ -190,10 +192,11 @@ export default function Champions({
 
                 <div className={`w-full mt-4 py-2 text-[11px] font-black uppercase tracking-widest text-black rounded transition-transform hover:scale-[1.02] flex items-center justify-center gap-2 ${theme.bg} ${theme.hoverBg}`}>
                   <div className="w-3 h-3 bg-black rounded-full flex items-center justify-center text-white text-[8px]">a</div>
-                  Compare →
+                  View Deal →
                 </div>
               </div>
-            </Link>
+              </Link>
+            </div>
           );
         })}
       </div>
