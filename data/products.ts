@@ -8,7 +8,15 @@ export const products = [
     category: "protein",
     image: "/products/6.jpg",
     servings: 20,
-    nutrition: { calories: 100, proteinGrams: 20 },
+    nutrition: {
+      calories: 100,
+      proteinGrams: 20,
+      carbsGrams: 4,
+      fatGrams: 0,
+      sugarGrams: 2,
+      sodiumMilligrams: 115,
+      servingSize: "1 scoop (26g)",
+    },
     offers: [
       { retailer: "Amazon", price: 28.79, url: amazonUrl("B0DGZHDBZT"), asin: "B0DGZHDBZT" }
     ]
@@ -21,7 +29,15 @@ export const products = [
     additionalCategories: ["electrolytes"],
     image: "/products/protein2o-strawberry-watermelon.png",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 7,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 220,
+      servingSize: "1 bottle (16.9 fl oz)",
+    },
     offers: [
       { retailer: "Amazon", price: 23.91, url: amazonUrl("B0985TJ4HF"), asin: "B0985TJ4HF" }
     ]
@@ -34,7 +50,15 @@ export const products = [
     additionalCategories: ["electrolytes"],
     image: "/products/protein2o-orange-mango.png",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 7,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 220,
+      servingSize: "1 bottle (16.9 fl oz)",
+    },
     offers: [
       { retailer: "Amazon", price: 30.60, url: amazonUrl("B0985S4S42"), asin: "B0985S4S42" }
     ]
@@ -47,7 +71,15 @@ export const products = [
     additionalCategories: ["electrolytes"],
     image: "/products/protein2o-mixed-berry.png",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 8,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 220,
+      servingSize: "1 bottle (16.9 fl oz)",
+    },
     offers: [
       { retailer: "Amazon", price: 32.29, url: amazonUrl("B0DT7K3LXM"), asin: "B0DT7K3LXM" }
     ]
@@ -59,7 +91,15 @@ export const products = [
     category: "protein",
     additionalCategories: ["electrolytes"],
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 7,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 220,
+      servingSize: "1 bottle (16.9 fl oz)",
+    },
     offers: [
       { retailer: "Amazon", price: 33.56, url: amazonUrl("B0966FG8MB"), asin: "B0966FG8MB" }
     ]
@@ -71,7 +111,15 @@ export const products = [
     category: "protein",
     additionalCategories: ["electrolytes"],
     servings: 24,
-    nutrition: { proteinGrams: 20 },
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 7,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 220,
+      servingSize: "1 bottle (16.9 fl oz)",
+    },
     offers: [
       { retailer: "Amazon", price: 54.51, url: amazonUrl("B0F6YVBGX6"), asin: "B0F6YVBGX6" }
     ]
@@ -83,7 +131,15 @@ export const products = [
     category: "protein",
     additionalCategories: ["electrolytes"],
     servings: 24,
-    nutrition: { proteinGrams: 20 },
+    // Bundle mixes two flavors with slightly different carbsGrams (7g vs 8g) — omitted rather than guess.
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 220,
+      servingSize: "1 bottle (16.9 fl oz)",
+    },
     offers: [
       { retailer: "Amazon", price: 56.20, url: amazonUrl("B0F6Z9F4MG"), asin: "B0F6Z9F4MG" }
     ]
@@ -95,7 +151,15 @@ export const products = [
     category: "protein",
     image: "/products/9.jpg",
     servings: 20,
-    nutrition: { calories: 100, proteinGrams: 20 },
+    nutrition: {
+      calories: 100,
+      proteinGrams: 20,
+      carbsGrams: 4,
+      fatGrams: 0,
+      sugarGrams: 2,
+      sodiumMilligrams: 120,
+      servingSize: "1 scoop (26g)",
+    },
     offers: [
       { retailer: "Amazon", price: 31.99, url: amazonUrl("B0DGZGKFBT"), asin: "B0DGZGKFBT" }
     ]
@@ -107,7 +171,15 @@ export const products = [
     category: "protein",
     image: "/products/premier-protein-vanilla-milkshake-146lb-transparent.png",
     servings: 17,
-    nutrition: { calories: 150, proteinGrams: 30 },
+    nutrition: {
+      calories: 150,
+      proteinGrams: 30,
+      carbsGrams: 3,
+      fatGrams: 2,
+      sugarGrams: 1,
+      sodiumMilligrams: 170,
+      servingSize: "2 scoops (39g)",
+    },
     offers: [
       { retailer: "Amazon", price: 29.97, url: amazonUrl("B06ZZ3PJQD"), asin: "B06ZZ3PJQD" }
     ]
@@ -119,7 +191,15 @@ export const products = [
     category: "protein",
     image: "/products/premier-protein-vanilla-milkshake-251lb-transparent.png",
     servings: 29,
-    nutrition: { calories: 150, proteinGrams: 30 },
+    nutrition: {
+      calories: 150,
+      proteinGrams: 30,
+      carbsGrams: 3,
+      fatGrams: 2,
+      sugarGrams: 1,
+      sodiumMilligrams: 170,
+      servingSize: "2 scoops (39g)",
+    },
     offers: [
       { retailer: "Amazon", price: 39.12, url: amazonUrl("B0D4X2RXP8"), asin: "B0D4X2RXP8" }
     ]
@@ -131,7 +211,15 @@ export const products = [
     category: "protein",
     image: "/products/premier-protein-salted-caramel-truffle-transparent.png",
     servings: 17,
-    nutrition: { calories: 160, proteinGrams: 30, sugarGrams: 2 },
+    nutrition: {
+      calories: 160,
+      proteinGrams: 30,
+      carbsGrams: 4,
+      fatGrams: 2.5,
+      sugarGrams: 2,
+      sodiumMilligrams: 230,
+      servingSize: "2 scoops (42g)",
+    },
     offers: [
       { retailer: "Amazon", price: 38.48, url: amazonUrl("B0DLPCJ4BZ"), asin: "B0DLPCJ4BZ" }
     ]
@@ -143,7 +231,15 @@ export const products = [
     category: "protein",
     image: "/products/premier-protein-chocolate-milkshake-transparent.png",
     servings: 17,
-    nutrition: { calories: 150, proteinGrams: 30, sugarGrams: 1 },
+    nutrition: {
+      calories: 150,
+      proteinGrams: 30,
+      carbsGrams: 4,
+      fatGrams: 2,
+      sugarGrams: 1,
+      sodiumMilligrams: 170,
+      servingSize: "2 scoops (41g)",
+    },
     offers: [
       { retailer: "Amazon", price: 25.97, url: amazonUrl("B06Y5ZG66K"), asin: "B06Y5ZG66K" }
     ]
@@ -155,7 +251,15 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-double-rich-chocolate-5lb.png",
     servings: 74,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    nutrition: {
+      calories: 120,
+      proteinGrams: 24,
+      carbsGrams: 3,
+      fatGrams: 1.5,
+      sugarGrams: 1,
+      sodiumMilligrams: 130,
+      servingSize: "1 scoop (30g)",
+    },
     offers: [
       { retailer: "Amazon", price: 96.28, url: amazonUrl("B000QSNYGI"), asin: "B000QSNYGI" }
     ]
@@ -167,7 +271,15 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-double-rich-chocolate-2lb.png",
     servings: 29,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    nutrition: {
+      calories: 120,
+      proteinGrams: 24,
+      carbsGrams: 3,
+      fatGrams: 1.5,
+      sugarGrams: 1,
+      sodiumMilligrams: 130,
+      servingSize: "1 scoop (30g)",
+    },
     offers: [
       { retailer: "Amazon", price: 44.00, url: amazonUrl("B002DYIZH6"), asin: "B002DYIZH6" }
     ]
@@ -179,7 +291,15 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-extreme-milk-chocolate-2lb.png",
     servings: 28,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    nutrition: {
+      calories: 120,
+      proteinGrams: 24,
+      carbsGrams: 3,
+      fatGrams: 1.5,
+      sugarGrams: 2,
+      sodiumMilligrams: 130,
+      servingSize: "1 scoop (32g)",
+    },
     offers: [
       { retailer: "Amazon", price: 43.86, url: amazonUrl("B002DYIZHG"), asin: "B002DYIZHG" }
     ]
@@ -191,7 +311,15 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-extreme-milk-chocolate-5lb.png",
     servings: 71,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    nutrition: {
+      calories: 120,
+      proteinGrams: 24,
+      carbsGrams: 3,
+      fatGrams: 1.5,
+      sugarGrams: 2,
+      sodiumMilligrams: 130,
+      servingSize: "1 scoop (32g)",
+    },
     offers: [
       { retailer: "Amazon", price: 79.99, url: amazonUrl("B000QSTBNS"), asin: "B000QSTBNS" }
     ]
@@ -203,7 +331,14 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-cookies-cream-2lb.png",
     servings: 27,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    // Sugar/sodium not confirmed for this flavor from available sources — left unset rather than guess.
+    nutrition: {
+      calories: 120,
+      proteinGrams: 24,
+      carbsGrams: 3,
+      fatGrams: 1.5,
+      servingSize: "1 scoop (33g)",
+    },
     offers: [
       { retailer: "Amazon", price: 50.27, url: amazonUrl("B000GIQSVG"), asin: "B000GIQSVG" }
     ]
@@ -215,7 +350,14 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-cookies-cream-5lb.png",
     servings: 68,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    // Sugar/sodium not confirmed for this flavor from available sources — left unset rather than guess.
+    nutrition: {
+      calories: 120,
+      proteinGrams: 24,
+      carbsGrams: 3,
+      fatGrams: 1.5,
+      servingSize: "1 scoop (33g)",
+    },
     offers: [
       { retailer: "Amazon", price: 96.28, url: amazonUrl("B000GIPJZ2"), asin: "B000GIPJZ2" }
     ]
@@ -227,7 +369,15 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-delicious-strawberry-2lb.png",
     servings: 29,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    nutrition: {
+      calories: 120,
+      proteinGrams: 24,
+      carbsGrams: 3,
+      fatGrams: 1,
+      sugarGrams: 1,
+      sodiumMilligrams: 140,
+      servingSize: "1 scoop (32g)",
+    },
     offers: [
       { retailer: "Amazon", price: 54.03, url: amazonUrl("B000GIURIQ"), asin: "B000GIURIQ" }
     ]
@@ -239,7 +389,15 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-delicious-strawberry-5lb.png",
     servings: 73,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    nutrition: {
+      calories: 120,
+      proteinGrams: 24,
+      carbsGrams: 3,
+      fatGrams: 1,
+      sugarGrams: 1,
+      sodiumMilligrams: 140,
+      servingSize: "1 scoop (32g)",
+    },
     offers: [
       { retailer: "Amazon", price: 96.28, url: amazonUrl("B000QSRO1Y"), asin: "B000QSRO1Y" }
     ]
@@ -251,7 +409,15 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-french-vanilla-creme-2lb.png",
     servings: 29,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    // Calories corrected to 110 (was 120) per label lookup; sugar and exact scoop weight not confirmed.
+    nutrition: {
+      calories: 110,
+      proteinGrams: 24,
+      carbsGrams: 2,
+      fatGrams: 1,
+      sodiumMilligrams: 130,
+      servingSize: "1 scoop",
+    },
     offers: [
       { retailer: "Amazon", price: 45.32, url: amazonUrl("B002DYIZHQ"), asin: "B002DYIZHQ", inStock: false }
     ]
@@ -263,7 +429,15 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-french-vanilla-creme-5lb.png",
     servings: 73,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    // Calories corrected to 110 (was 120) per label lookup; sugar and exact scoop weight not confirmed.
+    nutrition: {
+      calories: 110,
+      proteinGrams: 24,
+      carbsGrams: 2,
+      fatGrams: 1,
+      sodiumMilligrams: 130,
+      servingSize: "1 scoop",
+    },
     offers: [
       { retailer: "Amazon", price: 97.32, url: amazonUrl("B000QSO3FO"), asin: "B000QSO3FO" }
     ]
@@ -275,7 +449,14 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-chocolate-peanut-butter-2lb.png",
     servings: 27,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    // Calories corrected to 130 (was 120) per label lookup; sugar/sodium not confirmed.
+    nutrition: {
+      calories: 130,
+      proteinGrams: 24,
+      carbsGrams: 4,
+      fatGrams: 2,
+      servingSize: "1 scoop (33g)",
+    },
     offers: [
       { retailer: "Amazon", price: 42.49, url: amazonUrl("B006E54GJG"), asin: "B006E54GJG" }
     ]
@@ -287,7 +468,14 @@ export const products = [
     category: "protein",
     image: "/products/optimum-nutrition-chocolate-peanut-butter-5lb.png",
     servings: 68,
-    nutrition: { calories: 120, proteinGrams: 24 },
+    // Calories corrected to 130 (was 120) per label lookup; sugar/sodium not confirmed.
+    nutrition: {
+      calories: 130,
+      proteinGrams: 24,
+      carbsGrams: 4,
+      fatGrams: 2,
+      servingSize: "1 scoop (33g)",
+    },
     offers: [
       { retailer: "Amazon", price: 99.99, url: amazonUrl("B07DJL1PJT"), asin: "B07DJL1PJT" }
     ]
@@ -299,7 +487,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-unflavored.jpg",
     servings: 100,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 21.50, url: amazonUrl("B00GL2HMES"), asin: "B00GL2HMES" }
     ]
@@ -311,7 +508,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-fruit-punch.jpg",
     servings: 76,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 23.25, url: amazonUrl("B01M3SO70X"), asin: "B01M3SO70X" }
     ]
@@ -323,7 +529,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-blue-raspberry.jpg",
     servings: 76,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 23.95, url: amazonUrl("B01MA6LPQR"), asin: "B01MA6LPQR" }
     ]
@@ -335,7 +550,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-watermelon.jpg",
     servings: 77,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 23.95, url: amazonUrl("B0CDJ2XTQB"), asin: "B0CDJ2XTQB" }
     ]
@@ -347,7 +571,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-pineapple-mango.jpg",
     servings: 77,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 23.95, url: amazonUrl("B0CDFDDRCF"), asin: "B0CDFDDRCF" }
     ]
@@ -359,7 +592,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-shaqs-berry-blast.jpg",
     servings: 74,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 23.95, url: amazonUrl("B0FWDBG1QC"), asin: "B0FWDBG1QC" }
     ]
@@ -371,7 +613,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-unflavored.jpg",
     servings: 200,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 38.95, url: amazonUrl("B01EVVQX9U"), asin: "B01EVVQX9U" }
     ]
@@ -383,7 +634,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-fruit-punch.jpg",
     servings: 152,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 47.90, url: amazonUrl("B0GGVW3BK2"), asin: "B0GGVW3BK2" }
     ]
@@ -395,7 +655,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-blue-raspberry.jpg",
     servings: 152,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 45.50, url: amazonUrl("B0GGVC2PHT"), asin: "B0GGVC2PHT" }
     ]
@@ -407,7 +676,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-watermelon.jpg",
     servings: 154,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 45.50, url: amazonUrl("B0GGVNVV4K"), asin: "B0GGVNVV4K" }
     ]
@@ -419,7 +697,16 @@ export const products = [
     category: "creatine",
     image: "/products/nutricost-creatine-pineapple-mango.jpg",
     servings: 154,
-    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, servingSize: "5g" },
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "5g",
+    },
     offers: [
       { retailer: "Amazon", price: 47.90, url: amazonUrl("B0GGVXMBS7"), asin: "B0GGVXMBS7" }
     ]
@@ -431,7 +718,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/ghost-legend-blue-raspberry.jpg",
     servings: 30,
-    nutrition: { calories: 10, proteinGrams: 0 },
+    // Calories corrected to 5 (was 10) per label lookup; sodium not confirmed.
+    nutrition: {
+      calories: 5,
+      proteinGrams: 0,
+      carbsGrams: 1,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 scoop (13g)",
+    },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0D9NFTNQL"), asin: "B0D9NFTNQL" }
     ]
@@ -443,7 +738,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/ghost-legend-sonic-cherry-limeade.jpg",
     servings: 30,
-    nutrition: { calories: 10, proteinGrams: 0 },
+    // Calories corrected to 5 (was 10) per label lookup; sodium not confirmed.
+    nutrition: {
+      calories: 5,
+      proteinGrams: 0,
+      carbsGrams: 1,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 scoop (13g)",
+    },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0D9NKPH6Q"), asin: "B0D9NKPH6Q" }
     ]
@@ -455,7 +758,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/ghost-legend-welchs-grape.jpg",
     servings: 30,
-    nutrition: { calories: 10, proteinGrams: 0 },
+    // Calories corrected to 5 (was 10) per label lookup; sodium not confirmed.
+    nutrition: {
+      calories: 5,
+      proteinGrams: 0,
+      carbsGrams: 1,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 scoop (13g)",
+    },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0CS7KYSYZ"), asin: "B0CS7KYSYZ" }
     ]
@@ -467,7 +778,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/ghost-legend-warheads-sour-watermelon.jpg",
     servings: 30,
-    nutrition: { calories: 10, proteinGrams: 0 },
+    // Calories corrected to 5 (was 10) per label lookup; sodium not confirmed.
+    nutrition: {
+      calories: 5,
+      proteinGrams: 0,
+      carbsGrams: 1,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 scoop (13g)",
+    },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0D9NLF8Z3"), asin: "B0D9NLF8Z3" }
     ]
@@ -479,7 +798,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/ghost-legend-orange-cream.jpg",
     servings: 30,
-    nutrition: { calories: 10, proteinGrams: 0 },
+    // Calories corrected to 5 (was 10) per label lookup; sodium not confirmed.
+    nutrition: {
+      calories: 5,
+      proteinGrams: 0,
+      carbsGrams: 1,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 scoop (13g)",
+    },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0D9NKCBFR"), asin: "B0D9NKCBFR" }
     ]
@@ -491,7 +818,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/ghost-legend-sour-strips-rainbow.jpg",
     servings: 30,
-    nutrition: { calories: 10, proteinGrams: 0 },
+    // Calories corrected to 5 (was 10) per label lookup; sodium not confirmed.
+    nutrition: {
+      calories: 5,
+      proteinGrams: 0,
+      carbsGrams: 1,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 scoop (13g)",
+    },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0FPPP1SGH"), asin: "B0FPPP1SGH" }
     ]
@@ -503,7 +838,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/ghost-legend-bubblicious-strawberry-splash.jpg",
     servings: 30,
-    nutrition: { calories: 10, proteinGrams: 0 },
+    // Calories corrected to 5 (was 10) per label lookup; sodium not confirmed.
+    nutrition: {
+      calories: 5,
+      proteinGrams: 0,
+      carbsGrams: 1,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 scoop (13g)",
+    },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0FB1TLP3P"), asin: "B0FB1TLP3P" }
     ]
@@ -515,7 +858,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/ghost-legend-sonic-ocean-water.jpg",
     servings: 30,
-    nutrition: { calories: 10, proteinGrams: 0 },
+    // Calories corrected to 5 (was 10) per label lookup; sodium not confirmed.
+    nutrition: {
+      calories: 5,
+      proteinGrams: 0,
+      carbsGrams: 1,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 scoop (13g)",
+    },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0FB1XGNB9"), asin: "B0FB1XGNB9" }
     ]
@@ -527,7 +878,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/liquidiv-lemon-lime.jpg",
     servings: 16,
-    nutrition: { calories: 45, proteinGrams: 0 },
+    nutrition: {
+      calories: 45,
+      proteinGrams: 0,
+      carbsGrams: 11,
+      fatGrams: 0,
+      sugarGrams: 11,
+      sodiumMilligrams: 500,
+      servingSize: "1 stick pack (16g)",
+    },
     offers: [
       { retailer: "Amazon", price: 23.28, url: amazonUrl("B01IT9NLHW"), asin: "B01IT9NLHW" }
     ]
@@ -539,7 +898,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/liquidiv-passion-fruit.jpg",
     servings: 16,
-    nutrition: { calories: 45, proteinGrams: 0 },
+    nutrition: {
+      calories: 45,
+      proteinGrams: 0,
+      carbsGrams: 11,
+      fatGrams: 0,
+      sugarGrams: 11,
+      sodiumMilligrams: 500,
+      servingSize: "1 stick pack (16g)",
+    },
     offers: [
       { retailer: "Amazon", price: 23.30, url: amazonUrl("B07HCNM7KQ"), asin: "B07HCNM7KQ" }
     ]
@@ -551,7 +918,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/liquidiv-watermelon.jpg",
     servings: 16,
-    nutrition: { calories: 45, proteinGrams: 0 },
+    nutrition: {
+      calories: 45,
+      proteinGrams: 0,
+      carbsGrams: 11,
+      fatGrams: 0,
+      sugarGrams: 11,
+      sodiumMilligrams: 500,
+      servingSize: "1 stick pack (16g)",
+    },
     offers: [
       { retailer: "Amazon", price: 24.17, url: amazonUrl("B08ZYNSZZT"), asin: "B08ZYNSZZT" }
     ]
@@ -563,7 +938,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/liquidiv-strawberry-lemonade.jpg",
     servings: 16,
-    nutrition: { calories: 45, proteinGrams: 0 },
+    nutrition: {
+      calories: 45,
+      proteinGrams: 0,
+      carbsGrams: 11,
+      fatGrams: 0,
+      sugarGrams: 11,
+      sodiumMilligrams: 500,
+      servingSize: "1 stick pack (16g)",
+    },
     offers: [
       { retailer: "Amazon", price: 23.27, url: amazonUrl("B0BQ51S5BL"), asin: "B0BQ51S5BL" }
     ]
@@ -575,7 +958,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/liquidiv-tropical-punch.jpg",
     servings: 16,
-    nutrition: { calories: 45, proteinGrams: 0 },
+    nutrition: {
+      calories: 45,
+      proteinGrams: 0,
+      carbsGrams: 11,
+      fatGrams: 0,
+      sugarGrams: 11,
+      sodiumMilligrams: 500,
+      servingSize: "1 stick pack (16g)",
+    },
     offers: [
       { retailer: "Amazon", price: 22.68, url: amazonUrl("B0B177N8VP"), asin: "B0B177N8VP" }
     ]
@@ -587,7 +978,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/liquidiv-concord-grape.jpg",
     servings: 16,
-    nutrition: { calories: 45, proteinGrams: 0 },
+    nutrition: {
+      calories: 45,
+      proteinGrams: 0,
+      carbsGrams: 11,
+      fatGrams: 0,
+      sugarGrams: 11,
+      sodiumMilligrams: 500,
+      servingSize: "1 stick pack (16g)",
+    },
     offers: [
       { retailer: "Amazon", price: 24.00, url: amazonUrl("B09VCS1YM1"), asin: "B09VCS1YM1" }
     ]
@@ -599,7 +998,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/liquidiv-firecracker.jpg",
     servings: 16,
-    nutrition: { calories: 45, proteinGrams: 0 },
+    nutrition: {
+      calories: 45,
+      proteinGrams: 0,
+      carbsGrams: 11,
+      fatGrams: 0,
+      sugarGrams: 11,
+      sodiumMilligrams: 500,
+      servingSize: "1 stick pack (16g)",
+    },
     offers: [
       { retailer: "Amazon", price: 23.28, url: amazonUrl("B0CHN5D13P"), asin: "B0CHN5D13P" }
     ]
@@ -611,7 +1018,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/liquidiv-golden-cherry.jpg",
     servings: 16,
-    nutrition: { calories: 45, proteinGrams: 0 },
+    nutrition: {
+      calories: 45,
+      proteinGrams: 0,
+      carbsGrams: 11,
+      fatGrams: 0,
+      sugarGrams: 11,
+      sodiumMilligrams: 500,
+      servingSize: "1 stick pack (16g)",
+    },
     offers: [
       { retailer: "Amazon", price: 23.46, url: amazonUrl("B0B1LN467K"), asin: "B0B1LN467K" }
     ]
@@ -623,7 +1038,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/liquidiv-arctic-raspberry.jpg",
     servings: 16,
-    nutrition: { calories: 45, proteinGrams: 0 },
+    nutrition: {
+      calories: 45,
+      proteinGrams: 0,
+      carbsGrams: 11,
+      fatGrams: 0,
+      sugarGrams: 11,
+      sodiumMilligrams: 500,
+      servingSize: "1 stick pack (16g)",
+    },
     offers: [
       { retailer: "Amazon", price: 23.96, url: amazonUrl("B0DNNMR2CD"), asin: "B0DNNMR2CD" }
     ]
@@ -635,7 +1058,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/prosupps-mr-hyde-signature-blue-razz-30srv.jpg",
     servings: 30,
-    nutrition: { proteinGrams: 0 },
+    // Sodium reused from the 12-stick-pack SKU (same flavor/formula) — not independently confirmed for this size.
+    nutrition: {
+      proteinGrams: 0,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 75,
+      servingSize: "1 scoop (12.6g)",
+    },
     offers: [
       { retailer: "Amazon", price: 15, url: amazonUrl("B07HNFF75B"), asin: "B07HNFF75B" }
     ]
@@ -647,7 +1078,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/prosupps-mr-hyde-signature-blue-razz-12pack.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 0, sodiumMilligrams: 75, creatineGrams: 2.5 },
+    nutrition: {
+      proteinGrams: 0,
+      sodiumMilligrams: 75,
+      creatineGrams: 2.5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 stick pack",
+    },
     offers: [
       { retailer: "Amazon", price: 17, url: amazonUrl("B0F4M38KVX"), asin: "B0F4M38KVX" }
     ]
@@ -659,7 +1098,15 @@ export const products = [
     category: "pre-workout",
     image: "/products/prosupps-mr-hyde-signature-blue-razz-60srv.jpg",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    // Sodium reused from the 12-stick-pack SKU (same flavor/formula) — not independently confirmed for this size.
+    nutrition: {
+      proteinGrams: 0,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 75,
+      servingSize: "1 scoop (12.6g)",
+    },
     offers: [
       { retailer: "Amazon", price: 38, url: amazonUrl("B07X375B4M"), asin: "B07X375B4M" }
     ]
@@ -768,7 +1215,15 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/sports-research-mct-oil-120-softgels.png",
     servings: 120,
-    nutrition: { proteinGrams: 0 },
+    // Calories/fat derived from MCT oil's known energy density (~9 kcal/g fat), not a directly sourced label figure.
+    nutrition: {
+      proteinGrams: 0,
+      calories: 9,
+      fatGrams: 1,
+      carbsGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 softgel (1000mg)",
+    },
     offers: [
       { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129959949573030687149&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fmct-oil-120-softgels%3fvariant%3d42500072505544" }
     ]
@@ -780,7 +1235,14 @@ export const products = [
     category: "protein",
     image: "/products/sports-research-whey-protein-isolate.png",
     servings: 30,
-    nutrition: { proteinGrams: 25 },
+    // Sodium not confirmed.
+    nutrition: {
+      proteinGrams: 25,
+      calories: 150,
+      carbsGrams: 4,
+      fatGrams: 4,
+      sugarGrams: 1,
+    },
     offers: [
       { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate" }
     ]
@@ -793,7 +1255,13 @@ export const products = [
     additionalCategories: ["bariatric"],
     image: "/products/sports-research-organic-collagen.png",
     servings: 30,
-    nutrition: { proteinGrams: 9 },
+    nutrition: {
+      proteinGrams: 9,
+      calories: 40,
+      carbsGrams: 0,
+      fatGrams: 0,
+      servingSize: "1 scoop (11g)",
+    },
     offers: [
       { retailer: "Sports Research", price: 35.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-collagen" }
     ]
@@ -806,7 +1274,14 @@ export const products = [
     additionalCategories: ["bariatric"],
     image: "/products/sports-research-collagen-peptides-naturally-flavored.png",
     servings: 30,
-    nutrition: { proteinGrams: 11 },
+    // Sugar/sodium not confirmed.
+    nutrition: {
+      proteinGrams: 11,
+      calories: 50,
+      carbsGrams: 2,
+      fatGrams: 0.5,
+      servingSize: "1 scoop (15.7g)",
+    },
     offers: [
       { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-naturally-flavored" }
     ]
@@ -832,7 +1307,7 @@ export const products = [
     additionalCategories: ["multivitamin", "bariatric"],
     image: "/products/sports-research-iron-liposomal-vitamin-c.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Firon-liposomal-vitamin-c" }
     ]
@@ -845,7 +1320,15 @@ export const products = [
     additionalCategories: ["bariatric"],
     image: "/products/sports-research-organic-fiber.png",
     servings: 30,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: {
+      proteinGrams: 0,
+      calories: 20,
+      carbsGrams: 7,
+      fatGrams: 0,
+      sugarGrams: 1,
+      servingSize: "1 scoop (8g)",
+    },
     offers: [
       { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-fiber" }
     ]
@@ -857,7 +1340,7 @@ export const products = [
     category: "gut-health",
     image: "/products/sports-research-womens-probiotics.png",
     servings: 30,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics" }
     ]
@@ -870,7 +1353,15 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/sports-research-keto-c8-mct-oil.png",
     servings: 32,
-    nutrition: { proteinGrams: 0 },
+    // Calories/fat are category-typical values for liquid MCT oil (1 tbsp = ~14g pure fat), not a directly sourced label figure.
+    nutrition: {
+      proteinGrams: 0,
+      calories: 130,
+      fatGrams: 14,
+      carbsGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 tbsp (15mL)",
+    },
     offers: [
       { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fketo-c8-mct-oil" }
     ]
@@ -883,7 +1374,7 @@ export const products = [
     additionalCategories: ["gut-health", "multivitamin"],
     image: "/products/sports-research-magnesium-oxide.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 18.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide" }
     ]
@@ -896,7 +1387,7 @@ export const products = [
     additionalCategories: ["multivitamin"],
     image: "/products/sports-research-mag-lt-with-magtein-magnesium-l-threonate.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmag-lt-with-magtein-magnesium-l-threonate" }
     ]
@@ -908,7 +1399,14 @@ export const products = [
     category: "creatine",
     image: "/products/sports-research-flavored-creatine-monohydrate.png",
     servings: 25,
-    nutrition: { proteinGrams: 0, creatineGrams: 5 },
+    nutrition: {
+      proteinGrams: 0,
+      creatineGrams: 5,
+      calories: 0,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+    },
     offers: [
       { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate" }
     ]
@@ -920,7 +1418,7 @@ export const products = [
     category: "creatine",
     image: "/products/sports-research-creatine-monohydrate-veggie-capsules.png",
     servings: 120,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcreatine-monohydrate-veggie-capsules" }
     ]
@@ -932,7 +1430,15 @@ export const products = [
     category: "electrolytes",
     image: "/products/sports-research-hydrate-electrolytes-packets.png",
     servings: 16,
-    nutrition: { proteinGrams: 0, sodiumMilligrams: 400 },
+    nutrition: {
+      proteinGrams: 0,
+      sodiumMilligrams: 400,
+      calories: 5,
+      carbsGrams: 1,
+      fatGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 packet (5g)",
+    },
     offers: [
       { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets" }
     ]
@@ -944,7 +1450,7 @@ export const products = [
     category: "gut-health",
     image: "/products/sports-research-digestive-enzymes.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes" }
     ]
@@ -956,7 +1462,7 @@ export const products = [
     category: "gut-health",
     image: "/products/sports-research-daily-probiotics.png",
     servings: 30,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics" }
     ]
@@ -969,7 +1475,7 @@ export const products = [
     additionalCategories: ["gut-health"],
     image: "/products/sports-research-sleep-complex-with-melatonin.png",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 27.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsleep-complex-with-melatonin" }
     ]
@@ -981,7 +1487,7 @@ export const products = [
     category: "pre-workout",
     image: "/products/sports-research-l-theanine-and-caffeine.png",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine" }
     ]
@@ -993,7 +1499,7 @@ export const products = [
     category: "weight-management",
     image: "/products/sports-research-garcinia-cambogia-65-500mg.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 17.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fgarcinia-cambogia-65-500mg" }
     ]
@@ -1006,7 +1512,7 @@ export const products = [
     additionalCategories: ["gut-health"],
     image: "/products/sports-research-magnesium-glycinate.png",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate" }
     ]
@@ -1019,7 +1525,7 @@ export const products = [
     additionalCategories: ["gut-health"],
     image: "/products/sports-research-triple-magnesium-complex.png",
     servings: 120,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Ftriple-magnesium-complex" }
     ]
@@ -1031,7 +1537,7 @@ export const products = [
     category: "other",
     image: "/products/sports-research-organic-ashwagandha.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 32.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha" }
     ]
@@ -1043,7 +1549,7 @@ export const products = [
     category: "other",
     image: "/products/sports-research-vitamin-d3-k2.png",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
       { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2" }
     ]
@@ -1105,7 +1611,8 @@ export const products = [
     additionalCategories: ["gut-health"],
     image: "/products/benefiber-prebiotic-fiber-unflavored.jpg",
     servings: 250,
-    nutrition: { proteinGrams: 0 },
+    // Calories/carbs per single-teaspoon serving weren't confirmed (sources conflict); fat/sugar are 0 across the whole Benefiber line.
+    nutrition: { proteinGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 26.99, url: amazonUrl("B00CX3ASFE"), asin: "B00CX3ASFE" }
@@ -1119,7 +1626,8 @@ export const products = [
     additionalCategories: ["weight-management", "bariatric"],
     image: "/products/vital-proteins-collagen-peptides-unflavored.jpg",
     servings: 13,
-    nutrition: { proteinGrams: 20 },
+    // Calories derived from protein content (collagen peptides are ~100% protein, no carbs/fat, consistent across the category).
+    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 18.65, url: amazonUrl("B09RQBHRCT"), asin: "B09RQBHRCT" }
@@ -1132,7 +1640,8 @@ export const products = [
     category: "protein",
     image: "/products/vital-proteins-collagen-peptides-advanced-unflavored.jpg",
     servings: 27,
-    nutrition: { proteinGrams: 20 },
+    // Calories derived from protein content (collagen peptides are ~100% protein, no carbs/fat, consistent across the category).
+    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 42.99, url: amazonUrl("B00K6JUG4K"), asin: "B00K6JUG4K" }
@@ -1146,7 +1655,8 @@ export const products = [
     additionalCategories: ["multivitamin"],
     image: "/products/bariatricpal-multivitamin-one-mixed-berry.jpg",
     servings: 30,
-    nutrition: { proteinGrams: 0 },
+    // Carbs derived from "100% carbs" calorie breakdown at 15 cal/tablet; sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 16.99, url: amazonUrl("B07RVK8FXW"), asin: "B07RVK8FXW" }
     ]
@@ -1159,7 +1669,8 @@ export const products = [
     additionalCategories: ["multivitamin"],
     image: "/products/bariatricpal-multivitamin-one-orange-citrus.jpg",
     servings: 30,
-    nutrition: { proteinGrams: 0 },
+    // Carbs derived from "100% carbs" calorie breakdown at 15 cal/tablet; sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 16.99, url: amazonUrl("B08VZ5V1FV"), asin: "B08VZ5V1FV" }
     ]
@@ -1171,7 +1682,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-tropical-punch.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B0D54PQPJQ"), asin: "B0D54PQPJQ" }
     ]
@@ -1183,7 +1695,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-belgian-chocolate-caramel.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B08J1D53VM"), asin: "B08J1D53VM" }
     ]
@@ -1195,7 +1708,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-butterscotch.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B0D54MNCH2"), asin: "B0D54MNCH2" }
     ]
@@ -1207,7 +1721,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-caramel-apple.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B09KG9ZJT6"), asin: "B09KG9ZJT6" }
     ]
@@ -1219,7 +1734,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-chocolate-mint.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B0985RY58P"), asin: "B0985RY58P" }
     ]
@@ -1231,7 +1747,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-french-caramel-vanilla.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B07ZDF528Q"), asin: "B07ZDF528Q" }
     ]
@@ -1243,7 +1760,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-pina-colada.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B09KGCMS3M"), asin: "B09KGCMS3M" }
     ]
@@ -1255,7 +1773,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-strawberry-twist.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B089MFTWF3"), asin: "B089MFTWF3" }
     ]
@@ -1267,7 +1786,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-blue-raspberry.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B0BRTG147X"), asin: "B0BRTG147X" }
     ]
@@ -1279,7 +1799,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-orange-creamsicle.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B0985QG3SH"), asin: "B0985QG3SH" }
     ]
@@ -1291,7 +1812,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatricpal-calcium-citrate-chews-wild-grape.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B08HJRVBNY"), asin: "B08HJRVBNY" }
     ]
@@ -1303,7 +1825,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-fusion-calcium-citrate-chews-caramel.jpg",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 26.99, url: amazonUrl("B07FTNZBZQ"), asin: "B07FTNZBZQ" }
     ]
@@ -1315,7 +1837,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-fusion-calcium-citrate-chews-cranberry-grape.jpg",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 26.99, url: amazonUrl("B0817NBQKK"), asin: "B0817NBQKK" }
     ]
@@ -1327,7 +1849,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-fusion-calcium-citrate-chews-fruit-punch.jpg",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 26.99, url: amazonUrl("B077THPMG6"), asin: "B077THPMG6" }
     ]
@@ -1339,7 +1861,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-fusion-calcium-citrate-chews-lemon.jpg",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 26.99, url: amazonUrl("B0D3FRR547"), asin: "B0D3FRR547" }
     ]
@@ -1351,7 +1873,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-fusion-calcium-citrate-chews-strawberry.jpg",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 26.99, url: amazonUrl("B08HG1Y3YB"), asin: "B08HG1Y3YB" }
     ]
@@ -1363,7 +1885,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-fusion-calcium-citrate-chews-vanilla.jpg",
     servings: 60,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 26.99, url: amazonUrl("B089LRCF2K"), asin: "B089LRCF2K" }
     ]
@@ -1375,7 +1897,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-advantage-calcium-citrate-chewy-bite-caramel.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Category-typical values for calcium citrate soft chews (not independently confirmed for this brand).
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["jannette"],
     offers: [
       { retailer: "Amazon", price: 39.40, url: amazonUrl("B00O5O6VCS"), asin: "B00O5O6VCS" }
@@ -1388,7 +1911,15 @@ export const products = [
     category: "protein",
     image: "/products/dymatize-elite-casein-chocolate.jpg",
     servings: 50,
-    nutrition: { proteinGrams: 25 },
+    // Sodium not confirmed.
+    nutrition: {
+      proteinGrams: 25,
+      calories: 130,
+      carbsGrams: 3,
+      fatGrams: 2,
+      sugarGrams: 0,
+      servingSize: "2 scoops (34g)",
+    },
     offers: [
       { retailer: "Amazon", price: 77.94, url: amazonUrl("B00JT8470S"), asin: "B00JT8470S" }
     ]
@@ -1400,7 +1931,15 @@ export const products = [
     category: "protein",
     image: "/products/dymatize-elite-casein-cookies-cream.jpg",
     servings: 53,
-    nutrition: { proteinGrams: 25 },
+    // Sodium not confirmed.
+    nutrition: {
+      proteinGrams: 25,
+      calories: 130,
+      carbsGrams: 2,
+      fatGrams: 1.5,
+      sugarGrams: 0,
+      servingSize: "2 scoops (34g)",
+    },
     offers: [
       { retailer: "Amazon", price: 69.98, url: amazonUrl("B007L4QMGO"), asin: "B007L4QMGO" }
     ]
@@ -1412,7 +1951,16 @@ export const products = [
     category: "protein",
     image: "/products/dymatize-elite-casein-vanilla.jpg",
     servings: 55,
-    nutrition: { proteinGrams: 25 },
+    // Carbs estimated from calorie math (120 - 100 from protein - 18 from fat ≈ 1g), not a direct label read.
+    nutrition: {
+      proteinGrams: 25,
+      calories: 120,
+      carbsGrams: 1,
+      fatGrams: 2,
+      sugarGrams: 0,
+      sodiumMilligrams: 180,
+      servingSize: "2 scoops (33g)",
+    },
     offers: [
       { retailer: "Amazon", price: 83.31, url: amazonUrl("B00JXP38MU"), asin: "B00JXP38MU" }
     ]
@@ -1424,7 +1972,7 @@ export const products = [
     category: "multivitamin",
     image: "/products/bari-life-just-one-multivitamin-90ct.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B07RNM5MZJ"), asin: "B07RNM5MZJ" }
@@ -1437,7 +1985,8 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-trix-cereal-milk.png",
     servings: 27,
-    nutrition: { proteinGrams: 25 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B0GPB1WR26"), asin: "B0GPB1WR26" }
@@ -1451,7 +2000,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/spylt-chocolate.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 39.99, url: amazonUrl("B0CS2L66H6"), asin: "B0CS2L66H6" }
@@ -1465,7 +2015,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/spylt-max-chocolate.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 39.99, url: amazonUrl("B0CS2D278X"), asin: "B0CS2D278X" }
@@ -1479,7 +2030,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/spylt-vanilla-milkshake.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 290, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 39.99, url: amazonUrl("B0CS24964G"), asin: "B0CS24964G" }
@@ -1493,7 +2044,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/spylt-cookies-cream.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 320, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 39.99, url: amazonUrl("B0DQVP36RZ"), asin: "B0DQVP36RZ" }
@@ -1507,7 +2058,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/spylt-strawberry.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 39.99, url: amazonUrl("B0CS27D1B9"), asin: "B0CS27D1B9" }
@@ -1521,7 +2073,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/spylt-peanut-butter-chocolate.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 290, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 39.99, url: amazonUrl("B0DQVMT2X3"), asin: "B0DQVMT2X3" }
@@ -1535,7 +2087,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-coconut.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 17 },
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B09M968ZCM"), asin: "B09M968ZCM" }
@@ -1549,7 +2101,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-brownie-batter.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 17 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 6, servingSize: "1 bar (40g)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 26.84, url: amazonUrl("B0BFPFBGGC"), asin: "B0BFPFBGGC" }
@@ -1563,7 +2116,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-cookies-n-cream.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 20 },
+    // Protein corrected to 17g (was 20g), matching this flavor's label; sodium not confirmed.
+    nutrition: { proteinGrams: 17, calories: 150, carbsGrams: 14, fatGrams: 3, sugarGrams: 7, servingSize: "1 bar (40g)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B0D7PS26VG"), asin: "B0D7PS26VG" }
@@ -1577,7 +2131,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-cookie-dough-chunk.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 15 },
+    // Fat derived from macro-percentage breakdown; sodium not confirmed.
+    nutrition: { proteinGrams: 15, calories: 160, carbsGrams: 19, fatGrams: 3, sugarGrams: 8, servingSize: "1 bar (44g)" },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B0B7P7QNK3"), asin: "B0B7P7QNK3" }
@@ -1591,7 +2146,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-salted-caramel.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 17 },
+    // Fat/sodium not confirmed.
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 14, sugarGrams: 6 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B0DGMFL2TV"), asin: "B0DGMFL2TV" }
@@ -1605,7 +2161,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-peanut-butter-cup.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 17 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 17, calories: 150, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 6 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B0FQCKYNJ3"), asin: "B0FQCKYNJ3" }
@@ -1619,7 +2176,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-strawberries-n-cream.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 15 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 15, calories: 140, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B0D1KD323N"), asin: "B0D1KD323N" }
@@ -1633,7 +2191,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-sour-puff-blue-razz-blast.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 16 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B0G1K55M9K"), asin: "B0G1K55M9K" }
@@ -1647,7 +2206,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-sour-puff-green-apple-crush.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 16 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B0G1K9MMSJ"), asin: "B0G1K9MMSJ" }
@@ -1661,7 +2221,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-sour-puff-sweet-peach-punch.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 16 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B0G1K8X36Z"), asin: "B0G1K8X36Z" }
@@ -1675,7 +2236,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-sour-puff-variety-pack.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 16 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B0G2K37XFK"), asin: "B0G2K37XFK" }
@@ -1688,7 +2250,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bari-life-bariburst-watermelon.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Category-typical values for calcium citrate soft chews (not independently confirmed for this brand).
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 38.99, url: amazonUrl("B07SV51NM6"), asin: "B07SV51NM6" }
@@ -1701,7 +2264,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bari-life-bariburst-sour-grape.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Category-typical values for calcium citrate soft chews (not independently confirmed for this brand).
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 37.99, url: amazonUrl("B0CHH417FR"), asin: "B0CHH417FR" }
@@ -1714,7 +2278,8 @@ export const products = [
     category: "bariatric",
     image: "/products/bari-life-bariburst-lemon-lime.png",
     servings: 90,
-    nutrition: { proteinGrams: 0 },
+    // Category-typical values for calcium citrate soft chews (not independently confirmed for this brand).
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 37.99, url: amazonUrl("B0DHYPHMRV"), asin: "B0DHYPHMRV" }
@@ -1727,7 +2292,7 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-cinnabon.png",
     servings: 67,
-    nutrition: { proteinGrams: 25 },
+    nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 190 },
     offers: [
       { retailer: "Amazon", price: 99.99, url: amazonUrl("B0D3JDN1QF"), asin: "B0D3JDN1QF" }
     ]
@@ -1739,7 +2304,8 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-coffee-ice-cream.png",
     servings: 27,
-    nutrition: { proteinGrams: 25 },
+    // Carbs/fat derived from macro-percentage breakdown; sodium not confirmed.
+    nutrition: { proteinGrams: 25, calories: 120, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, servingSize: "1 scoop (33g)" },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B07FQPCZ77"), asin: "B07FQPCZ77" }
     ]
@@ -1751,7 +2317,8 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-lucky-charms-cereal-milk.png",
     servings: 27,
-    nutrition: { proteinGrams: 25 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 3 },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B0GPB91TRB"), asin: "B0GPB91TRB" }
     ]
@@ -1763,7 +2330,8 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-milk-chocolate.png",
     servings: 27,
-    nutrition: { proteinGrams: 25 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 2, servingSize: "1 scoop (35g)" },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B01MQQ4RFA"), asin: "B01MQQ4RFA" }
     ]
@@ -1775,7 +2343,8 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-peanut-butter-cereal-milk.png",
     servings: 26,
-    nutrition: { proteinGrams: 26 },
+    // Carbs/fat derived from macro-percentage breakdown; sugar/sodium not confirmed.
+    nutrition: { proteinGrams: 26, calories: 140, carbsGrams: 4, fatGrams: 1.5, servingSize: "1 scoop (35.5g)" },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B07FLJYP5M"), asin: "B07FLJYP5M" }
     ]
@@ -1787,7 +2356,8 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-cereal-milk.png",
     servings: 27,
-    nutrition: { proteinGrams: 25 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 2 },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B01N9BO3SE"), asin: "B01N9BO3SE" }
     ]
@@ -1799,7 +2369,7 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-count-chocula.png",
     servings: 27,
-    nutrition: { proteinGrams: 25 },
+    nutrition: { proteinGrams: 25, calories: 140, carbsGrams: 6, fatGrams: 1, sugarGrams: 3, sodiumMilligrams: 210, servingSize: "1 scoop (37g)" },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B0FQM88VDM"), asin: "B0FQM88VDM" }
     ]
@@ -1812,7 +2382,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-minions-monsters.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 16 },
+    // Limited-edition variety pack — category-typical Puff bar values, not independently confirmed.
+    nutrition: { proteinGrams: 16, calories: 140, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 7 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 26.84, url: amazonUrl("B0H47VP41X"), asin: "B0H47VP41X" }
@@ -1826,7 +2397,8 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-churro.jpg",
     servings: 12,
-    nutrition: { proteinGrams: 17 },
+    // Sodium not confirmed.
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 7 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 29.99, url: amazonUrl("B09M95V187"), asin: "B09M95V187" }
@@ -1839,7 +2411,7 @@ export const products = [
     category: "other",
     image: "/products/pin-up-girl-magnesium-glycinate.png",
     servings: 30,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 17.95, url: amazonUrl("B0GNP37Q1C"), asin: "B0GNP37Q1C" }
