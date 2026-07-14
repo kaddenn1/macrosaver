@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Playfair_Display, Alex_Brush } from "next/font/google";
 
 const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600", "700", "900"], style: ["normal", "italic"] });
@@ -101,8 +102,6 @@ const TRUST_POINTS = [
 function Icon({ name, className = "w-5 h-5" }: { name: string; className?: string }) {
   const common = { fill: "none", stroke: "currentColor", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const, viewBox: "0 0 24 24" };
   switch (name) {
-    case "leaf":
-      return <svg className={className} {...common}><path d="M5 21c8-2 14-8 14-16-8 0-14 6-14 14v2z" /><path d="M5 21c2-4 5-8 10-11" /></svg>;
     case "search":
       return <svg className={className} {...common}><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" /></svg>;
     case "user":
@@ -180,19 +179,15 @@ export default function CassiePage() {
       {/* Header */}
       <header className="w-full bg-black border-b border-white/10">
         <div className="max-w-[1500px] mx-auto px-6 lg:px-10 h-20 flex items-center justify-between gap-6">
-          <div className="flex items-center gap-3 shrink-0">
-            <div className="w-10 h-10 rounded-full bg-pink-500/10 flex items-center justify-center text-pink-400">
-              <Icon name="leaf" className="w-6 h-6" />
-            </div>
-            <div className="flex flex-col leading-none">
-              <span className={`${playfair.className} text-2xl font-black tracking-tight`}>
-                <span className="text-pink-400">DERM</span>
-                <span className="text-white">-DEALS</span>
-              </span>
-              <span className="text-[9px] font-bold tracking-widest text-pink-300/70 uppercase mt-1 flex items-center gap-1">
-                Skincare Savings You&apos;ll Love <Icon name="heart" className="w-2.5 h-2.5" />
-              </span>
-            </div>
+          <div className="flex items-center shrink-0">
+            <Image
+              src="/cassie/derm-deals-logo.png"
+              alt="Derm-Deals — Skincare Savings You'll Love"
+              width={965}
+              height={187}
+              priority
+              className="h-10 w-auto"
+            />
           </div>
 
           <nav className="hidden lg:flex items-center gap-7 text-[13px] font-bold tracking-wide text-neutral-300 whitespace-nowrap">
@@ -256,32 +251,13 @@ export default function CassiePage() {
           </div>
 
           <div className="relative">
-            <p
-              className={`${script.className} text-pink-400 text-5xl sm:text-6xl mb-1 flex items-center gap-2`}
-              style={{ textShadow: "0 0 8px rgba(244,114,182,0.9), 0 0 22px rgba(244,114,182,0.6), 0 0 44px rgba(219,39,119,0.4)" }}
-            >
-              by Cassie{" "}
-              <Icon name="heart" className="w-7 h-7 drop-shadow-[0_0_10px_rgba(244,114,182,0.9)]" />
-            </p>
-            <svg
-              viewBox="0 0 300 20"
-              className="w-48 sm:w-56 h-4 mb-5 drop-shadow-[0_0_6px_rgba(244,114,182,0.8)]"
-              fill="none"
-            >
-              <path d="M5 5 Q150 20 295 3" stroke="#f472b6" strokeWidth="2" strokeLinecap="round" />
-            </svg>
-            <blockquote
-              className={`${script.className} text-white text-2xl sm:text-3xl leading-tight mb-3 max-w-sm`}
-              style={{ textShadow: "0 0 6px rgba(255,255,255,0.85), 0 0 16px rgba(255,255,255,0.5), 0 0 32px rgba(255,255,255,0.3)" }}
-            >
-              &ldquo;I&apos;m passionate about skincare and finding the best deals for you!&rdquo;
-            </blockquote>
-            <p
-              className={`${script.className} text-white text-2xl sm:text-3xl text-right max-w-sm mb-6`}
-              style={{ textShadow: "0 0 6px rgba(255,255,255,0.85), 0 0 16px rgba(255,255,255,0.5)" }}
-            >
-              Xo, Cassie ♡
-            </p>
+            <Image
+              src="/cassie/cassie-quote.png"
+              alt="by Cassie — I'm passionate about skincare and finding the best deals for you! Xo, Cassie"
+              width={998}
+              height={879}
+              className="w-full max-w-sm mb-6"
+            />
 
             <div className="relative rounded-3xl bg-gradient-to-br from-pink-100/10 via-pink-300/10 to-rose-400/10 border border-pink-400/20 p-8">
               <div className="grid grid-cols-4 gap-3">
