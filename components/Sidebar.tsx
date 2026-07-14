@@ -90,6 +90,7 @@ function SidebarInner() {
           <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Price Per Serving</div>
           <input
             type="range"
+            aria-label="Maximum price per serving"
             min={minCost}
             max={maxCost}
             step={0.01}
@@ -119,7 +120,7 @@ function SidebarInner() {
                     {isChecked('protein', String(threshold)) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
                   </div>
                   <span className={`text-xs ${isChecked('protein', String(threshold)) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{threshold}g+</span>
-                  <span className="text-[9px] text-gray-600 ml-auto">({proteinCounts[idx]})</span>
+                  <span className="text-[9px] text-gray-500 ml-auto">({proteinCounts[idx]})</span>
                 </div>
               ))}
             </div>
@@ -138,7 +139,7 @@ function SidebarInner() {
                 {isChecked('type', 'clear') && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
               </div>
               <span className={`text-xs ${isChecked('type', 'clear') ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>Clear Protein</span>
-              <span className="text-[9px] text-gray-600 ml-auto">({clearProteinCount})</span>
+              <span className="text-[9px] text-gray-500 ml-auto">({clearProteinCount})</span>
             </div>
           </div>
         )}
@@ -158,7 +159,7 @@ function SidebarInner() {
                     {isChecked('flavor', flavor) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
                   </div>
                   <span className={`text-xs ${isChecked('flavor', flavor) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{flavor}</span>
-                  <span className="text-[9px] text-gray-600 ml-auto">({flavorCounts.get(flavor)})</span>
+                  <span className="text-[9px] text-gray-500 ml-auto">({flavorCounts.get(flavor)})</span>
                 </div>
               ))}
             </div>

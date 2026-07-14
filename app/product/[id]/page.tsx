@@ -409,7 +409,7 @@ export default async function ProductPage({
                           className="object-contain h-full w-auto"
                         />
                       ) : (
-                        <span className="text-[10px] text-gray-600 uppercase">No Image</span>
+                        <span className="text-[10px] text-gray-500 uppercase">No Image</span>
                       )}
                     </div>
                     <div className="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-0.5">

@@ -30,7 +30,7 @@ export default function CompareTray() {
                 {p.image ? (
                   <Image src={p.image} alt={p.name} fill className="object-contain p-1" sizes="48px" />
                 ) : (
-                  <span className="text-[7px] text-gray-600 uppercase text-center px-1 leading-tight">
+                  <span className="text-[7px] text-gray-500 uppercase text-center px-1 leading-tight">
                     {p.brand}
                   </span>
                 )}

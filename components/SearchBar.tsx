@@ -32,6 +32,7 @@ function SearchBarInner() {
     <div className="relative w-full sm:w-[300px]">
       <input
         type="text"
+        aria-label="Search brands or products"
         placeholder="Search brands or products..."
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}

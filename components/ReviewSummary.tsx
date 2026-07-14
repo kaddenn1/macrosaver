@@ -4,7 +4,7 @@ function Stars({ rating }: { rating: number }) {
   return (
     <span className="text-[#a3e635] text-lg leading-none">
       {"★".repeat(Math.round(rating))}
-      <span className="text-gray-700">{"★".repeat(5 - Math.round(rating))}</span>
+      <span className="text-gray-500">{"★".repeat(5 - Math.round(rating))}</span>
     </span>
   );
 }

@@ -21,6 +21,7 @@ function SortDropdownInner() {
 
   return (
     <select
+      aria-label="Sort products by"
       value={currentSort}
       onChange={handleSort}
       className="w-full sm:w-auto bg-[#111] border border-gray-800 text-sm rounded px-4 py-2 text-gray-300 focus:outline-none focus:border-gray-500 cursor-pointer"

@@ -57,6 +57,7 @@ export default function ReviewForm({ productId }: { productId: string }) {
 
       <input
         type="text"
+        aria-label="Your name (optional)"
         value={reviewerName}
         onChange={(e) => setReviewerName(e.target.value)}
         placeholder="Name (optional)"
@@ -65,6 +66,7 @@ export default function ReviewForm({ productId }: { productId: string }) {
       />
 
       <textarea
+        aria-label="Your review (optional)"
         value={comment}
         onChange={(e) => setComment(e.target.value)}
         placeholder="Share your experience (optional)"

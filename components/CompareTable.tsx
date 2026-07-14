@@ -196,7 +196,7 @@ export default function CompareTable() {
                       className="object-contain h-full w-auto"
                     />
                   ) : (
-                    <span className="text-[9px] text-gray-600 uppercase">No Image</span>
+                    <span className="text-[9px] text-gray-500 uppercase">No Image</span>
                   )}
                 </div>
                 <div className={`text-[9px] font-bold uppercase tracking-wider mb-1 ${theme.text}`}>

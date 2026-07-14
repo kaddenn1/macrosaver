@@ -25,7 +25,7 @@ export default function Footer() {
 
         {/* Mandatory Amazon Affiliate Disclosure */}
         <div className="w-full max-w-2xl border-t border-[#151515] pt-4 mt-2">
-          <p className="text-[11px] text-gray-600 text-center leading-relaxed">
+          <p className="text-[11px] text-gray-500 text-center leading-relaxed">
             <strong>Disclaimer:</strong> As an Amazon Associate, I earn from qualifying purchases. 
             Product prices, descriptions, and availability are pulled dynamically and are subject to change. 
             All links to external retail platforms may generate a small referral commission at absolutely no extra cost to you.

@@ -10,12 +10,12 @@ export default function ReviewList({ reviews }: { reviews: ReviewSummary["review
           <div className="flex items-center gap-2 mb-1">
             <span className="text-[#a3e635] text-sm leading-none">
               {"★".repeat(review.rating)}
-              <span className="text-gray-700">{"★".repeat(5 - review.rating)}</span>
+              <span className="text-gray-500">{"★".repeat(5 - review.rating)}</span>
             </span>
             <span className="text-xs text-gray-500 uppercase tracking-wider">
               {review.reviewerName || "Anonymous"}
             </span>
-            <span className="text-[10px] text-gray-600">
+            <span className="text-[10px] text-gray-500">
               {new Date(review.createdAt).toLocaleDateString()}
             </span>
           </div>
