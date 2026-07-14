@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import AmbientBackground from "@/components/AmbientBackground";
+import SiteChrome from "@/components/SiteChrome";
 import { CompareProvider } from "@/components/CompareContext";
-import CompareTray from "@/components/CompareTray";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import "./globals.css";
 
@@ -53,14 +50,8 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
-        <AmbientBackground />
         <CompareProvider>
-          <Navbar />
-          <div className="flex-1 flex flex-col">
-            {children}
-          </div>
-          <CompareTray />
-          <Footer />
+          <SiteChrome>{children}</SiteChrome>
         </CompareProvider>
       </body>
     </html>
