@@ -254,8 +254,8 @@ export default function CassiePage() {
             <Image
               src="/cassie/cassie-quote.png"
               alt="by Cassie — I'm passionate about skincare and finding the best deals for you! Xo, Cassie"
-              width={998}
-              height={879}
+              width={894}
+              height={822}
               className="w-full max-w-sm mb-6"
             />
 
