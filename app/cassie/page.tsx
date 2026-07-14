@@ -256,14 +256,32 @@ export default function CassiePage() {
           </div>
 
           <div className="relative">
-            <p className={`${script.className} text-pink-300 text-5xl mb-2 flex items-center gap-2`}>
-              by Cassie <Icon name="heart" className="w-6 h-6" />
+            <p
+              className={`${script.className} text-pink-400 text-5xl sm:text-6xl mb-1 flex items-center gap-2`}
+              style={{ textShadow: "0 0 8px rgba(244,114,182,0.9), 0 0 22px rgba(244,114,182,0.6), 0 0 44px rgba(219,39,119,0.4)" }}
+            >
+              by Cassie{" "}
+              <Icon name="heart" className="w-7 h-7 drop-shadow-[0_0_10px_rgba(244,114,182,0.9)]" />
             </p>
-            <blockquote className={`${playfair.className} italic text-neutral-300 text-base mb-6 max-w-xs`}>
+            <svg
+              viewBox="0 0 300 20"
+              className="w-48 sm:w-56 h-4 mb-5 drop-shadow-[0_0_6px_rgba(244,114,182,0.8)]"
+              fill="none"
+            >
+              <path d="M5 5 Q150 20 295 3" stroke="#f472b6" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+            <blockquote
+              className={`${script.className} text-white text-2xl sm:text-3xl leading-tight mb-3 max-w-sm`}
+              style={{ textShadow: "0 0 6px rgba(255,255,255,0.85), 0 0 16px rgba(255,255,255,0.5), 0 0 32px rgba(255,255,255,0.3)" }}
+            >
               &ldquo;I&apos;m passionate about skincare and finding the best deals for you!&rdquo;
-              <br />
-              <span className="not-italic text-pink-300">Xo, Cassie ♡</span>
             </blockquote>
+            <p
+              className={`${script.className} text-white text-2xl sm:text-3xl text-right max-w-sm mb-6`}
+              style={{ textShadow: "0 0 6px rgba(255,255,255,0.85), 0 0 16px rgba(255,255,255,0.5)" }}
+            >
+              Xo, Cassie ♡
+            </p>
 
             <div className="relative rounded-3xl bg-gradient-to-br from-pink-100/10 via-pink-300/10 to-rose-400/10 border border-pink-400/20 p-8">
               <div className="grid grid-cols-4 gap-3">
