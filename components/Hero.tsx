@@ -24,7 +24,7 @@ export default function Hero() {
           <p className="text-2xl sm:text-3xl font-bold text-gray-300 mb-4">
             Know Where Every Dollar Goes.
           </p>
-          <p className="text-lg sm:text-xl font-bold text-gray-500">
+          <p className="text-lg sm:text-xl font-bold text-gray-400">
             Stop Overpaying for Supplements.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function Hero() {
               </div>
               <div>
                 <div className="text-sm font-bold text-white leading-tight">{feature.title}</div>
-                <div className="text-xs text-gray-500">{feature.desc}</div>
+                <div className="text-xs text-gray-400">{feature.desc}</div>
               </div>
             </div>
           ))}

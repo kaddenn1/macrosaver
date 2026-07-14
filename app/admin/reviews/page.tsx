@@ -12,12 +12,12 @@ export default async function AdminReviewsPage() {
         <h1 className="text-2xl font-black text-white uppercase tracking-wide mb-1">
           Pending Reviews
         </h1>
-        <p className="text-xs text-gray-500 uppercase tracking-wider mb-8">
+        <p className="text-xs text-gray-400 uppercase tracking-wider mb-8">
           {pending.length} awaiting moderation
         </p>
 
         {pending.length === 0 ? (
-          <div className="py-12 text-center text-gray-500 text-sm border-2 border-dashed border-gray-800 rounded-xl">
+          <div className="py-12 text-center text-gray-400 text-sm border-2 border-dashed border-gray-800 rounded-xl">
             Nothing pending. Nice and clean.
           </div>
         ) : (

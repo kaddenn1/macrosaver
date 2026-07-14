@@ -36,7 +36,7 @@ export default function ReviewModerationRow({ review }: { review: PendingReview 
         <span className="text-sm font-bold text-white">{review.productName}</span>
         <span className="text-[#a3e635] font-black">{review.rating} / 5</span>
       </div>
-      <div className="text-xs text-gray-500 uppercase tracking-wider">
+      <div className="text-xs text-gray-400 uppercase tracking-wider">
         {review.reviewerName || "Anonymous"} &middot;{" "}
         {new Date(review.createdAt).toLocaleDateString()}
       </div>

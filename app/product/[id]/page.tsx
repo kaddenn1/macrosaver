@@ -197,7 +197,7 @@ export default async function ProductPage({
                   <span className={`text-[10px] font-bold tracking-widest uppercase ${theme.text}`}>
                     {product.category}
                   </span>
-                  <p className="text-[8px] text-gray-500 uppercase mt-1">Asset Pending</p>
+                  <p className="text-[8px] text-gray-400 uppercase mt-1">Asset Pending</p>
                 </div>
               )}
             </div>
@@ -237,7 +237,7 @@ export default async function ProductPage({
                 </div>
               </div>
               <div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">
+                <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                   Cost / Serving
                 </div>
                 <div className={`text-xl font-black ${theme.text}`}>
@@ -246,7 +246,7 @@ export default async function ProductPage({
               </div>
               {hasProtein && (
                 <div>
-                  <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">
+                  <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                     Cost / Oz Protein
                   </div>
                   <div className={`text-xl font-black ${theme.text}`}>
@@ -255,7 +255,7 @@ export default async function ProductPage({
                 </div>
               )}
               <div>
-                <div className="text-[10px] text-gray-500 uppercase tracking-wider mb-1">
+                <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                   Protein / Dollar
                 </div>
                 <div className="text-xl font-black text-white">
@@ -271,34 +271,34 @@ export default async function ProductPage({
               </h2>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
                 <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                  <div className="text-[10px] text-gray-500 uppercase">Servings</div>
+                  <div className="text-[10px] text-gray-400 uppercase">Servings</div>
                   <div className="font-bold text-white">{product.servings}</div>
                 </div>
                 {product.nutrition.servingSize && (
                   <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                    <div className="text-[10px] text-gray-500 uppercase">Serving Size</div>
+                    <div className="text-[10px] text-gray-400 uppercase">Serving Size</div>
                     <div className="font-bold text-white">{product.nutrition.servingSize}</div>
                   </div>
                 )}
                 {product.nutrition.calories !== undefined && (
                   <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                    <div className="text-[10px] text-gray-500 uppercase">Calories</div>
+                    <div className="text-[10px] text-gray-400 uppercase">Calories</div>
                     <div className="font-bold text-white">{product.nutrition.calories}</div>
                   </div>
                 )}
                 <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                  <div className="text-[10px] text-gray-500 uppercase">Protein</div>
+                  <div className="text-[10px] text-gray-400 uppercase">Protein</div>
                   <div className="font-bold text-white">{product.nutrition.proteinGrams}g</div>
                 </div>
                 {product.nutrition.carbsGrams !== undefined && (
                   <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                    <div className="text-[10px] text-gray-500 uppercase">Carbs</div>
+                    <div className="text-[10px] text-gray-400 uppercase">Carbs</div>
                     <div className="font-bold text-white">{product.nutrition.carbsGrams}g</div>
                   </div>
                 )}
                 {product.nutrition.sugarGrams !== undefined && (
                   <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                    <div className="text-[10px] text-gray-500 uppercase">Sugar</div>
+                    <div className="text-[10px] text-gray-400 uppercase">Sugar</div>
                     <div className="font-bold text-white">{product.nutrition.sugarGrams}g</div>
                   </div>
                 )}
@@ -336,7 +336,7 @@ export default async function ProductPage({
                             Out of Stock
                           </span>
                         </div>
-                        <span className="text-lg font-black text-gray-500">${offer.price.toFixed(2)}</span>
+                        <span className="text-lg font-black text-gray-400">${offer.price.toFixed(2)}</span>
                       </div>
                     );
                   }
@@ -373,7 +373,7 @@ export default async function ProductPage({
               </div>
             </div>
 
-            <p className="text-[11px] text-gray-500 leading-relaxed">
+            <p className="text-[11px] text-gray-400 leading-relaxed">
               As an Amazon Associate and affiliate of other retailer programs, MacroSaver earns from
               qualifying purchases made through links on this page. This does not affect the price you
               pay or the offers we show — our rankings are based purely on cost per serving and cost
@@ -409,10 +409,10 @@ export default async function ProductPage({
                           className="object-contain h-full w-auto"
                         />
                       ) : (
-                        <span className="text-[10px] text-gray-500 uppercase">No Image</span>
+                        <span className="text-[10px] text-gray-400 uppercase">No Image</span>
                       )}
                     </div>
-                    <div className="text-[10px] font-bold uppercase tracking-wider text-gray-500 mb-0.5">
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-0.5">
                       {related.brand}
                     </div>
                     <div className="text-xs text-gray-200 leading-snug line-clamp-2 mb-1">
@@ -421,7 +421,7 @@ export default async function ProductPage({
                     <div className="text-sm font-black text-white">
                       {relatedBestOffer ? `$${relatedBestOffer.price.toFixed(2)}` : "—"}
                       {relatedCostPerServing !== null && (
-                        <span className="text-[10px] font-normal text-gray-500 ml-1">
+                        <span className="text-[10px] font-normal text-gray-400 ml-1">
                           (${relatedCostPerServing.toFixed(2)}/serving)
                         </span>
                       )}

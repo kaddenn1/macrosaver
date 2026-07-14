@@ -98,7 +98,7 @@ export default function Champions({
 
       <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {displayProducts.length === 0 && (
-          <div className="col-span-full py-12 text-center text-gray-500 text-sm border-2 border-dashed border-gray-800 rounded-xl">
+          <div className="col-span-full py-12 text-center text-gray-400 text-sm border-2 border-dashed border-gray-800 rounded-xl">
             No products found matching those filters. Try adjusting your selections!
           </div>
         )}
@@ -135,7 +135,7 @@ export default function Champions({
                     <span className={`text-[10px] font-bold tracking-widest uppercase ${theme.text}`}>
                       {item.category}
                     </span>
-                    <p className="text-[8px] text-gray-500 uppercase mt-1">Asset Pending</p>
+                    <p className="text-[8px] text-gray-400 uppercase mt-1">Asset Pending</p>
                   </div>
                 )}
                 {item.approvedBy && item.approvedBy.length > 0 && (
@@ -174,7 +174,7 @@ export default function Champions({
                    </div>
 
                    <div className="text-right">
-                     <div className="text-[9px] text-gray-500 uppercase tracking-wider mb-1">
+                     <div className="text-[9px] text-gray-400 uppercase tracking-wider mb-1">
                         {savings !== null ? `Save $${savings.toFixed(2)} vs highest` : '\u00A0'}
                      </div>
                      {(item.nutrition?.proteinGrams || 0) > 0 && (

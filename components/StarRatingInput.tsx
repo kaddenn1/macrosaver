@@ -23,7 +23,7 @@ export default function StarRatingInput({
             onMouseEnter={() => setHovered(star)}
             aria-label={`${star} star${star > 1 ? "s" : ""}`}
             className={`text-2xl leading-none transition-colors ${
-              filled ? "text-[#a3e635]" : "text-gray-500"
+              filled ? "text-[#a3e635]" : "text-gray-400"
             }`}
           >
             ★

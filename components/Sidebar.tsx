@@ -87,7 +87,7 @@ function SidebarInner() {
 
         {/* Price Per Serving Slider */}
         <div className="mb-6">
-          <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Price Per Serving</div>
+          <div className="text-[10px] text-gray-400 uppercase tracking-widest mb-2">Price Per Serving</div>
           <input
             type="range"
             aria-label="Maximum price per serving"
@@ -108,7 +108,7 @@ function SidebarInner() {
         {/* Protein Per Serving Filter - only relevant when browsing Protein */}
         {isProteinCategory && (
           <div className="mb-6">
-            <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-3">Protein Per Serving</div>
+            <div className="text-[10px] text-gray-400 uppercase tracking-widest mb-3">Protein Per Serving</div>
             <div className="flex flex-col gap-2">
               {PROTEIN_THRESHOLDS.map((threshold, idx) => (
                 <div
@@ -120,7 +120,7 @@ function SidebarInner() {
                     {isChecked('protein', String(threshold)) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
                   </div>
                   <span className={`text-xs ${isChecked('protein', String(threshold)) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{threshold}g+</span>
-                  <span className="text-[9px] text-gray-500 ml-auto">({proteinCounts[idx]})</span>
+                  <span className="text-[9px] text-gray-400 ml-auto">({proteinCounts[idx]})</span>
                 </div>
               ))}
             </div>
@@ -130,7 +130,7 @@ function SidebarInner() {
         {/* Clear Protein - only relevant when browsing Protein */}
         {isProteinCategory && clearProteinCount > 0 && (
           <div className="mb-6">
-            <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-3">Protein Type</div>
+            <div className="text-[10px] text-gray-400 uppercase tracking-widest mb-3">Protein Type</div>
             <div
               className="flex items-center gap-2 group cursor-pointer"
               onClick={() => handleCheck('type', 'clear')}
@@ -139,7 +139,7 @@ function SidebarInner() {
                 {isChecked('type', 'clear') && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
               </div>
               <span className={`text-xs ${isChecked('type', 'clear') ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>Clear Protein</span>
-              <span className="text-[9px] text-gray-500 ml-auto">({clearProteinCount})</span>
+              <span className="text-[9px] text-gray-400 ml-auto">({clearProteinCount})</span>
             </div>
           </div>
         )}
@@ -147,7 +147,7 @@ function SidebarInner() {
         {/* Flavor Filter - shows whenever the current category has more than one flavor */}
         {flavors.length > 1 && (
           <div className="mb-2">
-            <div className="text-[10px] text-gray-500 uppercase tracking-widest mb-3">Flavor</div>
+            <div className="text-[10px] text-gray-400 uppercase tracking-widest mb-3">Flavor</div>
             <div className="flex flex-col gap-2 max-h-64 overflow-y-auto pr-1">
               {flavors.map((flavor) => (
                 <div
@@ -159,7 +159,7 @@ function SidebarInner() {
                     {isChecked('flavor', flavor) && <svg className="w-2 h-2 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={4} d="M5 13l4 4L19 7" /></svg>}
                   </div>
                   <span className={`text-xs ${isChecked('flavor', flavor) ? 'text-white' : 'text-gray-400 group-hover:text-gray-300'}`}>{flavor}</span>
-                  <span className="text-[9px] text-gray-500 ml-auto">({flavorCounts.get(flavor)})</span>
+                  <span className="text-[9px] text-gray-400 ml-auto">({flavorCounts.get(flavor)})</span>
                 </div>
               ))}
             </div>

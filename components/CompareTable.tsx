@@ -159,7 +159,7 @@ export default function CompareTable() {
       <div className="flex items-center justify-end mb-4">
         <button
           onClick={clear}
-          className="text-xs text-gray-500 hover:text-white uppercase tracking-wider"
+          className="text-xs text-gray-400 hover:text-white uppercase tracking-wider"
         >
           Clear All
         </button>
@@ -196,7 +196,7 @@ export default function CompareTable() {
                       className="object-contain h-full w-auto"
                     />
                   ) : (
-                    <span className="text-[9px] text-gray-500 uppercase">No Image</span>
+                    <span className="text-[9px] text-gray-400 uppercase">No Image</span>
                   )}
                 </div>
                 <div className={`text-[9px] font-bold uppercase tracking-wider mb-1 ${theme.text}`}>
