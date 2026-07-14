@@ -1,4 +1,8 @@
 import type { Metadata } from "next";
+import { Playfair_Display, Alex_Brush } from "next/font/google";
+
+const playfair = Playfair_Display({ subsets: ["latin"], weight: ["600", "700", "900"], style: ["normal", "italic"] });
+const script = Alex_Brush({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
   title: "Derm-Deals | Top Skincare, Lowest Prices",
@@ -181,7 +185,7 @@ export default function CassiePage() {
               <Icon name="leaf" className="w-6 h-6" />
             </div>
             <div className="flex flex-col leading-none">
-              <span className="text-2xl font-black tracking-tight">
+              <span className={`${playfair.className} text-2xl font-black tracking-tight`}>
                 <span className="text-pink-400">DERM</span>
                 <span className="text-white">-DEALS</span>
               </span>
@@ -220,8 +224,8 @@ export default function CassiePage() {
         <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-pink-500/20 blur-[120px]" />
         <div className="max-w-[1500px] mx-auto px-6 lg:px-10 py-16 lg:py-20 relative grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="italic text-pink-300 text-xl mb-2">Your Skin Deserves More.</p>
-            <h1 className="text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight mb-5">
+            <p className={`${script.className} text-pink-300 text-4xl mb-1`}>Your Skin Deserves More.</p>
+            <h1 className={`${playfair.className} text-5xl sm:text-6xl font-black leading-[0.95] tracking-tight mb-5`}>
               Top Skincare.<br />
               <span className="text-pink-400">Lowest Prices.</span>
             </h1>
@@ -252,10 +256,10 @@ export default function CassiePage() {
           </div>
 
           <div className="relative">
-            <p className="font-serif italic text-pink-300 text-3xl mb-2 flex items-center gap-2">
-              by Cassie <Icon name="heart" className="w-5 h-5" />
+            <p className={`${script.className} text-pink-300 text-5xl mb-2 flex items-center gap-2`}>
+              by Cassie <Icon name="heart" className="w-6 h-6" />
             </p>
-            <blockquote className="text-neutral-300 text-sm italic mb-6 max-w-xs">
+            <blockquote className={`${playfair.className} italic text-neutral-300 text-base mb-6 max-w-xs`}>
               &ldquo;I&apos;m passionate about skincare and finding the best deals for you!&rdquo;
               <br />
               <span className="not-italic text-pink-300">Xo, Cassie ♡</span>
