@@ -4,8 +4,10 @@ import FilterDrawer from "@/components/FilterDrawer";
 import Champions from "@/components/Champions";
 import SortDropdown from "@/components/SortDropdown";
 import SearchBar from "@/components/SearchBar"; // <-- New Search Import!
+import Link from "next/link";
 import { CATEGORY_SLUGS, CATEGORY_TITLES } from "@/lib/categories";
 import { CATEGORY_BUYING_GUIDE } from "@/lib/categoryContent";
+import { getGuideByCategory } from "@/lib/guides";
 import { SITE_URL } from "@/lib/site";
 
 export function generateStaticParams() {
@@ -43,6 +45,7 @@ export default async function CategoryPage({
 
   const displayTitle = CATEGORY_TITLES[currentSlug] || currentSlug;
   const buyingGuide = CATEGORY_BUYING_GUIDE[currentSlug];
+  const fullGuide = getGuideByCategory(currentSlug);
 
   return (
     <main className="min-h-screen text-gray-100 font-sans">
@@ -87,6 +90,14 @@ export default async function CategoryPage({
               <p className="text-sm text-gray-400 leading-relaxed max-w-[750px]">
                 {buyingGuide}
               </p>
+              {fullGuide && (
+                <Link
+                  href={`/guides/${fullGuide.slug}`}
+                  className="inline-block mt-4 text-[11px] font-black uppercase tracking-widest text-[#a3e635] hover:text-white transition-colors"
+                >
+                  Read the full {displayTitle} buying guide →
+                </Link>
+              )}
             </div>
           )}
         </div>
