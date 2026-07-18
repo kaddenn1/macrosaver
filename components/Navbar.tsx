@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/category/bariatric", label: "Bariatric Support" },
   { href: "/category/food-drink", label: "Food & Drink" },
   { href: "/category/gut-health", label: "Gut Health" },
+  { href: "/brands", label: "Brands" },
 ];
 
 export default function Navbar() {

@@ -17,6 +17,7 @@ import CompareButton from "@/components/CompareButton";
 
 interface ChampionsProps {
   filterCategory?: string;
+  filterBrand?: string;
   searchParams?: { [key: string]: string | string[] | undefined };
   /** Caps how many products are shown (e.g. a 4-up homepage preview row). */
   limit?: number;
@@ -26,6 +27,7 @@ interface ChampionsProps {
 
 export default function Champions({
   filterCategory,
+  filterBrand,
   searchParams,
   limit,
   title = "🔥 Best Deals Right Now",
@@ -40,6 +42,11 @@ export default function Champions({
         p.category.toLowerCase() === target ||
         p.additionalCategories?.some((c) => c.toLowerCase() === target)
     );
+  }
+
+  if (filterBrand) {
+    const target = filterBrand.toLowerCase();
+    displayProducts = displayProducts.filter((p) => p.brand.toLowerCase() === target);
   }
 
   if (searchParams?.protein) {
