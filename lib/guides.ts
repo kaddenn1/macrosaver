@@ -73,15 +73,23 @@ export const GUIDES: Guide[] = [
       },
       {
         heading: "Watch the scoop size, not just the tub price",
-        body: "The standard effective dose is about 5g per day, but not every tub's scoop actually measures out 5g — some run smaller to stretch the container into more \"servings.\" A cheaper tub with undersized scoops can cost more per effective dose than a pricier tub with accurate 5g scoops. Check the label's serving size in grams, not just the number of servings claimed."
+        body: "The standard effective dose falls in the 3–5g per day range, but not every tub's scoop actually measures out the same amount — some run smaller to stretch the container into more \"servings.\" A cheaper tub with undersized scoops can cost more per effective dose than a pricier tub with accurate scoops. Check the label's serving size in grams, not just the number of servings claimed."
       },
       {
         heading: "You don't need a loading phase",
-        body: "Some labels suggest a \"loading phase\" of 20g/day for the first week to saturate your muscles faster. It works, but it's optional — taking a steady 5g/day gets you to the same saturation point in about 3–4 weeks without the extra cost or GI discomfort some people get from higher doses. If you're not in a rush, skip the loading phase and save the tub."
+        body: "Some labels suggest a \"loading phase\" of 20g/day for the first week to saturate your muscles faster. It works, but it's optional — taking a steady 3–5g/day gets you to the same saturation point in a few weeks without the extra cost or GI discomfort some people get from higher doses. If you're not in a rush, skip the loading phase and save the tub."
       },
       {
         heading: "Timing matters less than consistency",
-        body: "Unlike pre-workout, creatine doesn't need to be taken right before training to work — it builds up in your muscles over time. Taking it at the same time every day, with or without food, matters more for results than trying to time it around your workout window."
+        body: "Unlike pre-workout, creatine doesn't need to be taken right before training to work — it builds up in your muscles over time and acts as a quick-recharge source for the ATP your muscles burn through during intense effort. Taking it at the same time every day, with or without food, matters more for results than trying to time it around your workout window."
+      },
+      {
+        heading: "Powder, capsules, gummies, or a blended formula",
+        body: "Plain creatine monohydrate powder is the cheapest per-gram option and mixes into any drink. Capsules and gummies cost more per gram of creatine but skip the mixing and taste entirely — a fair trade for some people. Blended \"creatine +\" formulas add extras like B-vitamins, zinc, or electrolytes; they're not a performance upgrade over plain monohydrate, so treat them as a convenience product, not a better one, and price them against a plain tub before assuming they're worth it."
+      },
+      {
+        heading: "Common creatine myths, debunked",
+        body: "Creatine is not a steroid — it's a legal, well-studied dietary supplement found naturally in food like meat and fish. In healthy adults taking recommended doses, research doesn't show creatine harming kidney function. And despite the reputation for causing cramps or dehydration, studies generally find creatine users report fewer cramping and hydration issues, not more."
       }
     ],
     faqs: [
@@ -96,6 +104,14 @@ export const GUIDES: Guide[] = [
       {
         question: "Do I need a fancy flavored creatine, or is unflavored fine?",
         answer: "Plain creatine monohydrate has no real flavor and dissolves into most drinks without much fuss. Flavored versions are a convenience premium, not a performance upgrade — unflavored is usually the better per-serving value if you don't mind mixing it into juice or a shake."
+      },
+      {
+        question: "How long until I actually notice a difference?",
+        answer: "Most people notice a bump in training energy and performance within 2–3 weeks of consistent daily use. Visible muscle-building benefits take longer — think months of consistent training, not days — since creatine supports the work you're putting in rather than building muscle on its own."
+      },
+      {
+        question: "Does creatine work for women, or is it mainly for men?",
+        answer: "Creatine's performance and strength benefits apply to women just as much as men — it isn't a men's-only supplement. Dosing recommendations don't typically differ by gender; the same 3–5g/day range applies."
       }
     ]
   },
