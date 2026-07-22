@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Champions from "@/components/Champions";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { GUIDES, getGuideBySlug } from "@/lib/guides";
 import { SITE_URL } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
@@ -82,6 +83,13 @@ export default async function GuidePage({
         dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
 <div className="w-full max-w-[900px] mx-auto pt-10 px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: "Guides", href: "/guides" },
+            { label: guide.title },
+          ]}
+        />
         <div className="mb-10 border-b border-gray-800 pb-6">
           <Link
             href={`/category/${guide.category}`}

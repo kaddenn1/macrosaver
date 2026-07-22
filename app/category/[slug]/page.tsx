@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import FilterDrawer from "@/components/FilterDrawer";
 import Champions from "@/components/Champions";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import SortDropdown from "@/components/SortDropdown";
 import SearchBar from "@/components/SearchBar";
 import Link from "next/link";
@@ -116,6 +117,7 @@ export default async function CategoryPage({
       )}
 
       <div className="w-full max-w-[1600px] mx-auto pt-6 px-4 sm:px-6 lg:px-8">
+        <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: displayTitle }]} />
         <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-gray-800 pb-6">
           <div>
             <h1 className="text-3xl font-black text-[#a3e635] tracking-tight uppercase">

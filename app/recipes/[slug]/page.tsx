@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Champions from "@/components/Champions";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import { RECIPES, getRecipeBySlug } from "@/lib/recipes";
 import { SITE_URL } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
@@ -108,6 +109,13 @@ export default async function RecipePage({
       />
       <main className="min-h-screen text-gray-100 font-sans">
         <div className="w-full max-w-[900px] mx-auto pt-10 px-4 sm:px-6 lg:px-8">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Recipes", href: "/recipes" },
+              { label: recipe.title },
+            ]}
+          />
           <div className="mb-10 border-b border-gray-800 pb-6">
             <Link
               href="/recipes"

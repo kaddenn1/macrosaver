@@ -10,6 +10,7 @@ import {
   getCostPerOzProtein,
   getProteinPerDollar,
   getSavingsVsHighestOffer,
+  hasFreshPriceObservation,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
 import { getTheme } from "@/lib/theme";
@@ -20,6 +21,7 @@ import { APPROVAL_BADGES } from "@/lib/approvals";
 import { getReviewSummary } from "@/lib/reviews";
 import ProductReviews from "@/components/ProductReviews";
 import CompareButton from "@/components/CompareButton";
+import Breadcrumbs from "@/components/Breadcrumbs";
 import type { Product } from "@/data/types";
 
 export const revalidate = 3600;
@@ -103,6 +105,7 @@ export default async function ProductPage({
   const reviewSummary = await getReviewSummary(product.id);
 
   const sortedOffers = [...product.offers].sort((a, b) => a.price - b.price);
+  const freshOffers = sortedOffers.filter((offer) => hasFreshPriceObservation(offer));
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -132,24 +135,29 @@ export default async function ProductPage({
     category: CATEGORY_TITLES[product.category] || product.category,
     image: product.image ? `${SITE_URL}${product.image}` : undefined,
     url: `${SITE_URL}/product/${product.id}`,
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "USD",
-      lowPrice: sortedOffers[0]?.price,
-      highPrice: sortedOffers[sortedOffers.length - 1]?.price,
-      offerCount: sortedOffers.length,
-      offers: sortedOffers.map((offer) => ({
-        "@type": "Offer",
-        url: offer.url,
+    // Offer/price data is only presented to crawlers when at least one offer carries
+    // an explicit, recent observation date — undated snapshots stay visible on the
+    // page but are never asserted as current price/availability facts to Google.
+    ...(freshOffers.length > 0 && {
+      offers: {
+        "@type": "AggregateOffer",
         priceCurrency: "USD",
-        price: offer.price,
-        availability:
-          offer.inStock === false
-            ? "https://schema.org/OutOfStock"
-            : "https://schema.org/InStock",
-        seller: { "@type": "Organization", name: offer.retailer },
-      })),
-    },
+        lowPrice: freshOffers[0].price,
+        highPrice: freshOffers[freshOffers.length - 1].price,
+        offerCount: freshOffers.length,
+        offers: freshOffers.map((offer) => ({
+          "@type": "Offer",
+          url: offer.url,
+          priceCurrency: "USD",
+          price: offer.price,
+          availability:
+            offer.inStock === false
+              ? "https://schema.org/OutOfStock"
+              : "https://schema.org/InStock",
+          seller: { "@type": "Organization", name: offer.retailer },
+        })),
+      },
+    }),
     ...(reviewSummary.reviewCount > 0 && {
       aggregateRating: {
         "@type": "AggregateRating",
@@ -187,12 +195,13 @@ export default async function ProductPage({
       />
       <main className="min-h-screen text-gray-100 font-sans">
       <div className="w-full max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24">
-        <Link
-          href={`/category/${product.category}`}
-          className="text-xs text-gray-400 hover:text-white uppercase tracking-wider transition-colors"
-        >
-          ← Back to {categoryTitle}
-        </Link>
+        <Breadcrumbs
+          items={[
+            { label: "Home", href: "/" },
+            { label: categoryTitle, href: `/category/${product.category}` },
+            { label: product.name },
+          ]}
+        />
 
         <div className="mt-6 flex flex-col lg:flex-row gap-10">
           {/* Image */}
