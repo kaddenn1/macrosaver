@@ -54,17 +54,23 @@ export async function generateMetadata({
   }
 
   const bestOffer = getBestOffer(product);
-  const title = `Best Price for ${product.name} | ${product.brand} | Compare Deals on ${SITE_NAME}`;
-  const description = bestOffer
-    ? `Compare prices for ${product.name} from ${product.brand}. Lowest price $${bestOffer.price.toFixed(2)} — see cost per serving on ${SITE_NAME}.`
-    : `Compare prices for ${product.name} from ${product.brand} across top retailers on ${SITE_NAME}.`;
+  const servingMetricsApply = supportsServingMetrics(product);
+
+  const title = `${product.name} | ${product.brand} Price & Value`;
+  const priceText = bestOffer
+    ? `Recorded price snapshot $${bestOffer.price.toFixed(2)}`
+    : "Recorded price snapshot unavailable";
+  const detailsText = servingMetricsApply
+    ? "cost per serving and nutrition details"
+    : "product details";
+  const description = `${product.brand} ${product.name}: ${priceText} — ${detailsText} on ${SITE_NAME}. Verify current price at the retailer.`;
 
   return {
     title,
     description,
     alternates: { canonical: `${SITE_URL}/product/${product.id}` },
     openGraph: {
-      title,
+      title: `${title} | ${SITE_NAME}`,
       description,
       url: `${SITE_URL}/product/${product.id}`,
       images: product.image ? [product.image] : undefined,
