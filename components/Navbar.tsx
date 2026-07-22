@@ -15,6 +15,7 @@ const navLinks = [
   { href: "/category/gut-health", label: "Gut Health" },
   { href: "/brands", label: "Brands" },
   { href: "/guides", label: "Guides" },
+  { href: "/recipes", label: "Recipes" },
 ];
 
 export default function Navbar() {
