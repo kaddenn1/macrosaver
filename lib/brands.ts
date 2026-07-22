@@ -41,7 +41,7 @@ export const BRANDS: Brand[] = [
   {
     slug: "liquid-iv",
     name: "Liquid I.V.",
-    intro: "Electrolyte drink mixes designed to hydrate faster than water alone.",
+    intro: "Single-serve flavored drink mixes containing electrolytes, with formulas that vary in sugar and sodium content.",
   },
   {
     slug: "protein2o",
@@ -51,7 +51,7 @@ export const BRANDS: Brand[] = [
   {
     slug: "bariatric-fusion",
     name: "Bariatric Fusion",
-    intro: "Bariatric-specific vitamins and protein built around post-surgery nutrient needs.",
+    intro: "A brand focused on vitamins and protein products marketed to people after bariatric surgery.",
   },
   {
     slug: "spylt",
@@ -66,7 +66,7 @@ export const BRANDS: Brand[] = [
   {
     slug: "bari-life",
     name: "Bari Life",
-    intro: "Chewable and capsule vitamins formulated for bariatric surgery patients.",
+    intro: "Chewable and capsule vitamin products marketed to bariatric surgery patients.",
   },
   {
     slug: "prosupps",
@@ -96,7 +96,7 @@ export const BRANDS: Brand[] = [
   {
     slug: "bariatric-advantage",
     name: "Bariatric Advantage",
-    intro: "A dedicated line of vitamins and protein built around bariatric surgery nutrition guidelines.",
+    intro: "A vitamin and protein brand focused on the bariatric-surgery market.",
   },
   {
     slug: "pin-up-girl",

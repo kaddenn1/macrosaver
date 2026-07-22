@@ -10,10 +10,12 @@ import {
   getCostPerOzProtein,
   getProteinPerDollar,
   getSavingsVsHighestOffer,
+  supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
 import { getTheme } from "@/lib/theme";
 import { CATEGORY_TITLES } from "@/lib/categories";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
+import { serializeJsonLd } from "@/lib/json-ld";
 import { APPROVAL_BADGES } from "@/lib/approvals";
 import { getReviewSummary } from "@/lib/reviews";
 import ProductReviews from "@/components/ProductReviews";
@@ -36,6 +38,8 @@ function getRelatedProducts(product: Product, limit: number): Product[] {
 export function generateStaticParams() {
   return products.map((product) => ({ id: product.id }));
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
@@ -86,7 +90,8 @@ export default async function ProductPage({
   const costPerOzProtein = getCostPerOzProtein(product);
   const proteinPerDollar = getProteinPerDollar(product);
   const savings = getSavingsVsHighestOffer(product);
-  const hasProtein = product.nutrition.proteinGrams > 0;
+  const servingMetricsApply = supportsServingMetrics(product);
+  const hasProtein = servingMetricsApply && product.nutrition.proteinGrams > 0;
   const categoryTitle = CATEGORY_TITLES[product.category] || product.category;
   const relatedProducts = getRelatedProducts(product, 4);
   const reviewSummary = await getReviewSummary(product.id);
@@ -168,11 +173,11 @@ export default async function ProductPage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(productJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <main className="min-h-screen text-gray-100 font-sans">
       <div className="w-full max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-24">
@@ -211,7 +216,7 @@ export default async function ProductPage({
             <h1 className="text-3xl font-black text-white leading-tight mb-4">{product.name}</h1>
 
             <div className="mb-4">
-              <CompareButton productId={product.id} variant="pill" />
+              <CompareButton productId={product.id} productName={product.name} variant="pill" />
             </div>
 
             {product.approvedBy && product.approvedBy.length > 0 && (
@@ -227,7 +232,15 @@ export default async function ProductPage({
             )}
 
             {/* Value metrics grid */}
-            <div className={`grid grid-cols-2 ${hasProtein ? "sm:grid-cols-4" : "sm:grid-cols-3"} gap-4 mb-8 border-y border-gray-800 py-6`}>
+            <div
+              className={`grid ${
+                hasProtein
+                  ? "grid-cols-2 sm:grid-cols-4"
+                  : servingMetricsApply
+                    ? "grid-cols-2 sm:grid-cols-3"
+                    : "grid-cols-1"
+              } gap-4 mb-8 border-y border-gray-800 py-6`}
+            >
               <div>
                 <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                   Lowest Price
@@ -236,14 +249,16 @@ export default async function ProductPage({
                   {bestOffer ? `$${bestOffer.price.toFixed(2)}` : "—"}
                 </div>
               </div>
-              <div>
-                <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
-                  Cost / Serving
+              {servingMetricsApply && (
+                <div>
+                  <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+                    Cost / Serving
+                  </div>
+                  <div className={`text-xl font-black ${theme.text}`}>
+                    {costPerServing !== null ? `$${costPerServing.toFixed(2)}` : "—"}
+                  </div>
                 </div>
-                <div className={`text-xl font-black ${theme.text}`}>
-                  {costPerServing !== null ? `$${costPerServing.toFixed(2)}` : "—"}
-                </div>
-              </div>
+              )}
               {hasProtein && (
                 <div>
                   <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
@@ -254,56 +269,63 @@ export default async function ProductPage({
                   </div>
                 </div>
               )}
-              <div>
-                <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
-                  Protein / Dollar
+              {servingMetricsApply && (
+                <div>
+                  <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+                    Protein / Dollar
+                  </div>
+                  <div className="text-xl font-black text-white">
+                    {proteinPerDollar !== null ? `${proteinPerDollar.toFixed(1)}g` : "—"}
+                  </div>
                 </div>
-                <div className="text-xl font-black text-white">
-                  {proteinPerDollar !== null ? `${proteinPerDollar.toFixed(1)}g` : "—"}
-                </div>
-              </div>
+              )}
             </div>
 
             {/* Nutrition facts */}
-            <div className="mb-8">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
-                Nutrition Facts
-              </h2>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
-                <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                  <div className="text-[10px] text-gray-400 uppercase">Servings</div>
-                  <div className="font-bold text-white">{product.servings}</div>
+            {servingMetricsApply && (
+              <div className="mb-8">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
+                  Nutrition Facts
+                </h2>
+                {product.nutritionNote && (
+                  <p className="text-xs text-gray-400 mb-3">{product.nutritionNote}</p>
+                )}
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm">
+                  <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
+                    <div className="text-[10px] text-gray-400 uppercase">Servings</div>
+                    <div className="font-bold text-white">{product.servings}</div>
+                  </div>
+                  {product.nutrition.servingSize && (
+                    <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
+                      <div className="text-[10px] text-gray-400 uppercase">Serving Size</div>
+                      <div className="font-bold text-white">{product.nutrition.servingSize}</div>
+                    </div>
+                  )}
+                  {product.nutrition.calories !== undefined && (
+                    <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
+                      <div className="text-[10px] text-gray-400 uppercase">Calories</div>
+                      <div className="font-bold text-white">{product.nutrition.calories}</div>
+                    </div>
+                  )}
+                  <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
+                    <div className="text-[10px] text-gray-400 uppercase">Protein</div>
+                    <div className="font-bold text-white">{product.nutrition.proteinGrams}g</div>
+                  </div>
+                  {product.nutrition.carbsGrams !== undefined && (
+                    <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
+                      <div className="text-[10px] text-gray-400 uppercase">Carbs</div>
+                      <div className="font-bold text-white">{product.nutrition.carbsGrams}g</div>
+                    </div>
+                  )}
+                  {product.nutrition.sugarGrams !== undefined && (
+                    <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
+                      <div className="text-[10px] text-gray-400 uppercase">Sugar</div>
+                      <div className="font-bold text-white">{product.nutrition.sugarGrams}g</div>
+                    </div>
+                  )}
                 </div>
-                {product.nutrition.servingSize && (
-                  <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                    <div className="text-[10px] text-gray-400 uppercase">Serving Size</div>
-                    <div className="font-bold text-white">{product.nutrition.servingSize}</div>
-                  </div>
-                )}
-                {product.nutrition.calories !== undefined && (
-                  <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                    <div className="text-[10px] text-gray-400 uppercase">Calories</div>
-                    <div className="font-bold text-white">{product.nutrition.calories}</div>
-                  </div>
-                )}
-                <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                  <div className="text-[10px] text-gray-400 uppercase">Protein</div>
-                  <div className="font-bold text-white">{product.nutrition.proteinGrams}g</div>
-                </div>
-                {product.nutrition.carbsGrams !== undefined && (
-                  <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                    <div className="text-[10px] text-gray-400 uppercase">Carbs</div>
-                    <div className="font-bold text-white">{product.nutrition.carbsGrams}g</div>
-                  </div>
-                )}
-                {product.nutrition.sugarGrams !== undefined && (
-                  <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-                    <div className="text-[10px] text-gray-400 uppercase">Sugar</div>
-                    <div className="font-bold text-white">{product.nutrition.sugarGrams}g</div>
-                  </div>
-                )}
               </div>
-            </div>
+            )}
 
             {/* Offers */}
             <div className="mb-6">

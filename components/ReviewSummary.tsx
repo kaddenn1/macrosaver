@@ -2,9 +2,12 @@ import type { ReviewSummary as ReviewSummaryType } from "@/lib/reviews";
 
 function Stars({ rating }: { rating: number }) {
   return (
-    <span className="text-[#a3e635] text-lg leading-none">
-      {"★".repeat(Math.round(rating))}
-      <span className="text-gray-400">{"★".repeat(5 - Math.round(rating))}</span>
+    <span>
+      <span aria-hidden="true" className="text-[#a3e635] text-lg leading-none">
+        {"★".repeat(Math.round(rating))}
+        <span className="text-gray-400">{"★".repeat(5 - Math.round(rating))}</span>
+      </span>
+      <span className="sr-only">{rating.toFixed(1)} out of 5 stars</span>
     </span>
   );
 }

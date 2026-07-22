@@ -6,21 +6,22 @@ export default function ReviewList({ reviews }: { reviews: ReviewSummary["review
   return (
     <div className="flex flex-col gap-4">
       {reviews.map((review) => (
-        <div key={review.id} className="border-b border-gray-800 pb-4 last:border-0">
+        <article key={review.id} className="border-b border-gray-800 pb-4 last:border-0">
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-[#a3e635] text-sm leading-none">
+            <span aria-hidden="true" className="text-[#a3e635] text-sm leading-none">
               {"★".repeat(review.rating)}
               <span className="text-gray-400">{"★".repeat(5 - review.rating)}</span>
             </span>
+            <span className="sr-only">{review.rating} out of 5 stars</span>
             <span className="text-xs text-gray-400 uppercase tracking-wider">
               {review.reviewerName || "Anonymous"}
             </span>
-            <span className="text-[10px] text-gray-400">
+            <time dateTime={review.createdAt} className="text-[10px] text-gray-400">
               {new Date(review.createdAt).toLocaleDateString()}
-            </span>
+            </time>
           </div>
           {review.comment && <p className="text-sm text-gray-300">{review.comment}</p>}
-        </div>
+        </article>
       ))}
     </div>
   );

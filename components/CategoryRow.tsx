@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -57,13 +57,20 @@ export default function CategoryRow() {
     speedRef.current = 0;
   };
 
+  useEffect(
+    () => () => {
+      if (rafRef.current !== null) cancelAnimationFrame(rafRef.current);
+    },
+    []
+  );
+
   return (
     <div className="w-full mb-4 mt-6">
       <h2 className="text-3xl font-black text-[#a3e635] tracking-tight uppercase leading-none mb-1">
         Shop By Category
       </h2>
       <p className="text-xs text-gray-400 mb-6">
-        Compare the best prices, save more, and fuel your goals.
+        Compare recorded price snapshots, serving-level value, and nutrition details.
       </p>
 
       <div
@@ -73,23 +80,23 @@ export default function CategoryRow() {
         style={{ ["--cat-count" as string]: categories.length }}
         className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 [scrollbar-width:thin] lg:grid lg:overflow-visible lg:pb-0 lg:[grid-template-columns:repeat(var(--cat-count),minmax(0,1fr))]"
       >
-        {categories.map((cat, index) => {
+        {categories.map((cat) => {
           const isActive = pathname === `/category/${cat.id}`;
 
           return (
             <Link
               href={`/category/${cat.id}`}
               key={cat.id}
-              className={`group relative block rounded-xl overflow-hidden border transition-all duration-300 aspect-[7/20] w-32 sm:w-40 shrink-0 lg:w-auto lg:shrink ${
+              aria-label={`Browse ${cat.title}`}
+              className={`group relative block aspect-[7/20] w-32 shrink-0 overflow-hidden rounded-xl border transition-all duration-300 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime-400 sm:w-40 lg:w-auto lg:shrink ${
                 isActive ? "border-[#a3e635]" : "border-gray-800 hover:border-gray-600"
               }`}
             >
               <Image
                 src={cat.image}
-                alt={cat.title}
+                alt=""
                 fill
-                priority={index === 0}
-                sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 11vw"
+                sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 10vw"
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
               />
             </Link>

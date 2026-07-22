@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GUIDES } from "@/lib/guides";
 import { SITE_URL } from "@/lib/site";
 
-const title = "Supplement Buying Guides | MacroSaver";
+const title = "Supplement Buying Guides";
 const description =
   "Straightforward buying guides for protein, creatine, pre-workout, and electrolytes — what actually matters before you buy, without the marketing fluff.";
 
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: `${SITE_URL}/guides` },
-  openGraph: { title, description, url: `${SITE_URL}/guides` },
+  openGraph: { title: `${title} | MacroSaver`, description, url: `${SITE_URL}/guides` },
 };
 
 export default function GuidesPage() {

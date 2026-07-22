@@ -4,10 +4,13 @@ import { notFound } from "next/navigation";
 import Champions from "@/components/Champions";
 import { GUIDES, getGuideBySlug } from "@/lib/guides";
 import { SITE_URL } from "@/lib/site";
+import { serializeJsonLd } from "@/lib/json-ld";
 
 export function generateStaticParams() {
   return GUIDES.map((guide) => ({ slug: guide.slug }));
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
@@ -72,11 +75,11 @@ export default async function GuidePage({
     <main className="min-h-screen text-gray-100 font-sans">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(faqJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
 <div className="w-full max-w-[900px] mx-auto pt-10 px-4 sm:px-6 lg:px-8">
         <div className="mb-10 border-b border-gray-800 pb-6">

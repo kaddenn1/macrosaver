@@ -8,22 +8,34 @@ import SearchBar from "@/components/SearchBar";
 import { products } from "@/data/products";
 import { CATEGORY_SLUGS, CATEGORY_TITLES } from "@/lib/categories";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
+import { getCatalogFacets } from "@/lib/catalog-facets";
+import { parseCatalogQuery } from "@/lib/catalog-query";
 
 const HOMEPAGE_PREVIEW_COUNT = 4;
-const ACTIVE_FILTER_KEYS = ["q", "protein", "maxPrice", "flavor", "type"];
+const HOME_TITLE = `${SITE_NAME} | Compare Supplement Value & Cost per Serving`;
+const HOME_DESCRIPTION =
+  "Compare protein powder, pre-workout, creatine, and other supplements by recorded price snapshot, cost per serving, and nutrition value.";
 
-export const metadata: Metadata = {
-  title: `${SITE_NAME} | Compare Supplement & Protein Powder Prices`,
-  description:
-    "Compare prices for protein powder, pre-workout, creatine, and more across top retailers. See cost per serving and find the lowest price on every product.",
-  alternates: { canonical: SITE_URL },
-  openGraph: {
-    title: `${SITE_NAME} | Compare Supplement & Protein Powder Prices`,
-    description:
-      "Compare prices for protein powder, pre-workout, creatine, and more across top retailers. See cost per serving and find the lowest price on every product.",
-    url: SITE_URL,
-  },
-};
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}): Promise<Metadata> {
+  const resolvedSearchParams = await searchParams;
+  const hasQuery = Object.keys(resolvedSearchParams).length > 0;
+
+  return {
+    title: { absolute: HOME_TITLE },
+    description: HOME_DESCRIPTION,
+    alternates: { canonical: SITE_URL },
+    robots: hasQuery ? { index: false, follow: true } : undefined,
+    openGraph: {
+      title: HOME_TITLE,
+      description: HOME_DESCRIPTION,
+      url: SITE_URL,
+    },
+  };
+}
 
 export default async function Home({
   searchParams,
@@ -31,16 +43,25 @@ export default async function Home({
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 }) {
   const resolvedSearchParams = await searchParams;
-
-  const hasActiveFilters = ACTIVE_FILTER_KEYS.some((key) => resolvedSearchParams[key]);
+  const facets = getCatalogFacets();
+  const listingQuery = parseCatalogQuery(resolvedSearchParams, {
+    allowSearch: true,
+    allowMaxPrice: true,
+    maxPriceCeiling: facets.maxCost,
+    allowProteinSort: true,
+  });
 
   const categoriesWithProducts = CATEGORY_SLUGS.filter((slug) =>
-    products.some((p) => p.category === slug || p.additionalCategories?.includes(slug))
+    products.some(
+      (p) =>
+        p.category === slug ||
+        (p.additionalCategories as readonly string[] | undefined)?.includes(slug)
+    )
   );
 
   return (
     <main className="min-h-screen text-gray-100 font-sans">
-      
+
       {/* 1. The Brand New Hero Section! */}
       <Hero />
 
@@ -58,7 +79,7 @@ export default async function Home({
         <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-gray-800 pb-6">
           <div className="border-l-4 border-[#a3e635] pl-4">
             <h2 className="text-3xl font-black text-white tracking-widest uppercase">
-              Best Deals Right Now
+              Best Value Picks
             </h2>
           </div>
 
@@ -71,14 +92,18 @@ export default async function Home({
 
       {/* Main Grid & Filters Section */}
       <div className="w-full max-w-[1600px] mx-auto flex flex-col lg:flex-row items-start gap-8 px-4 sm:px-6 lg:px-8 pb-24">
-        
+
         <div className="w-full lg:w-[280px] shrink-0">
-          <FilterDrawer />
+            <FilterDrawer facets={facets} />
         </div>
 
         <div className="flex-1 w-full min-w-0">
-          {hasActiveFilters ? (
-            <Champions searchParams={resolvedSearchParams} />
+          {listingQuery.hasListingIntent ? (
+            <Champions
+              searchParams={resolvedSearchParams}
+              title="Filtered Products"
+              paginationPath="/"
+            />
           ) : (
             <div className="flex flex-col gap-16">
               {categoriesWithProducts.map((slug) => (

@@ -1,4 +1,13 @@
-export const themeMap: Record<string, any> = {
+type Theme = {
+  text: string;
+  border: string;
+  hoverBorder: string;
+  bg: string;
+  hoverBg: string;
+  glow: string;
+};
+
+export const themeMap: Record<string, Theme> = {
   protein: {
     text: 'text-[#a3e635]', border: 'border-[#a3e635]', hoverBorder: 'hover:border-[#a3e635]',
     bg: 'bg-[#a3e635]', hoverBg: 'hover:bg-[#86c526]', glow: 'group-hover:shadow-[0_0_30px_rgba(163,230,53,0.15)]'

@@ -1,9 +1,14 @@
 "use client";
 
 import { createContext, useCallback, useContext, useSyncExternalStore, type ReactNode } from "react";
+import {
+  COMPARE_LIMIT,
+  reconcileCompareIds,
+  sanitizeCompareIds,
+} from "@/lib/compare";
 
 const STORAGE_KEY = "macrosaver:compare";
-export const COMPARE_LIMIT = 4;
+export { COMPARE_LIMIT } from "@/lib/compare";
 
 type CompareContextValue = {
   ids: string[];
@@ -11,6 +16,7 @@ type CompareContextValue = {
   toggle: (id: string) => void;
   remove: (id: string) => void;
   clear: () => void;
+  reconcile: (requestedIds: readonly string[], validIds: readonly string[]) => void;
   isFull: boolean;
 };
 
@@ -19,13 +25,24 @@ const CompareContext = createContext<CompareContextValue | null>(null);
 const listeners = new Set<() => void>();
 let cachedIds: string[] = [];
 let cachedRaw: string | null = null;
+let storageUnavailable = false;
 
 function readIds(): string[] {
-  const raw = window.localStorage.getItem(STORAGE_KEY);
+  if (storageUnavailable) return cachedIds;
+
+  let raw: string | null;
+  try {
+    raw = window.localStorage.getItem(STORAGE_KEY);
+  } catch {
+    storageUnavailable = true;
+    return cachedIds;
+  }
+
   if (raw !== cachedRaw) {
     cachedRaw = raw;
     try {
-      cachedIds = raw ? JSON.parse(raw) : [];
+      const parsed: unknown = raw ? JSON.parse(raw) : [];
+      cachedIds = sanitizeCompareIds(parsed);
     } catch {
       cachedIds = [];
     }
@@ -34,12 +51,15 @@ function readIds(): string[] {
 }
 
 function writeIds(ids: string[]) {
-  cachedIds = ids;
-  cachedRaw = JSON.stringify(ids);
-  try {
-    window.localStorage.setItem(STORAGE_KEY, cachedRaw);
-  } catch {
-    // ignore write failures (e.g. private browsing quota)
+  cachedIds = sanitizeCompareIds(ids);
+  cachedRaw = JSON.stringify(cachedIds);
+  if (!storageUnavailable) {
+    try {
+      window.localStorage.setItem(STORAGE_KEY, cachedRaw);
+    } catch {
+      // Keep compare usable in memory when storage is denied or full.
+      storageUnavailable = true;
+    }
   }
   listeners.forEach((listener) => listener());
 }
@@ -77,12 +97,24 @@ export function CompareProvider({ children }: { children: ReactNode }) {
 
   const clear = useCallback(() => writeIds([]), []);
 
+  const reconcile = useCallback(
+    (requestedIds: readonly string[], validIds: readonly string[]) => {
+      const current = readIds();
+      const next = reconcileCompareIds(current, requestedIds, validIds);
+      if (next.length !== current.length || next.some((id, index) => id !== current[index])) {
+        writeIds(next);
+      }
+    },
+    []
+  );
+
   const value: CompareContextValue = {
     ids,
     isSelected: (id: string) => ids.includes(id),
     toggle,
     remove,
     clear,
+    reconcile,
     isFull: ids.length >= COMPARE_LIMIT,
   };
 

@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import { getPendingReviews } from "@/lib/reviews";
 import ReviewModerationRow from "@/components/admin/ReviewModerationRow";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Review Moderation",
+  robots: { index: false, follow: false, noarchive: true },
+};
 
 export default async function AdminReviewsPage() {
   const pending = await getPendingReviews();

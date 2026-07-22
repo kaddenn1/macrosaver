@@ -1,4 +1,4 @@
-import { amazonUrl } from "@/lib/affiliate";
+import { amazonUrl } from "../lib/affiliate.ts";
 
 export const products = [
   {
@@ -1058,7 +1058,7 @@ export const products = [
     category: "pre-workout",
     image: "/products/prosupps-mr-hyde-signature-blue-razz-30srv.jpg",
     servings: 30,
-    // Sodium reused from the 12-stick-pack SKU (same flavor/formula) — not independently confirmed for this size.
+    nutritionNote: "Sodium is carried over from the same-flavor 12-stick-pack formula and was not independently verified for this package size.",
     nutrition: {
       proteinGrams: 0,
       carbsGrams: 0,
@@ -1098,7 +1098,7 @@ export const products = [
     category: "pre-workout",
     image: "/products/prosupps-mr-hyde-signature-blue-razz-60srv.jpg",
     servings: 60,
-    // Sodium reused from the 12-stick-pack SKU (same flavor/formula) — not independently confirmed for this size.
+    nutritionNote: "Sodium is carried over from the same-flavor 12-stick-pack formula and was not independently verified for this package size.",
     nutrition: {
       proteinGrams: 0,
       carbsGrams: 0,
@@ -1116,6 +1116,7 @@ export const products = [
     name: "Sweet Sweat Workout Enhancer Gel, Original (13.5 oz)",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "topical",
     image: "/products/sweet-sweat-original.jpg",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1128,6 +1129,7 @@ export const products = [
     name: "Sweet Sweat Workout Enhancer Gel, Tropical (13.5 oz)",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "topical",
     image: "/products/sweet-sweat-tropical.jpg",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1140,6 +1142,7 @@ export const products = [
     name: "Sweet Sweat Workout Enhancer Gel, Coconut (13.5 oz)",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "topical",
     image: "/products/sweet-sweat-coconut.jpg",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1152,6 +1155,7 @@ export const products = [
     name: "Sweet Sweat Workout Enhancer Gel, Citrus Mint (13.5 oz)",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "topical",
     image: "/products/sweet-sweat-citrus-mint.jpg",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1164,6 +1168,7 @@ export const products = [
     name: "Sweet Sweat Workout Enhancer Gel, Unscented (13.5 oz)",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "topical",
     image: "/products/sweet-sweat-unscented.jpg",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1176,6 +1181,7 @@ export const products = [
     name: "Sweet Sweat Toned Bundle with Waist Trimmer, Quartz/Vanilla (Medium)",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "mixed-bundle",
     image: "/products/sports-research-toned-waist-trimmer-bundle.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1188,6 +1194,7 @@ export const products = [
     name: "Sweet Sweat Toned Bundle with Waist Trimmer, Clay/Vanilla (Medium)",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "mixed-bundle",
     image: "/products/sports-research-toned-waist-trimmer-bundle-clay.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1200,6 +1207,7 @@ export const products = [
     name: "Sweet Sweat Core Bundle with Waist Trimmer, Pink/Tropical (Medium)",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "mixed-bundle",
     image: "/products/sports-research-sweet-sweat-core-bundle-pink-tropical.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1215,7 +1223,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/sports-research-mct-oil-120-softgels.png",
     servings: 120,
-    // Calories/fat derived from MCT oil's known energy density (~9 kcal/g fat), not a directly sourced label figure.
+    nutritionNote: "Calories and fat are calculated from MCT oil energy density, not transcribed from this product's label.",
     nutrition: {
       proteinGrams: 0,
       calories: 9,
@@ -1303,7 +1311,7 @@ export const products = [
     id: "112",
     name: "Iron + Liposomal Vitamin C (90 Liquid Veggie Capsules)",
     brand: "Sports Research",
-    category: "other",
+    category: "multivitamin",
     additionalCategories: ["multivitamin", "bariatric"],
     image: "/products/sports-research-iron-liposomal-vitamin-c.png",
     servings: 90,
@@ -1353,7 +1361,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/sports-research-keto-c8-mct-oil.png",
     servings: 32,
-    // Calories/fat are category-typical values for liquid MCT oil (1 tbsp = ~14g pure fat), not a directly sourced label figure.
+    nutritionNote: "Calories and fat are category-typical estimates for one tablespoon of liquid MCT oil, not independently verified from this product's label.",
     nutrition: {
       proteinGrams: 0,
       calories: 130,
@@ -1370,7 +1378,7 @@ export const products = [
     id: "116",
     name: "Magnesium Oxide, 420mg (90 Softgels)",
     brand: "Sports Research",
-    category: "other",
+    category: "multivitamin",
     additionalCategories: ["gut-health", "multivitamin"],
     image: "/products/sports-research-magnesium-oxide.png",
     servings: 90,
@@ -1383,7 +1391,7 @@ export const products = [
     id: "117",
     name: "Magnesium L-Threonate (Magtein), 2000mg (90 Veggie Capsules)",
     brand: "Sports Research",
-    category: "other",
+    category: "multivitamin",
     additionalCategories: ["multivitamin"],
     image: "/products/sports-research-mag-lt-with-magtein-magnesium-l-threonate.png",
     servings: 90,
@@ -1471,7 +1479,7 @@ export const products = [
     id: "107",
     name: "Sleep Complex with Melatonin, 5mg (60 Veggie Capsules)",
     brand: "Sports Research",
-    category: "other",
+    category: "multivitamin",
     additionalCategories: ["gut-health"],
     image: "/products/sports-research-sleep-complex-with-melatonin.png",
     servings: 60,
@@ -1508,7 +1516,7 @@ export const products = [
     id: "99",
     name: "Magnesium Glycinate, 160mg (60 Softgels)",
     brand: "Sports Research",
-    category: "other",
+    category: "multivitamin",
     additionalCategories: ["gut-health"],
     image: "/products/sports-research-magnesium-glycinate.png",
     servings: 60,
@@ -1521,7 +1529,7 @@ export const products = [
     id: "100",
     name: "Triple Magnesium Complex, 300mg (120 Veggie Capsules)",
     brand: "Sports Research",
-    category: "other",
+    category: "multivitamin",
     additionalCategories: ["gut-health"],
     image: "/products/sports-research-triple-magnesium-complex.png",
     servings: 120,
@@ -1534,7 +1542,7 @@ export const products = [
     id: "101",
     name: "Organic Ashwagandha KSM-66, 600mg (90 Veggie Capsules)",
     brand: "Sports Research",
-    category: "other",
+    category: "multivitamin",
     image: "/products/sports-research-organic-ashwagandha.png",
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
@@ -1546,7 +1554,7 @@ export const products = [
     id: "102",
     name: "Vitamin D3 + K2 (60 Plantgel Capsules)",
     brand: "Sports Research",
-    category: "other",
+    category: "multivitamin",
     image: "/products/sports-research-vitamin-d3-k2.png",
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
@@ -1572,6 +1580,7 @@ export const products = [
     name: "Sweet Sweat Arm & Thigh Trimmer Bundle (4-Piece)",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "equipment",
     image: "/products/sports-research-arm-and-thigh-trimmer-bundle.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1584,6 +1593,7 @@ export const products = [
     name: "Sweet Sweat Pro Series Waist Trimmer Bundle with Stick",
     brand: "Sports Research",
     category: "weight-management",
+    kind: "mixed-bundle",
     image: "/products/sports-research-pro-series-bundle.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1595,7 +1605,8 @@ export const products = [
     id: "106",
     name: "Sports Research Jump Rope",
     brand: "Sports Research",
-    category: "other",
+    category: "multivitamin",
+    kind: "equipment",
     image: "/products/sports-research-jump-rope.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
@@ -1626,7 +1637,7 @@ export const products = [
     additionalCategories: ["weight-management", "bariatric"],
     image: "/products/vital-proteins-collagen-peptides-unflavored.jpg",
     servings: 13,
-    // Calories derived from protein content (collagen peptides are ~100% protein, no carbs/fat, consistent across the category).
+    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
     nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
@@ -1640,7 +1651,7 @@ export const products = [
     category: "protein",
     image: "/products/vital-proteins-collagen-peptides-advanced-unflavored.jpg",
     servings: 27,
-    // Calories derived from protein content (collagen peptides are ~100% protein, no carbs/fat, consistent across the category).
+    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
     nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
@@ -1655,7 +1666,7 @@ export const products = [
     additionalCategories: ["multivitamin"],
     image: "/products/bariatricpal-multivitamin-one-mixed-berry.jpg",
     servings: 30,
-    // Carbs derived from "100% carbs" calorie breakdown at 15 cal/tablet; sodium not confirmed.
+    nutritionNote: "Carbohydrates are inferred from the calorie breakdown rather than a direct label read; sodium was not confirmed.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 16.99, url: amazonUrl("B07RVK8FXW"), asin: "B07RVK8FXW" }
@@ -1669,7 +1680,7 @@ export const products = [
     additionalCategories: ["multivitamin"],
     image: "/products/bariatricpal-multivitamin-one-orange-citrus.jpg",
     servings: 30,
-    // Carbs derived from "100% carbs" calorie breakdown at 15 cal/tablet; sodium not confirmed.
+    nutritionNote: "Carbohydrates are inferred from the calorie breakdown rather than a direct label read; sodium was not confirmed.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 16.99, url: amazonUrl("B08VZ5V1FV"), asin: "B08VZ5V1FV" }
@@ -1897,7 +1908,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-advantage-calcium-citrate-chewy-bite-caramel.jpg",
     servings: 90,
-    // Category-typical values for calcium citrate soft chews (not independently confirmed for this brand).
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["jannette"],
     offers: [
@@ -1951,7 +1962,7 @@ export const products = [
     category: "protein",
     image: "/products/dymatize-elite-casein-vanilla.jpg",
     servings: 55,
-    // Carbs estimated from calorie math (120 - 100 from protein - 18 from fat ≈ 1g), not a direct label read.
+    nutritionNote: "Carbohydrates are estimated from calorie math rather than a direct label read.",
     nutrition: {
       proteinGrams: 25,
       calories: 120,
@@ -2131,7 +2142,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-cookie-dough-chunk.jpg",
     servings: 12,
-    // Fat derived from macro-percentage breakdown; sodium not confirmed.
+    nutritionNote: "Fat is derived from the published macro-percentage breakdown; sodium was not confirmed.",
     nutrition: { proteinGrams: 15, calories: 160, carbsGrams: 19, fatGrams: 3, sugarGrams: 8, servingSize: "1 bar (44g)" },
     approvedBy: ["geo"],
     offers: [
@@ -2250,7 +2261,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bari-life-bariburst-watermelon.png",
     servings: 90,
-    // Category-typical values for calcium citrate soft chews (not independently confirmed for this brand).
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
@@ -2264,7 +2275,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bari-life-bariburst-sour-grape.png",
     servings: 90,
-    // Category-typical values for calcium citrate soft chews (not independently confirmed for this brand).
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
@@ -2278,7 +2289,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bari-life-bariburst-lemon-lime.png",
     servings: 90,
-    // Category-typical values for calcium citrate soft chews (not independently confirmed for this brand).
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
@@ -2304,7 +2315,7 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-coffee-ice-cream.png",
     servings: 27,
-    // Carbs/fat derived from macro-percentage breakdown; sodium not confirmed.
+    nutritionNote: "Carbohydrates and fat are derived from the published macro-percentage breakdown; sodium was not confirmed.",
     nutrition: { proteinGrams: 25, calories: 120, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, servingSize: "1 scoop (33g)" },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B07FQPCZ77"), asin: "B07FQPCZ77" }
@@ -2343,7 +2354,7 @@ export const products = [
     category: "protein",
     image: "/products/ghost-whey-peanut-butter-cereal-milk.png",
     servings: 26,
-    // Carbs/fat derived from macro-percentage breakdown; sugar/sodium not confirmed.
+    nutritionNote: "Carbohydrates and fat are derived from the published macro-percentage breakdown; sugar and sodium were not confirmed.",
     nutrition: { proteinGrams: 26, calories: 140, carbsGrams: 4, fatGrams: 1.5, servingSize: "1 scoop (35.5g)" },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B07FLJYP5M"), asin: "B07FLJYP5M" }
@@ -2382,7 +2393,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/built-puff-minions-monsters.jpg",
     servings: 12,
-    // Limited-edition variety pack — category-typical Puff bar values, not independently confirmed.
+    nutritionNote: "Displayed nutrition values are category-typical estimates for Puff bars and were not independently verified for this limited-edition variety pack.",
     nutrition: { proteinGrams: 16, calories: 140, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 7 },
     approvedBy: ["geo"],
     offers: [
@@ -2408,7 +2419,7 @@ export const products = [
     id: "167",
     name: "Pin Up Girl Magnesium Glycinate for Women, 150mg Chelated (60 Capsules)",
     brand: "Pin Up Girl",
-    category: "other",
+    category: "multivitamin",
     image: "/products/pin-up-girl-magnesium-glycinate.png",
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },

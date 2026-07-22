@@ -29,11 +29,11 @@ export const GUIDES: Guide[] = [
     sections: [
       {
         heading: "Whey concentrate vs. whey isolate vs. plant protein",
-        body: "Whey concentrate is the cheapest option per gram of protein but carries more lactose and fat, which can cause bloating for people who are lactose-sensitive. Whey isolate strips out most of the lactose and fat during processing, so it digests easier and mixes thinner, but usually costs more per serving. Plant proteins (pea, rice, or blends) are the go-to for anyone avoiding dairy, though they often need to be blended from multiple sources to hit a complete amino acid profile."
+        body: "Whey concentrate generally retains more lactose and fat than whey isolate, while isolate usually costs more per serving. Individual tolerance and product formulations vary, so compare the ingredient list and nutrition label rather than assuming one form will digest or mix better for everyone. Plant-based powders avoid dairy, but their protein sources and amino-acid profiles differ by product."
       },
       {
         heading: "Judge it by cost per gram of protein, not price per tub",
-        body: "A $20 tub with small 20g scoops and a $35 tub with generous 30g scoops can land at wildly different value once you do the math. Divide the price by total grams of protein in the container, not by the number of scoops or the sticker price — that's the only number that tells you which tub is actually cheaper to hit your protein target. Every listing on MacroSaver already runs this calculation for you."
+        body: "A lower-priced tub can still cost more per gram of protein when serving sizes and serving counts differ. Price divided by the total labeled grams of protein is one useful value measure; ingredients, dietary needs, taste, and tolerance still matter. MacroSaver calculates this label-based metric where the required data is available."
       },
       {
         heading: "Check the serving size before you compare flavors",
@@ -41,13 +41,13 @@ export const GUIDES: Guide[] = [
       },
       {
         heading: "Mixability and flavor are real, not just marketing",
-        body: "A protein powder you don't enjoy drinking is one you'll stop buying, no matter how good the macros look on paper. Isolates and hydrolyzed proteins tend to mix thinner and clump less than concentrates; plant proteins are usually grittier unless blended with a thickener. If you're on the fence between two similarly priced options, the one with better reviews for taste and mixability is usually worth the small premium."
+        body: "Taste and texture vary substantially by formula, flavor, and preparation method. Reviews can reveal recurring complaints about clumping or flavor, but they are subjective and should be weighed alongside the label, price, and your own dietary needs."
       }
     ],
     faqs: [
       {
         question: "How much protein do I actually need per day?",
-        answer: "A common starting range is 0.7–1g of protein per pound of bodyweight for people who train regularly, though needs vary by goal and activity level. Protein powder is meant to fill the gap between what you eat and what you're targeting, not replace whole food entirely."
+        answer: "Protein needs vary with body size, age, diet, activity, goals, and health status. The NIH resource linked below offers general background, while a clinician or registered dietitian can help set an individual target. Protein powder can supplement a diet; it does not need to replace protein-rich foods."
       },
       {
         question: "Is a more expensive protein powder always better?",
@@ -55,7 +55,7 @@ export const GUIDES: Guide[] = [
       },
       {
         question: "Can I take protein powder if I'm lactose intolerant?",
-        answer: "Whey isolate has much of the lactose removed and is tolerated by many people with mild lactose sensitivity, but concentrate typically isn't. If you're strongly lactose intolerant, a plant-based protein sidesteps the issue entirely."
+        answer: "Whey isolate generally contains less lactose than concentrate, but lactose content and individual tolerance vary. A dairy-free powder avoids lactose, though its other ingredients may still matter for allergies or digestive symptoms. Check the label and seek clinical advice for significant reactions."
       }
     ]
   },
@@ -65,41 +65,41 @@ export const GUIDES: Guide[] = [
     category: "creatine",
     categoryLabel: "Creatine",
     summary:
-      "Creatine is one of the most researched, cheapest-per-serving supplements out there — here's how to buy it without overpaying for the same 5 grams of monohydrate.",
+      "How to compare creatine forms, labeled serving sizes, and cost per gram without treating marketing claims as settled evidence.",
     sections: [
       {
         heading: "Monohydrate is the default for a reason",
-        body: "Creatine monohydrate is the form backed by the most research for strength, power output, and muscle performance, and it's almost always the cheapest per gram. Newer forms like creatine HCL or buffered creatine are marketed on claims of better absorption or less bloating, but the evidence for a real performance edge over monohydrate is thin. Unless you have a specific reason to switch, monohydrate is the safe, well-studied, budget-friendly choice."
+        body: "Creatine monohydrate is the form most commonly studied for exercise performance and is often inexpensive per gram. Other forms may make absorption or comfort claims, but those claims should be checked against independent evidence. Compare the labeled creatine amount and price, and discuss suitability with a clinician if you have a medical condition or take medication."
       },
       {
         heading: "Watch the scoop size, not just the tub price",
-        body: "The standard effective dose falls in the 3–5g per day range, but not every tub's scoop actually measures out the same amount — some run smaller to stretch the container into more \"servings.\" A cheaper tub with undersized scoops can cost more per effective dose than a pricier tub with accurate scoops. Check the label's serving size in grams, not just the number of servings claimed."
+        body: "Serving sizes differ across products, so compare the labeled grams of creatine per serving as well as the serving count. A smaller scoop is not necessarily misleading, but it can make two tubs look more similar than they are. The NIH source below summarizes studied amounts; it is not a personalized dosing recommendation."
       },
       {
-        heading: "You don't need a loading phase",
-        body: "Some labels suggest a \"loading phase\" of 20g/day for the first week to saturate your muscles faster. It works, but it's optional — taking a steady 3–5g/day gets you to the same saturation point in a few weeks without the extra cost or GI discomfort some people get from higher doses. If you're not in a rush, skip the loading phase and save the tub."
+        heading: "Understand loading instructions before following them",
+        body: "Some products describe a short loading phase, while others use one consistent serving. Research protocols and personal needs are not interchangeable with label marketing, and larger amounts can be harder for some people to tolerate. Follow the product directions and seek professional advice when dosing is uncertain."
       },
       {
         heading: "Timing matters less than consistency",
-        body: "Unlike pre-workout, creatine doesn't need to be taken right before training to work — it builds up in your muscles over time and acts as a quick-recharge source for the ATP your muscles burn through during intense effort. Taking it at the same time every day, with or without food, matters more for results than trying to time it around your workout window."
+        body: "Creatine research generally focuses on repeated use rather than an immediate stimulant-like effect. Evidence does not establish one universally best time of day, so convenience and following the labeled directions may be more practical than treating workout timing as essential."
       },
       {
         heading: "Powder, capsules, gummies, or a blended formula",
-        body: "Plain creatine monohydrate powder is the cheapest per-gram option and mixes into any drink. Capsules and gummies cost more per gram of creatine but skip the mixing and taste entirely — a fair trade for some people. Blended \"creatine +\" formulas add extras like B-vitamins, zinc, or electrolytes; they're not a performance upgrade over plain monohydrate, so treat them as a convenience product, not a better one, and price them against a plain tub before assuming they're worth it."
+        body: "Plain powder is often less expensive per gram, while capsules, gummies, and flavored products may charge more for convenience. Blends add ingredients that should be evaluated separately; their presence does not by itself establish a performance advantage. Compare the actual creatine amount, full ingredient list, and cost per serving."
       },
       {
-        heading: "Common creatine myths, debunked",
-        body: "Creatine is not a steroid — it's a legal, well-studied dietary supplement found naturally in food like meat and fish. In healthy adults taking recommended doses, research doesn't show creatine harming kidney function. And despite the reputation for causing cramps or dehydration, studies generally find creatine users report fewer cramping and hydration issues, not more."
+        heading: "Put safety claims in context",
+        body: "Creatine is not an anabolic steroid and is also obtained from foods such as meat and fish. Safety findings from studies of healthy participants should not be generalized to every person, dose, product, or duration. Anyone with kidney concerns, pregnancy, or medication questions should get individual medical guidance before use."
       }
     ],
     faqs: [
       {
         question: "Does creatine cause bloating or water retention?",
-        answer: "Creatine draws water into muscle cells, which some people notice as a bit of extra weight or fullness early on — this is not the same as the puffy, under-the-skin bloating some other supplements cause, and it typically levels off after a few weeks."
+        answer: "Changes in body water and weight can occur, but the amount and timing vary. The scale cannot show where water is stored, and persistent swelling or other concerning symptoms warrant medical advice rather than an assumption that creatine is the cause."
       },
       {
         question: "Is creatine safe to take every day, long term?",
-        answer: "Creatine monohydrate is one of the most studied supplements available, with a long track record of safety at standard doses (around 3–5g/day) in healthy adults. As always, check with a doctor if you have kidney concerns or take other medications."
+        answer: "Studies summarized by NIH provide useful safety context, but they do not guarantee that daily, long-term use is appropriate for every person. Discuss use with a clinician if you have kidney concerns, are pregnant, take medication, or plan to use more than the label directs."
       },
       {
         question: "Do I need a fancy flavored creatine, or is unflavored fine?",
@@ -107,11 +107,11 @@ export const GUIDES: Guide[] = [
       },
       {
         question: "How long until I actually notice a difference?",
-        answer: "Most people notice a bump in training energy and performance within 2–3 weeks of consistent daily use. Visible muscle-building benefits take longer — think months of consistent training, not days — since creatine supports the work you're putting in rather than building muscle on its own."
+        answer: "Response and timing vary, and some people may notice no obvious subjective change. Training, diet, sleep, the product used, and the outcome being measured all affect what can be observed; creatine does not replace a training program."
       },
       {
         question: "Does creatine work for women, or is it mainly for men?",
-        answer: "Creatine's performance and strength benefits apply to women just as much as men — it isn't a men's-only supplement. Dosing recommendations don't typically differ by gender; the same 3–5g/day range applies."
+        answer: "Creatine is not a men's-only supplement, and research includes women as well as men. That does not make one dose appropriate for everyone; follow the label and consider individual health, body size, pregnancy, and professional advice."
       }
     ]
   },
@@ -125,15 +125,15 @@ export const GUIDES: Guide[] = [
     sections: [
       {
         heading: "Start with the stimulant dose, not the flavor",
-        body: "Caffeine is the main driver of the \"kick\" in most pre-workouts, typically ranging from 150mg (moderate) to 300mg+ (high-stim) per serving — for reference, a cup of coffee is roughly 95mg. If a label doesn't disclose exact caffeine content per scoop, be cautious, since underdosed or hidden-stim blends make it hard to know what you're actually taking."
+        body: "Many pre-workouts use caffeine, and the labeled amount can vary widely. Compare that amount with caffeine from coffee, energy drinks, medication, and other supplements rather than assessing one product in isolation. If the amount is not disclosed, it is harder to judge total intake; the FDA source below provides general caffeine safety context."
       },
       {
         heading: "Know the other key ingredients and what they do",
-        body: "Beta-alanine helps buffer muscle fatigue during higher-rep work and is the ingredient behind the harmless tingling ('paresthesia') feeling. Citrulline malate and nitrates (like beetroot extract) support blood flow and pump. L-theanine is often paired with caffeine to smooth out jitters. None of these need to be present for a pre-workout to \"work,\" but they explain why two products at the same caffeine dose can feel different."
+        body: "Ingredients such as beta-alanine, citrulline, nitrates, and L-theanine are used for different proposed effects, but evidence, studied amounts, and product doses vary. Beta-alanine can cause tingling in some people. Treat front-label claims as a prompt to inspect the full Supplement Facts panel, not as proof that a blend will produce a particular result."
       },
       {
         heading: "Stim vs. non-stim options",
-        body: "Non-stimulant pre-workouts skip caffeine entirely and lean on pump and endurance ingredients instead — a good option for evening training sessions or anyone sensitive to stimulants. If you already drink coffee before training, a non-stim option avoids stacking caffeine on caffeine."
+        body: "Products sold as non-stimulant commonly omit caffeine, but the full label still matters because formulas differ. People trying to limit caffeine may prefer them, particularly later in the day. Check all sources of caffeine and other stimulants rather than relying only on a product name."
       },
       {
         heading: "Cost per serving adds up fast with proprietary blends",
@@ -143,15 +143,15 @@ export const GUIDES: Guide[] = [
     faqs: [
       {
         question: "How long before a workout should I take pre-workout?",
-        answer: "Most people take it 20–30 minutes before training to let caffeine and other ingredients kick in. Taking it too close to bedtime workouts can disrupt sleep given caffeine's several-hour half-life."
+        answer: "Follow the product directions because ingredients absorb at different rates. Caffeine can remain active for hours and may affect sleep, so consider timing, total intake, and personal sensitivity rather than assuming one pre-workout window fits everyone."
       },
       {
         question: "Do I need to cycle off pre-workout?",
-        answer: "Regular daily use of high-stim pre-workout can build caffeine tolerance, meaning you need more to get the same effect over time. Many people take periodic breaks (a week or two) or rotate in a non-stim option to reset sensitivity."
+        answer: "Caffeine tolerance can develop with regular use, but there is no universal supplement-cycling schedule. Avoid increasing the serving simply to chase the same sensation; review total caffeine intake and discuss persistent fatigue or dependence concerns with a clinician."
       },
       {
         question: "Is the tingling feeling from pre-workout dangerous?",
-        answer: "That tingling ('paresthesia') is caused by beta-alanine and is a harmless, well-documented side effect, not a sign of a problem. It typically fades within 30–60 minutes."
+        answer: "Beta-alanine can cause temporary tingling, but a guide cannot determine the cause of an individual's symptoms. Stop using the product and seek medical help for severe, persistent, or allergy-like symptoms rather than assuming every reaction is expected."
       }
     ]
   },
@@ -165,15 +165,15 @@ export const GUIDES: Guide[] = [
     sections: [
       {
         heading: "What electrolytes are actually doing",
-        body: "Sodium, potassium, and magnesium are the core electrolytes lost through sweat, and they're what your body uses to regulate fluid balance, muscle contractions, and nerve signaling. Plain water rehydrates volume but doesn't replace these minerals — that's the gap electrolyte mixes are designed to fill, particularly after heavy sweating or long training sessions."
+        body: "Electrolytes such as sodium and potassium help with fluid balance, nerve signaling, and muscle function. Sweat losses vary substantially by person, conditions, and activity. Water and food meet everyday needs for many people; electrolyte products are one optional way to replace minerals in situations with meaningful losses."
       },
       {
         heading: "Match the sodium level to how much you sweat",
-        body: "Electrolyte mixes range from lightly flavored low-sodium options to \"hydration multiplier\" style mixes with 500mg+ of sodium per serving. Heavy sweaters, endurance athletes, people training in heat, and those following low-carb or keto diets (which flush sodium faster) generally need the higher end. Casual, shorter workouts usually don't need that much replacement."
+        body: "Sodium per serving varies widely, and a higher number is not automatically better. Needs depend on sweat loss, activity duration, weather, diet, and health conditions. Compare the label with your overall intake, and seek individual guidance when blood pressure, kidney, heart, or medication concerns apply."
       },
       {
         heading: "Sugar content varies more than people expect",
-        body: "Some electrolyte mixes use a few grams of sugar to aid absorption, which is genuinely useful during long endurance efforts; others use it mainly for taste, which adds calories without much functional benefit for a 30-minute gym session. Check the sugar line if you're using an electrolyte drink daily rather than just around workouts."
+        body: "Sugar content ranges from zero to amounts closer to a traditional sports drink. Carbohydrate can serve as fuel during some prolonged activities, while other buyers may be looking only for minerals and flavor. Check serving size, added sugar, and intended use instead of assuming every electrolyte product serves the same purpose."
       },
       {
         heading: "Compare cost per serving, not per box",
@@ -183,15 +183,15 @@ export const GUIDES: Guide[] = [
     faqs: [
       {
         question: "Do I need electrolytes if I'm not exercising heavily?",
-        answer: "For most people with a normal diet and moderate activity, food already provides enough electrolytes. Electrolyte drinks earn their keep during heavy sweating, illness (vomiting/diarrhea), hot weather, long endurance exercise, or low-carb diets that flush sodium faster than normal."
+        answer: "Many people can meet routine fluid and electrolyte needs through water and food. Heavy sweating or illness can change those needs, but vomiting, diarrhea, dehydration, or symptoms of an electrolyte imbalance may require medical guidance rather than self-treatment with a supplement."
       },
       {
         question: "What's the difference between electrolyte drinks and sports drinks like Gatorade?",
-        answer: "Traditional sports drinks are formulated around sugar for quick energy alongside some electrolytes; dedicated electrolyte mixes usually prioritize sodium/potassium/magnesium ratios with little to no sugar. Which one makes sense depends on whether you need the extra carbs for energy or just the minerals for hydration."
+        answer: "The categories overlap. Some sports drinks contain carbohydrate and modest electrolytes, while some electrolyte mixes contain little sugar and others contain plenty. Compare the actual Nutrition Facts or Supplement Facts panel instead of relying on the product category."
       },
       {
         question: "Can you get too much sodium from electrolyte drinks?",
-        answer: "It's possible if you're stacking multiple high-sodium servings on top of a normal diet without heavy sweat losses to offset it. Match your intake to your actual sweat rate and activity level rather than defaulting to the highest-sodium option available."
+        answer: "Yes. Multiple servings can add substantial sodium to the rest of a day's diet. More is not inherently more hydrating, and people with blood pressure, kidney, heart, or medication concerns should ask a clinician what intake is appropriate."
       }
     ]
   }

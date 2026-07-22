@@ -3,6 +3,7 @@ import Script from "next/script";
 import SiteChrome from "@/components/SiteChrome";
 import { CompareProvider } from "@/components/CompareContext";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
+import { serializeJsonLd } from "@/lib/json-ld";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -43,6 +44,12 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className="relative bg-[#0a0a0a] text-gray-100 antialiased min-h-screen flex flex-col">
+        <a
+          href="#main-content"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-md bg-lime-400 px-4 py-3 font-bold text-black shadow-lg transition-transform focus:translate-y-0"
+        >
+          Skip to main content
+        </a>
         <Script
           id="impact-radius-tracking"
           strategy="afterInteractive"
@@ -52,11 +59,11 @@ export default function RootLayout({
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(organizationJsonLd) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteJsonLd) }}
         />
         <CompareProvider>
           <SiteChrome>{children}</SiteChrome>

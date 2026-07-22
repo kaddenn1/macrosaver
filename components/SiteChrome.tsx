@@ -1,5 +1,3 @@
-"use client";
-
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import AmbientBackground from "./AmbientBackground";
@@ -10,7 +8,9 @@ export default function SiteChrome({ children }: { children: React.ReactNode }) 
     <>
       <AmbientBackground />
       <Navbar />
-      <div className="flex-1 flex flex-col">{children}</div>
+      <div id="main-content" className="flex-1 flex flex-col" tabIndex={-1}>
+        {children}
+      </div>
       <CompareTray />
       <Footer />
     </>

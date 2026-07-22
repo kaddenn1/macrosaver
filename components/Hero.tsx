@@ -8,26 +8,27 @@ export default function Hero() {
       <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12">
 
         {/* Left Column: The MacroSaver Wordmark */}
-        <div className="flex-1 text-center lg:text-left">
+        <div className="min-w-0 flex-1 text-center lg:text-left">
           <div className="flex items-center justify-center lg:justify-start gap-4 sm:gap-6 mb-6">
             <Image
               src="/logo.png"
               alt=""
               width={140}
               height={140}
+              preload
               className="rounded-2xl w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 shrink-0"
             />
-            <p className="text-5xl sm:text-7xl md:text-8xl lg:text-[120px] font-black leading-[0.85] tracking-tighter">
+            <p className="text-[clamp(2.35rem,12vw,7.5rem)] font-black leading-[0.85] tracking-tighter">
               <span className="text-[#a3e635]">Macro</span><span className="text-white">Saver</span>
             </p>
           </div>
           <h1 className="font-bold">
-            <div className="text-2xl sm:text-3xl text-gray-300 mb-4">
-              Compare Supplement Prices &amp; Find the Lowest Cost Per Serving
-            </div>
-            <div className="text-lg sm:text-xl text-gray-400">
-              Stop Overpaying for Protein, Pre-Workout, Creatine &amp; More.
-            </div>
+            <span className="mb-4 block text-2xl text-gray-300 sm:text-3xl">
+              Compare Supplement Price Snapshots &amp; Cost Per Serving
+            </span>
+            <span className="block text-lg text-gray-400 sm:text-xl">
+              See the value math for protein, pre-workout, creatine &amp; more.
+            </span>
           </h1>
         </div>
 

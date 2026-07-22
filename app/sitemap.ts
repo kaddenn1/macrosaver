@@ -35,10 +35,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.6,
     },
     {
-      url: `${SITE_URL}/compare`,
+      url: `${SITE_URL}/about`,
       lastModified,
-      changeFrequency: "weekly",
-      priority: 0.5,
+      changeFrequency: "monthly",
+      priority: 0.4,
     },
     {
       url: `${SITE_URL}/privacy`,

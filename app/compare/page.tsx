@@ -3,7 +3,7 @@ import CompareTable from "@/components/CompareTable";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: `Compare Products | ${SITE_NAME}`,
+  title: "Compare Products",
   description: `Compare price, cost per serving, and nutrition facts side by side on ${SITE_NAME}.`,
   alternates: { canonical: `${SITE_URL}/compare` },
   robots: { index: false, follow: true },

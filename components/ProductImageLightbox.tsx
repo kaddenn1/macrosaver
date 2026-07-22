@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 interface ProductImageLightboxProps {
@@ -10,25 +10,37 @@ interface ProductImageLightboxProps {
 
 export default function ProductImageLightbox({ src, alt }: ProductImageLightboxProps) {
   const [open, setOpen] = useState(false);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
     if (!open) return;
 
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+    const previousOverflow = document.body.style.overflow;
+    const trigger = triggerRef.current;
+    closeRef.current?.focus();
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Tab") {
+        event.preventDefault();
+        closeRef.current?.focus();
+      }
     };
     document.addEventListener("keydown", handleKeyDown);
     document.body.style.overflow = "hidden";
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
+      trigger?.focus();
     };
   }, [open]);
 
   return (
     <>
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Enlarge product photo"
@@ -46,15 +58,20 @@ export default function ProductImageLightbox({ src, alt }: ProductImageLightboxP
 
       {open && (
         <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Enlarged image of ${alt}`}
           className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-6 cursor-zoom-out"
           onClick={() => setOpen(false)}
         >
           <button
+            ref={closeRef}
+            type="button"
             onClick={() => setOpen(false)}
-            aria-label="Close"
+            aria-label="Close enlarged product photo"
             className="absolute top-4 right-4 sm:top-6 sm:right-6 w-10 h-10 flex items-center justify-center bg-[#111] border border-gray-700 rounded-full text-gray-300 hover:text-white hover:border-gray-500 transition-colors"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg aria-hidden="true" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>

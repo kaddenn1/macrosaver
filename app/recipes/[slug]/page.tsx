@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import Champions from "@/components/Champions";
 import { RECIPES, getRecipeBySlug } from "@/lib/recipes";
 import { SITE_URL } from "@/lib/site";
+import { serializeJsonLd } from "@/lib/json-ld";
 import { products } from "@/data/products";
 import { getBestOffer } from "@/lib/macrosaver-engine";
 import type { Product } from "@/data/types";
@@ -18,6 +19,8 @@ function toIsoDuration(text: string): string | undefined {
 export function generateStaticParams() {
   return RECIPES.map((recipe) => ({ slug: recipe.slug }));
 }
+
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
@@ -97,11 +100,11 @@ export default async function RecipePage({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(recipeJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }}
       />
       <main className="min-h-screen text-gray-100 font-sans">
         <div className="w-full max-w-[900px] mx-auto pt-10 px-4 sm:px-6 lg:px-8">
@@ -133,10 +136,10 @@ export default async function RecipePage({
               {recipe.summary}
             </p>
 
-            {recipe.bariatricApproved && (
+            {recipe.bariatricFocused && (
               <div className="mt-4 flex items-start gap-3 bg-[#111] border border-[#a3e635]/30 rounded-lg p-3">
                 <div className="shrink-0 bg-[#a3e635] text-black text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded-full">
-                  Bariatric Approved
+                  Bariatric-Focused Note
                 </div>
                 <p className="text-[11px] text-gray-400 leading-relaxed">
                   Built around common post-op basics — protein first, low or no added sugar, small portions. Guidelines vary by surgery type and stage, so check with your bariatric team before trying something new.

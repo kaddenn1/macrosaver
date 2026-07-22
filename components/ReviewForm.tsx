@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import StarRatingInput from "./StarRatingInput";
 
 type FormState = "idle" | "submitting" | "success" | "error" | "rate_limited";
@@ -44,14 +45,22 @@ export default function ReviewForm({ productId }: { productId: string }) {
 
   if (state === "success") {
     return (
-      <div className="border border-gray-800 rounded-lg p-4 bg-[#111] text-sm text-gray-300">
+      <div
+        role="status"
+        aria-live="polite"
+        className="border border-gray-800 rounded-lg p-4 bg-[#111] text-sm text-gray-300"
+      >
         Thanks! Your review is in for moderation and will appear once approved.
       </div>
     );
   }
 
   return (
-    <form onSubmit={handleSubmit} className="border border-gray-800 rounded-lg p-4 bg-[#111] flex flex-col gap-3">
+    <form
+      onSubmit={handleSubmit}
+      aria-busy={state === "submitting"}
+      className="border border-gray-800 rounded-lg p-4 bg-[#111] flex flex-col gap-3"
+    >
       <div className="text-[10px] uppercase tracking-wider text-gray-400">Your rating</div>
       <StarRatingInput value={rating} onChange={setRating} />
 
@@ -62,7 +71,7 @@ export default function ReviewForm({ productId }: { productId: string }) {
         onChange={(e) => setReviewerName(e.target.value)}
         placeholder="Name (optional)"
         maxLength={80}
-        className="bg-[#0a0a0a] border border-gray-800 rounded px-3 py-2 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-[#a3e635]"
+        className="min-h-11 bg-[#0a0a0a] border border-gray-700 rounded px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#a3e635]"
       />
 
       <textarea
@@ -72,7 +81,7 @@ export default function ReviewForm({ productId }: { productId: string }) {
         placeholder="Share your experience (optional)"
         maxLength={2000}
         rows={3}
-        className="bg-[#0a0a0a] border border-gray-800 rounded px-3 py-2 text-sm text-white placeholder:text-gray-600 focus:outline-none focus:border-[#a3e635] resize-none"
+        className="bg-[#0a0a0a] border border-gray-700 rounded px-3 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-[#a3e635] resize-none"
       />
 
       {/* Honeypot: hidden from real users, left off-screen rather than display:none */}
@@ -87,16 +96,25 @@ export default function ReviewForm({ productId }: { productId: string }) {
       />
 
       {state === "error" && (
-        <div className="text-xs text-red-400">Something went wrong. Please try again.</div>
+        <div role="alert" className="text-xs text-red-400">Something went wrong. Please try again.</div>
       )}
       {state === "rate_limited" && (
-        <div className="text-xs text-red-400">You&apos;ve submitted a few reviews recently — try again later.</div>
+        <div role="alert" className="text-xs text-red-400">You&apos;ve submitted a few reviews recently — try again later.</div>
       )}
+
+      <p className="text-[11px] leading-relaxed text-gray-400">
+        Approved ratings, names, and comments may be published. We use a one-way keyed IP hash to
+        limit abuse. See the{" "}
+        <Link href="/privacy" className="text-gray-200 underline hover:text-white">
+          Privacy Policy
+        </Link>
+        .
+      </p>
 
       <button
         type="submit"
         disabled={rating < 1 || state === "submitting"}
-        className="py-2 text-[11px] font-black uppercase tracking-widest text-black bg-[#a3e635] rounded hover:scale-[1.02] transition-transform disabled:opacity-50 disabled:hover:scale-100"
+        className="min-h-11 py-2 text-[11px] font-black uppercase tracking-widest text-black bg-[#a3e635] rounded hover:scale-[1.02] transition-transform focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white disabled:opacity-50 disabled:hover:scale-100"
       >
         {state === "submitting" ? "Submitting..." : "Submit Review"}
       </button>

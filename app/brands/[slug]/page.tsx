@@ -8,23 +8,30 @@ export function generateStaticParams() {
   return BRANDS.map((brand) => ({ slug: brand.slug }));
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
   const { slug } = await params;
   const brand = getBrandBySlug(slug);
   if (!brand) return {};
 
-  const title = `${brand.name} Deals | Compare Prices on MacroSaver`;
-  const description = `${brand.intro} Compare ${brand.name} prices across retailers on MacroSaver.`;
+  const query = await searchParams;
+  const title = `${brand.name} Products & Value`;
+  const description = `${brand.intro} Compare cataloged offer-price snapshots and cost-per-serving values for tracked ${brand.name} products.`;
+  const hasQuery = Object.values(query).some((value) => value !== undefined);
 
   return {
     title,
     description,
     alternates: { canonical: `${SITE_URL}/brands/${slug}` },
     openGraph: { title, description, url: `${SITE_URL}/brands/${slug}` },
+    robots: hasQuery ? { index: false, follow: true } : undefined,
   };
 }
 
@@ -67,6 +74,7 @@ export default async function BrandPage({
           searchParams={resolvedSearchParams}
           title={`${brand.name} Products`}
           viewAllHref="/brands"
+          paginationPath={`/brands/${slug}`}
         />
       </div>
     </main>

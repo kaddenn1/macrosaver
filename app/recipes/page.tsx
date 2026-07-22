@@ -6,15 +6,15 @@ import { SITE_URL } from "@/lib/site";
 import { products } from "@/data/products";
 import type { Product } from "@/data/types";
 
-const title = "High-Protein Recipes | MacroSaver";
+const title = "High-Protein & Hydration Recipes";
 const description =
-  "Simple recipes built around a scoop of protein powder — pancakes, overnight oats, mug cake, smoothies, and more, with macros for each.";
+  "Practical protein and hydration recipes with prep times, estimated nutrition, and preparation tips.";
 
 export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: `${SITE_URL}/recipes` },
-  openGraph: { title, description, url: `${SITE_URL}/recipes` },
+  openGraph: { title: `${title} | MacroSaver`, description, url: `${SITE_URL}/recipes` },
 };
 
 export default function RecipesPage() {
@@ -23,10 +23,11 @@ export default function RecipesPage() {
       <div className="w-full max-w-[1600px] mx-auto pt-10 px-4 sm:px-6 lg:px-8 pb-24">
         <div className="mb-10 border-b border-gray-800 pb-6">
           <h1 className="text-3xl font-black text-[#a3e635] tracking-tight uppercase">
-            High-Protein Recipes
+            High-Protein &amp; Hydration Recipes
           </h1>
           <p className="text-gray-400 text-sm mt-2 max-w-[650px]">
-            Simple recipes built around a scoop of protein powder — with prep time, macros, and a tip for each so they actually turn out right.
+            Protein-forward and hydration recipes with prep time, estimated nutrition, and a
+            preparation tip for each. Nutrition varies by ingredients and portion size.
           </p>
         </div>
 
@@ -66,9 +67,9 @@ export default function RecipesPage() {
                       </div>
                     </div>
                   ) : null}
-                  {recipe.bariatricApproved && (
+                  {recipe.bariatricFocused && (
                     <div className="absolute top-2 left-2 bg-[#a3e635] text-black text-[10px] font-black uppercase tracking-wider px-2 py-1 rounded-full">
-                      Bariatric Approved
+                      Bariatric-Focused
                     </div>
                   )}
                 </div>

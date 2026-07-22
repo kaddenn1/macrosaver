@@ -18,7 +18,7 @@ export type Recipe = {
   nutrition: RecipeNutrition;
   featuredProductId?: string;
   image?: string;
-  bariatricApproved?: boolean;
+  bariatricFocused?: boolean;
 };
 
 export const RECIPES: Recipe[] = [
@@ -290,7 +290,7 @@ export const RECIPES: Recipe[] = [
     },
     featuredProductId: "8",
     image: "/recipes/bariatric-protein-pudding.png",
-    bariatricApproved: true,
+    bariatricFocused: true,
   },
   {
     slug: "bariatric-protein-hot-cocoa",
@@ -321,7 +321,7 @@ export const RECIPES: Recipe[] = [
     },
     featuredProductId: "33",
     image: "/recipes/bariatric-protein-hot-cocoa.png",
-    bariatricApproved: true,
+    bariatricFocused: true,
   },
   {
     slug: "bariatric-protein-broth-soup",
@@ -353,7 +353,7 @@ export const RECIPES: Recipe[] = [
     },
     featuredProductId: "109",
     image: "/recipes/bariatric-protein-broth-soup.png",
-    bariatricApproved: true,
+    bariatricFocused: true,
   },
   {
     slug: "bariatric-protein-popsicles",
@@ -384,7 +384,7 @@ export const RECIPES: Recipe[] = [
     },
     featuredProductId: "118",
     image: "/recipes/bariatric-protein-popsicles.png",
-    bariatricApproved: true,
+    bariatricFocused: true,
   },
   {
     slug: "bariatric-protein-egg-bites",
@@ -418,7 +418,7 @@ export const RECIPES: Recipe[] = [
     },
     featuredProductId: "62",
     image: "/recipes/bariatric-protein-egg-bites.png",
-    bariatricApproved: true,
+    bariatricFocused: true,
   },
   {
     slug: "bariatric-protein-gelatin-cups",
@@ -450,7 +450,7 @@ export const RECIPES: Recipe[] = [
     },
     featuredProductId: "32",
     image: "/recipes/bariatric-protein-gelatin-cups.png",
-    bariatricApproved: true,
+    bariatricFocused: true,
   },
   {
     slug: "protein-waffles",
