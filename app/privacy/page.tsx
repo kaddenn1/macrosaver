@@ -1,4 +1,17 @@
 import React from 'react';
+import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
+
+const title = "Privacy Policy | MacroSaver";
+const description =
+  "MacroSaver's privacy policy, including our affiliate and advertising disclosures.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: `${SITE_URL}/privacy` },
+  openGraph: { title, description, url: `${SITE_URL}/privacy` },
+};
 
 export default function PrivacyPolicy() {
   return (

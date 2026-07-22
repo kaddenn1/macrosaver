@@ -9,6 +9,8 @@ import { CATEGORY_SLUGS, CATEGORY_TITLES } from "@/lib/categories";
 import { CATEGORY_BUYING_GUIDE } from "@/lib/categoryContent";
 import { getGuideByCategory } from "@/lib/guides";
 import { SITE_URL } from "@/lib/site";
+import { products } from "@/data/products";
+import type { Product } from "@/data/types";
 
 export function generateStaticParams() {
   return CATEGORY_SLUGS.map((slug) => ({ slug }));
@@ -47,9 +49,49 @@ export default async function CategoryPage({
   const buyingGuide = CATEGORY_BUYING_GUIDE[currentSlug];
   const fullGuide = getGuideByCategory(currentSlug);
 
+  const categoryProducts = (products as Product[]).filter(
+    (p) =>
+      p.category.toLowerCase() === currentSlug.toLowerCase() ||
+      p.additionalCategories?.some((c) => c.toLowerCase() === currentSlug.toLowerCase())
+  );
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: displayTitle,
+        item: `${SITE_URL}/category/${currentSlug}`,
+      },
+    ],
+  };
+
+  const itemListJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${displayTitle} Deals`,
+    itemListElement: categoryProducts.slice(0, 20).map((p, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: `${SITE_URL}/product/${p.id}`,
+      name: p.name,
+    })),
+  };
+
   return (
     <main className="min-h-screen text-gray-100 font-sans">
-      
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+
       <div className="w-full max-w-[1600px] mx-auto pt-6 px-4 sm:px-6 lg:px-8 pb-2">
          <CategoryRow />
       </div>

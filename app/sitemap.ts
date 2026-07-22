@@ -41,12 +41,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${SITE_URL}/protein`,
-      lastModified,
-      changeFrequency: "daily",
-      priority: 0.7,
-    },
-    {
       url: `${SITE_URL}/privacy`,
       lastModified,
       changeFrequency: "yearly",

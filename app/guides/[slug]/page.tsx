@@ -40,9 +40,45 @@ export default async function GuidePage({
     notFound();
   }
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: guide.faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      { "@type": "ListItem", position: 2, name: "Guides", item: `${SITE_URL}/guides` },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: guide.title,
+        item: `${SITE_URL}/guides/${slug}`,
+      },
+    ],
+  };
+
   return (
     <main className="min-h-screen text-gray-100 font-sans">
-      <div className="w-full max-w-[900px] mx-auto pt-10 px-4 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+<div className="w-full max-w-[900px] mx-auto pt-10 px-4 sm:px-6 lg:px-8">
         <div className="mb-10 border-b border-gray-800 pb-6">
           <Link
             href={`/category/${guide.category}`}

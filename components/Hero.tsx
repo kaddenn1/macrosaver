@@ -17,16 +17,18 @@ export default function Hero() {
               height={140}
               className="rounded-2xl w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 shrink-0"
             />
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[120px] font-black leading-[0.85] tracking-tighter">
+            <p className="text-5xl sm:text-7xl md:text-8xl lg:text-[120px] font-black leading-[0.85] tracking-tighter">
               <span className="text-[#a3e635]">Macro</span><span className="text-white">Saver</span>
-            </h1>
+            </p>
           </div>
-          <p className="text-2xl sm:text-3xl font-bold text-gray-300 mb-4">
-            Know Where Every Dollar Goes.
-          </p>
-          <p className="text-lg sm:text-xl font-bold text-gray-400">
-            Stop Overpaying for Supplements.
-          </p>
+          <h1 className="font-bold">
+            <div className="text-2xl sm:text-3xl text-gray-300 mb-4">
+              Compare Supplement Prices &amp; Find the Lowest Cost Per Serving
+            </div>
+            <div className="text-lg sm:text-xl text-gray-400">
+              Stop Overpaying for Protein, Pre-Workout, Creatine &amp; More.
+            </div>
+          </h1>
         </div>
 
         {/* Right Column: Feature List (desktop only, cramped/redundant on mobile) */}
