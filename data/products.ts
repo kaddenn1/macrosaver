@@ -2427,5 +2427,40 @@ export const products = [
     offers: [
       { retailer: "Amazon", price: 17.95, url: amazonUrl("B0GNP37Q1C"), asin: "B0GNP37Q1C" }
     ]
+  },
+  {
+    id: "168",
+    name: "Electrolytes Powder Packets, Sugar Free Hydration Sticks - Lemon Lime (20 Sticks)",
+    brand: "Sooergy",
+    category: "electrolytes",
+    servings: 20,
+    nutrition: {
+      calories: 0,
+      proteinGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 stick pack",
+    },
+    nutritionNote:
+      "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 15.19, url: amazonUrl("B0F9T3ZH6D"), asin: "B0F9T3ZH6D" }
+    ]
+  },
+  {
+    id: "169",
+    name: "Sugar-Free Hydration Multiplier - Lemon Lime (24 Sticks)",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 24,
+    nutrition: {
+      proteinGrams: 0,
+      sugarGrams: 0,
+      servingSize: "1 stick pack",
+    },
+    nutritionNote:
+      "Calories, sodium, and other electrolyte mineral amounts were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 47.99, url: amazonUrl("B0CVX6YK9K"), asin: "B0CVX6YK9K" }
+    ]
   }
 ];
