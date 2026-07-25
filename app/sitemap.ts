@@ -5,6 +5,7 @@ import { GUIDES } from "@/lib/guides";
 import { BRANDS } from "@/lib/brands";
 import { RECIPES } from "@/lib/recipes";
 import { BEST_VALUE_ARTICLES } from "@/lib/best-value";
+import { BRAND_COMPARISON_ARTICLES } from "@/lib/brand-comparison";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -97,11 +98,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
+  const brandComparisonRoutes: MetadataRoute.Sitemap = BRAND_COMPARISON_ARTICLES.map((article) => ({
+    url: `${SITE_URL}/best/${article.slug}`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: 0.75,
+  }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
     ...guideRoutes,
     ...bestValueRoutes,
+    ...brandComparisonRoutes,
     ...brandRoutes,
     ...recipeRoutes,
     ...productRoutes,

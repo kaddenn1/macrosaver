@@ -4,10 +4,17 @@ import {
   getBestOffer,
   getCostPerServing,
   getProteinPerDollar,
+  getServingSizeGrams,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
 
-export type BestValueSortMetric = "proteinPerDollar" | "costPerServing";
+export type BestValueSortMetric = "proteinPerDollar" | "costPerServing" | "servingSizeGrams";
+
+const METRIC_GETTERS: Record<BestValueSortMetric, (product: Product) => number | null> = {
+  proteinPerDollar: getProteinPerDollar,
+  costPerServing: getCostPerServing,
+  servingSizeGrams: getServingSizeGrams,
+};
 
 export type BestValueArticle = {
   slug: string;
@@ -21,6 +28,7 @@ export type BestValueArticle = {
   sortDirection: "asc" | "desc";
   limit: number;
   metricLabel: string;
+  metricFormat: "grams" | "dollars";
 };
 
 export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
@@ -37,6 +45,7 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     sortDirection: "asc",
     limit: 15,
     metricLabel: "Cost / Serving",
+    metricFormat: "dollars",
   },
   {
     slug: "best-protein-powder-under-30",
@@ -54,6 +63,7 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     sortDirection: "desc",
     limit: 15,
     metricLabel: "Protein / $",
+    metricFormat: "grams",
   },
   {
     slug: "best-protein-powder-under-50",
@@ -71,6 +81,7 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     sortDirection: "desc",
     limit: 15,
     metricLabel: "Protein / $",
+    metricFormat: "grams",
   },
   {
     slug: "highest-protein-per-dollar",
@@ -84,6 +95,65 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     sortDirection: "desc",
     limit: 25,
     metricLabel: "Protein / $",
+    metricFormat: "grams",
+  },
+  {
+    slug: "best-value-clear-protein-powder",
+    title: "Best-Value Clear Protein Powder",
+    metaDescription:
+      "Clear whey protein isolate products in our catalog, ranked by protein per dollar, for anyone who wants a juice-like protein drink instead of a milky shake.",
+    intro:
+      "Clear whey isolate is still a small category in our catalog — this list is limited to products explicitly labeled \"clear\" in their own name, so it may only show a couple of results today. They're ranked by protein per dollar, same as our other protein rankings.",
+    category: "protein",
+    filter: (product) => /clear/i.test(product.name),
+    sortBy: "proteinPerDollar",
+    sortDirection: "desc",
+    limit: 15,
+    metricLabel: "Protein / $",
+    metricFormat: "grams",
+  },
+  {
+    slug: "best-value-protein-powder-bariatric",
+    title: "Best-Value Protein Powder for Bariatric Patients",
+    metaDescription:
+      "Protein products in our bariatric category, ranked by protein per dollar, for post-op shoppers prioritizing protein first in small portions.",
+    intro:
+      "Filtered to products tagged in our bariatric category that actually contain protein — mostly collagen and protein powders sized for small portions, not the full bariatric vitamin and supplement lineup. Ranked by protein per dollar. This is a newer part of our catalog, so the list may be short; always confirm with your bariatric team before changing what you use post-op.",
+    category: "bariatric",
+    filter: (product) => product.nutrition.proteinGrams > 0,
+    sortBy: "proteinPerDollar",
+    sortDirection: "desc",
+    limit: 15,
+    metricLabel: "Protein / $",
+    metricFormat: "grams",
+  },
+  {
+    slug: "best-protein-powder-small-serving-sizes",
+    title: "Best Protein Powder for Small Serving Sizes",
+    metaDescription:
+      "Protein powders ranked by grams per serving, smallest first, for anyone who wants a lighter scoop to mix into a small glass or add to another recipe.",
+    intro:
+      "Ranked by the labeled grams-per-serving figure, smallest first — pulled directly from each product's serving size, not estimated. Only products with a parseable gram serving size on the label are included, so this list skips products sold by stick pack, bottle, or capsule instead of a scoop.",
+    category: "protein",
+    sortBy: "servingSizeGrams",
+    sortDirection: "asc",
+    limit: 15,
+    metricLabel: "Grams / Serving",
+    metricFormat: "grams",
+  },
+  {
+    slug: "protein-powder-price-tracker",
+    title: "Protein Powder Price Tracker and Buying Guide",
+    metaDescription:
+      "Every protein powder in our catalog with a recorded price, sorted cheapest-per-serving first — a full reference table, not just a top-10 list.",
+    intro:
+      "This is the full catalog, not a shortlist: every protein product we track with a recorded price, sorted by cost per serving from cheapest to most expensive. Use it as a reference table rather than a top-picks list — pair it with the protein per dollar rankings above if you want the best value, not just the lowest sticker price.",
+    category: "protein",
+    sortBy: "costPerServing",
+    sortDirection: "asc",
+    limit: 60,
+    metricLabel: "Cost / Serving",
+    metricFormat: "dollars",
   },
 ];
 
@@ -106,7 +176,7 @@ export function getRankedProducts(article: BestValueArticle): RankedProduct[] {
     (p) => supportsServingMetrics(p) && (!article.filter || article.filter(p))
   );
 
-  const getMetric = article.sortBy === "proteinPerDollar" ? getProteinPerDollar : getCostPerServing;
+  const getMetric = METRIC_GETTERS[article.sortBy];
 
   const ranked = eligible
     .map((product) => ({ product, metricValue: getMetric(product) }))

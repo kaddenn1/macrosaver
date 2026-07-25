@@ -39,6 +39,21 @@ export function supportsServingMetrics(product: Product): boolean {
 }
 
 /**
+ * Parses the labeled gram weight out of a servingSize string like "1 scoop (26g)"
+ * or "2 scoops (42g)". Returns null when no parenthesized gram figure is present
+ * (e.g. "1 stick pack", "1 bottle (16.9 fl oz)") rather than guessing one.
+ */
+export function getServingSizeGrams(product: Product): number | null {
+  if (!supportsServingMetrics(product) || !product.nutrition.servingSize) return null;
+
+  const match = product.nutrition.servingSize.match(/\((\d+(?:\.\d+)?)\s*g\)/i);
+  if (!match) return null;
+
+  const grams = parseFloat(match[1]);
+  return Number.isFinite(grams) && grams > 0 ? grams : null;
+}
+
+/**
  * Price structured data is emitted only for a recent, explicitly dated observation.
  * Undated, invalid, future, and older snapshots remain visible on the page but are not
  * presented to crawlers as an active Offer.

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BEST_VALUE_ARTICLES } from "@/lib/best-value";
+import { BRAND_COMPARISON_ARTICLES } from "@/lib/brand-comparison";
 import { SITE_URL } from "@/lib/site";
 
 const title = "Best Value Comparisons";
@@ -41,6 +42,21 @@ export default function BestValuePage() {
               </p>
               <div className="mt-4 text-[11px] font-black uppercase tracking-widest text-gray-400 group-hover:text-[#a3e635] transition-colors">
                 See the ranking →
+              </div>
+            </Link>
+          ))}
+          {BRAND_COMPARISON_ARTICLES.map((article) => (
+            <Link
+              key={article.slug}
+              href={`/best/${article.slug}`}
+              className="group bg-[#111] border border-gray-800 hover:border-[#a3e635] rounded-xl p-6 flex flex-col transition-all duration-300 hover:shadow-[0_0_30px_rgba(163,230,53,0.1)]"
+            >
+              <h2 className="text-lg font-bold text-white leading-snug mb-3">{article.title}</h2>
+              <p className="text-sm text-gray-400 leading-relaxed flex-1">
+                {article.metaDescription}
+              </p>
+              <div className="mt-4 text-[11px] font-black uppercase tracking-widest text-gray-400 group-hover:text-[#a3e635] transition-colors">
+                See the comparison →
               </div>
             </Link>
           ))}

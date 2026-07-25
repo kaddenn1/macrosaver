@@ -5,6 +5,7 @@ import Champions from "@/components/Champions";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { GUIDES, getGuideBySlug } from "@/lib/guides";
 import { getBestValueArticlesByCategory } from "@/lib/best-value";
+import { BRAND_COMPARISON_ARTICLES } from "@/lib/brand-comparison";
 import { SITE_URL } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
 
@@ -45,7 +46,10 @@ export default async function GuidePage({
     notFound();
   }
 
-  const relatedArticles = getBestValueArticlesByCategory(guide.category);
+  const relatedArticles = [
+    ...getBestValueArticlesByCategory(guide.category),
+    ...BRAND_COMPARISON_ARTICLES.filter((a) => a.category === guide.category),
+  ];
 
   const faqJsonLd = {
     "@context": "https://schema.org",
