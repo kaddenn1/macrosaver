@@ -2443,7 +2443,7 @@ export const products = [
     nutritionNote:
       "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 15.19, url: amazonUrl("B0F9T3ZH6D"), asin: "B0F9T3ZH6D" }
+      { retailer: "Amazon", price: 15.19, url: amazonUrl("B0F9T3ZH6D"), asin: "B0F9T3ZH6D", priceObservedAt: "2026-07-25" }
     ]
   },
   {
@@ -2460,7 +2460,7 @@ export const products = [
     nutritionNote:
       "Calories, sodium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 47.99, url: amazonUrl("B0CVX6YK9K"), asin: "B0CVX6YK9K" }
+      { retailer: "Amazon", price: 47.99, url: amazonUrl("B0CVX6YK9K"), asin: "B0CVX6YK9K", priceObservedAt: "2026-07-25" }
     ]
   }
 ];
