@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Champions from "@/components/Champions";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { GUIDES, getGuideBySlug } from "@/lib/guides";
+import { getBestValueArticlesByCategory } from "@/lib/best-value";
 import { SITE_URL } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
 
@@ -43,6 +44,8 @@ export default async function GuidePage({
   if (!guide) {
     notFound();
   }
+
+  const relatedArticles = getBestValueArticlesByCategory(guide.category);
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -117,6 +120,25 @@ export default async function GuidePage({
             </div>
           ))}
         </div>
+
+        {relatedArticles.length > 0 && (
+          <div className="border-t border-gray-800 pt-8 pb-8">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              Related Price Comparisons
+            </h2>
+            <div className="flex flex-col gap-2">
+              {relatedArticles.map((article) => (
+                <Link
+                  key={article.slug}
+                  href={`/best/${article.slug}`}
+                  className="text-sm text-gray-300 hover:text-[#a3e635] underline transition-colors"
+                >
+                  {article.title} →
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="border-t border-gray-800 pt-8 pb-16">
           <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-6">

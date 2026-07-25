@@ -4,6 +4,7 @@ import { CATEGORY_SLUGS } from "@/lib/categories";
 import { GUIDES } from "@/lib/guides";
 import { BRANDS } from "@/lib/brands";
 import { RECIPES } from "@/lib/recipes";
+import { BEST_VALUE_ARTICLES } from "@/lib/best-value";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -18,6 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${SITE_URL}/guides`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
+    {
+      url: `${SITE_URL}/best`,
       lastModified,
       changeFrequency: "weekly",
       priority: 0.8,
@@ -83,10 +90,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const bestValueRoutes: MetadataRoute.Sitemap = BEST_VALUE_ARTICLES.map((article) => ({
+    url: `${SITE_URL}/best/${article.slug}`,
+    lastModified,
+    changeFrequency: "weekly",
+    priority: 0.75,
+  }));
+
   return [
     ...staticRoutes,
     ...categoryRoutes,
     ...guideRoutes,
+    ...bestValueRoutes,
     ...brandRoutes,
     ...recipeRoutes,
     ...productRoutes,

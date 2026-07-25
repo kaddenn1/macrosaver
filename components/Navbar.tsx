@@ -17,6 +17,7 @@ const navLinks = [
   { href: "/category/multivitamin", label: "Multivitamin" },
   { href: "/brands", label: "Brands" },
   { href: "/guides", label: "Guides" },
+  { href: "/best", label: "Comparisons" },
   { href: "/recipes", label: "Recipes" },
   { href: "/about", label: "About" },
 ];
