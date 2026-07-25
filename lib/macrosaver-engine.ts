@@ -136,3 +136,33 @@ export function getSavingsVsHighestOffer(product: Product): number | null {
   return roundToTwo(highestOffer.price - bestOffer.price);
 }
 
+/**
+ * Picks the single best-value product from a set, e.g. products sharing a category.
+ * Prefers highest protein-per-dollar; falls back to lowest cost-per-serving for
+ * categories (electrolytes, creatine) where protein isn't the relevant metric.
+ */
+export function getBestValueProduct(
+  candidates: Product[],
+  excludeId?: string
+): Product | null {
+  const pool = excludeId ? candidates.filter((p) => p.id !== excludeId) : candidates;
+
+  const byProteinPerDollar = pool
+    .map((product) => ({ product, value: getProteinPerDollar(product) }))
+    .filter((entry): entry is { product: Product; value: number } => entry.value !== null);
+
+  if (byProteinPerDollar.length > 0) {
+    return byProteinPerDollar.reduce((best, entry) => (entry.value > best.value ? entry : best))
+      .product;
+  }
+
+  const byCostPerServing = pool
+    .map((product) => ({ product, value: getCostPerServing(product) }))
+    .filter((entry): entry is { product: Product; value: number } => entry.value !== null);
+
+  if (byCostPerServing.length === 0) return null;
+
+  return byCostPerServing.reduce((best, entry) => (entry.value < best.value ? entry : best))
+    .product;
+}
+

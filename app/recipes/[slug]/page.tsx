@@ -8,7 +8,9 @@ import { RECIPES, getRecipeBySlug } from "@/lib/recipes";
 import { SITE_URL } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
 import { products } from "@/data/products";
-import { getBestOffer } from "@/lib/macrosaver-engine";
+import { getBestOffer, getBestValueProduct } from "@/lib/macrosaver-engine";
+import { getGuideByCategory } from "@/lib/guides";
+import { CATEGORY_TITLES } from "@/lib/categories";
 import type { Product } from "@/data/types";
 
 function toIsoDuration(text: string): string | undefined {
@@ -58,6 +60,16 @@ export default async function RecipePage({
     ? (products as Product[]).find((p) => p.id === recipe.featuredProductId)
     : undefined;
   const featuredOffer = featuredProduct ? getBestOffer(featuredProduct) : undefined;
+
+  const category = featuredProduct?.category ?? "protein";
+  const categoryLabel = CATEGORY_TITLES[category] ?? category;
+  const guide = getGuideByCategory(category);
+
+  const categoryProducts = (products as Product[]).filter(
+    (p) => p.category === category || p.additionalCategories?.includes(category)
+  );
+  const bestValueProduct = getBestValueProduct(categoryProducts, featuredProduct?.id);
+  const bestValueOffer = bestValueProduct ? getBestOffer(bestValueProduct) : undefined;
 
   const recipeJsonLd = {
     "@context": "https://schema.org",
@@ -229,54 +241,91 @@ export default async function RecipePage({
 
           {featuredProduct && (
             <div className="pb-16">
-              <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
-                Made With
-              </h2>
-              <Link
-                href={`/product/${featuredProduct.id}`}
-                className="group flex items-center gap-4 bg-[#111] border border-gray-800 hover:border-[#a3e635] rounded-xl p-4 transition-all duration-300"
-              >
-                <div className="w-16 h-16 shrink-0 bg-[#0a0a0a] border border-gray-800 rounded-lg relative overflow-hidden">
-                  {featuredProduct.image && (
-                    <Image
-                      src={featuredProduct.image}
-                      alt={featuredProduct.name}
-                      fill
-                      className="object-contain p-1.5"
-                      sizes="64px"
-                    />
-                  )}
-                </div>
-                <div className="flex-1 min-w-0">
-                  <div className="text-[10px] font-bold uppercase tracking-wider text-[#a3e635] mb-1">
-                    {featuredProduct.brand}
-                  </div>
-                  <div className="text-sm font-bold text-white leading-snug truncate">
-                    {featuredProduct.name}
-                  </div>
-                </div>
-                <div className="text-right shrink-0">
-                  <div className="text-lg font-black text-white">
-                    {featuredOffer ? `$${featuredOffer.price.toFixed(2)}` : "View"}
-                  </div>
-                  <div className="text-[10px] text-gray-400 uppercase tracking-wider group-hover:text-[#a3e635] transition-colors">
-                    Shop this powder →
-                  </div>
-                </div>
-              </Link>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-white">
+                  Made With
+                </h2>
+                {guide && (
+                  <Link
+                    href={`/guides/${guide.slug}`}
+                    className="text-[11px] font-bold uppercase tracking-wider text-gray-400 hover:text-[#a3e635] transition-colors"
+                  >
+                    {guide.categoryLabel} Buying Guide →
+                  </Link>
+                )}
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <RecipeProductPick
+                  product={featuredProduct}
+                  offer={featuredOffer}
+                  reason="Used in this recipe"
+                />
+                {bestValueProduct && (
+                  <RecipeProductPick
+                    product={bestValueProduct}
+                    offer={bestValueOffer}
+                    reason={`Best value pick for ${categoryLabel.toLowerCase()}`}
+                  />
+                )}
+              </div>
             </div>
           )}
         </div>
 
         <div className="w-full max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pb-24">
           <Champions
-            filterCategory="protein"
+            filterCategory={category}
             limit={4}
-            title="Shop Protein Powder"
-            viewAllHref="/category/protein"
+            title={`Shop ${categoryLabel}`}
+            viewAllHref={`/category/${category}`}
           />
         </div>
       </main>
     </>
+  );
+}
+
+function RecipeProductPick({
+  product,
+  offer,
+  reason,
+}: {
+  product: Product;
+  offer: ReturnType<typeof getBestOffer> | undefined;
+  reason: string;
+}) {
+  return (
+    <Link
+      href={`/product/${product.id}`}
+      className="group flex items-center gap-4 bg-[#111] border border-gray-800 hover:border-[#a3e635] rounded-xl p-4 transition-all duration-300"
+    >
+      <div className="w-16 h-16 shrink-0 bg-[#0a0a0a] border border-gray-800 rounded-lg relative overflow-hidden">
+        {product.image && (
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-contain p-1.5"
+            sizes="64px"
+          />
+        )}
+      </div>
+      <div className="flex-1 min-w-0">
+        <div className="text-[10px] font-bold uppercase tracking-wider text-[#a3e635] mb-1">
+          {reason}
+        </div>
+        <div className="text-sm font-bold text-white leading-snug truncate">
+          {product.brand} {product.name}
+        </div>
+      </div>
+      <div className="text-right shrink-0">
+        <div className="text-lg font-black text-white">
+          {offer ? `$${offer.price.toFixed(2)}` : "View"}
+        </div>
+        <div className="text-[10px] text-gray-400 uppercase tracking-wider group-hover:text-[#a3e635] transition-colors">
+          Shop →
+        </div>
+      </div>
+    </Link>
   );
 }
