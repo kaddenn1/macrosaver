@@ -25,6 +25,20 @@ export type BestValueArticle = {
 
 export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
   {
+    slug: "cheapest-whey-protein-per-serving",
+    title: "Cheapest Whey Protein per Serving",
+    metaDescription:
+      "Every whey protein in our catalog — identified by \"whey\" in the product name — ranked from lowest to highest cost per serving using recorded retailer prices.",
+    intro:
+      "This list is limited to products with \"whey\" in their own product name — we're not classifying formulas ourselves, just filtering to what the label already claims. They're ranked by cost per serving (price divided by servings per container), the number that actually determines what one scoop costs you, not the price on the tub.",
+    category: "protein",
+    filter: (product) => /whey/i.test(product.name),
+    sortBy: "costPerServing",
+    sortDirection: "asc",
+    limit: 15,
+    metricLabel: "Cost / Serving",
+  },
+  {
     slug: "best-protein-powder-under-30",
     title: "Best Protein Powder Under $30",
     metaDescription:
