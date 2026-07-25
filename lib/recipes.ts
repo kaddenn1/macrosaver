@@ -54,7 +54,7 @@ export const RECIPES: Recipe[] = [
       carbs: "~32g",
       fat: "~8g",
     },
-    featuredProductId: "17",
+    featuredProductId: "18",
     image: "/recipes/protein-pancakes.png",
   },
   {
