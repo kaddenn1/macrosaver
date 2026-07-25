@@ -22,7 +22,19 @@ import { getReviewSummary } from "@/lib/reviews";
 import ProductReviews from "@/components/ProductReviews";
 import CompareButton from "@/components/CompareButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { getGuideByCategory } from "@/lib/guides";
+import { RECIPES } from "@/lib/recipes";
 import type { Product } from "@/data/types";
+
+function getLatestPriceObservation(product: Product): Date | null {
+  const observedDates = product.offers
+    .map((offer) => (offer.priceObservedAt ? Date.parse(offer.priceObservedAt) : NaN))
+    .filter((time) => Number.isFinite(time));
+
+  if (observedDates.length === 0) return null;
+
+  return new Date(Math.max(...observedDates));
+}
 
 export const revalidate = 3600;
 
@@ -103,6 +115,9 @@ export default async function ProductPage({
   const categoryTitle = CATEGORY_TITLES[product.category] || product.category;
   const relatedProducts = getRelatedProducts(product, 4);
   const reviewSummary = await getReviewSummary(product.id);
+  const guide = getGuideByCategory(product.category);
+  const featuredInRecipes = RECIPES.filter((r) => r.featuredProductId === product.id);
+  const latestPriceObservation = getLatestPriceObservation(product);
 
   const sortedOffers = [...product.offers].sort((a, b) => a.price - b.price);
   const freshOffers = sortedOffers.filter((offer) => hasFreshPriceObservation(offer));
@@ -416,10 +431,68 @@ export default async function ProductPage({
               pay or the offers we show — our rankings are based purely on cost per serving and cost
               per ounce of protein.
             </p>
+
+            <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-gray-500">
+              <span>
+                {latestPriceObservation
+                  ? `Price data last verified ${latestPriceObservation.toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}`
+                  : "Retailer prices shown above are undated snapshots"}
+              </span>
+              <span aria-hidden="true">·</span>
+              <Link href="/about#corrections" className="underline hover:text-gray-300">
+                Report a correction
+              </Link>
+              {guide && (
+                <>
+                  <span aria-hidden="true">·</span>
+                  <Link href={`/guides/${guide.slug}`} className="underline hover:text-gray-300">
+                    Read the {guide.categoryLabel} Buying Guide
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
         </div>
 
         <ProductReviews productId={product.id} summary={reviewSummary} />
+
+        {featuredInRecipes.length > 0 && (
+          <div className="mt-12 border-t border-gray-800 pt-8">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
+              Featured In These Recipes
+            </h2>
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              {featuredInRecipes.map((recipe) => (
+                <Link
+                  key={recipe.slug}
+                  href={`/recipes/${recipe.slug}`}
+                  className="block bg-[#111] border border-gray-800 rounded-lg p-3 hover:border-gray-600 transition-colors"
+                >
+                  <div className="h-24 flex items-center justify-center mb-2 relative overflow-hidden rounded">
+                    {recipe.image ? (
+                      <Image
+                        src={recipe.image}
+                        alt={recipe.title}
+                        fill
+                        className="object-cover"
+                        sizes="200px"
+                      />
+                    ) : (
+                      <span className="text-[10px] text-gray-400 uppercase">No Image</span>
+                    )}
+                  </div>
+                  <div className="text-xs text-gray-200 leading-snug line-clamp-2">
+                    {recipe.title}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {relatedProducts.length > 0 && (
           <div className="mt-12 border-t border-gray-800 pt-8">

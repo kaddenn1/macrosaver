@@ -127,7 +127,7 @@ export default function AboutPage() {
           </p>
         </section>
 
-        <section className="space-y-3 border-t border-gray-800 pt-8">
+        <section id="corrections" className="space-y-3 border-t border-gray-800 pt-8 scroll-mt-24">
           <h2 className="text-xl font-bold text-white">Reviews, corrections, and contact</h2>
           <p className="leading-relaxed text-gray-400">
             Submitted reviews are moderated before publication. If you spot an incorrect price,
