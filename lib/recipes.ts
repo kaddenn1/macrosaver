@@ -11,6 +11,9 @@ export type Recipe = {
   summary: string;
   prepTime: string;
   cookTime: string;
+  /** Active prep + cook time, plus any passive wait (chilling/freezing/setting) folded in. */
+  totalTime: string;
+  recipeCategory: "Breakfast" | "Dessert" | "Snack" | "Drink" | "Bariatric-Friendly";
   servings: string;
   ingredients: string[];
   instructions: string[];
@@ -29,6 +32,8 @@ export const RECIPES: Recipe[] = [
       "Fluffy pancakes with a full scoop of protein powder baked in, so breakfast stops being the weakest meal of your day for hitting your target.",
     prepTime: "5 min",
     cookTime: "10 min",
+    totalTime: "15 min",
+    recipeCategory: "Breakfast",
     servings: "2 (about 6 pancakes)",
     ingredients: [
       "1 scoop (about 30g) vanilla or unflavored whey or plant protein powder",
@@ -64,6 +69,8 @@ export const RECIPES: Recipe[] = [
       "Zero-cook, make-ahead breakfast that mixes a scoop of protein powder straight into the oats so you're not choking down a chalky shake before work.",
     prepTime: "5 min (plus overnight in the fridge)",
     cookTime: "None",
+    totalTime: "5 min (plus overnight chill)",
+    recipeCategory: "Breakfast",
     servings: "1",
     ingredients: [
       "1/2 cup old-fashioned oats",
@@ -98,6 +105,8 @@ export const RECIPES: Recipe[] = [
       "A single-serving cake that's done in under two minutes in the microwave — the fastest way to make a protein powder tub feel like dessert.",
     prepTime: "2 min",
     cookTime: "1-2 min (microwave)",
+    totalTime: "4 min",
+    recipeCategory: "Dessert",
     servings: "1",
     ingredients: [
       "1 scoop (about 30g) chocolate or vanilla protein powder",
@@ -132,6 +141,8 @@ export const RECIPES: Recipe[] = [
       "The baseline recipe everything else gets compared to — a thick, balanced smoothie built around a single scoop of protein powder.",
     prepTime: "5 min",
     cookTime: "None",
+    totalTime: "5 min",
+    recipeCategory: "Drink",
     servings: "1",
     ingredients: [
       "1 scoop (about 30g) protein powder, any flavor",
@@ -164,6 +175,8 @@ export const RECIPES: Recipe[] = [
       "A cakey, oven-baked single-serving oat bake that eats like a dessert but is built around a full scoop of protein powder.",
     prepTime: "5 min",
     cookTime: "20-25 min",
+    totalTime: "30 min",
+    recipeCategory: "Breakfast",
     servings: "1",
     ingredients: [
       "1/2 cup old-fashioned oats",
@@ -199,6 +212,8 @@ export const RECIPES: Recipe[] = [
       "Frozen banana blended with protein powder into a soft-serve texture — no ice cream maker, no added sugar, and a real dessert once your macros are otherwise spent.",
     prepTime: "5 min (plus freezing the banana ahead)",
     cookTime: "None",
+    totalTime: "5 min (plus freezing bananas ahead)",
+    recipeCategory: "Dessert",
     servings: "1",
     ingredients: [
       "2 ripe bananas, sliced and frozen overnight",
@@ -230,6 +245,8 @@ export const RECIPES: Recipe[] = [
       "Homemade marshmallows with protein powder whipped into the batch — a fun way to turn a sweet-tooth craving into something that also counts toward your daily protein.",
     prepTime: "20 min (plus 4+ hours to set)",
     cookTime: "10 min",
+    totalTime: "4 hrs 30 min (includes setting time)",
+    recipeCategory: "Snack",
     servings: "About 24 marshmallows",
     ingredients: [
       "3 packets (about 21g) unflavored gelatin",
@@ -268,6 +285,8 @@ export const RECIPES: Recipe[] = [
       "A silky, sugar-free protein pudding built for small portions and the pureed stage — thick enough to feel like a treat, gentle enough to sit well.",
     prepTime: "5 min",
     cookTime: "None (chill 1 hour)",
+    totalTime: "1 hr 5 min",
+    recipeCategory: "Bariatric-Friendly",
     servings: "2 small portions (about 1/2 cup each)",
     ingredients: [
       "1 scoop (about 30g) vanilla protein powder",
@@ -299,6 +318,8 @@ export const RECIPES: Recipe[] = [
       "A warm, sippable chocolate protein drink — small portion, no added sugar, and easy to get down slowly on days when food doesn't sound appealing.",
     prepTime: "5 min",
     cookTime: "3 min",
+    totalTime: "8 min",
+    recipeCategory: "Bariatric-Friendly",
     servings: "1 small portion (about 3/4 cup)",
     ingredients: [
       "3/4 cup unsweetened almond milk or skim milk",
@@ -330,6 +351,8 @@ export const RECIPES: Recipe[] = [
       "A warm, savory blended soup with unflavored protein stirred in — built for the soft-food and pureed stages when a shake feels like too much but broth alone isn't enough.",
     prepTime: "5 min",
     cookTime: "10 min",
+    totalTime: "15 min",
+    recipeCategory: "Bariatric-Friendly",
     servings: "2 small portions (about 1 cup each)",
     ingredients: [
       "2 cups low-sodium chicken or vegetable broth",
@@ -362,6 +385,8 @@ export const RECIPES: Recipe[] = [
       "Slow-melting, low-sugar protein popsicles — a way to get fluids and protein in without a straw or a full glass to finish.",
     prepTime: "5 min (plus 4+ hours to freeze)",
     cookTime: "None",
+    totalTime: "4 hrs 5 min (includes freezing)",
+    recipeCategory: "Bariatric-Friendly",
     servings: "6 small popsicles",
     ingredients: [
       "2 scoops (about 40-50g) protein powder, any flavor",
@@ -393,6 +418,8 @@ export const RECIPES: Recipe[] = [
       "Soft, mini baked egg bites with unflavored protein mixed into the batter — an easy make-ahead option for the soft-food stage that isn't sweet.",
     prepTime: "10 min",
     cookTime: "20 min",
+    totalTime: "30 min",
+    recipeCategory: "Bariatric-Friendly",
     servings: "12 mini bites",
     ingredients: [
       "6 eggs",
@@ -427,6 +454,8 @@ export const RECIPES: Recipe[] = [
       "Jiggly, sugar-free protein gelatin cups — an easy, portion-controlled way to work in protein between meals without anything to chew.",
     prepTime: "10 min (plus 2+ hours to set)",
     cookTime: "5 min",
+    totalTime: "2 hrs 15 min (includes setting)",
+    recipeCategory: "Bariatric-Friendly",
     servings: "4 small cups",
     ingredients: [
       "2 packets (about 14g) unflavored gelatin",
@@ -459,6 +488,8 @@ export const RECIPES: Recipe[] = [
       "Crisp on the outside, fluffy inside — a waffle iron turns the same protein pancake batter into something that holds up better to toppings.",
     prepTime: "5 min",
     cookTime: "15 min",
+    totalTime: "20 min",
+    recipeCategory: "Breakfast",
     servings: "2 (about 4 waffles)",
     ingredients: [
       "1 scoop (about 30g) vanilla protein powder",
@@ -494,6 +525,8 @@ export const RECIPES: Recipe[] = [
       "A ready-to-drink protein milk swapped in for regular milk turns a basic French toast soak into a genuine protein source, not just a carb delivery vehicle.",
     prepTime: "5 min",
     cookTime: "10 min",
+    totalTime: "15 min",
+    recipeCategory: "Breakfast",
     servings: "2 (4 slices)",
     ingredients: [
       "1 can (11 fl oz) vanilla protein milk",
@@ -526,6 +559,8 @@ export const RECIPES: Recipe[] = [
       "Chia seeds thicken this into a pudding-like texture overnight, and a scoop of strawberry protein turns it into a full breakfast instead of a snack.",
     prepTime: "5 min (plus overnight in the fridge)",
     cookTime: "None",
+    totalTime: "5 min (plus overnight to set)",
+    recipeCategory: "Breakfast",
     servings: "1",
     ingredients: [
       "3 tbsp chia seeds",
@@ -558,6 +593,8 @@ export const RECIPES: Recipe[] = [
       "No-bake bites made by crushing a protein bar into the mix — an easy way to stretch a box of bars into more servings, or use up a flavor you're bored of.",
     prepTime: "15 min",
     cookTime: "None",
+    totalTime: "45 min (includes 30 min chilling)",
+    recipeCategory: "Snack",
     servings: "12 balls",
     ingredients: [
       "2 protein bars, chopped or crumbled",
@@ -590,6 +627,8 @@ export const RECIPES: Recipe[] = [
       "A full loaf of banana bread with unflavored protein blended into the batter, so it tastes like regular banana bread but pulls its weight nutritionally.",
     prepTime: "10 min",
     cookTime: "50 min",
+    totalTime: "1 hr",
+    recipeCategory: "Snack",
     servings: "1 loaf (about 10 slices)",
     ingredients: [
       "3 ripe bananas, mashed",
@@ -627,6 +666,8 @@ export const RECIPES: Recipe[] = [
       "Frozen yogurt bark studded with fruit and a scoop of protein blended in — snap off a piece as a quick high-protein snack straight from the freezer.",
     prepTime: "10 min (plus 3+ hours to freeze)",
     cookTime: "None",
+    totalTime: "3 hrs 10 min (includes freezing)",
+    recipeCategory: "Snack",
     servings: "About 8 pieces",
     ingredients: [
       "2 cups plain Greek yogurt",
@@ -660,6 +701,8 @@ export const RECIPES: Recipe[] = [
       "Edible, egg-free cookie dough bites built around chocolate peanut butter protein powder — tastes like the bowl you'd sneak from before baking, minus the raw egg and flour.",
     prepTime: "10 min",
     cookTime: "None",
+    totalTime: "30 min (includes 20 min chilling)",
+    recipeCategory: "Snack",
     servings: "14 bites",
     ingredients: [
       "1 cup oat flour (or old-fashioned oats blended into flour)",
@@ -692,6 +735,8 @@ export const RECIPES: Recipe[] = [
       "A thick, rich hot chocolate made with casein protein instead of whey — casein's naturally creamy texture makes this taste closer to melted chocolate than a thin cocoa packet.",
     prepTime: "2 min",
     cookTime: "5 min",
+    totalTime: "7 min",
+    recipeCategory: "Drink",
     servings: "1",
     ingredients: [
       "1 cup milk of choice",
@@ -722,6 +767,8 @@ export const RECIPES: Recipe[] = [
       "No-bake, single-serving cheesecake cups with a crushed cookie base and a protein-boosted filling — all the richness of cheesecake, portioned out so you're not committed to a whole slice.",
     prepTime: "15 min (plus 2+ hours to chill)",
     cookTime: "None",
+    totalTime: "2 hrs 15 min (includes chilling)",
+    recipeCategory: "Dessert",
     servings: "4 cups",
     ingredients: [
       "8 sandwich cookies, crushed",
@@ -755,6 +802,8 @@ export const RECIPES: Recipe[] = [
       "Real fruit blended with a scoop of protein and frozen into popsicles — a lighter, fruitier alternative to the chocolate and vanilla recipes in this list.",
     prepTime: "10 min (plus 4+ hours to freeze)",
     cookTime: "None",
+    totalTime: "4 hrs 10 min (includes freezing)",
+    recipeCategory: "Snack",
     servings: "6 popsicles",
     ingredients: [
       "1 scoop (about 30g) orange or citrus-flavored protein powder",
@@ -786,6 +835,8 @@ export const RECIPES: Recipe[] = [
       "Chewy, chocolate-chip-studded blondies with a scoop of protein baked into the batter — dessert that doesn't derail the rest of your day's macros.",
     prepTime: "10 min",
     cookTime: "25 min",
+    totalTime: "35 min",
+    recipeCategory: "Dessert",
     servings: "9 squares",
     ingredients: [
       "1 cup almond flour or oat flour",
@@ -823,6 +874,8 @@ export const RECIPES: Recipe[] = [
       "Baked, not fried, in a donut pan — a scoop of cookies-and-cream protein gives these a malty sweetness without needing much added sugar.",
     prepTime: "10 min",
     cookTime: "12 min",
+    totalTime: "22 min",
+    recipeCategory: "Dessert",
     servings: "6 donuts",
     ingredients: [
       "1 cup oat flour",
@@ -859,6 +912,8 @@ export const RECIPES: Recipe[] = [
       "An electrolyte drink mix frozen into popsicles — slower to get down than a full glass, which makes them a good option after a hot workout when chugging fluids doesn't sound appealing.",
     prepTime: "5 min (plus 4+ hours to freeze)",
     cookTime: "None",
+    totalTime: "4 hrs 5 min (includes freezing)",
+    recipeCategory: "Snack",
     servings: "6 popsicles",
     ingredients: [
       "2 packets electrolyte drink mix, any flavor",
@@ -889,6 +944,8 @@ export const RECIPES: Recipe[] = [
       "A pitcher of lightly flavored, electrolyte-boosted water built for sipping throughout the day — an easy habit for anyone who struggles to drink enough plain water.",
     prepTime: "5 min",
     cookTime: "None",
+    totalTime: "35 min (includes 30 min chilling)",
+    recipeCategory: "Drink",
     servings: "8 cups (1 pitcher)",
     ingredients: [
       "1 packet electrolyte drink mix",

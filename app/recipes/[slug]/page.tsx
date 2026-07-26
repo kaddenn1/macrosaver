@@ -19,6 +19,16 @@ function toIsoDuration(text: string): string | undefined {
   return `PT${match[0]}M`;
 }
 
+/** Parses hand-authored totalTime strings like "2 hrs 15 min (includes chilling)" into an ISO 8601 duration. */
+function totalTimeToIsoDuration(text: string): string | undefined {
+  const hourMatch = text.match(/(\d+)\s*hrs?/i);
+  const minMatch = text.match(/(\d+)\s*min/i);
+  const hours = hourMatch ? parseInt(hourMatch[1], 10) : 0;
+  const minutes = minMatch ? parseInt(minMatch[1], 10) : 0;
+  if (!hours && !minutes) return undefined;
+  return `PT${hours ? `${hours}H` : ""}${minutes ? `${minutes}M` : ""}`;
+}
+
 export function generateStaticParams() {
   return RECIPES.map((recipe) => ({ slug: recipe.slug }));
 }
@@ -79,6 +89,11 @@ export default async function RecipePage({
     recipeYield: recipe.servings,
     prepTime: toIsoDuration(recipe.prepTime),
     cookTime: toIsoDuration(recipe.cookTime),
+    totalTime: totalTimeToIsoDuration(recipe.totalTime),
+    recipeCategory: recipe.recipeCategory,
+    keywords: recipe.bariatricFocused
+      ? "bariatric-friendly recipe, high protein"
+      : "protein powder recipe",
     image: recipe.image ? `${SITE_URL}${recipe.image}` : undefined,
     recipeIngredient: recipe.ingredients,
     recipeInstructions: recipe.instructions.map((step) => ({
@@ -175,6 +190,10 @@ export default async function RecipePage({
               <div>
                 <div className="text-gray-500 uppercase tracking-widest text-[10px] font-bold">Cook</div>
                 <div className="text-white font-bold mt-1">{recipe.cookTime}</div>
+              </div>
+              <div>
+                <div className="text-gray-500 uppercase tracking-widest text-[10px] font-bold">Total</div>
+                <div className="text-white font-bold mt-1">{recipe.totalTime}</div>
               </div>
               <div>
                 <div className="text-gray-500 uppercase tracking-widest text-[10px] font-bold">Servings</div>
