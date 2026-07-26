@@ -1312,7 +1312,7 @@ export const products = [
     name: "Iron + Liposomal Vitamin C (90 Liquid Veggie Capsules)",
     brand: "Sports Research",
     category: "multivitamin",
-    additionalCategories: ["multivitamin", "bariatric"],
+    additionalCategories: ["bariatric"],
     image: "/products/sports-research-iron-liposomal-vitamin-c.png",
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
@@ -2433,6 +2433,7 @@ export const products = [
     name: "Electrolytes Powder Packets, Sugar Free Hydration Sticks - Lemon Lime (20 Sticks)",
     brand: "Sooergy",
     category: "electrolytes",
+    image: "/products/sooergy-electrolytes-lemon-lime.jpg",
     servings: 20,
     nutrition: {
       calories: 0,

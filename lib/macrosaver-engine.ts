@@ -58,6 +58,17 @@ export function getServingSizeGrams(product: Product): number | null {
  * Undated, invalid, future, and older snapshots remain visible on the page but are not
  * presented to crawlers as an active Offer.
  */
+/** Most recent dated price observation across a product's offers, or null if none are dated. */
+export function getLatestPriceObservation(product: Product): Date | null {
+  const observedDates = product.offers
+    .map((offer) => (offer.priceObservedAt ? Date.parse(offer.priceObservedAt) : NaN))
+    .filter((time) => Number.isFinite(time));
+
+  if (observedDates.length === 0) return null;
+
+  return new Date(Math.max(...observedDates));
+}
+
 export function hasFreshPriceObservation(
   offer: RetailerOffer,
   asOf: Date = new Date()

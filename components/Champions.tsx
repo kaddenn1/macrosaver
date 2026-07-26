@@ -5,6 +5,7 @@ import {
   getBestOffer,
   getCostPerServing,
   getCostPerOzProtein,
+  getLatestPriceObservation,
   getSavingsVsHighestOffer,
   extractFlavor,
   supportsServingMetrics,
@@ -132,6 +133,7 @@ export default function Champions({
 
         {displayProducts.map((item) => {
           const bestOffer = getBestOffer(item);
+          const latestPriceObservation = getLatestPriceObservation(item);
           const costPerServing = getCostPerServing(item);
           const costPerOzProtein = getCostPerOzProtein(item);
           const savings = getSavingsVsHighestOffer(item);
@@ -195,9 +197,18 @@ export default function Champions({
                 <div className={`mt-auto gap-2 ${servingMetricsApply ? "grid grid-cols-2" : "block"}`}>
                    <div>
                      <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
-                       {item.offers.filter((offer) => offer.inStock !== false).length > 1
-                         ? "Lowest Undated Snapshot"
-                         : "Undated Price Snapshot"}
+                       {(() => {
+                         const isLowest = item.offers.filter((offer) => offer.inStock !== false).length > 1;
+                         if (!latestPriceObservation) {
+                           return isLowest ? "Lowest Undated Snapshot" : "Undated Price Snapshot";
+                         }
+                         const dateLabel = latestPriceObservation.toLocaleDateString("en-US", {
+                           month: "short",
+                           day: "numeric",
+                           timeZone: "UTC",
+                         });
+                         return isLowest ? `Lowest Verified ${dateLabel}` : `Verified ${dateLabel}`;
+                       })()}
                       </div>
                       <div className="text-xl font-black text-white">
                         {bestOffer ? `$${bestOffer.price.toFixed(2)}` : "—"}

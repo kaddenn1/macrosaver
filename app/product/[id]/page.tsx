@@ -8,6 +8,7 @@ import {
   getBestOffer,
   getCostPerServing,
   getCostPerOzProtein,
+  getLatestPriceObservation,
   getProteinPerDollar,
   getSavingsVsHighestOffer,
   hasFreshPriceObservation,
@@ -25,16 +26,6 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { getGuideByCategory } from "@/lib/guides";
 import { RECIPES } from "@/lib/recipes";
 import type { Product } from "@/data/types";
-
-function getLatestPriceObservation(product: Product): Date | null {
-  const observedDates = product.offers
-    .map((offer) => (offer.priceObservedAt ? Date.parse(offer.priceObservedAt) : NaN))
-    .filter((time) => Number.isFinite(time));
-
-  if (observedDates.length === 0) return null;
-
-  return new Date(Math.max(...observedDates));
-}
 
 export const revalidate = 3600;
 
@@ -439,6 +430,7 @@ export default async function ProductPage({
                       year: "numeric",
                       month: "long",
                       day: "numeric",
+                      timeZone: "UTC",
                     })}`
                   : "Retailer prices shown above are undated snapshots"}
               </span>
