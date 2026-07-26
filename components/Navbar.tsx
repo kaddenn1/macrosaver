@@ -15,11 +15,9 @@ const navLinks = [
   { href: "/category/food-drink", label: "Food & Drink" },
   { href: "/category/gut-health", label: "Gut Health" },
   { href: "/category/multivitamin", label: "Multivitamin" },
-  { href: "/brands", label: "Brands" },
   { href: "/guides", label: "Guides" },
   { href: "/best", label: "Comparisons" },
   { href: "/recipes", label: "Recipes" },
-  { href: "/about", label: "About" },
 ];
 
 export default function Navbar() {
