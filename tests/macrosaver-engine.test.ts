@@ -22,6 +22,8 @@ import {
   reconcileCompareIds,
   sanitizeCompareIds,
 } from "../lib/compare.ts";
+import { getProductLine, PRODUCT_LINES } from "../lib/product-lines.ts";
+import { products } from "../data/products.ts";
 
 const product: Product = {
   id: "test-product",
@@ -210,4 +212,46 @@ test("metric highlights expose every tied lowest value", () => {
 
   assert.deepEqual([...result.ids], ["one", "two"]);
   assert.equal(result.isTie, true);
+});
+
+test("getProductLine finds the line for any member id and returns undefined for ungrouped products", () => {
+  const line = getProductLine("17");
+  assert.ok(line);
+  assert.equal(line?.id, "optimum-nutrition-gold-standard-whey");
+  assert.equal(getProductLine("test-product"), undefined);
+});
+
+test("every product line's primary id is one of its own members", () => {
+  for (const line of PRODUCT_LINES) {
+    assert.ok(
+      line.memberProductIds.includes(line.primaryProductId),
+      `${line.id} primary "${line.primaryProductId}" is not a listed member`
+    );
+  }
+});
+
+test("every product line has 2+ distinct members that all exist in the catalog", () => {
+  const productIds = new Set(products.map((p) => p.id));
+  for (const line of PRODUCT_LINES) {
+    assert.ok(line.memberProductIds.length >= 2, `${line.id} has fewer than 2 members`);
+    assert.equal(
+      new Set(line.memberProductIds).size,
+      line.memberProductIds.length,
+      `${line.id} lists a duplicate member id`
+    );
+    for (const id of line.memberProductIds) {
+      assert.ok(productIds.has(id), `${line.id} references missing product id "${id}"`);
+    }
+  }
+});
+
+test("no product belongs to more than one product line", () => {
+  const seen = new Map<string, string>();
+  for (const line of PRODUCT_LINES) {
+    for (const id of line.memberProductIds) {
+      const existing = seen.get(id);
+      assert.equal(existing, undefined, `product ${id} is in both "${existing}" and "${line.id}"`);
+      seen.set(id, line.id);
+    }
+  }
 });

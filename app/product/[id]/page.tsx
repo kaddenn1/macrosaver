@@ -23,8 +23,10 @@ import { getReviewSummary } from "@/lib/reviews";
 import ProductReviews from "@/components/ProductReviews";
 import CompareButton from "@/components/CompareButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import ProductVariantSelector from "@/components/ProductVariantSelector";
 import { getGuideByCategory } from "@/lib/guides";
 import { RECIPES } from "@/lib/recipes";
+import { getProductLine } from "@/lib/product-lines";
 import type { Product } from "@/data/types";
 
 export const revalidate = 3600;
@@ -70,10 +72,16 @@ export async function generateMetadata({
     : "product details";
   const description = `${product.brand} ${product.name}: ${priceText} — ${detailsText} on ${SITE_NAME}. Verify current price at the retailer.`;
 
+  // Flavor/size variants of the same line canonicalize to one primary variant,
+  // so Google consolidates ranking signal instead of treating near-duplicate
+  // flavor pages as separate low-value pages (see lib/product-lines.ts).
+  const line = getProductLine(product.id);
+  const canonicalId = line ? line.primaryProductId : product.id;
+
   return {
     title,
     description,
-    alternates: { canonical: `${SITE_URL}/product/${product.id}` },
+    alternates: { canonical: `${SITE_URL}/product/${canonicalId}` },
     openGraph: {
       title: `${title} | ${SITE_NAME}`,
       description,
@@ -223,7 +231,6 @@ export default async function ProductPage({
                   <span className={`text-[10px] font-bold tracking-widest uppercase ${theme.text}`}>
                     {product.category}
                   </span>
-                  <p className="text-[8px] text-gray-400 uppercase mt-1">Asset Pending</p>
                 </div>
               )}
             </div>
@@ -235,6 +242,17 @@ export default async function ProductPage({
               {product.brand}
             </div>
             <h1 className="text-3xl font-black text-white leading-tight mb-4">{product.name}</h1>
+
+            {(() => {
+              const line = getProductLine(product.id);
+              if (!line) return null;
+              const variants = (products as Product[]).filter((p) =>
+                line.memberProductIds.includes(p.id)
+              );
+              return (
+                <ProductVariantSelector currentProductId={product.id} variants={variants} />
+              );
+            })()}
 
             <div className="mb-4">
               <CompareButton productId={product.id} productName={product.name} variant="pill" />

@@ -170,7 +170,6 @@ export default function Champions({
                     <span className={`text-[10px] font-bold tracking-widest uppercase ${theme.text}`}>
                       {item.category}
                     </span>
-                    <p className="text-[8px] text-gray-400 uppercase mt-1">Asset Pending</p>
                   </div>
                 )}
                 {item.approvedBy && item.approvedBy.length > 0 && (

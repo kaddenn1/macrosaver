@@ -6,6 +6,7 @@ import { BRANDS } from "@/lib/brands";
 import { RECIPES } from "@/lib/recipes";
 import { BEST_VALUE_ARTICLES } from "@/lib/best-value";
 import { BRAND_COMPARISON_ARTICLES } from "@/lib/brand-comparison";
+import { getProductLine } from "@/lib/product-lines";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -84,12 +85,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const productRoutes: MetadataRoute.Sitemap = products.map((product) => ({
-    url: `${SITE_URL}/product/${product.id}`,
-    lastModified,
-    changeFrequency: "daily",
-    priority: 0.6,
-  }));
+  // Flavor/size variants of the same line only submit their primary variant's
+  // URL — the rest canonicalize to it (see lib/product-lines.ts) and don't
+  // need a separate sitemap entry telling Google to treat them as distinct pages.
+  const productRoutes: MetadataRoute.Sitemap = products
+    .filter((product) => {
+      const line = getProductLine(product.id);
+      return !line || line.primaryProductId === product.id;
+    })
+    .map((product) => ({
+      url: `${SITE_URL}/product/${product.id}`,
+      lastModified,
+      changeFrequency: "daily",
+      priority: 0.6,
+    }));
 
   const bestValueRoutes: MetadataRoute.Sitemap = BEST_VALUE_ARTICLES.map((article) => ({
     url: `${SITE_URL}/best/${article.slug}`,
