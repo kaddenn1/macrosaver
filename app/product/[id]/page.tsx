@@ -27,6 +27,8 @@ import ProductVariantSelector from "@/components/ProductVariantSelector";
 import { getGuideByCategory } from "@/lib/guides";
 import { RECIPES } from "@/lib/recipes";
 import { getProductLine } from "@/lib/product-lines";
+import { getProductOverview } from "@/lib/product-overviews";
+import { getBestValueArticleBySlug } from "@/lib/best-value";
 import type { Product } from "@/data/types";
 
 export const revalidate = 3600;
@@ -104,6 +106,10 @@ export default async function ProductPage({
   }
 
   const theme = getTheme(product.category);
+  const overview = getProductOverview(product.id);
+  const relatedBestValueArticle = overview?.relatedBestValueSlug
+    ? getBestValueArticleBySlug(overview.relatedBestValueSlug)
+    : undefined;
   const bestOffer = getBestOffer(product);
   const costPerServing = getCostPerServing(product);
   const costPerOzProtein = getCostPerOzProtein(product);
@@ -145,6 +151,7 @@ export default async function ProductPage({
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
+    ...(overview && { description: overview.summary }),
     brand: { "@type": "Brand", name: product.brand },
     category: CATEGORY_TITLES[product.category] || product.category,
     image: product.image ? `${SITE_URL}${product.image}` : undefined,
@@ -242,6 +249,10 @@ export default async function ProductPage({
               {product.brand}
             </div>
             <h1 className="text-3xl font-black text-white leading-tight mb-4">{product.name}</h1>
+
+            {overview && (
+              <p className="text-sm text-gray-300 leading-relaxed mb-5">{overview.summary}</p>
+            )}
 
             {(() => {
               const line = getProductLine(product.id);
@@ -363,6 +374,54 @@ export default async function ProductPage({
                     </div>
                   )}
                 </div>
+              </div>
+            )}
+
+            {overview && (
+              <div className="mb-8">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
+                  Best For &amp; Trade-offs
+                </h2>
+                <p className="text-sm text-gray-300 leading-relaxed mb-4">
+                  <span className="font-bold text-white">Best for: </span>
+                  {overview.bestFor}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <div className={`text-[10px] font-bold uppercase tracking-wider mb-2 ${theme.text}`}>
+                      Pros
+                    </div>
+                    <ul className="flex flex-col gap-1.5 text-sm text-gray-300">
+                      {overview.pros.map((pro) => (
+                        <li key={pro} className="flex gap-2">
+                          <span className={theme.text}>+</span>
+                          {pro}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <div className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2">
+                      Trade-offs
+                    </div>
+                    <ul className="flex flex-col gap-1.5 text-sm text-gray-300">
+                      {overview.cons.map((con) => (
+                        <li key={con} className="flex gap-2">
+                          <span className="text-gray-500">–</span>
+                          {con}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                {relatedBestValueArticle && (
+                  <Link
+                    href={`/best/${relatedBestValueArticle.slug}`}
+                    className={`inline-block mt-4 text-[11px] font-black uppercase tracking-widest ${theme.text} hover:text-white transition-colors`}
+                  >
+                    See where this ranks in {relatedBestValueArticle.title} →
+                  </Link>
+                )}
               </div>
             )}
 

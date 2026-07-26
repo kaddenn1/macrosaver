@@ -165,6 +165,20 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     metricFormat: "grams",
   },
   {
+    slug: "creatine-cost-per-serving",
+    title: "Creatine Monohydrate Cost Per Serving: Ranked",
+    metaDescription:
+      "Every creatine monohydrate product in our catalog, ranked from lowest to highest cost per serving using recorded retailer prices — powder tubs and capsules alike.",
+    intro:
+      "Creatine monohydrate is close to a commodity — a 5g dose is a 5g dose regardless of brand, so price per serving is most of the decision. This list ranks every creatine product we track by cost per serving (price divided by servings per container), covering different sizes and flavors of the same formula as well as capsule versions, since a bigger tub or a multi-pack is only a better deal if it actually lowers the per-serving cost.",
+    category: "creatine",
+    sortBy: "costPerServing",
+    sortDirection: "asc",
+    limit: 15,
+    metricLabel: "Cost / Serving",
+    metricFormat: "dollars",
+  },
+  {
     slug: "protein-powder-price-tracker",
     title: "Protein Powder Price Tracker and Buying Guide",
     metaDescription:

@@ -23,6 +23,7 @@ import {
   sanitizeCompareIds,
 } from "../lib/compare.ts";
 import { getProductLine, PRODUCT_LINES } from "../lib/product-lines.ts";
+import { PRODUCT_OVERVIEWS } from "../lib/product-overviews.ts";
 import { products } from "../data/products.ts";
 
 const product: Product = {
@@ -242,6 +243,16 @@ test("every product line has 2+ distinct members that all exist in the catalog",
     for (const id of line.memberProductIds) {
       assert.ok(productIds.has(id), `${line.id} references missing product id "${id}"`);
     }
+  }
+});
+
+test("every product overview references a real, unique product id", () => {
+  const productIds = new Set(products.map((p) => p.id));
+  const seen = new Set<string>();
+  for (const overview of PRODUCT_OVERVIEWS) {
+    assert.ok(productIds.has(overview.productId), `overview references missing product id "${overview.productId}"`);
+    assert.ok(!seen.has(overview.productId), `duplicate overview for product id "${overview.productId}"`);
+    seen.add(overview.productId);
   }
 });
 
