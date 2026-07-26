@@ -15,7 +15,7 @@ export default function Hero() {
               alt=""
               width={140}
               height={140}
-              preload
+              priority
               className="rounded-2xl w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 shrink-0"
             />
             <p className="text-[clamp(2.35rem,12vw,7.5rem)] font-black leading-[0.85] tracking-tighter">

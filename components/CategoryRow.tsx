@@ -80,7 +80,7 @@ export default function CategoryRow() {
         style={{ ["--cat-count" as string]: categories.length }}
         className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 [scrollbar-width:thin] lg:grid lg:overflow-visible lg:pb-0 lg:[grid-template-columns:repeat(var(--cat-count),minmax(0,1fr))]"
       >
-        {categories.map((cat) => {
+        {categories.map((cat, index) => {
           const isActive = pathname === `/category/${cat.id}`;
 
           return (
@@ -98,6 +98,7 @@ export default function CategoryRow() {
                 fill
                 sizes="(max-width: 640px) 128px, (max-width: 1024px) 160px, 10vw"
                 className="object-cover transition-transform duration-300 group-hover:scale-105"
+                priority={index < 3}
               />
             </Link>
           );
