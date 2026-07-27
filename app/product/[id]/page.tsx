@@ -18,7 +18,7 @@ import { getTheme } from "@/lib/theme";
 import { CATEGORY_TITLES } from "@/lib/categories";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
-import { APPROVAL_BADGES } from "@/lib/approvals";
+import { APPROVAL_BADGES, APPROVAL_LINKS, APPROVAL_LINK_LABELS } from "@/lib/approvals";
 import { getReviewSummary } from "@/lib/reviews";
 import ProductReviews from "@/components/ProductReviews";
 import CompareButton from "@/components/CompareButton";
@@ -32,6 +32,14 @@ import { getBestValueArticleBySlug } from "@/lib/best-value";
 import type { Product } from "@/data/types";
 
 export const revalidate = 3600;
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M16.6 5.82c-.96-.83-1.6-2.02-1.72-3.36h-3.06v13.53c0 1.62-1.32 2.94-2.94 2.94a2.94 2.94 0 0 1-2.94-2.94c0-1.62 1.32-2.93 2.94-2.93.31 0 .6.05.88.13V10.1a6.06 6.06 0 0 0-.88-.06 6.02 6.02 0 0 0-6.02 6.02A6.02 6.02 0 0 0 8.88 22a6.02 6.02 0 0 0 6.02-6.02V9.14a9.29 9.29 0 0 0 5.42 1.74V7.83a5.86 5.86 0 0 1-3.72-2.01z" />
+    </svg>
+  );
+}
 
 function getRelatedProducts(product: Product, limit: number): Product[] {
   return (products as Product[])
@@ -270,13 +278,27 @@ export default async function ProductPage({
             </div>
 
             {product.approvedBy && product.approvedBy.length > 0 && (
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="flex flex-wrap items-center gap-2 mb-4">
                 {product.approvedBy
                   .filter((key) => APPROVAL_BADGES[key])
                   .map((key) => (
                     <div key={key} className="relative h-7 w-32">
                       <Image src={APPROVAL_BADGES[key]} alt={`${key} approved`} fill className="object-contain" />
                     </div>
+                  ))}
+                {product.approvedBy
+                  .filter((key) => APPROVAL_LINKS[key])
+                  .map((key) => (
+                    <a
+                      key={`${key}-social`}
+                      href={APPROVAL_LINKS[key]}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 rounded-full border border-gray-700 bg-gray-900 px-3 py-1 text-xs font-semibold text-[#a3e635] hover:border-[#a3e635] hover:underline"
+                    >
+                      <TikTokIcon className="h-3.5 w-3.5 shrink-0" />
+                      {APPROVAL_LINK_LABELS[key] ?? "View on TikTok"}
+                    </a>
                   ))}
               </div>
             )}
