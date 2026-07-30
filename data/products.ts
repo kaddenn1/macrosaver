@@ -2463,5 +2463,95 @@ export const products = [
     offers: [
       { retailer: "Amazon", price: 47.99, url: amazonUrl("B0CVX6YK9K"), asin: "B0CVX6YK9K", priceObservedAt: "2026-07-25" }
     ]
+  },
+  {
+    id: "170",
+    name: "Core Power Protein Shake, Chocolate (14 fl oz, 12 Pack)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    image: "/products/core-power-chocolate.webp",
+    servings: 12,
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote:
+      "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 41.88, url: amazonUrl("B07LD2NV9X"), asin: "B07LD2NV9X", priceObservedAt: "2026-07-29" }
+    ]
+  },
+  {
+    id: "171",
+    name: "Core Power Protein Shake, Strawberry Banana (14 fl oz, 12 Pack)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    image: "/products/core-power-strawberry-banana.webp",
+    servings: 12,
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote:
+      "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 41.88, url: amazonUrl("B07LD7B766"), asin: "B07LD7B766", priceObservedAt: "2026-07-29" }
+    ]
+  },
+  {
+    id: "172",
+    name: "Core Power Protein Shake, Vanilla (14 fl oz, 12 Pack)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    image: "/products/core-power-vanilla.webp",
+    servings: 12,
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote:
+      "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 41.88, url: amazonUrl("B07LCZC2C2"), asin: "B07LCZC2C2", priceObservedAt: "2026-07-29" }
+    ]
+  },
+  {
+    id: "173",
+    name: "Core Power Elite High Protein Shake, Chocolate (14 fl oz, 12 Pack)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    image: "/products/core-power-elite-chocolate.webp",
+    servings: 12,
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote:
+      "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 50.98, url: amazonUrl("B01DDIRDZA"), asin: "B01DDIRDZA", priceObservedAt: "2026-07-29" }
+    ]
+  },
+  {
+    id: "174",
+    name: "Core Power Elite High Protein Shake, Strawberry (14 fl oz, 12 Pack)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    image: "/products/core-power-elite-strawberry.webp",
+    servings: 12,
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote:
+      "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 63.36, url: amazonUrl("B0855NBDH3"), asin: "B0855NBDH3", priceObservedAt: "2026-07-29" }
+    ]
+  },
+  {
+    id: "175",
+    name: "Core Power Elite High Protein Shake, Vanilla (14 fl oz, 12 Pack)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    image: "/products/core-power-elite-vanilla.webp",
+    servings: 12,
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote:
+      "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 61.76, url: amazonUrl("B01DDIRE2W"), asin: "B01DDIRE2W", priceObservedAt: "2026-07-29" }
+    ]
   }
 ];

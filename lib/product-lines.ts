@@ -107,6 +107,16 @@ export const PRODUCT_LINES: ProductLine[] = [
     primaryProductId: "64",
     memberProductIds: ["64", "65"],
   },
+  {
+    id: "core-power-protein-shake",
+    primaryProductId: "170",
+    memberProductIds: ["170", "171", "172"],
+  },
+  {
+    id: "core-power-elite-high-protein-shake",
+    primaryProductId: "173",
+    memberProductIds: ["173", "174", "175"],
+  },
 ];
 
 const lineByProductId = new Map<string, ProductLine>(
