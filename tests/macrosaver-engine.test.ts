@@ -113,7 +113,7 @@ test("only recent, explicitly dated prices qualify for Offer structured data", (
         retailer: "Store",
         price: 20,
         url: "https://example.com",
-        priceObservedAt: "2026-07-01T12:00:00.000Z",
+        priceObservedAt: "2026-06-11T12:00:00.000Z",
       },
       asOf
     ),

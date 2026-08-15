@@ -1,7 +1,11 @@
 import type { Product, RetailerOffer } from "@/data/types";
 
 const GRAMS_PER_OZ = 28.3495;
-const STRUCTURED_PRICE_MAX_AGE_MS = 7 * 24 * 60 * 60 * 1000;
+// Prices are verified manually (no automated retailer feed), so this window has to match a
+// realistic re-check cadence rather than "how fresh would be ideal." 7 days made the entire
+// catalog fall out of Product-snippet eligibility between manual passes; 30 days keeps stamped
+// offers valid for a monthly check without asserting anything we haven't actually looked at.
+const STRUCTURED_PRICE_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
 
 function roundToTwo(value: number): number {
   return Math.round(value * 100) / 100;
