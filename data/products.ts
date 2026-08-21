@@ -2553,5 +2553,34 @@ export const products = [
     offers: [
       { retailer: "Amazon", price: 61.76, url: amazonUrl("B01DDIRE2W"), asin: "B01DDIRE2W", priceObservedAt: "2026-07-29" }
     ]
+  },
+  {
+    id: "176",
+    name: "Myprotein Clear Whey Isolate, Peach Mango (1.1 lb, 20 Servings)",
+    brand: "Myprotein",
+    category: "protein",
+    image: "/products/myprotein-clear-whey-isolate-peach-mango.jpg",
+    servings: 20,
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutritionNote:
+      "Carbs, fat, and sodium were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 34.99, url: amazonUrl("B0921FLKYK"), asin: "B0921FLKYK", priceObservedAt: "2026-08-20" }
+    ]
+  },
+  {
+    id: "177",
+    name: "Premier Protein Shake, Café Latte with Caffeine (11.5 fl oz, 12 Pack)",
+    brand: "Premier Protein",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    image: "/products/premier-protein-cafe-latte.jpg",
+    servings: 12,
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutritionNote:
+      "Carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B0DFJP6LZF"), asin: "B0DFJP6LZF", priceObservedAt: "2026-08-20" }
+    ]
   }
 ];
