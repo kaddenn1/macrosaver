@@ -10,6 +10,12 @@ export type SupplementCategory =
   | "multivitamin"
   | "other";
 
+export type PricePoint = {
+  /** ISO date the price was observed. */
+  date: string;
+  price: number;
+};
+
 export type RetailerOffer = {
   retailer: string;
   price: number;
@@ -20,6 +26,10 @@ export type RetailerOffer = {
   inStock?: boolean;
   /** ISO timestamp for a direct retailer price observation. Omit when the observation date is unknown. */
   priceObservedAt?: string;
+  /** Pre-sale/typical price. Present only while `price` reflects an active discount off this value. */
+  listPrice?: number;
+  /** Chronological price observations for this offer, oldest first. Appended on each verified re-check. */
+  priceHistory?: PricePoint[];
 };
 
 export type ProductKind = "consumable" | "topical" | "equipment" | "mixed-bundle";

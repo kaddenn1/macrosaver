@@ -4,11 +4,16 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { products } from "@/data/products";
 import ProductImageLightbox from "@/components/ProductImageLightbox";
+import PriceHistoryChart from "@/components/PriceHistoryChart";
 import {
   getBestOffer,
   getCostPerServing,
   getCostPerOzProtein,
   getLatestPriceObservation,
+  getOfferFreshness,
+  getOfferSale,
+  getPriceConfidence,
+  getPriceHistory,
   getProteinPerDollar,
   getSavingsVsHighestOffer,
   hasFreshPriceObservation,
@@ -29,7 +34,7 @@ import { RECIPES } from "@/lib/recipes";
 import { getProductLine } from "@/lib/product-lines";
 import { getProductOverview } from "@/lib/product-overviews";
 import { getBestValueArticleBySlug } from "@/lib/best-value";
-import type { Product } from "@/data/types";
+import type { Product, RetailerOffer } from "@/data/types";
 
 export const revalidate = 3600;
 
@@ -39,6 +44,18 @@ function TikTokIcon({ className }: { className?: string }) {
       <path d="M16.6 5.82c-.96-.83-1.6-2.02-1.72-3.36h-3.06v13.53c0 1.62-1.32 2.94-2.94 2.94a2.94 2.94 0 0 1-2.94-2.94c0-1.62 1.32-2.93 2.94-2.93.31 0 .6.05.88.13V10.1a6.06 6.06 0 0 0-.88-.06 6.02 6.02 0 0 0-6.02 6.02A6.02 6.02 0 0 0 8.88 22a6.02 6.02 0 0 0 6.02-6.02V9.14a9.29 9.29 0 0 0 5.42 1.74V7.83a5.86 5.86 0 0 1-3.72-2.01z" />
     </svg>
   );
+}
+
+function formatOfferFreshnessLabel(offer: RetailerOffer): string {
+  const freshness = getOfferFreshness(offer);
+  if (freshness === "unknown") return "Undated — verify at retailer";
+
+  const dateLabel = new Date(offer.priceObservedAt as string).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
+  return freshness === "stale" ? `Checked ${dateLabel} — verify current price` : `Checked ${dateLabel}`;
 }
 
 function getRelatedProducts(product: Product, limit: number): Product[] {
@@ -118,7 +135,8 @@ export default async function ProductPage({
   const relatedBestValueArticle = overview?.relatedBestValueSlug
     ? getBestValueArticleBySlug(overview.relatedBestValueSlug)
     : undefined;
-  const bestOffer = getBestOffer(product);
+  const priceConfidence = getPriceConfidence(product);
+  const headlineSale = priceConfidence.offer ? getOfferSale(priceConfidence.offer) : null;
   const costPerServing = getCostPerServing(product);
   const costPerOzProtein = getCostPerOzProtein(product);
   const proteinPerDollar = getProteinPerDollar(product);
@@ -309,16 +327,37 @@ export default async function ProductPage({
                 hasProtein
                   ? "grid-cols-2 sm:grid-cols-4"
                   : servingMetricsApply
-                    ? "grid-cols-2 sm:grid-cols-3"
+                    ? "grid-cols-2"
                     : "grid-cols-1"
               } gap-4 mb-8 border-y border-gray-800 py-6`}
             >
               <div>
                 <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
-                  Lowest Price
+                  {priceConfidence.status === "lowest-recorded"
+                    ? "Lowest Recorded Price"
+                    : priceConfidence.status === "recorded"
+                      ? `Recorded Price at ${priceConfidence.offer?.retailer}`
+                      : "Price Unavailable"}
                 </div>
-                <div className="text-xl font-black text-white">
-                  {bestOffer ? `$${bestOffer.price.toFixed(2)}` : "—"}
+                <div className="flex items-baseline gap-2">
+                  <div className="text-xl font-black text-white">
+                    {priceConfidence.offer ? `$${priceConfidence.offer.price.toFixed(2)}` : "—"}
+                  </div>
+                  {headlineSale && (
+                    <span className="text-xs font-bold text-gray-500 line-through">
+                      ${headlineSale.listPrice.toFixed(2)}
+                    </span>
+                  )}
+                </div>
+                {headlineSale && (
+                  <div className="mt-0.5 text-[10px] font-bold text-rose-400">
+                    Save ${headlineSale.savings.toFixed(2)} ({headlineSale.savingsPct.toFixed(0)}%)
+                  </div>
+                )}
+                <div className="mt-1 text-[9px] uppercase tracking-wider text-gray-500">
+                  {priceConfidence.offer?.priceObservedAt
+                    ? `Checked ${new Date(priceConfidence.offer.priceObservedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}`
+                    : "Check retailer for current price"}
                 </div>
               </div>
               {servingMetricsApply && (
@@ -341,7 +380,7 @@ export default async function ProductPage({
                   </div>
                 </div>
               )}
-              {servingMetricsApply && (
+              {hasProtein && (
                 <div>
                   <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                     Protein / Dollar
@@ -463,8 +502,11 @@ export default async function ProductPage({
 
               <div className="flex flex-col gap-2">
                 {sortedOffers.map((offer) => {
-                  const isBest = bestOffer?.retailer === offer.retailer && bestOffer?.price === offer.price;
+                  const isBest =
+                    priceConfidence.offer?.retailer === offer.retailer &&
+                    priceConfidence.offer?.price === offer.price;
                   const isOutOfStock = offer.inStock === false;
+                  const sale = getOfferSale(offer);
 
                   if (isOutOfStock) {
                     return (
@@ -472,10 +514,15 @@ export default async function ProductPage({
                         key={offer.retailer}
                         className="flex items-center justify-between px-4 py-3 rounded-lg border border-gray-800 bg-[#0d0d0d] opacity-50"
                       >
-                        <div className="flex items-center gap-3">
-                          <span className="font-bold text-white text-sm">{offer.retailer}</span>
-                          <span className="text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-gray-700 text-gray-300">
-                            Out of Stock
+                        <div className="flex flex-col gap-0.5">
+                          <div className="flex items-center gap-3">
+                            <span className="font-bold text-white text-sm">{offer.retailer}</span>
+                            <span className="text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-gray-700 text-gray-300">
+                              Out of Stock
+                            </span>
+                          </div>
+                          <span className="text-[10px] text-gray-500">
+                            {formatOfferFreshnessLabel(offer)}
                           </span>
                         </div>
                         <span className="text-lg font-black text-gray-400">${offer.price.toFixed(2)}</span>
@@ -495,18 +542,35 @@ export default async function ProductPage({
                           : "border-gray-800 bg-[#0d0d0d] hover:border-gray-600"
                       }`}
                     >
-                      <div className="flex items-center gap-3">
-                        <span className="font-bold text-white text-sm">{offer.retailer}</span>
-                        {isBest && (
-                          <span
-                            className={`text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded ${theme.bg} text-black`}
-                          >
-                            Best Price
-                          </span>
-                        )}
+                      <div className="flex flex-col gap-0.5">
+                        <div className="flex items-center gap-3">
+                          <span className="font-bold text-white text-sm">{offer.retailer}</span>
+                          {isBest && (
+                            <span
+                              className={`text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded ${theme.bg} text-black`}
+                            >
+                              Best Price
+                            </span>
+                          )}
+                          {sale && (
+                            <span className="text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-rose-500 text-white">
+                              Sale
+                            </span>
+                          )}
+                        </div>
+                        <span className="text-[10px] text-gray-500">
+                          {formatOfferFreshnessLabel(offer)}
+                        </span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <span className="text-lg font-black text-white">${offer.price.toFixed(2)}</span>
+                        <div className="flex items-baseline gap-2">
+                          {sale && (
+                            <span className="text-xs font-bold text-gray-500 line-through">
+                              ${sale.listPrice.toFixed(2)}
+                            </span>
+                          )}
+                          <span className="text-lg font-black text-white">${offer.price.toFixed(2)}</span>
+                        </div>
                         <span className={`text-xs font-bold uppercase ${theme.text}`}>Buy →</span>
                       </div>
                     </a>
@@ -514,6 +578,28 @@ export default async function ProductPage({
                 })}
               </div>
             </div>
+
+            {sortedOffers.some((offer) => getPriceHistory(offer).length >= 2) && (
+              <div className="mb-8">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
+                  Price History
+                </h2>
+                <div className="flex flex-col gap-6">
+                  {sortedOffers
+                    .filter((offer) => getPriceHistory(offer).length >= 2)
+                    .map((offer) => (
+                      <div key={offer.retailer} className="bg-[#111] border border-gray-800 rounded-lg px-4 py-4">
+                        {sortedOffers.length > 1 && (
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2">
+                            {offer.retailer}
+                          </div>
+                        )}
+                        <PriceHistoryChart history={getPriceHistory(offer)} color={theme.hex} />
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
 
             <p className="text-[11px] text-gray-400 leading-relaxed">
               As an Amazon Associate and affiliate of other retailer programs, MacroSaver earns from

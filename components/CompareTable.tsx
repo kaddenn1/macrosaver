@@ -8,6 +8,7 @@ import {
   getBestOffer,
   getCostPerServing,
   getCostPerOzProtein,
+  getOfferSale,
   getProteinPerDollar,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
@@ -74,7 +75,21 @@ export default function CompareTable() {
   const rows: Row[] = [
     {
       label: "Undated Price Snapshot",
-      render: (p) => formatMoney(getBestOffer(p)?.price ?? null),
+      render: (p) => {
+        const offer = getBestOffer(p);
+        if (!offer) return "—";
+        const sale = getOfferSale(offer);
+        return (
+          <span className="inline-flex items-baseline gap-1.5">
+            {formatMoney(offer.price)}
+            {sale && (
+              <span className="text-[10px] font-bold text-gray-500 line-through">
+                ${sale.listPrice.toFixed(2)}
+              </span>
+            )}
+          </span>
+        );
+      },
       metric: (p) => getBestOffer(p)?.price ?? null,
       direction: "min",
       highlightLabel: "lowest listed package price",
@@ -102,10 +117,12 @@ export default function CompareTable() {
     {
       label: "Protein / Dollar",
       render: (p) => {
+        if (!supportsServingMetrics(p) || p.nutrition.proteinGrams <= 0) return "—";
         const v = getProteinPerDollar(p);
         return v !== null ? `${v.toFixed(1)}g` : "—";
       },
-      metric: (p) => getProteinPerDollar(p),
+      metric: (p) =>
+        supportsServingMetrics(p) && p.nutrition.proteinGrams > 0 ? getProteinPerDollar(p) : null,
       direction: "max",
       highlightLabel: "highest protein per dollar",
     },

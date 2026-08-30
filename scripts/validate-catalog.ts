@@ -1,12 +1,19 @@
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { products } from "../data/products.ts";
-import { supportsServingMetrics } from "../lib/macrosaver-engine.ts";
+import { getOfferFreshness, supportsServingMetrics } from "../lib/macrosaver-engine.ts";
+import type { PriceFreshness } from "../lib/macrosaver-engine.ts";
 import type { Product } from "../data/types.ts";
 
 const errors: string[] = [];
 const ids = new Set<string>();
 const retailerCounts = new Map<string, number>();
+const freshnessCounts: Record<PriceFreshness, number> = {
+  fresh: 0,
+  aging: 0,
+  stale: 0,
+  unknown: 0,
+};
 let singleOfferProducts = 0;
 let qualifiedNutritionProducts = 0;
 
@@ -50,6 +57,7 @@ for (const product of products as Product[]) {
   for (const offer of product.offers) {
     const priceObservedAt = (offer as { priceObservedAt?: unknown }).priceObservedAt;
     retailerCounts.set(offer.retailer, (retailerCounts.get(offer.retailer) ?? 0) + 1);
+    freshnessCounts[getOfferFreshness(offer)] += 1;
     if (!offer.retailer.trim()) errors.push(`${label}: retailer is required`);
     if (!Number.isFinite(offer.price) || offer.price <= 0) {
       errors.push(`${label}: offer price must be positive`);
@@ -69,6 +77,19 @@ for (const product of products as Product[]) {
     ) {
       errors.push(`${label}: priceObservedAt must be a valid ISO timestamp`);
     }
+    if (offer.listPrice !== undefined && offer.listPrice <= offer.price) {
+      errors.push(`${label}: listPrice must be greater than the current price to represent a sale`);
+    }
+    if (offer.priceHistory) {
+      for (const point of offer.priceHistory) {
+        if (!Number.isFinite(Date.parse(point.date))) {
+          errors.push(`${label}: priceHistory date must be a valid ISO timestamp`);
+        }
+        if (!Number.isFinite(point.price) || point.price <= 0) {
+          errors.push(`${label}: priceHistory price must be positive`);
+        }
+      }
+    }
   }
 }
 
@@ -84,4 +105,8 @@ if (errors.length > 0) {
   console.log(`Offer coverage: ${coverage}.`);
   console.log(`${singleOfferProducts} products currently have a single retailer offer.`);
   console.log(`${qualifiedNutritionProducts} products display a nutrition-data qualification.`);
+  console.log(
+    `Offer freshness: ${freshnessCounts.fresh} fresh, ${freshnessCounts.aging} aging, ` +
+      `${freshnessCounts.stale} stale, ${freshnessCounts.unknown} unknown.`
+  );
 }

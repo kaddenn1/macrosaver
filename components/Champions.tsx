@@ -2,10 +2,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/products";
 import {
-  getBestOffer,
   getCostPerServing,
   getCostPerOzProtein,
-  getLatestPriceObservation,
+  getOfferSale,
+  getPriceConfidence,
   getSavingsVsHighestOffer,
   extractFlavor,
   supportsServingMetrics,
@@ -132,8 +132,8 @@ export default function Champions({
         )}
 
         {displayProducts.map((item) => {
-          const bestOffer = getBestOffer(item);
-          const latestPriceObservation = getLatestPriceObservation(item);
+          const priceConfidence = getPriceConfidence(item);
+          const sale = priceConfidence.offer ? getOfferSale(priceConfidence.offer) : null;
           const costPerServing = getCostPerServing(item);
           const costPerOzProtein = getCostPerOzProtein(item);
           const savings = getSavingsVsHighestOffer(item);
@@ -197,23 +197,38 @@ export default function Champions({
                    <div>
                      <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                        {(() => {
-                         const isLowest = item.offers.filter((offer) => offer.inStock !== false).length > 1;
-                         if (!latestPriceObservation) {
-                           return isLowest ? "Lowest Undated Snapshot" : "Undated Price Snapshot";
+                         const { status, offer } = priceConfidence;
+                         if (status === "unavailable" || !offer?.priceObservedAt) {
+                           return "Price Unavailable";
                          }
-                         const dateLabel = latestPriceObservation.toLocaleDateString("en-US", {
+                         const dateLabel = new Date(offer.priceObservedAt).toLocaleDateString("en-US", {
                            month: "short",
                            day: "numeric",
                            timeZone: "UTC",
                          });
-                         return isLowest ? `Lowest Verified ${dateLabel}` : `Verified ${dateLabel}`;
+                         return status === "lowest-recorded"
+                           ? `Lowest Verified ${dateLabel}`
+                           : `Verified ${dateLabel}`;
                        })()}
                       </div>
-                      <div className="text-xl font-black text-white">
-                        {bestOffer ? `$${bestOffer.price.toFixed(2)}` : "—"}
-                     </div>
+                      <div className="flex items-baseline gap-1.5">
+                        <div className="text-xl font-black text-white">
+                          {priceConfidence.offer ? `$${priceConfidence.offer.price.toFixed(2)}` : "—"}
+                        </div>
+                        {sale && (
+                          <span className="text-xs font-bold text-gray-500 line-through">
+                            ${sale.listPrice.toFixed(2)}
+                          </span>
+                        )}
+                      </div>
                      <div className="mt-1 text-[9px] uppercase tracking-wider text-gray-500">
-                       Verify at retailer
+                       {sale ? (
+                         <span className="font-bold text-rose-400">
+                           Sale · Save ${sale.savings.toFixed(2)}
+                         </span>
+                       ) : (
+                         "Verify at retailer"
+                       )}
                      </div>
                      {servingMetricsApply && (
                        <>
@@ -245,9 +260,9 @@ export default function Champions({
                 </div>
 
                 <div className={`w-full mt-4 py-2 text-[11px] font-black uppercase tracking-widest text-black rounded transition-transform hover:scale-[1.02] flex items-center justify-center gap-2 ${theme.bg} ${theme.hoverBg}`}>
-                  {bestOffer && (
+                  {priceConfidence.offer && (
                     <span className="max-w-[55%] truncate rounded bg-black/80 px-1.5 py-0.5 text-[8px] text-white">
-                      {bestOffer.retailer}
+                      {priceConfidence.offer.retailer}
                     </span>
                   )}
                   View Details →

@@ -4,8 +4,13 @@ import type { Product } from "../data/types.ts";
 import {
   extractFlavor,
   getBestOffer,
+  getBestValueProduct,
   getCostPerOzProtein,
   getCostPerServing,
+  getOfferFreshness,
+  getOfferSale,
+  getPriceConfidence,
+  getPriceHistory,
   getProteinPerDollar,
   getSavingsVsHighestOffer,
   hasFreshPriceObservation,
@@ -130,6 +135,166 @@ test("only recent, explicitly dated prices qualify for Offer structured data", (
       asOf
     ),
     false
+  );
+});
+
+test("offer freshness classifies fresh, aging, stale, and unknown observations", () => {
+  const asOf = new Date("2026-08-23T12:00:00.000Z");
+
+  assert.equal(
+    getOfferFreshness({ retailer: "Store", price: 20, url: "https://example.com" }, asOf),
+    "unknown"
+  );
+  assert.equal(
+    getOfferFreshness(
+      { retailer: "Store", price: 20, url: "https://example.com", priceObservedAt: "2026-08-20" },
+      asOf
+    ),
+    "fresh"
+  );
+  assert.equal(
+    getOfferFreshness(
+      { retailer: "Store", price: 20, url: "https://example.com", priceObservedAt: "2026-07-15" },
+      asOf
+    ),
+    "aging"
+  );
+  assert.equal(
+    getOfferFreshness(
+      { retailer: "Store", price: 20, url: "https://example.com", priceObservedAt: "2026-05-01" },
+      asOf
+    ),
+    "stale"
+  );
+  assert.equal(
+    getOfferFreshness(
+      {
+        retailer: "Store",
+        price: 20,
+        url: "https://example.com",
+        priceObservedAt: "2026-08-24T00:00:00.000Z",
+      },
+      asOf
+    ),
+    "unknown"
+  );
+});
+
+test("price confidence excludes stale/unknown offers and reflects valid retailer count", () => {
+  const asOf = new Date("2026-08-23T12:00:00.000Z");
+  const freshOffer = {
+    retailer: "Store A",
+    price: 40,
+    url: "https://example.com/a",
+    priceObservedAt: "2026-08-20",
+  };
+  const secondFreshOffer = {
+    retailer: "Store B",
+    price: 30,
+    url: "https://example.com/b",
+    priceObservedAt: "2026-08-15",
+  };
+  const staleOffer = {
+    retailer: "Store C",
+    price: 10,
+    url: "https://example.com/c",
+    priceObservedAt: "2026-01-01",
+  };
+  const undatedOffer = { retailer: "Store D", price: 5, url: "https://example.com/d" };
+
+  assert.deepEqual(getPriceConfidence({ ...product, offers: [freshOffer] }, asOf), {
+    offer: freshOffer,
+    freshness: "fresh",
+    retailerCount: 1,
+    status: "recorded",
+  });
+
+  assert.deepEqual(
+    getPriceConfidence({ ...product, offers: [freshOffer, secondFreshOffer] }, asOf),
+    {
+      offer: secondFreshOffer,
+      freshness: "fresh",
+      retailerCount: 2,
+      status: "lowest-recorded",
+    }
+  );
+
+  assert.deepEqual(getPriceConfidence({ ...product, offers: [staleOffer, undatedOffer] }, asOf), {
+    offer: null,
+    freshness: "unknown",
+    retailerCount: 0,
+    status: "unavailable",
+  });
+
+  assert.deepEqual(
+    getPriceConfidence({ ...product, offers: [freshOffer, staleOffer] }, asOf),
+    {
+      offer: freshOffer,
+      freshness: "fresh",
+      retailerCount: 1,
+      status: "recorded",
+    }
+  );
+});
+
+test("best-value and ranked-product pickers skip stale/unknown-priced candidates", () => {
+  const asOf = new Date("2026-08-23T12:00:00.000Z");
+  const withUndatedOffer: Product = {
+    ...product,
+    id: "undated-offer-product",
+    offers: [{ retailer: "Store", price: 1, url: "https://example.com/cheap" }],
+  };
+  const withFreshOffer: Product = {
+    ...product,
+    id: "fresh-offer-product",
+    offers: [
+      {
+        retailer: "Store",
+        price: 25,
+        url: "https://example.com/fresh",
+        priceObservedAt: "2026-08-20",
+      },
+    ],
+  };
+
+  assert.equal(getPriceConfidence(withUndatedOffer, asOf).status, "unavailable");
+  assert.equal(
+    getBestValueProduct([withUndatedOffer, withFreshOffer])?.id,
+    "fresh-offer-product"
+  );
+});
+
+test("offer sale is only reported when listPrice is a genuine discount", () => {
+  assert.equal(
+    getOfferSale({ retailer: "Store", price: 20, url: "https://example.com" }),
+    null
+  );
+  assert.equal(
+    getOfferSale({ retailer: "Store", price: 20, url: "https://example.com", listPrice: 20 }),
+    null
+  );
+  assert.equal(
+    getOfferSale({ retailer: "Store", price: 20, url: "https://example.com", listPrice: 15 }),
+    null
+  );
+  assert.deepEqual(
+    getOfferSale({ retailer: "Store", price: 21.03, url: "https://example.com", listPrice: 29.99 }),
+    { price: 21.03, listPrice: 29.99, savings: 8.96, savingsPct: 29.88 }
+  );
+});
+
+test("price history returns recorded observations oldest-first, or empty when untracked", () => {
+  assert.deepEqual(
+    getPriceHistory({ retailer: "Store", price: 20, url: "https://example.com" }),
+    []
+  );
+  const history = [
+    { date: "2026-08-20", price: 25 },
+    { date: "2026-08-29", price: 21 },
+  ];
+  assert.deepEqual(
+    getPriceHistory({ retailer: "Store", price: 21, url: "https://example.com", priceHistory: history }),
+    history
   );
 });
 

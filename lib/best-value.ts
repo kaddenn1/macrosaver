@@ -3,6 +3,7 @@ import { products } from "@/data/products";
 import {
   getBestOffer,
   getCostPerServing,
+  getPriceConfidence,
   getProteinPerDollar,
   getServingSizeGrams,
   supportsServingMetrics,
@@ -213,6 +214,7 @@ export function getRankedProducts(article: BestValueArticle): RankedProduct[] {
   const eligible = categoryProducts.filter(
     (p) =>
       supportsServingMetrics(p) &&
+      getPriceConfidence(p).status !== "unavailable" &&
       (!article.powderOnly || isPowderFormat(p)) &&
       (!article.filter || article.filter(p))
   );
