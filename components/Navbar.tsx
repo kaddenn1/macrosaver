@@ -43,13 +43,6 @@ export default function Navbar() {
 
         {/* NAVIGATION LINKS - DESKTOP ONLY */}
         <nav className="hidden items-center gap-3 whitespace-nowrap text-[11px] font-bold text-neutral-400 xl:flex">
-          <Link
-            href="/deals"
-            aria-current={pathname === "/deals" ? "page" : undefined}
-            className="text-rose-400 hover:text-rose-300 transition duration-150 aria-[current=page]:text-rose-300"
-          >
-            Deals
-          </Link>
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -88,14 +81,6 @@ export default function Navbar() {
       {/* MOBILE MENU PANEL */}
       {menuOpen && (
         <nav id="mobile-navigation" className="flex max-h-[calc(100vh-5rem)] w-full max-w-[1400px] flex-col gap-1 overflow-y-auto border-t border-neutral-900 px-4 pb-6 text-sm font-bold text-neutral-300 sm:px-6 xl:hidden">
-          <Link
-            href="/deals"
-            onClick={() => setMenuOpen(false)}
-            aria-current={pathname === "/deals" ? "page" : undefined}
-            className="py-3 border-b border-neutral-900 text-rose-400 hover:text-rose-300 transition duration-150"
-          >
-            Deals
-          </Link>
           {navLinks.map((link) => (
             <Link
               key={link.href}

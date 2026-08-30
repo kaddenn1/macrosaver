@@ -1,6 +1,7 @@
 "use client";
 
 import { Suspense, useEffect, useId, useRef, useState } from "react";
+import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { FilterFacets } from "@/data/types";
 
@@ -130,6 +131,13 @@ function SidebarInner({
           </button>
         )}
       </div>
+
+      <Link
+        href="/deals"
+        className="flex min-h-11 w-full items-center justify-center rounded-lg bg-rose-500 py-2.5 text-[11px] font-black uppercase tracking-widest text-white transition-colors hover:bg-rose-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300"
+      >
+        View Current Deals →
+      </Link>
 
       <div>
         <label
