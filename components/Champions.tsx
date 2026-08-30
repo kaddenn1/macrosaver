@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/products";
 import {
+  getBestSale,
   getCostPerServing,
   getCostPerOzProtein,
   getOfferSale,
@@ -24,6 +25,8 @@ import {
 interface ChampionsProps {
   filterCategory?: string;
   filterBrand?: string;
+  /** Restricts the list to products with an active sale, ordered by largest savings first. */
+  dealsOnly?: boolean;
   searchParams?: { [key: string]: string | string[] | undefined };
   /** Caps how many products are shown (e.g. a 4-up homepage preview row). */
   limit?: number;
@@ -35,6 +38,7 @@ interface ChampionsProps {
 export default function Champions({
   filterCategory,
   filterBrand,
+  dealsOnly,
   searchParams,
   limit,
   title = "Products",
@@ -55,6 +59,10 @@ export default function Champions({
   if (filterBrand) {
     const target = filterBrand.toLowerCase();
     displayProducts = displayProducts.filter((p) => p.brand.toLowerCase() === target);
+  }
+
+  if (dealsOnly) {
+    displayProducts = displayProducts.filter((p) => getBestSale(p) !== null);
   }
 
   const scopedProducts = displayProducts;
@@ -82,6 +90,12 @@ export default function Champions({
   });
 
   displayProducts = applyCatalogQuery(scopedProducts, query);
+
+  if (dealsOnly) {
+    displayProducts = [...displayProducts].sort(
+      (a, b) => (getBestSale(b)?.savings ?? 0) - (getBestSale(a)?.savings ?? 0)
+    );
+  }
 
   const totalMatches = displayProducts.length;
   const totalPages = limit ? 1 : Math.max(1, Math.ceil(totalMatches / CATALOG_PAGE_SIZE));
@@ -127,7 +141,9 @@ export default function Champions({
       <div className="grid grid-cols-1 min-[400px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {displayProducts.length === 0 && (
           <div className="col-span-full py-12 text-center text-gray-400 text-sm border-2 border-dashed border-gray-800 rounded-xl">
-            No products found matching those filters. Try adjusting your selections!
+            {dealsOnly
+              ? "No active deals right now — check back after the next price check."
+              : "No products found matching those filters. Try adjusting your selections!"}
           </div>
         )}
 

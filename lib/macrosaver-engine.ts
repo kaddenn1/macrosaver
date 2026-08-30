@@ -133,6 +133,17 @@ export function getPriceHistory(offer: RetailerOffer): PricePoint[] {
   return offer.priceHistory ?? [];
 }
 
+/** The largest active sale across a product's offers, or null when nothing is currently discounted. */
+export function getBestSale(product: Product): OfferSale | null {
+  const sales = product.offers
+    .map((offer) => getOfferSale(offer))
+    .filter((sale): sale is OfferSale => sale !== null);
+
+  if (sales.length === 0) return null;
+
+  return sales.reduce((best, sale) => (sale.savings > best.savings ? sale : best));
+}
+
 function getAvailableOffers(product: Product): RetailerOffer[] {
   return product.offers.filter((offer) => offer.inStock !== false);
 }

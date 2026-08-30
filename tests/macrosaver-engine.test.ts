@@ -5,6 +5,7 @@ import {
   extractFlavor,
   getBestOffer,
   getBestValueProduct,
+  getBestSale,
   getCostPerOzProtein,
   getCostPerServing,
   getOfferFreshness,
@@ -296,6 +297,25 @@ test("price history returns recorded observations oldest-first, or empty when un
     getPriceHistory({ retailer: "Store", price: 21, url: "https://example.com", priceHistory: history }),
     history
   );
+});
+
+test("best sale picks the largest-savings offer, or null when nothing is discounted", () => {
+  assert.equal(getBestSale(product), null);
+
+  const onSale: Product = {
+    ...product,
+    offers: [
+      { retailer: "Store A", price: 40, url: "https://example.com/a" },
+      { retailer: "Store B", price: 30, url: "https://example.com/b", listPrice: 45 },
+      { retailer: "Store C", price: 35, url: "https://example.com/c", listPrice: 40 },
+    ],
+  };
+  assert.deepEqual(getBestSale(onSale), {
+    price: 30,
+    listPrice: 45,
+    savings: 15,
+    savingsPct: 33.33,
+  });
 });
 
 test("flavor extraction ignores product-line hyphens and dosage variants", () => {
