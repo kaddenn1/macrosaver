@@ -12,6 +12,7 @@
     "test": "node --experimental-strip-types --test tests/macrosaver-engine.test.ts",
     "validate:data": "node --experimental-strip-types scripts/validate-catalog.ts",
     "audit:index-quality": "node --experimental-strip-types scripts/audit-index-quality.ts",
+    "apply-price-scrape": "node --experimental-strip-types scripts/apply-price-scrape.ts",
     "check": "npm run validate:data && npm test && npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {
