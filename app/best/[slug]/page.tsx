@@ -73,13 +73,11 @@ export default async function BestValueArticlePage({
 }
 
 function ArticleShell({
-  slug,
   title,
   intro,
   category,
   children,
 }: {
-  slug: string;
   title: string;
   intro: string;
   category: string;
@@ -223,7 +221,7 @@ function RankedListArticle({ article, slug }: { article: BestValueArticle; slug:
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListJsonLd) }} />
-      <ArticleShell slug={slug} title={article.title} intro={article.intro} category={article.category}>
+      <ArticleShell title={article.title} intro={article.intro} category={article.category}>
         <div className="pb-16">
           {ranked.length === 0 ? (
             <div className="py-12 text-center text-gray-400 text-sm border-2 border-dashed border-gray-800 rounded-xl">
@@ -310,7 +308,7 @@ function BrandComparisonArticlePage({ article, slug }: { article: BrandCompariso
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }} />
-      <ArticleShell slug={slug} title={article.title} intro={article.intro} category={article.category}>
+      <ArticleShell title={article.title} intro={article.intro} category={article.category}>
         <div className="pb-16 grid grid-cols-1 sm:grid-cols-2 gap-8">
           <BrandColumn stats={statsA} metricLabel="Protein / $" metricFormat="grams" />
           <BrandColumn stats={statsB} metricLabel="Protein / $" metricFormat="grams" />
