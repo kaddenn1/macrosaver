@@ -1121,7 +1121,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00TDELNCS"), asin: "B00TDELNCS", priceObservedAt: "2026-08-30", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }] }
+      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00TDELNCS"), asin: "B00TDELNCS", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }] }
     ]
   },
   {
@@ -1134,7 +1134,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 33.96, url: amazonUrl("B099KPFN1B"), asin: "B099KPFN1B", priceObservedAt: "2026-08-30", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }] }
+      { retailer: "Amazon", price: 33.96, url: amazonUrl("B099KPFN1B"), asin: "B099KPFN1B", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }] }
     ]
   },
   {
@@ -1147,7 +1147,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00Q5CIL4Y"), asin: "B00Q5CIL4Y", priceObservedAt: "2026-08-30", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 33.96 }, { date: "2026-08-30", price: 33.96 }] }
+      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00Q5CIL4Y"), asin: "B00Q5CIL4Y", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 33.96 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }] }
     ]
   },
   {
@@ -1160,7 +1160,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 35.95, url: amazonUrl("B099KP14NL"), asin: "B099KP14NL", priceObservedAt: "2026-08-30", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-30", price: 35.95 }] }
+      { retailer: "Amazon", price: 35.95, url: amazonUrl("B099KP14NL"), asin: "B099KP14NL", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-30", price: 35.95 }, { date: "2026-09-01", price: 35.95 }] }
     ]
   },
   {
@@ -1173,7 +1173,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00RC7PV5I"), asin: "B00RC7PV5I", priceObservedAt: "2026-08-30", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }] }
+      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00RC7PV5I"), asin: "B00RC7PV5I", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }] }
     ]
   },
   {
@@ -1186,7 +1186,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800" }
+      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 49.49 }] }
     ]
   },
   {
@@ -1199,7 +1199,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624" }
+      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 49.49 }] }
     ]
   },
   {
@@ -1212,7 +1212,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200" }
+      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 49.49 }] }
     ]
   },
   {
@@ -1233,7 +1233,7 @@ export const products = [
       servingSize: "1 softgel (1000mg)",
     },
     offers: [
-      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129959949573030687149&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fmct-oil-120-softgels%3fvariant%3d42500072505544" }
+      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129959949573030687149&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fmct-oil-120-softgels%3fvariant%3d42500072505544", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 16.95 }] }
     ]
   },
   {
@@ -1252,7 +1252,7 @@ export const products = [
       sugarGrams: 1,
     },
     offers: [
-      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate" }
+      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 49.95 }] }
     ]
   },
   {
@@ -1270,7 +1270,7 @@ export const products = [
       servingSize: "1 scoop (11g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 35.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-collagen", priceObservedAt: "2026-07-26" }
+      { retailer: "Sports Research", price: 35.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-collagen", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-07-26", price: 35.95 }, { date: "2026-09-01", price: 35.95 }] }
     ]
   },
   {
@@ -1289,7 +1289,7 @@ export const products = [
       servingSize: "1 scoop (15.7g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-naturally-flavored", priceObservedAt: "2026-07-26" }
+      { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-naturally-flavored", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-07-26", price: 34.95 }, { date: "2026-09-01", price: 34.95 }] }
     ]
   },
   {
@@ -1301,7 +1301,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 8 },
     offers: [
-      { retailer: "Sports Research", price: 33.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmulti-collagen-complex" }
+      { retailer: "Sports Research", price: 33.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmulti-collagen-complex", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 33.95 }] }
     ]
   },
   {
@@ -1314,7 +1314,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Firon-liposomal-vitamin-c" }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Firon-liposomal-vitamin-c", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 24.95 }] }
     ]
   },
   {
@@ -1335,7 +1335,7 @@ export const products = [
       servingSize: "1 scoop (8g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-fiber" }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-fiber", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 24.95 }] }
     ]
   },
   {
@@ -1347,7 +1347,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics" }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 24.95 }] }
     ]
   },
   {
@@ -1368,7 +1368,7 @@ export const products = [
       servingSize: "1 tbsp (15mL)",
     },
     offers: [
-      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fketo-c8-mct-oil" }
+      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fketo-c8-mct-oil", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 23.95 }] }
     ]
   },
   {
@@ -1381,7 +1381,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 18.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide" }
+      { retailer: "Sports Research", price: 18.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 18.95 }] }
     ]
   },
   {
@@ -1394,7 +1394,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmag-lt-with-magtein-magnesium-l-threonate" }
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmag-lt-with-magtein-magnesium-l-threonate", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 29.95 }] }
     ]
   },
   {
@@ -1413,7 +1413,7 @@ export const products = [
       sugarGrams: 0,
     },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate" }
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 29.95 }] }
     ]
   },
   {
@@ -1425,7 +1425,7 @@ export const products = [
     servings: 120,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcreatine-monohydrate-veggie-capsules" }
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcreatine-monohydrate-veggie-capsules", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 29.95 }] }
     ]
   },
   {
@@ -1445,7 +1445,7 @@ export const products = [
       servingSize: "1 packet (5g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets" }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 22.95 }] }
     ]
   },
   {
@@ -1457,7 +1457,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes" }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 22.95 }] }
     ]
   },
   {
@@ -1469,7 +1469,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics" }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 24.95 }] }
     ]
   },
   {
@@ -1482,7 +1482,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 27.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsleep-complex-with-melatonin" }
+      { retailer: "Sports Research", price: 27.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsleep-complex-with-melatonin", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 27.95 }] }
     ]
   },
   {
@@ -1494,7 +1494,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine" }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 22.95 }] }
     ]
   },
   {
@@ -1506,7 +1506,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 17.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fgarcinia-cambogia-65-500mg" }
+      { retailer: "Sports Research", price: 17.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fgarcinia-cambogia-65-500mg", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 17.95 }] }
     ]
   },
   {
@@ -1519,7 +1519,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate" }
+      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 16.95 }] }
     ]
   },
   {
@@ -1532,7 +1532,7 @@ export const products = [
     servings: 120,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Ftriple-magnesium-complex" }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Ftriple-magnesium-complex", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 24.95 }] }
     ]
   },
   {
@@ -1544,7 +1544,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 32.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha" }
+      { retailer: "Sports Research", price: 32.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 32.95 }] }
     ]
   },
   {
@@ -1556,7 +1556,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2" }
+      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 23.95 }] }
     ]
   },
   {
@@ -1569,7 +1569,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmct-oil-powder", priceObservedAt: "2026-07-26" }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmct-oil-powder", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-07-26", price: 24.95 }, { date: "2026-09-01", price: 24.95 }] }
     ]
   },
   {
@@ -1582,7 +1582,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 48.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Farm-and-thigh-trimmer-bundle" }
+      { retailer: "Sports Research", price: 48.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Farm-and-thigh-trimmer-bundle", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 48.95 }] }
     ]
   },
   {
@@ -1595,7 +1595,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 64.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fpro-series-bundle" }
+      { retailer: "Sports Research", price: 64.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fpro-series-bundle", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 64.95 }] }
     ]
   },
   {
@@ -1608,7 +1608,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 19.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fjump-rope" }
+      { retailer: "Sports Research", price: 19.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fjump-rope", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 19.95 }] }
     ]
   },
   {
