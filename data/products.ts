@@ -261,7 +261,7 @@ export const products = [
       servingSize: "1 scoop (30g)",
     },
     offers: [
-      { retailer: "Amazon", price: 96.28, url: amazonUrl("B000QSNYGI"), asin: "B000QSNYGI", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-08-20", price: 96.28 }, { date: "2026-08-29", price: 96.28 }, { date: "2026-08-30", price: 81.84 }, { date: "2026-09-01", price: 96.28 }] }
+      { retailer: "Amazon", price: 96.28, url: amazonUrl("B000QSNYGI"), asin: "B000QSNYGI", priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-08-20", price: 96.28 }, { date: "2026-08-29", price: 96.28 }, { date: "2026-08-30", price: 81.84 }, { date: "2026-09-01", price: 96.28 }, { date: "2026-09-05", price: 96.28 }] }
     ]
   },
   {
@@ -281,7 +281,7 @@ export const products = [
       servingSize: "1 scoop (30g)",
     },
     offers: [
-      { retailer: "Amazon", price: 48.83, url: amazonUrl("B002DYIZH6"), asin: "B002DYIZH6", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-08-20", price: 44 }, { date: "2026-08-29", price: 48.83 }, { date: "2026-08-30", price: 48.82 }, { date: "2026-09-01", price: 48.83 }] }
+      { retailer: "Amazon", price: 48.83, url: amazonUrl("B002DYIZH6"), asin: "B002DYIZH6", priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-08-20", price: 44 }, { date: "2026-08-29", price: 48.83 }, { date: "2026-08-30", price: 48.82 }, { date: "2026-09-01", price: 48.83 }, { date: "2026-09-05", price: 48.83 }] }
     ]
   },
   {
@@ -1347,7 +1347,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 24.95 }] }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics", priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-05", price: 24.95 }] }
     ]
   },
   {
@@ -1457,7 +1457,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 22.95 }] }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes", priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-09-01", price: 22.95 }, { date: "2026-09-05", price: 22.95 }] }
     ]
   },
   {
@@ -1469,7 +1469,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 24.95 }] }
+      { retailer: "Sports Research", price: 21.20, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics", listPrice: 24.95, priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-05", price: 21.20 }] }
     ]
   },
   {
@@ -1494,7 +1494,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 22.95 }] }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine", priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-09-01", price: 22.95 }, { date: "2026-09-05", price: 22.95 }] }
     ]
   },
   {
@@ -1519,7 +1519,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 16.95 }] }
+      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate", priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-09-01", price: 16.95 }, { date: "2026-09-05", price: 16.95 }] }
     ]
   },
   {
@@ -1544,7 +1544,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 32.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 32.95 }] }
+      { retailer: "Sports Research", price: 32.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha", priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-09-01", price: 32.95 }, { date: "2026-09-05", price: 32.95 }] }
     ]
   },
   {
@@ -1623,7 +1623,7 @@ export const products = [
     nutrition: { proteinGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 22.98, url: amazonUrl("B00CX3ASFE"), asin: "B00CX3ASFE", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-08-20", price: 26.99 }, { date: "2026-08-29", price: 19.53 }, { date: "2026-08-30", price: 19.53 }, { date: "2026-09-01", price: 22.98 }] }
+      { retailer: "Amazon", price: 22.98, url: amazonUrl("B00CX3ASFE"), asin: "B00CX3ASFE", priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-08-20", price: 26.99 }, { date: "2026-08-29", price: 19.53 }, { date: "2026-08-30", price: 19.53 }, { date: "2026-09-01", price: 22.98 }, { date: "2026-09-05", price: 22.98 }] }
     ]
   },
   {
@@ -1638,7 +1638,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 18.65, url: amazonUrl("B09RQBHRCT"), asin: "B09RQBHRCT", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-08-20", price: 18.65 }, { date: "2026-08-29", price: 16.78 }, { date: "2026-08-30", price: 16.78 }, { date: "2026-09-01", price: 18.65 }] }
+      { retailer: "Amazon", price: 18.65, url: amazonUrl("B09RQBHRCT"), asin: "B09RQBHRCT", priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-08-20", price: 18.65 }, { date: "2026-08-29", price: 16.78 }, { date: "2026-08-30", price: 16.78 }, { date: "2026-09-01", price: 18.65 }, { date: "2026-09-05", price: 18.65 }] }
     ]
   },
   {
