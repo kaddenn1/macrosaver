@@ -1,17 +1,24 @@
 /**
- * Applies a daily/every-other-day Amazon price scrape (CSV) to data/products.ts.
+ * Applies a full live price scrape (CSV) to data/products.ts.
  *
  * Usage:
  *   node --experimental-strip-types scripts/apply-price-scrape.ts <path-to-csv> [--dry-run]
  *
  * Expected CSV columns (order doesn't matter, matched by header name):
- *   macrosaver_id, asin, amazon_displayed_price_usd, amazon_price_status, checked_at
- *   optional: amazon_list_price_usd (a genuine Amazon "was $X" strikethrough price)
+ *   product_id, retailer, catalog_price, one_time_price, checked_at, action, safe_to_apply
+ *   optional: verified_list_price (a genuine "was $X" strikethrough price)
  *
- * Rows are only applied when amazon_price_status === "amazon_page" and a price is
- * present — rows like price_not_exposed/fetch_error are left untouched rather than
- * guessed at. Edits data/products.ts as raw text (regex per ASIN line) so existing
- * formatting, comments, and field ordering elsewhere in the file are preserved.
+ * A row is applied only when safe_to_apply === "true" (covers both APPLY and
+ * DATE_ONLY actions from the scrape's own verification pass) and a price is
+ * present. REVIEW rows (safe_to_apply=false) are left completely untouched —
+ * the scrape itself already rejected them (formulaic percentage patterns,
+ * variant/package mismatches, no trustworthy rendered price, etc).
+ *
+ * Matches offers by product_id (catalog `id`) rather than ASIN, since some
+ * offers (e.g. Sports Research) have no ASIN. Assumes one offer per product.
+ * Edits data/products.ts as raw text (regex per id block) so existing
+ * formatting, comments, and field ordering elsewhere in the file are
+ * preserved. Idempotent against re-running the same day's file.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -25,36 +32,46 @@ if (!csvArg) {
 }
 
 function parseCsv(text: string): string[][] {
-  const lines = text.replace(/^﻿/, "").split(/\r?\n/).filter((l) => l.length > 0);
-  return lines.map((line) => {
-    const fields: string[] = [];
-    let cur = "";
-    let inQuotes = false;
-    for (let j = 0; j < line.length; j++) {
-      const c = line[j];
-      if (inQuotes) {
-        if (c === '"') {
-          if (line[j + 1] === '"') {
-            cur += '"';
-            j++;
-          } else {
-            inQuotes = false;
-          }
+  // Handles quoted fields with embedded commas and newlines (RFC4180-ish).
+  const rows: string[][] = [];
+  let field = "";
+  let row: string[] = [];
+  let inQuotes = false;
+  const s = text.replace(/^﻿/, "");
+  for (let i = 0; i < s.length; i++) {
+    const c = s[i];
+    if (inQuotes) {
+      if (c === '"') {
+        if (s[i + 1] === '"') {
+          field += '"';
+          i++;
         } else {
-          cur += c;
+          inQuotes = false;
         }
-      } else if (c === '"') {
-        inQuotes = true;
-      } else if (c === ",") {
-        fields.push(cur);
-        cur = "";
       } else {
-        cur += c;
+        field += c;
       }
+    } else if (c === '"') {
+      inQuotes = true;
+    } else if (c === ",") {
+      row.push(field);
+      field = "";
+    } else if (c === "\r") {
+      // skip
+    } else if (c === "\n") {
+      row.push(field);
+      field = "";
+      rows.push(row);
+      row = [];
+    } else {
+      field += c;
     }
-    fields.push(cur);
-    return fields;
-  });
+  }
+  if (field.length || row.length) {
+    row.push(field);
+    rows.push(row);
+  }
+  return rows.filter((r) => r.length > 1 || r[0] !== "");
 }
 
 const csvPath = resolve(csvArg);
@@ -62,19 +79,17 @@ const rows = parseCsv(readFileSync(csvPath, "utf8"));
 const header = rows[0].map((h) => h.trim());
 const col = (name: string) => header.indexOf(name);
 
-const idxId = col("macrosaver_id");
-const idxAsin = col("asin");
-const idxPrice = col("amazon_displayed_price_usd");
-const idxStatus = col("amazon_price_status");
+const idxId = col("product_id");
+const idxPrice = col("one_time_price");
 const idxCheckedAt = col("checked_at");
-const idxListPrice = col("amazon_list_price_usd"); // optional, -1 if absent
+const idxSafe = col("safe_to_apply");
+const idxListPrice = col("verified_list_price"); // optional, -1 if absent
 
 for (const [name, idx] of [
-  ["macrosaver_id", idxId],
-  ["asin", idxAsin],
-  ["amazon_displayed_price_usd", idxPrice],
-  ["amazon_price_status", idxStatus],
+  ["product_id", idxId],
+  ["one_time_price", idxPrice],
   ["checked_at", idxCheckedAt],
+  ["safe_to_apply", idxSafe],
 ] as const) {
   if (idx === -1) {
     console.error(`CSV is missing required column: ${name}`);
@@ -94,13 +109,12 @@ const notFound: string[] = [];
 
 for (const r of rows.slice(1)) {
   const id = r[idxId];
-  const asin = r[idxAsin];
-  const status = r[idxStatus];
+  const safe = r[idxSafe];
   const priceRaw = r[idxPrice];
-  const checkedAt = r[idxCheckedAt];
+  const checkedAtRaw = r[idxCheckedAt];
   const listPriceRaw = idxListPrice === -1 ? "" : r[idxListPrice];
 
-  if (status !== "amazon_page" || !priceRaw) {
+  if (safe !== "true" || !priceRaw) {
     skippedUnverified++;
     continue;
   }
@@ -109,29 +123,37 @@ for (const r of rows.slice(1)) {
     skippedUnverified++;
     continue;
   }
+  const checkedAt = checkedAtRaw.slice(0, 10); // ISO timestamp -> YYYY-MM-DD
 
-  const asinNeedle = `asin: "${asin}"`;
-  const idx = src.indexOf(asinNeedle);
-  if (idx === -1) {
-    notFound.push(`id=${id} asin=${asin} (not in catalog)`);
+  const idNeedle = `id: "${id}"`;
+  const idIdx = src.indexOf(idNeedle);
+  if (idIdx === -1) {
+    notFound.push(`id=${id} (not in catalog)`);
     continue;
   }
-  const lineStart = src.lastIndexOf("\n", idx) + 1;
-  const lineEnd = src.indexOf("\n", idx);
-  const line = src.slice(lineStart, lineEnd);
+  const nextIdIdx = src.indexOf('id: "', idIdx + idNeedle.length);
+  const blockEnd = nextIdIdx === -1 ? src.length : nextIdIdx;
+  const offerMatch = src.slice(idIdx, blockEnd).match(/^\s*\{ retailer: "[^"]+", price: [\d.]+.*\}\s*$/m);
+  if (!offerMatch || offerMatch.index === undefined) {
+    notFound.push(`id=${id} (no offer line found)`);
+    continue;
+  }
+  const lineStart = idIdx + offerMatch.index;
+  const lineEnd = lineStart + offerMatch[0].length;
+  const line = offerMatch[0];
   let newLine = line;
 
   const historyMatch = newLine.match(/priceHistory: \[(.*)\]/);
   if (!historyMatch) {
     // First-ever verified re-check for this offer: seed history from whatever price/date it had.
-    const oldPriceMatch = newLine.match(/retailer: "Amazon", price: ([\d.]+)/);
+    const oldPriceMatch = newLine.match(/retailer: "[^"]+", price: ([\d.]+)/);
     const oldDateMatch = newLine.match(/priceObservedAt: "(\d{4}-\d{2}-\d{2})"/);
     const seedPoint =
       oldPriceMatch && oldDateMatch
         ? `{ date: "${oldDateMatch[1]}", price: ${oldPriceMatch[1]} }, `
         : "";
     newLine = newLine.replace(
-      /(retailer: "Amazon", price: )[\d.]+(.*?)(\s*\})\s*$/,
+      /(retailer: "[^"]+", price: )[\d.]+(.*?)(\s*\})\s*$/,
       (_m, prefix, middle) => {
         let rebuilt = `${prefix}${price}${middle}`;
         rebuilt = rebuilt.replace(/priceObservedAt: "\d{4}-\d{2}-\d{2}"/, `priceObservedAt: "${checkedAt}"`);
@@ -157,7 +179,7 @@ for (const r of rows.slice(1)) {
     } else {
       newLine = newLine.replace(/priceHistory: \[(.*)\]/, `priceHistory: [${points}, { date: "${checkedAt}", price: ${price} }]`);
     }
-    newLine = newLine.replace(/(retailer: "Amazon", price: )[\d.]+/, `$1${price}`);
+    newLine = newLine.replace(/(retailer: "[^"]+", price: )[\d.]+/, `$1${price}`);
     newLine = newLine.replace(/priceObservedAt: "\d{4}-\d{2}-\d{2}"/, `priceObservedAt: "${checkedAt}"`);
   }
 
@@ -167,7 +189,7 @@ for (const r of rows.slice(1)) {
       if (/listPrice: [\d.]+/.test(newLine)) {
         newLine = newLine.replace(/listPrice: [\d.]+/, `listPrice: ${listPrice}`);
       } else {
-        newLine = newLine.replace(/(url: amazonUrl\([^)]*\), asin: "[^"]*")/, `$1, listPrice: ${listPrice}`);
+        newLine = newLine.replace(/priceObservedAt: "\d{4}-\d{2}-\d{2}"/, `listPrice: ${listPrice}, priceObservedAt: "${checkedAt}"`);
       }
       listPriceSet.push(`id=${id}`);
     }
@@ -182,7 +204,7 @@ for (const r of rows.slice(1)) {
 console.log(`Applied: ${applied}`);
 console.log(`History arrays initialized for first-time verification: ${historyInitialized}`);
 console.log(`Already current (same date+price already recorded): ${alreadyCurrent}`);
-console.log(`Skipped (unverified/no price in scrape): ${skippedUnverified}`);
+console.log(`Skipped (unverified/not safe_to_apply): ${skippedUnverified}`);
 if (listPriceSet.length) console.log(`List price set/updated: ${listPriceSet.join(", ")}`);
 if (notFound.length) {
   console.log(`Not found in catalog (${notFound.length}) — new product? Add it manually first:`);
