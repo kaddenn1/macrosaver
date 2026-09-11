@@ -2579,5 +2579,917 @@ export const products = [
     offers: [
       { retailer: "Amazon", price: 20.37, url: amazonUrl("B0DFJP6LZF"), asin: "B0DFJP6LZF", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.97 }, { date: "2026-08-29", price: 23.97 }, { date: "2026-08-30", price: 20.37 }, { date: "2026-09-05", price: 20.37 }, { date: "2026-09-07", price: 20.37 }] }
     ]
+  },
+  {
+    id: "178",
+    name: "Bari Life BariBurst Calcium Citrate Chews with 1000 IU Vitamin D3, Butter Toffee (90 Count)",
+    brand: "Bari Life",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 37.99, url: amazonUrl("B0B9VQRMHL"), asin: "B0B9VQRMHL", subscribeAndSavePrice: 36.09, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 37.99 }] }
+    ]
+  },
+  {
+    id: "179",
+    name: "Bari Life BariBurst Calcium Citrate Chews with 1000 IU Vitamin D3, Fruit Punch (90 Count)",
+    brand: "Bari Life",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 37.99, url: amazonUrl("B0D485XNHL"), asin: "B0D485XNHL", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 37.99 }] }
+    ]
+  },
+  {
+    id: "180",
+    name: "Bari Life BariBurst Calcium Citrate Chews with 1000 IU Vitamin D3, Sour Green Apple (90 Count)",
+    brand: "Bari Life",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 37.99, url: amazonUrl("B0FMDWNPQW"), asin: "B0FMDWNPQW", subscribeAndSavePrice: 34.19, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 37.99 }] }
+    ]
+  },
+  {
+    id: "181",
+    name: "Bari Life Just One Multivitamin with Iron (30 Count)",
+    brand: "Bari Life",
+    category: "multivitamin",
+    servings: 30,
+    nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 21.99, url: amazonUrl("B07RNM5VH8"), asin: "B07RNM5VH8", subscribeAndSavePrice: 20.89, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 21.99 }] }
+    ]
+  },
+  {
+    id: "182",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Assorted Fruit (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 44.28, url: amazonUrl("B088KV4MTM"), asin: "B088KV4MTM", subscribeAndSavePrice: 39.85, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 44.28 }] }
+    ]
+  },
+  {
+    id: "183",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Assorted Sweet (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 44.28, url: amazonUrl("B084RVMH4S"), asin: "B084RVMH4S", subscribeAndSavePrice: 39.85, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 44.28 }] }
+    ]
+  },
+  {
+    id: "184",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Chocolate (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 42.08, url: amazonUrl("B00UZFSS6I"), asin: "B00UZFSS6I", subscribeAndSavePrice: 37.87, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 42.08 }] }
+    ]
+  },
+  {
+    id: "185",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Coconut (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 42.08, url: amazonUrl("B01D41PWAO"), asin: "B01D41PWAO", subscribeAndSavePrice: 37.87, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 42.08 }] }
+    ]
+  },
+  {
+    id: "186",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Lemon (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 42.08, url: amazonUrl("B0736GHQ61"), asin: "B0736GHQ61", subscribeAndSavePrice: 37.87, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 42.08 }] }
+    ]
+  },
+  {
+    id: "187",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Peanut Butter Chocolate (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 42.08, url: amazonUrl("B00GAMSKUE"), asin: "B00GAMSKUE", subscribeAndSavePrice: 37.87, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 42.08 }] }
+    ]
+  },
+  {
+    id: "188",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Pineapple Mango (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 39.4, url: amazonUrl("B07J2TXJMN"), asin: "B07J2TXJMN", subscribeAndSavePrice: 35.46, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 39.4 }] }
+    ]
+  },
+  {
+    id: "189",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Raspberry (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 39.4, url: amazonUrl("B07BSQSXMB"), asin: "B07BSQSXMB", subscribeAndSavePrice: 35.46, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 39.4 }] }
+    ]
+  },
+  {
+    id: "190",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Strawberry (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 39.4, url: amazonUrl("B01ECRK9D4"), asin: "B01ECRK9D4", subscribeAndSavePrice: 35.46, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 39.4 }] }
+    ]
+  },
+  {
+    id: "191",
+    name: "Bariatric Advantage Calcium Citrate Chewy Bite, Tropical Orange (90 Count)",
+    brand: "Bariatric Advantage",
+    category: "bariatric",
+    servings: 90,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
+    offers: [
+      { retailer: "Amazon", price: 42.08, url: amazonUrl("B00OKUL5UK"), asin: "B00OKUL5UK", subscribeAndSavePrice: 37.87, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 42.08 }] }
+    ]
+  },
+  {
+    id: "192",
+    name: "Bariatric Fusion Calcium Citrate Soft Chews, Variety Pack (60 Count)",
+    brand: "Bariatric Fusion",
+    category: "bariatric",
+    servings: 60,
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
+    offers: [
+      { retailer: "Amazon", price: 36.99, url: amazonUrl("B0FBV9H833"), asin: "B0FBV9H833", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 36.99 }] }
+    ]
+  },
+  {
+    id: "193",
+    name: "Built Puff Protein Bar, Mixed Puff (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0BCR4H9KJ"), asin: "B0BCR4H9KJ", subscribeAndSavePrice: 26.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 29.99 }] }
+    ]
+  },
+  {
+    id: "194",
+    name: "Built Puff Protein Bar, Puff Banana Cream Pie (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B09M951M29"), asin: "B09M951M29", subscribeAndSavePrice: 26.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 29.99 }] }
+    ]
+  },
+  {
+    id: "195",
+    name: "Built Puff Protein Bar, Puff Chocolate Milkshake (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0FN7MFN37"), asin: "B0FN7MFN37", subscribeAndSavePrice: 26.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 29.99 }] }
+    ]
+  },
+  {
+    id: "196",
+    name: "Built Puff Protein Bar, Puff Lemon Meringue Pie (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0G35PSQXC"), asin: "B0G35PSQXC", subscribeAndSavePrice: 26.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 29.99 }] }
+    ]
+  },
+  {
+    id: "197",
+    name: "Built Puff Protein Bar, Puff S'mores Chunk (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0CH1JMHZD"), asin: "B0CH1JMHZD", subscribeAndSavePrice: 26.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 29.99 }] }
+    ]
+  },
+  {
+    id: "198",
+    name: "Built Puff Protein Bar, Sour Pink Lemonade Squeeze (12 Count)",
+    brand: "Built Bar",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
+    offers: [
+      { retailer: "Amazon", price: 29.99, url: amazonUrl("B0HFKXW6M9"), asin: "B0HFKXW6M9", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 29.99 }] }
+    ]
+  },
+  {
+    id: "199",
+    name: "Core Power Protein Shake, Chocolate (14 Fl Oz)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 1,
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 3.88, url: amazonUrl("B07PGPY5VB"), asin: "B07PGPY5VB", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 3.88 }] }
+    ]
+  },
+  {
+    id: "200",
+    name: "Core Power Protein Shake, Strawberry Banana (14 Fl Oz)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 1,
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 3, url: amazonUrl("B07PFKFTW9"), asin: "B07PFKFTW9", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 3 }] }
+    ]
+  },
+  {
+    id: "201",
+    name: "Core Power Protein Shake, Vanilla (14 Fl Oz)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 1,
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 3, url: amazonUrl("B07PFKGQ3S"), asin: "B07PFKGQ3S", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 3 }] }
+    ]
+  },
+  {
+    id: "202",
+    name: "Core Power Elite High Protein Shake, Chocolate (14 Fl Oz)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 1,
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 5, url: amazonUrl("B01N4OMLOZ"), asin: "B01N4OMLOZ", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 5 }] }
+    ]
+  },
+  {
+    id: "203",
+    name: "Core Power Elite High Protein Shake, Strawberry (14 Fl Oz)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 1,
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 5.28, url: amazonUrl("B085LJ7D2S"), asin: "B085LJ7D2S", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 5.28 }] }
+    ]
+  },
+  {
+    id: "204",
+    name: "Core Power Elite High Protein Shake, Vanilla (14 Fl Oz)",
+    brand: "Core Power",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 1,
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 4.29, url: amazonUrl("B01MT9NTDD"), asin: "B01MT9NTDD", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 4.29 }] }
+    ]
+  },
+  {
+    id: "205",
+    name: "Hydration Multiplier - Acai Berry",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
+    offers: [
+      { retailer: "Amazon", price: 24.99, url: amazonUrl("B078XMP8KJ"), asin: "B078XMP8KJ", subscribeAndSavePrice: 22.49, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 24.99 }] }
+    ]
+  },
+  {
+    id: "206",
+    name: "Hydration Multiplier - Cotton Candy",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
+    offers: [
+      { retailer: "Amazon", price: 24.99, url: amazonUrl("B0CXCF4ZLL"), asin: "B0CXCF4ZLL", subscribeAndSavePrice: 22.49, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 24.99 }] }
+    ]
+  },
+  {
+    id: "207",
+    name: "Hydration Multiplier - Guava",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
+    offers: [
+      { retailer: "Amazon", price: 24.99, url: amazonUrl("B0B4X36DT5"), asin: "B0B4X36DT5", subscribeAndSavePrice: 22.49, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 24.99 }] }
+    ]
+  },
+  {
+    id: "208",
+    name: "Hydration Multiplier - Mango",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
+    offers: [
+      { retailer: "Amazon", price: 24.99, url: amazonUrl("B0DNNHVL48"), asin: "B0DNNHVL48", subscribeAndSavePrice: 22.49, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 24.99 }] }
+    ]
+  },
+  {
+    id: "209",
+    name: "Hydration Multiplier - Orange Vanilla Dream",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
+    offers: [
+      { retailer: "Amazon", price: 24.99, url: amazonUrl("B0DNNNHB1C"), asin: "B0DNNNHB1C", subscribeAndSavePrice: 22.49, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 24.99 }] }
+    ]
+  },
+  {
+    id: "210",
+    name: "Hydration Multiplier - Pear",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
+    offers: [
+      { retailer: "Amazon", price: 24.99, url: amazonUrl("B0CHXP3331"), asin: "B0CHXP3331", subscribeAndSavePrice: 22.49, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 24.99 }] }
+    ]
+  },
+  {
+    id: "211",
+    name: "Hydration Multiplier - Pina Colada",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
+    offers: [
+      { retailer: "Amazon", price: 24.99, url: amazonUrl("B0B1LLKZ8S"), asin: "B0B1LLKZ8S", subscribeAndSavePrice: 22.49, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 24.99 }] }
+    ]
+  },
+  {
+    id: "212",
+    name: "Hydration Multiplier - Seaberry",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
+    offers: [
+      { retailer: "Amazon", price: 24.99, url: amazonUrl("B0BQ4YQN99"), asin: "B0BQ4YQN99", subscribeAndSavePrice: 22.49, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 24.99 }] }
+    ]
+  },
+  {
+    id: "213",
+    name: "Hydration Multiplier - Strawberry",
+    brand: "Liquid I.V.",
+    category: "electrolytes",
+    servings: 16,
+    nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
+    offers: [
+      { retailer: "Amazon", price: 23.3, url: amazonUrl("B08MVDTLKC"), asin: "B08MVDTLKC", subscribeAndSavePrice: 20.97, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.3 }] }
+    ]
+  },
+  {
+    id: "214",
+    name: "Myprotein Clear Whey Isolate, Blue Raspberry (1.1 lb, 20 Servings)",
+    brand: "Myprotein",
+    category: "protein",
+    servings: 20,
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 34.99, url: amazonUrl("B0D8K5BMVH"), asin: "B0D8K5BMVH", subscribeAndSavePrice: 33.24, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 34.99 }] }
+    ]
+  },
+  {
+    id: "215",
+    name: "Myprotein Clear Whey Isolate, Fruit Punch (1.1 lb, 20 Servings)",
+    brand: "Myprotein",
+    category: "protein",
+    servings: 20,
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 34.99, url: amazonUrl("B0FNRQHHJL"), asin: "B0FNRQHHJL", subscribeAndSavePrice: 33.24, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 34.99 }] }
+    ]
+  },
+  {
+    id: "216",
+    name: "Myprotein Clear Whey Isolate, Lemon Ice Tea (1.1 lb, 20 Servings)",
+    brand: "Myprotein",
+    category: "protein",
+    servings: 20,
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 34.99, url: amazonUrl("B0FNRQYK6K"), asin: "B0FNRQYK6K", subscribeAndSavePrice: 33.24, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 34.99 }] }
+    ]
+  },
+  {
+    id: "217",
+    name: "Myprotein Clear Whey Isolate, Orange Cream (1.1 lb, 20 Servings)",
+    brand: "Myprotein",
+    category: "protein",
+    servings: 20,
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 34.99, url: amazonUrl("B0FNRSW3MG"), asin: "B0FNRSW3MG", subscribeAndSavePrice: 33.24, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 34.99 }] }
+    ]
+  },
+  {
+    id: "218",
+    name: "Myprotein Clear Whey Isolate, Strawberry (1.1 lb, 20 Servings)",
+    brand: "Myprotein",
+    category: "protein",
+    servings: 20,
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 34.99, url: amazonUrl("B089GYF3XM"), asin: "B089GYF3XM", subscribeAndSavePrice: 33.24, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 34.99 }] }
+    ]
+  },
+  {
+    id: "219",
+    name: "Myprotein Clear Whey Isolate, Watermelon (1.1 lb, 20 Servings)",
+    brand: "Myprotein",
+    category: "protein",
+    servings: 20,
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 34.99, url: amazonUrl("B0D8K4RRK1"), asin: "B0D8K4RRK1", subscribeAndSavePrice: 33.24, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 34.99 }] }
+    ]
+  },
+  {
+    id: "220",
+    name: "Myprotein Clear Whey Isolate, Peach Mango (1.9 Pound)",
+    brand: "Myprotein",
+    category: "protein",
+    servings: 35,
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 45.99, url: amazonUrl("B0H5MDF5Z4"), asin: "B0H5MDF5Z4", subscribeAndSavePrice: 41.39, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 45.99 }] }
+    ]
+  },
+  {
+    id: "221",
+    name: "Creatine Monohydrate - Coastal Explosion (500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    servings: 100,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 23.95, url: amazonUrl("B0FV961TDN"), asin: "B0FV961TDN", subscribeAndSavePrice: 22.75, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.95 }] }
+    ]
+  },
+  {
+    id: "222",
+    name: "Creatine Monohydrate - Green Behemoth (500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    servings: 100,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 23.95, url: amazonUrl("B0H6GRWNYS"), asin: "B0H6GRWNYS", subscribeAndSavePrice: 22.75, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.95 }] }
+    ]
+  },
+  {
+    id: "223",
+    name: "Creatine Monohydrate - Mandarin Orange (500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    servings: 100,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 23.95, url: amazonUrl("B0DDMR2RX5"), asin: "B0DDMR2RX5", subscribeAndSavePrice: 21.55, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.95 }] }
+    ]
+  },
+  {
+    id: "224",
+    name: "Creatine Monohydrate - Mandarin Orange (2 x 500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    servings: 152,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 47.9, url: amazonUrl("B0GGV7X8FB"), asin: "B0GGV7X8FB", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 47.9 }] }
+    ]
+  },
+  {
+    id: "225",
+    name: "Creatine Monohydrate - White Behemoth (500g)",
+    brand: "Nutricost",
+    category: "creatine",
+    servings: 100,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 23.95, url: amazonUrl("B0H6GWM3Y2"), asin: "B0H6GWM3Y2", subscribeAndSavePrice: 22.75, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.95 }] }
+    ]
+  },
+  {
+    id: "226",
+    name: "Creatine Monohydrate - Unflavored (1000 Gram, Pack of 2)",
+    brand: "Nutricost",
+    category: "creatine",
+    servings: 400,
+    nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
+    offers: [
+      { retailer: "Amazon", price: 75.5, url: amazonUrl("B0HB2M9WF7"), asin: "B0HB2M9WF7", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 75.5 }] }
+    ]
+  },
+  {
+    id: "227",
+    name: "Gold Standard 100% Whey - Double Rich Chocolate (0.68 Pound)",
+    brand: "Optimum Nutrition",
+    category: "protein",
+    servings: 10,
+    nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop (30g)" },
+    offers: [
+      { retailer: "Amazon", price: 19.99, url: amazonUrl("B0F1ZV7PWW"), asin: "B0F1ZV7PWW", subscribeAndSavePrice: 18.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 19.99 }] }
+    ]
+  },
+  {
+    id: "228",
+    name: "Gold Standard 100% Whey - Double Rich Chocolate (10 Pound)",
+    brand: "Optimum Nutrition",
+    category: "protein",
+    servings: 148,
+    nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop (30g)" },
+    offers: [
+      { retailer: "Amazon", price: 180.75, url: amazonUrl("B000GIQT2O"), asin: "B000GIQT2O", subscribeAndSavePrice: 171.71, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 180.75 }] }
+    ]
+  },
+  {
+    id: "229",
+    name: "Gold Standard 100% Whey - Extreme Milk Chocolate (10 Pound)",
+    brand: "Optimum Nutrition",
+    category: "protein",
+    servings: 140,
+    nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 2, sodiumMilligrams: 130, servingSize: "1 scoop (32g)" },
+    offers: [
+      { retailer: "Amazon", price: 141.83, url: amazonUrl("B00ZFONQZW"), asin: "B00ZFONQZW", subscribeAndSavePrice: 134.74, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 141.83 }] }
+    ]
+  },
+  {
+    id: "230",
+    name: "Gold Standard 100% Whey - Delicious Strawberry (10 Pound)",
+    brand: "Optimum Nutrition",
+    category: "protein",
+    servings: 145,
+    nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 140, servingSize: "1 scoop (32g)" },
+    offers: [
+      { retailer: "Amazon", price: 177.29, url: amazonUrl("B000GIUROA"), asin: "B000GIUROA", subscribeAndSavePrice: 168.43, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 177.29 }] }
+    ]
+  },
+  {
+    id: "231",
+    name: "Gold Standard 100% Whey - Extreme Milk Chocolate (10 Pound, Pack of 2)",
+    brand: "Optimum Nutrition",
+    category: "protein",
+    servings: 280,
+    nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 2, sodiumMilligrams: 130, servingSize: "1 scoop (32g)" },
+    offers: [
+      { retailer: "Amazon", price: 283.66, url: amazonUrl("B0GRLSRJ7R"), asin: "B0GRLSRJ7R", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 283.66 }] }
+    ]
+  },
+  {
+    id: "232",
+    name: "Gold Standard 100% Whey - French Vanilla Crème (2 Pound, Pack of 6)",
+    brand: "Optimum Nutrition",
+    category: "protein",
+    servings: 174,
+    nutrition: { calories: 110, proteinGrams: 24, carbsGrams: 2, fatGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop" },
+    offers: [
+      { retailer: "Amazon", price: 231.07, url: amazonUrl("B0HBNY578Y"), asin: "B0HBNY578Y", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 231.07 }] }
+    ]
+  },
+  {
+    id: "233",
+    name: "Gold Standard 100% Whey - Chocolate Peanut Butter (2 Pound, Pack of 6)",
+    brand: "Optimum Nutrition",
+    category: "protein",
+    servings: 162,
+    nutrition: { calories: 130, proteinGrams: 24, carbsGrams: 4, fatGrams: 2, servingSize: "1 scoop (33g)" },
+    offers: [
+      { retailer: "Amazon", price: 275.98, url: amazonUrl("B0HDPVLZDW"), asin: "B0HDPVLZDW", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 275.98 }] }
+    ]
+  },
+  {
+    id: "234",
+    name: "Gold Standard 100% Whey - Double Rich Chocolate (5 Pound, Pack of 4)",
+    brand: "Optimum Nutrition",
+    category: "protein",
+    servings: 296,
+    nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop (30g)" },
+    offers: [
+      { retailer: "Amazon", price: 379.98, url: amazonUrl("B0GRL6W5N3"), asin: "B0GRL6W5N3", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 379.98 }] }
+    ]
+  },
+  {
+    id: "235",
+    name: "Premier Protein Shake, Caramel (11.5 fl oz, 12 Pack)",
+    brand: "Premier Protein",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 23.99, url: amazonUrl("B07C8Y17VT"), asin: "B07C8Y17VT", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.99 }] }
+    ]
+  },
+  {
+    id: "236",
+    name: "Premier Protein Shake, Chocolate (11.5 fl oz, 12 Pack)",
+    brand: "Premier Protein",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B008JGIZGS"), asin: "B008JGIZGS", subscribeAndSavePrice: 22.77, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.97 }] }
+    ]
+  },
+  {
+    id: "237",
+    name: "Premier Protein Shake, Chocolate Peanut Butter (11.5 fl oz, 12 Pack)",
+    brand: "Premier Protein",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B0DFHTW5HN"), asin: "B0DFHTW5HN", subscribeAndSavePrice: 22.77, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.97 }] }
+    ]
+  },
+  {
+    id: "238",
+    name: "Premier Protein Shake, Strawberries & Cream (11.5 fl oz, 12 Pack)",
+    brand: "Premier Protein",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B00MH5GGFO"), asin: "B00MH5GGFO", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.97 }] }
+    ]
+  },
+  {
+    id: "239",
+    name: "Premier Protein Shake, Vanilla (11.5 fl oz, 12 Pack)",
+    brand: "Premier Protein",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B008JGIZNQ"), asin: "B008JGIZNQ", subscribeAndSavePrice: 22.77, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.97 }] }
+    ]
+  },
+  {
+    id: "240",
+    name: "Premier Protein Shake, Café Latte with Caffeine (11 Fl Oz, Pack of 4)",
+    brand: "Premier Protein",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 4,
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 8.59, url: amazonUrl("B08NTY1787"), asin: "B08NTY1787", subscribeAndSavePrice: 8.16, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 8.59 }] }
+    ]
+  },
+  {
+    id: "241",
+    name: "Premier Protein Powder, Chocolate Milkshake (2.62 Pound)",
+    brand: "Premier Protein",
+    category: "protein",
+    servings: 29,
+    nutrition: { calories: 150, proteinGrams: 30, carbsGrams: 4, fatGrams: 2, sugarGrams: 1, sodiumMilligrams: 170, servingSize: "2 scoops (41g)" },
+    offers: [
+      { retailer: "Amazon", price: 43.49, url: amazonUrl("B0D4WTDZZR"), asin: "B0D4WTDZZR", subscribeAndSavePrice: 41.32, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 43.49 }] }
+    ]
+  },
+  {
+    id: "242",
+    name: "Electrolytes Powder Packets, Sugar Free Hydration Sticks - Cherry Pomegranate (20 Sticks)",
+    brand: "Sooergy",
+    category: "electrolytes",
+    servings: 20,
+    nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
+    nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 19.99, url: amazonUrl("B0F9SSMYQJ"), asin: "B0F9SSMYQJ", subscribeAndSavePrice: 18.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 19.99 }] }
+    ]
+  },
+  {
+    id: "243",
+    name: "Electrolytes Powder Packets, Sugar Free Hydration Sticks - Lemon Strawberry (20 Sticks)",
+    brand: "Sooergy",
+    category: "electrolytes",
+    servings: 20,
+    nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
+    nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 19.99, url: amazonUrl("B0F9SVQ64Z"), asin: "B0F9SVQ64Z", subscribeAndSavePrice: 18.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 19.99 }] }
+    ]
+  },
+  {
+    id: "244",
+    name: "Electrolytes Powder Packets, Sugar Free Hydration Sticks - Mix Berry (20 Sticks)",
+    brand: "Sooergy",
+    category: "electrolytes",
+    servings: 20,
+    nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
+    nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 19.99, url: amazonUrl("B0F9SPBP2K"), asin: "B0F9SPBP2K", subscribeAndSavePrice: 18.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 19.99 }] }
+    ]
+  },
+  {
+    id: "245",
+    name: "Electrolytes Powder Packets, Sugar Free Hydration Sticks - Orange (20 Sticks)",
+    brand: "Sooergy",
+    category: "electrolytes",
+    servings: 20,
+    nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
+    nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 19.99, url: amazonUrl("B0F9SYF96P"), asin: "B0F9SYF96P", subscribeAndSavePrice: 18.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 19.99 }] }
+    ]
+  },
+  {
+    id: "246",
+    name: "Electrolytes Powder Packets, Sugar Free Hydration Sticks - Tropical Punch (20 Sticks)",
+    brand: "Sooergy",
+    category: "electrolytes",
+    servings: 20,
+    nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
+    nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 19.99, url: amazonUrl("B0F9SVTM8K"), asin: "B0F9SVTM8K", subscribeAndSavePrice: 18.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 19.99 }] }
+    ]
+  },
+  {
+    id: "247",
+    name: "Electrolytes Powder Packets, Sugar Free Hydration Sticks - Watermelon (20 Sticks)",
+    brand: "Sooergy",
+    category: "electrolytes",
+    servings: 20,
+    nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
+    nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
+    offers: [
+      { retailer: "Amazon", price: 19.99, url: amazonUrl("B0F9SXVCJN"), asin: "B0F9SXVCJN", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 19.99 }] }
+    ]
+  },
+  {
+    id: "248",
+    name: "Spylt High Protein Milk, 6 Flavor Variety Pack (12 Pack)",
+    brand: "Spylt",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0DZPGC969"), asin: "B0DZPGC969", subscribeAndSavePrice: 35.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 39.99 }] }
+    ]
+  },
+  {
+    id: "249",
+    name: "Spylt High Protein Milk, Banana (12 Pack)",
+    brand: "Spylt",
+    category: "protein",
+    additionalCategories: ["food-drink"],
+    servings: 12,
+    nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0H5T78P49"), asin: "B0H5T78P49", subscribeAndSavePrice: 35.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 39.99 }] }
+    ]
+  },
+  {
+    id: "250",
+    name: "Vital Proteins Collagen Peptides Advanced, Unflavored (12 Servings)",
+    brand: "Vital Proteins",
+    category: "bariatric",
+    servings: 12,
+    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
+    offers: [
+      { retailer: "Amazon", price: 22.38, url: amazonUrl("B00NLR1PX0"), asin: "B00NLR1PX0", subscribeAndSavePrice: 21.26, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 22.38 }] }
+    ]
+  },
+  {
+    id: "251",
+    name: "Vital Proteins Collagen Peptides Advanced, Unflavored (12 Servings, Pack of 3)",
+    brand: "Vital Proteins",
+    category: "bariatric",
+    servings: 36,
+    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
+    offers: [
+      { retailer: "Amazon", price: 67.14, url: amazonUrl("B0H73BXYY9"), asin: "B0H73BXYY9", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 67.14 }] }
+    ]
+  },
+  {
+    id: "252",
+    name: "Vital Proteins Collagen Peptides, Unflavored (20 Servings)",
+    brand: "Vital Proteins",
+    category: "bariatric",
+    additionalCategories: ["weight-management"],
+    servings: 20,
+    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
+    offers: [
+      { retailer: "Amazon", price: 22.86, url: amazonUrl("B09BP3P58Q"), asin: "B09BP3P58Q", subscribeAndSavePrice: 21.72, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 22.86 }] }
+    ]
+  },
+  {
+    id: "253",
+    name: "Vital Proteins Collagen Peptides Advanced, Unflavored (27 Servings, Pack of 3)",
+    brand: "Vital Proteins",
+    category: "bariatric",
+    servings: 81,
+    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
+    offers: [
+      { retailer: "Amazon", price: 116.97, url: amazonUrl("B0H73S91BD"), asin: "B0H73S91BD", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 116.97 }] }
+    ]
+  },
+  {
+    id: "254",
+    name: "Vital Proteins Collagen Peptides, Unflavored (7 Servings)",
+    brand: "Vital Proteins",
+    category: "bariatric",
+    additionalCategories: ["weight-management"],
+    servings: 7,
+    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
+    offers: [
+      { retailer: "Amazon", price: 15, url: amazonUrl("B076PL4TM8"), asin: "B076PL4TM8", subscribeAndSavePrice: 14.25, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 15 }] }
+    ]
   }
 ];
