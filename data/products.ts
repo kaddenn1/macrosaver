@@ -2939,6 +2939,7 @@ export const products = [
     name: "Hydration Multiplier - Acai Berry",
     brand: "Liquid I.V.",
     category: "electrolytes",
+    image: "/products/liquid-iv-acai-berry.jpg",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
@@ -2950,6 +2951,7 @@ export const products = [
     name: "Hydration Multiplier - Cotton Candy",
     brand: "Liquid I.V.",
     category: "electrolytes",
+    image: "/products/liquid-iv-cotton-candy.jpg",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
@@ -2961,6 +2963,7 @@ export const products = [
     name: "Hydration Multiplier - Guava",
     brand: "Liquid I.V.",
     category: "electrolytes",
+    image: "/products/liquid-iv-guava.jpg",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
@@ -2972,6 +2975,7 @@ export const products = [
     name: "Hydration Multiplier - Mango",
     brand: "Liquid I.V.",
     category: "electrolytes",
+    image: "/products/liquid-iv-mango.png",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
@@ -2983,6 +2987,7 @@ export const products = [
     name: "Hydration Multiplier - Orange Vanilla Dream",
     brand: "Liquid I.V.",
     category: "electrolytes",
+    image: "/products/liquid-iv-orange-vanilla-dream.jpg",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
@@ -2994,6 +2999,7 @@ export const products = [
     name: "Hydration Multiplier - Pear",
     brand: "Liquid I.V.",
     category: "electrolytes",
+    image: "/products/liquid-iv-pear.jpg",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
@@ -3005,6 +3011,7 @@ export const products = [
     name: "Hydration Multiplier - Pina Colada",
     brand: "Liquid I.V.",
     category: "electrolytes",
+    image: "/products/liquid-iv-pina-colada.jpg",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
@@ -3016,6 +3023,7 @@ export const products = [
     name: "Hydration Multiplier - Seaberry",
     brand: "Liquid I.V.",
     category: "electrolytes",
+    image: "/products/liquid-iv-seaberry.jpg",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
@@ -3027,6 +3035,7 @@ export const products = [
     name: "Hydration Multiplier - Strawberry",
     brand: "Liquid I.V.",
     category: "electrolytes",
+    image: "/products/liquid-iv-strawberry.jpg",
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
