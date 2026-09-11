@@ -16,6 +16,14 @@ export type PricePoint = {
   price: number;
 };
 
+/**
+ * "verified" is the only state eligible for a Verified badge, deal ranking, or campaign
+ * inclusion — it means `priceObservedAt` reflects a directly confirmed current price.
+ * The other three states may still carry an old `priceObservedAt` for historical display,
+ * but never license calling the price current.
+ */
+export type VerificationState = "verified" | "checked_stale" | "unavailable" | "review_required";
+
 export type RetailerOffer = {
   retailer: string;
   price: number;
@@ -24,8 +32,12 @@ export type RetailerOffer = {
   asin?: string;
   /** Defaults to true. Set to false when the retailer has temporarily sold out. */
   inStock?: boolean;
-  /** ISO timestamp for a direct retailer price observation. Omit when the observation date is unknown. */
+  /** ISO timestamp of the most recent retailer-link check attempt, successful or not. Never implies the price is current. */
+  lastCheckedAt?: string;
+  /** ISO timestamp for a direct retailer price observation. Only meaningful when verificationState is "verified". */
   priceObservedAt?: string;
+  /** What the most recent check actually established. Omitted only for offers that predate this field. */
+  verificationState?: VerificationState;
   /** Pre-sale/typical price. Present only while `price` reflects an active discount off this value. */
   listPrice?: number;
   /** Retailer's Subscribe & Save (or equivalent recurring-order) price. Present only while it's lower than `price`. */

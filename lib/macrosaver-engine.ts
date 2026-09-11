@@ -86,6 +86,11 @@ export function getOfferFreshness(
   offer: RetailerOffer,
   asOf: Date = new Date()
 ): PriceFreshness {
+  // Offers written before verificationState existed have no way to say otherwise, so they
+  // fall through to the date-only check below. Everything written since must have earned
+  // "verified" — a checked-but-unconfirmed, unavailable, or mismatched offer is never fresh,
+  // no matter how recent its (possibly stale) priceObservedAt looks.
+  if (offer.verificationState && offer.verificationState !== "verified") return "unknown";
   if (!offer.priceObservedAt) return "unknown";
 
   const observedAt = Date.parse(offer.priceObservedAt);
@@ -187,6 +192,29 @@ export function getPriceConfidence(
     retailerCount: eligibleOffers.length,
     status: eligibleOffers.length > 1 ? "lowest-recorded" : "recorded",
   };
+}
+
+/**
+ * Most recent retailer-link check across a product's offers, regardless of outcome. Used as
+ * the fallback label ("Checked [date]") when nothing is eligible to say "Verified" — so a
+ * product that was genuinely looked at today doesn't read identically to one nobody has
+ * touched.
+ */
+export function getMostRecentCheck(product: Product): string | null {
+  const checkedDates = product.offers
+    .map((offer) => offer.lastCheckedAt)
+    .filter((d): d is string => Boolean(d))
+    .sort();
+
+  return checkedDates.length > 0 ? checkedDates[checkedDates.length - 1] : null;
+}
+
+export function formatShortDate(isoDate: string): string {
+  return new Date(isoDate).toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    timeZone: "UTC",
+  });
 }
 
 export function getBestOffer(product: Product): RetailerOffer | null {

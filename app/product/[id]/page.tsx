@@ -6,10 +6,12 @@ import { products } from "@/data/products";
 import ProductImageLightbox from "@/components/ProductImageLightbox";
 import PriceHistoryChart from "@/components/PriceHistoryChart";
 import {
+  formatShortDate,
   getBestOffer,
   getCostPerServing,
   getCostPerOzProtein,
   getLatestPriceObservation,
+  getMostRecentCheck,
   getOfferFreshness,
   getOfferSale,
   getPriceConfidence,
@@ -48,13 +50,13 @@ function TikTokIcon({ className }: { className?: string }) {
 
 function formatOfferFreshnessLabel(offer: RetailerOffer): string {
   const freshness = getOfferFreshness(offer);
-  if (freshness === "unknown") return "Undated — verify at retailer";
+  if (freshness === "unknown") {
+    return offer.lastCheckedAt
+      ? `Checked ${formatShortDate(offer.lastCheckedAt)} — verify current price`
+      : "Undated — verify at retailer";
+  }
 
-  const dateLabel = new Date(offer.priceObservedAt as string).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    timeZone: "UTC",
-  });
+  const dateLabel = formatShortDate(offer.priceObservedAt as string);
   return freshness === "stale" ? `Checked ${dateLabel} — verify current price` : `Checked ${dateLabel}`;
 }
 
@@ -137,6 +139,7 @@ export default async function ProductPage({
     : undefined;
   const priceConfidence = getPriceConfidence(product);
   const headlineSale = priceConfidence.offer ? getOfferSale(priceConfidence.offer) : null;
+  const headlineLastChecked = priceConfidence.offer ? null : getMostRecentCheck(product);
   const costPerServing = getCostPerServing(product);
   const costPerOzProtein = getCostPerOzProtein(product);
   const proteinPerDollar = getProteinPerDollar(product);
@@ -362,8 +365,10 @@ export default async function ProductPage({
                   )}
                 <div className="mt-1 text-[9px] uppercase tracking-wider text-gray-500">
                   {priceConfidence.offer?.priceObservedAt
-                    ? `Checked ${new Date(priceConfidence.offer.priceObservedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}`
-                    : "Check retailer for current price"}
+                    ? `Checked ${formatShortDate(priceConfidence.offer.priceObservedAt)}`
+                    : headlineLastChecked
+                      ? `Checked ${formatShortDate(headlineLastChecked)} — verify current price`
+                      : "Check retailer for current price"}
                 </div>
               </div>
               {servingMetricsApply && (

@@ -18,7 +18,13 @@ import {
   type BrandStats,
 } from "@/lib/brand-comparison";
 import { getGuideByCategory } from "@/lib/guides";
-import { getBestOffer, getCostPerServing, hasFreshPriceObservation } from "@/lib/macrosaver-engine";
+import {
+  formatShortDate,
+  getBestOffer,
+  getCostPerServing,
+  getMostRecentCheck,
+  hasFreshPriceObservation,
+} from "@/lib/macrosaver-engine";
 import { CATEGORY_TITLES } from "@/lib/categories";
 import { SITE_URL } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
@@ -153,6 +159,7 @@ function ProductRow({
         (o) => o.retailer === offer.retailer && o.price === offer.price && hasFreshPriceObservation(o)
       )
     : false;
+  const lastChecked = priceIsDated ? null : getMostRecentCheck(product);
 
   return (
     <Link
@@ -174,7 +181,7 @@ function ProductRow({
         <div className="text-sm font-bold text-white leading-snug truncate">{product.name}</div>
         <div className="text-[10px] text-gray-500 mt-1">
           {offer
-            ? `${priceIsDated ? "Verified" : "Undated snapshot"} $${offer.price.toFixed(2)}`
+            ? `${priceIsDated ? "Verified" : lastChecked ? `Checked ${formatShortDate(lastChecked)}` : "Undated snapshot"} $${offer.price.toFixed(2)}`
             : "Price unavailable"}
           {costPerServing !== null && ` · $${costPerServing.toFixed(2)}/serving`}
         </div>

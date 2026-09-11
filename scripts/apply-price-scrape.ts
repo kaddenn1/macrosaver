@@ -9,11 +9,12 @@
  *   optional: verified_list_price (a genuine "was $X" strikethrough price)
  *   optional: subscribe_and_save_price (kept only while lower than the applied price)
  *
- * A row is applied only when safe_to_apply === "true" (covers both APPLY and
- * DATE_ONLY actions from the scrape's own verification pass) and a price is
- * present. REVIEW rows (safe_to_apply=false) are left completely untouched —
- * the scrape itself already rejected them (formulaic percentage patterns,
- * variant/package mismatches, no trustworthy rendered price, etc).
+ * A row is applied — price, priceObservedAt, and verificationState: "verified" — only when
+ * safe_to_apply === "true" (covers both APPLY and DATE_ONLY actions from the scrape's own
+ * verification pass) and a price is present. REVIEW rows (safe_to_apply=false) still get a
+ * lastCheckedAt + verificationState: "checked_stale" stamp — the link WAS looked at, that's
+ * real and worth recording — but price/priceObservedAt are left untouched, so a rejected
+ * check can never silently masquerade as a verified one.
  *
  * Matches offers by product_id (catalog `id`) rather than ASIN, since some
  * offers (e.g. Sports Research) have no ASIN. Assumes one offer per product.
@@ -114,12 +115,62 @@ for (const [name, idx] of [
   }
 }
 
+/**
+ * Replaces `field: "..."` in an offer line if present, else inserts it right after
+ * `anchorField: "..."`. Falls back to inserting before the closing brace if the anchor
+ * itself isn't present (e.g. a pre-migration offer with no priceObservedAt yet).
+ */
+function upsertStringField(line: string, field: string, value: string, anchorField: string): string {
+  const existing = new RegExp(`${field}: "[^"]*"`);
+  if (existing.test(line)) {
+    return line.replace(existing, `${field}: "${value}"`);
+  }
+  const anchor = new RegExp(`(${anchorField}: "[^"]*")`);
+  if (anchor.test(line)) {
+    return line.replace(anchor, `$1, ${field}: "${value}"`);
+  }
+  return line.replace(/\s*\}\s*$/, `, ${field}: "${value}" }`);
+}
+
 const productsPath = resolve(import.meta.dirname, "../data/products.ts");
 let src = readFileSync(productsPath, "utf8");
+
+/**
+ * Stamps a rejected (safe_to_apply=false) row's offer with lastCheckedAt and
+ * verificationState: "checked_stale" — the link was genuinely looked at, so that much is
+ * worth recording — without touching price, priceObservedAt, or priceHistory. Never
+ * downgrades an offer this same file already applied as verified.
+ */
+function stampCheckedStale(id: string, checkedAt: string): boolean {
+  const idNeedle = `id: "${id}"`;
+  const idIdx = src.indexOf(idNeedle);
+  if (idIdx === -1) return false;
+
+  const nextIdIdx = src.indexOf('id: "', idIdx + idNeedle.length);
+  const blockEnd = nextIdIdx === -1 ? src.length : nextIdIdx;
+  const offerMatch = src.slice(idIdx, blockEnd).match(/^\s*\{ retailer: "[^"]+", price: [\d.]+.*\}\s*$/m);
+  if (!offerMatch || offerMatch.index === undefined) return false;
+
+  const lineStart = idIdx + offerMatch.index;
+  const lineEnd = lineStart + offerMatch[0].length;
+  const line = offerMatch[0];
+
+  if (/verificationState: "verified"/.test(line) && line.includes(`priceObservedAt: "${checkedAt}"`)) {
+    return false;
+  }
+
+  let newLine = upsertStringField(line, "lastCheckedAt", checkedAt, "url");
+  newLine = upsertStringField(newLine, "verificationState", "checked_stale", "lastCheckedAt");
+
+  if (newLine === line) return false;
+  src = src.slice(0, lineStart) + newLine + src.slice(lineEnd);
+  return true;
+}
 
 let applied = 0;
 let historyInitialized = 0;
 let skippedUnverified = 0;
+let markedCheckedStale = 0;
 let alreadyCurrent = 0;
 const listPriceSet: string[] = [];
 const snsPriceSet: string[] = [];
@@ -135,6 +186,9 @@ for (const r of rows.slice(1)) {
 
   if (safe !== "true" || !priceRaw) {
     skippedUnverified++;
+    if (checkedAtRaw && stampCheckedStale(id, toDateStamp(checkedAtRaw))) {
+      markedCheckedStale++;
+    }
     continue;
   }
   const price = Number(priceRaw);
@@ -204,6 +258,9 @@ for (const r of rows.slice(1)) {
     newLine = newLine.replace(/priceObservedAt: "\d{4}-\d{2}-\d{2}"/, `priceObservedAt: "${checkedAt}"`);
   }
 
+  newLine = upsertStringField(newLine, "lastCheckedAt", checkedAt, "priceObservedAt");
+  newLine = upsertStringField(newLine, "verificationState", "verified", "lastCheckedAt");
+
   if (idxListPrice !== -1 && listPriceRaw) {
     const listPrice = Number(listPriceRaw);
     if (Number.isFinite(listPrice) && listPrice > price) {
@@ -240,10 +297,11 @@ for (const r of rows.slice(1)) {
   }
 }
 
-console.log(`Applied: ${applied}`);
+console.log(`Applied (verified): ${applied}`);
 console.log(`History arrays initialized for first-time verification: ${historyInitialized}`);
 console.log(`Already current (same date+price already recorded): ${alreadyCurrent}`);
 console.log(`Skipped (unverified/not safe_to_apply): ${skippedUnverified}`);
+console.log(`  ...of which stamped lastCheckedAt/checked_stale: ${markedCheckedStale}`);
 if (listPriceSet.length) console.log(`List price set/updated: ${listPriceSet.join(", ")}`);
 if (snsPriceSet.length) console.log(`Subscribe & Save price set/updated: ${snsPriceSet.join(", ")}`);
 if (notFound.length) {

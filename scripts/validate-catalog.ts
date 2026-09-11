@@ -3,7 +3,14 @@ import { resolve } from "node:path";
 import { products } from "../data/products.ts";
 import { getOfferFreshness, supportsServingMetrics } from "../lib/macrosaver-engine.ts";
 import type { PriceFreshness } from "../lib/macrosaver-engine.ts";
-import type { Product } from "../data/types.ts";
+import type { Product, VerificationState } from "../data/types.ts";
+
+const VALID_VERIFICATION_STATES: readonly VerificationState[] = [
+  "verified",
+  "checked_stale",
+  "unavailable",
+  "review_required",
+];
 
 const errors: string[] = [];
 const ids = new Set<string>();
@@ -76,6 +83,21 @@ for (const product of products as Product[]) {
       (typeof priceObservedAt !== "string" || !Number.isFinite(Date.parse(priceObservedAt)))
     ) {
       errors.push(`${label}: priceObservedAt must be a valid ISO timestamp`);
+    }
+    if (
+      offer.lastCheckedAt !== undefined &&
+      !Number.isFinite(Date.parse(offer.lastCheckedAt))
+    ) {
+      errors.push(`${label}: lastCheckedAt must be a valid ISO timestamp`);
+    }
+    if (
+      offer.verificationState !== undefined &&
+      !VALID_VERIFICATION_STATES.includes(offer.verificationState)
+    ) {
+      errors.push(`${label}: verificationState must be one of ${VALID_VERIFICATION_STATES.join(", ")}`);
+    }
+    if (offer.verificationState === "verified" && !priceObservedAt) {
+      errors.push(`${label}: verificationState "verified" requires priceObservedAt`);
     }
     if (offer.listPrice !== undefined && offer.listPrice <= offer.price) {
       errors.push(`${label}: listPrice must be greater than the current price to represent a sale`);

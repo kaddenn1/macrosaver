@@ -5,10 +5,12 @@ import {
   getBestSale,
   getCostPerServing,
   getCostPerOzProtein,
+  getMostRecentCheck,
   getOfferSale,
   getPriceConfidence,
   getSavingsVsHighestOffer,
   extractFlavor,
+  formatShortDate,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
 import type { Product } from "@/data/types";
@@ -214,17 +216,14 @@ export default function Champions({
                      <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                        {(() => {
                          const { status, offer } = priceConfidence;
-                         if (status === "unavailable" || !offer?.priceObservedAt) {
-                           return "Price Unavailable";
+                         if (status !== "unavailable" && offer?.priceObservedAt) {
+                           const dateLabel = formatShortDate(offer.priceObservedAt);
+                           return status === "lowest-recorded"
+                             ? `Lowest Verified ${dateLabel}`
+                             : `Verified ${dateLabel}`;
                          }
-                         const dateLabel = new Date(offer.priceObservedAt).toLocaleDateString("en-US", {
-                           month: "short",
-                           day: "numeric",
-                           timeZone: "UTC",
-                         });
-                         return status === "lowest-recorded"
-                           ? `Lowest Verified ${dateLabel}`
-                           : `Verified ${dateLabel}`;
+                         const lastChecked = getMostRecentCheck(item);
+                         return lastChecked ? `Checked ${formatShortDate(lastChecked)}` : "Price Unavailable";
                        })()}
                       </div>
                       <div className="flex items-baseline gap-1.5">

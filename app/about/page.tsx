@@ -44,9 +44,18 @@ export default function AboutPage() {
           <p className="leading-relaxed text-gray-400">
             Products are selected and entered manually; the catalog is not a complete survey of the
             market. Prices are manually maintained snapshots of the offers shown and can change at
-            any time. The current dataset does not include observation timestamps, so MacroSaver
-            does not claim that a displayed price is current. Many products also have only one
-            tracked retailer; a recorded price is not the lowest price available anywhere.
+            any time. Many products also have only one tracked retailer; a recorded price is not the
+            lowest price available anywhere.
+          </p>
+          <p className="leading-relaxed text-gray-400">
+            Every offer we track separates two different questions: when we last checked the
+            retailer link, and when we last directly confirmed the displayed price. A{" "}
+            <strong className="text-gray-200">Verified [date]</strong> badge means the exact price
+            shown was directly confirmed on that date. A{" "}
+            <strong className="text-gray-200">Checked [date]</strong> badge means we looked at the
+            retailer link on that date but couldn&apos;t confirm the displayed price is current —
+            treat the number as a reference point, not a quote. An offer with no badge at all has no
+            recent check on file.
           </p>
           <p className="leading-relaxed text-gray-400">
             Always verify the retailer price, package size, serving count, ingredients, and
@@ -141,7 +150,7 @@ export default function AboutPage() {
             </Link>
             .
           </p>
-          <p className="text-xs uppercase tracking-wider text-gray-500">Last updated July 21, 2026</p>
+          <p className="text-xs uppercase tracking-wider text-gray-500">Last updated September 11, 2026</p>
         </section>
       </article>
     </main>
