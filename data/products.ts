@@ -3131,7 +3131,8 @@ export const products = [
     name: "Creatine Monohydrate - Coastal Explosion (500g)",
     brand: "Nutricost",
     category: "creatine",
-    servings: 100,
+    image: "/products/nutricost-creatine-coastal-explosion.jpg",
+    servings: 75,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
     offers: [
       { retailer: "Amazon", price: 23.95, url: amazonUrl("B0FV961TDN"), asin: "B0FV961TDN", subscribeAndSavePrice: 22.75, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.95 }] }
@@ -3139,10 +3140,11 @@ export const products = [
   },
   {
     id: "222",
-    name: "Creatine Monohydrate - Green Behemoth (500g)",
+    name: "Creatine Monohydrate - Green Behemoth (219g)",
     brand: "Nutricost",
     category: "creatine",
-    servings: 100,
+    image: "/products/nutricost-creatine-green-behemoth.jpg",
+    servings: 30,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
     offers: [
       { retailer: "Amazon", price: 23.95, url: amazonUrl("B0H6GRWNYS"), asin: "B0H6GRWNYS", subscribeAndSavePrice: 22.75, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.95 }] }
@@ -3153,7 +3155,8 @@ export const products = [
     name: "Creatine Monohydrate - Mandarin Orange (500g)",
     brand: "Nutricost",
     category: "creatine",
-    servings: 100,
+    image: "/products/nutricost-creatine-mandarin-orange.jpg",
+    servings: 74,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
     offers: [
       { retailer: "Amazon", price: 23.95, url: amazonUrl("B0DDMR2RX5"), asin: "B0DDMR2RX5", subscribeAndSavePrice: 21.55, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.95 }] }
@@ -3172,10 +3175,11 @@ export const products = [
   },
   {
     id: "225",
-    name: "Creatine Monohydrate - White Behemoth (500g)",
+    name: "Creatine Monohydrate - White Behemoth (225g)",
     brand: "Nutricost",
     category: "creatine",
-    servings: 100,
+    image: "/products/nutricost-creatine-white-behemoth.jpg",
+    servings: 30,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
     offers: [
       { retailer: "Amazon", price: 23.95, url: amazonUrl("B0H6GWM3Y2"), asin: "B0H6GWM3Y2", subscribeAndSavePrice: 22.75, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-10", price: 23.95 }] }
