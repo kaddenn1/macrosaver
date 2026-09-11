@@ -81,7 +81,7 @@ export const products = [
       servingSize: "1 bottle (16.9 fl oz)",
     },
     offers: [
-      { retailer: "Amazon", price: 27.45, url: amazonUrl("B0DT7K3LXM"), asin: "B0DT7K3LXM", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 32.29 }, { date: "2026-08-29", price: 27.45 }, { date: "2026-08-30", price: 27.45 }, { date: "2026-09-05", price: 27.45 }, { date: "2026-09-07", price: 27.45 }] }
+      { retailer: "Amazon", price: 27.45, url: amazonUrl("B0DT7K3LXM"), asin: "B0DT7K3LXM", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 32.29 }, { date: "2026-08-29", price: 27.45 }, { date: "2026-08-30", price: 27.45 }, { date: "2026-09-05", price: 27.45 }, { date: "2026-09-07", price: 27.45 }, { date: "2026-09-10", price: 27.45 }] }
     ]
   },
   {
@@ -222,7 +222,7 @@ export const products = [
       servingSize: "2 scoops (42g)",
     },
     offers: [
-      { retailer: "Amazon", price: 32.71, url: amazonUrl("B0DLPCJ4BZ"), asin: "B0DLPCJ4BZ", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 38.48 }, { date: "2026-08-29", price: 38.48 }, { date: "2026-08-30", price: 32.71 }, { date: "2026-09-05", price: 32.71 }, { date: "2026-09-07", price: 32.71 }] }
+      { retailer: "Amazon", price: 32.71, url: amazonUrl("B0DLPCJ4BZ"), asin: "B0DLPCJ4BZ", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 38.48 }, { date: "2026-08-29", price: 38.48 }, { date: "2026-08-30", price: 32.71 }, { date: "2026-09-05", price: 32.71 }, { date: "2026-09-07", price: 32.71 }, { date: "2026-09-10", price: 32.71 }] }
     ]
   },
   {
@@ -360,7 +360,7 @@ export const products = [
       servingSize: "1 scoop (33g)",
     },
     offers: [
-      { retailer: "Amazon", price: 81.84, url: amazonUrl("B000GIPJZ2"), asin: "B000GIPJZ2", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 96.28 }, { date: "2026-08-29", price: 96.28 }, { date: "2026-08-30", price: 81.84 }, { date: "2026-09-05", price: 81.84 }, { date: "2026-09-07", price: 81.84 }] }
+      { retailer: "Amazon", price: 81.84, url: amazonUrl("B000GIPJZ2"), asin: "B000GIPJZ2", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 96.28 }, { date: "2026-08-29", price: 96.28 }, { date: "2026-08-30", price: 81.84 }, { date: "2026-09-05", price: 81.84 }, { date: "2026-09-07", price: 81.84 }, { date: "2026-09-10", price: 81.84 }] }
     ]
   },
   {
@@ -400,7 +400,7 @@ export const products = [
       servingSize: "1 scoop (32g)",
     },
     offers: [
-      { retailer: "Amazon", price: 81.84, url: amazonUrl("B000QSRO1Y"), asin: "B000QSRO1Y", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 96.28 }, { date: "2026-08-29", price: 96.28 }, { date: "2026-08-30", price: 81.84 }, { date: "2026-09-05", price: 81.84 }, { date: "2026-09-07", price: 81.84 }] }
+      { retailer: "Amazon", price: 81.84, url: amazonUrl("B000QSRO1Y"), asin: "B000QSRO1Y", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 96.28 }, { date: "2026-08-29", price: 96.28 }, { date: "2026-08-30", price: 81.84 }, { date: "2026-09-05", price: 81.84 }, { date: "2026-09-07", price: 81.84 }, { date: "2026-09-10", price: 81.84 }] }
     ]
   },
   {
@@ -440,7 +440,7 @@ export const products = [
       servingSize: "1 scoop",
     },
     offers: [
-      { retailer: "Amazon", price: 81.84, url: amazonUrl("B000QSO3FO"), asin: "B000QSO3FO", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 97.32 }, { date: "2026-08-29", price: 96.28 }, { date: "2026-08-30", price: 81.84 }, { date: "2026-09-05", price: 81.84 }, { date: "2026-09-07", price: 81.84 }] }
+      { retailer: "Amazon", price: 81.84, url: amazonUrl("B000QSO3FO"), asin: "B000QSO3FO", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 97.32 }, { date: "2026-08-29", price: 96.28 }, { date: "2026-08-30", price: 81.84 }, { date: "2026-09-05", price: 81.84 }, { date: "2026-09-07", price: 81.84 }, { date: "2026-09-10", price: 81.84 }] }
     ]
   },
   {
@@ -520,7 +520,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
-      { retailer: "Amazon", price: 20.36, url: amazonUrl("B01M3SO70X"), asin: "B01M3SO70X", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.25 }, { date: "2026-08-29", price: 23.95 }, { date: "2026-08-30", price: 20.36 }, { date: "2026-09-05", price: 20.36 }, { date: "2026-09-07", price: 20.36 }] }
+      { retailer: "Amazon", price: 20.36, url: amazonUrl("B01M3SO70X"), asin: "B01M3SO70X", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 23.25 }, { date: "2026-08-29", price: 23.95 }, { date: "2026-08-30", price: 20.36 }, { date: "2026-09-05", price: 20.36 }, { date: "2026-09-07", price: 20.36 }, { date: "2026-09-10", price: 20.36 }] }
     ]
   },
   {
@@ -541,7 +541,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
-      { retailer: "Amazon", price: 20.36, url: amazonUrl("B01MA6LPQR"), asin: "B01MA6LPQR", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.95 }, { date: "2026-08-29", price: 23.95 }, { date: "2026-08-30", price: 20.36 }, { date: "2026-09-05", price: 20.36 }, { date: "2026-09-07", price: 20.36 }] }
+      { retailer: "Amazon", price: 20.36, url: amazonUrl("B01MA6LPQR"), asin: "B01MA6LPQR", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 23.95 }, { date: "2026-08-29", price: 23.95 }, { date: "2026-08-30", price: 20.36 }, { date: "2026-09-05", price: 20.36 }, { date: "2026-09-07", price: 20.36 }, { date: "2026-09-10", price: 20.36 }] }
     ]
   },
   {
@@ -562,7 +562,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
-      { retailer: "Amazon", price: 20.36, url: amazonUrl("B0CDJ2XTQB"), asin: "B0CDJ2XTQB", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.95 }, { date: "2026-08-29", price: 23.95 }, { date: "2026-08-30", price: 20.36 }, { date: "2026-09-05", price: 20.36 }, { date: "2026-09-07", price: 20.36 }] }
+      { retailer: "Amazon", price: 20.36, url: amazonUrl("B0CDJ2XTQB"), asin: "B0CDJ2XTQB", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 23.95 }, { date: "2026-08-29", price: 23.95 }, { date: "2026-08-30", price: 20.36 }, { date: "2026-09-05", price: 20.36 }, { date: "2026-09-07", price: 20.36 }, { date: "2026-09-10", price: 20.36 }] }
     ]
   },
   {
@@ -583,7 +583,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
-      { retailer: "Amazon", price: 20.36, url: amazonUrl("B0CDFDDRCF"), asin: "B0CDFDDRCF", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.95 }, { date: "2026-08-29", price: 23.95 }, { date: "2026-08-30", price: 20.36 }, { date: "2026-09-05", price: 20.36 }, { date: "2026-09-07", price: 20.36 }] }
+      { retailer: "Amazon", price: 20.36, url: amazonUrl("B0CDFDDRCF"), asin: "B0CDFDDRCF", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 23.95 }, { date: "2026-08-29", price: 23.95 }, { date: "2026-08-30", price: 20.36 }, { date: "2026-09-05", price: 20.36 }, { date: "2026-09-07", price: 20.36 }, { date: "2026-09-10", price: 20.36 }] }
     ]
   },
   {
@@ -625,7 +625,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
-      { retailer: "Amazon", price: 35.66, url: amazonUrl("B01EVVQX9U"), asin: "B01EVVQX9U", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 38.95 }, { date: "2026-08-29", price: 41.95 }, { date: "2026-08-30", price: 35.66 }, { date: "2026-09-05", price: 35.66 }, { date: "2026-09-07", price: 35.66 }] }
+      { retailer: "Amazon", price: 35.66, url: amazonUrl("B01EVVQX9U"), asin: "B01EVVQX9U", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 38.95 }, { date: "2026-08-29", price: 41.95 }, { date: "2026-08-30", price: 35.66 }, { date: "2026-09-05", price: 35.66 }, { date: "2026-09-07", price: 35.66 }, { date: "2026-09-10", price: 35.66 }] }
     ]
   },
   {
@@ -729,7 +729,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
-      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0D9NFTNQL"), asin: "B0D9NFTNQL", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }] }
+      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0D9NFTNQL"), asin: "B0D9NFTNQL", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }, { date: "2026-09-10", price: 38.24 }] }
     ]
   },
   {
@@ -749,7 +749,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
-      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0D9NKPH6Q"), asin: "B0D9NKPH6Q", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }] }
+      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0D9NKPH6Q"), asin: "B0D9NKPH6Q", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }, { date: "2026-09-10", price: 38.24 }] }
     ]
   },
   {
@@ -769,7 +769,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
-      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0CS7KYSYZ"), asin: "B0CS7KYSYZ", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }] }
+      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0CS7KYSYZ"), asin: "B0CS7KYSYZ", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }, { date: "2026-09-10", price: 38.24 }] }
     ]
   },
   {
@@ -789,7 +789,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
-      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0D9NLF8Z3"), asin: "B0D9NLF8Z3", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }] }
+      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0D9NLF8Z3"), asin: "B0D9NLF8Z3", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }, { date: "2026-09-10", price: 38.24 }] }
     ]
   },
   {
@@ -809,7 +809,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
-      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0D9NKCBFR"), asin: "B0D9NKCBFR", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }] }
+      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0D9NKCBFR"), asin: "B0D9NKCBFR", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }, { date: "2026-09-10", price: 38.24 }] }
     ]
   },
   {
@@ -829,7 +829,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
-      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0FPPP1SGH"), asin: "B0FPPP1SGH", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }] }
+      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0FPPP1SGH"), asin: "B0FPPP1SGH", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }, { date: "2026-09-10", price: 38.24 }] }
     ]
   },
   {
@@ -849,7 +849,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
-      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0FB1TLP3P"), asin: "B0FB1TLP3P", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }] }
+      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0FB1TLP3P"), asin: "B0FB1TLP3P", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }, { date: "2026-09-10", price: 38.24 }] }
     ]
   },
   {
@@ -869,7 +869,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
-      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0FB1XGNB9"), asin: "B0FB1XGNB9", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }] }
+      { retailer: "Amazon", price: 38.24, url: amazonUrl("B0FB1XGNB9"), asin: "B0FB1XGNB9", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 44.99 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }, { date: "2026-09-10", price: 38.24 }] }
     ]
   },
   {
@@ -909,7 +909,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
-      { retailer: "Amazon", price: 19.8, url: amazonUrl("B07HCNM7KQ"), asin: "B07HCNM7KQ", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.3 }, { date: "2026-08-29", price: 23.3 }, { date: "2026-08-30", price: 19.8 }, { date: "2026-09-05", price: 19.8 }, { date: "2026-09-07", price: 19.8 }] }
+      { retailer: "Amazon", price: 19.8, url: amazonUrl("B07HCNM7KQ"), asin: "B07HCNM7KQ", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 23.3 }, { date: "2026-08-29", price: 23.3 }, { date: "2026-08-30", price: 19.8 }, { date: "2026-09-05", price: 19.8 }, { date: "2026-09-07", price: 19.8 }, { date: "2026-09-10", price: 19.8 }] }
     ]
   },
   {
@@ -929,7 +929,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
-      { retailer: "Amazon", price: 20.54, url: amazonUrl("B08ZYNSZZT"), asin: "B08ZYNSZZT", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 24.17 }, { date: "2026-08-29", price: 24.17 }, { date: "2026-08-30", price: 20.54 }, { date: "2026-09-05", price: 20.54 }, { date: "2026-09-07", price: 20.54 }] }
+      { retailer: "Amazon", price: 20.54, url: amazonUrl("B08ZYNSZZT"), asin: "B08ZYNSZZT", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 24.17 }, { date: "2026-08-29", price: 24.17 }, { date: "2026-08-30", price: 20.54 }, { date: "2026-09-05", price: 20.54 }, { date: "2026-09-07", price: 20.54 }, { date: "2026-09-10", price: 20.54 }] }
     ]
   },
   {
@@ -949,7 +949,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
-      { retailer: "Amazon", price: 20.54, url: amazonUrl("B0BQ51S5BL"), asin: "B0BQ51S5BL", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.27 }, { date: "2026-08-29", price: 24.17 }, { date: "2026-08-30", price: 20.54 }, { date: "2026-09-05", price: 20.54 }, { date: "2026-09-07", price: 20.54 }] }
+      { retailer: "Amazon", price: 20.54, url: amazonUrl("B0BQ51S5BL"), asin: "B0BQ51S5BL", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 23.27 }, { date: "2026-08-29", price: 24.17 }, { date: "2026-08-30", price: 20.54 }, { date: "2026-09-05", price: 20.54 }, { date: "2026-09-07", price: 20.54 }, { date: "2026-09-10", price: 20.54 }] }
     ]
   },
   {
@@ -969,7 +969,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
-      { retailer: "Amazon", price: 19.94, url: amazonUrl("B0B177N8VP"), asin: "B0B177N8VP", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 22.68 }, { date: "2026-08-29", price: 23.46 }, { date: "2026-08-30", price: 19.94 }, { date: "2026-09-05", price: 19.94 }, { date: "2026-09-07", price: 19.94 }] }
+      { retailer: "Amazon", price: 19.94, url: amazonUrl("B0B177N8VP"), asin: "B0B177N8VP", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 22.68 }, { date: "2026-08-29", price: 23.46 }, { date: "2026-08-30", price: 19.94 }, { date: "2026-09-05", price: 19.94 }, { date: "2026-09-07", price: 19.94 }, { date: "2026-09-10", price: 19.94 }] }
     ]
   },
   {
@@ -1009,7 +1009,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
-      { retailer: "Amazon", price: 19.8, url: amazonUrl("B0CHN5D13P"), asin: "B0CHN5D13P", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.28 }, { date: "2026-08-29", price: 23.3 }, { date: "2026-08-30", price: 19.8 }, { date: "2026-09-05", price: 19.8 }, { date: "2026-09-07", price: 19.8 }] }
+      { retailer: "Amazon", price: 19.8, url: amazonUrl("B0CHN5D13P"), asin: "B0CHN5D13P", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 23.28 }, { date: "2026-08-29", price: 23.3 }, { date: "2026-08-30", price: 19.8 }, { date: "2026-09-05", price: 19.8 }, { date: "2026-09-07", price: 19.8 }, { date: "2026-09-10", price: 19.8 }] }
     ]
   },
   {
@@ -1029,7 +1029,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
-      { retailer: "Amazon", price: 21.24, url: amazonUrl("B0B1LN467K"), asin: "B0B1LN467K", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.46 }, { date: "2026-08-29", price: 24.99 }, { date: "2026-08-30", price: 21.24 }, { date: "2026-09-05", price: 21.24 }, { date: "2026-09-07", price: 21.24 }] }
+      { retailer: "Amazon", price: 21.24, url: amazonUrl("B0B1LN467K"), asin: "B0B1LN467K", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 23.46 }, { date: "2026-08-29", price: 24.99 }, { date: "2026-08-30", price: 21.24 }, { date: "2026-09-05", price: 21.24 }, { date: "2026-09-07", price: 21.24 }, { date: "2026-09-10", price: 21.24 }] }
     ]
   },
   {
@@ -1122,7 +1122,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00TDELNCS"), asin: "B00TDELNCS", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }, { date: "2026-09-05", price: 33.96 }, { date: "2026-09-07", price: 33.96 }] }
+      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00TDELNCS"), asin: "B00TDELNCS", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }, { date: "2026-09-05", price: 33.96 }, { date: "2026-09-07", price: 33.96 }, { date: "2026-09-10", price: 33.96 }] }
     ]
   },
   {
@@ -1135,7 +1135,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 33.96, url: amazonUrl("B099KPFN1B"), asin: "B099KPFN1B", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }, { date: "2026-09-05", price: 33.96 }, { date: "2026-09-07", price: 33.96 }] }
+      { retailer: "Amazon", price: 33.96, url: amazonUrl("B099KPFN1B"), asin: "B099KPFN1B", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }, { date: "2026-09-05", price: 33.96 }, { date: "2026-09-07", price: 33.96 }, { date: "2026-09-10", price: 33.96 }] }
     ]
   },
   {
@@ -1174,7 +1174,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00RC7PV5I"), asin: "B00RC7PV5I", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }, { date: "2026-09-05", price: 33.96 }, { date: "2026-09-07", price: 33.96 }] }
+      { retailer: "Amazon", price: 33.96, url: amazonUrl("B00RC7PV5I"), asin: "B00RC7PV5I", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }, { date: "2026-09-05", price: 33.96 }, { date: "2026-09-07", price: 33.96 }, { date: "2026-09-10", price: 33.96 }] }
     ]
   },
   {
@@ -1187,7 +1187,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 49.49 }] }
+      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }] }
     ]
   },
   {
@@ -1200,7 +1200,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 49.49 }] }
+      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }] }
     ]
   },
   {
@@ -1213,7 +1213,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 49.49 }] }
+      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }] }
     ]
   },
   {
@@ -1253,7 +1253,7 @@ export const products = [
       sugarGrams: 1,
     },
     offers: [
-      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 49.95 }] }
+      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-01", price: 49.95 }, { date: "2026-09-10", price: 49.95 }] }
     ]
   },
   {
@@ -1382,7 +1382,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 18.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide", priceObservedAt: "2026-09-01", priceHistory: [{ date: "2026-09-01", price: 18.95 }] }
+      { retailer: "Sports Research", price: 18.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-01", price: 18.95 }, { date: "2026-09-10", price: 18.95 }] }
     ]
   },
   {
@@ -1470,7 +1470,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 21.20, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics", listPrice: 24.95, priceObservedAt: "2026-09-05", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-05", price: 21.20 }] }
+      { retailer: "Sports Research", price: 21.20, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics", listPrice: 24.95, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-05", price: 21.20 }, { date: "2026-09-10", price: 21.20 }] }
     ]
   },
   {
@@ -1667,7 +1667,7 @@ export const products = [
     nutritionNote: "Carbohydrates are inferred from the calorie breakdown rather than a direct label read; sodium was not confirmed.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 14.44, url: amazonUrl("B07RVK8FXW"), asin: "B07RVK8FXW", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 16.99 }, { date: "2026-08-29", price: 14.44 }, { date: "2026-08-30", price: 14.44 }, { date: "2026-09-05", price: 14.44 }, { date: "2026-09-07", price: 14.44 }] }
+      { retailer: "Amazon", price: 14.44, url: amazonUrl("B07RVK8FXW"), asin: "B07RVK8FXW", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 16.99 }, { date: "2026-08-29", price: 14.44 }, { date: "2026-08-30", price: 14.44 }, { date: "2026-09-05", price: 14.44 }, { date: "2026-09-07", price: 14.44 }, { date: "2026-09-10", price: 14.44 }] }
     ]
   },
   {
@@ -1681,7 +1681,7 @@ export const products = [
     nutritionNote: "Carbohydrates are inferred from the calorie breakdown rather than a direct label read; sodium was not confirmed.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 14.44, url: amazonUrl("B08VZ5V1FV"), asin: "B08VZ5V1FV", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 16.99 }, { date: "2026-08-29", price: 14.44 }, { date: "2026-08-30", price: 14.44 }, { date: "2026-09-05", price: 14.44 }, { date: "2026-09-07", price: 14.44 }] }
+      { retailer: "Amazon", price: 14.44, url: amazonUrl("B08VZ5V1FV"), asin: "B08VZ5V1FV", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 16.99 }, { date: "2026-08-29", price: 14.44 }, { date: "2026-08-30", price: 14.44 }, { date: "2026-09-05", price: 14.44 }, { date: "2026-09-07", price: 14.44 }, { date: "2026-09-10", price: 14.44 }] }
     ]
   },
   {
@@ -1694,7 +1694,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B0D54PQPJQ"), asin: "B0D54PQPJQ", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B0D54PQPJQ"), asin: "B0D54PQPJQ", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1707,7 +1707,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B08J1D53VM"), asin: "B08J1D53VM", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B08J1D53VM"), asin: "B08J1D53VM", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1720,7 +1720,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B0D54MNCH2"), asin: "B0D54MNCH2", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B0D54MNCH2"), asin: "B0D54MNCH2", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1733,7 +1733,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B09KG9ZJT6"), asin: "B09KG9ZJT6", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B09KG9ZJT6"), asin: "B09KG9ZJT6", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1746,7 +1746,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B0985RY58P"), asin: "B0985RY58P", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B0985RY58P"), asin: "B0985RY58P", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1759,7 +1759,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B07ZDF528Q"), asin: "B07ZDF528Q", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B07ZDF528Q"), asin: "B07ZDF528Q", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1772,7 +1772,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B09KGCMS3M"), asin: "B09KGCMS3M", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B09KGCMS3M"), asin: "B09KGCMS3M", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1785,7 +1785,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B089MFTWF3"), asin: "B089MFTWF3", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B089MFTWF3"), asin: "B089MFTWF3", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1811,7 +1811,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B0985QG3SH"), asin: "B0985QG3SH", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B0985QG3SH"), asin: "B0985QG3SH", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1824,7 +1824,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 31.41, url: amazonUrl("B08HJRVBNY"), asin: "B08HJRVBNY", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }] }
+      { retailer: "Amazon", price: 31.41, url: amazonUrl("B08HJRVBNY"), asin: "B08HJRVBNY", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }] }
     ]
   },
   {
@@ -1984,7 +1984,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 38.24, url: amazonUrl("B07RNM5MZJ"), asin: "B07RNM5MZJ", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 38.24 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }] }
+      { retailer: "Amazon", price: 38.24, url: amazonUrl("B07RNM5MZJ"), asin: "B07RNM5MZJ", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 44.99 }, { date: "2026-08-29", price: 38.24 }, { date: "2026-08-30", price: 38.24 }, { date: "2026-09-05", price: 38.24 }, { date: "2026-09-07", price: 38.24 }, { date: "2026-09-10", price: 38.24 }] }
     ]
   },
   {
@@ -1998,7 +1998,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1 },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 46.74, url: amazonUrl("B0GPB1WR26"), asin: "B0GPB1WR26", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }] }
+      { retailer: "Amazon", price: 46.74, url: amazonUrl("B0GPB1WR26"), asin: "B0GPB1WR26", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }, { date: "2026-09-10", price: 46.74 }] }
     ]
   },
   {
@@ -2013,7 +2013,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0CS2L66H6"), asin: "B0CS2L66H6", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }] }
+      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0CS2L66H6"), asin: "B0CS2L66H6", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }, { date: "2026-09-10", price: 33.99 }] }
     ]
   },
   {
@@ -2028,7 +2028,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0CS2D278X"), asin: "B0CS2D278X", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }] }
+      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0CS2D278X"), asin: "B0CS2D278X", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }, { date: "2026-09-10", price: 33.99 }] }
     ]
   },
   {
@@ -2042,7 +2042,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 290, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0CS24964G"), asin: "B0CS24964G", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }] }
+      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0CS24964G"), asin: "B0CS24964G", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }, { date: "2026-09-10", price: 33.99 }] }
     ]
   },
   {
@@ -2056,7 +2056,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 320, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0DQVP36RZ"), asin: "B0DQVP36RZ", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }] }
+      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0DQVP36RZ"), asin: "B0DQVP36RZ", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }, { date: "2026-09-10", price: 33.99 }] }
     ]
   },
   {
@@ -2071,7 +2071,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0CS27D1B9"), asin: "B0CS27D1B9", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }] }
+      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0CS27D1B9"), asin: "B0CS27D1B9", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }, { date: "2026-09-10", price: 33.99 }] }
     ]
   },
   {
@@ -2085,7 +2085,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 290, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0DQVMT2X3"), asin: "B0DQVMT2X3", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }] }
+      { retailer: "Amazon", price: 33.99, url: amazonUrl("B0DQVMT2X3"), asin: "B0DQVMT2X3", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 39.99 }, { date: "2026-08-29", price: 33.99 }, { date: "2026-08-30", price: 33.99 }, { date: "2026-09-05", price: 33.99 }, { date: "2026-09-07", price: 33.99 }, { date: "2026-09-10", price: 33.99 }] }
     ]
   },
   {
@@ -2249,7 +2249,7 @@ export const products = [
     nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 25.49, url: amazonUrl("B0G2K37XFK"), asin: "B0G2K37XFK", listPrice: 29.99, priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 29.99 }, { date: "2026-08-29", price: 21.67 }, { date: "2026-08-30", price: 20.39 }, { date: "2026-09-01", price: 25.49 }, { date: "2026-09-05", price: 25.49 }, { date: "2026-09-07", price: 25.49 }] }
+      { retailer: "Amazon", price: 25.49, url: amazonUrl("B0G2K37XFK"), asin: "B0G2K37XFK", listPrice: 29.99, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 29.99 }, { date: "2026-08-29", price: 21.67 }, { date: "2026-08-30", price: 20.39 }, { date: "2026-09-01", price: 25.49 }, { date: "2026-09-05", price: 25.49 }, { date: "2026-09-07", price: 25.49 }, { date: "2026-09-10", price: 25.49 }] }
     ]
   },
   {
@@ -2277,7 +2277,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 32.29, url: amazonUrl("B0CHH417FR"), asin: "B0CHH417FR", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 37.99 }, { date: "2026-08-29", price: 32.29 }, { date: "2026-08-30", price: 32.29 }, { date: "2026-09-05", price: 32.29 }, { date: "2026-09-07", price: 32.29 }] }
+      { retailer: "Amazon", price: 32.29, url: amazonUrl("B0CHH417FR"), asin: "B0CHH417FR", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 37.99 }, { date: "2026-08-29", price: 32.29 }, { date: "2026-08-30", price: 32.29 }, { date: "2026-09-05", price: 32.29 }, { date: "2026-09-07", price: 32.29 }, { date: "2026-09-10", price: 32.29 }] }
     ]
   },
   {
@@ -2291,7 +2291,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 32.29, url: amazonUrl("B0DHYPHMRV"), asin: "B0DHYPHMRV", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 37.99 }, { date: "2026-08-29", price: 32.29 }, { date: "2026-08-30", price: 32.29 }, { date: "2026-09-05", price: 32.29 }, { date: "2026-09-07", price: 32.29 }] }
+      { retailer: "Amazon", price: 32.29, url: amazonUrl("B0DHYPHMRV"), asin: "B0DHYPHMRV", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 37.99 }, { date: "2026-08-29", price: 32.29 }, { date: "2026-08-30", price: 32.29 }, { date: "2026-09-05", price: 32.29 }, { date: "2026-09-07", price: 32.29 }, { date: "2026-09-10", price: 32.29 }] }
     ]
   },
   {
@@ -2316,7 +2316,7 @@ export const products = [
     nutritionNote: "Carbohydrates and fat are derived from the published macro-percentage breakdown; sodium was not confirmed.",
     nutrition: { proteinGrams: 25, calories: 120, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, servingSize: "1 scoop (33g)" },
     offers: [
-      { retailer: "Amazon", price: 46.74, url: amazonUrl("B07FQPCZ77"), asin: "B07FQPCZ77", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }] }
+      { retailer: "Amazon", price: 46.74, url: amazonUrl("B07FQPCZ77"), asin: "B07FQPCZ77", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }, { date: "2026-09-10", price: 46.74 }] }
     ]
   },
   {
@@ -2329,7 +2329,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 3 },
     offers: [
-      { retailer: "Amazon", price: 46.74, url: amazonUrl("B0GPB91TRB"), asin: "B0GPB91TRB", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }] }
+      { retailer: "Amazon", price: 46.74, url: amazonUrl("B0GPB91TRB"), asin: "B0GPB91TRB", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }, { date: "2026-09-10", price: 46.74 }] }
     ]
   },
   {
@@ -2342,7 +2342,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 2, servingSize: "1 scoop (35g)" },
     offers: [
-      { retailer: "Amazon", price: 46.74, url: amazonUrl("B01MQQ4RFA"), asin: "B01MQQ4RFA", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }] }
+      { retailer: "Amazon", price: 46.74, url: amazonUrl("B01MQQ4RFA"), asin: "B01MQQ4RFA", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }, { date: "2026-09-10", price: 46.74 }] }
     ]
   },
   {
@@ -2355,7 +2355,7 @@ export const products = [
     nutritionNote: "Carbohydrates and fat are derived from the published macro-percentage breakdown; sugar and sodium were not confirmed.",
     nutrition: { proteinGrams: 26, calories: 140, carbsGrams: 4, fatGrams: 1.5, servingSize: "1 scoop (35.5g)" },
     offers: [
-      { retailer: "Amazon", price: 46.74, url: amazonUrl("B07FLJYP5M"), asin: "B07FLJYP5M", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }] }
+      { retailer: "Amazon", price: 46.74, url: amazonUrl("B07FLJYP5M"), asin: "B07FLJYP5M", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }, { date: "2026-09-10", price: 46.74 }] }
     ]
   },
   {
@@ -2368,7 +2368,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 2 },
     offers: [
-      { retailer: "Amazon", price: 46.74, url: amazonUrl("B01N9BO3SE"), asin: "B01N9BO3SE", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }] }
+      { retailer: "Amazon", price: 46.74, url: amazonUrl("B01N9BO3SE"), asin: "B01N9BO3SE", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }, { date: "2026-09-10", price: 46.74 }] }
     ]
   },
   {
@@ -2380,7 +2380,7 @@ export const products = [
     servings: 27,
     nutrition: { proteinGrams: 25, calories: 140, carbsGrams: 6, fatGrams: 1, sugarGrams: 3, sodiumMilligrams: 210, servingSize: "1 scoop (37g)" },
     offers: [
-      { retailer: "Amazon", price: 84.99, url: amazonUrl("B0FQM88VDM"), asin: "B0FQM88VDM", inStock: false, priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-30", price: 84.99 }, { date: "2026-09-05", price: 84.99 }, { date: "2026-09-07", price: 84.99 }] }
+      { retailer: "Amazon", price: 84.99, url: amazonUrl("B0FQM88VDM"), asin: "B0FQM88VDM", inStock: false, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-30", price: 84.99 }, { date: "2026-09-05", price: 84.99 }, { date: "2026-09-07", price: 84.99 }, { date: "2026-09-10", price: 84.99 }] }
     ]
   },
   {
@@ -2395,7 +2395,7 @@ export const products = [
     nutrition: { proteinGrams: 16, calories: 140, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 7 },
     approvedBy: ["geo"],
     offers: [
-      { retailer: "Amazon", price: 26.84, url: amazonUrl("B0H47VP41X"), asin: "B0H47VP41X", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 26.84 }, { date: "2026-09-05", price: 26.84 }, { date: "2026-09-07", price: 26.84 }] }
+      { retailer: "Amazon", price: 26.84, url: amazonUrl("B0H47VP41X"), asin: "B0H47VP41X", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 26.84 }, { date: "2026-09-05", price: 26.84 }, { date: "2026-09-07", price: 26.84 }, { date: "2026-09-10", price: 26.84 }] }
     ]
   },
   {
@@ -2475,7 +2475,7 @@ export const products = [
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 35.6, url: amazonUrl("B07LD2NV9X"), asin: "B07LD2NV9X", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 41.88 }, { date: "2026-08-29", price: 35.6 }, { date: "2026-08-30", price: 35.6 }, { date: "2026-09-05", price: 35.6 }, { date: "2026-09-07", price: 35.6 }] }
+      { retailer: "Amazon", price: 35.6, url: amazonUrl("B07LD2NV9X"), asin: "B07LD2NV9X", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 41.88 }, { date: "2026-08-29", price: 35.6 }, { date: "2026-08-30", price: 35.6 }, { date: "2026-09-05", price: 35.6 }, { date: "2026-09-07", price: 35.6 }, { date: "2026-09-10", price: 35.6 }] }
     ]
   },
   {
@@ -2490,7 +2490,7 @@ export const products = [
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 35.27, url: amazonUrl("B07LD7B766"), asin: "B07LD7B766", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 41.88 }, { date: "2026-08-29", price: 41.49 }, { date: "2026-08-30", price: 35.27 }, { date: "2026-09-05", price: 35.27 }, { date: "2026-09-07", price: 35.27 }] }
+      { retailer: "Amazon", price: 35.27, url: amazonUrl("B07LD7B766"), asin: "B07LD7B766", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 41.88 }, { date: "2026-08-29", price: 41.49 }, { date: "2026-08-30", price: 35.27 }, { date: "2026-09-05", price: 35.27 }, { date: "2026-09-07", price: 35.27 }, { date: "2026-09-10", price: 35.27 }] }
     ]
   },
   {
@@ -2505,7 +2505,7 @@ export const products = [
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 35.6, url: amazonUrl("B07LCZC2C2"), asin: "B07LCZC2C2", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 41.88 }, { date: "2026-08-29", price: 41.88 }, { date: "2026-08-30", price: 35.6 }, { date: "2026-09-05", price: 35.6 }, { date: "2026-09-07", price: 35.6 }] }
+      { retailer: "Amazon", price: 35.6, url: amazonUrl("B07LCZC2C2"), asin: "B07LCZC2C2", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 41.88 }, { date: "2026-08-29", price: 41.88 }, { date: "2026-08-30", price: 35.6 }, { date: "2026-09-05", price: 35.6 }, { date: "2026-09-07", price: 35.6 }, { date: "2026-09-10", price: 35.6 }] }
     ]
   },
   {
@@ -2579,7 +2579,7 @@ export const products = [
     nutritionNote:
       "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 20.37, url: amazonUrl("B0DFJP6LZF"), asin: "B0DFJP6LZF", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 23.97 }, { date: "2026-08-29", price: 23.97 }, { date: "2026-08-30", price: 20.37 }, { date: "2026-09-05", price: 20.37 }, { date: "2026-09-07", price: 20.37 }] }
+      { retailer: "Amazon", price: 20.37, url: amazonUrl("B0DFJP6LZF"), asin: "B0DFJP6LZF", priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 23.97 }, { date: "2026-08-29", price: 23.97 }, { date: "2026-08-30", price: 20.37 }, { date: "2026-09-05", price: 20.37 }, { date: "2026-09-07", price: 20.37 }, { date: "2026-09-10", price: 20.37 }] }
     ]
   },
   {
