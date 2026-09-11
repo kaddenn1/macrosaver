@@ -109,6 +109,7 @@ export const products = [
     name: "Protein2o Whey Protein Isolate Hydration Drink, Orange Mango + Strawberry Watermelon Bundle (16.9 oz, 24-Pack)",
     brand: "Protein2o",
     category: "protein",
+    image: "/products/protein2o-orange-mango-strawberry-watermelon-bundle.png",
     additionalCategories: ["electrolytes"],
     servings: 24,
     nutrition: {
@@ -3529,6 +3530,7 @@ export const products = [
     name: "Vital Proteins Collagen Peptides, Unflavored (7 Servings)",
     brand: "Vital Proteins",
     category: "bariatric",
+    image: "/products/vital-proteins-collagen-peptides-5oz.png",
     additionalCategories: ["weight-management"],
     servings: 7,
     nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
