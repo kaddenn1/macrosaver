@@ -354,6 +354,12 @@ export default async function ProductPage({
                     Save ${headlineSale.savings.toFixed(2)} ({headlineSale.savingsPct.toFixed(0)}%)
                   </div>
                 )}
+                {priceConfidence.offer?.subscribeAndSavePrice !== undefined &&
+                  priceConfidence.offer.subscribeAndSavePrice < priceConfidence.offer.price && (
+                    <div className="mt-0.5 text-[10px] font-bold text-emerald-400">
+                      ${priceConfidence.offer.subscribeAndSavePrice.toFixed(2)} with Subscribe & Save
+                    </div>
+                  )}
                 <div className="mt-1 text-[9px] uppercase tracking-wider text-gray-500">
                   {priceConfidence.offer?.priceObservedAt
                     ? `Checked ${new Date(priceConfidence.offer.priceObservedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", timeZone: "UTC" })}`
@@ -563,13 +569,21 @@ export default async function ProductPage({
                         </span>
                       </div>
                       <div className="flex items-center gap-3">
-                        <div className="flex items-baseline gap-2">
-                          {sale && (
-                            <span className="text-xs font-bold text-gray-500 line-through">
-                              ${sale.listPrice.toFixed(2)}
-                            </span>
-                          )}
-                          <span className="text-lg font-black text-white">${offer.price.toFixed(2)}</span>
+                        <div className="flex flex-col items-end gap-0.5">
+                          <div className="flex items-baseline gap-2">
+                            {sale && (
+                              <span className="text-xs font-bold text-gray-500 line-through">
+                                ${sale.listPrice.toFixed(2)}
+                              </span>
+                            )}
+                            <span className="text-lg font-black text-white">${offer.price.toFixed(2)}</span>
+                          </div>
+                          {offer.subscribeAndSavePrice !== undefined &&
+                            offer.subscribeAndSavePrice < offer.price && (
+                              <span className="text-[9px] font-bold text-emerald-400">
+                                ${offer.subscribeAndSavePrice.toFixed(2)} w/ Subscribe & Save
+                              </span>
+                            )}
                         </div>
                         <span className={`text-xs font-bold uppercase ${theme.text}`}>Buy →</span>
                       </div>

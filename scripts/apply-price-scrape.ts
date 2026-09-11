@@ -7,6 +7,7 @@
  * Expected CSV columns (order doesn't matter, matched by header name):
  *   product_id, retailer, catalog_price, one_time_price, checked_at, action, safe_to_apply
  *   optional: verified_list_price (a genuine "was $X" strikethrough price)
+ *   optional: subscribe_and_save_price (kept only while lower than the applied price)
  *
  * A row is applied only when safe_to_apply === "true" (covers both APPLY and
  * DATE_ONLY actions from the scrape's own verification pass) and a price is
@@ -74,6 +75,21 @@ function parseCsv(text: string): string[][] {
   return rows.filter((r) => r.length > 1 || r[0] !== "");
 }
 
+/**
+ * checked_at comes through as either an ISO timestamp or, when the source spreadsheet's date
+ * column got exported without its date formatting, a raw Excel/Sheets serial day-number (days
+ * since 1899-12-30, fractional part = time of day). Detect and convert the latter rather than
+ * blindly slicing the string, which would otherwise write garbage dates into the catalog.
+ */
+function toDateStamp(raw: string): string {
+  if (/^\d+(\.\d+)?$/.test(raw)) {
+    const serial = Number(raw);
+    const ms = Math.round((serial - 25569) * 86400 * 1000);
+    return new Date(ms).toISOString().slice(0, 10);
+  }
+  return raw.slice(0, 10);
+}
+
 const csvPath = resolve(csvArg);
 const rows = parseCsv(readFileSync(csvPath, "utf8"));
 const header = rows[0].map((h) => h.trim());
@@ -84,6 +100,7 @@ const idxPrice = col("one_time_price");
 const idxCheckedAt = col("checked_at");
 const idxSafe = col("safe_to_apply");
 const idxListPrice = col("verified_list_price"); // optional, -1 if absent
+const idxSnsPrice = col("subscribe_and_save_price"); // optional, -1 if absent
 
 for (const [name, idx] of [
   ["product_id", idxId],
@@ -105,6 +122,7 @@ let historyInitialized = 0;
 let skippedUnverified = 0;
 let alreadyCurrent = 0;
 const listPriceSet: string[] = [];
+const snsPriceSet: string[] = [];
 const notFound: string[] = [];
 
 for (const r of rows.slice(1)) {
@@ -113,6 +131,7 @@ for (const r of rows.slice(1)) {
   const priceRaw = r[idxPrice];
   const checkedAtRaw = r[idxCheckedAt];
   const listPriceRaw = idxListPrice === -1 ? "" : r[idxListPrice];
+  const snsPriceRaw = idxSnsPrice === -1 ? "" : r[idxSnsPrice];
 
   if (safe !== "true" || !priceRaw) {
     skippedUnverified++;
@@ -123,7 +142,7 @@ for (const r of rows.slice(1)) {
     skippedUnverified++;
     continue;
   }
-  const checkedAt = checkedAtRaw.slice(0, 10); // ISO timestamp -> YYYY-MM-DD
+  const checkedAt = toDateStamp(checkedAtRaw);
 
   const idNeedle = `id: "${id}"`;
   const idIdx = src.indexOf(idNeedle);
@@ -169,13 +188,15 @@ for (const r of rows.slice(1)) {
     if (lastPointMatch && lastPointMatch[1] === checkedAt) {
       // Re-running the same day's scrape: update in place instead of duplicating.
       if (Number(lastPointMatch[2]) === price) {
+        // Price/date already recorded — still fall through to listPrice/subscribeAndSavePrice
+        // backfill below rather than skipping the row outright.
         alreadyCurrent++;
-        continue;
+      } else {
+        newLine = newLine.replace(
+          /\{ date: "(\d{4}-\d{2}-\d{2})", price: [\d.]+ \}(\s*\])/,
+          `{ date: "$1", price: ${price} }$2`
+        );
       }
-      newLine = newLine.replace(
-        /\{ date: "(\d{4}-\d{2}-\d{2})", price: [\d.]+ \}(\s*\])/,
-        `{ date: "$1", price: ${price} }$2`
-      );
     } else {
       newLine = newLine.replace(/priceHistory: \[(.*)\]/, `priceHistory: [${points}, { date: "${checkedAt}", price: ${price} }]`);
     }
@@ -195,6 +216,24 @@ for (const r of rows.slice(1)) {
     }
   }
 
+  if (idxSnsPrice !== -1 && snsPriceRaw) {
+    const snsPrice = Number(snsPriceRaw);
+    if (Number.isFinite(snsPrice) && snsPrice < price) {
+      if (/subscribeAndSavePrice: [\d.]+/.test(newLine)) {
+        newLine = newLine.replace(/subscribeAndSavePrice: [\d.]+/, `subscribeAndSavePrice: ${snsPrice}`);
+      } else {
+        newLine = newLine.replace(
+          /priceObservedAt: "\d{4}-\d{2}-\d{2}"/,
+          `subscribeAndSavePrice: ${snsPrice}, priceObservedAt: "${checkedAt}"`
+        );
+      }
+      snsPriceSet.push(`id=${id}`);
+    } else if (Number.isFinite(snsPrice) && /subscribeAndSavePrice: [\d.]+/.test(newLine)) {
+      // No longer a discount (S&S price rose to meet or exceed the new price) — drop the stale field.
+      newLine = newLine.replace(/,?\s*subscribeAndSavePrice: [\d.]+/, "");
+    }
+  }
+
   if (newLine !== line) {
     src = src.slice(0, lineStart) + newLine + src.slice(lineEnd);
     applied++;
@@ -206,6 +245,7 @@ console.log(`History arrays initialized for first-time verification: ${historyIn
 console.log(`Already current (same date+price already recorded): ${alreadyCurrent}`);
 console.log(`Skipped (unverified/not safe_to_apply): ${skippedUnverified}`);
 if (listPriceSet.length) console.log(`List price set/updated: ${listPriceSet.join(", ")}`);
+if (snsPriceSet.length) console.log(`Subscribe & Save price set/updated: ${snsPriceSet.join(", ")}`);
 if (notFound.length) {
   console.log(`Not found in catalog (${notFound.length}) — new product? Add it manually first:`);
   for (const nf of notFound) console.log(`  ${nf}`);

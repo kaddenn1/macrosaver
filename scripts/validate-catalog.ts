@@ -80,6 +80,11 @@ for (const product of products as Product[]) {
     if (offer.listPrice !== undefined && offer.listPrice <= offer.price) {
       errors.push(`${label}: listPrice must be greater than the current price to represent a sale`);
     }
+    if (offer.subscribeAndSavePrice !== undefined && offer.subscribeAndSavePrice >= offer.price) {
+      errors.push(
+        `${label}: subscribeAndSavePrice must be lower than the current price to represent a discount`
+      );
+    }
     if (offer.priceHistory) {
       for (const point of offer.priceHistory) {
         if (!Number.isFinite(Date.parse(point.date))) {

@@ -28,6 +28,8 @@ export type RetailerOffer = {
   priceObservedAt?: string;
   /** Pre-sale/typical price. Present only while `price` reflects an active discount off this value. */
   listPrice?: number;
+  /** Retailer's Subscribe & Save (or equivalent recurring-order) price. Present only while it's lower than `price`. */
+  subscribeAndSavePrice?: number;
   /** Chronological price observations for this offer, oldest first. Appended on each verified re-check. */
   priceHistory?: PricePoint[];
 };
