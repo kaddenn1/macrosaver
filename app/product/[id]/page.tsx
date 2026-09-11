@@ -359,9 +359,14 @@ export default async function ProductPage({
                 )}
                 {priceConfidence.offer?.subscribeAndSavePrice !== undefined &&
                   priceConfidence.offer.subscribeAndSavePrice < priceConfidence.offer.price && (
-                    <div className="mt-0.5 text-[10px] font-bold text-emerald-400">
-                      ${priceConfidence.offer.subscribeAndSavePrice.toFixed(2)} with Subscribe & Save
-                    </div>
+                    <a
+                      href={priceConfidence.offer.url}
+                      target="_blank"
+                      rel="nofollow sponsored noopener"
+                      className="mt-1 inline-flex w-fit items-center gap-1 rounded border border-emerald-500 px-2 py-1 text-[10px] font-bold uppercase text-emerald-400 hover:bg-emerald-500/10 transition-colors"
+                    >
+                      ${priceConfidence.offer.subscribeAndSavePrice.toFixed(2)} w/ Subscribe & Save →
+                    </a>
                   )}
                 <div className="mt-1 text-[9px] uppercase tracking-wider text-gray-500">
                   {priceConfidence.offer?.priceObservedAt
@@ -541,13 +546,13 @@ export default async function ProductPage({
                     );
                   }
 
+                  const hasSubscribeAndSave =
+                    offer.subscribeAndSavePrice !== undefined && offer.subscribeAndSavePrice < offer.price;
+
                   return (
-                    <a
+                    <div
                       key={offer.retailer}
-                      href={offer.url}
-                      target="_blank"
-                      rel="nofollow sponsored noopener"
-                      className={`flex items-center justify-between px-4 py-3 rounded-lg border transition-colors ${
+                      className={`flex items-center justify-between gap-3 px-4 py-3 rounded-lg border transition-colors ${
                         isBest
                           ? `${theme.border} bg-[#111]`
                           : "border-gray-800 bg-[#0d0d0d] hover:border-gray-600"
@@ -573,7 +578,7 @@ export default async function ProductPage({
                           {formatOfferFreshnessLabel(offer)}
                         </span>
                       </div>
-                      <div className="flex items-center gap-3">
+                      <div className="flex items-center gap-2 shrink-0">
                         <div className="flex flex-col items-end gap-0.5">
                           <div className="flex items-baseline gap-2">
                             {sale && (
@@ -583,16 +588,34 @@ export default async function ProductPage({
                             )}
                             <span className="text-lg font-black text-white">${offer.price.toFixed(2)}</span>
                           </div>
-                          {offer.subscribeAndSavePrice !== undefined &&
-                            offer.subscribeAndSavePrice < offer.price && (
-                              <span className="text-[9px] font-bold text-emerald-400">
-                                ${offer.subscribeAndSavePrice.toFixed(2)} w/ Subscribe & Save
-                              </span>
-                            )}
+                          {hasSubscribeAndSave && (
+                            <span className="text-[9px] font-bold text-emerald-400">
+                              ${offer.subscribeAndSavePrice!.toFixed(2)} w/ Subscribe & Save
+                            </span>
+                          )}
                         </div>
-                        <span className={`text-xs font-bold uppercase ${theme.text}`}>Buy →</span>
+                        <div className="flex flex-col items-stretch gap-1">
+                          <a
+                            href={offer.url}
+                            target="_blank"
+                            rel="nofollow sponsored noopener"
+                            className={`text-center px-3 py-1.5 rounded text-xs font-bold uppercase ${theme.bg} text-black hover:opacity-90 transition-opacity`}
+                          >
+                            Buy →
+                          </a>
+                          {hasSubscribeAndSave && (
+                            <a
+                              href={offer.url}
+                              target="_blank"
+                              rel="nofollow sponsored noopener"
+                              className="text-center px-3 py-1.5 rounded text-[10px] font-bold uppercase border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 transition-colors"
+                            >
+                              Subscribe & Save →
+                            </a>
+                          )}
+                        </div>
                       </div>
-                    </a>
+                    </div>
                   );
                 })}
               </div>

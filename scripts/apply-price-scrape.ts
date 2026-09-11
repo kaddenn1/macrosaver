@@ -173,6 +173,7 @@ let skippedUnverified = 0;
 let markedCheckedStale = 0;
 let alreadyCurrent = 0;
 const listPriceSet: string[] = [];
+const listPriceCleared: string[] = [];
 const snsPriceSet: string[] = [];
 const notFound: string[] = [];
 
@@ -273,6 +274,15 @@ for (const r of rows.slice(1)) {
     }
   }
 
+  // Drop any existing listPrice the new price has caught up to or exceeded — a stale "was $X"
+  // strikethrough is worse than none. Catches both a rejected update just above (listPrice not
+  // greater than the new price) and a row with no verified_list_price column value at all.
+  const existingListPriceMatch = newLine.match(/listPrice: ([\d.]+)/);
+  if (existingListPriceMatch && Number(existingListPriceMatch[1]) <= price) {
+    newLine = newLine.replace(/,?\s*listPrice: [\d.]+/, "");
+    listPriceCleared.push(`id=${id}`);
+  }
+
   if (idxSnsPrice !== -1 && snsPriceRaw) {
     const snsPrice = Number(snsPriceRaw);
     if (Number.isFinite(snsPrice) && snsPrice < price) {
@@ -303,6 +313,7 @@ console.log(`Already current (same date+price already recorded): ${alreadyCurren
 console.log(`Skipped (unverified/not safe_to_apply): ${skippedUnverified}`);
 console.log(`  ...of which stamped lastCheckedAt/checked_stale: ${markedCheckedStale}`);
 if (listPriceSet.length) console.log(`List price set/updated: ${listPriceSet.join(", ")}`);
+if (listPriceCleared.length) console.log(`List price cleared (no longer a discount): ${listPriceCleared.join(", ")}`);
 if (snsPriceSet.length) console.log(`Subscribe & Save price set/updated: ${snsPriceSet.join(", ")}`);
 if (notFound.length) {
   console.log(`Not found in catalog (${notFound.length}) — new product? Add it manually first:`);
