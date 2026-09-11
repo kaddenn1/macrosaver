@@ -1108,7 +1108,7 @@ export const products = [
       servingSize: "1 scoop (12.6g)",
     },
     offers: [
-      { retailer: "Amazon", price: 39.94, url: amazonUrl("B07X375B4M"), asin: "B07X375B4M", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 38 }, { date: "2026-08-29", price: 46.99 }, { date: "2026-08-30", price: 39.94 }, { date: "2026-09-05", price: 39.94 }, { date: "2026-09-07", price: 39.94 }] }
+      { retailer: "Amazon", price: 46.99, url: amazonUrl("B0FWNS8QLT"), asin: "B0FWNS8QLT", subscribeAndSavePrice: 42.29, priceObservedAt: "2026-09-10", priceHistory: [{ date: "2026-08-20", price: 38 }, { date: "2026-08-29", price: 46.99 }, { date: "2026-08-30", price: 39.94 }, { date: "2026-09-05", price: 39.94 }, { date: "2026-09-07", price: 39.94 }, { date: "2026-09-10", price: 46.99 }] }
     ]
   },
   {
@@ -2379,7 +2379,7 @@ export const products = [
     servings: 27,
     nutrition: { proteinGrams: 25, calories: 140, carbsGrams: 6, fatGrams: 1, sugarGrams: 3, sodiumMilligrams: 210, servingSize: "1 scoop (37g)" },
     offers: [
-      { retailer: "Amazon", price: 84.99, url: amazonUrl("B0FQM88VDM"), asin: "B0FQM88VDM", priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-30", price: 84.99 }, { date: "2026-09-05", price: 84.99 }, { date: "2026-09-07", price: 84.99 }] }
+      { retailer: "Amazon", price: 84.99, url: amazonUrl("B0FQM88VDM"), asin: "B0FQM88VDM", inStock: false, priceObservedAt: "2026-09-07", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-30", price: 84.99 }, { date: "2026-09-05", price: 84.99 }, { date: "2026-09-07", price: 84.99 }] }
     ]
   },
   {
