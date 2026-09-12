@@ -40,3 +40,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Sports Research partner-feed photo staging (1.2GB, named by Rakuten variant id,
+# not the site's public asset naming convention) — pull individual files into
+# public/products/ as they're wired into the catalog, never commit the whole folder.
+/public new/

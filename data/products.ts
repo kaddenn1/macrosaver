@@ -1183,11 +1183,11 @@ export const products = [
     brand: "Sports Research",
     category: "weight-management",
     kind: "mixed-bundle",
-    image: "/products/sports-research-toned-waist-trimmer-bundle.png",
+    image: "/products/sports-research-toned-waist-trimmer-bundle-quartz-vanilla.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-10", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }] }
+      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }, { date: "2026-09-11", price: 49.49 }] }
     ]
   },
   {
@@ -1196,24 +1196,24 @@ export const products = [
     brand: "Sports Research",
     category: "weight-management",
     kind: "mixed-bundle",
-    image: "/products/sports-research-toned-waist-trimmer-bundle-clay.png",
+    image: "/products/sports-research-toned-waist-trimmer-bundle-clay-vanilla.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-10", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }] }
+      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }, { date: "2026-09-11", price: 49.49 }] }
     ]
   },
   {
     id: "90",
-    name: "Sweet Sweat Core Bundle with Waist Trimmer, Pink/Tropical (Medium)",
+    name: "Sweet Sweat Bundle with Trimmer & Sweet Sweat Stick, Pink/Tropical (Medium)",
     brand: "Sports Research",
     category: "weight-management",
     kind: "mixed-bundle",
-    image: "/products/sports-research-sweet-sweat-core-bundle-pink-tropical.png",
+    image: "/products/sports-research-sweet-sweat-bundle-pink-tropical.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-10", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }] }
+      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }, { date: "2026-09-11", price: 49.49 }] }
     ]
   },
   {
@@ -3568,6 +3568,236 @@ export const products = [
     nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
     offers: [
       { retailer: "Amazon", price: 15, url: amazonUrl("B076PL4TM8"), asin: "B076PL4TM8", subscribeAndSavePrice: 14.25, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 15 }, { date: "2026-09-11", price: 15 }] }
+    ]
+  },
+  {
+    id: "255",
+    name: "Whey Protein Isolate - Chocolate Peanut Butter (25 Servings)",
+    brand: "Sports Research",
+    category: "protein",
+    image: "/products/sports-research-whey-protein-isolate-chocolate-peanut-butter.png",
+    servings: 25,
+    nutrition: { proteinGrams: 25 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534123602095802020723519&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-chocolate-peanut-butter%3Fvariant%3D64600175214963", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }] }
+    ]
+  },
+  {
+    id: "256",
+    name: "Whey Protein Isolate - Creamy Vanilla (26 Servings)",
+    brand: "Sports Research",
+    category: "protein",
+    image: "/products/sports-research-whey-protein-isolate-creamy-vanilla-26.png",
+    servings: 26,
+    nutrition: { proteinGrams: 25 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534122207128965181052126&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-creamy-vanilla%3Fvariant%3D64600140939635", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 49.95 }] }
+    ]
+  },
+  {
+    id: "257",
+    name: "Whey Protein Isolate - Creamy Vanilla (63 Servings)",
+    brand: "Sports Research",
+    category: "protein",
+    image: "/products/sports-research-whey-protein-isolate-creamy-vanilla-63.png",
+    servings: 63,
+    nutrition: { proteinGrams: 25 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 89.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341214809195350015084616&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-creamy-vanilla%3Fvariant%3D64600140906867", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 89.95 }] }
+    ]
+  },
+  {
+    id: "258",
+    name: "Whey Protein Isolate - Dark Chocolate (25 Servings)",
+    brand: "Sports Research",
+    category: "protein",
+    image: "/products/sports-research-whey-protein-isolate-dark-chocolate.png",
+    servings: 25,
+    nutrition: { proteinGrams: 25 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341217360869658602846258&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dark-chocolate%3Fvariant%3D64600171315571", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }] }
+    ]
+  },
+  {
+    id: "259",
+    name: "Whey Protein Isolate - Dutch Chocolate (25 Servings)",
+    brand: "Sports Research",
+    category: "protein",
+    image: "/products/sports-research-whey-protein-isolate-dutch-chocolate-25.png",
+    servings: 25,
+    nutrition: { proteinGrams: 25 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128636017261210466750&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600178000243", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 49.95 }] }
+    ]
+  },
+  {
+    id: "260",
+    name: "Whey Protein Isolate - Dutch Chocolate (60 Servings)",
+    brand: "Sports Research",
+    category: "protein",
+    image: "/products/sports-research-whey-protein-isolate-dutch-chocolate-60.png",
+    servings: 60,
+    nutrition: { proteinGrams: 25 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 89.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212470078435524551091&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600177967475", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 89.95 }] }
+    ]
+  },
+  {
+    id: "261",
+    name: "Whey Protein Isolate - Fruity Cereal (25 Servings)",
+    brand: "Sports Research",
+    category: "protein",
+    image: "/products/sports-research-whey-protein-isolate-fruity-cereal.png",
+    servings: 25,
+    nutrition: { proteinGrams: 25 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212370642422443669510&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-fruity-cereal%3Fvariant%3D64600171282803", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }] }
+    ]
+  },
+  {
+    id: "262",
+    name: "Whey Protein Isolate - Unflavored (26 Servings)",
+    brand: "Sports Research",
+    category: "protein",
+    image: "/products/sports-research-whey-protein-isolate-unflavored.png",
+    servings: 26,
+    nutrition: { proteinGrams: 25 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 46.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129181237865121490352&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-unflavored%3Fvariant%3D64600171348339", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 46.95 }] }
+    ]
+  },
+  {
+    id: "263",
+    name: "Flavored Creatine Monohydrate, Blue Raspberry (25 Servings)",
+    brand: "Sports Research",
+    category: "creatine",
+    image: "/products/sports-research-flavored-creatine-monohydrate-blue-raspberry.png",
+    servings: 25,
+    nutrition: { proteinGrams: 0, creatineGrams: 5, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534121102805156694038874&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270780275", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 29.95 }] }
+    ]
+  },
+  {
+    id: "264",
+    name: "Flavored Creatine Monohydrate, Lemonade (25 Servings)",
+    brand: "Sports Research",
+    category: "creatine",
+    image: "/products/sports-research-flavored-creatine-monohydrate-lemonade.png",
+    servings: 25,
+    nutrition: { proteinGrams: 0, creatineGrams: 5, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    offers: [
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212752114310560441883&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270813043", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 29.95 }] }
+    ]
+  },
+  {
+    id: "265",
+    name: "Hydrate Electrolytes Packets, Lemon Lime (16 ct)",
+    brand: "Sports Research",
+    category: "electrolytes",
+    image: "/products/sports-research-hydrate-electrolytes-lemon-lime.png",
+    servings: 16,
+    nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
+    offers: [
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341215745968847731283803&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842540232", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 22.95 }] }
+    ]
+  },
+  {
+    id: "266",
+    name: "Hydrate Electrolytes Packets, Passion Fruit (16 ct)",
+    brand: "Sports Research",
+    category: "electrolytes",
+    image: "/products/sports-research-hydrate-electrolytes-passion-fruit.png",
+    servings: 16,
+    nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
+    offers: [
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341211936122994773273382&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842605768", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 22.95 }] }
+    ]
+  },
+  {
+    id: "267",
+    name: "Hydrate Electrolytes Packets, Raspberry Lemonade (16 ct)",
+    brand: "Sports Research",
+    category: "electrolytes",
+    image: "/products/sports-research-hydrate-electrolytes-raspberry-lemonade.png",
+    servings: 16,
+    nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
+    offers: [
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128027826914292874503&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842573000", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 22.95 }] }
+    ]
+  },
+  {
+    id: "268",
+    name: "Hydrate Electrolytes Packets, Variety Pack (16 ct)",
+    brand: "Sports Research",
+    category: "electrolytes",
+    image: "/products/sports-research-hydrate-electrolytes-variety-16.png",
+    servings: 16,
+    nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
+    offers: [
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534126306244918872035756&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842638536", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 22.95 }] }
+    ]
+  },
+  {
+    id: "269",
+    name: "Hydrate Electrolytes Packets, Variety Pack (32 ct)",
+    brand: "Sports Research",
+    category: "electrolytes",
+    image: "/products/sports-research-hydrate-electrolytes-variety-32.png",
+    servings: 32,
+    nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
+    offers: [
+      { retailer: "Sports Research", price: 35.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534124278079106657004214&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D52624700998003", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 35.95 }] }
+    ]
+  },
+  {
+    id: "270",
+    name: "Collagen Peptides, Unflavored (20 Packets)",
+    brand: "Sports Research",
+    category: "bariatric",
+    additionalCategories: ["weight-management"],
+    image: "/products/sports-research-collagen-peptides-20-packets.png",
+    servings: 20,
+    nutrition: { proteinGrams: 11 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 30.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341217363826882851076872&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-hydrolyzed-gelatin-2%3Fvariant%3D42500105568456", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 30.95 }] }
+    ]
+  },
+  {
+    id: "271",
+    name: "Collagen Peptides Matcha Green Tea (24 Servings) - 10.16oz",
+    brand: "Sports Research",
+    category: "bariatric",
+    additionalCategories: ["weight-management"],
+    image: "/products/sports-research-collagen-peptides-matcha.png",
+    servings: 24,
+    nutrition: { proteinGrams: 11 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 30.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129705448185880443388&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmatcha-collagen%3Fvariant%3D42500072308936", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 30.95 }] }
+    ]
+  },
+  {
+    id: "272",
+    name: "Marine Collagen Peptides (34 Servings) - 12oz",
+    brand: "Sports Research",
+    category: "bariatric",
+    additionalCategories: ["weight-management"],
+    image: "/products/sports-research-marine-collagen-peptides.png",
+    servings: 34,
+    nutrition: { proteinGrams: 11 },
+    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros were not independently verified.",
+    offers: [
+      { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341213458910373057932423&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmarine-collagen-peptides-12oz%3Fvariant%3D42644178469064", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 34.95 }] }
     ]
   }
 ];
