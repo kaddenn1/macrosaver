@@ -1122,7 +1122,8 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Amazon", price: 39.95, url: amazonUrl("B00TDELNCS"), asin: "B00TDELNCS", lastCheckedAt: "2026-09-11", subscribeAndSavePrice: 35.95, priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }, { date: "2026-09-05", price: 33.96 }, { date: "2026-09-07", price: 33.96 }, { date: "2026-09-10", price: 33.96 }, { date: "2026-09-11", price: 39.95 }] }
+      { retailer: "Amazon", price: 39.95, url: amazonUrl("B00TDELNCS"), asin: "B00TDELNCS", lastCheckedAt: "2026-09-11", subscribeAndSavePrice: 35.95, priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 39.95 }, { date: "2026-08-29", price: 39.95 }, { date: "2026-08-30", price: 33.96 }, { date: "2026-09-01", price: 33.96 }, { date: "2026-09-05", price: 33.96 }, { date: "2026-09-07", price: 33.96 }, { date: "2026-09-10", price: 33.96 }, { date: "2026-09-11", price: 39.95 }] },
+      { retailer: "Sports Research", price: 39.95, subscribeAndSavePrice: 33.96, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341216818053691060392224&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsweet-sweat-jar%3Fvariant%3D42500071358664", lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 39.95 }] }
     ]
   },
   {
@@ -1131,7 +1132,7 @@ export const products = [
     brand: "Sports Research",
     category: "weight-management",
     kind: "topical",
-    image: "/products/sweet-sweat-tropical.jpg",
+    image: "/products/sports-research-sweet-sweat-tropical.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
@@ -1157,7 +1158,7 @@ export const products = [
     brand: "Sports Research",
     category: "weight-management",
     kind: "topical",
-    image: "/products/sweet-sweat-citrus-mint.jpg",
+    image: "/products/sports-research-sweet-sweat-citrus-mint.png",
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
@@ -1234,7 +1235,8 @@ export const products = [
       servingSize: "1 softgel (1000mg)",
     },
     offers: [
-      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129959949573030687149&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fmct-oil-120-softgels%3fvariant%3d42500072505544", subscribeAndSavePrice: 14.41, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 16.95 }, { date: "2026-09-10", price: 16.95 }, { date: "2026-09-11", price: 16.95 }] }
+      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129959949573030687149&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fmct-oil-120-softgels%3fvariant%3d42500072505544", subscribeAndSavePrice: 14.41, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 16.95 }, { date: "2026-09-10", price: 16.95 }, { date: "2026-09-11", price: 16.95 }] },
+      { retailer: "Amazon", price: 16.95, url: amazonUrl("B01LZGT0FL"), asin: "B01LZGT0FL", subscribeAndSavePrice: 15.25, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 16.95 }] }
     ]
   },
   {
@@ -1315,7 +1317,8 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Firon-liposomal-vitamin-c", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-10", price: 24.95 }, { date: "2026-09-11", price: 24.95 }] }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Firon-liposomal-vitamin-c", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-10", price: 24.95 }, { date: "2026-09-11", price: 24.95 }] },
+      { retailer: "Amazon", price: 22.46, listPrice: 24.95, url: amazonUrl("B0GTWQ17XW"), asin: "B0GTWQ17XW", subscribeAndSavePrice: 20.21, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 22.46 }] }
     ]
   },
   {
@@ -1348,7 +1351,8 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-05", price: 24.95 }, { date: "2026-09-10", price: 24.95 }, { date: "2026-09-11", price: 24.95 }] }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-05", price: 24.95 }, { date: "2026-09-10", price: 24.95 }, { date: "2026-09-11", price: 24.95 }] },
+      { retailer: "Amazon", price: 24.95, url: amazonUrl("B09MCBPGCJ"), asin: "B09MCBPGCJ", subscribeAndSavePrice: 22.45, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 24.95 }] }
     ]
   },
   {
@@ -1382,7 +1386,8 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 18.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide", lastCheckedAt: "2026-09-11", subscribeAndSavePrice: 16.11, priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 18.95 }, { date: "2026-09-10", price: 18.95 }, { date: "2026-09-11", price: 18.95 }] }
+      { retailer: "Sports Research", price: 18.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide", lastCheckedAt: "2026-09-11", subscribeAndSavePrice: 16.11, priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 18.95 }, { date: "2026-09-10", price: 18.95 }, { date: "2026-09-11", price: 18.95 }] },
+      { retailer: "Amazon", price: 16.95, url: amazonUrl("B0CWS9SHFM"), asin: "B0CWS9SHFM", subscribeAndSavePrice: 15.25, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 16.95 }] }
     ]
   },
   {
@@ -1395,7 +1400,8 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmag-lt-with-magtein-magnesium-l-threonate", subscribeAndSavePrice: 25.46, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 29.95 }, { date: "2026-09-10", price: 29.95 }, { date: "2026-09-11", price: 29.95 }] }
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmag-lt-with-magtein-magnesium-l-threonate", subscribeAndSavePrice: 25.46, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 29.95 }, { date: "2026-09-10", price: 29.95 }, { date: "2026-09-11", price: 29.95 }] },
+      { retailer: "Amazon", price: 29.95, url: amazonUrl("B0B336FCWC"), asin: "B0B336FCWC", subscribeAndSavePrice: 26.95, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 29.95 }] }
     ]
   },
   {
@@ -1426,7 +1432,8 @@ export const products = [
     servings: 120,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcreatine-monohydrate-veggie-capsules", subscribeAndSavePrice: 25.46, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 29.95 }, { date: "2026-09-10", price: 29.95 }, { date: "2026-09-11", price: 29.95 }] }
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcreatine-monohydrate-veggie-capsules", subscribeAndSavePrice: 25.46, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 29.95 }, { date: "2026-09-10", price: 29.95 }, { date: "2026-09-11", price: 29.95 }] },
+      { retailer: "Amazon", price: 29.95, url: amazonUrl("B0DXRZ51DZ"), asin: "B0DXRZ51DZ", subscribeAndSavePrice: 26.95, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 29.95 }] }
     ]
   },
   {
@@ -1458,7 +1465,8 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes", subscribeAndSavePrice: 19.51, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 22.95 }, { date: "2026-09-05", price: 22.95 }, { date: "2026-09-10", price: 22.95 }, { date: "2026-09-11", price: 22.95 }] }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes", subscribeAndSavePrice: 19.51, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 22.95 }, { date: "2026-09-05", price: 22.95 }, { date: "2026-09-10", price: 22.95 }, { date: "2026-09-11", price: 22.95 }] },
+      { retailer: "Amazon", price: 22.95, url: amazonUrl("B08F8YC7C2"), asin: "B08F8YC7C2", subscribeAndSavePrice: 20.65, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 22.95 }] }
     ]
   },
   {
@@ -1470,7 +1478,8 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics", lastCheckedAt: "2026-09-11", subscribeAndSavePrice: 21.21, priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-05", price: 21.20 }, { date: "2026-09-10", price: 21.20 }, { date: "2026-09-11", price: 24.95 }] }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics", lastCheckedAt: "2026-09-11", subscribeAndSavePrice: 21.21, priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-05", price: 21.20 }, { date: "2026-09-10", price: 21.20 }, { date: "2026-09-11", price: 24.95 }] },
+      { retailer: "Amazon", price: 24.95, url: amazonUrl("B08DZ9TL85"), asin: "B08DZ9TL85", subscribeAndSavePrice: 22.45, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 24.95 }] }
     ]
   },
   {
@@ -1483,7 +1492,8 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 27.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsleep-complex-with-melatonin", subscribeAndSavePrice: 23.76, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 27.95 }, { date: "2026-09-10", price: 27.95 }, { date: "2026-09-11", price: 27.95 }] }
+      { retailer: "Sports Research", price: 27.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsleep-complex-with-melatonin", subscribeAndSavePrice: 23.76, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 27.95 }, { date: "2026-09-10", price: 27.95 }, { date: "2026-09-11", price: 27.95 }] },
+      { retailer: "Amazon", price: 27.95, url: amazonUrl("B0FMZMCGSL"), asin: "B0FMZMCGSL", subscribeAndSavePrice: 23.76, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 27.95 }] }
     ]
   },
   {
@@ -1495,7 +1505,8 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine", subscribeAndSavePrice: 19.51, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 22.95 }, { date: "2026-09-05", price: 22.95 }, { date: "2026-09-10", price: 22.95 }, { date: "2026-09-11", price: 22.95 }] }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine", subscribeAndSavePrice: 19.51, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 22.95 }, { date: "2026-09-05", price: 22.95 }, { date: "2026-09-10", price: 22.95 }, { date: "2026-09-11", price: 22.95 }] },
+      { retailer: "Amazon", price: 22.95, url: amazonUrl("B07MQWJYJ3"), asin: "B07MQWJYJ3", subscribeAndSavePrice: 20.65, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 22.95 }] }
     ]
   },
   {
@@ -1507,7 +1518,8 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 17.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fgarcinia-cambogia-65-500mg", subscribeAndSavePrice: 15.26, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 17.95 }, { date: "2026-09-10", price: 17.95 }, { date: "2026-09-11", price: 17.95 }] }
+      { retailer: "Sports Research", price: 17.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fgarcinia-cambogia-65-500mg", subscribeAndSavePrice: 15.26, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 17.95 }, { date: "2026-09-10", price: 17.95 }, { date: "2026-09-11", price: 17.95 }] },
+      { retailer: "Amazon", price: 17.95, url: amazonUrl("B00CKXJ06K"), asin: "B00CKXJ06K", subscribeAndSavePrice: 16.15, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 17.95 }] }
     ]
   },
   {
@@ -1520,7 +1532,8 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate", subscribeAndSavePrice: 14.41, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 16.95 }, { date: "2026-09-05", price: 16.95 }, { date: "2026-09-10", price: 16.95 }, { date: "2026-09-11", price: 16.95 }] }
+      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate", subscribeAndSavePrice: 14.41, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 16.95 }, { date: "2026-09-05", price: 16.95 }, { date: "2026-09-10", price: 16.95 }, { date: "2026-09-11", price: 16.95 }] },
+      { retailer: "Amazon", price: 16.95, url: amazonUrl("B0D2JD6SXV"), asin: "B0D2JD6SXV", subscribeAndSavePrice: 15.25, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 16.95 }] }
     ]
   },
   {
@@ -1533,7 +1546,8 @@ export const products = [
     servings: 120,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Ftriple-magnesium-complex", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-10", price: 24.95 }, { date: "2026-09-11", price: 24.95 }] }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Ftriple-magnesium-complex", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 24.95 }, { date: "2026-09-10", price: 24.95 }, { date: "2026-09-11", price: 24.95 }] },
+      { retailer: "Amazon", price: 24.95, url: amazonUrl("B0GND6KPG6"), asin: "B0GND6KPG6", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 24.95 }] }
     ]
   },
   {
@@ -1545,7 +1559,8 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 32.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha", subscribeAndSavePrice: 28.01, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 32.95 }, { date: "2026-09-05", price: 32.95 }, { date: "2026-09-10", price: 32.95 }, { date: "2026-09-11", price: 32.95 }] }
+      { retailer: "Sports Research", price: 32.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha", subscribeAndSavePrice: 28.01, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 32.95 }, { date: "2026-09-05", price: 32.95 }, { date: "2026-09-10", price: 32.95 }, { date: "2026-09-11", price: 32.95 }] },
+      { retailer: "Amazon", price: 32.95, url: amazonUrl("B0G4XN31BL"), asin: "B0G4XN31BL", subscribeAndSavePrice: 28.01, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 32.95 }] }
     ]
   },
   {
@@ -1557,7 +1572,8 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2", subscribeAndSavePrice: 20.36, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 23.95 }, { date: "2026-09-10", price: 23.95 }, { date: "2026-09-11", price: 23.95 }] }
+      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2", subscribeAndSavePrice: 20.36, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 23.95 }, { date: "2026-09-10", price: 23.95 }, { date: "2026-09-11", price: 23.95 }] },
+      { retailer: "Amazon", price: 23.95, url: amazonUrl("B07255MPRN"), asin: "B07255MPRN", subscribeAndSavePrice: 21.55, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 23.95 }] }
     ]
   },
   {
@@ -1570,7 +1586,8 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmct-oil-powder", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-07-26", price: 24.95 }, { date: "2026-09-01", price: 24.95 }, { date: "2026-09-10", price: 24.95 }, { date: "2026-09-11", price: 24.95 }] }
+      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmct-oil-powder", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-07-26", price: 24.95 }, { date: "2026-09-01", price: 24.95 }, { date: "2026-09-10", price: 24.95 }, { date: "2026-09-11", price: 24.95 }] },
+      { retailer: "Amazon", price: 24.95, url: amazonUrl("B06XRKBD7X"), asin: "B06XRKBD7X", subscribeAndSavePrice: 22.45, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 24.95 }] }
     ]
   },
   {
@@ -1609,7 +1626,8 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 19.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fjump-rope", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 19.95 }, { date: "2026-09-10", price: 19.95 }, { date: "2026-09-11", price: 19.95 }] }
+      { retailer: "Sports Research", price: 19.95, inStock: false, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fjump-rope", lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 19.95 }, { date: "2026-09-10", price: 19.95 }, { date: "2026-09-11", price: 19.95 }] },
+      { retailer: "Amazon", price: 17.95, url: amazonUrl("B08VWGGV7Q"), asin: "B08VWGGV7Q", lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 17.95 }] }
     ]
   },
   {
@@ -3580,7 +3598,8 @@ export const products = [
     nutrition: { proteinGrams: 25 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534123602095802020723519&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-chocolate-peanut-butter%3Fvariant%3D64600175214963", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }] }
+      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534123602095802020723519&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-chocolate-peanut-butter%3Fvariant%3D64600175214963", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }] },
+      { retailer: "Amazon", price: 53.95, url: amazonUrl("B0GN3RDD6Q"), asin: "B0GN3RDD6Q", subscribeAndSavePrice: 45.86, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 53.95 }] }
     ]
   },
   {
@@ -3632,7 +3651,8 @@ export const products = [
     nutrition: { proteinGrams: 25 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128636017261210466750&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600178000243", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 49.95 }] }
+      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128636017261210466750&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600178000243", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 49.95 }] },
+      { retailer: "Amazon", price: 49.95, url: amazonUrl("B0CRGMRTFR"), asin: "B0CRGMRTFR", subscribeAndSavePrice: 44.95, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 49.95 }] }
     ]
   },
   {
@@ -3658,7 +3678,8 @@ export const products = [
     nutrition: { proteinGrams: 25 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212370642422443669510&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-fruity-cereal%3Fvariant%3D64600171282803", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }] }
+      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212370642422443669510&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-fruity-cereal%3Fvariant%3D64600171282803", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }] },
+      { retailer: "Amazon", price: 53.95, url: amazonUrl("B0GN3RGLSG"), asin: "B0GN3RGLSG", subscribeAndSavePrice: 43.16, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 53.95 }] }
     ]
   },
   {
@@ -3783,7 +3804,8 @@ export const products = [
     nutrition: { proteinGrams: 11 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 30.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129705448185880443388&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmatcha-collagen%3Fvariant%3D42500072308936", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 30.95 }] }
+      { retailer: "Sports Research", price: 30.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129705448185880443388&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmatcha-collagen%3Fvariant%3D42500072308936", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 30.95 }] },
+      { retailer: "Amazon", price: 30.95, url: amazonUrl("B07TKFK3C5"), asin: "B07TKFK3C5", subscribeAndSavePrice: 27.85, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 30.95 }] }
     ]
   },
   {
@@ -3797,7 +3819,8 @@ export const products = [
     nutrition: { proteinGrams: 11 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341213458910373057932423&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmarine-collagen-peptides-12oz%3Fvariant%3D42644178469064", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 34.95 }] }
+      { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341213458910373057932423&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmarine-collagen-peptides-12oz%3Fvariant%3D42644178469064", lastCheckedAt: "2026-09-11", priceObservedAt: "2026-09-11", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 34.95 }] },
+      { retailer: "Amazon", price: 34.95, url: amazonUrl("B01M04S6JO"), asin: "B01M04S6JO", subscribeAndSavePrice: 31.45, lastCheckedAt: "2026-09-12", priceObservedAt: "2026-09-12", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 34.95 }] }
     ]
   }
 ];
