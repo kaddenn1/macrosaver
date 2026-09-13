@@ -102,6 +102,35 @@ const idxCheckedAt = col("checked_at");
 const idxSafe = col("safe_to_apply");
 const idxListPrice = col("verified_list_price"); // optional, -1 if absent
 const idxSnsPrice = col("subscribe_and_save_price"); // optional, -1 if absent
+const idxRetailer = col("retailer"); // optional, -1 if absent
+const idxStockStatus = col("stock_status"); // optional, -1 if absent
+
+/**
+ * Finds the offer line for `id`, disambiguated by `retailer` when a product carries more than
+ * one offer (e.g. both Amazon and a direct-brand retailer). Without a retailer column, falls
+ * back to the first offer line in the block, matching the original single-offer-per-product
+ * behavior.
+ */
+function findOfferLine(id: string, retailer: string | undefined): { lineStart: number; lineEnd: number; line: string } | null {
+  const idNeedle = `id: "${id}"`;
+  const idIdx = src.indexOf(idNeedle);
+  if (idIdx === -1) return null;
+  const nextIdIdx = src.indexOf('id: "', idIdx + idNeedle.length);
+  const blockEnd = nextIdIdx === -1 ? src.length : nextIdIdx;
+  const block = src.slice(idIdx, blockEnd);
+
+  // Trailing lookahead (not consumed into the match) allows for the comma that separates one
+  // offer from the next when a product has more than one — only the last offer in an array ends
+  // the line with a bare "}". Keeping the comma out of the match means all the downstream
+  // `\}\s*$` field-upsert regexes (which expect the match to end at the closing brace) still work.
+  const linePattern = retailer
+    ? new RegExp(`^\\s*\\{ retailer: "${retailer.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}",.*\\}(?=\\s*,?\\s*$)`, "m")
+    : /^\s*\{ retailer: "[^"]+", price: [\d.]+.*\}(?=\s*,?\s*$)/m;
+  const offerMatch = block.match(linePattern);
+  if (!offerMatch || offerMatch.index === undefined) return null;
+
+  return { lineStart: idIdx + offerMatch.index, lineEnd: idIdx + offerMatch.index + offerMatch[0].length, line: offerMatch[0] };
+}
 
 for (const [name, idx] of [
   ["product_id", idxId],
@@ -141,26 +170,26 @@ let src = readFileSync(productsPath, "utf8");
  * worth recording — without touching price, priceObservedAt, or priceHistory. Never
  * downgrades an offer this same file already applied as verified.
  */
-function stampCheckedStale(id: string, checkedAt: string): boolean {
-  const idNeedle = `id: "${id}"`;
-  const idIdx = src.indexOf(idNeedle);
-  if (idIdx === -1) return false;
+function stampCheckedStale(id: string, checkedAt: string, retailer: string | undefined, stockStatus: string): boolean {
+  const found = findOfferLine(id, retailer);
+  if (!found) return false;
+  const { lineStart, lineEnd, line } = found;
 
-  const nextIdIdx = src.indexOf('id: "', idIdx + idNeedle.length);
-  const blockEnd = nextIdIdx === -1 ? src.length : nextIdIdx;
-  const offerMatch = src.slice(idIdx, blockEnd).match(/^\s*\{ retailer: "[^"]+", price: [\d.]+.*\}\s*$/m);
-  if (!offerMatch || offerMatch.index === undefined) return false;
+  const alreadyVerifiedToday = /verificationState: "verified"/.test(line) && line.includes(`priceObservedAt: "${checkedAt}"`);
 
-  const lineStart = idIdx + offerMatch.index;
-  const lineEnd = lineStart + offerMatch[0].length;
-  const line = offerMatch[0];
-
-  if (/verificationState: "verified"/.test(line) && line.includes(`priceObservedAt: "${checkedAt}"`)) {
-    return false;
+  let newLine = line;
+  if (!alreadyVerifiedToday) {
+    newLine = upsertStringField(newLine, "lastCheckedAt", checkedAt, "url");
+    newLine = upsertStringField(newLine, "verificationState", "checked_stale", "lastCheckedAt");
   }
 
-  let newLine = upsertStringField(line, "lastCheckedAt", checkedAt, "url");
-  newLine = upsertStringField(newLine, "verificationState", "checked_stale", "lastCheckedAt");
+  if (stockStatus === "Out of Stock" && !/inStock: false/.test(newLine)) {
+    newLine = newLine.replace(/\}\s*$/, ", inStock: false }");
+    inStockSet.push(`id=${id}`);
+  } else if (stockStatus === "In Stock" && /inStock: false/.test(newLine)) {
+    newLine = newLine.replace(/,?\s*inStock: false/, "");
+    inStockCleared.push(`id=${id}`);
+  }
 
   if (newLine === line) return false;
   src = src.slice(0, lineStart) + newLine + src.slice(lineEnd);
@@ -175,6 +204,8 @@ let alreadyCurrent = 0;
 const listPriceSet: string[] = [];
 const listPriceCleared: string[] = [];
 const snsPriceSet: string[] = [];
+const inStockSet: string[] = [];
+const inStockCleared: string[] = [];
 const notFound: string[] = [];
 
 for (const r of rows.slice(1)) {
@@ -184,10 +215,12 @@ for (const r of rows.slice(1)) {
   const checkedAtRaw = r[idxCheckedAt];
   const listPriceRaw = idxListPrice === -1 ? "" : r[idxListPrice];
   const snsPriceRaw = idxSnsPrice === -1 ? "" : r[idxSnsPrice];
+  const retailer = idxRetailer === -1 ? undefined : r[idxRetailer];
+  const stockStatus = idxStockStatus === -1 ? "" : r[idxStockStatus];
 
   if (safe !== "true" || !priceRaw) {
     skippedUnverified++;
-    if (checkedAtRaw && stampCheckedStale(id, toDateStamp(checkedAtRaw))) {
+    if (checkedAtRaw && stampCheckedStale(id, toDateStamp(checkedAtRaw), retailer, stockStatus)) {
       markedCheckedStale++;
     }
     continue;
@@ -199,22 +232,12 @@ for (const r of rows.slice(1)) {
   }
   const checkedAt = toDateStamp(checkedAtRaw);
 
-  const idNeedle = `id: "${id}"`;
-  const idIdx = src.indexOf(idNeedle);
-  if (idIdx === -1) {
-    notFound.push(`id=${id} (not in catalog)`);
+  const found = findOfferLine(id, retailer);
+  if (!found) {
+    notFound.push(`id=${id}${retailer ? ` retailer=${retailer}` : ""} (no matching offer line found)`);
     continue;
   }
-  const nextIdIdx = src.indexOf('id: "', idIdx + idNeedle.length);
-  const blockEnd = nextIdIdx === -1 ? src.length : nextIdIdx;
-  const offerMatch = src.slice(idIdx, blockEnd).match(/^\s*\{ retailer: "[^"]+", price: [\d.]+.*\}\s*$/m);
-  if (!offerMatch || offerMatch.index === undefined) {
-    notFound.push(`id=${id} (no offer line found)`);
-    continue;
-  }
-  const lineStart = idIdx + offerMatch.index;
-  const lineEnd = lineStart + offerMatch[0].length;
-  const line = offerMatch[0];
+  const { lineStart, lineEnd, line } = found;
   let newLine = line;
 
   const historyMatch = newLine.match(/priceHistory: \[(.*)\]/);
@@ -301,6 +324,16 @@ for (const r of rows.slice(1)) {
     }
   }
 
+  if (idxStockStatus !== -1) {
+    if (stockStatus === "Out of Stock" && !/inStock: false/.test(newLine)) {
+      newLine = newLine.replace(/(priceObservedAt: "\d{4}-\d{2}-\d{2}")/, `$1, inStock: false`);
+      inStockSet.push(`id=${id}`);
+    } else if (stockStatus === "In Stock" && /inStock: false/.test(newLine)) {
+      newLine = newLine.replace(/,?\s*inStock: false/, "");
+      inStockCleared.push(`id=${id}`);
+    }
+  }
+
   if (newLine !== line) {
     src = src.slice(0, lineStart) + newLine + src.slice(lineEnd);
     applied++;
@@ -315,6 +348,8 @@ console.log(`  ...of which stamped lastCheckedAt/checked_stale: ${markedCheckedS
 if (listPriceSet.length) console.log(`List price set/updated: ${listPriceSet.join(", ")}`);
 if (listPriceCleared.length) console.log(`List price cleared (no longer a discount): ${listPriceCleared.join(", ")}`);
 if (snsPriceSet.length) console.log(`Subscribe & Save price set/updated: ${snsPriceSet.join(", ")}`);
+if (inStockSet.length) console.log(`Marked out of stock: ${inStockSet.join(", ")}`);
+if (inStockCleared.length) console.log(`Marked back in stock: ${inStockCleared.join(", ")}`);
 if (notFound.length) {
   console.log(`Not found in catalog (${notFound.length}) — new product? Add it manually first:`);
   for (const nf of notFound) console.log(`  ${nf}`);
