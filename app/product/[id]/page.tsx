@@ -552,7 +552,7 @@ export default async function ProductPage({
                   return (
                     <div
                       key={offer.retailer}
-                      className={`flex items-center justify-between gap-3 px-4 py-3 rounded-lg border transition-colors ${
+                      className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 py-3 rounded-lg border transition-colors ${
                         isBest
                           ? `${theme.border} bg-[#111]`
                           : "border-gray-800 bg-[#0d0d0d] hover:border-gray-600"
@@ -578,7 +578,7 @@ export default async function ProductPage({
                           {formatOfferFreshnessLabel(offer)}
                         </span>
                       </div>
-                      <div className="flex items-center gap-2 shrink-0">
+                      <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-2 sm:shrink-0">
                         <div className="flex flex-col items-end gap-0.5">
                           <div className="flex items-baseline gap-2">
                             {sale && (
@@ -594,7 +594,7 @@ export default async function ProductPage({
                             </span>
                           )}
                         </div>
-                        <div className="flex flex-col items-stretch gap-1">
+                        <div className="flex flex-col items-stretch gap-1 shrink-0">
                           <a
                             href={offer.url}
                             target="_blank"
