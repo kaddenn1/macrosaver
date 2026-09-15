@@ -2923,7 +2923,7 @@ export const products = [
     nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 5.28, url: amazonUrl("B01N4OMLOZ"), asin: "B01N4OMLOZ", listPrice: 50.98, lastCheckedAt: "2026-09-15", priceObservedAt: "2026-09-15", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 5 }, { date: "2026-09-13", price: 5.28 }, { date: "2026-09-15", price: 5.28 }] }
+      { retailer: "Amazon", price: 5.28, url: amazonUrl("B01N4OMLOZ"), asin: "B01N4OMLOZ", lastCheckedAt: "2026-09-15", priceObservedAt: "2026-09-15", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 5 }, { date: "2026-09-13", price: 5.28 }, { date: "2026-09-15", price: 5.28 }] }
     ]
   },
   {

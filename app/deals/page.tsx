@@ -4,7 +4,7 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 import { SITE_URL } from "@/lib/site";
 import { products } from "@/data/products";
 import type { Product } from "@/data/types";
-import { getBestSale } from "@/lib/macrosaver-engine";
+import { getCurrentSale } from "@/lib/macrosaver-engine";
 import { serializeJsonLd } from "@/lib/json-ld";
 
 export async function generateMetadata({
@@ -42,8 +42,8 @@ export default async function DealsPage({
   const hasQuery = Object.keys(resolvedSearchParams).length > 0;
 
   const dealProducts = (products as Product[])
-    .filter((p) => getBestSale(p) !== null)
-    .sort((a, b) => (getBestSale(b)?.savings ?? 0) - (getBestSale(a)?.savings ?? 0));
+    .filter((p) => getCurrentSale(p) !== null)
+    .sort((a, b) => (getCurrentSale(b)?.savings ?? 0) - (getCurrentSale(a)?.savings ?? 0));
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",

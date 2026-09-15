@@ -370,7 +370,7 @@ export default async function ProductPage({
                   )}
                 <div className="mt-1 text-[9px] uppercase tracking-wider text-gray-500">
                   {priceConfidence.offer?.priceObservedAt
-                    ? `Checked ${formatShortDate(priceConfidence.offer.priceObservedAt)}`
+                    ? `${priceConfidence.status === "lowest-recorded" ? "Lowest Verified" : "Verified"} ${formatShortDate(priceConfidence.offer.priceObservedAt)}`
                     : headlineLastChecked
                       ? `Checked ${formatShortDate(headlineLastChecked)} — verify current price`
                       : "Check retailer for current price"}

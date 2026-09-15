@@ -195,6 +195,18 @@ export function getPriceConfidence(
 }
 
 /**
+ * Sale details for the same offer the UI actually displays as the current price
+ * (`getPriceConfidence`'s pick), or null when that offer isn't discounted or no offer
+ * is fresh/verified enough to be shown. Unlike `getBestSale`, this never surfaces a sale
+ * from a stale or unverified offer that the price display itself would refuse to show —
+ * so a product can't appear in Deals with a "Checked [old date], no current price" card.
+ */
+export function getCurrentSale(product: Product, asOf: Date = new Date()): OfferSale | null {
+  const { offer } = getPriceConfidence(product, asOf);
+  return offer ? getOfferSale(offer) : null;
+}
+
+/**
  * Most recent retailer-link check across a product's offers, regardless of outcome. Used as
  * the fallback label ("Checked [date]") when nothing is eligible to say "Verified" — so a
  * product that was genuinely looked at today doesn't read identically to one nobody has
@@ -276,6 +288,11 @@ export function getCostPerOzProtein(product: Product): number | null {
   return roundToTwo(bestOffer.price / totalProteinOz);
 }
 
+/**
+ * How much the cheapest offer undercuts the priciest one, or null when there's nothing to
+ * compare (fewer than two offers) or every offer is tied at the same price — a $0.00 "savings"
+ * isn't a real advantage and shouldn't be rendered as one.
+ */
 export function getSavingsVsHighestOffer(product: Product): number | null {
   const bestOffer = getBestOffer(product);
   const availableOffers = getAvailableOffers(product);
@@ -288,7 +305,8 @@ export function getSavingsVsHighestOffer(product: Product): number | null {
     offer.price > highest.price ? offer : highest
   );
 
-  return roundToTwo(highestOffer.price - bestOffer.price);
+  const savings = roundToTwo(highestOffer.price - bestOffer.price);
+  return savings > 0 ? savings : null;
 }
 
 /**

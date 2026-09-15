@@ -2,9 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/products";
 import {
-  getBestSale,
   getCostPerServing,
   getCostPerOzProtein,
+  getCurrentSale,
   getMostRecentCheck,
   getOfferSale,
   getPriceConfidence,
@@ -17,6 +17,7 @@ import type { Product } from "@/data/types";
 import { getTheme } from "@/lib/theme";
 import { APPROVAL_BADGES } from "@/lib/approvals";
 import CompareButton from "@/components/CompareButton";
+import RetailerClickButton from "@/components/RetailerClickButton";
 import {
   applyCatalogQuery,
   CATALOG_PAGE_SIZE,
@@ -64,7 +65,7 @@ export default function Champions({
   }
 
   if (dealsOnly) {
-    displayProducts = displayProducts.filter((p) => getBestSale(p) !== null);
+    displayProducts = displayProducts.filter((p) => getCurrentSale(p) !== null);
   }
 
   const scopedProducts = displayProducts;
@@ -95,7 +96,7 @@ export default function Champions({
 
   if (dealsOnly) {
     displayProducts = [...displayProducts].sort(
-      (a, b) => (getBestSale(b)?.savings ?? 0) - (getBestSale(a)?.savings ?? 0)
+      (a, b) => (getCurrentSale(b)?.savings ?? 0) - (getCurrentSale(a)?.savings ?? 0)
     );
   }
 
@@ -284,6 +285,22 @@ export default function Champions({
                 </div>
               </div>
               </Link>
+              {dealsOnly && priceConfidence.offer && (
+                <div className="px-4 pb-4">
+                  <RetailerClickButton
+                    href={priceConfidence.offer.url}
+                    label={`Shop at ${priceConfidence.offer.retailer} →`}
+                    className="w-full block py-2 text-center text-[11px] font-black uppercase tracking-widest text-white rounded border border-gray-700 hover:border-[#a3e635] hover:text-[#a3e635] transition-colors"
+                    event={{
+                      productId: item.id,
+                      retailer: priceConfidence.offer.retailer,
+                      price: priceConfidence.offer.price,
+                      pageType: "deals",
+                      buttonPosition: "card_retailer_cta",
+                    }}
+                  />
+                </div>
+              )}
             </div>
           );
         })}

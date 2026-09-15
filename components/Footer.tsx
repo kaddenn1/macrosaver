@@ -33,7 +33,7 @@ export default function Footer() {
         <div className="w-full max-w-2xl border-t border-[#151515] pt-4 mt-2">
           <p className="text-[11px] text-gray-400 text-center leading-relaxed">
             <strong>Disclaimer:</strong> As an Amazon Associate, MacroSaver earns from qualifying purchases.
-            Prices are undated snapshots from cataloged retailer offers and can change at any time.
+            Prices are recorded from retailer offers, dated when verified, and can change at any time.
             Some products have only one retailer offer; always verify price and availability with the retailer.
             External retailer links may generate a referral commission at no extra cost to you.
           </p>
