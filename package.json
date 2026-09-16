@@ -14,7 +14,7 @@
     "audit:index-quality": "node --experimental-strip-types scripts/audit-index-quality.ts",
     "apply-price-scrape": "node --experimental-strip-types scripts/apply-price-scrape.ts",
     "check:price-staleness": "node --experimental-strip-types scripts/check-price-staleness.ts",
-    "check": "npm run validate:data && npm test && npm run lint && npm run typecheck && npm run build"
+    "check": "npm run validate:data && npm run check:price-staleness -- --days 60 && npm test && npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.2",
