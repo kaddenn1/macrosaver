@@ -45,3 +45,7 @@ next-env.d.ts
 # not the site's public asset naming convention) — pull individual files into
 # public/products/ as they're wired into the catalog, never commit the whole folder.
 /public new/
+
+# graphify generated knowledge graph — regenerate with `graphify update .`
+/graphify-out/
+.claude/settings.json.graphify-bak
