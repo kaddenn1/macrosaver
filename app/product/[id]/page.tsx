@@ -636,7 +636,11 @@ export default async function ProductPage({
                             {offer.retailer}
                           </div>
                         )}
-                        <PriceHistoryChart history={getPriceHistory(offer)} color={theme.hex} />
+                        <PriceHistoryChart
+                          history={getPriceHistory(offer)}
+                          color={theme.hex}
+                          subscribeAndSavePrice={offer.subscribeAndSavePrice}
+                        />
                       </div>
                     ))}
                 </div>
