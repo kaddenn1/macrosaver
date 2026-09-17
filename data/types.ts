@@ -44,6 +44,8 @@ export type RetailerOffer = {
   subscribeAndSavePrice?: number;
   /** Chronological price observations for this offer, oldest first. Appended on each verified re-check. */
   priceHistory?: PricePoint[];
+  /** Chronological Subscribe & Save price observations, oldest first. Only real check-ins that reported an S&S price; never backfilled or synthesized. */
+  subscribeAndSavePriceHistory?: PricePoint[];
 };
 
 export type ProductKind = "consumable" | "topical" | "equipment" | "mixed-bundle";

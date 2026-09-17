@@ -18,6 +18,7 @@ import {
   getPriceHistory,
   getProteinPerDollar,
   getSavingsVsHighestOffer,
+  getSubscribeAndSaveHistory,
   hasFreshPriceObservation,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
@@ -636,7 +637,11 @@ export default async function ProductPage({
                             {offer.retailer}
                           </div>
                         )}
-                        <PriceHistoryChart history={getPriceHistory(offer)} color={theme.hex} />
+                        <PriceHistoryChart
+                          history={getPriceHistory(offer)}
+                          color={theme.hex}
+                          subscribeAndSaveHistory={getSubscribeAndSaveHistory(offer)}
+                        />
                       </div>
                     ))}
                 </div>

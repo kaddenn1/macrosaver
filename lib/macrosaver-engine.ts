@@ -138,6 +138,11 @@ export function getPriceHistory(offer: RetailerOffer): PricePoint[] {
   return offer.priceHistory ?? [];
 }
 
+/** Chronological Subscribe & Save price observations for an offer, oldest first. Empty when nothing has been recorded yet. */
+export function getSubscribeAndSaveHistory(offer: RetailerOffer): PricePoint[] {
+  return offer.subscribeAndSavePriceHistory ?? [];
+}
+
 /** The largest active sale across a product's offers, or null when nothing is currently discounted. */
 export function getBestSale(product: Product): OfferSale | null {
   const sales = product.offers
