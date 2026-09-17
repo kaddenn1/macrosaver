@@ -167,8 +167,13 @@ let src = readFileSync(productsPath, "utf8");
 /**
  * Stamps a rejected (safe_to_apply=false) row's offer with lastCheckedAt and
  * verificationState: "checked_stale" — the link was genuinely looked at, so that much is
- * worth recording — without touching price, priceObservedAt, or priceHistory. Never
- * downgrades an offer this same file already applied as verified.
+ * worth recording — without touching price or priceObservedAt. Never downgrades an offer
+ * this same file already applied as verified.
+ *
+ * Still appends a priceHistory point (repeating the last known price) for checkedAt, unless
+ * one for that date already exists — every scrape that actually looked at the offer should
+ * show up as a bullet on the price-history chart, confirmed-unchanged or not, so the chart
+ * reflects how often we're checking, not just when the price moved.
  */
 function stampCheckedStale(id: string, checkedAt: string, retailer: string | undefined, stockStatus: string): boolean {
   const found = findOfferLine(id, retailer);
@@ -181,6 +186,21 @@ function stampCheckedStale(id: string, checkedAt: string, retailer: string | und
   if (!alreadyVerifiedToday) {
     newLine = upsertStringField(newLine, "lastCheckedAt", checkedAt, "url");
     newLine = upsertStringField(newLine, "verificationState", "checked_stale", "lastCheckedAt");
+
+    const historyMatch = newLine.match(/priceHistory: \[(.*)\]/);
+    const lastKnownPriceMatch = newLine.match(/retailer: "[^"]+", price: ([\d.]+)/);
+    const lastKnownPrice = lastKnownPriceMatch ? lastKnownPriceMatch[1] : null;
+    if (lastKnownPrice) {
+      if (!historyMatch) {
+        newLine = newLine.replace(/\}\s*$/, `, priceHistory: [{ date: "${checkedAt}", price: ${lastKnownPrice} }] }`);
+      } else {
+        const points = historyMatch[1];
+        const alreadyHasDate = new RegExp(`date: "${checkedAt}"`).test(points);
+        if (!alreadyHasDate) {
+          newLine = newLine.replace(/priceHistory: \[(.*)\]/, `priceHistory: [${points}, { date: "${checkedAt}", price: ${lastKnownPrice} }]`);
+        }
+      }
+    }
   }
 
   if (stockStatus === "Out of Stock" && !/inStock: false/.test(newLine)) {
