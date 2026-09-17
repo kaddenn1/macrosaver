@@ -196,8 +196,11 @@ function appendHistoryPoint(line: string, field: string, checkedAt: string, pric
  * one for that date already exists — every scrape that actually looked at the offer should
  * show up as a bullet on the price-history chart, confirmed-unchanged or not, so the chart
  * reflects how often we're checking, not just when the price moved. Does the same for
- * subscribeAndSavePriceHistory, but only when this row actually reported a live S&S price —
- * never backfilled from the regular price, since that would fabricate a number we never saw.
+ * subscribeAndSavePriceHistory: logs the live S&S price this row reported, or, when this
+ * check didn't turn up a live S&S price but the catalog still lists the offer as currently at
+ * a known S&S price, repeats that known price — same as the regular priceHistory repeat-on-stale
+ * behavior above. Never backfills from the regular (non-S&S) price, since that would fabricate
+ * a number we never saw.
  */
 function stampCheckedStale(id: string, checkedAt: string, retailer: string | undefined, stockStatus: string, snsPriceRaw: string): boolean {
   const found = findOfferLine(id, retailer);
@@ -219,6 +222,11 @@ function stampCheckedStale(id: string, checkedAt: string, retailer: string | und
     const snsPrice = Number(snsPriceRaw);
     if (snsPriceRaw && Number.isFinite(snsPrice)) {
       newLine = appendHistoryPoint(newLine, "subscribeAndSavePriceHistory", checkedAt, snsPrice);
+    } else {
+      const knownSnsMatch = newLine.match(/subscribeAndSavePrice: ([\d.]+)/);
+      if (knownSnsMatch) {
+        newLine = appendHistoryPoint(newLine, "subscribeAndSavePriceHistory", checkedAt, Number(knownSnsMatch[1]));
+      }
     }
   }
 
@@ -365,6 +373,13 @@ for (const r of rows.slice(1)) {
     // the history chart should reflect what was actually seen, not just active-discount days.
     if (Number.isFinite(snsPrice)) {
       newLine = appendHistoryPoint(newLine, "subscribeAndSavePriceHistory", checkedAt, snsPrice);
+    }
+  } else if (idxSnsPrice !== -1) {
+    // This check didn't report a live S&S price, but the offer still carries a known one from a
+    // prior check — repeat it so the chart shows this was a real, confirmed-unchanged check-in.
+    const knownSnsMatch = newLine.match(/subscribeAndSavePrice: ([\d.]+)/);
+    if (knownSnsMatch) {
+      newLine = appendHistoryPoint(newLine, "subscribeAndSavePriceHistory", checkedAt, Number(knownSnsMatch[1]));
     }
   }
 
