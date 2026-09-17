@@ -17,16 +17,12 @@ function formatDate(iso: string): string {
   });
 }
 
-const SNS_COLOR = "#dc2626";
-
 export default function PriceHistoryChart({
   history,
   color,
-  subscribeAndSavePrice,
 }: {
   history: PricePoint[];
   color: string;
-  subscribeAndSavePrice?: number;
 }) {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
@@ -38,7 +34,7 @@ export default function PriceHistoryChart({
     );
   }
 
-  const prices = subscribeAndSavePrice !== undefined ? [...history.map((point) => point.price), subscribeAndSavePrice] : history.map((point) => point.price);
+  const prices = history.map((point) => point.price);
   const minPrice = Math.min(...prices);
   const maxPrice = Math.max(...prices);
   const range = maxPrice - minPrice;
@@ -65,19 +61,8 @@ export default function PriceHistoryChart({
   const last = points[points.length - 1];
   const hovered = hoverIndex !== null ? points[hoverIndex] : null;
 
-  const snsY =
-    subscribeAndSavePrice !== undefined
-      ? PAD_TOP + plotHeight - ((subscribeAndSavePrice - domainMin) / domainRange) * plotHeight
-      : null;
-
   return (
     <div className="relative">
-      {subscribeAndSavePrice !== undefined && (
-        <div className="flex items-center gap-1.5 mb-1 text-[10px] text-gray-400">
-          <span className="inline-block w-3 border-t-2 border-dashed" style={{ borderColor: SNS_COLOR }} />
-          Current Subscribe &amp; Save price (${subscribeAndSavePrice.toFixed(2)})
-        </div>
-      )}
       <svg
         viewBox={`0 0 ${WIDTH} ${HEIGHT}`}
         className="w-full h-auto"
@@ -93,18 +78,6 @@ export default function PriceHistoryChart({
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-
-        {snsY !== null && (
-          <line
-            x1={PAD_X}
-            y1={snsY}
-            x2={WIDTH - PAD_X}
-            y2={snsY}
-            stroke={SNS_COLOR}
-            strokeWidth={1.5}
-            strokeDasharray="5,4"
-          />
-        )}
 
         <text x={first.x} y={HEIGHT - 8} fontSize={10} fill="#6b7280" textAnchor="start">
           {formatDate(first.date)}
