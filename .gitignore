@@ -49,3 +49,6 @@ next-env.d.ts
 # graphify generated knowledge graph — regenerate with `graphify update .`
 /graphify-out/
 .claude/settings.json.graphify-bak
+
+# scratch space for dropping input files (price scrape CSVs, etc.)
+/scratch/
