@@ -3822,5 +3822,47 @@ export const products = [
       { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341213458910373057932423&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmarine-collagen-peptides-12oz%3Fvariant%3D42644178469064", lastCheckedAt: "2026-09-18", subscribeAndSavePrice: 29.71, priceObservedAt: "2026-09-18", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 34.95 }, { date: "2026-09-12", price: 34.95 }, { date: "2026-09-13", price: 34.95 }, { date: "2026-09-15", price: 34.95 }, { date: "2026-09-16", price: 34.95 }, { date: "2026-09-17", price: 34.95 }, { date: "2026-09-18", price: 34.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 29.71 }, { date: "2026-09-13", price: 29.71 }, { date: "2026-09-15", price: 29.71 }, { date: "2026-09-16", price: 29.71 }, { date: "2026-09-17", price: 29.71 }, { date: "2026-09-18", price: 29.71 }] },
       { retailer: "Amazon", price: 34.95, url: amazonUrl("B01M04S6JO"), asin: "B01M04S6JO", subscribeAndSavePrice: 31.45, lastCheckedAt: "2026-09-18", priceObservedAt: "2026-09-18", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 34.95 }, { date: "2026-09-13", price: 34.95 }, { date: "2026-09-15", price: 34.95 }, { date: "2026-09-16", price: 34.95 }, { date: "2026-09-17", price: 34.95 }, { date: "2026-09-18", price: 34.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-13", price: 31.45 }, { date: "2026-09-15", price: 31.45 }, { date: "2026-09-16", price: 31.45 }, { date: "2026-09-17", price: 31.45 }, { date: "2026-09-18", price: 31.45 }] }
     ]
+  },
+  {
+    id: "273",
+    name: "Creatine for Women - Tropical Orange (9.48 oz)",
+    brand: "Clean Nutraceuticals",
+    category: "creatine",
+    image: "/products/clean-nutraceuticals-creatine-women-tropical-orange.avif",
+    servings: 30,
+    nutrition: {
+      calories: 10,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "1 scoop (9g)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 32.95, url: amazonUrl("B0DJDQCJX2"), asin: "B0DJDQCJX2", lastCheckedAt: "2026-09-18", priceObservedAt: "2026-09-18", verificationState: "verified", priceHistory: [{ date: "2026-09-18", price: 32.95 }] }
+    ]
+  },
+  {
+    id: "274",
+    name: "Creatine for Women - Strawberry Watermelon (9.48 oz)",
+    brand: "Clean Nutraceuticals",
+    category: "creatine",
+    image: "/products/clean-nutraceuticals-creatine-women-strawberry-watermelon.avif",
+    servings: 30,
+    nutrition: {
+      calories: 10,
+      proteinGrams: 0,
+      creatineGrams: 5,
+      carbsGrams: 0,
+      fatGrams: 0,
+      sugarGrams: 0,
+      sodiumMilligrams: 0,
+      servingSize: "1 scoop (9g)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 36.95, url: amazonUrl("B0GZT7HJ7G"), asin: "B0GZT7HJ7G", lastCheckedAt: "2026-09-18", priceObservedAt: "2026-09-18", verificationState: "verified", priceHistory: [{ date: "2026-09-18", price: 36.95 }] }
+    ]
   }
 ];
