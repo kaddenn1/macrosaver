@@ -287,7 +287,7 @@ for (const r of rows.slice(1)) {
   const { lineStart, lineEnd, line } = found;
   let newLine = line;
 
-  const historyMatch = newLine.match(/priceHistory: \[(.*)\]/);
+  const historyMatch = newLine.match(/priceHistory: \[(.*?)\]/);
   if (!historyMatch) {
     // First-ever verified re-check for this offer: seed history from whatever price/date it had.
     const oldPriceMatch = newLine.match(/retailer: "[^"]+", price: ([\d.]+)/);
@@ -323,7 +323,7 @@ for (const r of rows.slice(1)) {
         );
       }
     } else {
-      newLine = newLine.replace(/priceHistory: \[(.*)\]/, `priceHistory: [${points}, { date: "${checkedAt}", price: ${price} }]`);
+      newLine = newLine.replace(/priceHistory: \[(.*?)\]/, `priceHistory: [${points}, { date: "${checkedAt}", price: ${price} }]`);
     }
     newLine = newLine.replace(/(retailer: "[^"]+", price: )[\d.]+/, `$1${price}`);
     newLine = newLine.replace(/priceObservedAt: "\d{4}-\d{2}-\d{2}"/, `priceObservedAt: "${checkedAt}"`);
