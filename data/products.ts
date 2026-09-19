@@ -2398,7 +2398,7 @@ export const products = [
     servings: 27,
     nutrition: { proteinGrams: 25, calories: 140, carbsGrams: 6, fatGrams: 1, sugarGrams: 3, sodiumMilligrams: 210, servingSize: "1 scoop (37g)" },
     offers: [
-      { retailer: "Amazon", price: 84.99, url: amazonUrl("B0FQM88VDM"), asin: "B0FQM88VDM", inStock: false, lastCheckedAt: "2026-09-19", priceObservedAt: "2026-09-10", verificationState: "checked_stale", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-30", price: 84.99 }, { date: "2026-09-05", price: 84.99 }, { date: "2026-09-07", price: 84.99 }, { date: "2026-09-10", price: 84.99 }, { date: "2026-09-12", price: 84.99 }, { date: "2026-09-13", price: 84.99 }, { date: "2026-09-15", price: 84.99 }, { date: "2026-09-16", price: 84.99 }, { date: "2026-09-17", price: 84.99 }, { date: "2026-09-18", price: 84.99 }, { date: "2026-09-19", price: 84.99 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 49.49 }] }
+      { retailer: "Amazon", price: 54.99, url: amazonUrl("B0FQM88VDM") + "&th=1", asin: "B0FQM88VDM", lastCheckedAt: "2026-09-19", priceObservedAt: "2026-09-19", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-30", price: 84.99 }, { date: "2026-09-05", price: 84.99 }, { date: "2026-09-07", price: 84.99 }, { date: "2026-09-10", price: 84.99 }, { date: "2026-09-12", price: 84.99 }, { date: "2026-09-13", price: 84.99 }, { date: "2026-09-15", price: 84.99 }, { date: "2026-09-16", price: 84.99 }, { date: "2026-09-17", price: 84.99 }, { date: "2026-09-18", price: 84.99 }, { date: "2026-09-19", price: 54.99 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 49.49 }, { date: "2026-09-19", price: 54.99 }] }
     ]
   },
   {
@@ -2465,7 +2465,7 @@ export const products = [
   },
   {
     id: "169",
-    name: "Sugar-Free Hydration Multiplier - Lemon Lime (24 Sticks)",
+    name: "Sugar-Free Hydration Multiplier - Lemon Lime (24 Sticks + Bonus Green Grape Stick)",
     brand: "Liquid I.V.",
     category: "electrolytes",
     image: "/products/liquid-iv-hydration-multiplier-lemon-lime-24ct.jpg",
@@ -2478,7 +2478,7 @@ export const products = [
     nutritionNote:
       "Calories, sodium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 47.02, url: amazonUrl("B0CVX6YK9K"), asin: "B0CVX6YK9K", lastCheckedAt: "2026-09-19", priceObservedAt: "2026-09-16", verificationState: "checked_stale", priceHistory: [{ date: "2026-08-20", price: 47.99 }, { date: "2026-09-05", price: 47.99 }, { date: "2026-09-07", price: 47.99 }, { date: "2026-09-10", price: 47.08 }, { date: "2026-09-12", price: 47.08 }, { date: "2026-09-13", price: 47.08 }, { date: "2026-09-15", price: 47.02 }, { date: "2026-09-16", price: 47.02 }, { date: "2026-09-17", price: 47.02 }, { date: "2026-09-18", price: 47.02 }, { date: "2026-09-19", price: 47.02 }] }
+      { retailer: "Amazon", price: 47.51, url: amazonUrl("B0CVX6YK9K") + "&th=1", asin: "B0CVX6YK9K", lastCheckedAt: "2026-09-19", priceObservedAt: "2026-09-19", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 47.99 }, { date: "2026-09-05", price: 47.99 }, { date: "2026-09-07", price: 47.99 }, { date: "2026-09-10", price: 47.08 }, { date: "2026-09-12", price: 47.08 }, { date: "2026-09-13", price: 47.08 }, { date: "2026-09-15", price: 47.02 }, { date: "2026-09-16", price: 47.02 }, { date: "2026-09-17", price: 47.02 }, { date: "2026-09-18", price: 47.02 }, { date: "2026-09-19", price: 47.51 }] }
     ]
   },
   {
@@ -3414,7 +3414,7 @@ export const products = [
     servings: 29,
     nutrition: { calories: 150, proteinGrams: 30, carbsGrams: 4, fatGrams: 2, sugarGrams: 1, sodiumMilligrams: 170, servingSize: "2 scoops (41g)" },
     offers: [
-      { retailer: "Amazon", price: 43.49, url: amazonUrl("B0D4WTDZZR"), asin: "B0D4WTDZZR", subscribeAndSavePrice: 41.32, lastCheckedAt: "2026-09-19", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-10", price: 43.49 }, { date: "2026-09-11", price: 43.49 }, { date: "2026-09-12", price: 43.49 }, { date: "2026-09-13", price: 43.49 }, { date: "2026-09-15", price: 43.49 }, { date: "2026-09-16", price: 43.49 }, { date: "2026-09-17", price: 43.49 }, { date: "2026-09-18", price: 43.49 }, { date: "2026-09-19", price: 43.49 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 41.32 }, { date: "2026-09-12", price: 41.32 }, { date: "2026-09-13", price: 41.32 }, { date: "2026-09-15", price: 41.32 }, { date: "2026-09-16", price: 41.32 }, { date: "2026-09-17", price: 41.32 }, { date: "2026-09-18", price: 41.32 }, { date: "2026-09-19", price: 41.32 }] }
+      { retailer: "Amazon", price: 43.49, url: amazonUrl("B0D4WTDZZR") + "&th=1", asin: "B0D4WTDZZR", subscribeAndSavePrice: 41.32, inStock: false, lastCheckedAt: "2026-09-19", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-10", price: 43.49 }, { date: "2026-09-11", price: 43.49 }, { date: "2026-09-12", price: 43.49 }, { date: "2026-09-13", price: 43.49 }, { date: "2026-09-15", price: 43.49 }, { date: "2026-09-16", price: 43.49 }, { date: "2026-09-17", price: 43.49 }, { date: "2026-09-18", price: 43.49 }, { date: "2026-09-19", price: 43.49 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 41.32 }, { date: "2026-09-12", price: 41.32 }, { date: "2026-09-13", price: 41.32 }, { date: "2026-09-15", price: 41.32 }, { date: "2026-09-16", price: 41.32 }, { date: "2026-09-17", price: 41.32 }, { date: "2026-09-18", price: 41.32 }, { date: "2026-09-19", price: 41.32 }] }
     ]
   },
   {
@@ -3863,6 +3863,34 @@ export const products = [
     },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B0GZT7HJ7G"), asin: "B0GZT7HJ7G", lastCheckedAt: "2026-09-19", priceObservedAt: "2026-09-19", verificationState: "verified", priceHistory: [{ date: "2026-09-18", price: 36.95 }, { date: "2026-09-19", price: 36.95 }] }
+    ]
+  },
+  {
+    id: "275",
+    name: "Ghost Whey Protein Powder, Chocolate Chip Cookies (2.2 lb)",
+    brand: "Ghost",
+    category: "protein",
+    image: "/products/ghost-whey-chocolate-chip-cookies.png",
+    servings: 26,
+    nutritionNote:
+      "Carbohydrates, fat, and sodium were not independently verified from this product's label.",
+    nutrition: { proteinGrams: 25, calories: 150, sugarGrams: 3, servingSize: "1 scoop (39g)" },
+    offers: [
+      { retailer: "Amazon", price: 52.78, url: amazonUrl("B0GPB5JVR6") + "&th=1", asin: "B0GPB5JVR6", subscribeAndSavePrice: 47.5, lastCheckedAt: "2026-09-19", priceObservedAt: "2026-09-19", verificationState: "verified", priceHistory: [{ date: "2026-09-19", price: 52.78 }], subscribeAndSavePriceHistory: [{ date: "2026-09-19", price: 47.5 }] }
+    ]
+  },
+  {
+    id: "276",
+    name: "Ghost Whey Protein Powder, Cocoa Puffs Cereal Milk (2 lb)",
+    brand: "Ghost",
+    category: "protein",
+    image: "/products/ghost-whey-cocoa-puffs-cereal-milk.png",
+    servings: 26,
+    nutritionNote:
+      "Sodium was not independently verified from this product's label.",
+    nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1 },
+    offers: [
+      { retailer: "Amazon", price: 51.82, url: amazonUrl("B0GP9BCKR9") + "&th=1", asin: "B0GP9BCKR9", subscribeAndSavePrice: 46.64, lastCheckedAt: "2026-09-19", priceObservedAt: "2026-09-19", verificationState: "verified", priceHistory: [{ date: "2026-09-19", price: 51.82 }], subscribeAndSavePriceHistory: [{ date: "2026-09-19", price: 46.64 }] }
     ]
   }
 ];
