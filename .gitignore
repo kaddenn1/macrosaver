@@ -52,3 +52,4 @@ next-env.d.ts
 
 # scratch space for dropping input files (price scrape CSVs, etc.)
 /scratch/
+/scratch-done/
