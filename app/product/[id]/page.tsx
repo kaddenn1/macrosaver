@@ -150,6 +150,7 @@ export default async function ProductPage({
   const servingMetricsApply = supportsServingMetrics(product);
   const hasProtein = servingMetricsApply && product.nutrition.proteinGrams > 0;
   const ingredientInfo = productIngredients[product.id];
+  const labelPhotos = productLabelPhotos[product.id] ?? [];
   const categoryTitle = CATEGORY_TITLES[product.category] || product.category;
   const relatedProducts = getRelatedProducts(product, 4);
   const reviewSummary = await getReviewSummary(product.id);
@@ -260,10 +261,10 @@ export default async function ProductPage({
         <div className="mt-6 flex flex-col lg:flex-row gap-10">
           {/* Image */}
           <div className="w-full lg:w-[320px] shrink-0">
-            {product.image ? (
+            {product.image || labelPhotos.length > 0 ? (
               <ProductImageGallery
-                main={{ src: product.image, alt: product.name }}
-                extras={productLabelPhotos[product.id] ?? []}
+                main={product.image ? { src: product.image, alt: product.name } : labelPhotos[0]}
+                extras={product.image ? labelPhotos : labelPhotos.slice(1)}
               />
             ) : (
               <div className="h-72 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center relative overflow-hidden">
