@@ -3,6 +3,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { products } from "@/data/products";
+import { productIngredients } from "@/data/ingredients";
 import ProductImageLightbox from "@/components/ProductImageLightbox";
 import PriceHistoryChart from "@/components/PriceHistoryChart";
 import {
@@ -147,6 +148,7 @@ export default async function ProductPage({
   const savings = getSavingsVsHighestOffer(product);
   const servingMetricsApply = supportsServingMetrics(product);
   const hasProtein = servingMetricsApply && product.nutrition.proteinGrams > 0;
+  const ingredientInfo = productIngredients[product.id];
   const categoryTitle = CATEGORY_TITLES[product.category] || product.category;
   const relatedProducts = getRelatedProducts(product, 4);
   const reviewSummary = await getReviewSummary(product.id);
@@ -452,6 +454,21 @@ export default async function ProductPage({
                     </div>
                   )}
                 </div>
+              </div>
+            )}
+
+            {ingredientInfo && (
+              <div className="mb-8">
+                <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
+                  Ingredients
+                </h2>
+                <p className="text-sm text-gray-300 leading-relaxed">{ingredientInfo.ingredients}</p>
+                {ingredientInfo.allergens && (
+                  <p className="text-xs text-gray-400 mt-2">{ingredientInfo.allergens}</p>
+                )}
+                <p className="text-[11px] text-gray-500 mt-2">
+                  Transcribed from the retailer or brand page. Formulations change, so check the package label before use.
+                </p>
               </div>
             )}
 

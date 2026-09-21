@@ -1656,8 +1656,7 @@ export const products = [
     additionalCategories: ["weight-management"],
     image: "/products/vital-proteins-collagen-peptides-unflavored.jpg",
     servings: 13,
-    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
-    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 110 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 18.65, url: amazonUrl("B09RQBHRCT"), asin: "B09RQBHRCT", subscribeAndSavePrice: 17.72, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 18.65 }, { date: "2026-08-29", price: 16.78 }, { date: "2026-08-30", price: 16.78 }, { date: "2026-09-01", price: 18.65 }, { date: "2026-09-05", price: 18.65 }, { date: "2026-09-07", price: 18.65 }, { date: "2026-09-10", price: 18.65 }, { date: "2026-09-11", price: 18.65 }, { date: "2026-09-12", price: 18.65 }, { date: "2026-09-13", price: 18.65 }, { date: "2026-09-15", price: 18.65 }, { date: "2026-09-16", price: 18.65 }, { date: "2026-09-17", price: 18.65 }, { date: "2026-09-18", price: 18.65 }, { date: "2026-09-19", price: 18.65 }, { date: "2026-09-20", price: 18.65 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 17.72 }, { date: "2026-09-11", price: 17.72 }, { date: "2026-09-12", price: 17.72 }, { date: "2026-09-13", price: 17.72 }, { date: "2026-09-15", price: 17.72 }, { date: "2026-09-16", price: 17.72 }, { date: "2026-09-17", price: 17.72 }, { date: "2026-09-18", price: 17.72 }, { date: "2026-09-19", price: 17.72 }, { date: "2026-09-20", price: 17.72 }] }
@@ -1670,8 +1669,7 @@ export const products = [
     category: "bariatric",
     image: "/products/vital-proteins-collagen-peptides-advanced-unflavored.jpg",
     servings: 27,
-    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
-    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 110 },
     approvedBy: ["geo"],
     offers: [
       { retailer: "Amazon", price: 38.99, url: amazonUrl("B00K6JUG4K"), asin: "B00K6JUG4K", subscribeAndSavePrice: 37.04, lastCheckedAt: "2026-09-20", listPrice: 42.99, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 42.99 }, { date: "2026-08-29", price: 38.69 }, { date: "2026-08-30", price: 38.69 }, { date: "2026-09-01", price: 42.99 }, { date: "2026-09-05", price: 42.99 }, { date: "2026-09-07", price: 42.99 }, { date: "2026-09-10", price: 38.99 }, { date: "2026-09-12", price: 38.99 }, { date: "2026-09-13", price: 38.99 }, { date: "2026-09-15", price: 38.99 }, { date: "2026-09-16", price: 38.99 }, { date: "2026-09-17", price: 38.99 }, { date: "2026-09-18", price: 38.99 }, { date: "2026-09-19", price: 38.99 }, { date: "2026-09-20", price: 38.99 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 37.04 }, { date: "2026-09-12", price: 37.04 }, { date: "2026-09-13", price: 37.04 }, { date: "2026-09-15", price: 37.04 }, { date: "2026-09-16", price: 37.04 }, { date: "2026-09-17", price: 37.04 }, { date: "2026-09-18", price: 37.04 }, { date: "2026-09-19", price: 37.04 }, { date: "2026-09-20", price: 37.04 }] }
@@ -2346,7 +2344,7 @@ export const products = [
     brand: "Ghost",
     category: "protein",
     image: "/products/ghost-whey-lucky-charms-cereal-milk.png",
-    servings: 27,
+    servings: 26,
     // Sodium not confirmed.
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 3 },
     offers: [
@@ -2359,7 +2357,7 @@ export const products = [
     brand: "Ghost",
     category: "protein",
     image: "/products/ghost-whey-milk-chocolate.png",
-    servings: 27,
+    servings: 26,
     // Sodium not confirmed.
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 2, servingSize: "1 scoop (35g)" },
     offers: [
@@ -2385,7 +2383,7 @@ export const products = [
     brand: "Ghost",
     category: "protein",
     image: "/products/ghost-whey-cereal-milk.png",
-    servings: 27,
+    servings: 26,
     // Sodium not confirmed.
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 2 },
     offers: [
@@ -2398,8 +2396,8 @@ export const products = [
     brand: "Ghost",
     category: "protein",
     image: "/products/ghost-whey-count-chocula.png",
-    servings: 27,
-    nutrition: { proteinGrams: 25, calories: 140, carbsGrams: 6, fatGrams: 1, sugarGrams: 3, sodiumMilligrams: 210, servingSize: "1 scoop (37g)" },
+    servings: 26,
+    nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 6, fatGrams: 1, sugarGrams: 3, sodiumMilligrams: 210, servingSize: "1 scoop (37g)" },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B0FQM88VDM") + "&th=1", asin: "B0FQM88VDM", lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-19", verificationState: "checked_stale", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-30", price: 84.99 }, { date: "2026-09-05", price: 84.99 }, { date: "2026-09-07", price: 84.99 }, { date: "2026-09-10", price: 84.99 }, { date: "2026-09-12", price: 84.99 }, { date: "2026-09-13", price: 84.99 }, { date: "2026-09-15", price: 84.99 }, { date: "2026-09-16", price: 84.99 }, { date: "2026-09-17", price: 84.99 }, { date: "2026-09-18", price: 84.99 }, { date: "2026-09-19", price: 54.99 }, { date: "2026-09-20", price: 54.99 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 49.49 }, { date: "2026-09-19", price: 54.99 }] }
     ]
@@ -3558,8 +3556,7 @@ export const products = [
     image: "/products/vital-proteins-collagen-peptides-unflavored-20serv.jpg",
     additionalCategories: ["weight-management"],
     servings: 20,
-    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
-    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
+    nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
     offers: [
       { retailer: "Amazon", price: 22.86, url: amazonUrl("B09BP3P58Q"), asin: "B09BP3P58Q", subscribeAndSavePrice: 21.72, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 22.86 }, { date: "2026-09-11", price: 22.86 }, { date: "2026-09-12", price: 22.86 }, { date: "2026-09-13", price: 22.86 }, { date: "2026-09-15", price: 22.86 }, { date: "2026-09-16", price: 22.86 }, { date: "2026-09-17", price: 22.86 }, { date: "2026-09-18", price: 22.86 }, { date: "2026-09-19", price: 22.86 }, { date: "2026-09-20", price: 22.86 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 21.72 }, { date: "2026-09-13", price: 21.72 }, { date: "2026-09-15", price: 21.72 }, { date: "2026-09-16", price: 21.72 }, { date: "2026-09-17", price: 21.72 }, { date: "2026-09-18", price: 21.72 }, { date: "2026-09-19", price: 21.72 }, { date: "2026-09-20", price: 21.72 }] }
     ]
@@ -3585,8 +3582,7 @@ export const products = [
     image: "/products/vital-proteins-collagen-peptides-5oz.png",
     additionalCategories: ["weight-management"],
     servings: 7,
-    nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
-    nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
+    nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 110 },
     offers: [
       { retailer: "Amazon", price: 15, url: amazonUrl("B076PL4TM8"), asin: "B076PL4TM8", subscribeAndSavePrice: 14.25, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 15 }, { date: "2026-09-11", price: 15 }, { date: "2026-09-12", price: 15 }, { date: "2026-09-13", price: 15 }, { date: "2026-09-15", price: 15 }, { date: "2026-09-16", price: 15 }, { date: "2026-09-17", price: 15 }, { date: "2026-09-18", price: 15 }, { date: "2026-09-19", price: 15 }, { date: "2026-09-20", price: 15 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 14.25 }, { date: "2026-09-12", price: 14.25 }, { date: "2026-09-13", price: 14.25 }, { date: "2026-09-15", price: 14.25 }, { date: "2026-09-16", price: 14.25 }, { date: "2026-09-17", price: 14.25 }, { date: "2026-09-18", price: 14.25 }, { date: "2026-09-19", price: 14.25 }, { date: "2026-09-20", price: 14.25 }] }
     ]
