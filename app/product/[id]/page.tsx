@@ -4,7 +4,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { products } from "@/data/products";
 import { productIngredients } from "@/data/ingredients";
-import ProductImageLightbox from "@/components/ProductImageLightbox";
+import ProductImageGallery from "@/components/ProductImageGallery";
+import { productLabelPhotos } from "@/data/labelPhotos";
 import PriceHistoryChart from "@/components/PriceHistoryChart";
 import {
   formatShortDate,
@@ -259,10 +260,13 @@ export default async function ProductPage({
         <div className="mt-6 flex flex-col lg:flex-row gap-10">
           {/* Image */}
           <div className="w-full lg:w-[320px] shrink-0">
-            <div className="h-72 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center relative overflow-hidden">
-              {product.image ? (
-                <ProductImageLightbox src={product.image} alt={product.name} />
-              ) : (
+            {product.image ? (
+              <ProductImageGallery
+                main={{ src: product.image, alt: product.name }}
+                extras={productLabelPhotos[product.id] ?? []}
+              />
+            ) : (
+              <div className="h-72 bg-[#111] border border-gray-800 rounded-xl flex items-center justify-center relative overflow-hidden">
                 <div className="text-center opacity-50">
                   <div className={`w-10 h-12 mx-auto mb-2 border-2 rounded-sm ${theme.border}`}>
                     <div className="w-full h-2 border-b-2 bg-gray-800 border-inherit rounded-t-sm" />
@@ -271,8 +275,8 @@ export default async function ProductPage({
                     {product.category}
                   </span>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
 
           {/* Main details */}
