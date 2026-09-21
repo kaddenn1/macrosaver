@@ -339,6 +339,7 @@ export const products = [
       carbsGrams: 3,
       fatGrams: 1.5,
       servingSize: "1 scoop (33g)",
+      sugarGrams: 2,
     },
     offers: [
       { retailer: "Amazon", price: 50.27, url: amazonUrl("B000GIQSVG"), asin: "B000GIQSVG", subscribeAndSavePrice: 47.76, lastCheckedAt: "2026-09-20", listPrice: 64.99, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 50.27 }, { date: "2026-08-30", price: 45.24 }, { date: "2026-09-05", price: 45.24 }, { date: "2026-09-07", price: 45.24 }, { date: "2026-09-10", price: 50.27 }, { date: "2026-09-12", price: 50.27 }, { date: "2026-09-13", price: 50.27 }, { date: "2026-09-15", price: 50.27 }, { date: "2026-09-16", price: 50.27 }, { date: "2026-09-17", price: 50.27 }, { date: "2026-09-18", price: 50.27 }, { date: "2026-09-19", price: 50.27 }, { date: "2026-09-20", price: 50.27 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 47.76 }, { date: "2026-09-12", price: 47.76 }, { date: "2026-09-13", price: 47.76 }, { date: "2026-09-15", price: 47.76 }, { date: "2026-09-16", price: 47.76 }, { date: "2026-09-17", price: 47.76 }, { date: "2026-09-18", price: 47.76 }, { date: "2026-09-19", price: 47.76 }, { date: "2026-09-20", price: 47.76 }] }
@@ -358,6 +359,7 @@ export const products = [
       carbsGrams: 3,
       fatGrams: 1.5,
       servingSize: "1 scoop (33g)",
+      sugarGrams: 2,
     },
     offers: [
       { retailer: "Amazon", price: 96.28, url: amazonUrl("B000GIPJZ2"), asin: "B000GIPJZ2", lastCheckedAt: "2026-09-20", listPrice: 114.99, subscribeAndSavePrice: 91.47, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 96.28 }, { date: "2026-08-29", price: 96.28 }, { date: "2026-08-30", price: 81.84 }, { date: "2026-09-05", price: 81.84 }, { date: "2026-09-07", price: 81.84 }, { date: "2026-09-10", price: 81.84 }, { date: "2026-09-11", price: 96.28 }, { date: "2026-09-12", price: 96.28 }, { date: "2026-09-13", price: 96.28 }, { date: "2026-09-15", price: 96.28 }, { date: "2026-09-16", price: 96.28 }, { date: "2026-09-17", price: 96.28 }, { date: "2026-09-18", price: 96.28 }, { date: "2026-09-19", price: 96.28 }, { date: "2026-09-20", price: 96.28 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 91.47 }, { date: "2026-09-11", price: 91.47 }, { date: "2026-09-12", price: 91.47 }, { date: "2026-09-13", price: 91.47 }, { date: "2026-09-15", price: 91.47 }, { date: "2026-09-16", price: 91.47 }, { date: "2026-09-17", price: 91.47 }, { date: "2026-09-18", price: 91.47 }, { date: "2026-09-19", price: 91.47 }, { date: "2026-09-20", price: 91.47 }] }
@@ -457,6 +459,7 @@ export const products = [
       carbsGrams: 4,
       fatGrams: 2,
       servingSize: "1 scoop (33g)",
+      sugarGrams: 2,
     },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B006E54GJG"), asin: "B006E54GJG", subscribeAndSavePrice: 52.24, lastCheckedAt: "2026-09-20", listPrice: 64.99, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 42.49 }, { date: "2026-08-29", price: 49.99 }, { date: "2026-08-30", price: 48.92 }, { date: "2026-09-05", price: 48.92 }, { date: "2026-09-07", price: 48.92 }, { date: "2026-09-10", price: 49.99 }, { date: "2026-09-12", price: 49.99 }, { date: "2026-09-13", price: 53.02 }, { date: "2026-09-15", price: 49.99 }, { date: "2026-09-16", price: 53.64 }, { date: "2026-09-17", price: 53.64 }, { date: "2026-09-18", price: 53.64 }, { date: "2026-09-19", price: 53.68 }, { date: "2026-09-20", price: 54.99 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 47.49 }, { date: "2026-09-12", price: 47.49 }, { date: "2026-09-13", price: 50.37 }, { date: "2026-09-15", price: 47.49 }, { date: "2026-09-16", price: 50.96 }, { date: "2026-09-17", price: 50.96 }, { date: "2026-09-18", price: 50.96 }, { date: "2026-09-19", price: 51 }, { date: "2026-09-20", price: 52.24 }] }
@@ -1584,7 +1587,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/sports-research-mct-oil-powder.png",
     servings: 30,
-    nutrition: { proteinGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 60, fatGrams: 6 },
     offers: [
       { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmct-oil-powder", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-07-26", price: 24.95 }, { date: "2026-09-01", price: 24.95 }, { date: "2026-09-10", price: 24.95 }, { date: "2026-09-11", price: 24.95 }, { date: "2026-09-12", price: 24.95 }, { date: "2026-09-13", price: 24.95 }, { date: "2026-09-15", price: 24.95 }, { date: "2026-09-16", price: 24.95 }, { date: "2026-09-17", price: 24.95 }, { date: "2026-09-18", price: 24.95 }, { date: "2026-09-19", price: 24.95 }, { date: "2026-09-20", price: 24.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 21.21 }, { date: "2026-09-12", price: 21.21 }, { date: "2026-09-13", price: 21.21 }, { date: "2026-09-15", price: 21.21 }, { date: "2026-09-16", price: 21.21 }, { date: "2026-09-17", price: 21.21 }, { date: "2026-09-18", price: 21.21 }, { date: "2026-09-19", price: 21.21 }, { date: "2026-09-20", price: 21.21 }] },
       { retailer: "Amazon", price: 24.95, url: amazonUrl("B06XRKBD7X"), asin: "B06XRKBD7X", subscribeAndSavePrice: 22.45, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 24.95 }, { date: "2026-09-13", price: 24.95 }, { date: "2026-09-15", price: 24.95 }, { date: "2026-09-16", price: 24.95 }, { date: "2026-09-17", price: 24.95 }, { date: "2026-09-18", price: 24.95 }, { date: "2026-09-19", price: 24.95 }, { date: "2026-09-20", price: 24.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-13", price: 22.45 }, { date: "2026-09-15", price: 22.45 }, { date: "2026-09-16", price: 22.45 }, { date: "2026-09-17", price: 22.45 }, { date: "2026-09-18", price: 22.45 }, { date: "2026-09-19", price: 22.45 }, { date: "2026-09-20", price: 22.45 }] }
@@ -1775,7 +1778,7 @@ export const products = [
     image: "/products/bariatricpal-calcium-citrate-chews-french-caramel-vanilla.jpg",
     servings: 90,
     // Sodium not confirmed.
-    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 10 },
     offers: [
       { retailer: "Amazon", price: 36.95, url: amazonUrl("B07ZDF528Q"), asin: "B07ZDF528Q", lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 36.95 }, { date: "2026-08-29", price: 31.41 }, { date: "2026-08-30", price: 31.41 }, { date: "2026-09-05", price: 31.41 }, { date: "2026-09-07", price: 31.41 }, { date: "2026-09-10", price: 31.41 }, { date: "2026-09-11", price: 36.95 }, { date: "2026-09-12", price: 36.95 }, { date: "2026-09-13", price: 36.95 }, { date: "2026-09-15", price: 36.95 }, { date: "2026-09-16", price: 36.95 }, { date: "2026-09-17", price: 36.95 }, { date: "2026-09-18", price: 36.95 }, { date: "2026-09-19", price: 36.95 }, { date: "2026-09-20", price: 36.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 33.25 }, { date: "2026-09-11", price: 33.25 }, { date: "2026-09-12", price: 33.25 }, { date: "2026-09-13", price: 33.25 }, { date: "2026-09-15", price: 33.25 }, { date: "2026-09-16", price: 33.25 }, { date: "2026-09-17", price: 36.95 }, { date: "2026-09-18", price: 36.95 }, { date: "2026-09-19", price: 36.95 }, { date: "2026-09-20", price: 36.95 }] }
     ]
@@ -1925,7 +1928,7 @@ export const products = [
     image: "/products/bariatric-advantage-calcium-citrate-chewy-bite-caramel.jpg",
     servings: 90,
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
-    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 5 },
     approvedBy: ["jannette"],
     offers: [
       { retailer: "Amazon", price: 39.4, url: amazonUrl("B00O5O6VCS"), asin: "B00O5O6VCS", subscribeAndSavePrice: 35.46, lastCheckedAt: "2026-09-20", listPrice: 42.08, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 39.4 }, { date: "2026-08-29", price: 33.49 }, { date: "2026-08-30", price: 33.49 }, { date: "2026-09-01", price: 39.4 }, { date: "2026-09-05", price: 39.4 }, { date: "2026-09-07", price: 39.4 }, { date: "2026-09-10", price: 39.4 }, { date: "2026-09-11", price: 39.4 }, { date: "2026-09-12", price: 39.4 }, { date: "2026-09-13", price: 39.4 }, { date: "2026-09-15", price: 39.4 }, { date: "2026-09-16", price: 39.4 }, { date: "2026-09-17", price: 39.4 }, { date: "2026-09-18", price: 39.4 }, { date: "2026-09-19", price: 39.4 }, { date: "2026-09-20", price: 39.4 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 35.46 }, { date: "2026-09-11", price: 35.46 }, { date: "2026-09-12", price: 35.46 }, { date: "2026-09-13", price: 35.46 }, { date: "2026-09-15", price: 35.46 }, { date: "2026-09-16", price: 35.46 }, { date: "2026-09-17", price: 35.46 }, { date: "2026-09-18", price: 35.46 }, { date: "2026-09-19", price: 35.46 }, { date: "2026-09-20", price: 35.46 }] }
@@ -2489,7 +2492,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/core-power-chocolate.webp",
     servings: 12,
-    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)", calories: 170, carbsGrams: 8 },
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
@@ -2504,7 +2507,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/core-power-strawberry-banana.webp",
     servings: 12,
-    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)", calories: 170, carbsGrams: 7, fatGrams: 4.5 },
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
@@ -2519,7 +2522,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/core-power-vanilla.webp",
     servings: 12,
-    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)", calories: 170 },
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
@@ -2534,7 +2537,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/core-power-elite-chocolate.webp",
     servings: 12,
-    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)", calories: 230, carbsGrams: 9, fatGrams: 3.5 },
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
@@ -2549,7 +2552,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/core-power-elite-strawberry.webp",
     servings: 12,
-    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)", calories: 230 },
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
@@ -2564,7 +2567,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/core-power-elite-vanilla.webp",
     servings: 12,
-    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)", calories: 230 },
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
@@ -2578,7 +2581,7 @@ export const products = [
     category: "protein",
     image: "/products/myprotein-clear-whey-isolate-peach-mango.jpg",
     servings: 20,
-    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)", carbsGrams: 0, fatGrams: 0, sodiumMilligrams: 10 },
     nutritionNote:
       "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
@@ -2593,7 +2596,7 @@ export const products = [
     additionalCategories: ["food-drink"],
     image: "/products/premier-protein-cafe-latte.jpg",
     servings: 12,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 4, fatGrams: 3 },
     nutritionNote:
       "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
@@ -2671,7 +2674,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-advantage-chewy-assorted-sweet.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 20 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
       { retailer: "Amazon", price: 44.28, url: amazonUrl("B084RVMH4S"), asin: "B084RVMH4S", subscribeAndSavePrice: 39.85, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 44.28 }, { date: "2026-09-12", price: 44.28 }, { date: "2026-09-13", price: 44.28 }, { date: "2026-09-15", price: 44.28 }, { date: "2026-09-16", price: 44.28 }, { date: "2026-09-17", price: 44.28 }, { date: "2026-09-18", price: 44.28 }, { date: "2026-09-19", price: 44.28 }, { date: "2026-09-20", price: 44.28 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 39.85 }, { date: "2026-09-13", price: 39.85 }, { date: "2026-09-15", price: 39.85 }, { date: "2026-09-16", price: 39.85 }, { date: "2026-09-17", price: 39.85 }, { date: "2026-09-18", price: 39.85 }, { date: "2026-09-19", price: 39.85 }, { date: "2026-09-20", price: 39.85 }] }
@@ -2710,7 +2713,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-advantage-chewy-lemon.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 5 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
       { retailer: "Amazon", price: 42.08, url: amazonUrl("B0736GHQ61"), asin: "B0736GHQ61", subscribeAndSavePrice: 37.87, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 42.08 }, { date: "2026-09-12", price: 42.08 }, { date: "2026-09-13", price: 42.08 }, { date: "2026-09-15", price: 42.08 }, { date: "2026-09-16", price: 42.08 }, { date: "2026-09-17", price: 42.08 }, { date: "2026-09-18", price: 42.08 }, { date: "2026-09-19", price: 42.08 }, { date: "2026-09-20", price: 42.08 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 37.87 }, { date: "2026-09-13", price: 37.87 }, { date: "2026-09-15", price: 37.87 }, { date: "2026-09-16", price: 37.87 }, { date: "2026-09-17", price: 37.87 }, { date: "2026-09-18", price: 37.87 }, { date: "2026-09-19", price: 37.87 }, { date: "2026-09-20", price: 37.87 }] }
@@ -2749,7 +2752,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-advantage-chewy-raspberry.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 10 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
       { retailer: "Amazon", price: 39.4, url: amazonUrl("B07BSQSXMB"), asin: "B07BSQSXMB", subscribeAndSavePrice: 35.46, lastCheckedAt: "2026-09-20", listPrice: 42.08, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 39.4 }, { date: "2026-09-11", price: 39.4 }, { date: "2026-09-12", price: 39.4 }, { date: "2026-09-13", price: 39.4 }, { date: "2026-09-15", price: 39.4 }, { date: "2026-09-16", price: 39.4 }, { date: "2026-09-17", price: 39.4 }, { date: "2026-09-18", price: 39.4 }, { date: "2026-09-19", price: 39.4 }, { date: "2026-09-20", price: 39.4 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 35.46 }, { date: "2026-09-12", price: 35.46 }, { date: "2026-09-13", price: 35.46 }, { date: "2026-09-15", price: 35.46 }, { date: "2026-09-16", price: 35.46 }, { date: "2026-09-17", price: 35.46 }, { date: "2026-09-18", price: 35.46 }, { date: "2026-09-19", price: 35.46 }, { date: "2026-09-20", price: 35.46 }] }
@@ -2775,7 +2778,7 @@ export const products = [
     category: "bariatric",
     image: "/products/bariatric-advantage-chewy-tropical-orange.jpg",
     servings: 90,
-    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 10 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
       { retailer: "Amazon", price: 42.08, url: amazonUrl("B00OKUL5UK"), asin: "B00OKUL5UK", subscribeAndSavePrice: 37.87, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 42.08 }, { date: "2026-09-12", price: 42.08 }, { date: "2026-09-13", price: 42.08 }, { date: "2026-09-15", price: 42.08 }, { date: "2026-09-16", price: 42.08 }, { date: "2026-09-17", price: 42.08 }, { date: "2026-09-18", price: 42.08 }, { date: "2026-09-19", price: 42.08 }, { date: "2026-09-20", price: 42.08 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 37.87 }, { date: "2026-09-13", price: 37.87 }, { date: "2026-09-15", price: 37.87 }, { date: "2026-09-16", price: 37.87 }, { date: "2026-09-17", price: 37.87 }, { date: "2026-09-18", price: 37.87 }, { date: "2026-09-19", price: 37.87 }, { date: "2026-09-20", price: 37.87 }] }
@@ -2878,7 +2881,7 @@ export const products = [
     image: "/products/core-power-chocolate-single.webp",
     additionalCategories: ["food-drink"],
     servings: 1,
-    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)", calories: 170, carbsGrams: 8 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 3.88, url: amazonUrl("B07PGPY5VB"), asin: "B07PGPY5VB", lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 3.88 }, { date: "2026-09-12", price: 3.88 }, { date: "2026-09-13", price: 3.88 }, { date: "2026-09-15", price: 3.88 }, { date: "2026-09-16", price: 3.88 }, { date: "2026-09-17", price: 3.88 }, { date: "2026-09-18", price: 3.88 }, { date: "2026-09-19", price: 3.88 }, { date: "2026-09-20", price: 3.88 }] }
@@ -2892,7 +2895,7 @@ export const products = [
     image: "/products/core-power-strawberry-banana-single.webp",
     additionalCategories: ["food-drink"],
     servings: 1,
-    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)", calories: 170, carbsGrams: 7, fatGrams: 4.5 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 3.88, url: amazonUrl("B07PFKFTW9"), asin: "B07PFKFTW9", lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", inStock: false, verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 3 }, { date: "2026-09-12", price: 3.88 }, { date: "2026-09-13", price: 3.79 }, { date: "2026-09-15", price: 3.88 }, { date: "2026-09-16", price: 3.88 }, { date: "2026-09-17", price: 3.88 }, { date: "2026-09-18", price: 3.88 }, { date: "2026-09-19", price: 3.88 }, { date: "2026-09-20", price: 3.88 }] }
@@ -2920,7 +2923,7 @@ export const products = [
     image: "/products/core-power-elite-chocolate-single.webp",
     additionalCategories: ["food-drink"],
     servings: 1,
-    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)", calories: 230, carbsGrams: 9, fatGrams: 3.5 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 5.28, url: amazonUrl("B01N4OMLOZ"), asin: "B01N4OMLOZ", lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 5 }, { date: "2026-09-12", price: 5.28 }, { date: "2026-09-13", price: 5.28 }, { date: "2026-09-15", price: 5.28 }, { date: "2026-09-16", price: 5.28 }, { date: "2026-09-17", price: 5.28 }, { date: "2026-09-18", price: 5.28 }, { date: "2026-09-19", price: 5.28 }, { date: "2026-09-20", price: 5.28 }] }
@@ -2934,7 +2937,7 @@ export const products = [
     image: "/products/core-power-elite-strawberry-single.webp",
     additionalCategories: ["food-drink"],
     servings: 1,
-    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)", calories: 230 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 5.28, url: amazonUrl("B085LJ7D2S"), asin: "B085LJ7D2S", lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 5.28 }, { date: "2026-09-12", price: 5.28 }, { date: "2026-09-13", price: 5.28 }, { date: "2026-09-15", price: 5.28 }, { date: "2026-09-16", price: 5.28 }, { date: "2026-09-17", price: 5.19 }, { date: "2026-09-18", price: 5.19 }, { date: "2026-09-19", price: 5.19 }, { date: "2026-09-20", price: 5.28 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-18", price: 5.19 }] }
@@ -2948,7 +2951,7 @@ export const products = [
     image: "/products/core-power-elite-vanilla-single.webp",
     additionalCategories: ["food-drink"],
     servings: 1,
-    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)" },
+    nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)", calories: 230 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 4.5, url: amazonUrl("B01MT9NTDD"), asin: "B01MT9NTDD", listPrice: 4.99, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 4.29 }, { date: "2026-09-12", price: 4.5 }, { date: "2026-09-13", price: 4.29 }, { date: "2026-09-15", price: 4.5 }, { date: "2026-09-16", price: 4.5 }, { date: "2026-09-17", price: 4.5 }, { date: "2026-09-18", price: 4.5 }, { date: "2026-09-19", price: 4.5 }, { date: "2026-09-20", price: 4.5 }] }
@@ -3147,7 +3150,7 @@ export const products = [
     category: "protein",
     image: "/products/myprotein-clear-whey-isolate-peach-mango-19lb.jpg",
     servings: 35,
-    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
+    nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)", fatGrams: 0 },
     nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 45.99, url: amazonUrl("B0H5MDF5Z4"), asin: "B0H5MDF5Z4", subscribeAndSavePrice: 41.39, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 45.99 }, { date: "2026-09-11", price: 45.99 }, { date: "2026-09-12", price: 45.99 }, { date: "2026-09-13", price: 45.99 }, { date: "2026-09-15", price: 45.99 }, { date: "2026-09-16", price: 45.99 }, { date: "2026-09-17", price: 45.99 }, { date: "2026-09-18", price: 45.99 }, { date: "2026-09-19", price: 45.99 }, { date: "2026-09-20", price: 45.99 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 41.39 }, { date: "2026-09-12", price: 41.39 }, { date: "2026-09-13", price: 41.39 }, { date: "2026-09-15", price: 41.39 }, { date: "2026-09-16", price: 41.39 }, { date: "2026-09-17", price: 41.39 }, { date: "2026-09-18", price: 41.39 }, { date: "2026-09-19", price: 41.39 }, { date: "2026-09-20", price: 41.39 }] }
@@ -3343,7 +3346,7 @@ export const products = [
     image: "/products/premier-protein-chocolate.png",
     additionalCategories: ["food-drink"],
     servings: 12,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 3 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 23.97, url: amazonUrl("B008JGIZGS"), asin: "B008JGIZGS", subscribeAndSavePrice: 22.77, lastCheckedAt: "2026-09-20", listPrice: 26.74, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 23.97 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }] }
@@ -3357,7 +3360,7 @@ export const products = [
     image: "/products/premier-protein-chocolate-peanut-butter.png",
     additionalCategories: ["food-drink"],
     servings: 12,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 5 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 23.97, url: amazonUrl("B0DFHTW5HN"), asin: "B0DFHTW5HN", subscribeAndSavePrice: 22.77, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 23.97 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }] }
@@ -3385,7 +3388,7 @@ export const products = [
     image: "/products/premier-protein-vanilla.png",
     additionalCategories: ["food-drink"],
     servings: 12,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 2 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 23.97, url: amazonUrl("B008JGIZNQ"), asin: "B008JGIZNQ", subscribeAndSavePrice: 22.77, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 23.97 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }] }
@@ -3399,7 +3402,7 @@ export const products = [
     image: "/products/premier-protein-shake-cafe-latte-4pack.jpg",
     additionalCategories: ["food-drink"],
     servings: 4,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 4, fatGrams: 3 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 9.58, url: amazonUrl("B08NTY1787"), asin: "B08NTY1787", subscribeAndSavePrice: 9.1, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 8.59 }, { date: "2026-09-11", price: 9.58 }, { date: "2026-09-12", price: 9.58 }, { date: "2026-09-13", price: 9.58 }, { date: "2026-09-15", price: 8.59 }, { date: "2026-09-16", price: 8.59 }, { date: "2026-09-17", price: 8.59 }, { date: "2026-09-18", price: 8.59 }, { date: "2026-09-19", price: 9.19 }, { date: "2026-09-20", price: 9.58 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 9.1 }, { date: "2026-09-12", price: 9.1 }, { date: "2026-09-13", price: 9.1 }, { date: "2026-09-15", price: 8.16 }, { date: "2026-09-16", price: 8.16 }, { date: "2026-09-17", price: 8.16 }, { date: "2026-09-18", price: 8.16 }, { date: "2026-09-19", price: 8.73 }, { date: "2026-09-20", price: 9.1 }] }
@@ -3595,7 +3598,7 @@ export const products = [
     category: "protein",
     image: "/products/sports-research-whey-protein-isolate-chocolate-peanut-butter.png",
     servings: 25,
-    nutrition: { proteinGrams: 25 },
+    nutrition: { proteinGrams: 25, calories: 160, fatGrams: 4, sugarGrams: 1 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
       { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534123602095802020723519&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-chocolate-peanut-butter%3Fvariant%3D64600175214963", lastCheckedAt: "2026-09-20", subscribeAndSavePrice: 45.86, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }, { date: "2026-09-12", price: 53.95 }, { date: "2026-09-13", price: 53.95 }, { date: "2026-09-15", price: 53.95 }, { date: "2026-09-16", price: 53.95 }, { date: "2026-09-17", price: 53.95 }, { date: "2026-09-18", price: 53.95 }, { date: "2026-09-19", price: 53.95 }, { date: "2026-09-20", price: 53.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 45.86 }, { date: "2026-09-13", price: 45.86 }, { date: "2026-09-15", price: 45.86 }, { date: "2026-09-16", price: 45.86 }, { date: "2026-09-17", price: 45.86 }, { date: "2026-09-18", price: 45.86 }, { date: "2026-09-19", price: 45.86 }, { date: "2026-09-20", price: 45.86 }] },
@@ -3622,7 +3625,7 @@ export const products = [
     category: "protein",
     image: "/products/sports-research-whey-protein-isolate-creamy-vanilla-63.png",
     servings: 63,
-    nutrition: { proteinGrams: 25 },
+    nutrition: { proteinGrams: 25, calories: 150 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
       { retailer: "Sports Research", price: 89.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341214809195350015084616&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-creamy-vanilla%3Fvariant%3D64600140906867", lastCheckedAt: "2026-09-20", subscribeAndSavePrice: 76.46, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 89.95 }, { date: "2026-09-12", price: 89.95 }, { date: "2026-09-13", price: 89.95 }, { date: "2026-09-15", price: 89.95 }, { date: "2026-09-16", price: 89.95 }, { date: "2026-09-17", price: 89.95 }, { date: "2026-09-18", price: 89.95 }, { date: "2026-09-19", price: 89.95 }, { date: "2026-09-20", price: 89.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 76.46 }, { date: "2026-09-13", price: 76.46 }, { date: "2026-09-15", price: 76.46 }, { date: "2026-09-16", price: 76.46 }, { date: "2026-09-17", price: 76.46 }, { date: "2026-09-18", price: 76.46 }, { date: "2026-09-19", price: 76.46 }, { date: "2026-09-20", price: 76.46 }] }
@@ -3648,7 +3651,7 @@ export const products = [
     category: "protein",
     image: "/products/sports-research-whey-protein-isolate-dutch-chocolate-25.png",
     servings: 25,
-    nutrition: { proteinGrams: 25 },
+    nutrition: { proteinGrams: 25, calories: 150, fatGrams: 4 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
       { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128636017261210466750&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600178000243", lastCheckedAt: "2026-09-20", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 49.95 }, { date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 42.46 }, { date: "2026-09-13", price: 42.46 }, { date: "2026-09-15", price: 42.46 }, { date: "2026-09-16", price: 42.46 }, { date: "2026-09-17", price: 42.46 }, { date: "2026-09-18", price: 42.46 }, { date: "2026-09-19", price: 42.46 }, { date: "2026-09-20", price: 42.46 }] },
@@ -3675,7 +3678,7 @@ export const products = [
     category: "protein",
     image: "/products/sports-research-whey-protein-isolate-fruity-cereal.png",
     servings: 25,
-    nutrition: { proteinGrams: 25 },
+    nutrition: { proteinGrams: 25, calories: 140, sugarGrams: 1 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
       { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212370642422443669510&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-fruity-cereal%3Fvariant%3D64600171282803", lastCheckedAt: "2026-09-20", subscribeAndSavePrice: 45.86, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }, { date: "2026-09-12", price: 53.95 }, { date: "2026-09-13", price: 53.95 }, { date: "2026-09-15", price: 53.95 }, { date: "2026-09-16", price: 53.95 }, { date: "2026-09-17", price: 53.95 }, { date: "2026-09-18", price: 53.95 }, { date: "2026-09-19", price: 53.95 }, { date: "2026-09-20", price: 53.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 45.86 }, { date: "2026-09-13", price: 45.86 }, { date: "2026-09-15", price: 45.86 }, { date: "2026-09-16", price: 45.86 }, { date: "2026-09-17", price: 45.86 }, { date: "2026-09-18", price: 45.86 }, { date: "2026-09-19", price: 45.86 }, { date: "2026-09-20", price: 45.86 }] },
@@ -3689,7 +3692,7 @@ export const products = [
     category: "protein",
     image: "/products/sports-research-whey-protein-isolate-unflavored.png",
     servings: 26,
-    nutrition: { proteinGrams: 25 },
+    nutrition: { proteinGrams: 25, calories: 150 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
       { retailer: "Sports Research", price: 46.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129181237865121490352&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-unflavored%3Fvariant%3D64600171348339", lastCheckedAt: "2026-09-20", subscribeAndSavePrice: 39.91, priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 46.95 }, { date: "2026-09-12", price: 46.95 }, { date: "2026-09-13", price: 46.95 }, { date: "2026-09-15", price: 46.95 }, { date: "2026-09-16", price: 46.95 }, { date: "2026-09-17", price: 46.95 }, { date: "2026-09-18", price: 46.95 }, { date: "2026-09-19", price: 46.95 }, { date: "2026-09-20", price: 46.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 39.91 }, { date: "2026-09-13", price: 39.91 }, { date: "2026-09-15", price: 39.91 }, { date: "2026-09-16", price: 39.91 }, { date: "2026-09-17", price: 39.91 }, { date: "2026-09-18", price: 39.91 }, { date: "2026-09-19", price: 39.91 }, { date: "2026-09-20", price: 39.91 }] }
@@ -3901,8 +3904,8 @@ export const products = [
     image: "/products/kaged-original-pre-workout-berry-blast.jpg",
     servings: 20,
     nutritionNote:
-      "Serving size and macros were not independently verified from this product's label.",
-    nutrition: { proteinGrams: 0 },
+      "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 80, servingSize: "1 scoop (28.7g)" },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B07FXTPGH8") + "&th=1", asin: "B07FXTPGH8", subscribeAndSavePrice: 40.49, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-20", price: 44.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-20", price: 40.49 }] }
     ]
@@ -3915,8 +3918,8 @@ export const products = [
     image: "/products/kaged-original-pre-workout-bombsicle.jpg",
     servings: 20,
     nutritionNote:
-      "Serving size and macros were not independently verified from this product's label.",
-    nutrition: { proteinGrams: 0 },
+      "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 41, servingSize: "1 scoop (28.1g)" },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0FGKSR4X3") + "&th=1", asin: "B0FGKSR4X3", subscribeAndSavePrice: 40.49, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-20", price: 44.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-20", price: 40.49 }] }
     ]
@@ -3929,8 +3932,8 @@ export const products = [
     image: "/products/kaged-original-pre-workout-fruit-punch.jpg",
     servings: 20,
     nutritionNote:
-      "Serving size and macros were not independently verified from this product's label.",
-    nutrition: { proteinGrams: 0 },
+      "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 80, servingSize: "1 scoop (28.4g)" },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0C7YBHCM9") + "&th=1", asin: "B0C7YBHCM9", subscribeAndSavePrice: 40.49, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-20", price: 44.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-20", price: 40.49 }] }
     ]
@@ -3943,8 +3946,8 @@ export const products = [
     image: "/products/kaged-stimulant-free-pre-workout-fruit-punch.jpg",
     servings: 20,
     nutritionNote:
-      "Serving size and macros were not independently verified from this product's label.",
-    nutrition: { proteinGrams: 0 },
+      "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 0mg per serving.",
+    nutrition: { proteinGrams: 0, calories: 20, carbsGrams: 3, sugarGrams: 1, sodiumMilligrams: 80, servingSize: "1 scoop (29.8g)" },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0875JVWN3") + "&th=1", asin: "B0875JVWN3", subscribeAndSavePrice: 40.49, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-20", price: 44.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-20", price: 40.49 }] }
     ]
@@ -3957,8 +3960,8 @@ export const products = [
     image: "/products/kaged-original-pre-workout-krisp-apple.jpg",
     servings: 20,
     nutritionNote:
-      "Serving size and macros were not independently verified from this product's label.",
-    nutrition: { proteinGrams: 0 },
+      "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 68, servingSize: "1 scoop (28.2g)" },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B01N0V6C0J") + "&th=1", asin: "B01N0V6C0J", subscribeAndSavePrice: 40.49, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-20", price: 44.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-20", price: 40.49 }] }
     ]
@@ -3971,8 +3974,8 @@ export const products = [
     image: "/products/kaged-original-pre-workout-pink-lemonade.jpg",
     servings: 20,
     nutritionNote:
-      "Serving size and macros were not independently verified from this product's label.",
-    nutrition: { proteinGrams: 0 },
+      "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 41, servingSize: "1 scoop (28.1g)" },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B083LKMBNJ") + "&th=1", asin: "B083LKMBNJ", subscribeAndSavePrice: 40.49, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-20", price: 44.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-20", price: 40.49 }] }
     ]
@@ -3985,8 +3988,8 @@ export const products = [
     image: "/products/kaged-original-pre-workout-strawberry-lemonade.jpg",
     servings: 20,
     nutritionNote:
-      "Serving size and macros were not independently verified from this product's label.",
-    nutrition: { proteinGrams: 0 },
+      "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 41, servingSize: "1 scoop (28.1g)" },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B0FTJCJLZR") + "&th=1", asin: "B0FTJCJLZR", subscribeAndSavePrice: 40.49, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-20", price: 44.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-20", price: 40.49 }] }
     ]
@@ -3999,8 +4002,8 @@ export const products = [
     image: "/products/kaged-original-pre-workout-orange-crush.jpg",
     servings: 20,
     nutritionNote:
-      "Serving size and macros were not independently verified from this product's label.",
-    nutrition: { proteinGrams: 0 },
+      "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
+    nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 72, servingSize: "1 scoop (28.3g)" },
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B07G3WXQS4") + "&th=1", asin: "B07G3WXQS4", subscribeAndSavePrice: 40.49, lastCheckedAt: "2026-09-20", priceObservedAt: "2026-09-20", verificationState: "verified", priceHistory: [{ date: "2026-09-20", price: 44.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-20", price: 40.49 }] }
     ]
