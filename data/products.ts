@@ -89,6 +89,7 @@ export const products = [
     name: "Protein2o Whey Protein Isolate Hydration Drink, Variety Pack (16.9 oz, 12-Pack)",
     brand: "Protein2o",
     category: "protein",
+    image: "/products/protein2o-hydration-drink-variety-pack-12.jpg",
     additionalCategories: ["electrolytes"],
     servings: 12,
     nutrition: {
@@ -130,6 +131,7 @@ export const products = [
     name: "Protein2o Whey Protein Isolate Hydration Drink, Mixed Berry + Strawberry Watermelon Bundle (16.9 oz, 24-Pack)",
     brand: "Protein2o",
     category: "protein",
+    image: "/products/protein2o-hydration-drink-mixed-berry-strawberry-watermelon-24-pack.jpg",
     additionalCategories: ["electrolytes"],
     servings: 24,
     // Bundle mixes two flavors with slightly different carbsGrams (7g vs 8g) — omitted rather than guess.
@@ -2788,6 +2790,7 @@ export const products = [
     name: "Bariatric Fusion Calcium Citrate Soft Chews, Variety Pack (60 Count)",
     brand: "Bariatric Fusion",
     category: "bariatric",
+    image: "/products/bariatric-fusion-calcium-citrate-soft-chews-variety-pack.jpg",
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
