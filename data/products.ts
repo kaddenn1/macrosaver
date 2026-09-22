@@ -1626,7 +1626,7 @@ export const products = [
     id: "106",
     name: "Sports Research Jump Rope",
     brand: "Sports Research",
-    category: "multivitamin",
+    category: "weight-management",
     kind: "equipment",
     image: "/products/sports-research-jump-rope.png",
     servings: 1,
