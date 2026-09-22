@@ -47,6 +47,10 @@ export type BestValueArticle = {
   limit: number;
   metricLabel: string;
   metricFormat: "grams" | "dollars";
+  /** Short decision aids that explain how to use the ranking without inventing new ranking factors. */
+  decisionGuide?: { label: string; guidance: string }[];
+  /** Page-specific questions answered from the same catalog methodology used by the ranking. */
+  faqs?: { question: string; answer: string }[];
 };
 
 export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
@@ -89,9 +93,9 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     slug: "best-protein-powder-under-50",
     title: "Best Protein Powder Under $50",
     metaDescription:
-      "Protein powders with a recorded retailer price under $50, ranked by protein per dollar to find the best real value once you allow for bigger tubs.",
+      "Compare protein powders priced under $50 by protein per dollar, with recorded tub price, servings, cost per serving, and protein per scoop.",
     intro:
-      "Every product below has a recorded retailer price under $50 — enough headroom to include bigger tubs that a strict $30 cutoff would exclude. They're ranked by protein per dollar, not price, since a bigger container is only a better deal if it actually delivers more protein for the money.",
+      "Every product below has a recorded retailer price under $50. We rank them by total protein in the container divided by price, so a bigger tub only moves up when it delivers more protein for the money. Each row also shows the recorded price and cost per serving so you can compare upfront spend with ongoing value. Retailer prices can change, so verify the current price before buying.",
     category: "protein",
     filter: (product) => {
       const offer = getBestOffer(product);
@@ -103,6 +107,42 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     limit: 15,
     metricLabel: "Protein / $",
     metricFormat: "grams",
+    decisionGuide: [
+      {
+        label: "Best overall value",
+        guidance: "Start at the top: the primary ranking is grams of protein in the full container per dollar spent.",
+      },
+      {
+        label: "Lowest repeat cost",
+        guidance: "Compare the cost-per-serving figure on each row; it can differ from the protein-per-dollar order.",
+      },
+      {
+        label: "Smaller serving size",
+        guidance: "Use the separate small-serving-sizes ranking. Scoop weight is not treated as a synonym for value here.",
+      },
+    ],
+    faqs: [
+      {
+        question: "What counts as a protein powder under $50?",
+        answer:
+          "A scoopable protein powder qualifies when its best recorded retailer offer in our catalog is below $50. Collagen, protein bars, and ready-to-drink products are excluded from this page.",
+      },
+      {
+        question: "How are the powders ranked?",
+        answer:
+          "We divide the total grams of protein in the container by the recorded price. That rewards products that deliver more protein for each dollar rather than simply favoring the cheapest tub.",
+      },
+      {
+        question: "Is the lightest scoop automatically the best value?",
+        answer:
+          "No. A lighter scoop may contain less protein or come from a smaller container. This page ranks value by protein per dollar and reports cost per serving separately.",
+      },
+      {
+        question: "Why can the retailer price differ from this list?",
+        answer:
+          "Prices change after our recorded checks. Use this ranking to narrow the field, then verify the current price and serving count with the retailer before buying.",
+      },
+    ],
   },
   {
     slug: "highest-protein-per-dollar",

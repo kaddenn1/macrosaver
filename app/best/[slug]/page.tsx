@@ -229,6 +229,23 @@ function RankedListArticle({ article, slug }: { article: BestValueArticle; slug:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListJsonLd) }} />
       <ArticleShell title={article.title} intro={article.intro} category={article.category}>
+        {article.decisionGuide && (
+          <section className="mb-10" aria-labelledby="decision-guide-heading">
+            <h2 id="decision-guide-heading" className="text-xl font-black text-white mb-4">
+              How to use this ranking
+            </h2>
+            <dl className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {article.decisionGuide.map((item) => (
+                <div key={item.label} className="bg-[#111] border border-gray-800 rounded-xl p-4">
+                  <dt className="text-xs font-black uppercase tracking-wider text-[#a3e635]">
+                    {item.label}
+                  </dt>
+                  <dd className="text-xs text-gray-400 leading-relaxed mt-2">{item.guidance}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        )}
         <div className="pb-16">
           {ranked.length === 0 ? (
             <div className="py-12 text-center text-gray-400 text-sm border-2 border-dashed border-gray-800 rounded-xl">
@@ -250,6 +267,21 @@ function RankedListArticle({ article, slug }: { article: BestValueArticle; slug:
             </ol>
           )}
         </div>
+        {article.faqs && (
+          <section className="pb-16" aria-labelledby="ranking-faq-heading">
+            <h2 id="ranking-faq-heading" className="text-xl font-black text-white mb-4">
+              Questions about this ranking
+            </h2>
+            <div className="flex flex-col gap-3">
+              {article.faqs.map((faq) => (
+                <details key={faq.question} className="bg-[#111] border border-gray-800 rounded-xl p-4">
+                  <summary className="cursor-pointer text-sm font-bold text-white">{faq.question}</summary>
+                  <p className="text-sm text-gray-400 leading-relaxed mt-3">{faq.answer}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )}
       </ArticleShell>
     </>
   );
