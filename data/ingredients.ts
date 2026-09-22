@@ -197,4 +197,12 @@ export const productIngredients: Record<string, IngredientInfo> = {
   "260": { ingredients: "Whey Protein Isolate, Medium Chain Triglycerides (MCTs), L-Leucine, Cocoa Powder (Processed with Alkali), Sodium Caseinate, Natural Flavors, Purified Sea Salt, Gum Blend (Guar Gum, Gum Acacia, Xanthan Gum), Sucralose, Acesulfame Potassium, Sunflower Lecithin.", allergens: "Contains: Milk and tree nuts (coconut)." },
   "270": { ingredients: "Hydrolyzed Bovine Collagen Peptides." },
   "271": { ingredients: "Organic Hydrolyzed Bovine Collagen Peptides, Organic Matcha Green Tea Leaf Powder." },
+  "285": { ingredients: "Whey Protein Isolate, Natural Flavor, Steviol Glycosides, Citric Acid.", allergens: "Contains: Milk; Soy" },
+  "286": { ingredients: "Whey Protein Isolate, Natural Flavor, Citric Acid, Steviol Glycosides, Turmeric Extract (Color).", allergens: "Contains: Milk; Soy" },
+  "287": { ingredients: "Whey Protein Isolate, Natural Flavor, Steviol Glycosides, Fruit and Vegetable Juice (Color).", allergens: "Contains: Milk; Soy" },
+  "288": { ingredients: "Whey Protein Isolate, Natural Flavor, Citric Acid, Steviol Glycosides, Turmeric Extract (Color).", allergens: "Contains: Milk; Soy" },
+  "289": { ingredients: "Whey Protein Isolate, Natural Flavor, Steviol Glycosides, Fruit and Vegetable Juice (Color).", allergens: "Contains: Milk; Soy" },
+  "290": { ingredients: "Whey Protein Isolate, Natural Flavor, Citric Acid, Steviol Glycosides, Fruit and Vegetable Juice (Color).", allergens: "Contains: Milk; Soy" },
+  "291": { ingredients: "Whey Protein Isolate, Natural Flavor, Citric Acid, Steviol Glycosides, Turmeric Extract (Color).", allergens: "Contains: Milk" },
+  "292": { ingredients: "Whey Protein Isolate, Natural Flavor, Citric Acid, Steviol Glycosides, Fruit and Vegetable Juice (Color).", allergens: "Contains: Milk" },
 };

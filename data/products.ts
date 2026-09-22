@@ -4007,5 +4007,165 @@ export const products = [
     offers: [
       { retailer: "Amazon", price: 44.99, url: amazonUrl("B07G3WXQS4") + "&th=1", asin: "B07G3WXQS4", subscribeAndSavePrice: 40.49, lastCheckedAt: "2026-09-21", priceObservedAt: "2026-09-21", verificationState: "verified", priceHistory: [{ date: "2026-09-20", price: 44.99 }, { date: "2026-09-21", price: 44.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-20", price: 40.49 }, { date: "2026-09-21", price: 40.49 }] }
     ]
+  },
+  {
+    id: "285",
+    name: "Isopure Clear Whey Isolate Protein Powder, Citrus Lemonade (14 Servings)",
+    brand: "Isopure",
+    category: "protein",
+    image: "/products/isopure-clear-whey-citrus-lemonade-14-servings.jpg",
+    servings: 14,
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 3,
+      fatGrams: 0,
+      sugarGrams: 1,
+      sodiumMilligrams: 15,
+      servingSize: "25 g (about 1 scoop)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 34.99, url: amazonUrl("B07F4K1XF3") + "&th=1", asin: "B07F4K1XF3", subscribeAndSavePrice: 33.24, lastCheckedAt: "2026-09-22", priceObservedAt: "2026-09-22", verificationState: "verified", priceHistory: [{ date: "2026-09-22", price: 34.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-22", price: 33.24 }] }
+    ]
+  },
+  {
+    id: "286",
+    name: "Isopure Clear Whey Isolate Protein Powder, Mango Lime (14 Servings)",
+    brand: "Isopure",
+    category: "protein",
+    image: "/products/isopure-clear-whey-mango-lime-14-servings.jpg",
+    servings: 14,
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 3,
+      fatGrams: 0,
+      sugarGrams: 2,
+      sodiumMilligrams: 15,
+      servingSize: "25 g (about 1 scoop)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 38.81, url: amazonUrl("B07KYHP92Q") + "&th=1", asin: "B07KYHP92Q", subscribeAndSavePrice: 36.87, lastCheckedAt: "2026-09-22", priceObservedAt: "2026-09-22", verificationState: "verified", priceHistory: [{ date: "2026-09-22", price: 38.81 }], subscribeAndSavePriceHistory: [{ date: "2026-09-22", price: 36.87 }] }
+    ]
+  },
+  {
+    id: "287",
+    name: "Isopure Clear Whey Isolate Protein Powder, Mixed Berry (14 Servings)",
+    brand: "Isopure",
+    category: "protein",
+    image: "/products/isopure-clear-whey-mixed-berry-14-servings.jpg",
+    servings: 14,
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 3,
+      fatGrams: 0,
+      sugarGrams: 1,
+      sodiumMilligrams: 15,
+      servingSize: "25 g (about 1 scoop)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 30.99, url: amazonUrl("B07F43RM55") + "&th=1", asin: "B07F43RM55", listPrice: 34.99, subscribeAndSavePrice: 29.44, lastCheckedAt: "2026-09-22", priceObservedAt: "2026-09-22", verificationState: "verified", priceHistory: [{ date: "2026-09-22", price: 30.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-22", price: 29.44 }] }
+    ]
+  },
+  {
+    id: "288",
+    name: "Isopure Clear Whey Isolate Protein Powder, Pineapple Orange Banana (14 Servings)",
+    brand: "Isopure",
+    category: "protein",
+    image: "/products/isopure-clear-whey-pineapple-orange-banana-14-servings.jpg",
+    servings: 14,
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 2,
+      fatGrams: 0,
+      sugarGrams: 1,
+      sodiumMilligrams: 15,
+      servingSize: "25 g (about 1 scoop)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B07FNVR99K") + "&th=1", asin: "B07FNVR99K", subscribeAndSavePrice: 37.99, lastCheckedAt: "2026-09-22", priceObservedAt: "2026-09-22", verificationState: "verified", priceHistory: [{ date: "2026-09-22", price: 39.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-22", price: 37.99 }] }
+    ]
+  },
+  {
+    id: "289",
+    name: "Isopure Clear Whey Isolate Protein Powder, Tropical Punch (14 Servings)",
+    brand: "Isopure",
+    category: "protein",
+    image: "/products/isopure-clear-whey-tropical-punch-14-servings.jpg",
+    servings: 14,
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 3,
+      fatGrams: 0,
+      sugarGrams: 1,
+      sodiumMilligrams: 15,
+      servingSize: "25 g (about 1 scoop)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 34.97, url: amazonUrl("B07FHPGS4V") + "&th=1", asin: "B07FHPGS4V", subscribeAndSavePrice: 33.22, lastCheckedAt: "2026-09-22", priceObservedAt: "2026-09-22", verificationState: "verified", priceHistory: [{ date: "2026-09-22", price: 34.97 }], subscribeAndSavePriceHistory: [{ date: "2026-09-22", price: 33.22 }] }
+    ]
+  },
+  {
+    id: "290",
+    name: "Isopure Clear Whey Isolate Protein Powder, Watermelon Lime (14 Servings)",
+    brand: "Isopure",
+    category: "protein",
+    image: "/products/isopure-clear-whey-watermelon-lime-14-servings.jpg",
+    servings: 14,
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 3,
+      fatGrams: 0,
+      sugarGrams: 2,
+      sodiumMilligrams: 15,
+      servingSize: "25 g (about 1 scoop)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0BRM8CT4N") + "&th=1", asin: "B0BRM8CT4N", subscribeAndSavePrice: 37.99, lastCheckedAt: "2026-09-22", priceObservedAt: "2026-09-22", verificationState: "verified", priceHistory: [{ date: "2026-09-22", price: 39.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-22", price: 37.99 }] }
+    ]
+  },
+  {
+    id: "291",
+    name: "Isopure Clear Whey Isolate Protein Powder, Citrus Lemonade (1.9 lb, 36 Servings)",
+    brand: "Isopure",
+    category: "protein",
+    image: "/products/isopure-clear-whey-citrus-lemonade-1-9-lb.jpg",
+    servings: 36,
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 2,
+      fatGrams: 0,
+      sugarGrams: 1,
+      sodiumMilligrams: 15,
+      servingSize: "25 g (about 1 scoop)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 63.99, url: amazonUrl("B081ZV62BP") + "&th=1", asin: "B081ZV62BP", subscribeAndSavePrice: 60.79, lastCheckedAt: "2026-09-22", priceObservedAt: "2026-09-22", verificationState: "verified", priceHistory: [{ date: "2026-09-22", price: 63.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-22", price: 60.79 }] }
+    ]
+  },
+  {
+    id: "292",
+    name: "Isopure Clear Whey Isolate Protein Powder, Tropical Punch (1.9 lb, 36 Servings)",
+    brand: "Isopure",
+    category: "protein",
+    image: "/products/isopure-clear-whey-tropical-punch-1-9-lb.jpg",
+    servings: 36,
+    nutrition: {
+      calories: 90,
+      proteinGrams: 20,
+      carbsGrams: 2,
+      fatGrams: 0,
+      sugarGrams: 1,
+      sodiumMilligrams: 15,
+      servingSize: "25 g (about 1 scoop)",
+    },
+    offers: [
+      { retailer: "Amazon", price: 63.99, url: amazonUrl("B081ZV26B2") + "&th=1", asin: "B081ZV26B2", subscribeAndSavePrice: 60.79, lastCheckedAt: "2026-09-22", priceObservedAt: "2026-09-22", verificationState: "verified", priceHistory: [{ date: "2026-09-22", price: 63.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-22", price: 60.79 }] }
+    ]
   }
 ];
