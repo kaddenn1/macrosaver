@@ -2591,17 +2591,17 @@ export const products = [
   },
   {
     id: "177",
-    name: "Premier Protein Shake, Café Latte with Caffeine (11.5 fl oz, 12 Pack)",
+    name: "Premier Protein Shake, Café Latte with Caffeine (11 fl oz, 12 Pack)",
     brand: "Premier Protein",
     category: "protein",
     additionalCategories: ["food-drink"],
     image: "/products/premier-protein-cafe-latte.jpg",
     servings: 12,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 4, fatGrams: 3 },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 4, fatGrams: 3 },
     nutritionNote:
       "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 23.97, url: amazonUrl("B0DFJP6LZF"), asin: "B0DFJP6LZF", lastCheckedAt: "2026-09-23", subscribeAndSavePrice: 0.17, priceObservedAt: "2026-09-21", verificationState: "checked_stale", priceHistory: [{ date: "2026-08-20", price: 23.97 }, { date: "2026-08-29", price: 23.97 }, { date: "2026-08-30", price: 20.37 }, { date: "2026-09-05", price: 20.37 }, { date: "2026-09-07", price: 20.37 }, { date: "2026-09-10", price: 20.37 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 22.77 }, { date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }, { date: "2026-09-21", price: 0.17 }, { date: "2026-09-23", price: 22.77 }] }
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B0DFJP6LZF"), asin: "B0DFJP6LZF", lastCheckedAt: "2026-09-23", subscribeAndSavePrice: 22.77, priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 23.97 }, { date: "2026-08-29", price: 23.97 }, { date: "2026-08-30", price: 20.37 }, { date: "2026-09-05", price: 20.37 }, { date: "2026-09-07", price: 20.37 }, { date: "2026-09-10", price: 20.37 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 22.77 }, { date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }, { date: "2026-09-21", price: 0.17 }, { date: "2026-09-23", price: 22.77 }] }
     ]
   },
   {
@@ -3328,44 +3328,44 @@ export const products = [
   },
   {
     id: "235",
-    name: "Premier Protein Shake, Caramel (11.5 fl oz, 12 Pack)",
+    name: "Premier Protein Shake, Caramel (11 fl oz, 12 Pack)",
     brand: "Premier Protein",
     category: "protein",
     image: "/products/premier-protein-caramel.png",
     additionalCategories: ["food-drink"],
     servings: 12,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 2, fatGrams: 3, sugarGrams: 1, sodiumMilligrams: 350 },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 2, fatGrams: 3, sugarGrams: 1, sodiumMilligrams: 350 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 23.97, url: amazonUrl("B07C8Y17VT"), asin: "B07C8Y17VT", lastCheckedAt: "2026-09-23", subscribeAndSavePrice: 0.18, priceObservedAt: "2026-09-21", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-10", price: 23.99 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 0.18 }, { date: "2026-09-23", price: 23.97 }] }
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B07C8Y17VT"), asin: "B07C8Y17VT", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 23.99 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 0.18 }, { date: "2026-09-23", price: 23.97 }] }
     ]
   },
   {
     id: "236",
-    name: "Premier Protein Shake, Chocolate (11.5 fl oz, 12 Pack)",
+    name: "Premier Protein Shake, Chocolate (11 fl oz, 12 Pack)",
     brand: "Premier Protein",
     category: "protein",
     image: "/products/premier-protein-chocolate.png",
     additionalCategories: ["food-drink"],
     servings: 12,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 3 },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 3 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 23.97, url: amazonUrl("B008JGIZGS"), asin: "B008JGIZGS", subscribeAndSavePrice: 0.17, lastCheckedAt: "2026-09-23", listPrice: 26.74, priceObservedAt: "2026-09-21", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-10", price: 23.97 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }, { date: "2026-09-21", price: 0.17 }, { date: "2026-09-23", price: 22.77 }] }
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B008JGIZGS"), asin: "B008JGIZGS", subscribeAndSavePrice: 22.77, lastCheckedAt: "2026-09-23", listPrice: 26.74, priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 23.97 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }, { date: "2026-09-21", price: 0.17 }, { date: "2026-09-23", price: 22.77 }] }
     ]
   },
   {
     id: "237",
-    name: "Premier Protein Shake, Chocolate Peanut Butter (11.5 fl oz, 12 Pack)",
+    name: "Premier Protein Shake, Chocolate Peanut Butter (11 fl oz, 12 Pack)",
     brand: "Premier Protein",
     category: "protein",
     image: "/products/premier-protein-chocolate-peanut-butter.png",
     additionalCategories: ["food-drink"],
     servings: 12,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 5 },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 5 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 23.97, url: amazonUrl("B0DFHTW5HN"), asin: "B0DFHTW5HN", subscribeAndSavePrice: 0.17, lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-21", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-10", price: 23.97 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }, { date: "2026-09-21", price: 0.17 }, { date: "2026-09-23", price: 22.77 }] }
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B0DFHTW5HN"), asin: "B0DFHTW5HN", subscribeAndSavePrice: 22.77, lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 23.97 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }, { date: "2026-09-21", price: 0.17 }, { date: "2026-09-23", price: 22.77 }] }
     ]
   },
   {
@@ -3384,16 +3384,16 @@ export const products = [
   },
   {
     id: "239",
-    name: "Premier Protein Shake, Vanilla (11.5 fl oz, 12 Pack)",
+    name: "Premier Protein Shake, Vanilla (11 fl oz, 12 Pack)",
     brand: "Premier Protein",
     category: "protein",
     image: "/products/premier-protein-vanilla.png",
     additionalCategories: ["food-drink"],
     servings: 12,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 2 },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 2 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
-      { retailer: "Amazon", price: 23.97, url: amazonUrl("B008JGIZNQ"), asin: "B008JGIZNQ", subscribeAndSavePrice: 0.17, lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-21", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-10", price: 23.97 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }, { date: "2026-09-21", price: 0.17 }, { date: "2026-09-23", price: 22.77 }] }
+      { retailer: "Amazon", price: 23.97, url: amazonUrl("B008JGIZNQ"), asin: "B008JGIZNQ", subscribeAndSavePrice: 22.77, lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 23.97 }, { date: "2026-09-11", price: 23.97 }, { date: "2026-09-12", price: 23.97 }, { date: "2026-09-13", price: 23.97 }, { date: "2026-09-15", price: 23.97 }, { date: "2026-09-16", price: 23.97 }, { date: "2026-09-17", price: 23.97 }, { date: "2026-09-18", price: 23.97 }, { date: "2026-09-19", price: 23.97 }, { date: "2026-09-20", price: 23.97 }, { date: "2026-09-21", price: 23.97 }, { date: "2026-09-23", price: 23.97 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 22.77 }, { date: "2026-09-12", price: 22.77 }, { date: "2026-09-13", price: 22.77 }, { date: "2026-09-15", price: 22.77 }, { date: "2026-09-16", price: 22.77 }, { date: "2026-09-17", price: 22.77 }, { date: "2026-09-18", price: 22.77 }, { date: "2026-09-19", price: 22.77 }, { date: "2026-09-20", price: 22.77 }, { date: "2026-09-21", price: 0.17 }, { date: "2026-09-23", price: 22.77 }] }
     ]
   },
   {
@@ -3404,7 +3404,7 @@ export const products = [
     image: "/products/premier-protein-shake-cafe-latte-4pack.jpg",
     additionalCategories: ["food-drink"],
     servings: 4,
-    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)", carbsGrams: 4, fatGrams: 3 },
+    nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 4, fatGrams: 3 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
       { retailer: "Amazon", price: 8.59, url: amazonUrl("B08NTY1787"), asin: "B08NTY1787", subscribeAndSavePrice: 8.16, lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-10", price: 8.59 }, { date: "2026-09-11", price: 9.58 }, { date: "2026-09-12", price: 9.58 }, { date: "2026-09-13", price: 9.58 }, { date: "2026-09-15", price: 8.59 }, { date: "2026-09-16", price: 8.59 }, { date: "2026-09-17", price: 8.59 }, { date: "2026-09-18", price: 8.59 }, { date: "2026-09-19", price: 9.19 }, { date: "2026-09-20", price: 9.58 }, { date: "2026-09-21", price: 9.29 }, { date: "2026-09-23", price: 8.59 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 9.1 }, { date: "2026-09-12", price: 9.1 }, { date: "2026-09-13", price: 9.1 }, { date: "2026-09-15", price: 8.16 }, { date: "2026-09-16", price: 8.16 }, { date: "2026-09-17", price: 8.16 }, { date: "2026-09-18", price: 8.16 }, { date: "2026-09-19", price: 8.73 }, { date: "2026-09-20", price: 9.1 }, { date: "2026-09-21", price: 0.2 }, { date: "2026-09-23", price: 8.16 }] }
@@ -3615,7 +3615,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 140, fatGrams: 3.5, carbsGrams: 2, sodiumMilligrams: 260 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534122207128965181052126&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-creamy-vanilla%3Fvariant%3D64600140939635", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 49.95 }, { date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }, { date: "2026-09-21", price: 49.95 }, { date: "2026-09-23", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 76.46 }, { date: "2026-09-13", price: 76.46 }, { date: "2026-09-23", price: 76.46 }] }
+      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534122207128965181052126&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-creamy-vanilla%3Fvariant%3D64600140939635", lastCheckedAt: "2026-09-23", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 49.95 }, { date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }, { date: "2026-09-21", price: 49.95 }, { date: "2026-09-23", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 76.46 }, { date: "2026-09-13", price: 76.46 }, { date: "2026-09-23", price: 42.46 }] }
     ]
   },
   {
@@ -3668,7 +3668,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 150, fatGrams: 4, carbsGrams: 4, sodiumMilligrams: 250 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 89.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212470078435524551091&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600177967475", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 89.95 }, { date: "2026-09-12", price: 89.95 }, { date: "2026-09-13", price: 89.95 }, { date: "2026-09-15", price: 89.95 }, { date: "2026-09-16", price: 89.95 }, { date: "2026-09-17", price: 89.95 }, { date: "2026-09-18", price: 89.95 }, { date: "2026-09-19", price: 89.95 }, { date: "2026-09-20", price: 89.95 }, { date: "2026-09-21", price: 89.95 }, { date: "2026-09-23", price: 89.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 42.46 }, { date: "2026-09-13", price: 42.46 }, { date: "2026-09-23", price: 42.46 }] }
+      { retailer: "Sports Research", price: 89.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212470078435524551091&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600177967475", lastCheckedAt: "2026-09-23", subscribeAndSavePrice: 76.46, priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 89.95 }, { date: "2026-09-12", price: 89.95 }, { date: "2026-09-13", price: 89.95 }, { date: "2026-09-15", price: 89.95 }, { date: "2026-09-16", price: 89.95 }, { date: "2026-09-17", price: 89.95 }, { date: "2026-09-18", price: 89.95 }, { date: "2026-09-19", price: 89.95 }, { date: "2026-09-20", price: 89.95 }, { date: "2026-09-21", price: 89.95 }, { date: "2026-09-23", price: 89.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 42.46 }, { date: "2026-09-13", price: 42.46 }, { date: "2026-09-23", price: 76.46 }] }
     ]
   },
   {
@@ -3731,7 +3731,7 @@ export const products = [
     servings: 16,
     nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341215745968847731283803&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842540232", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 22.95 }, { date: "2026-09-12", price: 22.95 }, { date: "2026-09-13", price: 22.95 }, { date: "2026-09-15", price: 22.95 }, { date: "2026-09-16", price: 22.95 }, { date: "2026-09-17", price: 22.95 }, { date: "2026-09-18", price: 22.95 }, { date: "2026-09-19", price: 22.95 }, { date: "2026-09-20", price: 22.95 }, { date: "2026-09-21", price: 22.95 }, { date: "2026-09-23", price: 22.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 19.51 }, { date: "2026-09-13", price: 19.51 }, { date: "2026-09-23", price: 19.51 }] }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341215745968847731283803&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842540232", lastCheckedAt: "2026-09-23", subscribeAndSavePrice: 19.51, priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 22.95 }, { date: "2026-09-12", price: 22.95 }, { date: "2026-09-13", price: 22.95 }, { date: "2026-09-15", price: 22.95 }, { date: "2026-09-16", price: 22.95 }, { date: "2026-09-17", price: 22.95 }, { date: "2026-09-18", price: 22.95 }, { date: "2026-09-19", price: 22.95 }, { date: "2026-09-20", price: 22.95 }, { date: "2026-09-21", price: 22.95 }, { date: "2026-09-23", price: 22.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 19.51 }, { date: "2026-09-13", price: 19.51 }, { date: "2026-09-23", price: 19.51 }] }
     ]
   },
   {
@@ -3743,7 +3743,7 @@ export const products = [
     servings: 16,
     nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341211936122994773273382&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842605768", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 22.95 }, { date: "2026-09-12", price: 22.95 }, { date: "2026-09-13", price: 22.95 }, { date: "2026-09-15", price: 22.95 }, { date: "2026-09-16", price: 22.95 }, { date: "2026-09-17", price: 22.95 }, { date: "2026-09-18", price: 22.95 }, { date: "2026-09-19", price: 22.95 }, { date: "2026-09-20", price: 22.95 }, { date: "2026-09-21", price: 22.95 }, { date: "2026-09-23", price: 22.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 19.51 }, { date: "2026-09-13", price: 19.51 }, { date: "2026-09-23", price: 19.51 }] }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341211936122994773273382&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842605768", lastCheckedAt: "2026-09-23", subscribeAndSavePrice: 19.51, priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 22.95 }, { date: "2026-09-12", price: 22.95 }, { date: "2026-09-13", price: 22.95 }, { date: "2026-09-15", price: 22.95 }, { date: "2026-09-16", price: 22.95 }, { date: "2026-09-17", price: 22.95 }, { date: "2026-09-18", price: 22.95 }, { date: "2026-09-19", price: 22.95 }, { date: "2026-09-20", price: 22.95 }, { date: "2026-09-21", price: 22.95 }, { date: "2026-09-23", price: 22.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 19.51 }, { date: "2026-09-13", price: 19.51 }, { date: "2026-09-23", price: 19.51 }] }
     ]
   },
   {
@@ -3755,7 +3755,7 @@ export const products = [
     servings: 16,
     nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128027826914292874503&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842573000", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 22.95 }, { date: "2026-09-12", price: 22.95 }, { date: "2026-09-13", price: 22.95 }, { date: "2026-09-15", price: 22.95 }, { date: "2026-09-16", price: 22.95 }, { date: "2026-09-17", price: 22.95 }, { date: "2026-09-18", price: 22.95 }, { date: "2026-09-19", price: 22.95 }, { date: "2026-09-20", price: 22.95 }, { date: "2026-09-21", price: 22.95 }, { date: "2026-09-23", price: 22.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 19.51 }, { date: "2026-09-13", price: 19.51 }, { date: "2026-09-23", price: 19.51 }] }
+      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128027826914292874503&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842573000", lastCheckedAt: "2026-09-23", subscribeAndSavePrice: 19.51, priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 22.95 }, { date: "2026-09-12", price: 22.95 }, { date: "2026-09-13", price: 22.95 }, { date: "2026-09-15", price: 22.95 }, { date: "2026-09-16", price: 22.95 }, { date: "2026-09-17", price: 22.95 }, { date: "2026-09-18", price: 22.95 }, { date: "2026-09-19", price: 22.95 }, { date: "2026-09-20", price: 22.95 }, { date: "2026-09-21", price: 22.95 }, { date: "2026-09-23", price: 22.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 19.51 }, { date: "2026-09-13", price: 19.51 }, { date: "2026-09-23", price: 19.51 }] }
     ]
   },
   {
@@ -3779,7 +3779,7 @@ export const products = [
     servings: 32,
     nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
     offers: [
-      { retailer: "Sports Research", price: 35.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534124278079106657004214&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D52624700998003", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 35.95 }, { date: "2026-09-12", price: 35.95 }, { date: "2026-09-13", price: 35.95 }, { date: "2026-09-15", price: 35.95 }, { date: "2026-09-16", price: 35.95 }, { date: "2026-09-17", price: 35.95 }, { date: "2026-09-18", price: 35.95 }, { date: "2026-09-19", price: 35.95 }, { date: "2026-09-20", price: 35.95 }, { date: "2026-09-21", price: 35.95 }, { date: "2026-09-23", price: 35.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 19.51 }, { date: "2026-09-13", price: 19.51 }, { date: "2026-09-23", price: 19.51 }] }
+      { retailer: "Sports Research", price: 35.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534124278079106657004214&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D52624700998003", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 35.95 }, { date: "2026-09-12", price: 35.95 }, { date: "2026-09-13", price: 35.95 }, { date: "2026-09-15", price: 35.95 }, { date: "2026-09-16", price: 35.95 }, { date: "2026-09-17", price: 35.95 }, { date: "2026-09-18", price: 35.95 }, { date: "2026-09-19", price: 35.95 }, { date: "2026-09-20", price: 35.95 }, { date: "2026-09-21", price: 35.95 }, { date: "2026-09-23", price: 35.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 19.51 }, { date: "2026-09-13", price: 19.51 }, { date: "2026-09-23", price: 19.51 }] , inStock: false }
     ]
   },
   {
@@ -3793,7 +3793,7 @@ export const products = [
     nutrition: { proteinGrams: 10, calories: 40, sodiumMilligrams: 55, servingSize: "1 packet (11g)" },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 30.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341217363826882851076872&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-hydrolyzed-gelatin-2%3Fvariant%3D42500105568456", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 30.95 }, { date: "2026-09-12", price: 30.95 }, { date: "2026-09-13", price: 30.95 }, { date: "2026-09-15", price: 30.95 }, { date: "2026-09-16", price: 30.95 }, { date: "2026-09-17", price: 30.95 }, { date: "2026-09-18", price: 30.95 }, { date: "2026-09-19", price: 30.95 }, { date: "2026-09-20", price: 30.95 }, { date: "2026-09-21", price: 30.95 }, { date: "2026-09-23", price: 30.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 28.01 }, { date: "2026-09-13", price: 28.01 }, { date: "2026-09-23", price: 28.01 }] }
+      { retailer: "Sports Research", price: 30.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341217363826882851076872&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-hydrolyzed-gelatin-2%3Fvariant%3D42500105568456", lastCheckedAt: "2026-09-23", subscribeAndSavePrice: 26.31, priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 30.95 }, { date: "2026-09-12", price: 30.95 }, { date: "2026-09-13", price: 30.95 }, { date: "2026-09-15", price: 30.95 }, { date: "2026-09-16", price: 30.95 }, { date: "2026-09-17", price: 30.95 }, { date: "2026-09-18", price: 30.95 }, { date: "2026-09-19", price: 30.95 }, { date: "2026-09-20", price: 30.95 }, { date: "2026-09-21", price: 30.95 }, { date: "2026-09-23", price: 30.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 28.01 }, { date: "2026-09-13", price: 28.01 }, { date: "2026-09-23", price: 26.31 }] }
     ]
   },
   {
