@@ -207,4 +207,7 @@ export const productIngredients: Record<string, IngredientInfo> = {
   "291": { ingredients: "Whey Protein Isolate, Natural Flavor, Citric Acid, Steviol Glycosides, Turmeric Extract (Color).", allergens: "Contains: Milk" },
   "292": { ingredients: "Whey Protein Isolate, Natural Flavor, Citric Acid, Steviol Glycosides, Fruit and Vegetable Juice (Color).", allergens: "Contains: Milk" },
   "293": { ingredients: "Creatine Monohydrate (micronized), Citric Acid, Malic Acid, Natural and Artificial Flavors, Sucralose, Beet Root (for color)." },
+  "92": { ingredients: "Citric acid, natural flavors, steviol glycoside (as rebaudioside M & A), fruit and vegetable juice (for color), bamboo (Phyllostachys viridis) leaf extract." },
+  "263": { ingredients: "Citric acid, natural flavors, steviol glycoside (as rebaudioside M & A), blue spirulina (for color), bamboo (Phyllostachys viridis) leaf extract." },
+  "264": { ingredients: "Citric acid, natural flavors, steviol glycosides (as rebaudioside M), stevia leaf extract (as rebaudioside A), bamboo (Phyllostachys viridis) leaf extract, turmeric (for color)." },
 };

@@ -1194,7 +1194,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }, { date: "2026-09-11", price: 49.49 }, { date: "2026-09-12", price: 49.49 }, { date: "2026-09-13", price: 49.49 }, { date: "2026-09-15", price: 49.49 }, { date: "2026-09-16", price: 49.49 }, { date: "2026-09-17", price: 49.49 }, { date: "2026-09-18", price: 49.49 }, { date: "2026-09-19", price: 49.49 }, { date: "2026-09-20", price: 49.49 }, { date: "2026-09-21", price: 49.49 }, { date: "2026-09-23", price: 49.49 }] }
+      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }, { date: "2026-09-11", price: 49.49 }, { date: "2026-09-12", price: 49.49 }, { date: "2026-09-13", price: 49.49 }, { date: "2026-09-15", price: 49.49 }, { date: "2026-09-16", price: 49.49 }, { date: "2026-09-17", price: 49.49 }, { date: "2026-09-18", price: 49.49 }, { date: "2026-09-19", price: 49.49 }, { date: "2026-09-20", price: 49.49 }, { date: "2026-09-21", price: 49.49 }, { date: "2026-09-23", price: 49.49 }] }
     ]
   },
   {
@@ -1207,7 +1207,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }, { date: "2026-09-11", price: 49.49 }, { date: "2026-09-12", price: 49.49 }, { date: "2026-09-13", price: 49.49 }, { date: "2026-09-15", price: 49.49 }, { date: "2026-09-16", price: 49.49 }, { date: "2026-09-17", price: 49.49 }, { date: "2026-09-18", price: 49.49 }, { date: "2026-09-19", price: 49.49 }, { date: "2026-09-20", price: 49.49 }, { date: "2026-09-21", price: 49.49 }, { date: "2026-09-23", price: 49.49 }] }
+      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }, { date: "2026-09-11", price: 49.49 }, { date: "2026-09-12", price: 49.49 }, { date: "2026-09-13", price: 49.49 }, { date: "2026-09-15", price: 49.49 }, { date: "2026-09-16", price: 49.49 }, { date: "2026-09-17", price: 49.49 }, { date: "2026-09-18", price: 49.49 }, { date: "2026-09-19", price: 49.49 }, { date: "2026-09-20", price: 49.49 }, { date: "2026-09-21", price: 49.49 }, { date: "2026-09-23", price: 49.49 }] }
     ]
   },
   {
@@ -1220,7 +1220,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }, { date: "2026-09-11", price: 49.49 }, { date: "2026-09-12", price: 49.49 }, { date: "2026-09-13", price: 49.49 }, { date: "2026-09-15", price: 49.49 }, { date: "2026-09-16", price: 49.49 }, { date: "2026-09-17", price: 49.49 }, { date: "2026-09-18", price: 49.49 }, { date: "2026-09-19", price: 49.49 }, { date: "2026-09-20", price: 49.49 }, { date: "2026-09-21", price: 49.49 }, { date: "2026-09-23", price: 49.49 }] }
+      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 49.49 }, { date: "2026-09-10", price: 49.49 }, { date: "2026-09-11", price: 49.49 }, { date: "2026-09-12", price: 49.49 }, { date: "2026-09-13", price: 49.49 }, { date: "2026-09-15", price: 49.49 }, { date: "2026-09-16", price: 49.49 }, { date: "2026-09-17", price: 49.49 }, { date: "2026-09-18", price: 49.49 }, { date: "2026-09-19", price: 49.49 }, { date: "2026-09-20", price: 49.49 }, { date: "2026-09-21", price: 49.49 }, { date: "2026-09-23", price: 49.49 }] }
     ]
   },
   {
@@ -1412,21 +1412,22 @@ export const products = [
   },
   {
     id: "92",
-    name: "Flavored Creatine Monohydrate, Fruit Punch (25 Servings)",
+    name: "Flavored Creatine Monohydrate, Fruit Punch (60 Servings)",
     brand: "Sports Research",
     category: "creatine",
     image: "/products/sports-research-flavored-creatine-monohydrate.png",
-    servings: 25,
+    servings: 60,
     nutrition: {
       proteinGrams: 0,
       creatineGrams: 5,
-      calories: 0,
-      carbsGrams: 0,
+      calories: 5,
+      carbsGrams: 1,
       fatGrams: 0,
       sugarGrams: 0,
+      servingSize: "1 scoop (7g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate", subscribeAndSavePrice: 25.46, lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 29.95 }, { date: "2026-09-10", price: 29.95 }, { date: "2026-09-11", price: 29.95 }, { date: "2026-09-12", price: 29.95 }, { date: "2026-09-13", price: 29.95 }, { date: "2026-09-15", price: 29.95 }, { date: "2026-09-16", price: 29.95 }, { date: "2026-09-17", price: 29.95 }, { date: "2026-09-18", price: 29.95 }, { date: "2026-09-19", price: 29.95 }, { date: "2026-09-20", price: 29.95 }, { date: "2026-09-21", price: 29.95 }, { date: "2026-09-23", price: 29.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 25.46 }, { date: "2026-09-12", price: 25.46 }, { date: "2026-09-13", price: 25.46 }, { date: "2026-09-15", price: 25.46 }, { date: "2026-09-16", price: 25.46 }, { date: "2026-09-17", price: 25.46 }, { date: "2026-09-18", price: 25.46 }, { date: "2026-09-19", price: 25.46 }, { date: "2026-09-20", price: 25.46 }, { date: "2026-09-21", price: 25.46 }, { date: "2026-09-23", price: 25.46 }] }
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341211482542190307453504&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270747507", subscribeAndSavePrice: 25.46, lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 29.95 }, { date: "2026-09-10", price: 29.95 }, { date: "2026-09-11", price: 29.95 }, { date: "2026-09-12", price: 29.95 }, { date: "2026-09-13", price: 29.95 }, { date: "2026-09-15", price: 29.95 }, { date: "2026-09-16", price: 29.95 }, { date: "2026-09-17", price: 29.95 }, { date: "2026-09-18", price: 29.95 }, { date: "2026-09-19", price: 29.95 }, { date: "2026-09-20", price: 29.95 }, { date: "2026-09-21", price: 29.95 }, { date: "2026-09-23", price: 29.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 25.46 }, { date: "2026-09-12", price: 25.46 }, { date: "2026-09-13", price: 25.46 }, { date: "2026-09-15", price: 25.46 }, { date: "2026-09-16", price: 25.46 }, { date: "2026-09-17", price: 25.46 }, { date: "2026-09-18", price: 25.46 }, { date: "2026-09-19", price: 25.46 }, { date: "2026-09-20", price: 25.46 }, { date: "2026-09-21", price: 25.46 }, { date: "2026-09-23", price: 25.46 }] }
     ]
   },
   {
@@ -3323,7 +3324,7 @@ export const products = [
     servings: 296,
     nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop (30g)" },
     offers: [
-      { retailer: "Amazon", price: 379.98, url: amazonUrl("B0GRL6W5N3"), asin: "B0GRL6W5N3", lastCheckedAt: "2026-09-23", listPrice: 459.96, priceObservedAt: "2026-09-18", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-10", price: 379.98 }, { date: "2026-09-11", price: 379.98 }, { date: "2026-09-12", price: 379.98 }, { date: "2026-09-13", price: 379.98 }, { date: "2026-09-15", price: 379.98 }, { date: "2026-09-16", price: 379.98 }, { date: "2026-09-17", price: 379.98 }, { date: "2026-09-18", price: 379.98 }, { date: "2026-09-19", price: 379.98 }, { date: "2026-09-20", price: 379.98 }, { date: "2026-09-21", price: 379.98 }, { date: "2026-09-23", price: 379.98 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-18", price: 379.98 }, { date: "2026-09-23", price: 18.99 }] }
+      { retailer: "Amazon", price: 379.98, url: amazonUrl("B0GRL6W5N3"), asin: "B0GRL6W5N3", inStock: false, lastCheckedAt: "2026-09-23", listPrice: 459.96, priceObservedAt: "2026-09-18", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-10", price: 379.98 }, { date: "2026-09-11", price: 379.98 }, { date: "2026-09-12", price: 379.98 }, { date: "2026-09-13", price: 379.98 }, { date: "2026-09-15", price: 379.98 }, { date: "2026-09-16", price: 379.98 }, { date: "2026-09-17", price: 379.98 }, { date: "2026-09-18", price: 379.98 }, { date: "2026-09-19", price: 379.98 }, { date: "2026-09-20", price: 379.98 }, { date: "2026-09-21", price: 379.98 }, { date: "2026-09-23", price: 379.98 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-18", price: 379.98 }, { date: "2026-09-23", price: 18.99 }] }
     ]
   },
   {
@@ -3700,26 +3701,26 @@ export const products = [
   },
   {
     id: "263",
-    name: "Flavored Creatine Monohydrate, Blue Raspberry (25 Servings)",
+    name: "Flavored Creatine Monohydrate, Blue Raspberry (60 Servings)",
     brand: "Sports Research",
     category: "creatine",
     image: "/products/sports-research-flavored-creatine-monohydrate-blue-raspberry.png",
-    servings: 25,
-    nutrition: { proteinGrams: 0, creatineGrams: 5, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    servings: 60,
+    nutrition: { proteinGrams: 0, creatineGrams: 5, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 scoop (7g)" },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534121102805156694038874&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270780275", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 29.95 }, { date: "2026-09-12", price: 29.95 }, { date: "2026-09-13", price: 29.95 }, { date: "2026-09-15", price: 29.95 }, { date: "2026-09-16", price: 29.95 }, { date: "2026-09-17", price: 29.95 }, { date: "2026-09-18", price: 29.95 }, { date: "2026-09-19", price: 29.95 }, { date: "2026-09-20", price: 29.95 }, { date: "2026-09-21", price: 29.95 }, { date: "2026-09-23", price: 29.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 25.46 }, { date: "2026-09-13", price: 25.46 }, { date: "2026-09-23", price: 25.46 }] }
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534121102805156694038874&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270780275", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 29.95 }, { date: "2026-09-12", price: 29.95 }, { date: "2026-09-13", price: 29.95 }, { date: "2026-09-15", price: 29.95 }, { date: "2026-09-16", price: 29.95 }, { date: "2026-09-17", price: 29.95 }, { date: "2026-09-18", price: 29.95 }, { date: "2026-09-19", price: 29.95 }, { date: "2026-09-20", price: 29.95 }, { date: "2026-09-21", price: 29.95 }, { date: "2026-09-23", price: 29.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 25.46 }, { date: "2026-09-13", price: 25.46 }, { date: "2026-09-23", price: 25.46 }] }
     ]
   },
   {
     id: "264",
-    name: "Flavored Creatine Monohydrate, Lemonade (25 Servings)",
+    name: "Flavored Creatine Monohydrate, Lemonade (60 Servings)",
     brand: "Sports Research",
     category: "creatine",
     image: "/products/sports-research-flavored-creatine-monohydrate-lemonade.png",
-    servings: 25,
-    nutrition: { proteinGrams: 0, creatineGrams: 5, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
+    servings: 60,
+    nutrition: { proteinGrams: 0, creatineGrams: 5, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 scoop (7g)" },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212752114310560441883&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270813043", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-11", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-11", price: 29.95 }, { date: "2026-09-12", price: 29.95 }, { date: "2026-09-13", price: 29.95 }, { date: "2026-09-15", price: 29.95 }, { date: "2026-09-16", price: 29.95 }, { date: "2026-09-17", price: 29.95 }, { date: "2026-09-18", price: 29.95 }, { date: "2026-09-19", price: 29.95 }, { date: "2026-09-20", price: 29.95 }, { date: "2026-09-21", price: 29.95 }, { date: "2026-09-23", price: 29.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 25.46 }, { date: "2026-09-13", price: 25.46 }, { date: "2026-09-23", price: 25.46 }] }
+      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212752114310560441883&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270813043", lastCheckedAt: "2026-09-23", priceObservedAt: "2026-09-23", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 29.95 }, { date: "2026-09-12", price: 29.95 }, { date: "2026-09-13", price: 29.95 }, { date: "2026-09-15", price: 29.95 }, { date: "2026-09-16", price: 29.95 }, { date: "2026-09-17", price: 29.95 }, { date: "2026-09-18", price: 29.95 }, { date: "2026-09-19", price: 29.95 }, { date: "2026-09-20", price: 29.95 }, { date: "2026-09-21", price: 29.95 }, { date: "2026-09-23", price: 29.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 25.46 }, { date: "2026-09-13", price: 25.46 }, { date: "2026-09-23", price: 25.46 }] }
     ]
   },
   {
