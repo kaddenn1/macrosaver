@@ -9,6 +9,19 @@ const GRAMS_PER_OZ = 28.3495;
 const FRESH_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
 const STALE_MAX_AGE_MS = 60 * 24 * 60 * 60 * 1000;
 
+/**
+ * TEMPORARY (2026-09-25): Amazon Associates declined reinstatement over stale-price
+ * caching and price-tracking functionality, and closed API/content access along with it.
+ * Until reinstated, Amazon offers are excluded from every price, availability, and
+ * structured-data computation derived from a product's offers — not just hidden in the
+ * UI — so no Amazon-sourced price or link surfaces anywhere on the site. Revert by
+ * removing this filter once the account is reinstated and a real 24h refresh (PA API /
+ * Data Feed) is wired up.
+ */
+function getEligibleOffers(product: Product): RetailerOffer[] {
+  return product.offers.filter((offer) => offer.retailer !== "Amazon");
+}
+
 function roundToTwo(value: number): number {
   return Math.round(value * 100) / 100;
 }
@@ -66,7 +79,7 @@ export function getServingSizeGrams(product: Product): number | null {
  */
 /** Most recent dated price observation across a product's offers, or null if none are dated. */
 export function getLatestPriceObservation(product: Product): Date | null {
-  const observedDates = product.offers
+  const observedDates = getEligibleOffers(product)
     .map((offer) => (offer.priceObservedAt ? Date.parse(offer.priceObservedAt) : NaN))
     .filter((time) => Number.isFinite(time));
 
@@ -101,10 +114,6 @@ export function getOfferFreshness(
 
   const ageMs = asOfTime - observedAt;
   if (ageMs <= FRESH_MAX_AGE_MS) return "fresh";
-  // Amazon's IP License caps cached pricing at 24 hours; the 30-day "aging" grace period
-  // that other retailers get would still present a stale Amazon price as usable, so Amazon
-  // offers skip straight to "stale" (and drop out of display) once they age past FRESH.
-  if (offer.retailer === "Amazon") return "stale";
   if (ageMs <= STALE_MAX_AGE_MS) return "aging";
   return "stale";
 }
@@ -149,7 +158,7 @@ export function getSubscribeAndSaveHistory(offer: RetailerOffer): PricePoint[] {
 
 /** The largest active sale across a product's offers, or null when nothing is currently discounted. */
 export function getBestSale(product: Product): OfferSale | null {
-  const sales = product.offers
+  const sales = getEligibleOffers(product)
     .map((offer) => getOfferSale(offer))
     .filter((sale): sale is OfferSale => sale !== null);
 
@@ -159,7 +168,7 @@ export function getBestSale(product: Product): OfferSale | null {
 }
 
 function getAvailableOffers(product: Product): RetailerOffer[] {
-  return product.offers.filter((offer) => offer.inStock !== false);
+  return getEligibleOffers(product).filter((offer) => offer.inStock !== false);
 }
 
 export type PriceConfidenceStatus = "lowest-recorded" | "recorded" | "unavailable";
@@ -222,7 +231,7 @@ export function getCurrentSale(product: Product, asOf: Date = new Date()): Offer
  * touched.
  */
 export function getMostRecentCheck(product: Product): string | null {
-  const checkedDates = product.offers
+  const checkedDates = getEligibleOffers(product)
     .map((offer) => offer.lastCheckedAt)
     .filter((d): d is string => Boolean(d))
     .sort();

@@ -6,7 +6,6 @@ import { products } from "@/data/products";
 import { productIngredients } from "@/data/ingredients";
 import ProductImageGallery from "@/components/ProductImageGallery";
 import { productLabelPhotos } from "@/data/labelPhotos";
-import PriceHistoryChart from "@/components/PriceHistoryChart";
 import {
   formatShortDate,
   getBestOffer,
@@ -17,10 +16,8 @@ import {
   getOfferFreshness,
   getOfferSale,
   getPriceConfidence,
-  getPriceHistory,
   getProteinPerDollar,
   getSavingsVsHighestOffer,
-  getSubscribeAndSaveHistory,
   hasFreshPriceObservation,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
@@ -158,7 +155,11 @@ export default async function ProductPage({
   const featuredInRecipes = RECIPES.filter((r) => r.featuredProductId === product.id);
   const latestPriceObservation = getLatestPriceObservation(product);
 
-  const sortedOffers = [...product.offers].sort((a, b) => a.price - b.price);
+  // Amazon offers are excluded pending Amazon Associates reinstatement — see
+  // getEligibleOffers() in lib/macrosaver-engine.ts for why.
+  const sortedOffers = [...product.offers]
+    .filter((offer) => offer.retailer !== "Amazon")
+    .sort((a, b) => a.price - b.price);
   const freshOffers = sortedOffers.filter((offer) => hasFreshPriceObservation(offer));
 
   const breadcrumbJsonLd = {
@@ -527,20 +528,26 @@ export default async function ProductPage({
 
             {/* Offers */}
             <div className="mb-6">
-              <div className="flex items-center justify-between mb-3">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-white">
-                  Compare Offers
-                </h2>
-                {savings !== null && (
-                  <span className="text-xs text-gray-400">
-                    Save <span className={`font-bold ${theme.text}`}>${savings.toFixed(2)}</span> vs
-                    highest price
-                  </span>
-                )}
-              </div>
+              {sortedOffers.length === 0 ? (
+                <div className="py-6 text-center text-sm text-gray-400 border-2 border-dashed border-gray-800 rounded-xl">
+                  No current offers to compare. Check back soon.
+                </div>
+              ) : (
+                <>
+                  <div className="flex items-center justify-between mb-3">
+                    <h2 className="text-sm font-bold uppercase tracking-widest text-white">
+                      Compare Offers
+                    </h2>
+                    {savings !== null && (
+                      <span className="text-xs text-gray-400">
+                        Save <span className={`font-bold ${theme.text}`}>${savings.toFixed(2)}</span> vs
+                        highest price
+                      </span>
+                    )}
+                  </div>
 
-              <div className="flex flex-col gap-2">
-                {sortedOffers.map((offer) => {
+                  <div className="flex flex-col gap-2">
+                    {sortedOffers.map((offer) => {
                   const isBest =
                     priceConfidence.offer?.retailer === offer.retailer &&
                     priceConfidence.offer?.price === offer.price;
@@ -641,36 +648,10 @@ export default async function ProductPage({
                     </div>
                   );
                 })}
-              </div>
+                  </div>
+                </>
+              )}
             </div>
-
-            {sortedOffers.some(
-              (offer) => offer.retailer !== "Amazon" && getPriceHistory(offer).length >= 2
-            ) && (
-              <div className="mb-8">
-                <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
-                  Price History
-                </h2>
-                <div className="flex flex-col gap-6">
-                  {sortedOffers
-                    .filter((offer) => offer.retailer !== "Amazon" && getPriceHistory(offer).length >= 2)
-                    .map((offer) => (
-                      <div key={offer.retailer} className="bg-[#111] border border-gray-800 rounded-lg px-4 py-4">
-                        {sortedOffers.length > 1 && (
-                          <div className="text-[10px] font-bold uppercase tracking-wider text-gray-400 mb-2">
-                            {offer.retailer}
-                          </div>
-                        )}
-                        <PriceHistoryChart
-                          history={getPriceHistory(offer)}
-                          color={theme.hex}
-                          subscribeAndSaveHistory={getSubscribeAndSaveHistory(offer)}
-                        />
-                      </div>
-                    ))}
-                </div>
-              </div>
-            )}
 
             <p className="text-[11px] text-gray-400 leading-relaxed">
               As an Amazon Associate and affiliate of other retailer programs, MacroSaver earns from
