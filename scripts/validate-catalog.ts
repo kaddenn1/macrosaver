@@ -22,6 +22,7 @@ const freshnessCounts: Record<PriceFreshness, number> = {
   unknown: 0,
 };
 let singleOfferProducts = 0;
+let zeroOfferProducts = 0;
 let qualifiedNutritionProducts = 0;
 
 for (const product of products as Product[]) {
@@ -49,7 +50,9 @@ for (const product of products as Product[]) {
       );
     }
   }
-  if (product.offers.length === 0) errors.push(`${label}: at least one offer is required`);
+  // A zero-offer product is now a valid, intentional state: Amazon offers were pulled
+  // sitewide (2026-09-25, Associates compliance) and 233 products have no other retailer.
+  if (product.offers.length === 0) zeroOfferProducts += 1;
   if (product.offers.length === 1) singleOfferProducts += 1;
   if (product.nutritionNote) qualifiedNutritionProducts += 1;
 
@@ -107,16 +110,6 @@ for (const product of products as Product[]) {
         `${label}: subscribeAndSavePrice must be lower than the current price to represent a discount`
       );
     }
-    if (offer.priceHistory) {
-      for (const point of offer.priceHistory) {
-        if (!Number.isFinite(Date.parse(point.date))) {
-          errors.push(`${label}: priceHistory date must be a valid ISO timestamp`);
-        }
-        if (!Number.isFinite(point.price) || point.price <= 0) {
-          errors.push(`${label}: priceHistory price must be positive`);
-        }
-      }
-    }
   }
 }
 
@@ -131,6 +124,7 @@ if (errors.length > 0) {
   console.log(`Catalog valid: ${products.length} products, ${ids.size} unique IDs.`);
   console.log(`Offer coverage: ${coverage}.`);
   console.log(`${singleOfferProducts} products currently have a single retailer offer.`);
+  console.log(`${zeroOfferProducts} products currently have no offers (Amazon pulled pending Associates reinstatement).`);
   console.log(`${qualifiedNutritionProducts} products display a nutrition-data qualification.`);
   console.log(
     `Offer freshness: ${freshnessCounts.fresh} fresh, ${freshnessCounts.aging} aging, ` +

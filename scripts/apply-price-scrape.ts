@@ -165,44 +165,15 @@ const productsPath = resolve(import.meta.dirname, "../data/products.ts");
 let src = readFileSync(productsPath, "utf8");
 
 /**
- * Appends a dated point to a `field: [...]` array on an offer line (e.g. priceHistory,
- * subscribeAndSavePriceHistory), creating the array if absent. Updates the last point in place
- * instead of duplicating when re-running the same day's scrape, and no-ops if a point for
- * checkedAt already exists anywhere in the array (idempotent against replayed CSVs).
- */
-function appendHistoryPoint(line: string, field: string, checkedAt: string, price: number): string {
-  const re = new RegExp(`${field}: \\[(.*?)\\]`);
-  const match = line.match(re);
-  if (!match) {
-    return line.replace(/\}\s*$/, `, ${field}: [{ date: "${checkedAt}", price: ${price} }] }`);
-  }
-  const points = match[1];
-  const lastPointMatch = points.match(/\{ date: "(\d{4}-\d{2}-\d{2})", price: ([\d.]+) \}\s*$/);
-  if (lastPointMatch && lastPointMatch[1] === checkedAt) {
-    if (Number(lastPointMatch[2]) === price) return line;
-    return line.replace(re, `${field}: [${points.replace(/\{ date: "\d{4}-\d{2}-\d{2}", price: [\d.]+ \}\s*$/, `{ date: "${checkedAt}", price: ${price} }`)}]`);
-  }
-  if (new RegExp(`date: "${checkedAt}"`).test(points)) return line;
-  return line.replace(re, `${field}: [${points}, { date: "${checkedAt}", price: ${price} }]`);
-}
-
-/**
  * Stamps a rejected (safe_to_apply=false) row's offer with lastCheckedAt and
  * verificationState: "checked_stale" — the link was genuinely looked at, so that much is
  * worth recording — without touching price or priceObservedAt. Never downgrades an offer
  * this same file already applied as verified.
  *
- * Still appends a priceHistory point (repeating the last known price) for checkedAt, unless
- * one for that date already exists — every scrape that actually looked at the offer should
- * show up as a bullet on the price-history chart, confirmed-unchanged or not, so the chart
- * reflects how often we're checking, not just when the price moved. Does the same for
- * subscribeAndSavePriceHistory: logs the live S&S price this row reported, or, when this
- * check didn't turn up a live S&S price but the catalog still lists the offer as currently at
- * a known S&S price, repeats that known price — same as the regular priceHistory repeat-on-stale
- * behavior above. Never backfills from the regular (non-S&S) price, since that would fabricate
- * a number we never saw.
+ * Price-history logging was removed sitewide (2026-09-25, Amazon Associates compliance) —
+ * this no longer appends to any history array.
  */
-function stampCheckedStale(id: string, checkedAt: string, retailer: string | undefined, stockStatus: string, snsPriceRaw: string): boolean {
+function stampCheckedStale(id: string, checkedAt: string, retailer: string | undefined, stockStatus: string): boolean {
   const found = findOfferLine(id, retailer);
   if (!found) return false;
   const { lineStart, lineEnd, line } = found;
@@ -213,21 +184,6 @@ function stampCheckedStale(id: string, checkedAt: string, retailer: string | und
   if (!alreadyVerifiedToday) {
     newLine = upsertStringField(newLine, "lastCheckedAt", checkedAt, "url");
     newLine = upsertStringField(newLine, "verificationState", "checked_stale", "lastCheckedAt");
-
-    const lastKnownPriceMatch = newLine.match(/retailer: "[^"]+", price: ([\d.]+)/);
-    if (lastKnownPriceMatch) {
-      newLine = appendHistoryPoint(newLine, "priceHistory", checkedAt, Number(lastKnownPriceMatch[1]));
-    }
-
-    const snsPrice = Number(snsPriceRaw);
-    if (snsPriceRaw && Number.isFinite(snsPrice)) {
-      newLine = appendHistoryPoint(newLine, "subscribeAndSavePriceHistory", checkedAt, snsPrice);
-    } else {
-      const knownSnsMatch = newLine.match(/subscribeAndSavePrice: ([\d.]+)/);
-      if (knownSnsMatch) {
-        newLine = appendHistoryPoint(newLine, "subscribeAndSavePriceHistory", checkedAt, Number(knownSnsMatch[1]));
-      }
-    }
   }
 
   if (stockStatus === "Out of Stock" && !/inStock: false/.test(newLine)) {
@@ -244,7 +200,6 @@ function stampCheckedStale(id: string, checkedAt: string, retailer: string | und
 }
 
 let applied = 0;
-let historyInitialized = 0;
 let skippedUnverified = 0;
 let markedCheckedStale = 0;
 let alreadyCurrent = 0;
@@ -267,7 +222,7 @@ for (const r of rows.slice(1)) {
 
   if (safe !== "true" || !priceRaw) {
     skippedUnverified++;
-    if (checkedAtRaw && stampCheckedStale(id, toDateStamp(checkedAtRaw), retailer, stockStatus, snsPriceRaw)) {
+    if (checkedAtRaw && stampCheckedStale(id, toDateStamp(checkedAtRaw), retailer, stockStatus)) {
       markedCheckedStale++;
     }
     continue;
@@ -287,46 +242,20 @@ for (const r of rows.slice(1)) {
   const { lineStart, lineEnd, line } = found;
   let newLine = line;
 
-  const historyMatch = newLine.match(/priceHistory: \[(.*?)\]/);
-  if (!historyMatch) {
-    // First-ever verified re-check for this offer: seed history from whatever price/date it had.
-    const oldPriceMatch = newLine.match(/retailer: "[^"]+", price: ([\d.]+)/);
-    const oldDateMatch = newLine.match(/priceObservedAt: "(\d{4}-\d{2}-\d{2})"/);
-    const seedPoint =
-      oldPriceMatch && oldDateMatch
-        ? `{ date: "${oldDateMatch[1]}", price: ${oldPriceMatch[1]} }, `
-        : "";
-    newLine = newLine.replace(
-      /(retailer: "[^"]+", price: )[\d.]+(.*?)(\s*\})\s*$/,
-      (_m, prefix, middle) => {
-        let rebuilt = `${prefix}${price}${middle}`;
-        rebuilt = rebuilt.replace(/priceObservedAt: "\d{4}-\d{2}-\d{2}"/, `priceObservedAt: "${checkedAt}"`);
-        if (!/priceObservedAt:/.test(rebuilt)) rebuilt += `, priceObservedAt: "${checkedAt}"`;
-        rebuilt += `, priceHistory: [${seedPoint}{ date: "${checkedAt}", price: ${price} }] }`;
-        return rebuilt;
-      }
-    );
-    historyInitialized++;
+  // Price-history logging was removed sitewide (2026-09-25, Amazon Associates compliance) —
+  // this just updates price/priceObservedAt directly, no history array involved.
+  const alreadyCurrentToday =
+    newLine.includes(`priceObservedAt: "${checkedAt}"`) &&
+    new RegExp(`retailer: "[^"]+", price: ${price.toString().replace(".", "\\.")}(?:[^\\d.]|$)`).test(newLine);
+  if (alreadyCurrentToday) {
+    alreadyCurrent++;
   } else {
-    const points = historyMatch[1];
-    const lastPointMatch = points.match(/\{ date: "(\d{4}-\d{2}-\d{2})", price: ([\d.]+) \}\s*$/);
-    if (lastPointMatch && lastPointMatch[1] === checkedAt) {
-      // Re-running the same day's scrape: update in place instead of duplicating.
-      if (Number(lastPointMatch[2]) === price) {
-        // Price/date already recorded — still fall through to listPrice/subscribeAndSavePrice
-        // backfill below rather than skipping the row outright.
-        alreadyCurrent++;
-      } else {
-        newLine = newLine.replace(
-          /\{ date: "(\d{4}-\d{2}-\d{2})", price: [\d.]+ \}(\s*\])/,
-          `{ date: "$1", price: ${price} }$2`
-        );
-      }
-    } else {
-      newLine = newLine.replace(/priceHistory: \[(.*?)\]/, `priceHistory: [${points}, { date: "${checkedAt}", price: ${price} }]`);
-    }
     newLine = newLine.replace(/(retailer: "[^"]+", price: )[\d.]+/, `$1${price}`);
-    newLine = newLine.replace(/priceObservedAt: "\d{4}-\d{2}-\d{2}"/, `priceObservedAt: "${checkedAt}"`);
+    if (/priceObservedAt: "\d{4}-\d{2}-\d{2}"/.test(newLine)) {
+      newLine = newLine.replace(/priceObservedAt: "\d{4}-\d{2}-\d{2}"/, `priceObservedAt: "${checkedAt}"`);
+    } else {
+      newLine = newLine.replace(/\s*\}\s*$/, `, priceObservedAt: "${checkedAt}" }`);
+    }
   }
 
   newLine = upsertStringField(newLine, "lastCheckedAt", checkedAt, "priceObservedAt");
@@ -369,18 +298,6 @@ for (const r of rows.slice(1)) {
       // No longer a discount (S&S price rose to meet or exceed the new price) — drop the stale field.
       newLine = newLine.replace(/,?\s*subscribeAndSavePrice: [\d.]+/, "");
     }
-    // Log the real S&S price this check reported, whether or not it's currently a discount —
-    // the history chart should reflect what was actually seen, not just active-discount days.
-    if (Number.isFinite(snsPrice)) {
-      newLine = appendHistoryPoint(newLine, "subscribeAndSavePriceHistory", checkedAt, snsPrice);
-    }
-  } else if (idxSnsPrice !== -1) {
-    // This check didn't report a live S&S price, but the offer still carries a known one from a
-    // prior check — repeat it so the chart shows this was a real, confirmed-unchanged check-in.
-    const knownSnsMatch = newLine.match(/subscribeAndSavePrice: ([\d.]+)/);
-    if (knownSnsMatch) {
-      newLine = appendHistoryPoint(newLine, "subscribeAndSavePriceHistory", checkedAt, Number(knownSnsMatch[1]));
-    }
   }
 
   if (idxStockStatus !== -1) {
@@ -400,7 +317,6 @@ for (const r of rows.slice(1)) {
 }
 
 console.log(`Applied (verified): ${applied}`);
-console.log(`History arrays initialized for first-time verification: ${historyInitialized}`);
 console.log(`Already current (same date+price already recorded): ${alreadyCurrent}`);
 console.log(`Skipped (unverified/not safe_to_apply): ${skippedUnverified}`);
 console.log(`  ...of which stamped lastCheckedAt/checked_stale: ${markedCheckedStale}`);

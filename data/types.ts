@@ -10,12 +10,6 @@ export type SupplementCategory =
   | "multivitamin"
   | "other";
 
-export type PricePoint = {
-  /** ISO date the price was observed. */
-  date: string;
-  price: number;
-};
-
 /**
  * "verified" is the only state eligible for a Verified badge, deal ranking, or campaign
  * inclusion — it means `priceObservedAt` reflects a directly confirmed current price.
@@ -42,10 +36,6 @@ export type RetailerOffer = {
   listPrice?: number;
   /** Retailer's Subscribe & Save (or equivalent recurring-order) price. Present only while it's lower than `price`. */
   subscribeAndSavePrice?: number;
-  /** Chronological price observations for this offer, oldest first. Appended on each verified re-check. */
-  priceHistory?: PricePoint[];
-  /** Chronological Subscribe & Save price observations, oldest first. Only real check-ins that reported an S&S price; never backfilled or synthesized. */
-  subscribeAndSavePriceHistory?: PricePoint[];
 };
 
 export type ProductKind = "consumable" | "topical" | "equipment" | "mixed-bundle";

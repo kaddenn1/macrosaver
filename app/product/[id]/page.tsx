@@ -654,10 +654,9 @@ export default async function ProductPage({
             </div>
 
             <p className="text-[11px] text-gray-400 leading-relaxed">
-              As an Amazon Associate and affiliate of other retailer programs, MacroSaver earns from
-              qualifying purchases made through links on this page. This does not affect the price you
-              pay or the offers we show — our rankings are based purely on cost per serving and cost
-              per ounce of protein.
+              As an affiliate of retailer programs, MacroSaver earns from qualifying purchases made
+              through links on this page. This does not affect the price you pay or the offers we
+              show — our rankings are based purely on cost per serving and cost per ounce of protein.
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-gray-500">

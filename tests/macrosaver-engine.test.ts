@@ -11,7 +11,6 @@ import {
   getOfferFreshness,
   getOfferSale,
   getPriceConfidence,
-  getPriceHistory,
   getProteinPerDollar,
   getSavingsVsHighestOffer,
   hasFreshPriceObservation,
@@ -281,21 +280,6 @@ test("offer sale is only reported when listPrice is a genuine discount", () => {
   assert.deepEqual(
     getOfferSale({ retailer: "Store", price: 21.03, url: "https://example.com", listPrice: 29.99 }),
     { price: 21.03, listPrice: 29.99, savings: 8.96, savingsPct: 29.88 }
-  );
-});
-
-test("price history returns recorded observations oldest-first, or empty when untracked", () => {
-  assert.deepEqual(
-    getPriceHistory({ retailer: "Store", price: 20, url: "https://example.com" }),
-    []
-  );
-  const history = [
-    { date: "2026-08-20", price: 25 },
-    { date: "2026-08-29", price: 21 },
-  ];
-  assert.deepEqual(
-    getPriceHistory({ retailer: "Store", price: 21, url: "https://example.com", priceHistory: history }),
-    history
   );
 });
 

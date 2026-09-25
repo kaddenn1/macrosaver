@@ -1,4 +1,4 @@
-import type { PricePoint, Product, RetailerOffer } from "@/data/types";
+import type { Product, RetailerOffer } from "@/data/types";
 
 const GRAMS_PER_OZ = 28.3495;
 // Prices are verified manually (no automated retailer feed), so these windows have to match a
@@ -144,16 +144,6 @@ export function getOfferSale(offer: RetailerOffer): OfferSale | null {
     savings: roundToTwo(savings),
     savingsPct: roundToTwo((savings / offer.listPrice) * 100),
   };
-}
-
-/** Chronological price observations for an offer, oldest first. Empty when nothing has been recorded yet. */
-export function getPriceHistory(offer: RetailerOffer): PricePoint[] {
-  return offer.priceHistory ?? [];
-}
-
-/** Chronological Subscribe & Save price observations for an offer, oldest first. Empty when nothing has been recorded yet. */
-export function getSubscribeAndSaveHistory(offer: RetailerOffer): PricePoint[] {
-  return offer.subscribeAndSavePriceHistory ?? [];
 }
 
 /** The largest active sale across a product's offers, or null when nothing is currently discounted. */
