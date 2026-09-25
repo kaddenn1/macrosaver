@@ -171,11 +171,10 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     bestFor: "Shoppers who specifically want isolate over concentrate, often for easier digestion or a leaner macro profile.",
     pros: [
       "25g protein with only 4g carbs and 4g fat, consistent with isolate's leaner profile",
-      "Sold direct from an ingredient-focused brand rather than a mass-market label",
+      "Tracked at both the brand's own store and Amazon, so you can compare",
     ],
     cons: [
-      "Single retailer tracked (the brand's own store, not Amazon)",
-      "We haven't independently confirmed sodium content for this product",
+      "Sports Research doesn't publish a fiber breakdown consistent with what we track elsewhere",
     ],
     relatedBestValueSlug: "highest-protein-per-dollar",
   },

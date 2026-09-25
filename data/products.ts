@@ -1250,18 +1250,19 @@ export const products = [
     name: "Whey Protein Isolate - Dutch Chocolate (25 Servings)",
     brand: "Sports Research",
     category: "protein",
-    image: "/products/sports-research-whey-protein-isolate.png",
+    image: "/products/sports-research-whey-protein-isolate-dutch-chocolate-25.png",
     servings: 25,
-    // Sodium not confirmed.
     nutrition: {
       proteinGrams: 25,
       calories: 150,
       carbsGrams: 4,
       fatGrams: 4,
       sugarGrams: 1,
+      sodiumMilligrams: 250,
     },
     offers: [
-      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fwww.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 49.95 }, { date: "2026-09-10", price: 49.95 }, { date: "2026-09-11", price: 49.95 }, { date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }, { date: "2026-09-21", price: 49.95 }, { date: "2026-09-23", price: 49.95 }, { date: "2026-09-24", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 42.46 }, { date: "2026-09-12", price: 42.46 }, { date: "2026-09-13", price: 42.46 }, { date: "2026-09-17", price: 42.46 }, { date: "2026-09-18", price: 42.46 }, { date: "2026-09-19", price: 42.46 }, { date: "2026-09-20", price: 42.46 }, { date: "2026-09-21", price: 42.46 }, { date: "2026-09-23", price: 42.46 }, { date: "2026-09-24", price: 42.46 }] }
+      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fwww.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 49.95 }, { date: "2026-09-10", price: 49.95 }, { date: "2026-09-11", price: 49.95 }, { date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }, { date: "2026-09-21", price: 49.95 }, { date: "2026-09-23", price: 49.95 }, { date: "2026-09-24", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 42.46 }, { date: "2026-09-12", price: 42.46 }, { date: "2026-09-13", price: 42.46 }, { date: "2026-09-17", price: 42.46 }, { date: "2026-09-18", price: 42.46 }, { date: "2026-09-19", price: 42.46 }, { date: "2026-09-20", price: 42.46 }, { date: "2026-09-21", price: 42.46 }, { date: "2026-09-23", price: 42.46 }, { date: "2026-09-24", price: 42.46 }] },
+      { retailer: "Amazon", price: 49.95, url: amazonUrl("B0CRGMRTFR"), asin: "B0CRGMRTFR", subscribeAndSavePrice: 44.95, lastCheckedAt: "2026-09-24", listPrice: 54.95, priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }, { date: "2026-09-21", price: 49.95 }, { date: "2026-09-23", price: 49.95 }, { date: "2026-09-24", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-13", price: 44.95 }, { date: "2026-09-15", price: 44.95 }, { date: "2026-09-16", price: 44.95 }, { date: "2026-09-17", price: 44.95 }, { date: "2026-09-18", price: 44.95 }, { date: "2026-09-19", price: 44.95 }, { date: "2026-09-20", price: 44.95 }, { date: "2026-09-21", price: 44.95 }, { date: "2026-09-23", price: 44.95 }, { date: "2026-09-24", price: 44.95 }] }
     ]
   },
   {
@@ -3618,20 +3619,6 @@ export const products = [
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
       { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341217360869658602846258&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dark-chocolate%3Fvariant%3D64600171315571", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 45.86, priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 53.95 }, { date: "2026-09-12", price: 53.95 }, { date: "2026-09-13", price: 53.95 }, { date: "2026-09-15", price: 53.95 }, { date: "2026-09-16", price: 53.95 }, { date: "2026-09-17", price: 53.95 }, { date: "2026-09-18", price: 53.95 }, { date: "2026-09-19", price: 53.95 }, { date: "2026-09-20", price: 53.95 }, { date: "2026-09-21", price: 53.95 }, { date: "2026-09-23", price: 53.95 }, { date: "2026-09-24", price: 53.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 45.86 }, { date: "2026-09-13", price: 45.86 }, { date: "2026-09-15", price: 45.86 }, { date: "2026-09-16", price: 45.86 }, { date: "2026-09-17", price: 45.86 }, { date: "2026-09-18", price: 45.86 }, { date: "2026-09-19", price: 45.86 }, { date: "2026-09-20", price: 45.86 }, { date: "2026-09-21", price: 45.86 }, { date: "2026-09-23", price: 45.86 }, { date: "2026-09-24", price: 45.86 }] }
-    ]
-  },
-  {
-    id: "259",
-    name: "Whey Protein Isolate - Dutch Chocolate (25 Servings)",
-    brand: "Sports Research",
-    category: "protein",
-    image: "/products/sports-research-whey-protein-isolate-dutch-chocolate-25.png",
-    servings: 25,
-    nutrition: { proteinGrams: 25, calories: 150, fatGrams: 4 },
-    nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
-    offers: [
-      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128636017261210466750&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600178000243", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-11", price: 49.95 }, { date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }, { date: "2026-09-21", price: 49.95 }, { date: "2026-09-23", price: 49.95 }, { date: "2026-09-24", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 42.46 }, { date: "2026-09-13", price: 42.46 }, { date: "2026-09-15", price: 42.46 }, { date: "2026-09-16", price: 42.46 }, { date: "2026-09-17", price: 42.46 }, { date: "2026-09-18", price: 42.46 }, { date: "2026-09-19", price: 42.46 }, { date: "2026-09-20", price: 42.46 }, { date: "2026-09-21", price: 42.46 }, { date: "2026-09-23", price: 42.46 }, { date: "2026-09-24", price: 42.46 }] },
-      { retailer: "Amazon", price: 49.95, url: amazonUrl("B0CRGMRTFR"), asin: "B0CRGMRTFR", subscribeAndSavePrice: 44.95, lastCheckedAt: "2026-09-24", listPrice: 54.95, priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }, { date: "2026-09-21", price: 49.95 }, { date: "2026-09-23", price: 49.95 }, { date: "2026-09-24", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-13", price: 44.95 }, { date: "2026-09-15", price: 44.95 }, { date: "2026-09-16", price: 44.95 }, { date: "2026-09-17", price: 44.95 }, { date: "2026-09-18", price: 44.95 }, { date: "2026-09-19", price: 44.95 }, { date: "2026-09-20", price: 44.95 }, { date: "2026-09-21", price: 44.95 }, { date: "2026-09-23", price: 44.95 }, { date: "2026-09-24", price: 44.95 }] }
     ]
   },
   {
