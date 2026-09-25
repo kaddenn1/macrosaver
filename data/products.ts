@@ -4165,7 +4165,7 @@ export const products = [
     servings: 18,
     nutrition: { calories: 110, proteinGrams: 20, carbsGrams: 3, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 150, servingSize: "1 scoop (29g)" },
     offers: [
-      { retailer: "Amazon", price: 39.99, url: amazonUrl("B0DHT1K42Y") + "&th=1", asin: "B0DHT1K42Y", subscribeAndSavePrice: 37.99, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-24", price: 39.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-24", price: 37.99 }] }
+      { retailer: "Amazon", price: 39.99, url: "https://amzn.to/3Vy6pb4", asin: "B0DHT1K42Y", subscribeAndSavePrice: 37.99, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-24", price: 39.99 }], subscribeAndSavePriceHistory: [{ date: "2026-09-24", price: 37.99 }] }
     ]
   },
   {
