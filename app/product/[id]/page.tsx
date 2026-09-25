@@ -21,6 +21,7 @@ import {
   hasFreshPriceObservation,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
+import { amazonSearchUrl } from "@/lib/affiliate";
 import { getTheme } from "@/lib/theme";
 import { CATEGORY_TITLES } from "@/lib/categories";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
@@ -529,8 +530,16 @@ export default async function ProductPage({
             {/* Offers */}
             <div className="mb-6">
               {sortedOffers.length === 0 ? (
-                <div className="py-6 text-center text-sm text-gray-400 border-2 border-dashed border-gray-800 rounded-xl">
-                  No current offers to compare. Check back soon.
+                <div className="flex flex-col items-center gap-3 py-6 text-center border-2 border-dashed border-gray-800 rounded-xl">
+                  <p className="text-sm text-gray-400">No current offers to compare.</p>
+                  <a
+                    href={amazonSearchUrl(`${product.brand} ${product.name}`)}
+                    target="_blank"
+                    rel="nofollow noopener"
+                    className={`px-4 py-2 rounded text-xs font-black uppercase tracking-widest text-black transition-transform hover:scale-[1.02] ${theme.bg} ${theme.hoverBg}`}
+                  >
+                    Check Price →
+                  </a>
                 </div>
               ) : (
                 <>

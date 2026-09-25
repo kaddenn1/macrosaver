@@ -6,3 +6,13 @@ const AMAZON_ASSOCIATE_TAG =
 export function amazonUrl(asin: string): string {
   return `https://www.amazon.com/dp/${asin}?tag=${AMAZON_ASSOCIATE_TAG}`;
 }
+
+/**
+ * Plain, untagged Amazon search link — no affiliate tag, no stored price/ASIN, no
+ * commission. Used for "Check Price" on products where Amazon offers were pulled
+ * (2026-09-25, Associates compliance): this just points a shopper at Amazon's own
+ * search, it doesn't require Associates status and doesn't cache any Amazon content.
+ */
+export function amazonSearchUrl(query: string): string {
+  return `https://www.amazon.com/s?k=${encodeURIComponent(query)}`;
+}
