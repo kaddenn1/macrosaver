@@ -101,6 +101,10 @@ export function getOfferFreshness(
 
   const ageMs = asOfTime - observedAt;
   if (ageMs <= FRESH_MAX_AGE_MS) return "fresh";
+  // Amazon's IP License caps cached pricing at 24 hours; the 30-day "aging" grace period
+  // that other retailers get would still present a stale Amazon price as usable, so Amazon
+  // offers skip straight to "stale" (and drop out of display) once they age past FRESH.
+  if (offer.retailer === "Amazon") return "stale";
   if (ageMs <= STALE_MAX_AGE_MS) return "aging";
   return "stale";
 }

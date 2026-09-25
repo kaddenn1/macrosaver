@@ -644,14 +644,16 @@ export default async function ProductPage({
               </div>
             </div>
 
-            {sortedOffers.some((offer) => getPriceHistory(offer).length >= 2) && (
+            {sortedOffers.some(
+              (offer) => offer.retailer !== "Amazon" && getPriceHistory(offer).length >= 2
+            ) && (
               <div className="mb-8">
                 <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
                   Price History
                 </h2>
                 <div className="flex flex-col gap-6">
                   {sortedOffers
-                    .filter((offer) => getPriceHistory(offer).length >= 2)
+                    .filter((offer) => offer.retailer !== "Amazon" && getPriceHistory(offer).length >= 2)
                     .map((offer) => (
                       <div key={offer.retailer} className="bg-[#111] border border-gray-800 rounded-lg px-4 py-4">
                         {sortedOffers.length > 1 && (
