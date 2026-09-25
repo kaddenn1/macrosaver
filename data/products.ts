@@ -1247,11 +1247,11 @@ export const products = [
   },
   {
     id: "108",
-    name: "Whey Protein Isolate, Dutch Chocolate (36.32 oz)",
+    name: "Whey Protein Isolate - Dutch Chocolate (25 Servings)",
     brand: "Sports Research",
     category: "protein",
     image: "/products/sports-research-whey-protein-isolate.png",
-    servings: 30,
+    servings: 25,
     // Sodium not confirmed.
     nutrition: {
       proteinGrams: 25,
@@ -1261,7 +1261,7 @@ export const products = [
       sugarGrams: 1,
     },
     offers: [
-      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-23", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-01", price: 49.95 }, { date: "2026-09-10", price: 49.95 }, { date: "2026-09-11", price: 49.95 }, { date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }, { date: "2026-09-21", price: 49.95 }, { date: "2026-09-23", price: 49.95 }, { date: "2026-09-24", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 42.46 }, { date: "2026-09-12", price: 42.46 }, { date: "2026-09-13", price: 42.46 }, { date: "2026-09-17", price: 42.46 }, { date: "2026-09-18", price: 42.46 }, { date: "2026-09-19", price: 42.46 }, { date: "2026-09-20", price: 42.46 }, { date: "2026-09-21", price: 42.46 }, { date: "2026-09-23", price: 42.46 }, { date: "2026-09-24", price: 42.46 }] }
+      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fwww.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 49.95 }, { date: "2026-09-10", price: 49.95 }, { date: "2026-09-11", price: 49.95 }, { date: "2026-09-12", price: 49.95 }, { date: "2026-09-13", price: 49.95 }, { date: "2026-09-15", price: 49.95 }, { date: "2026-09-16", price: 49.95 }, { date: "2026-09-17", price: 49.95 }, { date: "2026-09-18", price: 49.95 }, { date: "2026-09-19", price: 49.95 }, { date: "2026-09-20", price: 49.95 }, { date: "2026-09-21", price: 49.95 }, { date: "2026-09-23", price: 49.95 }, { date: "2026-09-24", price: 49.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 42.46 }, { date: "2026-09-12", price: 42.46 }, { date: "2026-09-13", price: 42.46 }, { date: "2026-09-17", price: 42.46 }, { date: "2026-09-18", price: 42.46 }, { date: "2026-09-19", price: 42.46 }, { date: "2026-09-20", price: 42.46 }, { date: "2026-09-21", price: 42.46 }, { date: "2026-09-23", price: 42.46 }, { date: "2026-09-24", price: 42.46 }] }
     ]
   },
   {
@@ -1572,14 +1572,14 @@ export const products = [
   },
   {
     id: "102",
-    name: "Vitamin D3 + K2 (60 Plantgel Capsules)",
+    name: "Vitamin D3 + K2 5000 IU (60 Plantgel Capsules)",
     brand: "Sports Research",
     category: "multivitamin",
     image: "/products/sports-research-vitamin-d3-k2.png",
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2", subscribeAndSavePrice: 20.36, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-21", verificationState: "checked_stale", priceHistory: [{ date: "2026-09-01", price: 23.95 }, { date: "2026-09-10", price: 23.95 }, { date: "2026-09-11", price: 23.95 }, { date: "2026-09-12", price: 23.95 }, { date: "2026-09-13", price: 23.95 }, { date: "2026-09-15", price: 23.95 }, { date: "2026-09-16", price: 23.95 }, { date: "2026-09-17", price: 23.95 }, { date: "2026-09-18", price: 23.95 }, { date: "2026-09-19", price: 23.95 }, { date: "2026-09-20", price: 23.95 }, { date: "2026-09-21", price: 23.95 }, { date: "2026-09-23", price: 23.95 }, { date: "2026-09-24", price: 23.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 20.36 }, { date: "2026-09-12", price: 20.36 }, { date: "2026-09-13", price: 20.36 }, { date: "2026-09-15", price: 20.36 }, { date: "2026-09-16", price: 20.36 }, { date: "2026-09-17", price: 20.36 }, { date: "2026-09-18", price: 20.36 }, { date: "2026-09-19", price: 20.36 }, { date: "2026-09-20", price: 20.36 }, { date: "2026-09-21", price: 20.36 }, { date: "2026-09-23", price: 20.36 }, { date: "2026-09-24", price: 20.36 }] , inStock: false },
+      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fwww.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2-5000-iu%3Fv%3D64727020667251", subscribeAndSavePrice: 20.36, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-01", price: 23.95 }, { date: "2026-09-10", price: 23.95 }, { date: "2026-09-11", price: 23.95 }, { date: "2026-09-12", price: 23.95 }, { date: "2026-09-13", price: 23.95 }, { date: "2026-09-15", price: 23.95 }, { date: "2026-09-16", price: 23.95 }, { date: "2026-09-17", price: 23.95 }, { date: "2026-09-18", price: 23.95 }, { date: "2026-09-19", price: 23.95 }, { date: "2026-09-20", price: 23.95 }, { date: "2026-09-21", price: 23.95 }, { date: "2026-09-23", price: 23.95 }, { date: "2026-09-24", price: 23.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-11", price: 20.36 }, { date: "2026-09-12", price: 20.36 }, { date: "2026-09-13", price: 20.36 }, { date: "2026-09-15", price: 20.36 }, { date: "2026-09-16", price: 20.36 }, { date: "2026-09-17", price: 20.36 }, { date: "2026-09-18", price: 20.36 }, { date: "2026-09-19", price: 20.36 }, { date: "2026-09-20", price: 20.36 }, { date: "2026-09-21", price: 20.36 }, { date: "2026-09-23", price: 20.36 }, { date: "2026-09-24", price: 20.36 }] },
       { retailer: "Amazon", price: 23.95, url: amazonUrl("B07255MPRN"), asin: "B07255MPRN", subscribeAndSavePrice: 21.55, lastCheckedAt: "2026-09-24", listPrice: 29.97, priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-09-12", price: 23.95 }, { date: "2026-09-13", price: 23.95 }, { date: "2026-09-15", price: 23.95 }, { date: "2026-09-16", price: 23.95 }, { date: "2026-09-17", price: 23.95 }, { date: "2026-09-18", price: 23.95 }, { date: "2026-09-19", price: 23.95 }, { date: "2026-09-20", price: 23.95 }, { date: "2026-09-21", price: 23.95 }, { date: "2026-09-23", price: 23.95 }, { date: "2026-09-24", price: 23.95 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-13", price: 21.55 }, { date: "2026-09-15", price: 21.55 }, { date: "2026-09-16", price: 21.55 }, { date: "2026-09-17", price: 21.55 }, { date: "2026-09-18", price: 21.55 }, { date: "2026-09-19", price: 21.55 }, { date: "2026-09-20", price: 21.55 }, { date: "2026-09-21", price: 0.36 }, { date: "2026-09-23", price: 21.55 }, { date: "2026-09-24", price: 21.55 }] }
     ]
   },
@@ -2369,19 +2369,6 @@ export const products = [
     ]
   },
   {
-    id: "162",
-    name: "Ghost Whey Protein Powder, Peanut Butter Cereal Milk (2 lb)",
-    brand: "Ghost",
-    category: "protein",
-    image: "/products/ghost-whey-peanut-butter-cereal-milk.png",
-    servings: 26,
-    nutritionNote: "Carbohydrates and fat are derived from the published macro-percentage breakdown; sugar and sodium were not confirmed.",
-    nutrition: { proteinGrams: 26, calories: 140, carbsGrams: 4, fatGrams: 1.5, servingSize: "1 scoop (35.5g)" },
-    offers: [
-      { retailer: "Amazon", price: 54.99, url: amazonUrl("B07FLJYP5M"), asin: "B07FLJYP5M", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 49.49, priceObservedAt: "2026-09-23", verificationState: "checked_stale", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }, { date: "2026-09-10", price: 46.74 }, { date: "2026-09-12", price: 46.74 }, { date: "2026-09-13", price: 46.74 }, { date: "2026-09-15", price: 46.74 }, { date: "2026-09-16", price: 46.74 }, { date: "2026-09-17", price: 54.99 }, { date: "2026-09-18", price: 54.99 }, { date: "2026-09-19", price: 54.99 }, { date: "2026-09-20", price: 54.99 }, { date: "2026-09-21", price: 54.99 }, { date: "2026-09-23", price: 54.99 }, { date: "2026-09-24", price: 54.99 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 49.49 }, { date: "2026-09-12", price: 49.49 }, { date: "2026-09-13", price: 49.49 }, { date: "2026-09-15", price: 49.49 }, { date: "2026-09-16", price: 49.49 }, { date: "2026-09-17", price: 49.49 }, { date: "2026-09-18", price: 49.49 }, { date: "2026-09-19", price: 49.49 }, { date: "2026-09-20", price: 49.49 }, { date: "2026-09-21", price: 49.49 }, { date: "2026-09-23", price: 49.49 }, { date: "2026-09-24", price: 49.49 }] , inStock: false }
-    ]
-  },
-  {
     id: "163",
     name: "Ghost Whey Protein Powder, Cereal Milk (2 lb)",
     brand: "Ghost",
@@ -2392,18 +2379,6 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 2 },
     offers: [
       { retailer: "Amazon", price: 54.99, url: amazonUrl("B01N9BO3SE"), asin: "B01N9BO3SE", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 49.49, priceObservedAt: "2026-09-24", verificationState: "verified", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-29", price: 46.74 }, { date: "2026-08-30", price: 46.74 }, { date: "2026-09-05", price: 46.74 }, { date: "2026-09-07", price: 46.74 }, { date: "2026-09-10", price: 46.74 }, { date: "2026-09-12", price: 46.74 }, { date: "2026-09-13", price: 46.74 }, { date: "2026-09-15", price: 46.74 }, { date: "2026-09-16", price: 46.74 }, { date: "2026-09-17", price: 54.99 }, { date: "2026-09-18", price: 54.99 }, { date: "2026-09-19", price: 54.99 }, { date: "2026-09-20", price: 54.99 }, { date: "2026-09-21", price: 54.99 }, { date: "2026-09-23", price: 54.99 }, { date: "2026-09-24", price: 54.99 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-10", price: 49.49 }, { date: "2026-09-12", price: 49.49 }, { date: "2026-09-13", price: 49.49 }, { date: "2026-09-15", price: 49.49 }, { date: "2026-09-16", price: 49.49 }, { date: "2026-09-17", price: 49.49 }, { date: "2026-09-18", price: 49.49 }, { date: "2026-09-19", price: 49.49 }, { date: "2026-09-20", price: 49.49 }, { date: "2026-09-21", price: 49.49 }, { date: "2026-09-23", price: 49.49 }, { date: "2026-09-24", price: 49.49 }] }
-    ]
-  },
-  {
-    id: "164",
-    name: "Ghost Whey Protein Powder, Count Chocula (2.12 lb)",
-    brand: "Ghost",
-    category: "protein",
-    image: "/products/ghost-whey-count-chocula.png",
-    servings: 26,
-    nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 6, fatGrams: 1, sugarGrams: 3, sodiumMilligrams: 210, servingSize: "1 scoop (37g)" },
-    offers: [
-      { retailer: "Amazon", price: 54.99, url: amazonUrl("B0FQM88VDM") + "&th=1", asin: "B0FQM88VDM", inStock: false, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-19", verificationState: "checked_stale", priceHistory: [{ date: "2026-08-20", price: 54.99 }, { date: "2026-08-30", price: 84.99 }, { date: "2026-09-05", price: 84.99 }, { date: "2026-09-07", price: 84.99 }, { date: "2026-09-10", price: 84.99 }, { date: "2026-09-12", price: 84.99 }, { date: "2026-09-13", price: 84.99 }, { date: "2026-09-15", price: 84.99 }, { date: "2026-09-16", price: 84.99 }, { date: "2026-09-17", price: 84.99 }, { date: "2026-09-18", price: 84.99 }, { date: "2026-09-19", price: 54.99 }, { date: "2026-09-20", price: 54.99 }, { date: "2026-09-21", price: 54.99 }, { date: "2026-09-23", price: 54.99 }, { date: "2026-09-24", price: 54.99 }] , subscribeAndSavePriceHistory: [{ date: "2026-09-12", price: 49.49 }, { date: "2026-09-19", price: 54.99 }, { date: "2026-09-23", price: 49.49 }, { date: "2026-09-24", price: 49.49 }] }
     ]
   },
   {

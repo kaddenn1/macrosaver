@@ -40,7 +40,7 @@ export const PRODUCT_LINES: ProductLine[] = [
   {
     id: "ghost-whey-protein-powder",
     primaryProductId: "130",
-    memberProductIds: ["130", "158", "159", "160", "161", "162", "163", "164"],
+    memberProductIds: ["130", "158", "159", "160", "161", "163"],
   },
   {
     id: "built-bar-puff-protein-bar",
