@@ -36,7 +36,7 @@ export const BRANDS: Brand[] = [
   {
     slug: "nutricost",
     name: "Nutricost",
-    intro: "A value-focused brand with a wide catalog of no-frills supplement basics at low per-serving prices.",
+    intro: "A value-focused brand with a wide catalog of no-frills supplement basics.",
   },
   {
     slug: "liquid-iv",

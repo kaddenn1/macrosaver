@@ -4,9 +4,9 @@ import { BEST_VALUE_ARTICLES } from "@/lib/best-value";
 import { BRAND_COMPARISON_ARTICLES } from "@/lib/brand-comparison";
 import { SITE_URL } from "@/lib/site";
 
-const title = "Best Value Comparisons";
+const title = "Nutrition Rankings & Comparisons";
 const description =
-  "Data-driven rankings built from our live catalog — cheapest per serving, highest protein per dollar, and other head-to-head value comparisons.";
+  "Nutrition-based rankings calculated from label data — protein concentration, calories per gram of protein, and other head-to-head nutrition comparisons. No retailer prices are collected or stored.";
 
 export const metadata: Metadata = {
   title,
@@ -21,11 +21,11 @@ export default function BestValuePage() {
       <div className="w-full max-w-[1600px] mx-auto pt-10 px-4 sm:px-6 lg:px-8 pb-24">
         <div className="mb-10 border-b border-gray-800 pb-6">
           <h1 className="text-3xl font-black text-[#a3e635] tracking-tight uppercase">
-            Best Value Comparisons
+            Nutrition Rankings & Comparisons
           </h1>
           <p className="text-gray-400 text-sm mt-2 max-w-[650px]">
-            Ranked lists computed straight from our live catalog and recorded retailer prices — not
-            manufacturer marketing. Each ranking states its exact methodology up front.
+            Nutrition-based rankings calculated from label data. No retailer prices are collected
+            or stored. Each ranking states its exact methodology up front.
           </p>
         </div>
 

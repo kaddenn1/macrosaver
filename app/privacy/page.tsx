@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, AMAZON_ASSOCIATE_ACTIVE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -67,8 +67,8 @@ export default function PrivacyPolicy() {
         <section className="rounded-lg border border-amber-400/30 bg-[#111] p-5">
           <h2 className="text-xl font-bold text-amber-300">Affiliate links and third parties</h2>
           <p className="mt-3 leading-relaxed text-gray-300">
-            As an Amazon Associate I earn from qualifying purchases. Product links elsewhere on the
-            site may also contain affiliate identifiers. When you follow one, the retailer or
+            {AMAZON_ASSOCIATE_ACTIVE && "As an Amazon Associate I earn from qualifying purchases. "}
+            Product links elsewhere on the site may contain affiliate identifiers. When you follow one, the retailer or
             affiliate network may use cookies or similar technologies to attribute a purchase and
             may share commission-related reporting with us. MacroSaver may earn a commission without
             increasing your price. We do not store or track retailer prices; the on-page value

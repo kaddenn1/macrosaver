@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SITE_URL } from "@/lib/site";
+import { SITE_URL, AMAZON_ASSOCIATE_ACTIVE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About & Methodology",
@@ -87,8 +87,8 @@ export default function AboutPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-white">Affiliate and ranking policy</h2>
           <p className="leading-relaxed text-gray-400">
-            As an Amazon Associate I earn from qualifying purchases. MacroSaver may also earn a
-            commission when you buy through other marked retailer links, at no added cost to you.
+            {AMAZON_ASSOCIATE_ACTIVE && "As an Amazon Associate I earn from qualifying purchases. "}
+            MacroSaver may earn a commission when you buy through marked retailer links, at no added cost to you.
             Affiliate status does not alter the rankings: product lists are ordered by nutrition data
             (protein concentration), not commission rate, and outbound retailer links are marked
             &quot;(paid link)&quot; wherever they appear. We do not accept payment for user reviews.
@@ -139,8 +139,8 @@ export default function AboutPage() {
         <section id="corrections" className="space-y-3 border-t border-gray-800 pt-8 scroll-mt-24">
           <h2 className="text-xl font-bold text-white">Reviews, corrections, and contact</h2>
           <p className="leading-relaxed text-gray-400">
-            Submitted reviews are moderated before publication. If you spot an incorrect price,
-            serving count, nutrition value, attribution, or broken link, email{" "}
+            Submitted reviews are moderated before publication. If you spot an incorrect product fact,
+            serving count, nutrition value, attribution, label detail, or broken link, email{" "}
             <a className="text-white underline hover:text-lime-400" href="mailto:support@macrosaver.com">
               support@macrosaver.com
             </a>

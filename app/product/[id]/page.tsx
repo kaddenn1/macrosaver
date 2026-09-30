@@ -15,7 +15,7 @@ import {
 import { amazonSearchUrl } from "@/lib/affiliate";
 import { getTheme } from "@/lib/theme";
 import { CATEGORY_TITLES } from "@/lib/categories";
-import { SITE_URL, SITE_NAME } from "@/lib/site";
+import { SITE_URL, SITE_NAME, AMAZON_ASSOCIATE_ACTIVE } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
 import { APPROVAL_BADGES, APPROVAL_LINKS, APPROVAL_LINK_LABELS } from "@/lib/approvals";
 import { getReviewSummary } from "@/lib/reviews";
@@ -368,7 +368,7 @@ export default async function ProductPage({
                   <p className="text-xs text-gray-400 mt-2">{ingredientInfo.allergens}</p>
                 )}
                 <p className="text-[11px] text-gray-500 mt-2">
-                  Transcribed from the retailer or brand page. Formulations change, so check the package label before use.
+                  Transcribed from the manufacturer&apos;s product page or packaging. Formulations change, so check the package label before use.
                 </p>
               </div>
             )}
@@ -434,7 +434,7 @@ export default async function ProductPage({
                     rel="nofollow noopener"
                     className={`px-4 py-2 rounded text-xs font-black uppercase tracking-widest text-black transition-transform hover:scale-[1.02] ${theme.bg} ${theme.hoverBg}`}
                   >
-                    Check Price →
+                    Check current price on Amazon →
                   </a>
                 </div>
               ) : (
@@ -471,11 +471,11 @@ export default async function ProductPage({
             </div>
 
             <p className="text-[11px] text-gray-400 leading-relaxed">
-              As an Amazon Associate I earn from qualifying purchases. MacroSaver may also earn a
-              commission from other retailer links on this page at no added cost to you. MacroSaver
-              does not store or display retailer prices — our rankings are based on nutrition data
-              (protein concentration and calories per gram of protein), and the value calculator above
-              runs entirely on the price you type in, on the spot.
+              {AMAZON_ASSOCIATE_ACTIVE && "As an Amazon Associate I earn from qualifying purchases. "}
+              MacroSaver may earn a commission from retailer links on this page at no added cost to
+              you. MacroSaver does not store or display retailer prices — our rankings are based on
+              nutrition data (protein concentration and calories per gram of protein), and the value
+              calculator above runs entirely on the price you type in, on the spot.
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-gray-500">

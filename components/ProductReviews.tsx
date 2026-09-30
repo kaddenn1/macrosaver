@@ -13,8 +13,11 @@ export default function ProductReviews({
   return (
     <div className="mt-12 border-t border-gray-800 pt-8">
       <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
-        Reviews
+        MacroSaver Community Reviews
       </h2>
+      <p className="text-xs text-gray-500 mb-4 -mt-3">
+        Submitted directly by MacroSaver visitors — not imported from Amazon or any other retailer.
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="flex flex-col gap-6">

@@ -7,8 +7,7 @@ declare global {
 export type RetailerClickEvent = {
   productId: string;
   retailer: string;
-  price: number;
-  pageType: "deals" | "product" | "compare" | "best" | "champions";
+  pageType: "product" | "compare" | "best" | "champions";
   buttonPosition: string;
 };
 

@@ -1,5 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { readFileSync } from "node:fs";
 import type { Product } from "../data/types.ts";
 import {
   costPerOzProtein,
@@ -276,4 +277,9 @@ test("no product belongs to more than one product line", () => {
       seen.set(id, line.id);
     }
   }
+});
+
+test("retailer-click analytics event never carries a price field again", () => {
+  const source = readFileSync(new URL("../lib/analytics.ts", import.meta.url), "utf8");
+  assert.ok(!/\bprice\s*:/.test(source), "lib/analytics.ts RetailerClickEvent must not reintroduce a price field");
 });

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { BRANDS, getBrandProductCount } from "@/lib/brands";
 import { SITE_URL } from "@/lib/site";
 
-const title = "Tracked Supplement Brands";
+const title = "Cataloged Supplement Brands";
 const description =
-  "Browse supplement brands in the MacroSaver catalog, with a quick introduction and links to each tracked product lineup.";
+  "Browse supplement brands in the MacroSaver catalog, with a quick introduction and links to each brand's product lineup.";
 
 export const metadata: Metadata = {
   title,
@@ -22,11 +22,11 @@ export default function BrandsPage() {
       <div className="w-full max-w-[1600px] mx-auto pt-10 px-4 sm:px-6 lg:px-8 pb-24">
         <div className="mb-10 border-b border-gray-800 pb-6">
           <h1 className="text-3xl font-black text-[#a3e635] tracking-tight uppercase">
-            Tracked Brands
+            Cataloged Brands
           </h1>
           <p className="text-gray-400 text-sm mt-2 max-w-[650px]">
             Every brand in our catalog, in one place. Pick one to see the products and
-            serving-level value data we track.
+            serving-level nutrition data we cover.
           </p>
         </div>
 

@@ -54,7 +54,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link href="/#best-value" className="hover:text-white transition duration-150 text-lime-500">
-            Best Value
+            Nutrition Rankings
           </Link>
         </nav>
 
@@ -97,7 +97,7 @@ export default function Navbar() {
             onClick={() => setMenuOpen(false)}
             className="py-3 text-lime-500 hover:text-lime-400 transition duration-150"
           >
-            Best Value
+            Nutrition Rankings
           </Link>
         </nav>
       )}

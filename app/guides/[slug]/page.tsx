@@ -128,7 +128,7 @@ export default async function GuidePage({
         {relatedArticles.length > 0 && (
           <div className="border-t border-gray-800 pt-8 pb-8">
             <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-4">
-              Related Price Comparisons
+              Related Nutrition Comparisons
             </h2>
             <div className="flex flex-col gap-2">
               {relatedArticles.map((article) => (

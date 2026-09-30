@@ -54,7 +54,7 @@ export type BestValueArticle = {
 
 export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
   {
-    slug: "cheapest-whey-protein-per-serving",
+    slug: "highest-protein-whey",
     title: "Highest-Protein Whey Powders, Ranked",
     metaDescription:
       "Every whey protein in our catalog — identified by \"whey\" in the product name — ranked by protein grams per gram of serving, the nutrition-density figure that matters more than scoop size.",
@@ -70,7 +70,7 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     metricFormat: "decimal",
   },
   {
-    slug: "highest-protein-per-dollar",
+    slug: "highest-protein-concentration",
     title: "Highest Protein Concentration: Ranked",
     metaDescription:
       "Every protein powder in our catalog ranked from highest to lowest protein concentration — grams of protein per gram of serving, with no price data involved.",
@@ -131,7 +131,7 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     metricFormat: "grams",
   },
   {
-    slug: "creatine-cost-per-serving",
+    slug: "creatine-serving-size",
     title: "Creatine Monohydrate by Serving Size: Ranked",
     metaDescription:
       "Every creatine monohydrate product in our catalog, ranked by labeled serving size — powder tubs and capsules alike, smallest dose first.",

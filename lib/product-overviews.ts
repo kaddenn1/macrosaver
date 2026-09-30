@@ -28,7 +28,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "No retailer offer currently in the catalog — check price on Amazon",
       "5 lb is a bigger commitment than 2 lb if you haven't tried the flavor first",
     ],
-    relatedBestValueSlug: "highest-protein-per-dollar",
+    relatedBestValueSlug: "highest-protein-concentration",
   },
   {
     productId: "8",
@@ -43,7 +43,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Single retailer offer",
       "170mg sodium per serving is on the higher side for a protein powder",
     ],
-    relatedBestValueSlug: "highest-protein-per-dollar",
+    relatedBestValueSlug: "highest-protein-concentration",
   },
   {
     productId: "27",
@@ -59,7 +59,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Unflavored only — a flavored creatine means picking a different size/flavor in the same lineup",
       "Single retailer offer",
     ],
-    relatedBestValueSlug: "creatine-cost-per-serving",
+    relatedBestValueSlug: "creatine-serving-size",
   },
   {
     productId: "34",
@@ -147,7 +147,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Highest per-tub price of the flagship products on this page",
       "Single retailer offer",
     ],
-    relatedBestValueSlug: "highest-protein-per-dollar",
+    relatedBestValueSlug: "highest-protein-concentration",
   },
   {
     productId: "103",
@@ -175,7 +175,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     cons: [
       "Sports Research doesn't publish a fiber breakdown consistent with what we show elsewhere",
     ],
-    relatedBestValueSlug: "highest-protein-per-dollar",
+    relatedBestValueSlug: "highest-protein-concentration",
   },
   {
     productId: "109",
@@ -223,7 +223,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Priciest whey per-tub among the flagship products on this page",
       "Single retailer offer",
     ],
-    relatedBestValueSlug: "highest-protein-per-dollar",
+    relatedBestValueSlug: "highest-protein-concentration",
   },
   {
     productId: "138",

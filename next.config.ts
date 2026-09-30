@@ -29,6 +29,21 @@ const nextConfig: NextConfig = {
         destination: "/category/protein",
         permanent: true,
       },
+      {
+        source: "/best/cheapest-whey-protein-per-serving",
+        destination: "/best/highest-protein-whey",
+        permanent: true,
+      },
+      {
+        source: "/best/highest-protein-per-dollar",
+        destination: "/best/highest-protein-concentration",
+        permanent: true,
+      },
+      {
+        source: "/best/creatine-cost-per-serving",
+        destination: "/best/creatine-serving-size",
+        permanent: true,
+      },
     ];
   },
   async headers() {

@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { AMAZON_ASSOCIATE_ACTIVE } from '@/lib/site';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -32,11 +33,12 @@ export default function Footer() {
         {/* Mandatory Affiliate Disclosure */}
         <div className="w-full max-w-2xl border-t border-[#151515] pt-4 mt-2">
           <p className="text-[11px] text-gray-400 text-center leading-relaxed">
-            <strong>Disclaimer:</strong> As an Amazon Associate I earn from qualifying purchases.
-            MacroSaver may also earn a commission from other retailer links on this site at no extra
-            cost to you. MacroSaver does not store, track, or display retailer prices — rankings are
-            based on nutrition data, and any cost figures you see come from the price you type into
-            our on-page value calculator. Always verify current price and availability with the
+            <strong>Disclaimer:</strong>{" "}
+            {AMAZON_ASSOCIATE_ACTIVE && "As an Amazon Associate I earn from qualifying purchases. "}
+            MacroSaver may earn a commission from retailer links on this site at no extra cost to
+            you. MacroSaver does not store, track, or display retailer prices — rankings are based
+            on nutrition data, and any cost figures you see come from the price you type into our
+            on-page value calculator. Always verify current price and availability with the
             retailer before buying.
           </p>
         </div>
