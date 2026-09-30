@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import FilterDrawer from "@/components/FilterDrawer";
 import Champions from "@/components/Champions";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import SortDropdown from "@/components/SortDropdown";
 import SearchBar from "@/components/SearchBar";
 import Link from "next/link";
 import { CATEGORY_SLUGS, CATEGORY_TITLES } from "@/lib/categories";
@@ -13,7 +12,7 @@ import { SITE_URL } from "@/lib/site";
 import { products } from "@/data/products";
 import type { Product } from "@/data/types";
 import { getCatalogFacets } from "@/lib/catalog-facets";
-import { getCostPerServing } from "@/lib/macrosaver-engine";
+import { getProteinConcentration } from "@/lib/macrosaver-engine";
 import { serializeJsonLd } from "@/lib/json-ld";
 
 export const dynamicParams = false;
@@ -34,8 +33,8 @@ export async function generateMetadata({
   if (!CATEGORY_SLUGS.includes(slug)) return {};
   const displayTitle = CATEGORY_TITLES[slug];
 
-  const title = `${displayTitle} Price & Value Comparison`;
-  const description = `Compare ${displayTitle.toLowerCase()} products by recorded offer-price snapshot, cost per serving, and available nutrition data on MacroSaver.`;
+  const title = `${displayTitle} Nutrition & Value Comparison`;
+  const description = `Compare ${displayTitle.toLowerCase()} products by protein density, ingredients, and dietary fit on MacroSaver.`;
 
   return {
     title,
@@ -75,7 +74,7 @@ export default async function CategoryPage({
     (p) =>
       p.category.toLowerCase() === currentSlug.toLowerCase() ||
       p.additionalCategories?.some((c) => c.toLowerCase() === currentSlug.toLowerCase())
-  ).sort((a, b) => (getCostPerServing(a) ?? Number.POSITIVE_INFINITY) - (getCostPerServing(b) ?? Number.POSITIVE_INFINITY));
+  ).sort((a, b) => (getProteinConcentration(b) ?? 0) - (getProteinConcentration(a) ?? 0));
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -94,7 +93,7 @@ export default async function CategoryPage({
   const itemListJsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    name: `${displayTitle} Deals`,
+    name: `${displayTitle} Products`,
     itemListElement: categoryProducts.slice(0, 20).map((p, index) => ({
       "@type": "ListItem",
       position: index + 1,
@@ -124,14 +123,13 @@ export default async function CategoryPage({
               {displayTitle}
             </h1>
             <p className="text-gray-400 text-sm mt-1">
-              Compare {displayTitle.toLowerCase()} by recorded price snapshot, cost per serving, and nutrition value.
+              Compare {displayTitle.toLowerCase()} by protein density, ingredients, and nutrition value.
             </p>
           </div>
 
-          {/* Controls Cluster: Search & Sort! */}
+          {/* Controls Cluster: Search */}
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <SearchBar label={`Search ${displayTitle}`} />
-            <SortDropdown allowProteinSort={currentSlug === "protein"} />
           </div>
         </div>
       </div>
@@ -152,7 +150,7 @@ export default async function CategoryPage({
           {buyingGuide && (
             <div className="mt-12 border-t border-gray-800 pt-8">
               <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
-                How We Rank {displayTitle} Deals
+                How We Rank {displayTitle}
               </h2>
               <p className="text-sm text-gray-400 leading-relaxed max-w-[750px]">
                 {buyingGuide}

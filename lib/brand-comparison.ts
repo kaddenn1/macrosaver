@@ -1,9 +1,8 @@
 import type { Product, SupplementCategory } from "@/data/types";
 import { products } from "@/data/products";
 import {
-  getBestOffer,
-  getCostPerServing,
-  getProteinPerDollar,
+  getProteinConcentration,
+  hasAvailableOffer,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
 
@@ -22,20 +21,20 @@ export const BRAND_COMPARISON_ARTICLES: BrandComparisonArticle[] = [
     slug: "optimum-nutrition-vs-dymatize",
     title: "Optimum Nutrition vs. Dymatize: Value Comparison",
     metaDescription:
-      "Optimum Nutrition and Dymatize whey protein compared on cost per serving and protein per dollar, using every product from each brand in our catalog.",
+      "Optimum Nutrition and Dymatize whey protein compared on protein concentration, using every product from each brand in our catalog.",
     intro:
-      "A head-to-head on price and protein value, not taste or mixability — we don't have reliable data on either. Every Optimum Nutrition and Dymatize protein product in our catalog is included below, compared on cost per serving and protein per dollar using recorded retailer prices.",
+      "A head-to-head on nutrition density, not taste, mixability, or price — we don't have reliable data on the first two, and the last one changes too often to track. Every Optimum Nutrition and Dymatize protein product in our catalog is included below, compared on protein concentration (grams of protein per gram of serving).",
     category: "protein",
     brandA: "Optimum Nutrition",
     brandB: "Dymatize",
   },
   {
     slug: "ghost-vs-optimum-nutrition",
-    title: "Ghost Whey vs. Optimum Nutrition: Which Is the Better Buy?",
+    title: "Ghost Whey vs. Optimum Nutrition: Which Has More Protein?",
     metaDescription:
-      "Ghost Whey and Optimum Nutrition Gold Standard compared on cost per serving and protein per dollar, using every product from each brand in our catalog.",
+      "Ghost Whey and Optimum Nutrition Gold Standard compared on protein concentration, using every product from each brand in our catalog.",
     intro:
-      "Ghost built its name on flavor collaborations and packaging; Optimum Nutrition's Gold Standard line is the longtime default. This comparison sets taste and branding aside and compares every product we carry from each brand purely on cost per serving and protein per dollar.",
+      "Ghost built its name on flavor collaborations and packaging; Optimum Nutrition's Gold Standard line is the longtime default. This comparison sets taste and branding aside and compares every product we carry from each brand purely on protein concentration (grams of protein per gram of serving).",
     category: "protein",
     brandA: "Ghost",
     brandB: "Optimum Nutrition",
@@ -48,10 +47,9 @@ export function getBrandComparisonBySlug(slug: string): BrandComparisonArticle |
 
 export type BrandStats = {
   brand: string;
-  products: Array<{ product: Product; costPerServing: number | null; proteinPerDollar: number | null }>;
-  cheapestByServing: { product: Product; value: number } | null;
-  bestProteinPerDollar: { product: Product; value: number } | null;
-  avgCostPerServing: number | null;
+  products: Array<{ product: Product; proteinConcentration: number | null }>;
+  bestProteinConcentration: { product: Product; value: number } | null;
+  avgProteinConcentration: number | null;
 };
 
 export function getBrandStats(category: SupplementCategory, brand: string): BrandStats {
@@ -60,48 +58,36 @@ export function getBrandStats(category: SupplementCategory, brand: string): Bran
       p.brand === brand &&
       (p.category === category || p.additionalCategories?.includes(category)) &&
       supportsServingMetrics(p) &&
-      getBestOffer(p) !== null
+      hasAvailableOffer(p)
   );
 
   const rows = brandProducts.map((product) => ({
     product,
-    costPerServing: getCostPerServing(product),
-    proteinPerDollar: getProteinPerDollar(product),
+    proteinConcentration: getProteinConcentration(product),
   }));
 
-  const withCost = rows.filter(
-    (r): r is { product: Product; costPerServing: number; proteinPerDollar: number | null } =>
-      r.costPerServing !== null
-  );
   const withProtein = rows.filter(
-    (r): r is { product: Product; costPerServing: number | null; proteinPerDollar: number } =>
-      r.proteinPerDollar !== null
+    (r): r is { product: Product; proteinConcentration: number } => r.proteinConcentration !== null
   );
 
-  const cheapestByServing =
-    withCost.length > 0
-      ? withCost.reduce((best, r) => (r.costPerServing < best.costPerServing ? r : best))
-      : null;
-
-  const bestProteinPerDollar =
+  const bestProteinConcentration =
     withProtein.length > 0
-      ? withProtein.reduce((best, r) => (r.proteinPerDollar > best.proteinPerDollar ? r : best))
+      ? withProtein.reduce((best, r) => (r.proteinConcentration > best.proteinConcentration ? r : best))
       : null;
 
-  const avgCostPerServing =
-    withCost.length > 0
-      ? Math.round((withCost.reduce((sum, r) => sum + r.costPerServing, 0) / withCost.length) * 100) / 100
+  const avgProteinConcentration =
+    withProtein.length > 0
+      ? Math.round(
+          (withProtein.reduce((sum, r) => sum + r.proteinConcentration, 0) / withProtein.length) * 100
+        ) / 100
       : null;
 
   return {
     brand,
     products: rows,
-    cheapestByServing: cheapestByServing
-      ? { product: cheapestByServing.product, value: cheapestByServing.costPerServing }
+    bestProteinConcentration: bestProteinConcentration
+      ? { product: bestProteinConcentration.product, value: bestProteinConcentration.proteinConcentration }
       : null,
-    bestProteinPerDollar: bestProteinPerDollar
-      ? { product: bestProteinPerDollar.product, value: bestProteinPerDollar.proteinPerDollar }
-      : null,
-    avgCostPerServing,
+    avgProteinConcentration,
   };
 }

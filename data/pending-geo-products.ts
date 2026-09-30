@@ -1,16 +1,10 @@
 // DRAFT ONLY — not imported anywhere in the app.
 // These products come from Geo's "on deck" list. Every ASIN below was
-// confirmed by fetching the live Amazon product page, but Amazon hides
-// pricing from non-browser requests, so every `price` here is a `0`
-// placeholder pending a manual check. Once real prices are filled in,
-// move each entry into data/products.ts (continuing id numbering from
-// wherever it left off) and delete it from this file.
-//
-// CHECK PRICE ON EVERYTHING BELOW before promoting it: Amazon offers were
-// pulled sitewide (2026-09-25, Associates compliance) and cannot be added
-// back to the live catalog. Every `$0` placeholder here needs a real price
-// from a non-Amazon retailer (or Amazon pricing must stay out entirely)
-// before it moves into data/products.ts.
+// confirmed by fetching the live Amazon product page. Once reviewed, move
+// each entry into data/products.ts (continuing id numbering from wherever
+// it left off) and delete it from this file. MacroSaver no longer stores
+// or displays retailer prices (2026-09-29, Associates compliance) — offers
+// are outbound links only, so there's nothing to check before promoting.
 import { amazonUrl } from "@/lib/affiliate";
 import type { Product } from "./types";
 
@@ -23,8 +17,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 90,
     nutrition: { proteinGrams: 0 },
     approvedBy: ["geo"],
-    // TODO: check price. Confirmed out of stock on Amazon as of the last check — no real price yet.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0B9VQRMHL"), asin: "B0B9VQRMHL", inStock: false }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0B9VQRMHL"), asin: "B0B9VQRMHL", inStock: false }],
   },
   {
     id: "126",
@@ -35,8 +28,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 10,
     nutrition: { proteinGrams: 30 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0FST375QH"), asin: "B0FST375QH" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0FST375QH"), asin: "B0FST375QH" }],
   },
   {
     id: "127",
@@ -47,8 +39,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 6,
     nutrition: { proteinGrams: 10 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B01F2C8O6C"), asin: "B01F2C8O6C" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B01F2C8O6C"), asin: "B01F2C8O6C" }],
   },
   {
     id: "128",
@@ -59,8 +50,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 4,
     nutrition: { proteinGrams: 20 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0DQVWWTCN"), asin: "B0DQVWWTCN" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0DQVWWTCN"), asin: "B0DQVWWTCN" }],
   },
   {
     id: "129",
@@ -71,8 +61,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 4,
     nutrition: { proteinGrams: 20 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0DQVV385C"), asin: "B0DQVV385C" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0DQVV385C"), asin: "B0DQVV385C" }],
   },
   {
     id: "131",
@@ -82,8 +71,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 26,
     nutrition: { proteinGrams: 25 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0GP9BCKR9"), asin: "B0GP9BCKR9" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0GP9BCKR9"), asin: "B0GP9BCKR9" }],
   },
   {
     id: "139",
@@ -94,8 +82,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 12,
     nutrition: { proteinGrams: 17 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B09M951M29"), asin: "B09M951M29" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B09M951M29"), asin: "B09M951M29" }],
   },
   {
     id: "140",
@@ -106,8 +93,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 12,
     nutrition: { proteinGrams: 17 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0C5QCYZTH"), asin: "B0C5QCYZTH" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0C5QCYZTH"), asin: "B0C5QCYZTH" }],
   },
   {
     id: "144",
@@ -118,8 +104,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 12,
     nutrition: { proteinGrams: 15 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0CH1JMHZD"), asin: "B0CH1JMHZD" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0CH1JMHZD"), asin: "B0CH1JMHZD" }],
   },
   {
     id: "146",
@@ -130,8 +115,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 12,
     nutrition: { proteinGrams: 17 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0CB5C55WX"), asin: "B0CB5C55WX" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0CB5C55WX"), asin: "B0CB5C55WX" }],
   },
   {
     id: "148",
@@ -142,8 +126,7 @@ export const pendingGeoProducts: Product[] = [
     servings: 12,
     nutrition: { proteinGrams: 16 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0G35PSQXC"), asin: "B0G35PSQXC" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0G35PSQXC"), asin: "B0G35PSQXC" }],
   },
   {
     id: "150",
@@ -154,7 +137,6 @@ export const pendingGeoProducts: Product[] = [
     servings: 12,
     nutrition: { proteinGrams: 16 },
     approvedBy: ["geo"],
-    // TODO: check price.
-    offers: [{ retailer: "Amazon", price: 0, url: amazonUrl("B0BCR4H9KJ"), asin: "B0BCR4H9KJ" }],
+    offers: [{ retailer: "Amazon", url: amazonUrl("B0BCR4H9KJ"), asin: "B0BCR4H9KJ" }],
   },
 ];

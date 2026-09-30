@@ -3,7 +3,6 @@ import Hero from "@/components/Hero"; // <-- The Glow Up!
 import CategoryRow from "@/components/CategoryRow";
 import FilterDrawer from "@/components/FilterDrawer";
 import Champions from "@/components/Champions";
-import SortDropdown from "@/components/SortDropdown";
 import SearchBar from "@/components/SearchBar";
 import { products } from "@/data/products";
 import { CATEGORY_SLUGS, CATEGORY_TITLES } from "@/lib/categories";
@@ -12,9 +11,9 @@ import { getCatalogFacets } from "@/lib/catalog-facets";
 import { parseCatalogQuery } from "@/lib/catalog-query";
 
 const HOMEPAGE_PREVIEW_COUNT = 4;
-const HOME_TITLE = `${SITE_NAME} | Compare Supplement Value & Cost per Serving`;
+const HOME_TITLE = `${SITE_NAME} | Compare Supplement Nutrition & Value`;
 const HOME_DESCRIPTION =
-  "Compare protein powder, pre-workout, creatine, and other supplements by recorded price snapshot, cost per serving, and nutrition value.";
+  "Compare protein powder, pre-workout, creatine, and other supplements by protein density and nutrition value, then enter your own price to calculate cost per serving.";
 
 export async function generateMetadata({
   searchParams,
@@ -46,9 +45,6 @@ export default async function Home({
   const facets = getCatalogFacets();
   const listingQuery = parseCatalogQuery(resolvedSearchParams, {
     allowSearch: true,
-    allowMaxPrice: true,
-    maxPriceCeiling: facets.maxCost,
-    allowProteinSort: true,
   });
 
   const categoriesWithProducts = CATEGORY_SLUGS.filter((slug) =>
@@ -75,7 +71,7 @@ export default async function Home({
       </div>
 
       {/* Header & Controls Section */}
-      <div id="best-deals" className="w-full max-w-[1600px] mx-auto pt-16 px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      <div id="best-value" className="w-full max-w-[1600px] mx-auto pt-16 px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <div className="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6 border-b border-gray-800 pb-6">
           <div className="border-l-4 border-[#a3e635] pl-4">
             <h2 className="text-3xl font-black text-white tracking-widest uppercase">
@@ -85,7 +81,6 @@ export default async function Home({
 
           <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <SearchBar />
-            <SortDropdown />
           </div>
         </div>
       </div>

@@ -1,19 +1,18 @@
 import type { Product, SupplementCategory } from "@/data/types";
 import { products } from "@/data/products";
 import {
-  getBestOffer,
-  getCostPerServing,
-  getPriceConfidence,
-  getProteinPerDollar,
+  getCaloriesPerGramProtein,
+  getProteinConcentration,
   getServingSizeGrams,
+  hasAvailableOffer,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
 
-export type BestValueSortMetric = "proteinPerDollar" | "costPerServing" | "servingSizeGrams";
+export type BestValueSortMetric = "proteinConcentration" | "caloriesPerGramProtein" | "servingSizeGrams";
 
 const METRIC_GETTERS: Record<BestValueSortMetric, (product: Product) => number | null> = {
-  proteinPerDollar: getProteinPerDollar,
-  costPerServing: getCostPerServing,
+  proteinConcentration: getProteinConcentration,
+  caloriesPerGramProtein: getCaloriesPerGramProtein,
   servingSizeGrams: getServingSizeGrams,
 };
 
@@ -46,7 +45,7 @@ export type BestValueArticle = {
   sortDirection: "asc" | "desc";
   limit: number;
   metricLabel: string;
-  metricFormat: "grams" | "dollars";
+  metricFormat: "grams" | "decimal";
   /** Short decision aids that explain how to use the ranking without inventing new ranking factors. */
   decisionGuide?: { label: string; guidance: string }[];
   /** Page-specific questions answered from the same catalog methodology used by the ranking. */
@@ -56,139 +55,65 @@ export type BestValueArticle = {
 export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
   {
     slug: "cheapest-whey-protein-per-serving",
-    title: "Cheapest Whey Protein per Serving",
+    title: "Highest-Protein Whey Powders, Ranked",
     metaDescription:
-      "Every whey protein in our catalog — identified by \"whey\" in the product name — ranked from lowest to highest cost per serving using recorded retailer prices.",
+      "Every whey protein in our catalog — identified by \"whey\" in the product name — ranked by protein grams per gram of serving, the nutrition-density figure that matters more than scoop size.",
     intro:
-      "This list is limited to products with \"whey\" in their own product name — we're not classifying formulas ourselves, just filtering to what the label already claims. They're ranked by cost per serving (price divided by servings per container), the number that actually determines what one scoop costs you, not the price on the tub.",
+      "This list is limited to products with \"whey\" in their own product name — we're not classifying formulas ourselves, just filtering to what the label already claims. They're ranked by protein concentration (grams of protein per gram of serving), the number that shows how much of each scoop is actually protein versus filler.",
     category: "protein",
     filter: (product) => /whey/i.test(product.name),
     powderOnly: true,
-    sortBy: "costPerServing",
-    sortDirection: "asc",
-    limit: 15,
-    metricLabel: "Cost / Serving",
-    metricFormat: "dollars",
-  },
-  {
-    slug: "best-protein-powder-under-30",
-    title: "Best Protein Powder Under $30",
-    metaDescription:
-      "Protein powders with a recorded retailer price under $30, ranked by protein per dollar so you can see which cheap tubs are actually the best deal.",
-    intro:
-      "Every product below has a recorded retailer price under $30. They're ranked by protein per dollar — total grams of protein in the container divided by price — not by sticker price alone, since a cheaper tub with a smaller scoop or fewer servings can be a worse deal than a slightly pricier one.",
-    category: "protein",
-    filter: (product) => {
-      const offer = getBestOffer(product);
-      return offer !== null && offer.price < 30;
-    },
-    powderOnly: true,
-    sortBy: "proteinPerDollar",
+    sortBy: "proteinConcentration",
     sortDirection: "desc",
     limit: 15,
-    metricLabel: "Protein / $",
-    metricFormat: "grams",
-  },
-  {
-    slug: "best-protein-powder-under-50",
-    title: "Best Protein Powder Under $50",
-    metaDescription:
-      "Compare protein powders priced under $50 by protein per dollar, with recorded tub price, servings, cost per serving, and protein per scoop.",
-    intro:
-      "Every product below has a recorded retailer price under $50. We rank them by total protein in the container divided by price, so a bigger tub only moves up when it delivers more protein for the money. Each row also shows the recorded price and cost per serving so you can compare upfront spend with ongoing value. Retailer prices can change, so verify the current price before buying.",
-    category: "protein",
-    filter: (product) => {
-      const offer = getBestOffer(product);
-      return offer !== null && offer.price < 50;
-    },
-    powderOnly: true,
-    sortBy: "proteinPerDollar",
-    sortDirection: "desc",
-    limit: 15,
-    metricLabel: "Protein / $",
-    metricFormat: "grams",
-    decisionGuide: [
-      {
-        label: "Best overall value",
-        guidance: "Start at the top: the primary ranking is grams of protein in the full container per dollar spent.",
-      },
-      {
-        label: "Lowest repeat cost",
-        guidance: "Compare the cost-per-serving figure on each row; it can differ from the protein-per-dollar order.",
-      },
-      {
-        label: "Smaller serving size",
-        guidance: "Use the separate small-serving-sizes ranking. Scoop weight is not treated as a synonym for value here.",
-      },
-    ],
-    faqs: [
-      {
-        question: "What counts as a protein powder under $50?",
-        answer:
-          "A scoopable protein powder qualifies when its best recorded retailer offer in our catalog is below $50. Collagen, protein bars, and ready-to-drink products are excluded from this page.",
-      },
-      {
-        question: "How are the powders ranked?",
-        answer:
-          "We divide the total grams of protein in the container by the recorded price. That rewards products that deliver more protein for each dollar rather than simply favoring the cheapest tub.",
-      },
-      {
-        question: "Is the lightest scoop automatically the best value?",
-        answer:
-          "No. A lighter scoop may contain less protein or come from a smaller container. This page ranks value by protein per dollar and reports cost per serving separately.",
-      },
-      {
-        question: "Why can the retailer price differ from this list?",
-        answer:
-          "Prices change after our recorded checks. Use this ranking to narrow the field, then verify the current price and serving count with the retailer before buying.",
-      },
-    ],
+    metricLabel: "Protein / g Serving",
+    metricFormat: "decimal",
   },
   {
     slug: "highest-protein-per-dollar",
-    title: "Highest Protein Per Dollar: Ranked",
+    title: "Highest Protein Concentration: Ranked",
     metaDescription:
-      "Every protein powder in our catalog with a recorded price, ranked from highest to lowest protein per dollar — no price ceiling, just the raw value ranking.",
+      "Every protein powder in our catalog ranked from highest to lowest protein concentration — grams of protein per gram of serving, with no price data involved.",
     intro:
-      "This is the full ranking, no price ceiling: every protein powder in our catalog with a recorded retailer price, sorted purely by protein per dollar. It's the same metric used in our $30 and $50 lists, just without a cutoff, so you can see exactly where a specific product lands against everything else we track.",
+      "This is the full ranking: every protein powder in our catalog, sorted purely by protein concentration — grams of protein per gram of serving. It's a nutrition-density metric, not a price comparison, so you can see exactly how a specific product's formula stacks up against everything else we track.",
     category: "protein",
     powderOnly: true,
-    sortBy: "proteinPerDollar",
+    sortBy: "proteinConcentration",
     sortDirection: "desc",
     limit: 25,
-    metricLabel: "Protein / $",
-    metricFormat: "grams",
+    metricLabel: "Protein / g Serving",
+    metricFormat: "decimal",
   },
   {
     slug: "best-value-clear-protein-powder",
     title: "Best-Value Clear Protein Powder",
     metaDescription:
-      "Clear whey protein isolate products in our catalog, ranked by protein per dollar, for anyone who wants a juice-like protein drink instead of a milky shake.",
+      "Clear whey protein isolate products in our catalog, ranked by protein concentration, for anyone who wants a juice-like protein drink instead of a milky shake.",
     intro:
-      "Clear whey isolate is still a small category in our catalog — this list is limited to products explicitly labeled \"clear\" in their own name, so it may only show a couple of results today. They're ranked by protein per dollar, same as our other protein rankings.",
+      "Clear whey isolate is still a small category in our catalog — this list is limited to products explicitly labeled \"clear\" in their own name, so it may only show a couple of results today. They're ranked by protein concentration (grams of protein per gram of serving), same as our other protein rankings.",
     category: "protein",
     filter: (product) => /clear/i.test(product.name),
     powderOnly: true,
-    sortBy: "proteinPerDollar",
+    sortBy: "proteinConcentration",
     sortDirection: "desc",
     limit: 15,
-    metricLabel: "Protein / $",
-    metricFormat: "grams",
+    metricLabel: "Protein / g Serving",
+    metricFormat: "decimal",
   },
   {
     slug: "best-value-protein-powder-bariatric",
     title: "Best-Value Protein Powder for Bariatric Patients",
     metaDescription:
-      "Protein products in our bariatric category, ranked by protein per dollar, for post-op shoppers prioritizing protein first in small portions.",
+      "Protein products in our bariatric category, ranked by protein concentration, for post-op shoppers prioritizing protein first in small portions.",
     intro:
-      "Filtered to products tagged in our bariatric category that actually contain protein — mostly collagen and protein powders sized for small portions, not the full bariatric vitamin and supplement lineup. Ranked by protein per dollar. This is a newer part of our catalog, so the list may be short; always confirm with your bariatric team before changing what you use post-op.",
+      "Filtered to products tagged in our bariatric category that actually contain protein — mostly collagen and protein powders sized for small portions, not the full bariatric vitamin and supplement lineup. Ranked by protein concentration (grams of protein per gram of serving). This is a newer part of our catalog, so the list may be short; always confirm with your bariatric team before changing what you use post-op.",
     category: "bariatric",
     filter: (product) => product.nutrition.proteinGrams > 0,
-    sortBy: "proteinPerDollar",
+    sortBy: "proteinConcentration",
     sortDirection: "desc",
     limit: 15,
-    metricLabel: "Protein / $",
-    metricFormat: "grams",
+    metricLabel: "Protein / g Serving",
+    metricFormat: "decimal",
   },
   {
     slug: "best-protein-powder-small-serving-sizes",
@@ -207,32 +132,17 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
   },
   {
     slug: "creatine-cost-per-serving",
-    title: "Creatine Monohydrate Cost Per Serving: Ranked",
+    title: "Creatine Monohydrate by Serving Size: Ranked",
     metaDescription:
-      "Every creatine monohydrate product in our catalog, ranked from lowest to highest cost per serving using recorded retailer prices — powder tubs and capsules alike.",
+      "Every creatine monohydrate product in our catalog, ranked by labeled serving size — powder tubs and capsules alike, smallest dose first.",
     intro:
-      "Creatine monohydrate is close to a commodity — a 5g dose is a 5g dose regardless of brand, so price per serving is most of the decision. This list ranks every creatine product we track by cost per serving (price divided by servings per container), covering different sizes and flavors of the same formula as well as capsule versions, since a bigger tub or a multi-pack is only a better deal if it actually lowers the per-serving cost.",
+      "Creatine monohydrate is close to a commodity — a 5g dose is a 5g dose regardless of brand. This list ranks every creatine product we track by labeled grams per serving, smallest first, covering different sizes and flavors of the same formula as well as capsule versions.",
     category: "creatine",
-    sortBy: "costPerServing",
+    sortBy: "servingSizeGrams",
     sortDirection: "asc",
     limit: 15,
-    metricLabel: "Cost / Serving",
-    metricFormat: "dollars",
-  },
-  {
-    slug: "protein-powder-price-tracker",
-    title: "Protein Powder Price Tracker and Buying Guide",
-    metaDescription:
-      "Every scoopable protein powder in our catalog with a recorded price, sorted cheapest-per-serving first — a full reference table, not just a top-10 list.",
-    intro:
-      "This is the full catalog of protein powder specifically, not a shortlist: every scoopable whey, casein, or plant protein powder we track with a recorded price, sorted by cost per serving from cheapest to most expensive. It excludes collagen peptides, protein bars, and ready-to-drink protein shakes, which we track under the protein category too but aren't \"protein powder\" in the sense most people searching that term mean. Use it as a reference table rather than a top-picks list — pair it with the protein per dollar rankings above if you want the best value, not just the lowest sticker price.",
-    category: "protein",
-    powderOnly: true,
-    sortBy: "costPerServing",
-    sortDirection: "asc",
-    limit: 60,
-    metricLabel: "Cost / Serving",
-    metricFormat: "dollars",
+    metricLabel: "Grams / Serving",
+    metricFormat: "grams",
   },
 ];
 
@@ -254,7 +164,7 @@ export function getRankedProducts(article: BestValueArticle): RankedProduct[] {
   const eligible = categoryProducts.filter(
     (p) =>
       supportsServingMetrics(p) &&
-      getPriceConfidence(p).status !== "unavailable" &&
+      hasAvailableOffer(p) &&
       (!article.powderOnly || isPowderFormat(p)) &&
       (!article.filter || article.filter(p))
   );

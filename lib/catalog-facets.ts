@@ -2,7 +2,7 @@ import "server-only";
 
 import { products } from "@/data/products";
 import type { FilterFacets, Product } from "@/data/types";
-import { extractFlavor, getCostPerServing } from "@/lib/macrosaver-engine";
+import { extractFlavor } from "@/lib/macrosaver-engine";
 import { PROTEIN_THRESHOLDS } from "@/lib/catalog-query";
 
 export function getCatalogFacets(activeCategory?: string): FilterFacets {
@@ -14,12 +14,6 @@ export function getCatalogFacets(activeCategory?: string): FilterFacets {
       )
     : (products as Product[]);
 
-  const costs = baseProducts
-    .map((product) => getCostPerServing(product))
-    .filter((cost): cost is number => cost !== null);
-
-  const minCost = costs.length ? Math.min(...costs) : 0;
-  const maxCost = costs.length ? Math.max(...costs) : 0;
   const flavorCounts = new Map<string, number>();
 
   // A site-wide flavor list is too noisy to be useful. Facets are scoped to a
@@ -32,8 +26,6 @@ export function getCatalogFacets(activeCategory?: string): FilterFacets {
   }
 
   return {
-    minCost,
-    maxCost,
     proteinThresholds: PROTEIN_THRESHOLDS.map((value) => ({
       value,
       count: baseProducts.filter(

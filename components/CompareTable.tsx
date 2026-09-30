@@ -5,17 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/products";
 import {
-  getBestOffer,
-  getCostPerServing,
-  getCostPerOzProtein,
-  getOfferSale,
-  getProteinPerDollar,
+  getCaloriesPerGramProtein,
+  getProteinConcentration,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
 import { getTheme } from "@/lib/theme";
 import { getMetricHighlights, type ComparisonDirection } from "@/lib/compare";
 import { useCompare } from "./CompareContext";
-import type { Product } from "@/data/types";
+import type { Product, RetailerOffer } from "@/data/types";
 
 type Row = {
   label: string;
@@ -26,8 +23,8 @@ type Row = {
   highlightLabel?: string;
 };
 
-function formatMoney(value: number | null): string {
-  return value !== null ? `$${value.toFixed(2)}` : "—";
+function getFirstAvailableOffer(product: Product): RetailerOffer | null {
+  return product.offers.find((offer) => offer.inStock !== false) ?? null;
 }
 
 export default function CompareTable() {
@@ -74,57 +71,30 @@ export default function CompareTable() {
 
   const rows: Row[] = [
     {
-      label: "Undated Price Snapshot",
-      render: (p) => {
-        const offer = getBestOffer(p);
-        if (!offer) return "—";
-        const sale = getOfferSale(offer);
-        return (
-          <span className="inline-flex items-baseline gap-1.5">
-            {formatMoney(offer.price)}
-            {sale && (
-              <span className="text-[10px] font-bold text-gray-500 line-through">
-                ${sale.listPrice.toFixed(2)}
-              </span>
-            )}
-          </span>
-        );
-      },
-      metric: (p) => getBestOffer(p)?.price ?? null,
-      direction: "min",
-      highlightLabel: "lowest listed package price",
-    },
-    {
-      label: "Cost / Serving",
-      render: (p) => formatMoney(getCostPerServing(p)),
-      metric: (p) => getCostPerServing(p),
-      direction: "min",
-      highlightLabel: "lowest listed cost per serving",
-    },
-    {
-      label: "Cost / Oz Protein",
-      render: (p) =>
-        supportsServingMetrics(p) && p.nutrition.proteinGrams > 0
-          ? formatMoney(getCostPerOzProtein(p))
-          : "—",
-      metric: (p) =>
-        supportsServingMetrics(p) && p.nutrition.proteinGrams > 0
-          ? getCostPerOzProtein(p)
-          : null,
-      direction: "min",
-      highlightLabel: "lowest cost per ounce of protein",
-    },
-    {
-      label: "Protein / Dollar",
+      label: "Protein Concentration",
       render: (p) => {
         if (!supportsServingMetrics(p) || p.nutrition.proteinGrams <= 0) return "—";
-        const v = getProteinPerDollar(p);
-        return v !== null ? `${v.toFixed(1)}g` : "—";
+        const v = getProteinConcentration(p);
+        return v !== null ? `${v.toFixed(2)}g/g` : "—";
       },
       metric: (p) =>
-        supportsServingMetrics(p) && p.nutrition.proteinGrams > 0 ? getProteinPerDollar(p) : null,
+        supportsServingMetrics(p) && p.nutrition.proteinGrams > 0 ? getProteinConcentration(p) : null,
       direction: "max",
-      highlightLabel: "highest protein per dollar",
+      highlightLabel: "highest protein concentration",
+    },
+    {
+      label: "Calories / g Protein",
+      render: (p) => {
+        if (!supportsServingMetrics(p) || p.nutrition.proteinGrams <= 0) return "—";
+        const v = getCaloriesPerGramProtein(p);
+        return v !== null ? v.toFixed(1) : "—";
+      },
+      metric: (p) =>
+        supportsServingMetrics(p) && p.nutrition.proteinGrams > 0
+          ? getCaloriesPerGramProtein(p)
+          : null,
+      direction: "min",
+      highlightLabel: "lowest calories per gram of protein",
     },
     {
       label: "Servings",
@@ -249,7 +219,7 @@ export default function CompareTable() {
                 </th>
           {selectedProducts.map((p) => {
             const theme = getTheme(p.category);
-            const bestOffer = getBestOffer(p);
+            const bestOffer = getFirstAvailableOffer(p);
             return (
               <th
                 key={p.id}
@@ -291,10 +261,10 @@ export default function CompareTable() {
                     href={bestOffer.url}
                     target="_blank"
                     rel="nofollow sponsored noopener"
-                    aria-label={`View ${p.name} at ${bestOffer.retailer} for $${bestOffer.price.toFixed(2)} (opens in a new tab)`}
+                    aria-label={`View ${p.name} at ${bestOffer.retailer} (opens in a new tab, paid link)`}
                     className={`mt-auto inline-flex min-h-11 w-full items-center justify-center rounded py-2 text-[10px] font-black uppercase tracking-widest text-black transition-transform hover:scale-[1.02] ${theme.bg} ${theme.hoverBg}`}
                   >
-                    View offer →
+                    View offer (paid link) →
                   </a>
                 )}
               </th>

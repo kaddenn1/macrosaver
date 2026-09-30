@@ -1,11 +1,10 @@
 "use client";
 
-import { Suspense, useEffect, useId, useRef, useState } from "react";
-import Link from "next/link";
+import { Suspense, useId } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import type { FilterFacets } from "@/data/types";
 
-const FILTER_KEYS = ["protein", "maxPrice", "flavor", "type"] as const;
+const FILTER_KEYS = ["protein", "flavor", "type"] as const;
 
 function ChoiceButton({
   checked,
@@ -51,34 +50,13 @@ function SidebarInner({
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const idPrefix = useId();
-  const maxPriceId = `${idPrefix}-max-price-filter`;
   const proteinLabelId = `${idPrefix}-protein-filter-label`;
   const proteinTypeLabelId = `${idPrefix}-protein-type-filter-label`;
   const flavorLabelId = `${idPrefix}-flavor-filter-label`;
   const paramsString = searchParams.toString();
 
   const isProteinCategory = activeCategory === "protein";
-  const urlMaxPrice = searchParams.get("maxPrice");
-  const parsedUrlMax = urlMaxPrice ? Number.parseFloat(urlMaxPrice) : facets.maxCost;
-  const urlSliderValue = Number.isFinite(parsedUrlMax)
-    ? Math.min(facets.maxCost, Math.max(facets.minCost, parsedUrlMax))
-    : facets.maxCost;
-  const sliderSource = `${urlMaxPrice ?? ""}:${facets.minCost}:${facets.maxCost}`;
-  const [sliderDraft, setSliderDraft] = useState({
-    value: urlSliderValue,
-    source: sliderSource,
-  });
-  const sliderValue =
-    sliderDraft.source === sliderSource ? sliderDraft.value : urlSliderValue;
-
-  useEffect(
-    () => () => {
-      if (debounceRef.current) clearTimeout(debounceRef.current);
-    },
-    []
-  );
 
   const replaceParams = (params: URLSearchParams) => {
     const query = params.toString();
@@ -93,18 +71,6 @@ function SidebarInner({
     replaceParams(params);
   };
 
-  const handleSliderChange = (value: number) => {
-    setSliderDraft({ value, source: sliderSource });
-    if (debounceRef.current) clearTimeout(debounceRef.current);
-    debounceRef.current = setTimeout(() => {
-      const params = new URLSearchParams(paramsString);
-      params.delete("page");
-      if (value >= facets.maxCost) params.delete("maxPrice");
-      else params.set("maxPrice", value.toFixed(2));
-      replaceParams(params);
-    }, 250);
-  };
-
   const clearFilters = () => {
     const params = new URLSearchParams(paramsString);
     FILTER_KEYS.forEach((key) => params.delete(key));
@@ -113,7 +79,6 @@ function SidebarInner({
 
   const hasFilters = FILTER_KEYS.some((key) => searchParams.has(key));
   const isChecked = (key: string, value: string) => searchParams.get(key) === value;
-  const canSlide = facets.maxCost > facets.minCost;
 
   return (
     <aside className="flex w-full flex-col gap-6" aria-label="Product filters">
@@ -130,37 +95,6 @@ function SidebarInner({
             Clear all
           </button>
         )}
-      </div>
-
-      <Link
-        href="/deals"
-        className="flex min-h-11 w-full items-center justify-center rounded-lg bg-rose-500 py-2.5 text-[11px] font-black uppercase tracking-widest text-white transition-colors hover:bg-rose-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-300"
-      >
-        View Current Deals →
-      </Link>
-
-      <div>
-        <label
-          htmlFor={maxPriceId}
-          className="mb-2 block text-[10px] uppercase tracking-widest text-gray-300"
-        >
-          Maximum cost per serving
-        </label>
-        <input
-          id={maxPriceId}
-          type="range"
-          min={facets.minCost}
-          max={facets.maxCost}
-          step={0.01}
-          value={sliderValue}
-          onChange={(event) => handleSliderChange(Number.parseFloat(event.target.value))}
-          className="w-full accent-[#a3e635] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#a3e635]"
-          disabled={!canSlide}
-        />
-        <div className="mt-1 flex justify-between text-[10px] font-bold text-[#a3e635]">
-          <span>${facets.minCost.toFixed(2)}</span>
-          <span>Up to ${sliderValue.toFixed(2)}</span>
-        </div>
       </div>
 
       {isProteinCategory && (

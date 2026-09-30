@@ -7,18 +7,9 @@ import { productIngredients } from "@/data/ingredients";
 import ProductImageGallery from "@/components/ProductImageGallery";
 import { productLabelPhotos } from "@/data/labelPhotos";
 import {
-  formatShortDate,
-  getBestOffer,
-  getCostPerServing,
-  getCostPerOzProtein,
-  getLatestPriceObservation,
-  getMostRecentCheck,
-  getOfferFreshness,
-  getOfferSale,
-  getPriceConfidence,
-  getProteinPerDollar,
-  getSavingsVsHighestOffer,
-  hasFreshPriceObservation,
+  getCaloriesPerGramProtein,
+  getProteinConcentration,
+  hasAvailableOffer,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
 import { amazonSearchUrl } from "@/lib/affiliate";
@@ -32,12 +23,13 @@ import ProductReviews from "@/components/ProductReviews";
 import CompareButton from "@/components/CompareButton";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import ProductVariantSelector from "@/components/ProductVariantSelector";
+import ValueCalculator from "@/components/ValueCalculator";
 import { getGuideByCategory } from "@/lib/guides";
 import { RECIPES } from "@/lib/recipes";
 import { getProductLine } from "@/lib/product-lines";
 import { getProductOverview } from "@/lib/product-overviews";
 import { getBestValueArticleBySlug } from "@/lib/best-value";
-import type { Product, RetailerOffer } from "@/data/types";
+import type { Product } from "@/data/types";
 
 export const revalidate = 3600;
 
@@ -49,18 +41,6 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
-function formatOfferFreshnessLabel(offer: RetailerOffer): string {
-  const freshness = getOfferFreshness(offer);
-  if (freshness === "unknown") {
-    return offer.lastCheckedAt
-      ? `Checked ${formatShortDate(offer.lastCheckedAt)} — verify current price`
-      : "Undated — verify at retailer";
-  }
-
-  const dateLabel = formatShortDate(offer.priceObservedAt as string);
-  return freshness === "stale" ? `Checked ${dateLabel} — verify current price` : `Checked ${dateLabel}`;
-}
-
 function getRelatedProducts(product: Product, limit: number): Product[] {
   return (products as Product[])
     .filter(
@@ -68,7 +48,7 @@ function getRelatedProducts(product: Product, limit: number): Product[] {
         p.id !== product.id &&
         (p.category === product.category || p.additionalCategories?.includes(product.category))
     )
-    .sort((a, b) => (getCostPerServing(a) ?? 999) - (getCostPerServing(b) ?? 999))
+    .sort((a, b) => (getProteinConcentration(b) ?? 0) - (getProteinConcentration(a) ?? 0))
     .slice(0, limit);
 }
 
@@ -90,17 +70,15 @@ export async function generateMetadata({
     return {};
   }
 
-  const bestOffer = getBestOffer(product);
   const servingMetricsApply = supportsServingMetrics(product);
+  const categoryTitle = CATEGORY_TITLES[product.category] || product.category;
 
-  const title = `${product.name} | ${product.brand} Price & Value`;
-  const priceText = bestOffer
-    ? `Recorded price snapshot $${bestOffer.price.toFixed(2)}`
-    : "Recorded price snapshot unavailable";
-  const detailsText = servingMetricsApply
-    ? "cost per serving and nutrition details"
-    : "product details";
-  const description = `${product.brand} ${product.name}: ${priceText} — ${detailsText} on ${SITE_NAME}. Verify current price at the retailer.`;
+  const title = `${product.name} | ${product.brand} Nutrition & Value`;
+  const proteinText =
+    servingMetricsApply && product.nutrition.proteinGrams > 0
+      ? `${product.nutrition.proteinGrams}g protein per serving`
+      : `${categoryTitle} details`;
+  const description = `${product.brand} ${product.name}: ${proteinText}, serving size, and full nutrition facts on ${SITE_NAME}. Enter the price you see to calculate cost per serving and value.`;
 
   // Flavor/size variants of the same line canonicalize to one primary variant,
   // so Google consolidates ranking signal instead of treating near-duplicate
@@ -138,13 +116,8 @@ export default async function ProductPage({
   const relatedBestValueArticle = overview?.relatedBestValueSlug
     ? getBestValueArticleBySlug(overview.relatedBestValueSlug)
     : undefined;
-  const priceConfidence = getPriceConfidence(product);
-  const headlineSale = priceConfidence.offer ? getOfferSale(priceConfidence.offer) : null;
-  const headlineLastChecked = priceConfidence.offer ? null : getMostRecentCheck(product);
-  const costPerServing = getCostPerServing(product);
-  const costPerOzProtein = getCostPerOzProtein(product);
-  const proteinPerDollar = getProteinPerDollar(product);
-  const savings = getSavingsVsHighestOffer(product);
+  const proteinConcentration = getProteinConcentration(product);
+  const caloriesPerGramProtein = getCaloriesPerGramProtein(product);
   const servingMetricsApply = supportsServingMetrics(product);
   const hasProtein = servingMetricsApply && product.nutrition.proteinGrams > 0;
   const ingredientInfo = productIngredients[product.id];
@@ -154,14 +127,8 @@ export default async function ProductPage({
   const reviewSummary = await getReviewSummary(product.id);
   const guide = getGuideByCategory(product.category);
   const featuredInRecipes = RECIPES.filter((r) => r.featuredProductId === product.id);
-  const latestPriceObservation = getLatestPriceObservation(product);
 
-  // Amazon offers are excluded pending Amazon Associates reinstatement — see
-  // getEligibleOffers() in lib/macrosaver-engine.ts for why.
-  const sortedOffers = [...product.offers]
-    .filter((offer) => offer.retailer !== "Amazon")
-    .sort((a, b) => a.price - b.price);
-  const freshOffers = sortedOffers.filter((offer) => hasFreshPriceObservation(offer));
+  const availableOffers = product.offers.filter((offer) => offer.inStock !== false);
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -192,29 +159,6 @@ export default async function ProductPage({
     category: CATEGORY_TITLES[product.category] || product.category,
     image: product.image ? `${SITE_URL}${product.image}` : undefined,
     url: `${SITE_URL}/product/${product.id}`,
-    // Offer/price data is only presented to crawlers when at least one offer carries
-    // an explicit, recent observation date — undated snapshots stay visible on the
-    // page but are never asserted as current price/availability facts to Google.
-    ...(freshOffers.length > 0 && {
-      offers: {
-        "@type": "AggregateOffer",
-        priceCurrency: "USD",
-        lowPrice: freshOffers[0].price,
-        highPrice: freshOffers[freshOffers.length - 1].price,
-        offerCount: freshOffers.length,
-        offers: freshOffers.map((offer) => ({
-          "@type": "Offer",
-          url: offer.url,
-          priceCurrency: "USD",
-          price: offer.price,
-          availability:
-            offer.inStock === false
-              ? "https://schema.org/OutOfStock"
-              : "https://schema.org/InStock",
-          seller: { "@type": "Organization", name: offer.retailer },
-        })),
-      },
-    }),
     ...(reviewSummary.reviewCount > 0 && {
       aggregateRating: {
         "@type": "AggregateRating",
@@ -334,88 +278,38 @@ export default async function ProductPage({
               </div>
             )}
 
-            {/* Value metrics grid */}
+            {/* Nutrition value metrics grid */}
             <div
               className={`grid ${
-                hasProtein
-                  ? "grid-cols-2 sm:grid-cols-4"
-                  : servingMetricsApply
-                    ? "grid-cols-2"
-                    : "grid-cols-1"
+                hasProtein ? "grid-cols-2 sm:grid-cols-3" : "grid-cols-1"
               } gap-4 mb-8 border-y border-gray-800 py-6`}
             >
+              {hasProtein && (
+                <div>
+                  <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+                    Protein Concentration
+                  </div>
+                  <div className={`text-xl font-black ${theme.text}`}>
+                    {proteinConcentration !== null ? `${proteinConcentration.toFixed(2)}g/g` : "—"}
+                  </div>
+                </div>
+              )}
+              {hasProtein && (
+                <div>
+                  <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+                    Calories / g Protein
+                  </div>
+                  <div className="text-xl font-black text-white">
+                    {caloriesPerGramProtein !== null ? caloriesPerGramProtein.toFixed(1) : "—"}
+                  </div>
+                </div>
+              )}
               <div>
                 <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
-                  {priceConfidence.status === "lowest-recorded"
-                    ? "Lowest Recorded Price"
-                    : priceConfidence.status === "recorded"
-                      ? `Recorded Price at ${priceConfidence.offer?.retailer}`
-                      : "Price Unavailable"}
+                  Servings Per Container
                 </div>
-                <div className="flex items-baseline gap-2">
-                  <div className="text-xl font-black text-white">
-                    {priceConfidence.offer ? `$${priceConfidence.offer.price.toFixed(2)}` : "—"}
-                  </div>
-                  {headlineSale && (
-                    <span className="text-xs font-bold text-gray-500 line-through">
-                      ${headlineSale.listPrice.toFixed(2)}
-                    </span>
-                  )}
-                </div>
-                {headlineSale && (
-                  <div className="mt-0.5 text-[10px] font-bold text-rose-400">
-                    Save ${headlineSale.savings.toFixed(2)} ({headlineSale.savingsPct.toFixed(0)}%)
-                  </div>
-                )}
-                {priceConfidence.offer?.subscribeAndSavePrice !== undefined &&
-                  priceConfidence.offer.subscribeAndSavePrice < priceConfidence.offer.price && (
-                    <a
-                      href={priceConfidence.offer.url}
-                      target="_blank"
-                      rel="nofollow sponsored noopener"
-                      className="mt-1 inline-flex w-fit items-center gap-1 rounded border border-emerald-500 px-2 py-1 text-[10px] font-bold uppercase text-emerald-400 hover:bg-emerald-500/10 transition-colors"
-                    >
-                      ${priceConfidence.offer.subscribeAndSavePrice.toFixed(2)} w/ Subscribe & Save →
-                    </a>
-                  )}
-                <div className="mt-1 text-[9px] uppercase tracking-wider text-gray-500">
-                  {priceConfidence.offer?.priceObservedAt
-                    ? `${priceConfidence.status === "lowest-recorded" ? "Lowest Verified" : "Verified"} ${formatShortDate(priceConfidence.offer.priceObservedAt)}`
-                    : headlineLastChecked
-                      ? `Checked ${formatShortDate(headlineLastChecked)} — verify current price`
-                      : "Check retailer for current price"}
-                </div>
+                <div className="text-xl font-black text-white">{product.servings}</div>
               </div>
-              {servingMetricsApply && (
-                <div>
-                  <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
-                    Cost / Serving
-                  </div>
-                  <div className={`text-xl font-black ${theme.text}`}>
-                    {costPerServing !== null ? `$${costPerServing.toFixed(2)}` : "—"}
-                  </div>
-                </div>
-              )}
-              {hasProtein && (
-                <div>
-                  <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
-                    Cost / Oz Protein
-                  </div>
-                  <div className={`text-xl font-black ${theme.text}`}>
-                    {costPerOzProtein !== null ? `$${costPerOzProtein.toFixed(2)}` : "—"}
-                  </div>
-                </div>
-              )}
-              {hasProtein && (
-                <div>
-                  <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
-                    Protein / Dollar
-                  </div>
-                  <div className="text-xl font-black text-white">
-                    {proteinPerDollar !== null ? `${proteinPerDollar.toFixed(1)}g` : "—"}
-                  </div>
-                </div>
-              )}
             </div>
 
             {/* Nutrition facts */}
@@ -527,9 +421,11 @@ export default async function ProductPage({
               </div>
             )}
 
+            <ValueCalculator product={product} />
+
             {/* Offers */}
             <div className="mb-6">
-              {sortedOffers.length === 0 ? (
+              {availableOffers.length === 0 ? (
                 <div className="flex flex-col items-center gap-3 py-6 text-center border-2 border-dashed border-gray-800 rounded-xl">
                   <p className="text-sm text-gray-400">No current offers to compare.</p>
                   <a
@@ -543,142 +439,47 @@ export default async function ProductPage({
                 </div>
               ) : (
                 <>
-                  <div className="flex items-center justify-between mb-3">
-                    <h2 className="text-sm font-bold uppercase tracking-widest text-white">
-                      Compare Offers
-                    </h2>
-                    {savings !== null && (
-                      <span className="text-xs text-gray-400">
-                        Save <span className={`font-bold ${theme.text}`}>${savings.toFixed(2)}</span> vs
-                        highest price
-                      </span>
-                    )}
-                  </div>
+                  <h2 className="text-sm font-bold uppercase tracking-widest text-white mb-3">
+                    Where to Buy
+                  </h2>
 
                   <div className="flex flex-col gap-2">
-                    {sortedOffers.map((offer) => {
-                  const isBest =
-                    priceConfidence.offer?.retailer === offer.retailer &&
-                    priceConfidence.offer?.price === offer.price;
-                  const isOutOfStock = offer.inStock === false;
-                  const sale = getOfferSale(offer);
-
-                  if (isOutOfStock) {
-                    return (
-                      <div
+                    {availableOffers.map((offer) => (
+                      <a
                         key={offer.retailer}
-                        className="flex items-center justify-between px-4 py-3 rounded-lg border border-gray-800 bg-[#0d0d0d] opacity-50"
+                        href={offer.url}
+                        target="_blank"
+                        rel="nofollow sponsored noopener"
+                        className="flex items-center justify-between gap-3 px-4 py-3 rounded-lg border border-gray-800 bg-[#0d0d0d] hover:border-gray-600 transition-colors"
                       >
-                        <div className="flex flex-col gap-0.5">
-                          <div className="flex items-center gap-3">
-                            <span className="font-bold text-white text-sm">{offer.retailer}</span>
-                            <span className="text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-gray-700 text-gray-300">
-                              Out of Stock
-                            </span>
-                          </div>
-                          <span className="text-[10px] text-gray-500">
-                            {formatOfferFreshnessLabel(offer)}
+                        <span className="text-sm font-bold text-white">
+                          Check current price at {offer.retailer}
+                          <span className="ml-2 text-[10px] font-normal uppercase tracking-widest text-gray-500">
+                            (paid link)
                           </span>
-                        </div>
-                        <span className="text-lg font-black text-gray-400">${offer.price.toFixed(2)}</span>
-                      </div>
-                    );
-                  }
-
-                  const hasSubscribeAndSave =
-                    offer.subscribeAndSavePrice !== undefined && offer.subscribeAndSavePrice < offer.price;
-
-                  return (
-                    <div
-                      key={offer.retailer}
-                      className={`flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 px-4 py-3 rounded-lg border transition-colors ${
-                        isBest
-                          ? `${theme.border} bg-[#111]`
-                          : "border-gray-800 bg-[#0d0d0d] hover:border-gray-600"
-                      }`}
-                    >
-                      <div className="flex flex-col gap-0.5">
-                        <div className="flex items-center gap-3">
-                          <span className="font-bold text-white text-sm">{offer.retailer}</span>
-                          {isBest && (
-                            <span
-                              className={`text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded ${theme.bg} text-black`}
-                            >
-                              Best Price
-                            </span>
-                          )}
-                          {sale && (
-                            <span className="text-[9px] uppercase tracking-wider font-bold px-2 py-0.5 rounded bg-rose-500 text-white">
-                              Sale
-                            </span>
-                          )}
-                        </div>
-                        <span className="text-[10px] text-gray-500">
-                          {formatOfferFreshnessLabel(offer)}
                         </span>
-                      </div>
-                      <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-2 sm:shrink-0">
-                        <div className="flex flex-col items-end gap-0.5">
-                          <div className="flex items-baseline gap-2">
-                            {sale && (
-                              <span className="text-xs font-bold text-gray-500 line-through">
-                                ${sale.listPrice.toFixed(2)}
-                              </span>
-                            )}
-                            <span className="text-lg font-black text-white">${offer.price.toFixed(2)}</span>
-                          </div>
-                          {hasSubscribeAndSave && (
-                            <span className="text-[9px] font-bold text-emerald-400">
-                              ${offer.subscribeAndSavePrice!.toFixed(2)} w/ Subscribe & Save
-                            </span>
-                          )}
-                        </div>
-                        <div className="flex flex-col items-stretch gap-1 shrink-0">
-                          <a
-                            href={offer.url}
-                            target="_blank"
-                            rel="nofollow sponsored noopener"
-                            className={`text-center px-3 py-1.5 rounded text-xs font-bold uppercase ${theme.bg} text-black hover:opacity-90 transition-opacity`}
-                          >
-                            Buy →
-                          </a>
-                          {hasSubscribeAndSave && (
-                            <a
-                              href={offer.url}
-                              target="_blank"
-                              rel="nofollow sponsored noopener"
-                              className="text-center px-3 py-1.5 rounded text-[10px] font-bold uppercase border border-emerald-500 text-emerald-400 hover:bg-emerald-500/10 transition-colors"
-                            >
-                              Subscribe & Save →
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
+                        <span
+                          className={`shrink-0 text-[10px] font-black uppercase tracking-widest text-black px-3 py-1.5 rounded transition-transform hover:scale-[1.02] ${theme.bg} ${theme.hoverBg}`}
+                        >
+                          Check Price →
+                        </span>
+                      </a>
+                    ))}
                   </div>
                 </>
               )}
             </div>
 
             <p className="text-[11px] text-gray-400 leading-relaxed">
-              As an affiliate of retailer programs, MacroSaver earns from qualifying purchases made
-              through links on this page. This does not affect the price you pay or the offers we
-              show — our rankings are based purely on cost per serving and cost per ounce of protein.
+              As an Amazon Associate I earn from qualifying purchases. MacroSaver may also earn a
+              commission from other retailer links on this page at no added cost to you. MacroSaver
+              does not store or display retailer prices — our rankings are based on nutrition data
+              (protein concentration and calories per gram of protein), and the value calculator above
+              runs entirely on the price you type in, on the spot.
             </p>
 
             <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-[11px] text-gray-500">
-              <span>
-                {latestPriceObservation
-                  ? `Price data last verified ${latestPriceObservation.toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
-                      timeZone: "UTC",
-                    })}`
-                  : "Retailer prices shown above are undated snapshots"}
-              </span>
+              <span>Always verify current price and availability with the retailer before buying.</span>
               <span aria-hidden="true">·</span>
               <Link href="/about#corrections" className="underline hover:text-gray-300">
                 Report a correction
@@ -738,8 +539,8 @@ export default async function ProductPage({
             </h2>
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
               {relatedProducts.map((related) => {
-                const relatedBestOffer = getBestOffer(related);
-                const relatedCostPerServing = getCostPerServing(related);
+                const relatedProteinConcentration = getProteinConcentration(related);
+                const relatedHasOffer = hasAvailableOffer(related);
                 return (
                   <Link
                     key={related.id}
@@ -766,12 +567,11 @@ export default async function ProductPage({
                       {related.name}
                     </div>
                     <div className="text-sm font-black text-white">
-                      {relatedBestOffer ? `$${relatedBestOffer.price.toFixed(2)}` : "—"}
-                      {relatedCostPerServing !== null && (
-                        <span className="text-[10px] font-normal text-gray-400 ml-1">
-                          (${relatedCostPerServing.toFixed(2)}/serving)
-                        </span>
-                      )}
+                      {relatedProteinConcentration !== null
+                        ? `${relatedProteinConcentration.toFixed(2)}g protein/g`
+                        : relatedHasOffer
+                          ? "View details"
+                          : "—"}
                     </div>
                   </Link>
                 );

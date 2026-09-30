@@ -53,7 +53,7 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link href="/#best-deals" className="hover:text-white transition duration-150 text-lime-500">
+          <Link href="/#best-value" className="hover:text-white transition duration-150 text-lime-500">
             Best Value
           </Link>
         </nav>
@@ -93,7 +93,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/#best-deals"
+            href="/#best-value"
             onClick={() => setMenuOpen(false)}
             className="py-3 text-lime-500 hover:text-lime-400 transition duration-150"
           >

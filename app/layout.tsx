@@ -8,8 +8,8 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "MacroSaver | Performance Nutrition Price Tracker",
-  description: "Automated macro calculation and price tracking dashboard for fitness supplements, clear whey isolates, and workout gear.",
+  title: "MacroSaver | Performance Nutrition Value Comparisons",
+  description: "Compare nutrition, ingredients, and serving value for fitness supplements, clear whey isolates, and workout gear, then calculate value at the price you find.",
   alternates: { canonical: SITE_URL },
   verification: {
     google: "HVBqnvFCZN2ebssSR01qGiPu9iollfp8N_1zlEQk9OI",

@@ -2,22 +2,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { products } from "@/data/products";
 import {
-  getCostPerServing,
-  getCostPerOzProtein,
-  getCurrentSale,
-  getMostRecentCheck,
-  getOfferSale,
-  getPriceConfidence,
-  getSavingsVsHighestOffer,
   extractFlavor,
-  formatShortDate,
+  getCaloriesPerGramProtein,
+  getProteinConcentration,
+  hasAvailableOffer,
   supportsServingMetrics,
 } from "@/lib/macrosaver-engine";
 import type { Product } from "@/data/types";
 import { getTheme } from "@/lib/theme";
 import { APPROVAL_BADGES } from "@/lib/approvals";
 import CompareButton from "@/components/CompareButton";
-import RetailerClickButton from "@/components/RetailerClickButton";
 import {
   applyCatalogQuery,
   CATALOG_PAGE_SIZE,
@@ -28,8 +22,6 @@ import {
 interface ChampionsProps {
   filterCategory?: string;
   filterBrand?: string;
-  /** Restricts the list to products with an active sale, ordered by largest savings first. */
-  dealsOnly?: boolean;
   searchParams?: { [key: string]: string | string[] | undefined };
   /** Caps how many products are shown (e.g. a 4-up homepage preview row). */
   limit?: number;
@@ -41,7 +33,6 @@ interface ChampionsProps {
 export default function Champions({
   filterCategory,
   filterBrand,
-  dealsOnly,
   searchParams,
   limit,
   title = "Products",
@@ -64,14 +55,7 @@ export default function Champions({
     displayProducts = displayProducts.filter((p) => p.brand.toLowerCase() === target);
   }
 
-  if (dealsOnly) {
-    displayProducts = displayProducts.filter((p) => getCurrentSale(p) !== null);
-  }
-
   const scopedProducts = displayProducts;
-  const scopedCosts = scopedProducts
-    .map((product) => getCostPerServing(product))
-    .filter((cost): cost is number => cost !== null);
   const allowedFlavors = filterCategory
     ? Array.from(
         new Set(
@@ -85,20 +69,11 @@ export default function Champions({
   const hasListingControls = !filterBrand;
   const query = parseCatalogQuery(searchParams, {
     allowSearch: hasListingControls,
-    allowMaxPrice: hasListingControls,
-    maxPriceCeiling: scopedCosts.length ? Math.max(...scopedCosts) : undefined,
     allowProteinFilters: isProteinCategory,
-    allowProteinSort: hasListingControls && (!filterCategory || isProteinCategory),
     allowedFlavors,
   });
 
   displayProducts = applyCatalogQuery(scopedProducts, query);
-
-  if (dealsOnly) {
-    displayProducts = [...displayProducts].sort(
-      (a, b) => (getCurrentSale(b)?.savings ?? 0) - (getCurrentSale(a)?.savings ?? 0)
-    );
-  }
 
   const totalMatches = displayProducts.length;
   const totalPages = limit ? 1 : Math.max(1, Math.ceil(totalMatches / CATALOG_PAGE_SIZE));
@@ -144,20 +119,16 @@ export default function Champions({
       <div className="grid grid-cols-1 min-[400px]:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {displayProducts.length === 0 && (
           <div className="col-span-full py-12 text-center text-gray-400 text-sm border-2 border-dashed border-gray-800 rounded-xl">
-            {dealsOnly
-              ? "No active deals right now — check back after the next price check."
-              : "No products found matching those filters. Try adjusting your selections!"}
+            No products found matching those filters. Try adjusting your selections!
           </div>
         )}
 
         {displayProducts.map((item) => {
-          const priceConfidence = getPriceConfidence(item);
-          const sale = priceConfidence.offer ? getOfferSale(priceConfidence.offer) : null;
-          const costPerServing = getCostPerServing(item);
-          const costPerOzProtein = getCostPerOzProtein(item);
-          const savings = getSavingsVsHighestOffer(item);
           const servingMetricsApply = supportsServingMetrics(item);
           const hasProtein = servingMetricsApply && item.nutrition.proteinGrams > 0;
+          const proteinConcentration = hasProtein ? getProteinConcentration(item) : null;
+          const caloriesPerGramProtein = hasProtein ? getCaloriesPerGramProtein(item) : null;
+          const hasOffer = hasAvailableOffer(item);
 
           const theme = getTheme(item.category);
 
@@ -212,95 +183,32 @@ export default function Champions({
                   {item.name}
                 </h3>
 
-                <div className={`mt-auto gap-2 ${servingMetricsApply ? "grid grid-cols-2" : "block"}`}>
-                   <div>
-                     <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
-                       {(() => {
-                         const { status, offer } = priceConfidence;
-                         if (status !== "unavailable" && offer?.priceObservedAt) {
-                           const dateLabel = formatShortDate(offer.priceObservedAt);
-                           return status === "lowest-recorded"
-                             ? `Lowest Verified ${dateLabel}`
-                             : `Verified ${dateLabel}`;
-                         }
-                         const lastChecked = getMostRecentCheck(item);
-                         return lastChecked ? `Checked ${formatShortDate(lastChecked)}` : "Price Unavailable";
-                       })()}
+                {servingMetricsApply && (
+                  <div className="mt-auto grid grid-cols-2 gap-2">
+                    <div>
+                      <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+                        Protein Concentration
                       </div>
-                      <div className="flex items-baseline gap-1.5">
-                        <div className="text-xl font-black text-white">
-                          {priceConfidence.offer ? `$${priceConfidence.offer.price.toFixed(2)}` : "—"}
-                        </div>
-                        {sale && (
-                          <span className="text-xs font-bold text-gray-500 line-through">
-                            ${sale.listPrice.toFixed(2)}
-                          </span>
-                        )}
+                      <div className={`text-lg font-black ${theme.text}`}>
+                        {proteinConcentration !== null ? `${proteinConcentration.toFixed(2)}g/g` : "—"}
                       </div>
-                     <div className="mt-1 text-[9px] uppercase tracking-wider text-gray-500">
-                       {sale ? (
-                         <span className="font-bold text-rose-400">
-                           Sale · Save ${sale.savings.toFixed(2)}
-                         </span>
-                       ) : (
-                         "Verify at retailer"
-                       )}
-                     </div>
-                     {servingMetricsApply && (
-                       <>
-                         <div className="mt-2 text-[10px] uppercase tracking-wider text-gray-400">
-                           Per Serving
-                         </div>
-                         <div className={`mt-0.5 text-sm font-bold ${theme.text}`}>
-                           {costPerServing !== null ? `$${costPerServing.toFixed(2)}` : "—"}
-                         </div>
-                       </>
-                     )}
-                   </div>
-
-                   {servingMetricsApply && <div className="text-right">
-                     <div className="text-[9px] text-gray-400 uppercase tracking-wider mb-1">
-                        {savings !== null ? `Save $${savings.toFixed(2)} vs highest` : ' '}
-                     </div>
-                     {hasProtein && (
-                       <>
-                         <div className="text-[10px] text-gray-400 mt-2 uppercase tracking-wider text-right">
-                           Cost / Oz Protein
-                         </div>
-                         <div className={`text-sm font-bold mt-0.5 text-right ${theme.text}`}>
-                            {costPerOzProtein !== null ? `$${costPerOzProtein.toFixed(2)}` : '—'}
-                         </div>
-                       </>
-                     )}
-                   </div>}
-                </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+                        Cal / g Protein
+                      </div>
+                      <div className="text-lg font-black text-white">
+                        {caloriesPerGramProtein !== null ? caloriesPerGramProtein.toFixed(1) : "—"}
+                      </div>
+                    </div>
+                  </div>
+                )}
 
                 <div className={`w-full mt-4 py-2 text-[11px] font-black uppercase tracking-widest text-black rounded transition-transform hover:scale-[1.02] flex items-center justify-center gap-2 ${theme.bg} ${theme.hoverBg}`}>
-                  {priceConfidence.offer && (
-                    <span className="max-w-[55%] truncate rounded bg-black/80 px-1.5 py-0.5 text-[8px] text-white">
-                      {priceConfidence.offer.retailer}
-                    </span>
-                  )}
-                  View Details →
+                  {hasOffer ? "Check Price (paid link) →" : "View Details →"}
                 </div>
               </div>
               </Link>
-              {dealsOnly && priceConfidence.offer && (
-                <div className="px-4 pb-4">
-                  <RetailerClickButton
-                    href={priceConfidence.offer.url}
-                    label={`Shop at ${priceConfidence.offer.retailer} →`}
-                    className="w-full block py-2 text-center text-[11px] font-black uppercase tracking-widest text-white rounded border border-gray-700 hover:border-[#a3e635] hover:text-[#a3e635] transition-colors"
-                    event={{
-                      productId: item.id,
-                      retailer: priceConfidence.offer.retailer,
-                      price: priceConfidence.offer.price,
-                      pageType: "deals",
-                      buttonPosition: "card_retailer_cta",
-                    }}
-                  />
-                </div>
-              )}
             </div>
           );
         })}

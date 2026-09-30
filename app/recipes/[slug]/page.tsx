@@ -8,10 +8,14 @@ import { RECIPES, getRecipeBySlug } from "@/lib/recipes";
 import { SITE_URL } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
 import { products } from "@/data/products";
-import { getBestOffer, getBestValueProduct } from "@/lib/macrosaver-engine";
+import { getBestValueProduct, getProteinConcentration } from "@/lib/macrosaver-engine";
 import { getGuideByCategory } from "@/lib/guides";
 import { CATEGORY_TITLES } from "@/lib/categories";
-import type { Product } from "@/data/types";
+import type { Product, RetailerOffer } from "@/data/types";
+
+function getFirstAvailableOffer(product: Product): RetailerOffer | null {
+  return product.offers.find((offer) => offer.inStock !== false) ?? null;
+}
 
 function toIsoDuration(text: string): string | undefined {
   const match = text.match(/\d+/);
@@ -69,7 +73,7 @@ export default async function RecipePage({
   const featuredProduct = recipe.featuredProductId
     ? (products as Product[]).find((p) => p.id === recipe.featuredProductId)
     : undefined;
-  const featuredOffer = featuredProduct ? getBestOffer(featuredProduct) : undefined;
+  const featuredOffer = featuredProduct ? getFirstAvailableOffer(featuredProduct) : undefined;
 
   const category = featuredProduct?.category ?? "protein";
   const categoryLabel = CATEGORY_TITLES[category] ?? category;
@@ -79,7 +83,7 @@ export default async function RecipePage({
     (p) => p.category === category || p.additionalCategories?.includes(category)
   );
   const bestValueProduct = getBestValueProduct(categoryProducts, featuredProduct?.id);
-  const bestValueOffer = bestValueProduct ? getBestOffer(bestValueProduct) : undefined;
+  const bestValueOffer = bestValueProduct ? getFirstAvailableOffer(bestValueProduct) : undefined;
 
   const recipeJsonLd = {
     "@context": "https://schema.org",
@@ -310,9 +314,11 @@ function RecipeProductPick({
   reason,
 }: {
   product: Product;
-  offer: ReturnType<typeof getBestOffer> | undefined;
+  offer: RetailerOffer | null | undefined;
   reason: string;
 }) {
+  const proteinConcentration = getProteinConcentration(product);
+
   return (
     <Link
       href={`/product/${product.id}`}
@@ -339,10 +345,10 @@ function RecipeProductPick({
       </div>
       <div className="text-right shrink-0">
         <div className="text-lg font-black text-white">
-          {offer ? `$${offer.price.toFixed(2)}` : "View"}
+          {proteinConcentration !== null ? `${proteinConcentration.toFixed(2)}g/g` : "View"}
         </div>
         <div className="text-[10px] text-gray-400 uppercase tracking-wider group-hover:text-[#a3e635] transition-colors">
-          Shop →
+          {offer ? "Shop (paid link) →" : "View →"}
         </div>
       </div>
     </Link>

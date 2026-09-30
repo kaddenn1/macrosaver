@@ -5,20 +5,21 @@ import { SITE_URL } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About & Methodology",
   description:
-    "How MacroSaver selects products, records prices, calculates value metrics, handles affiliate links, and approaches nutrition content.",
+    "How MacroSaver selects products, sources nutrition data, calculates value metrics, handles affiliate links, and approaches nutrition content.",
   alternates: { canonical: `${SITE_URL}/about` },
   openGraph: {
     title: "About MacroSaver & Our Methodology",
     description:
-      "A transparent explanation of MacroSaver's catalog, price snapshots, calculations, editorial standards, and affiliate model.",
+      "A transparent explanation of MacroSaver's catalog, nutrition data, value calculations, editorial standards, and affiliate model.",
     url: `${SITE_URL}/about`,
   },
 };
 
 const formulas = [
-  ["Cost per serving", "Recorded available offer price ÷ servings in the package"],
-  ["Protein per dollar", "Protein grams per serving ÷ cost per serving"],
-  ["Cost per ounce of protein", "Recorded offer price ÷ total protein ounces in the package"],
+  ["Protein concentration", "Protein grams per serving ÷ serving weight in grams"],
+  ["Cost per serving", "The price you type into our value calculator ÷ servings in the package"],
+  ["Protein per dollar", "Total protein grams in the package ÷ the price you type in"],
+  ["Cost per ounce of protein", "The price you type in ÷ total protein ounces in the package"],
 ];
 
 export default function AboutPage() {
@@ -40,27 +41,23 @@ export default function AboutPage() {
         </header>
 
         <section className="space-y-3">
-          <h2 className="text-xl font-bold text-white">Catalog and price data</h2>
+          <h2 className="text-xl font-bold text-white">Catalog and nutrition data</h2>
           <p className="leading-relaxed text-gray-400">
             Products are selected and entered manually; the catalog is not a complete survey of the
-            market. Prices are manually maintained snapshots of the offers shown and can change at
-            any time. Many products also have only one tracked retailer; a recorded price is not the
-            lowest price available anywhere.
+            market. MacroSaver does not store, track, or display retailer prices anywhere on the
+            site — rankings are built entirely from label nutrition data (protein per serving,
+            serving weight, calories) that we enter from the manufacturer&apos;s own listing.
           </p>
           <p className="leading-relaxed text-gray-400">
-            Every offer we track separates two different questions: when we last checked the
-            retailer link, and when we last directly confirmed the displayed price. A{" "}
-            <strong className="text-gray-200">Verified [date]</strong> badge means the exact price
-            shown was directly confirmed on that date. A{" "}
-            <strong className="text-gray-200">Checked [date]</strong> badge means we looked at the
-            retailer link on that date but couldn&apos;t confirm the displayed price is current —
-            treat the number as a reference point, not a quote. An offer with no badge at all has no
-            recent check on file.
+            Where you see a dollar figure on a product page, it came from the value calculator: you
+            type in the price you currently see at a retailer, and the math (cost per serving,
+            protein per dollar, cost per ounce of protein) runs in your browser on the spot. Nothing
+            you type is saved, logged, or sent anywhere.
           </p>
           <p className="leading-relaxed text-gray-400">
             Always verify the retailer price, package size, serving count, ingredients, and
-            availability before purchasing. Out-of-stock offers are excluded from value rankings
-            when that status is known.
+            availability before purchasing. Out-of-stock offers are excluded from our &quot;Where to
+            Buy&quot; links when that status is known.
           </p>
         </section>
 
@@ -75,9 +72,11 @@ export default function AboutPage() {
             ))}
           </dl>
           <p className="text-sm leading-relaxed text-gray-400">
-            Calculations use the serving and nutrition values in our catalog. Manufacturers can
-            change labels and formulations, and data-entry errors are possible. A low calculated
-            cost is a value signal, not a judgment about quality, safety, or suitability.
+            Category rankings and best-value guides use protein concentration (protein grams per
+            gram of serving) — a nutrition-only metric that never depends on price. Manufacturers can
+            change labels and formulations, and data-entry errors are possible. A high protein
+            concentration is a nutrition-density signal, not a judgment about quality, safety, or
+            suitability.
           </p>
           <p className="text-sm leading-relaxed text-gray-400">
             Named community endorsement badges identify a contributor&apos;s product list. They are not
@@ -88,10 +87,11 @@ export default function AboutPage() {
         <section className="space-y-3">
           <h2 className="text-xl font-bold text-white">Affiliate and ranking policy</h2>
           <p className="leading-relaxed text-gray-400">
-            MacroSaver may earn a commission when you buy through a marked retailer link, at no
-            added cost to you. Affiliate status does not alter the formulas. Product lists are
-            ordered using the selected on-page metric and filters, not commission rate. We do not
-            accept payment for user reviews.
+            As an Amazon Associate I earn from qualifying purchases. MacroSaver may also earn a
+            commission when you buy through other marked retailer links, at no added cost to you.
+            Affiliate status does not alter the rankings: product lists are ordered by nutrition data
+            (protein concentration), not commission rate, and outbound retailer links are marked
+            &quot;(paid link)&quot; wherever they appear. We do not accept payment for user reviews.
           </p>
         </section>
 

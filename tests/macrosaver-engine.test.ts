@@ -2,18 +2,14 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import type { Product } from "../data/types.ts";
 import {
+  costPerOzProtein,
+  costPerServing,
   extractFlavor,
-  getBestOffer,
   getBestValueProduct,
-  getBestSale,
-  getCostPerOzProtein,
-  getCostPerServing,
-  getOfferFreshness,
-  getOfferSale,
-  getPriceConfidence,
-  getProteinPerDollar,
-  getSavingsVsHighestOffer,
-  hasFreshPriceObservation,
+  getCaloriesPerGramProtein,
+  getProteinConcentration,
+  hasAvailableOffer,
+  proteinPerDollar,
   supportsServingMetrics,
 } from "../lib/macrosaver-engine.ts";
 import { serializeJsonLd } from "../lib/json-ld.ts";
@@ -37,40 +33,68 @@ const product: Product = {
   brand: "Test Brand",
   category: "protein",
   servings: 20,
-  nutrition: { proteinGrams: 25 },
+  nutrition: { proteinGrams: 25, calories: 120, servingSize: "1 scoop (30g)" },
   offers: [
-    { retailer: "Store A", price: 40, url: "https://example.com/a" },
-    { retailer: "Store B", price: 30, url: "https://example.com/b" },
+    { retailer: "Store A", url: "https://example.com/a" },
+    { retailer: "Store B", url: "https://example.com/b" },
   ],
 };
 
-test("value metrics use the cheapest available offer", () => {
-  assert.equal(getBestOffer(product)?.retailer, "Store B");
-  assert.equal(getCostPerServing(product), 1.5);
-  assert.equal(getProteinPerDollar(product), 16.67);
-  assert.equal(getCostPerOzProtein(product), 1.7);
-  assert.equal(getSavingsVsHighestOffer(product), 10);
+test("costPerServing computes a normal case and rejects invalid inputs", () => {
+  assert.equal(costPerServing(30, 20), 1.5);
+  assert.equal(costPerServing(0, 20), null);
+  assert.equal(costPerServing(-5, 20), null);
+  assert.equal(costPerServing(30, 0), null);
 });
 
-test("out-of-stock offers are excluded", () => {
-  const withUnavailableLowPrice: Product = {
-    ...product,
-    offers: [
-      { retailer: "Unavailable", price: 1, url: "https://example.com/oos", inStock: false },
-      { retailer: "Available", price: 35, url: "https://example.com/in-stock" },
-    ],
-  };
-
-  assert.equal(getBestOffer(withUnavailableLowPrice)?.retailer, "Available");
-  assert.equal(getSavingsVsHighestOffer(withUnavailableLowPrice), null);
+test("proteinPerDollar computes a normal case and rejects invalid inputs", () => {
+  assert.equal(proteinPerDollar(30, 25, 20), 16.67);
+  assert.equal(proteinPerDollar(0, 25, 20), null);
+  assert.equal(proteinPerDollar(-10, 25, 20), null);
+  assert.equal(proteinPerDollar(30, 25, 0), null);
 });
 
-test("invalid denominators return null instead of misleading values", () => {
-  assert.equal(getCostPerServing({ ...product, servings: 0 }), null);
+test("costPerOzProtein computes a normal case and rejects invalid inputs", () => {
+  assert.equal(costPerOzProtein(30, 25, 20), 1.7);
+  assert.equal(costPerOzProtein(0, 25, 20), null);
+  assert.equal(costPerOzProtein(-1, 25, 20), null);
+  assert.equal(costPerOzProtein(30, 25, 0), null);
+});
+
+test("getProteinConcentration reads grams of protein per gram of serving weight", () => {
+  assert.equal(getProteinConcentration(product), 0.83);
   assert.equal(
-    getProteinPerDollar({ ...product, nutrition: { proteinGrams: 0 } }),
+    getProteinConcentration({ ...product, nutrition: { proteinGrams: 25 } }),
     null
   );
+  assert.equal(
+    getProteinConcentration({ ...product, nutrition: { ...product.nutrition, proteinGrams: 0 } }),
+    null
+  );
+});
+
+test("getCaloriesPerGramProtein divides calories by protein grams, or null when unavailable", () => {
+  assert.equal(getCaloriesPerGramProtein(product), 4.8);
+  assert.equal(
+    getCaloriesPerGramProtein({ ...product, nutrition: { ...product.nutrition, calories: undefined } }),
+    null
+  );
+  assert.equal(
+    getCaloriesPerGramProtein({ ...product, nutrition: { ...product.nutrition, proteinGrams: 0 } }),
+    null
+  );
+});
+
+test("hasAvailableOffer reflects whether any offer is in stock", () => {
+  assert.equal(hasAvailableOffer(product), true);
+  assert.equal(
+    hasAvailableOffer({
+      ...product,
+      offers: [{ retailer: "Store A", url: "https://example.com/a", inStock: false }],
+    }),
+    false
+  );
+  assert.equal(hasAvailableOffer({ ...product, offers: [] }), false);
 });
 
 test("non-consumables never receive serving or nutrition value metrics", () => {
@@ -84,222 +108,41 @@ test("non-consumables never receive serving or nutrition value metrics", () => {
   };
 
   assert.equal(supportsServingMetrics(equipment), false);
-  assert.equal(getCostPerServing(equipment), null);
-  assert.equal(getProteinPerDollar(equipment), null);
-  assert.equal(getCostPerOzProtein(equipment), null);
   assert.equal(supportsServingMetrics(product), true);
 });
 
-test("only recent, explicitly dated prices qualify for Offer structured data", () => {
-  const asOf = new Date("2026-07-21T12:00:00.000Z");
-
-  assert.equal(
-    hasFreshPriceObservation(
-      { retailer: "Store", price: 20, url: "https://example.com" },
-      asOf
-    ),
-    false
-  );
-  assert.equal(
-    hasFreshPriceObservation(
-      {
-        retailer: "Store",
-        price: 20,
-        url: "https://example.com",
-        priceObservedAt: "2026-07-20T12:00:00.000Z",
-      },
-      asOf
-    ),
-    true
-  );
-  assert.equal(
-    hasFreshPriceObservation(
-      {
-        retailer: "Store",
-        price: 20,
-        url: "https://example.com",
-        priceObservedAt: "2026-06-11T12:00:00.000Z",
-      },
-      asOf
-    ),
-    false
-  );
-  assert.equal(
-    hasFreshPriceObservation(
-      {
-        retailer: "Store",
-        price: 20,
-        url: "https://example.com",
-        priceObservedAt: "2026-07-22T12:00:00.000Z",
-      },
-      asOf
-    ),
-    false
-  );
-});
-
-test("offer freshness classifies fresh, aging, stale, and unknown observations", () => {
-  const asOf = new Date("2026-08-23T12:00:00.000Z");
-
-  assert.equal(
-    getOfferFreshness({ retailer: "Store", price: 20, url: "https://example.com" }, asOf),
-    "unknown"
-  );
-  assert.equal(
-    getOfferFreshness(
-      { retailer: "Store", price: 20, url: "https://example.com", priceObservedAt: "2026-08-20" },
-      asOf
-    ),
-    "fresh"
-  );
-  assert.equal(
-    getOfferFreshness(
-      { retailer: "Store", price: 20, url: "https://example.com", priceObservedAt: "2026-07-15" },
-      asOf
-    ),
-    "aging"
-  );
-  assert.equal(
-    getOfferFreshness(
-      { retailer: "Store", price: 20, url: "https://example.com", priceObservedAt: "2026-05-01" },
-      asOf
-    ),
-    "stale"
-  );
-  assert.equal(
-    getOfferFreshness(
-      {
-        retailer: "Store",
-        price: 20,
-        url: "https://example.com",
-        priceObservedAt: "2026-08-24T00:00:00.000Z",
-      },
-      asOf
-    ),
-    "unknown"
-  );
-});
-
-test("price confidence excludes stale/unknown offers and reflects valid retailer count", () => {
-  const asOf = new Date("2026-08-23T12:00:00.000Z");
-  const freshOffer = {
-    retailer: "Store A",
-    price: 40,
-    url: "https://example.com/a",
-    priceObservedAt: "2026-08-20",
-  };
-  const secondFreshOffer = {
-    retailer: "Store B",
-    price: 30,
-    url: "https://example.com/b",
-    priceObservedAt: "2026-08-15",
-  };
-  const staleOffer = {
-    retailer: "Store C",
-    price: 10,
-    url: "https://example.com/c",
-    priceObservedAt: "2026-01-01",
-  };
-  const undatedOffer = { retailer: "Store D", price: 5, url: "https://example.com/d" };
-
-  assert.deepEqual(getPriceConfidence({ ...product, offers: [freshOffer] }, asOf), {
-    offer: freshOffer,
-    freshness: "fresh",
-    retailerCount: 1,
-    status: "recorded",
-  });
-
-  assert.deepEqual(
-    getPriceConfidence({ ...product, offers: [freshOffer, secondFreshOffer] }, asOf),
-    {
-      offer: secondFreshOffer,
-      freshness: "fresh",
-      retailerCount: 2,
-      status: "lowest-recorded",
-    }
-  );
-
-  assert.deepEqual(getPriceConfidence({ ...product, offers: [staleOffer, undatedOffer] }, asOf), {
-    offer: null,
-    freshness: "unknown",
-    retailerCount: 0,
-    status: "unavailable",
-  });
-
-  assert.deepEqual(
-    getPriceConfidence({ ...product, offers: [freshOffer, staleOffer] }, asOf),
-    {
-      offer: freshOffer,
-      freshness: "fresh",
-      retailerCount: 1,
-      status: "recorded",
-    }
-  );
-});
-
-test("best-value and ranked-product pickers skip stale/unknown-priced candidates", () => {
-  const asOf = new Date("2026-08-23T12:00:00.000Z");
-  const withUndatedOffer: Product = {
+test("getBestValueProduct ranks by protein concentration, not price", () => {
+  const higherProteinConcentration: Product = {
     ...product,
-    id: "undated-offer-product",
-    offers: [{ retailer: "Store", price: 1, url: "https://example.com/cheap" }],
+    id: "higher-protein-concentration",
+    nutrition: { proteinGrams: 25, servingSize: "1 scoop (30g)" },
   };
-  const withFreshOffer: Product = {
+  const lowerProteinConcentration: Product = {
     ...product,
-    id: "fresh-offer-product",
-    offers: [
-      {
-        retailer: "Store",
-        price: 25,
-        url: "https://example.com/fresh",
-        priceObservedAt: "2026-08-20",
-      },
-    ],
+    id: "lower-protein-concentration",
+    nutrition: { proteinGrams: 10, servingSize: "1 scoop (30g)" },
   };
 
-  assert.equal(getPriceConfidence(withUndatedOffer, asOf).status, "unavailable");
   assert.equal(
-    getBestValueProduct([withUndatedOffer, withFreshOffer])?.id,
-    "fresh-offer-product"
+    getBestValueProduct([lowerProteinConcentration, higherProteinConcentration])?.id,
+    "higher-protein-concentration"
   );
 });
 
-test("offer sale is only reported when listPrice is a genuine discount", () => {
-  assert.equal(
-    getOfferSale({ retailer: "Store", price: 20, url: "https://example.com" }),
-    null
-  );
-  assert.equal(
-    getOfferSale({ retailer: "Store", price: 20, url: "https://example.com", listPrice: 20 }),
-    null
-  );
-  assert.equal(
-    getOfferSale({ retailer: "Store", price: 20, url: "https://example.com", listPrice: 15 }),
-    null
-  );
-  assert.deepEqual(
-    getOfferSale({ retailer: "Store", price: 21.03, url: "https://example.com", listPrice: 29.99 }),
-    { price: 21.03, listPrice: 29.99, savings: 8.96, savingsPct: 29.88 }
-  );
-});
-
-test("best sale picks the largest-savings offer, or null when nothing is discounted", () => {
-  assert.equal(getBestSale(product), null);
-
-  const onSale: Product = {
+test("getBestValueProduct excludes products with no available offer", () => {
+  const outOfStock: Product = {
     ...product,
-    offers: [
-      { retailer: "Store A", price: 40, url: "https://example.com/a" },
-      { retailer: "Store B", price: 30, url: "https://example.com/b", listPrice: 45 },
-      { retailer: "Store C", price: 35, url: "https://example.com/c", listPrice: 40 },
-    ],
+    id: "out-of-stock-product",
+    nutrition: { proteinGrams: 40, servingSize: "1 scoop (30g)" },
+    offers: [{ retailer: "Store A", url: "https://example.com/a", inStock: false }],
   };
-  assert.deepEqual(getBestSale(onSale), {
-    price: 30,
-    listPrice: 45,
-    savings: 15,
-    savingsPct: 33.33,
-  });
+  const inStock: Product = {
+    ...product,
+    id: "in-stock-product",
+    nutrition: { proteinGrams: 10, servingSize: "1 scoop (30g)" },
+  };
+
+  assert.equal(getBestValueProduct([outOfStock, inStock])?.id, "in-stock-product");
 });
 
 test("flavor extraction ignores product-line hyphens and dosage variants", () => {
@@ -321,33 +164,32 @@ test("catalog queries ignore unsupported and malformed listing values", () => {
     {
       q: "   ",
       protein: "999",
-      maxPrice: "12oops",
       flavor: "Imaginary",
-      sort: "protein-high",
       page: "2",
     },
-    { maxPriceCeiling: 10, allowedFlavors: [], allowProteinSort: false }
+    { allowedFlavors: [], allowProteinFilters: true }
   );
 
   assert.equal(query.hasListingIntent, false);
-  assert.equal(query.sort, "price-low");
+  assert.equal(query.sort, "protein-high");
   assert.equal(query.page, 2);
   assert.equal(getCatalogQueryString(query), "page=2");
 });
 
-test("protein sorting is available only when the listing enables it", () => {
+test("protein filtering is available only when the listing enables it", () => {
   const allowed = parseCatalogQuery(
-    { sort: "protein-high" },
-    { allowProteinSort: true }
+    { protein: "25" },
+    { allowProteinFilters: true }
   );
   const denied = parseCatalogQuery(
-    { sort: "protein-high" },
-    { allowProteinSort: false }
+    { protein: "25" },
+    { allowProteinFilters: false }
   );
 
-  assert.equal(allowed.sort, "protein-high");
+  assert.equal(allowed.protein, 25);
   assert.equal(allowed.hasListingIntent, true);
-  assert.equal(denied.sort, "price-low");
+  assert.equal(denied.protein, undefined);
+  assert.equal(denied.hasListingIntent, false);
   assert.deepEqual(applyCatalogQuery([product], denied), [product]);
 });
 

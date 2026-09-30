@@ -25,7 +25,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "One of the best-known, most reviewed whey powders on the market",
     ],
     cons: [
-      "Only one tracked retailer (Amazon), so this isn't a cross-seller price comparison",
+      "No retailer offer currently in the catalog — check price on Amazon",
       "5 lb is a bigger commitment than 2 lb if you haven't tried the flavor first",
     ],
     relatedBestValueSlug: "highest-protein-per-dollar",
@@ -38,13 +38,12 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     pros: [
       "30g protein per serving, among the higher counts we track",
       "Only 1g sugar and 3g carbs per serving",
-      "Recorded price falls under our $50 price-point ranking",
     ],
     cons: [
-      "Single retailer tracked",
+      "Single retailer offer",
       "170mg sodium per serving is on the higher side for a protein powder",
     ],
-    relatedBestValueSlug: "best-protein-powder-under-50",
+    relatedBestValueSlug: "highest-protein-per-dollar",
   },
   {
     productId: "27",
@@ -58,7 +57,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     ],
     cons: [
       "Unflavored only — a flavored creatine means picking a different size/flavor in the same lineup",
-      "Single retailer tracked",
+      "Single retailer offer",
     ],
     relatedBestValueSlug: "creatine-cost-per-serving",
   },
@@ -72,7 +71,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Recognizable brand with flavor collaborations (Sonic, Warheads, Welch's) across the line",
     ],
     cons: [
-      "Single retailer tracked",
+      "Single retailer offer",
       "We don't carry a stimulant/caffeine breakdown in our data — check the label before buying",
     ],
   },
@@ -88,7 +87,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     ],
     cons: [
       "11g sugar per stick, the highest sugar figure among the products on this page",
-      "Single retailer tracked",
+      "Single retailer offer",
     ],
   },
   {
@@ -103,7 +102,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     ],
     cons: [
       "We haven't independently confirmed calories/carbs per single teaspoon — check the label",
-      "Single retailer tracked",
+      "Single retailer offer",
     ],
   },
   {
@@ -117,7 +116,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "90-count container",
     ],
     cons: [
-      "Single retailer tracked",
+      "Single retailer offer",
       "Confirm the elemental calcium dose and your care team's recommended daily total — labels vary on this",
     ],
   },
@@ -132,7 +131,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     ],
     cons: [
       "60-count package is a shorter supply than the 90-count alternative",
-      "Single retailer tracked",
+      "Single retailer offer",
     ],
   },
   {
@@ -146,7 +145,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     ],
     cons: [
       "Highest per-tub price of the flagship products on this page",
-      "Single retailer tracked",
+      "Single retailer offer",
     ],
     relatedBestValueSlug: "highest-protein-per-dollar",
   },
@@ -160,7 +159,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Unflavored, so it doesn't change the taste of what you mix it into",
     ],
     cons: [
-      "Single retailer tracked",
+      "Single retailer offer",
       "We don't carry a full calorie/fat breakdown for this product in our nutrition panel — check the label directly",
     ],
   },
@@ -171,10 +170,10 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     bestFor: "Shoppers who specifically want isolate over concentrate, often for easier digestion or a leaner macro profile.",
     pros: [
       "25g protein with only 4g carbs and 4g fat, consistent with isolate's leaner profile",
-      "Tracked at both the brand's own store and Amazon, so you can compare",
+      "Sold direct through the brand's own store",
     ],
     cons: [
-      "Sports Research doesn't publish a fiber breakdown consistent with what we track elsewhere",
+      "Sports Research doesn't publish a fiber breakdown consistent with what we show elsewhere",
     ],
     relatedBestValueSlug: "highest-protein-per-dollar",
   },
@@ -190,7 +189,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     ],
     cons: [
       "Not a complete protein source — check with your care team if you're relying on it to hit a protein target",
-      "Single retailer tracked",
+      "Single retailer offer",
     ],
     relatedBestValueSlug: "best-value-protein-powder-bariatric",
   },
@@ -206,7 +205,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     ],
     cons: [
       "Same collagen limitation as the unflavored version — not a complete protein source",
-      "Single retailer tracked",
+      "Single retailer offer",
     ],
     relatedBestValueSlug: "best-value-protein-powder-bariatric",
   },
@@ -222,7 +221,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     ],
     cons: [
       "Priciest whey per-tub among the flagship products on this page",
-      "Single retailer tracked",
+      "Single retailer offer",
     ],
     relatedBestValueSlug: "highest-protein-per-dollar",
   },
@@ -238,7 +237,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     ],
     cons: [
       "6g sugar and 13g carbs per bar, higher than the powders in our protein lineup",
-      "Single retailer tracked",
+      "Single retailer offer",
     ],
   },
 ];

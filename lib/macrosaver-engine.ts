@@ -1,26 +1,6 @@
-import type { Product, RetailerOffer } from "@/data/types";
+import type { Product } from "@/data/types";
 
 const GRAMS_PER_OZ = 28.3495;
-// Prices are verified manually (no automated retailer feed), so these windows have to match a
-// realistic re-check cadence rather than "how fresh would be ideal." 7 days made the entire
-// catalog fall out of Product-snippet eligibility between manual passes; 30 days keeps stamped
-// offers valid for a monthly check without asserting anything we haven't actually looked at.
-// "Aging" gives one missed monthly cycle of grace before a price counts as stale.
-const FRESH_MAX_AGE_MS = 30 * 24 * 60 * 60 * 1000;
-const STALE_MAX_AGE_MS = 60 * 24 * 60 * 60 * 1000;
-
-/**
- * TEMPORARY (2026-09-25): Amazon Associates declined reinstatement over stale-price
- * caching and price-tracking functionality, and closed API/content access along with it.
- * Until reinstated, Amazon offers are excluded from every price, availability, and
- * structured-data computation derived from a product's offers — not just hidden in the
- * UI — so no Amazon-sourced price or link surfaces anywhere on the site. Revert by
- * removing this filter once the account is reinstated and a real 24h refresh (PA API /
- * Data Feed) is wired up.
- */
-function getEligibleOffers(product: Product): RetailerOffer[] {
-  return product.offers.filter((offer) => offer.retailer !== "Amazon");
-}
 
 function roundToTwo(value: number): number {
   return Math.round(value * 100) / 100;
@@ -72,280 +52,108 @@ export function getServingSizeGrams(product: Product): number | null {
   return Number.isFinite(grams) && grams > 0 ? grams : null;
 }
 
-/**
- * Price structured data is emitted only for a recent, explicitly dated observation.
- * Undated, invalid, future, and older snapshots remain visible on the page but are not
- * presented to crawlers as an active Offer.
- */
-/** Most recent dated price observation across a product's offers, or null if none are dated. */
-export function getLatestPriceObservation(product: Product): Date | null {
-  const observedDates = getEligibleOffers(product)
-    .map((offer) => (offer.priceObservedAt ? Date.parse(offer.priceObservedAt) : NaN))
-    .filter((time) => Number.isFinite(time));
-
-  if (observedDates.length === 0) return null;
-
-  return new Date(Math.max(...observedDates));
+function getAvailableOffers(product: Product) {
+  return product.offers.filter((offer) => offer.inStock !== false);
 }
 
-export type PriceFreshness = "fresh" | "aging" | "stale" | "unknown";
-
-/**
- * Classifies a single offer's price-observation age. "Unknown" covers missing,
- * unparseable, and future-dated timestamps alike — none of those can be trusted
- * enough to call the price current, so they're never treated as better than stale.
- */
-export function getOfferFreshness(
-  offer: RetailerOffer,
-  asOf: Date = new Date()
-): PriceFreshness {
-  // Offers written before verificationState existed have no way to say otherwise, so they
-  // fall through to the date-only check below. Everything written since must have earned
-  // "verified" — a checked-but-unconfirmed, unavailable, or mismatched offer is never fresh,
-  // no matter how recent its (possibly stale) priceObservedAt looks.
-  if (offer.verificationState && offer.verificationState !== "verified") return "unknown";
-  if (!offer.priceObservedAt) return "unknown";
-
-  const observedAt = Date.parse(offer.priceObservedAt);
-  const asOfTime = asOf.getTime();
-
-  if (!Number.isFinite(observedAt) || !Number.isFinite(asOfTime)) return "unknown";
-  if (observedAt > asOfTime) return "unknown";
-
-  const ageMs = asOfTime - observedAt;
-  if (ageMs <= FRESH_MAX_AGE_MS) return "fresh";
-  if (ageMs <= STALE_MAX_AGE_MS) return "aging";
-  return "stale";
-}
-
-export function hasFreshPriceObservation(
-  offer: RetailerOffer,
-  asOf: Date = new Date()
-): boolean {
-  return getOfferFreshness(offer, asOf) === "fresh";
-}
-
-export type OfferSale = {
-  price: number;
-  listPrice: number;
-  savings: number;
-  savingsPct: number;
-};
-
-/** Sale details when `offer.listPrice` is a genuine discount off the current price, else null. */
-export function getOfferSale(offer: RetailerOffer): OfferSale | null {
-  if (offer.listPrice === undefined || offer.listPrice <= offer.price) return null;
-
-  const savings = offer.listPrice - offer.price;
-
-  return {
-    price: offer.price,
-    listPrice: offer.listPrice,
-    savings: roundToTwo(savings),
-    savingsPct: roundToTwo((savings / offer.listPrice) * 100),
-  };
-}
-
-/** The largest active sale across a product's offers, or null when nothing is currently discounted. */
-export function getBestSale(product: Product): OfferSale | null {
-  const sales = getEligibleOffers(product)
-    .map((offer) => getOfferSale(offer))
-    .filter((sale): sale is OfferSale => sale !== null);
-
-  if (sales.length === 0) return null;
-
-  return sales.reduce((best, sale) => (sale.savings > best.savings ? sale : best));
-}
-
-function getAvailableOffers(product: Product): RetailerOffer[] {
-  return getEligibleOffers(product).filter((offer) => offer.inStock !== false);
-}
-
-export type PriceConfidenceStatus = "lowest-recorded" | "recorded" | "unavailable";
-
-export type PriceConfidence = {
-  /** The offer backing the headline price claim, or null when nothing is eligible. */
-  offer: RetailerOffer | null;
-  freshness: PriceFreshness;
-  /** Count of in-stock offers with a usable (fresh or aging) timestamp for this product. */
-  retailerCount: number;
-  status: PriceConfidenceStatus;
-};
-
-/**
- * The single source of truth for "can we call this price current, and how many
- * retailers back it up." Stale and unknown offers are never eligible to be called
- * recorded/lowest — they can still be shown elsewhere on the page, just not as a
- * confidence claim MacroSaver hasn't earned.
- */
-export function getPriceConfidence(
-  product: Product,
-  asOf: Date = new Date()
-): PriceConfidence {
-  const eligibleOffers = getAvailableOffers(product)
-    .map((offer) => ({ offer, freshness: getOfferFreshness(offer, asOf) }))
-    .filter((entry) => entry.freshness === "fresh" || entry.freshness === "aging");
-
-  if (eligibleOffers.length === 0) {
-    return { offer: null, freshness: "unknown", retailerCount: 0, status: "unavailable" };
-  }
-
-  const best = eligibleOffers.reduce((lowest, entry) =>
-    entry.offer.price < lowest.offer.price ? entry : lowest
-  );
-
-  return {
-    offer: best.offer,
-    freshness: best.freshness,
-    retailerCount: eligibleOffers.length,
-    status: eligibleOffers.length > 1 ? "lowest-recorded" : "recorded",
-  };
+/** Whether a product has at least one in-stock retailer link to send a shopper to. */
+export function hasAvailableOffer(product: Product): boolean {
+  return getAvailableOffers(product).length > 0;
 }
 
 /**
- * Sale details for the same offer the UI actually displays as the current price
- * (`getPriceConfidence`'s pick), or null when that offer isn't discounted or no offer
- * is fresh/verified enough to be shown. Unlike `getBestSale`, this never surfaces a sale
- * from a stale or unverified offer that the price display itself would refuse to show —
- * so a product can't appear in Deals with a "Checked [old date], no current price" card.
+ * Grams of protein per gram of serving weight — a stable nutrition metric that never
+ * depends on price, used for default catalog/best-value ranking.
  */
-export function getCurrentSale(product: Product, asOf: Date = new Date()): OfferSale | null {
-  const { offer } = getPriceConfidence(product, asOf);
-  return offer ? getOfferSale(offer) : null;
+export function getProteinConcentration(product: Product): number | null {
+  const servingGrams = getServingSizeGrams(product);
+  if (!servingGrams || product.nutrition.proteinGrams <= 0) return null;
+  return roundToTwo(product.nutrition.proteinGrams / servingGrams);
+}
+
+export function getCaloriesPerGramProtein(product: Product): number | null {
+  if (!product.nutrition.calories || product.nutrition.proteinGrams <= 0) return null;
+  return roundToTwo(product.nutrition.calories / product.nutrition.proteinGrams);
 }
 
 /**
- * Most recent retailer-link check across a product's offers, regardless of outcome. Used as
- * the fallback label ("Checked [date]") when nothing is eligible to say "Verified" — so a
- * product that was genuinely looked at today doesn't read identically to one nobody has
- * touched.
+ * Stateless value calculator: the visitor types in the price they see at a retailer and
+ * these compute cost/value figures on the spot. Nothing here reads or writes stored data —
+ * these are pure functions of whatever price the caller passes in.
  */
-export function getMostRecentCheck(product: Product): string | null {
-  const checkedDates = getEligibleOffers(product)
-    .map((offer) => offer.lastCheckedAt)
-    .filter((d): d is string => Boolean(d))
-    .sort();
-
-  return checkedDates.length > 0 ? checkedDates[checkedDates.length - 1] : null;
-}
-
-export function formatShortDate(isoDate: string): string {
-  return new Date(isoDate).toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-    timeZone: "UTC",
-  });
-}
-
-export function getBestOffer(product: Product): RetailerOffer | null {
-  const availableOffers = getAvailableOffers(product);
-
-  if (availableOffers.length === 0) {
+export function costPerServing(price: number, servings: number): number | null {
+  if (!Number.isFinite(price) || price <= 0 || !Number.isFinite(servings) || servings <= 0) {
     return null;
   }
-
-  return availableOffers.reduce((bestOffer, offer) =>
-    offer.price < bestOffer.price ? offer : bestOffer
-  );
+  return roundToTwo(price / servings);
 }
 
-export function getCostPerServing(product: Product): number | null {
-  if (!supportsServingMetrics(product)) return null;
-
-  const bestOffer = getBestOffer(product);
-
-  if (!bestOffer || product.servings <= 0) {
+export function proteinPerDollar(
+  price: number,
+  proteinGramsPerServing: number,
+  servings: number
+): number | null {
+  if (
+    !Number.isFinite(price) ||
+    price <= 0 ||
+    !Number.isFinite(proteinGramsPerServing) ||
+    proteinGramsPerServing <= 0 ||
+    !Number.isFinite(servings) ||
+    servings <= 0
+  ) {
     return null;
   }
-
-  return roundToTwo(bestOffer.price / product.servings);
+  const totalProtein = proteinGramsPerServing * servings;
+  return roundToTwo(totalProtein / price);
 }
 
-export function getProteinPerDollar(product: Product): number | null {
-  if (!supportsServingMetrics(product)) return null;
-
-  const bestOffer = getBestOffer(product);
-
-  if (!bestOffer || bestOffer.price <= 0 || product.nutrition.proteinGrams <= 0) {
+export function costPerOzProtein(
+  price: number,
+  proteinGramsPerServing: number,
+  servings: number
+): number | null {
+  if (
+    !Number.isFinite(price) ||
+    price <= 0 ||
+    !Number.isFinite(proteinGramsPerServing) ||
+    proteinGramsPerServing <= 0 ||
+    !Number.isFinite(servings) ||
+    servings <= 0
+  ) {
     return null;
   }
-
-  const totalProtein = product.nutrition.proteinGrams * product.servings;
-
-  return roundToTwo(totalProtein / bestOffer.price);
-}
-
-// This is the metric you specifically wanted: what you actually pay per
-// ounce of protein you get, regardless of tub size or serving count tricks.
-export function getCostPerOzProtein(product: Product): number | null {
-  if (!supportsServingMetrics(product)) return null;
-
-  const bestOffer = getBestOffer(product);
-
-  if (!bestOffer || bestOffer.price <= 0 || product.nutrition.proteinGrams <= 0) {
-    return null;
-  }
-
-  const totalProteinGrams = product.nutrition.proteinGrams * product.servings;
-  const totalProteinOz = totalProteinGrams / GRAMS_PER_OZ;
-
-  if (totalProteinOz <= 0) {
-    return null;
-  }
-
-  return roundToTwo(bestOffer.price / totalProteinOz);
-}
-
-/**
- * How much the cheapest offer undercuts the priciest one, or null when there's nothing to
- * compare (fewer than two offers) or every offer is tied at the same price — a $0.00 "savings"
- * isn't a real advantage and shouldn't be rendered as one.
- */
-export function getSavingsVsHighestOffer(product: Product): number | null {
-  const bestOffer = getBestOffer(product);
-  const availableOffers = getAvailableOffers(product);
-
-  if (!bestOffer || availableOffers.length < 2) {
-    return null;
-  }
-
-  const highestOffer = availableOffers.reduce((highest, offer) =>
-    offer.price > highest.price ? offer : highest
-  );
-
-  const savings = roundToTwo(highestOffer.price - bestOffer.price);
-  return savings > 0 ? savings : null;
+  const totalProteinOz = (proteinGramsPerServing * servings) / GRAMS_PER_OZ;
+  if (totalProteinOz <= 0) return null;
+  return roundToTwo(price / totalProteinOz);
 }
 
 /**
  * Picks the single best-value product from a set, e.g. products sharing a category.
- * Prefers highest protein-per-dollar; falls back to lowest cost-per-serving for
- * categories (electrolytes, creatine) where protein isn't the relevant metric.
+ * Ranking is nutrition-only (never price-derived): prefers highest protein concentration
+ * (protein per gram of serving), falling back to lowest calories-per-gram-of-protein for
+ * categories (electrolytes, creatine) where protein concentration isn't meaningful.
  */
-export function getBestValueProduct(
-  candidates: Product[],
-  excludeId?: string
-): Product | null {
+export function getBestValueProduct(candidates: Product[], excludeId?: string): Product | null {
   const pool = (excludeId ? candidates.filter((p) => p.id !== excludeId) : candidates).filter(
-    (p) => getPriceConfidence(p).status !== "unavailable"
+    (p) => hasAvailableOffer(p)
   );
 
-  const byProteinPerDollar = pool
-    .map((product) => ({ product, value: getProteinPerDollar(product) }))
+  const byProteinConcentration = pool
+    .map((product) => ({ product, value: getProteinConcentration(product) }))
     .filter((entry): entry is { product: Product; value: number } => entry.value !== null);
 
-  if (byProteinPerDollar.length > 0) {
-    return byProteinPerDollar.reduce((best, entry) => (entry.value > best.value ? entry : best))
-      .product;
+  if (byProteinConcentration.length > 0) {
+    return byProteinConcentration.reduce((best, entry) =>
+      entry.value > best.value ? entry : best
+    ).product;
   }
 
-  const byCostPerServing = pool
-    .map((product) => ({ product, value: getCostPerServing(product) }))
+  const byCaloriesPerGramProtein = pool
+    .map((product) => ({ product, value: getCaloriesPerGramProtein(product) }))
     .filter((entry): entry is { product: Product; value: number } => entry.value !== null);
 
-  if (byCostPerServing.length === 0) return null;
+  if (byCaloriesPerGramProtein.length === 0) return null;
 
-  return byCostPerServing.reduce((best, entry) => (entry.value < best.value ? entry : best))
+  return byCaloriesPerGramProtein.reduce((best, entry) => (entry.value < best.value ? entry : best))
     .product;
 }
-

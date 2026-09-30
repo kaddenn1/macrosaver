@@ -23,7 +23,7 @@ export async function generateMetadata({
 
   const query = await searchParams;
   const title = `${brand.name} Products & Value`;
-  const description = `${brand.intro} Compare cataloged offer-price snapshots and cost-per-serving values for tracked ${brand.name} products.`;
+  const description = `${brand.intro} Compare nutrition facts and protein concentration across ${brand.name} products.`;
   const hasQuery = Object.values(query).some((value) => value !== undefined);
 
   return {

@@ -70,7 +70,7 @@ export default function CategoryRow() {
         Shop By Category
       </h2>
       <p className="text-xs text-gray-400 mb-6">
-        Compare recorded price snapshots, serving-level value, and nutrition details.
+        Compare protein density, serving-level value, and nutrition details.
       </p>
 
       <div

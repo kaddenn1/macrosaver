@@ -32,10 +32,12 @@ export default function Footer() {
         {/* Mandatory Affiliate Disclosure */}
         <div className="w-full max-w-2xl border-t border-[#151515] pt-4 mt-2">
           <p className="text-[11px] text-gray-400 text-center leading-relaxed">
-            <strong>Disclaimer:</strong> As an affiliate, MacroSaver earns from qualifying purchases.
-            Prices are recorded from retailer offers, dated when verified, and can change at any time.
-            Some products have only one retailer offer; always verify price and availability with the retailer.
-            External retailer links may generate a referral commission at no extra cost to you.
+            <strong>Disclaimer:</strong> As an Amazon Associate I earn from qualifying purchases.
+            MacroSaver may also earn a commission from other retailer links on this site at no extra
+            cost to you. MacroSaver does not store, track, or display retailer prices — rankings are
+            based on nutrition data, and any cost figures you see come from the price you type into
+            our on-page value calculator. Always verify current price and availability with the
+            retailer before buying.
           </p>
         </div>
 

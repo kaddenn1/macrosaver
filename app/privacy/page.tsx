@@ -67,10 +67,13 @@ export default function PrivacyPolicy() {
         <section className="rounded-lg border border-amber-400/30 bg-[#111] p-5">
           <h2 className="text-xl font-bold text-amber-300">Affiliate links and third parties</h2>
           <p className="mt-3 leading-relaxed text-gray-300">
-            Product links may contain affiliate identifiers. When you follow one, the retailer or
+            As an Amazon Associate I earn from qualifying purchases. Product links elsewhere on the
+            site may also contain affiliate identifiers. When you follow one, the retailer or
             affiliate network may use cookies or similar technologies to attribute a purchase and
             may share commission-related reporting with us. MacroSaver may earn a commission without
-            increasing your price. Retailers, affiliate networks, Supabase, and the site&apos;s hosting
+            increasing your price. We do not store or track retailer prices; the on-page value
+            calculator runs only on the price you type in, in your browser, and nothing you type is
+            saved or sent to us. Retailers, affiliate networks, Supabase, and the site&apos;s hosting
             provider process data under their own privacy terms.
           </p>
         </section>

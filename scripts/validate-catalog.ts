@@ -1,26 +1,22 @@
 import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { products } from "../data/products.ts";
-import { getOfferFreshness, supportsServingMetrics } from "../lib/macrosaver-engine.ts";
-import type { PriceFreshness } from "../lib/macrosaver-engine.ts";
-import type { Product, VerificationState } from "../data/types.ts";
+import { supportsServingMetrics } from "../lib/macrosaver-engine.ts";
+import type { Product } from "../data/types.ts";
 
-const VALID_VERIFICATION_STATES: readonly VerificationState[] = [
-  "verified",
-  "checked_stale",
-  "unavailable",
-  "review_required",
-];
+const FORBIDDEN_OFFER_KEYS = [
+  "price",
+  "listPrice",
+  "priceHistory",
+  "subscribeAndSavePrice",
+  "verificationState",
+] as const;
+
+const AMAZON_IMAGE_HOST_PATTERNS = [/amazon\.com/i, /media-amazon\.com/i, /ssl-images-amazon\.com/i];
 
 const errors: string[] = [];
 const ids = new Set<string>();
 const retailerCounts = new Map<string, number>();
-const freshnessCounts: Record<PriceFreshness, number> = {
-  fresh: 0,
-  aging: 0,
-  stale: 0,
-  unknown: 0,
-};
 let singleOfferProducts = 0;
 let zeroOfferProducts = 0;
 let qualifiedNutritionProducts = 0;
@@ -62,16 +58,14 @@ for (const product of products as Product[]) {
     } else if (!existsSync(resolve(process.cwd(), "public", product.image.slice(1)))) {
       errors.push(`${label}: image not found at public${product.image}`);
     }
+    if (AMAZON_IMAGE_HOST_PATTERNS.some((pattern) => pattern.test(product.image!))) {
+      errors.push(`${label}: image must not be hosted on an Amazon-owned domain`);
+    }
   }
 
   for (const offer of product.offers) {
-    const priceObservedAt = (offer as { priceObservedAt?: unknown }).priceObservedAt;
     retailerCounts.set(offer.retailer, (retailerCounts.get(offer.retailer) ?? 0) + 1);
-    freshnessCounts[getOfferFreshness(offer)] += 1;
     if (!offer.retailer.trim()) errors.push(`${label}: retailer is required`);
-    if (!Number.isFinite(offer.price) || offer.price <= 0) {
-      errors.push(`${label}: offer price must be positive`);
-    }
     try {
       const url = new URL(offer.url);
       if (url.protocol !== "https:") errors.push(`${label}: offer URL must use HTTPS`);
@@ -81,34 +75,10 @@ for (const product of products as Product[]) {
     if (/your-[a-z-]*tag/i.test(offer.url)) {
       errors.push(`${label}: placeholder affiliate tag detected`);
     }
-    if (
-      priceObservedAt !== undefined &&
-      (typeof priceObservedAt !== "string" || !Number.isFinite(Date.parse(priceObservedAt)))
-    ) {
-      errors.push(`${label}: priceObservedAt must be a valid ISO timestamp`);
-    }
-    if (
-      offer.lastCheckedAt !== undefined &&
-      !Number.isFinite(Date.parse(offer.lastCheckedAt))
-    ) {
-      errors.push(`${label}: lastCheckedAt must be a valid ISO timestamp`);
-    }
-    if (
-      offer.verificationState !== undefined &&
-      !VALID_VERIFICATION_STATES.includes(offer.verificationState)
-    ) {
-      errors.push(`${label}: verificationState must be one of ${VALID_VERIFICATION_STATES.join(", ")}`);
-    }
-    if (offer.verificationState === "verified" && !priceObservedAt) {
-      errors.push(`${label}: verificationState "verified" requires priceObservedAt`);
-    }
-    if (offer.listPrice !== undefined && offer.listPrice <= offer.price) {
-      errors.push(`${label}: listPrice must be greater than the current price to represent a sale`);
-    }
-    if (offer.subscribeAndSavePrice !== undefined && offer.subscribeAndSavePrice >= offer.price) {
-      errors.push(
-        `${label}: subscribeAndSavePrice must be lower than the current price to represent a discount`
-      );
+    for (const key of FORBIDDEN_OFFER_KEYS) {
+      if (Object.prototype.hasOwnProperty.call(offer, key)) {
+        errors.push(`${label}: offer must not have a "${key}" property (pricing data was removed sitewide)`);
+      }
     }
   }
 }
@@ -126,8 +96,4 @@ if (errors.length > 0) {
   console.log(`${singleOfferProducts} products currently have a single retailer offer.`);
   console.log(`${zeroOfferProducts} products currently have no offers (Amazon pulled pending Associates reinstatement).`);
   console.log(`${qualifiedNutritionProducts} products display a nutrition-data qualification.`);
-  console.log(
-    `Offer freshness: ${freshnessCounts.fresh} fresh, ${freshnessCounts.aging} aging, ` +
-      `${freshnessCounts.stale} stale, ${freshnessCounts.unknown} unknown.`
-  );
 }

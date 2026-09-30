@@ -1071,7 +1071,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 39.95, subscribeAndSavePrice: 33.96, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341216818053691060392224&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsweet-sweat-jar%3Fvariant%3D42500071358664", lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341216818053691060392224&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsweet-sweat-jar%3Fvariant%3D42500071358664"  }
     ]
   },
   {
@@ -1132,7 +1132,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800", lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified" }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129968715509946581990&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821669785800" }
     ]
   },
   {
@@ -1145,7 +1145,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624", lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified" }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129928231164363472412&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2ftoned-waist-trimmer-bundle%3fvariant%3d41821670375624" }
     ]
   },
   {
@@ -1158,7 +1158,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 49.49, listPrice: 57.9, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200", lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified" }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129868765032114237007&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fsweet-sweat-bundle%3fvariant%3d37596790784200" }
     ]
   },
   {
@@ -1179,7 +1179,7 @@ export const products = [
       servingSize: "3 softgels",
     },
     offers: [
-      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129959949573030687149&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fmct-oil-120-softgels%3fvariant%3d42500072505544", subscribeAndSavePrice: 14.41, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129959949573030687149&type=2&murl=https%3a%2f%2fstore.sportsresearch.com%2fproducts%2fmct-oil-120-softgels%3fvariant%3d42500072505544"  },
     ]
   },
   {
@@ -1198,7 +1198,7 @@ export const products = [
       sodiumMilligrams: 250,
     },
     offers: [
-      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fwww.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fwww.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate"  },
     ]
   },
   {
@@ -1216,7 +1216,7 @@ export const products = [
       servingSize: "1 scoop (11g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 35.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-collagen", subscribeAndSavePrice: 30.56, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-21", inStock: false, verificationState: "checked_stale"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-collagen", inStock: false  }
     ]
   },
   {
@@ -1235,7 +1235,7 @@ export const products = [
       servingSize: "1 scoop (15.7g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-naturally-flavored", subscribeAndSavePrice: 29.71, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-naturally-flavored"  }
     ]
   },
   {
@@ -1247,7 +1247,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 8 },
     offers: [
-      { retailer: "Sports Research", price: 33.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmulti-collagen-complex", subscribeAndSavePrice: 28.86, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmulti-collagen-complex"  }
     ]
   },
   {
@@ -1260,7 +1260,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Firon-liposomal-vitamin-c", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Firon-liposomal-vitamin-c"  },
     ]
   },
   {
@@ -1281,7 +1281,7 @@ export const products = [
       servingSize: "1 scoop (8g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-fiber", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-fiber"  }
     ]
   },
   {
@@ -1293,7 +1293,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwomens-probiotics"  },
     ]
   },
   {
@@ -1314,7 +1314,7 @@ export const products = [
       servingSize: "1 tbsp (15mL)",
     },
     offers: [
-      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fketo-c8-mct-oil", subscribeAndSavePrice: 20.36, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fketo-c8-mct-oil"  }
     ]
   },
   {
@@ -1327,7 +1327,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 10, carbsGrams: 0, fatGrams: 0.5, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 18.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 16.11, priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-oxide"  },
     ]
   },
   {
@@ -1340,7 +1340,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "3 capsules" },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmag-lt-with-magtein-magnesium-l-threonate", subscribeAndSavePrice: 25.46, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmag-lt-with-magtein-magnesium-l-threonate"  },
     ]
   },
   {
@@ -1360,7 +1360,7 @@ export const products = [
       servingSize: "1 scoop (7g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341211482542190307453504&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270747507", subscribeAndSavePrice: 25.46, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341211482542190307453504&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270747507"  }
     ]
   },
   {
@@ -1372,7 +1372,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "4 capsules" },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcreatine-monohydrate-veggie-capsules", subscribeAndSavePrice: 25.46, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcreatine-monohydrate-veggie-capsules"  },
     ]
   },
   {
@@ -1392,7 +1392,7 @@ export const products = [
       servingSize: "1 packet (5g)",
     },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842507464", subscribeAndSavePrice: 19.51, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842507464"  }
     ]
   },
   {
@@ -1404,7 +1404,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes", subscribeAndSavePrice: 19.51, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdigestive-enzymes"  },
     ]
   },
   {
@@ -1416,7 +1416,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 21.21, priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fdaily-probiotics"  },
     ]
   },
   {
@@ -1429,7 +1429,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "2 capsules" },
     offers: [
-      { retailer: "Sports Research", price: 27.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsleep-complex-with-melatonin", subscribeAndSavePrice: 23.76, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fsleep-complex-with-melatonin"  },
     ]
   },
   {
@@ -1441,7 +1441,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine", subscribeAndSavePrice: 19.51, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fl-theanine-and-caffeine"  },
     ]
   },
   {
@@ -1453,7 +1453,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 5, carbsGrams: 0, fatGrams: 0.5, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 17.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fgarcinia-cambogia-65-500mg", subscribeAndSavePrice: 15.26, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fgarcinia-cambogia-65-500mg"  },
     ]
   },
   {
@@ -1466,7 +1466,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 0, fatGrams: 1.5, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "2 softgels" },
     offers: [
-      { retailer: "Sports Research", price: 16.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate", subscribeAndSavePrice: 14.41, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmagnesium-glycinate"  },
     ]
   },
   {
@@ -1479,7 +1479,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "4 capsules" },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Ftriple-magnesium-complex", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Ftriple-magnesium-complex"  },
     ]
   },
   {
@@ -1491,7 +1491,7 @@ export const products = [
     servings: 90,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 32.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha", subscribeAndSavePrice: 28.01, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Forganic-ashwagandha"  },
     ]
   },
   {
@@ -1503,7 +1503,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 23.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fwww.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2-5000-iu%3Fv%3D64727020667251", subscribeAndSavePrice: 20.36, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fwww.sportsresearch.com%2Fproducts%2Fvitamin-d3-k2-5000-iu%3Fv%3D64727020667251"  },
     ]
   },
   {
@@ -1516,7 +1516,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 60, fatGrams: 6 },
     offers: [
-      { retailer: "Sports Research", price: 24.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmct-oil-powder", subscribeAndSavePrice: 21.21, lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmct-oil-powder"  },
     ]
   },
   {
@@ -1529,7 +1529,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 48.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Farm-and-thigh-trimmer-bundle", lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-24", verificationState: "verified" }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Farm-and-thigh-trimmer-bundle" }
     ]
   },
   {
@@ -1542,7 +1542,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 64.95, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fpro-series-bundle", lastCheckedAt: "2026-09-24", listPrice: 75.9, priceObservedAt: "2026-09-24", verificationState: "verified" }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fpro-series-bundle" }
     ]
   },
   {
@@ -1555,7 +1555,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
-      { retailer: "Sports Research", price: 19.95, inStock: false, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fjump-rope", lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-21", verificationState: "checked_stale" },
+      { retailer: "Sports Research", inStock: false, url: "https://click.linksynergy.com/deeplink?id=zM7ArY2cJpc&mid=53412&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fjump-rope" },
     ]
   },
   {
@@ -3355,7 +3355,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 160, fatGrams: 4, sugarGrams: 1 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534123602095802020723519&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-chocolate-peanut-butter%3Fvariant%3D64600175214963", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 45.86, priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534123602095802020723519&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-chocolate-peanut-butter%3Fvariant%3D64600175214963"  },
     ]
   },
   {
@@ -3368,7 +3368,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 140, fatGrams: 3.5, carbsGrams: 2, sodiumMilligrams: 260 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 49.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534122207128965181052126&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-creamy-vanilla%3Fvariant%3D64600140939635", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534122207128965181052126&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-creamy-vanilla%3Fvariant%3D64600140939635"  }
     ]
   },
   {
@@ -3381,7 +3381,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 150 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 89.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341214809195350015084616&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-creamy-vanilla%3Fvariant%3D64600140906867", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 76.46, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341214809195350015084616&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-creamy-vanilla%3Fvariant%3D64600140906867"  }
     ]
   },
   {
@@ -3394,7 +3394,7 @@ export const products = [
     nutrition: { proteinGrams: 25 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341217360869658602846258&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dark-chocolate%3Fvariant%3D64600171315571", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 45.86, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341217360869658602846258&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dark-chocolate%3Fvariant%3D64600171315571"  }
     ]
   },
   {
@@ -3407,7 +3407,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 150, fatGrams: 4, carbsGrams: 4, sodiumMilligrams: 250 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 89.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212470078435524551091&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600177967475", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 42.46, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212470078435524551091&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-dutch-chocolate%3Fvariant%3D64600177967475"  }
     ]
   },
   {
@@ -3420,7 +3420,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 140, sugarGrams: 1 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 53.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212370642422443669510&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-fruity-cereal%3Fvariant%3D64600171282803", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 45.86, priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212370642422443669510&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-fruity-cereal%3Fvariant%3D64600171282803"  },
     ]
   },
   {
@@ -3433,7 +3433,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 150 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros for this flavor were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 46.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129181237865121490352&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-unflavored%3Fvariant%3D64600171348339", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 39.91, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129181237865121490352&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fwhey-protein-isolate-unflavored%3Fvariant%3D64600171348339"  }
     ]
   },
   {
@@ -3445,7 +3445,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, creatineGrams: 5, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 scoop (7g)" },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534121102805156694038874&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270780275", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 25.46, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534121102805156694038874&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270780275"  }
     ]
   },
   {
@@ -3457,7 +3457,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, creatineGrams: 5, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 scoop (7g)" },
     offers: [
-      { retailer: "Sports Research", price: 29.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212752114310560441883&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270813043", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 25.46, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341212752114310560441883&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fflavored-creatine-monohydrate%3Fvariant%3D63065270813043"  }
     ]
   },
   {
@@ -3469,7 +3469,7 @@ export const products = [
     servings: 16,
     nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341215745968847731283803&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842540232", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 19.51, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341215745968847731283803&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842540232"  }
     ]
   },
   {
@@ -3481,7 +3481,7 @@ export const products = [
     servings: 16,
     nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341211936122994773273382&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842605768", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 19.51, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341211936122994773273382&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842605768"  }
     ]
   },
   {
@@ -3493,7 +3493,7 @@ export const products = [
     servings: 16,
     nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128027826914292874503&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842573000", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 19.51, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534128027826914292874503&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842573000"  }
     ]
   },
   {
@@ -3505,7 +3505,7 @@ export const products = [
     servings: 16,
     nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
     offers: [
-      { retailer: "Sports Research", price: 22.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534126306244918872035756&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842638536", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 19.51, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534126306244918872035756&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D43350842638536"  }
     ]
   },
   {
@@ -3517,7 +3517,7 @@ export const products = [
     servings: 32,
     nutrition: { proteinGrams: 0, sodiumMilligrams: 400, calories: 5, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 packet (5g)" },
     offers: [
-      { retailer: "Sports Research", price: 35.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534124278079106657004214&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D52624700998003", lastCheckedAt: "2026-09-24", priceObservedAt: "2026-09-11", verificationState: "checked_stale"  , inStock: false }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534124278079106657004214&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fhydrate-electrolytes-packets%3Fvariant%3D52624700998003", inStock: false }
     ]
   },
   {
@@ -3531,7 +3531,7 @@ export const products = [
     nutrition: { proteinGrams: 10, calories: 40, sodiumMilligrams: 55, servingSize: "1 packet (11g)" },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 30.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341217363826882851076872&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-hydrolyzed-gelatin-2%3Fvariant%3D42500105568456", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 28.01, priceObservedAt: "2026-09-24", verificationState: "verified"  }
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341217363826882851076872&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fcollagen-peptides-hydrolyzed-gelatin-2%3Fvariant%3D42500105568456"  }
     ]
   },
   {
@@ -3545,7 +3545,7 @@ export const products = [
     nutrition: { proteinGrams: 9, calories: 40 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 30.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129705448185880443388&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmatcha-collagen%3Fvariant%3D42500072308936", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 26.31, priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.534129705448185880443388&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmatcha-collagen%3Fvariant%3D42500072308936"  },
     ]
   },
   {
@@ -3559,7 +3559,7 @@ export const products = [
     nutrition: { proteinGrams: 9, calories: 35 },
     nutritionNote: "Only protein content is confirmed, from the manufacturer's own product description. Calories and other macros were not independently verified.",
     offers: [
-      { retailer: "Sports Research", price: 34.95, url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341213458910373057932423&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmarine-collagen-peptides-12oz%3Fvariant%3D42644178469064", lastCheckedAt: "2026-09-24", subscribeAndSavePrice: 29.71, priceObservedAt: "2026-09-24", verificationState: "verified"  },
+      { retailer: "Sports Research", url: "https://click.linksynergy.com/link?id=zM7ArY2cJpc&offerid=1663588.5341213458910373057932423&type=2&murl=https%3A%2F%2Fstore.sportsresearch.com%2Fproducts%2Fmarine-collagen-peptides-12oz%3Fvariant%3D42644178469064"  },
     ]
   },
   {

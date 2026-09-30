@@ -18,17 +18,15 @@ import {
   type BrandStats,
 } from "@/lib/brand-comparison";
 import { getGuideByCategory } from "@/lib/guides";
-import {
-  formatShortDate,
-  getBestOffer,
-  getCostPerServing,
-  getMostRecentCheck,
-  hasFreshPriceObservation,
-} from "@/lib/macrosaver-engine";
+import { getCaloriesPerGramProtein } from "@/lib/macrosaver-engine";
 import { CATEGORY_TITLES } from "@/lib/categories";
 import { SITE_URL } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
-import type { Product } from "@/data/types";
+import type { Product, RetailerOffer } from "@/data/types";
+
+function getFirstAvailableOffer(product: Product): RetailerOffer | null {
+  return product.offers.find((offer) => offer.inStock !== false) ?? null;
+}
 
 export function generateStaticParams() {
   return [
@@ -126,9 +124,9 @@ function ArticleShell({
         {children}
 
         <p className="text-[11px] text-gray-500 leading-relaxed border-t border-gray-800 pt-6 pb-16">
-          Generated from recorded retailer price snapshots in our catalog. Prices marked &quot;undated
-          snapshot&quot; have not been re-observed recently — verify the current price at the retailer
-          before buying.{" "}
+          Rankings on this page are generated from nutrition data in our catalog — no stored or
+          tracked retailer prices are involved. Use the value calculator on each product page to
+          work out cost per serving from the price you see at the retailer.{" "}
           <Link href="/about#corrections" className="underline hover:text-gray-300">
             Report a correction
           </Link>
@@ -149,50 +147,52 @@ function ProductRow({
   product: Product;
   metricLabel: string;
   metricValue: number;
-  metricFormat: "grams" | "dollars";
+  metricFormat: "grams" | "decimal";
   rank?: number;
 }) {
-  const offer = getBestOffer(product);
-  const costPerServing = getCostPerServing(product);
-  const priceIsDated = offer
-    ? product.offers.some(
-        (o) => o.retailer === offer.retailer && o.price === offer.price && hasFreshPriceObservation(o)
-      )
-    : false;
-  const lastChecked = priceIsDated ? null : getMostRecentCheck(product);
+  const offer = getFirstAvailableOffer(product);
+  const caloriesPerGramProtein = getCaloriesPerGramProtein(product);
 
   return (
-    <Link
-      href={`/product/${product.id}`}
-      className="group flex items-center gap-4 bg-[#111] border border-gray-800 hover:border-[#a3e635] rounded-xl p-4 transition-all duration-300"
-    >
+    <div className="group flex items-center gap-4 bg-[#111] border border-gray-800 hover:border-[#a3e635] rounded-xl p-4 transition-all duration-300">
       {rank !== undefined && (
         <div className="text-lg font-black text-gray-600 w-6 text-center shrink-0">{rank}</div>
       )}
-      <div className="w-14 h-14 shrink-0 bg-[#0a0a0a] border border-gray-800 rounded-lg relative overflow-hidden">
-        {product.image && (
-          <Image src={product.image} alt={product.name} fill className="object-contain p-1.5" sizes="56px" />
-        )}
-      </div>
-      <div className="flex-1 min-w-0">
-        <div className="text-[10px] font-bold uppercase tracking-wider text-[#a3e635] mb-1">
-          {product.brand}
+      <Link href={`/product/${product.id}`} className="flex flex-1 min-w-0 items-center gap-4">
+        <div className="w-14 h-14 shrink-0 bg-[#0a0a0a] border border-gray-800 rounded-lg relative overflow-hidden">
+          {product.image && (
+            <Image src={product.image} alt={product.name} fill className="object-contain p-1.5" sizes="56px" />
+          )}
         </div>
-        <div className="text-sm font-bold text-white leading-snug truncate">{product.name}</div>
-        <div className="text-[10px] text-gray-500 mt-1">
-          {offer
-            ? `${priceIsDated ? "Verified" : lastChecked ? `Checked ${formatShortDate(lastChecked)}` : "Undated snapshot"} $${offer.price.toFixed(2)}`
-            : "Price unavailable"}
-          {costPerServing !== null && ` · $${costPerServing.toFixed(2)}/serving`}
+        <div className="flex-1 min-w-0">
+          <div className="text-[10px] font-bold uppercase tracking-wider text-[#a3e635] mb-1">
+            {product.brand}
+          </div>
+          <div className="text-sm font-bold text-white leading-snug truncate">{product.name}</div>
+          {caloriesPerGramProtein !== null && (
+            <div className="text-[10px] text-gray-500 mt-1">
+              {caloriesPerGramProtein.toFixed(1)} calories / g protein
+            </div>
+          )}
         </div>
-      </div>
-      <div className="text-right shrink-0">
-        <div className="text-[9px] text-gray-400 uppercase tracking-wider mb-0.5">{metricLabel}</div>
-        <div className="text-lg font-black text-white">
-          {metricFormat === "grams" ? `${metricValue.toFixed(1)}g` : `$${metricValue.toFixed(2)}`}
+        <div className="text-right shrink-0">
+          <div className="text-[9px] text-gray-400 uppercase tracking-wider mb-0.5">{metricLabel}</div>
+          <div className="text-lg font-black text-white">
+            {metricFormat === "grams" ? `${metricValue.toFixed(1)}g` : metricValue.toFixed(2)}
+          </div>
         </div>
-      </div>
-    </Link>
+      </Link>
+      {offer && (
+        <a
+          href={offer.url}
+          target="_blank"
+          rel="nofollow sponsored noopener"
+          className="shrink-0 rounded border border-gray-700 px-3 py-2 text-[10px] font-black uppercase tracking-widest text-gray-200 hover:border-[#a3e635] hover:text-white transition-colors"
+        >
+          Check price (paid link) →
+        </a>
+      )}
+    </div>
   );
 }
 
@@ -287,32 +287,32 @@ function RankedListArticle({ article, slug }: { article: BestValueArticle; slug:
   );
 }
 
-function BrandColumn({ stats, metricLabel, metricFormat }: { stats: BrandStats; metricLabel: string; metricFormat: "grams" | "dollars" }) {
+function BrandColumn({ stats, metricLabel, metricFormat }: { stats: BrandStats; metricLabel: string; metricFormat: "grams" | "decimal" }) {
   const sorted = [...stats.products]
-    .filter((r) => r.costPerServing !== null)
-    .sort((a, b) => (a.costPerServing ?? 0) - (b.costPerServing ?? 0));
+    .filter((r) => r.proteinConcentration !== null)
+    .sort((a, b) => (b.proteinConcentration ?? 0) - (a.proteinConcentration ?? 0));
 
   return (
     <div>
       <h2 className="text-lg font-bold text-white mb-3">{stats.brand}</h2>
       <div className="grid grid-cols-2 gap-3 mb-4 text-xs">
         <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-          <div className="text-[10px] text-gray-400 uppercase">Avg Cost / Serving</div>
+          <div className="text-[10px] text-gray-400 uppercase">Avg Protein / g Serving</div>
           <div className="font-bold text-white">
-            {stats.avgCostPerServing !== null ? `$${stats.avgCostPerServing.toFixed(2)}` : "—"}
+            {stats.avgProteinConcentration !== null ? stats.avgProteinConcentration.toFixed(2) : "—"}
           </div>
         </div>
         <div className="bg-[#111] border border-gray-800 rounded-lg px-3 py-2">
-          <div className="text-[10px] text-gray-400 uppercase">Best Protein / $</div>
+          <div className="text-[10px] text-gray-400 uppercase">Best Protein / g Serving</div>
           <div className="font-bold text-white">
-            {stats.bestProteinPerDollar !== null ? `${stats.bestProteinPerDollar.value.toFixed(1)}g` : "—"}
+            {stats.bestProteinConcentration !== null ? stats.bestProteinConcentration.value.toFixed(2) : "—"}
           </div>
         </div>
       </div>
       <div className="flex flex-col gap-3">
         {sorted.length === 0 ? (
           <div className="py-8 text-center text-gray-400 text-sm border-2 border-dashed border-gray-800 rounded-xl">
-            No priced products from this brand yet.
+            No available products from this brand yet.
           </div>
         ) : (
           sorted.map((row) => (
@@ -320,7 +320,7 @@ function BrandColumn({ stats, metricLabel, metricFormat }: { stats: BrandStats; 
               key={row.product.id}
               product={row.product}
               metricLabel={metricLabel}
-              metricValue={metricFormat === "grams" ? (row.proteinPerDollar ?? 0) : (row.costPerServing ?? 0)}
+              metricValue={row.proteinConcentration ?? 0}
               metricFormat={metricFormat}
             />
           ))
@@ -349,8 +349,8 @@ function BrandComparisonArticlePage({ article, slug }: { article: BrandCompariso
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }} />
       <ArticleShell title={article.title} intro={article.intro} category={article.category}>
         <div className="pb-16 grid grid-cols-1 sm:grid-cols-2 gap-8">
-          <BrandColumn stats={statsA} metricLabel="Protein / $" metricFormat="grams" />
-          <BrandColumn stats={statsB} metricLabel="Protein / $" metricFormat="grams" />
+          <BrandColumn stats={statsA} metricLabel="Protein / g Serving" metricFormat="decimal" />
+          <BrandColumn stats={statsB} metricLabel="Protein / g Serving" metricFormat="decimal" />
         </div>
       </ArticleShell>
     </>

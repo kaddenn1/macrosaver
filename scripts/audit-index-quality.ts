@@ -1,19 +1,18 @@
 import { products } from "../data/products.ts";
-import { getBestOffer, hasFreshPriceObservation, supportsServingMetrics } from "../lib/macrosaver-engine.ts";
+import { hasAvailableOffer, supportsServingMetrics } from "../lib/macrosaver-engine.ts";
 import type { Product } from "../data/types.ts";
 
 // Implements the "identify thin, duplicate, and incomplete product pages" step
 // of the SEO recovery plan's Week 1 checklist. Flags weak-page signals per
 // product rather than asserting quality judgments the label data can't support.
 
-type Signal = "no-image" | "no-dated-price" | "no-offer" | "nutrition-unverified";
+type Signal = "no-image" | "no-offer" | "nutrition-unverified";
 
 function getSignals(product: Product): Signal[] {
   const signals: Signal[] = [];
 
   if (!product.image) signals.push("no-image");
-  if (!getBestOffer(product)) signals.push("no-offer");
-  if (!product.offers.some((o) => hasFreshPriceObservation(o))) signals.push("no-dated-price");
+  if (!hasAvailableOffer(product)) signals.push("no-offer");
   if (product.nutritionNote && supportsServingMetrics(product)) signals.push("nutrition-unverified");
 
   return signals;
