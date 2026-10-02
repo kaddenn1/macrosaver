@@ -8,3 +8,7 @@ export const SITE_NAME = "MacroSaver";
  * reinstated account. Flip this — and only this — when that happens.
  */
 export const AMAZON_ASSOCIATE_ACTIVE = true;
+
+/** GA4 measurement ID. Not secret (visible in page source); override per environment if needed. */
+export const GA_MEASUREMENT_ID =
+  process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "G-KN7KC11RRV";

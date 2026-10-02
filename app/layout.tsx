@@ -4,6 +4,7 @@ import SiteChrome from "@/components/SiteChrome";
 import { CompareProvider } from "@/components/CompareContext";
 import { SITE_URL, SITE_NAME } from "@/lib/site";
 import { serializeJsonLd } from "@/lib/json-ld";
+import Analytics from "@/components/Analytics";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -65,6 +66,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: serializeJsonLd(websiteJsonLd) }}
         />
+        <Analytics />
         <CompareProvider>
           <SiteChrome>{children}</SiteChrome>
         </CompareProvider>

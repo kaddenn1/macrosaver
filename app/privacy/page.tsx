@@ -64,6 +64,20 @@ export default function PrivacyPolicy() {
           </p>
         </section>
 
+        <section className="space-y-3">
+          <h2 className="text-xl font-bold text-white">Analytics</h2>
+          <p className="leading-relaxed text-gray-400">
+            We use Google Analytics 4 to count page views and clicks on retailer links so we can see
+            which pages are useful. Google Analytics uses cookies or similar technologies and
+            receives your IP address, browser and device information, and the page you viewed;
+            Google processes that data under its own privacy terms. We have turned off Google
+            advertising features and ad personalization for this property, and we do not send
+            prices or any information you type into the site. You can block analytics with a
+            browser extension or your browser&apos;s tracking settings, or use Google&apos;s opt-out
+            add-on.
+          </p>
+        </section>
+
         <section className="rounded-lg border border-amber-400/30 bg-[#111] p-5">
           <h2 className="text-xl font-bold text-amber-300">Affiliate links and third parties</h2>
           <p className="mt-3 leading-relaxed text-gray-300">
