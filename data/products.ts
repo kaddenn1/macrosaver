@@ -16,6 +16,7 @@ export const products = [
       servingSize: "1 scoop (26g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DGZHDBZT?tag=macrosaver02-20", asin: "B0DGZHDBZT" },
     ]
   },
   {
@@ -36,6 +37,7 @@ export const products = [
       servingSize: "1 bottle (16.9 fl oz)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0985TJ4HF?tag=macrosaver02-20", asin: "B0985TJ4HF" },
     ]
   },
   {
@@ -56,6 +58,7 @@ export const products = [
       servingSize: "1 bottle (16.9 fl oz)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0985S4S42?tag=macrosaver02-20", asin: "B0985S4S42" },
     ]
   },
   {
@@ -76,6 +79,7 @@ export const products = [
       servingSize: "1 bottle (16.9 fl oz)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DT7K3LXM?tag=macrosaver02-20", asin: "B0DT7K3LXM" },
     ]
   },
   {
@@ -96,6 +100,7 @@ export const products = [
       servingSize: "1 bottle (16.9 fl oz)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0966FG8MB?tag=macrosaver02-20", asin: "B0966FG8MB" },
     ]
   },
   {
@@ -116,6 +121,7 @@ export const products = [
       servingSize: "1 bottle (16.9 fl oz)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F6YVBGX6?tag=macrosaver02-20", asin: "B0F6YVBGX6" },
     ]
   },
   {
@@ -136,6 +142,7 @@ export const products = [
       servingSize: "1 bottle (16.9 fl oz)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F6Z9F4MG?tag=macrosaver02-20", asin: "B0F6Z9F4MG" },
     ]
   },
   {
@@ -155,6 +162,7 @@ export const products = [
       servingSize: "1 scoop (26g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DGZGKFBT?tag=macrosaver02-20", asin: "B0DGZGKFBT" },
     ]
   },
   {
@@ -174,6 +182,7 @@ export const products = [
       servingSize: "2 scoops (39g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B06ZZ3PJQD?tag=macrosaver02-20", asin: "B06ZZ3PJQD" },
     ]
   },
   {
@@ -193,6 +202,7 @@ export const products = [
       servingSize: "2 scoops (39g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D4X2RXP8?tag=macrosaver02-20", asin: "B0D4X2RXP8" },
     ]
   },
   {
@@ -212,6 +222,7 @@ export const products = [
       servingSize: "2 scoops (42g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DLPCJ4BZ?tag=macrosaver02-20", asin: "B0DLPCJ4BZ" },
     ]
   },
   {
@@ -231,6 +242,7 @@ export const products = [
       servingSize: "2 scoops (41g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B06Y5ZG66K?tag=macrosaver02-20", asin: "B06Y5ZG66K" },
     ]
   },
   {
@@ -250,6 +262,7 @@ export const products = [
       servingSize: "1 scoop (30g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B000QSNYGI?tag=macrosaver02-20", asin: "B000QSNYGI" },
     ]
   },
   {
@@ -269,6 +282,7 @@ export const products = [
       servingSize: "1 scoop (30g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B002DYIZH6?tag=macrosaver02-20", asin: "B002DYIZH6" },
     ]
   },
   {
@@ -288,6 +302,7 @@ export const products = [
       servingSize: "1 scoop (32g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B002DYIZHG?tag=macrosaver02-20", asin: "B002DYIZHG" },
     ]
   },
   {
@@ -307,6 +322,7 @@ export const products = [
       servingSize: "1 scoop (32g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B000QSTBNS?tag=macrosaver02-20", asin: "B000QSTBNS" },
     ]
   },
   {
@@ -326,6 +342,7 @@ export const products = [
       sugarGrams: 2,
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B000GIQSVG?tag=macrosaver02-20", asin: "B000GIQSVG" },
     ]
   },
   {
@@ -345,6 +362,7 @@ export const products = [
       sugarGrams: 2,
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B000GIPJZ2?tag=macrosaver02-20", asin: "B000GIPJZ2" },
     ]
   },
   {
@@ -364,6 +382,7 @@ export const products = [
       servingSize: "1 scoop (32g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B000GIURIQ?tag=macrosaver02-20", asin: "B000GIURIQ" },
     ]
   },
   {
@@ -383,6 +402,7 @@ export const products = [
       servingSize: "1 scoop (32g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B000QSRO1Y?tag=macrosaver02-20", asin: "B000QSRO1Y" },
     ]
   },
   {
@@ -402,6 +422,7 @@ export const products = [
       servingSize: "1 scoop",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B002DYIZHQ?tag=macrosaver02-20", asin: "B002DYIZHQ" },
     ]
   },
   {
@@ -422,6 +443,7 @@ export const products = [
       sugarGrams: 2,
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B000QSO3FO?tag=macrosaver02-20", asin: "B000QSO3FO" },
     ]
   },
   {
@@ -441,6 +463,7 @@ export const products = [
       sugarGrams: 2,
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B006E54GJG?tag=macrosaver02-20", asin: "B006E54GJG" },
     ]
   },
   {
@@ -459,6 +482,7 @@ export const products = [
       servingSize: "1 scoop (33g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07DJL1PJT?tag=macrosaver02-20", asin: "B07DJL1PJT" },
     ]
   },
   {
@@ -479,6 +503,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00GL2HMES?tag=macrosaver02-20", asin: "B00GL2HMES" },
     ]
   },
   {
@@ -499,6 +524,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01M3SO70X?tag=macrosaver02-20", asin: "B01M3SO70X" },
     ]
   },
   {
@@ -519,6 +545,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01MA6LPQR?tag=macrosaver02-20", asin: "B01MA6LPQR" },
     ]
   },
   {
@@ -539,6 +566,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CDJ2XTQB?tag=macrosaver02-20", asin: "B0CDJ2XTQB" },
     ]
   },
   {
@@ -559,6 +587,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CDFDDRCF?tag=macrosaver02-20", asin: "B0CDFDDRCF" },
     ]
   },
   {
@@ -579,6 +608,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FWDBG1QC?tag=macrosaver02-20", asin: "B0FWDBG1QC" },
     ]
   },
   {
@@ -599,6 +629,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01EVVQX9U?tag=macrosaver02-20", asin: "B01EVVQX9U" },
     ]
   },
   {
@@ -619,6 +650,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GGVW3BK2?tag=macrosaver02-20", asin: "B0GGVW3BK2" },
     ]
   },
   {
@@ -639,6 +671,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GGVC2PHT?tag=macrosaver02-20", asin: "B0GGVC2PHT" },
     ]
   },
   {
@@ -659,6 +692,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GGVNVV4K?tag=macrosaver02-20", asin: "B0GGVNVV4K" },
     ]
   },
   {
@@ -679,6 +713,7 @@ export const products = [
       servingSize: "5g",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GGVXMBS7?tag=macrosaver02-20", asin: "B0GGVXMBS7" },
     ]
   },
   {
@@ -698,6 +733,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D9NFTNQL?tag=macrosaver02-20", asin: "B0D9NFTNQL" },
     ]
   },
   {
@@ -717,6 +753,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D9NKPH6Q?tag=macrosaver02-20", asin: "B0D9NKPH6Q" },
     ]
   },
   {
@@ -736,6 +773,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CS7KYSYZ?tag=macrosaver02-20", asin: "B0CS7KYSYZ" },
     ]
   },
   {
@@ -755,6 +793,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D9NLF8Z3?tag=macrosaver02-20", asin: "B0D9NLF8Z3" },
     ]
   },
   {
@@ -774,6 +813,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D9NKCBFR?tag=macrosaver02-20", asin: "B0D9NKCBFR" },
     ]
   },
   {
@@ -793,6 +833,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FPPP1SGH?tag=macrosaver02-20", asin: "B0FPPP1SGH" },
     ]
   },
   {
@@ -812,6 +853,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FB1TLP3P?tag=macrosaver02-20", asin: "B0FB1TLP3P" },
     ]
   },
   {
@@ -831,6 +873,7 @@ export const products = [
       servingSize: "1 scoop (13g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FB1XGNB9?tag=macrosaver02-20", asin: "B0FB1XGNB9" },
     ]
   },
   {
@@ -850,6 +893,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01IT9NLHW?tag=macrosaver02-20", asin: "B01IT9NLHW" },
     ]
   },
   {
@@ -869,6 +913,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07HCNM7KQ?tag=macrosaver02-20", asin: "B07HCNM7KQ" },
     ]
   },
   {
@@ -888,6 +933,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B08ZYNSZZT?tag=macrosaver02-20", asin: "B08ZYNSZZT" },
     ]
   },
   {
@@ -907,6 +953,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0BQ51S5BL?tag=macrosaver02-20", asin: "B0BQ51S5BL" },
     ]
   },
   {
@@ -926,6 +973,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0B177N8VP?tag=macrosaver02-20", asin: "B0B177N8VP" },
     ]
   },
   {
@@ -945,6 +993,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B09VCS1YM1?tag=macrosaver02-20", asin: "B09VCS1YM1" },
     ]
   },
   {
@@ -964,6 +1013,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CHN5D13P?tag=macrosaver02-20", asin: "B0CHN5D13P" },
     ]
   },
   {
@@ -983,6 +1033,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0B1LN467K?tag=macrosaver02-20", asin: "B0B1LN467K" },
     ]
   },
   {
@@ -1002,6 +1053,7 @@ export const products = [
       servingSize: "1 stick pack (16g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DNNMR2CD?tag=macrosaver02-20", asin: "B0DNNMR2CD" },
     ]
   },
   {
@@ -1021,6 +1073,7 @@ export const products = [
       servingSize: "1 scoop (12.6g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07HNFF75B?tag=macrosaver02-20", asin: "B07HNFF75B" },
     ]
   },
   {
@@ -1040,6 +1093,7 @@ export const products = [
       servingSize: "1 stick pack",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F4M38KVX?tag=macrosaver02-20", asin: "B0F4M38KVX" },
     ]
   },
   {
@@ -1059,6 +1113,7 @@ export const products = [
       servingSize: "1 scoop (12.6g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FWNS8QLT?tag=macrosaver02-20", asin: "B0FWNS8QLT" },
     ]
   },
   {
@@ -1084,6 +1139,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B099KPFN1B?tag=macrosaver02-20", asin: "B099KPFN1B" },
     ]
   },
   {
@@ -1096,6 +1152,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00Q5CIL4Y?tag=macrosaver02-20", asin: "B00Q5CIL4Y" },
     ]
   },
   {
@@ -1108,6 +1165,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B099KP14NL?tag=macrosaver02-20", asin: "B099KP14NL" },
     ]
   },
   {
@@ -1120,6 +1178,7 @@ export const products = [
     servings: 1,
     nutrition: { proteinGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00RC7PV5I?tag=macrosaver02-20", asin: "B00RC7PV5I" },
     ]
   },
   {
@@ -1570,6 +1629,7 @@ export const products = [
     nutrition: { proteinGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00CX3ASFE?tag=macrosaver02-20", asin: "B00CX3ASFE" },
     ]
   },
   {
@@ -1583,6 +1643,7 @@ export const products = [
     nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 110 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B09RQBHRCT?tag=macrosaver02-20", asin: "B09RQBHRCT" },
     ]
   },
   {
@@ -1595,6 +1656,7 @@ export const products = [
     nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 110 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00K6JUG4K?tag=macrosaver02-20", asin: "B00K6JUG4K" },
     ]
   },
   {
@@ -1608,6 +1670,7 @@ export const products = [
     nutritionNote: "Carbohydrates are inferred from the calorie breakdown rather than a direct label read; sodium was not confirmed.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 3, fatGrams: 0, sugarGrams: 3 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07RVK8FXW?tag=macrosaver02-20", asin: "B07RVK8FXW" },
     ]
   },
   {
@@ -1621,6 +1684,7 @@ export const products = [
     nutritionNote: "Carbohydrates are inferred from the calorie breakdown rather than a direct label read; sodium was not confirmed.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B08VZ5V1FV?tag=macrosaver02-20", asin: "B08VZ5V1FV" },
     ]
   },
   {
@@ -1633,6 +1697,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D54PQPJQ?tag=macrosaver02-20", asin: "B0D54PQPJQ" },
     ]
   },
   {
@@ -1645,6 +1710,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B08J1D53VM?tag=macrosaver02-20", asin: "B08J1D53VM" },
     ]
   },
   {
@@ -1657,6 +1723,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D54MNCH2?tag=macrosaver02-20", asin: "B0D54MNCH2" },
     ]
   },
   {
@@ -1669,6 +1736,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B09KG9ZJT6?tag=macrosaver02-20", asin: "B09KG9ZJT6" },
     ]
   },
   {
@@ -1681,6 +1749,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0985RY58P?tag=macrosaver02-20", asin: "B0985RY58P" },
     ]
   },
   {
@@ -1693,6 +1762,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 10 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07ZDF528Q?tag=macrosaver02-20", asin: "B07ZDF528Q" },
     ]
   },
   {
@@ -1705,6 +1775,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B09KGCMS3M?tag=macrosaver02-20", asin: "B09KGCMS3M" },
     ]
   },
   {
@@ -1717,6 +1788,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B089MFTWF3?tag=macrosaver02-20", asin: "B089MFTWF3" },
     ]
   },
   {
@@ -1729,6 +1801,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0BRTG147X?tag=macrosaver02-20", asin: "B0BRTG147X" },
     ]
   },
   {
@@ -1741,6 +1814,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0985QG3SH?tag=macrosaver02-20", asin: "B0985QG3SH" },
     ]
   },
   {
@@ -1753,6 +1827,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B08HJRVBNY?tag=macrosaver02-20", asin: "B08HJRVBNY" },
     ]
   },
   {
@@ -1764,6 +1839,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07FTNZBZQ?tag=macrosaver02-20", asin: "B07FTNZBZQ" },
     ]
   },
   {
@@ -1775,6 +1851,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0817NBQKK?tag=macrosaver02-20", asin: "B0817NBQKK" },
     ]
   },
   {
@@ -1786,6 +1863,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B077THPMG6?tag=macrosaver02-20", asin: "B077THPMG6" },
     ]
   },
   {
@@ -1797,6 +1875,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D3FRR547?tag=macrosaver02-20", asin: "B0D3FRR547" },
     ]
   },
   {
@@ -1808,6 +1887,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B08HG1Y3YB?tag=macrosaver02-20", asin: "B08HG1Y3YB" },
     ]
   },
   {
@@ -1819,6 +1899,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B089LRCF2K?tag=macrosaver02-20", asin: "B089LRCF2K" },
     ]
   },
   {
@@ -1832,6 +1913,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 5 },
     approvedBy: ["jannette"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00O5O6VCS?tag=macrosaver02-20", asin: "B00O5O6VCS" },
     ]
   },
   {
@@ -1851,6 +1933,7 @@ export const products = [
       servingSize: "2 scoops (34g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00JT8470S?tag=macrosaver02-20", asin: "B00JT8470S" },
     ]
   },
   {
@@ -1870,6 +1953,7 @@ export const products = [
       servingSize: "2 scoops (34g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B007L4QMGO?tag=macrosaver02-20", asin: "B007L4QMGO" },
     ]
   },
   {
@@ -1890,6 +1974,7 @@ export const products = [
       servingSize: "2 scoops (33g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00JXP38MU?tag=macrosaver02-20", asin: "B00JXP38MU" },
     ]
   },
   {
@@ -1902,6 +1987,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07RNM5MZJ?tag=macrosaver02-20", asin: "B07RNM5MZJ" },
     ]
   },
   {
@@ -1915,6 +2001,7 @@ export const products = [
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GPB1WR26?tag=macrosaver02-20", asin: "B0GPB1WR26" },
     ]
   },
   {
@@ -1929,6 +2016,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 3, fatGrams: 0.5, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CS2L66H6?tag=macrosaver02-20", asin: "B0CS2L66H6" },
     ]
   },
   {
@@ -1943,6 +2031,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 3, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CS2D278X?tag=macrosaver02-20", asin: "B0CS2D278X" },
     ]
   },
   {
@@ -1956,6 +2045,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 290, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CS24964G?tag=macrosaver02-20", asin: "B0CS24964G" },
     ]
   },
   {
@@ -1969,6 +2059,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 320, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DQVP36RZ?tag=macrosaver02-20", asin: "B0DQVP36RZ" },
     ]
   },
   {
@@ -1983,6 +2074,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CS27D1B9?tag=macrosaver02-20", asin: "B0CS27D1B9" },
     ]
   },
   {
@@ -1996,6 +2088,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 290, servingSize: "1 can (11 fl oz)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DQVMT2X3?tag=macrosaver02-20", asin: "B0DQVMT2X3" },
     ]
   },
   {
@@ -2009,6 +2102,7 @@ export const products = [
     nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B09M968ZCM?tag=macrosaver02-20", asin: "B09M968ZCM" },
     ]
   },
   {
@@ -2023,6 +2117,7 @@ export const products = [
     nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 6, servingSize: "1 bar (40g)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0BFPFBGGC?tag=macrosaver02-20", asin: "B0BFPFBGGC" },
     ]
   },
   {
@@ -2037,6 +2132,7 @@ export const products = [
     nutrition: { proteinGrams: 17, calories: 150, carbsGrams: 14, fatGrams: 3, sugarGrams: 7, servingSize: "1 bar (40g)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D7PS26VG?tag=macrosaver02-20", asin: "B0D7PS26VG" },
     ]
   },
   {
@@ -2051,6 +2147,7 @@ export const products = [
     nutrition: { proteinGrams: 15, calories: 160, carbsGrams: 19, fatGrams: 3, sugarGrams: 8, servingSize: "1 bar (44g)" },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0B7P7QNK3?tag=macrosaver02-20", asin: "B0B7P7QNK3" },
     ]
   },
   {
@@ -2065,6 +2162,7 @@ export const products = [
     nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 14, sugarGrams: 6 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DGMFL2TV?tag=macrosaver02-20", asin: "B0DGMFL2TV" },
     ]
   },
   {
@@ -2079,6 +2177,7 @@ export const products = [
     nutrition: { proteinGrams: 17, calories: 150, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 6 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FQCKYNJ3?tag=macrosaver02-20", asin: "B0FQCKYNJ3" },
     ]
   },
   {
@@ -2093,6 +2192,7 @@ export const products = [
     nutrition: { proteinGrams: 15, calories: 140, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D1KD323N?tag=macrosaver02-20", asin: "B0D1KD323N" },
     ]
   },
   {
@@ -2107,6 +2207,7 @@ export const products = [
     nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0G1K55M9K?tag=macrosaver02-20", asin: "B0G1K55M9K" },
     ]
   },
   {
@@ -2121,6 +2222,7 @@ export const products = [
     nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0G1K9MMSJ?tag=macrosaver02-20", asin: "B0G1K9MMSJ" },
     ]
   },
   {
@@ -2135,6 +2237,7 @@ export const products = [
     nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0G1K8X36Z?tag=macrosaver02-20", asin: "B0G1K8X36Z" },
     ]
   },
   {
@@ -2149,6 +2252,7 @@ export const products = [
     nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 15, fatGrams: 2.5, sugarGrams: 8 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0G2K37XFK?tag=macrosaver02-20", asin: "B0G2K37XFK" },
     ]
   },
   {
@@ -2162,6 +2266,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07SV51NM6?tag=macrosaver02-20", asin: "B07SV51NM6" },
     ]
   },
   {
@@ -2175,6 +2280,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CHH417FR?tag=macrosaver02-20", asin: "B0CHH417FR" },
     ]
   },
   {
@@ -2188,6 +2294,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DHYPHMRV?tag=macrosaver02-20", asin: "B0DHYPHMRV" },
     ]
   },
   {
@@ -2199,6 +2306,7 @@ export const products = [
     servings: 27,
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 190, servingSize: "1 rounded scoop (34g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0BYBB4HF7?tag=macrosaver02-20", asin: "B0BYBB4HF7" },
     ]
   },
   {
@@ -2211,6 +2319,7 @@ export const products = [
     nutritionNote: "Carbohydrates and fat are derived from the published macro-percentage breakdown; sodium was not confirmed.",
     nutrition: { proteinGrams: 25, calories: 120, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, servingSize: "1 scoop (33g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07FQPCZ77?tag=macrosaver02-20", asin: "B07FQPCZ77" },
     ]
   },
   {
@@ -2223,6 +2332,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 3 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GPB91TRB?tag=macrosaver02-20", asin: "B0GPB91TRB" },
     ]
   },
   {
@@ -2235,6 +2345,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 2, servingSize: "1 scoop (35g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01MQQ4RFA?tag=macrosaver02-20", asin: "B01MQQ4RFA" },
     ]
   },
   {
@@ -2247,6 +2358,7 @@ export const products = [
     // Sodium not confirmed.
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 4, fatGrams: 1.5, sugarGrams: 2 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01N9BO3SE?tag=macrosaver02-20", asin: "B01N9BO3SE" },
     ]
   },
   {
@@ -2261,6 +2373,7 @@ export const products = [
     nutrition: { proteinGrams: 16, calories: 140, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 7 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/s?k=Built%20Bar%20Puff%20Variety%20Pack%2C%20Minions%20%26%20Monsters%20Limited%20Edition%20(12%20Count)&tag=macrosaver02-20" },
     ]
   },
   {
@@ -2275,6 +2388,7 @@ export const products = [
     nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 14, fatGrams: 2.5, sugarGrams: 7 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B09M95V187?tag=macrosaver02-20", asin: "B09M95V187" },
     ]
   },
   {
@@ -2287,6 +2401,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     approvedBy: ["geo"],
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GNP37Q1C?tag=macrosaver02-20", asin: "B0GNP37Q1C" },
     ]
   },
   {
@@ -2305,6 +2420,7 @@ export const products = [
     nutritionNote:
       "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F9T3ZH6D?tag=macrosaver02-20", asin: "B0F9T3ZH6D" },
     ]
   },
   {
@@ -2322,6 +2438,7 @@ export const products = [
     nutritionNote:
       "Calories, sodium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CVX6YK9K?tag=macrosaver02-20", asin: "B0CVX6YK9K" },
     ]
   },
   {
@@ -2336,6 +2453,7 @@ export const products = [
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07LD2NV9X?tag=macrosaver02-20", asin: "B07LD2NV9X" },
     ]
   },
   {
@@ -2350,6 +2468,7 @@ export const products = [
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07LD7B766?tag=macrosaver02-20", asin: "B07LD7B766" },
     ]
   },
   {
@@ -2364,6 +2483,7 @@ export const products = [
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07LCZC2C2?tag=macrosaver02-20", asin: "B07LCZC2C2" },
     ]
   },
   {
@@ -2378,6 +2498,7 @@ export const products = [
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01DDIRDZA?tag=macrosaver02-20", asin: "B01DDIRDZA" },
     ]
   },
   {
@@ -2392,6 +2513,7 @@ export const products = [
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0855NBDH3?tag=macrosaver02-20", asin: "B0855NBDH3" },
     ]
   },
   {
@@ -2406,6 +2528,7 @@ export const products = [
     nutritionNote:
       "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01DDIRE2W?tag=macrosaver02-20", asin: "B01DDIRE2W" },
     ]
   },
   {
@@ -2419,6 +2542,7 @@ export const products = [
     nutritionNote:
       "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0921FLKYK?tag=macrosaver02-20", asin: "B0921FLKYK" },
     ]
   },
   {
@@ -2433,6 +2557,7 @@ export const products = [
     nutritionNote:
       "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DFJP6LZF?tag=macrosaver02-20", asin: "B0DFJP6LZF" },
     ]
   },
   {
@@ -2445,6 +2570,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0B9VQRMHL?tag=macrosaver02-20", asin: "B0B9VQRMHL" },
     ]
   },
   {
@@ -2457,6 +2583,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D485XNHL?tag=macrosaver02-20", asin: "B0D485XNHL" },
     ]
   },
   {
@@ -2469,6 +2596,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FMDWNPQW?tag=macrosaver02-20", asin: "B0FMDWNPQW" },
     ]
   },
   {
@@ -2480,6 +2608,7 @@ export const products = [
     servings: 30,
     nutrition: { proteinGrams: 0, calories: 0, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07RNM5VH8?tag=macrosaver02-20", asin: "B07RNM5VH8" },
     ]
   },
   {
@@ -2492,6 +2621,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B088KV4MTM?tag=macrosaver02-20", asin: "B088KV4MTM" },
     ]
   },
   {
@@ -2504,6 +2634,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 20 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B084RVMH4S?tag=macrosaver02-20", asin: "B084RVMH4S" },
     ]
   },
   {
@@ -2516,6 +2647,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00UZFSS6I?tag=macrosaver02-20", asin: "B00UZFSS6I" },
     ]
   },
   {
@@ -2528,6 +2660,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01D41PWAO?tag=macrosaver02-20", asin: "B01D41PWAO" },
     ]
   },
   {
@@ -2540,6 +2673,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 5 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0736GHQ61?tag=macrosaver02-20", asin: "B0736GHQ61" },
     ]
   },
   {
@@ -2552,6 +2686,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00GAMSKUE?tag=macrosaver02-20", asin: "B00GAMSKUE" },
     ]
   },
   {
@@ -2564,6 +2699,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07J2TXJMN?tag=macrosaver02-20", asin: "B07J2TXJMN" },
     ]
   },
   {
@@ -2576,6 +2712,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 10 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07BSQSXMB?tag=macrosaver02-20", asin: "B07BSQSXMB" },
     ]
   },
   {
@@ -2588,6 +2725,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01ECRK9D4?tag=macrosaver02-20", asin: "B01ECRK9D4" },
     ]
   },
   {
@@ -2600,6 +2738,7 @@ export const products = [
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 10 },
     nutritionNote: "Displayed nutrition values are category-typical estimates for calcium citrate soft chews and were not independently verified for this product.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00OKUL5UK?tag=macrosaver02-20", asin: "B00OKUL5UK" },
     ]
   },
   {
@@ -2611,6 +2750,7 @@ export const products = [
     servings: 60,
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 4, fatGrams: 0.5, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FBV9H833?tag=macrosaver02-20", asin: "B0FBV9H833" },
     ]
   },
   {
@@ -2623,6 +2763,7 @@ export const products = [
     servings: 12,
     nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0BCR4H9KJ?tag=macrosaver02-20", asin: "B0BCR4H9KJ" },
     ]
   },
   {
@@ -2635,6 +2776,7 @@ export const products = [
     servings: 12,
     nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 14, fatGrams: 2, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B09M951M29?tag=macrosaver02-20", asin: "B09M951M29" },
     ]
   },
   {
@@ -2647,6 +2789,7 @@ export const products = [
     servings: 12,
     nutrition: { proteinGrams: 17, calories: 140, carbsGrams: 13, fatGrams: 3, sugarGrams: 6, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FN7MFN37?tag=macrosaver02-20", asin: "B0FN7MFN37" },
     ]
   },
   {
@@ -2659,6 +2802,7 @@ export const products = [
     servings: 12,
     nutrition: { proteinGrams: 16, calories: 140, carbsGrams: 14, fatGrams: 3, sugarGrams: 7, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0G35PSQXC?tag=macrosaver02-20", asin: "B0G35PSQXC" },
     ]
   },
   {
@@ -2671,6 +2815,7 @@ export const products = [
     servings: 12,
     nutrition: { proteinGrams: 15, calories: 160, carbsGrams: 13, fatGrams: 3, sugarGrams: 8, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CH1JMHZD?tag=macrosaver02-20", asin: "B0CH1JMHZD" },
     ]
   },
   {
@@ -2683,6 +2828,7 @@ export const products = [
     servings: 12,
     nutrition: { proteinGrams: 16, calories: 150, carbsGrams: 13, fatGrams: 3, sugarGrams: 8, sodiumMilligrams: 85, servingSize: "1 bar (40g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0HFKXW6M9?tag=macrosaver02-20", asin: "B0HFKXW6M9" },
     ]
   },
   {
@@ -2696,6 +2842,7 @@ export const products = [
     nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)", calories: 170, carbsGrams: 8 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07PGPY5VB?tag=macrosaver02-20", asin: "B07PGPY5VB" },
     ]
   },
   {
@@ -2709,6 +2856,7 @@ export const products = [
     nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)", calories: 170, carbsGrams: 7, fatGrams: 4.5 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07PFKFTW9?tag=macrosaver02-20", asin: "B07PFKFTW9" },
     ]
   },
   {
@@ -2722,6 +2870,7 @@ export const products = [
     nutrition: { proteinGrams: 26, servingSize: "1 bottle (14 fl oz)", calories: 170, fatGrams: 4.5, carbsGrams: 6, sugarGrams: 5, sodiumMilligrams: 260 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07PFKGQ3S?tag=macrosaver02-20", asin: "B07PFKGQ3S" },
     ]
   },
   {
@@ -2735,6 +2884,7 @@ export const products = [
     nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)", calories: 230, carbsGrams: 9, fatGrams: 3.5 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01N4OMLOZ?tag=macrosaver02-20", asin: "B01N4OMLOZ" },
     ]
   },
   {
@@ -2748,6 +2898,7 @@ export const products = [
     nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)", calories: 230, fatGrams: 3.5, carbsGrams: 8, sugarGrams: 7, sodiumMilligrams: 250 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B085LJ7D2S?tag=macrosaver02-20", asin: "B085LJ7D2S" },
     ]
   },
   {
@@ -2761,6 +2912,7 @@ export const products = [
     nutrition: { proteinGrams: 42, servingSize: "1 bottle (14 fl oz)", calories: 230 },
     nutritionNote: "Calories, carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01MT9NTDD?tag=macrosaver02-20", asin: "B01MT9NTDD" },
     ]
   },
   {
@@ -2772,6 +2924,7 @@ export const products = [
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B078XMP8KJ?tag=macrosaver02-20", asin: "B078XMP8KJ" },
     ]
   },
   {
@@ -2783,6 +2936,7 @@ export const products = [
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CXCF4ZLL?tag=macrosaver02-20", asin: "B0CXCF4ZLL" },
     ]
   },
   {
@@ -2794,6 +2948,7 @@ export const products = [
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0B4X36DT5?tag=macrosaver02-20", asin: "B0B4X36DT5" },
     ]
   },
   {
@@ -2805,6 +2960,7 @@ export const products = [
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DNNHVL48?tag=macrosaver02-20", asin: "B0DNNHVL48" },
     ]
   },
   {
@@ -2816,6 +2972,7 @@ export const products = [
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DNNNHB1C?tag=macrosaver02-20", asin: "B0DNNNHB1C" },
     ]
   },
   {
@@ -2827,6 +2984,7 @@ export const products = [
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0CHXP3331?tag=macrosaver02-20", asin: "B0CHXP3331" },
     ]
   },
   {
@@ -2838,6 +2996,7 @@ export const products = [
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0B1LLKZ8S?tag=macrosaver02-20", asin: "B0B1LLKZ8S" },
     ]
   },
   {
@@ -2849,6 +3008,7 @@ export const products = [
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0BQ4YQN99?tag=macrosaver02-20", asin: "B0BQ4YQN99" },
     ]
   },
   {
@@ -2860,6 +3020,7 @@ export const products = [
     servings: 16,
     nutrition: { calories: 45, proteinGrams: 0, carbsGrams: 11, fatGrams: 0, sugarGrams: 11, sodiumMilligrams: 500, servingSize: "1 stick pack (16g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B08MVDTLKC?tag=macrosaver02-20", asin: "B08MVDTLKC" },
     ]
   },
   {
@@ -2872,6 +3033,7 @@ export const products = [
     nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
     nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D8K5BMVH?tag=macrosaver02-20", asin: "B0D8K5BMVH" },
     ]
   },
   {
@@ -2884,6 +3046,7 @@ export const products = [
     nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
     nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FNRQHHJL?tag=macrosaver02-20", asin: "B0FNRQHHJL" },
     ]
   },
   {
@@ -2896,6 +3059,7 @@ export const products = [
     nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
     nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FNRQYK6K?tag=macrosaver02-20", asin: "B0FNRQYK6K" },
     ]
   },
   {
@@ -2908,6 +3072,7 @@ export const products = [
     nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
     nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FNRSW3MG?tag=macrosaver02-20", asin: "B0FNRSW3MG" },
     ]
   },
   {
@@ -2920,6 +3085,7 @@ export const products = [
     nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
     nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B089GYF3XM?tag=macrosaver02-20", asin: "B089GYF3XM" },
     ]
   },
   {
@@ -2932,6 +3098,7 @@ export const products = [
     nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)" },
     nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D8K4RRK1?tag=macrosaver02-20", asin: "B0D8K4RRK1" },
     ]
   },
   {
@@ -2944,6 +3111,7 @@ export const products = [
     nutrition: { calories: 80, proteinGrams: 20, sugarGrams: 0, servingSize: "1 scoop (25g)", fatGrams: 0 },
     nutritionNote: "Carbs, fat, and sodium were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0H5MDF5Z4?tag=macrosaver02-20", asin: "B0H5MDF5Z4" },
     ]
   },
   {
@@ -2955,6 +3123,7 @@ export const products = [
     servings: 75,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FV961TDN?tag=macrosaver02-20", asin: "B0FV961TDN" },
     ]
   },
   {
@@ -2966,6 +3135,7 @@ export const products = [
     servings: 68,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 170, servingSize: "7g" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0H6GRWNYS?tag=macrosaver02-20", asin: "B0H6GRWNYS" },
     ]
   },
   {
@@ -2977,6 +3147,7 @@ export const products = [
     servings: 74,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DDMR2RX5?tag=macrosaver02-20", asin: "B0DDMR2RX5" },
     ]
   },
   {
@@ -2988,6 +3159,7 @@ export const products = [
     servings: 148,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GGV7X8FB?tag=macrosaver02-20", asin: "B0GGV7X8FB" },
     ]
   },
   {
@@ -2999,6 +3171,7 @@ export const products = [
     servings: 67,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 170, servingSize: "7g" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0H6GWM3Y2?tag=macrosaver02-20", asin: "B0H6GWM3Y2" },
     ]
   },
   {
@@ -3010,6 +3183,7 @@ export const products = [
     servings: 400,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 0, servingSize: "5g" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0HB2M9WF7?tag=macrosaver02-20", asin: "B0HB2M9WF7" },
     ]
   },
   {
@@ -3021,6 +3195,7 @@ export const products = [
     servings: 10,
     nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop (30g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F1ZV7PWW?tag=macrosaver02-20", asin: "B0F1ZV7PWW" },
     ]
   },
   {
@@ -3032,6 +3207,7 @@ export const products = [
     servings: 148,
     nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop (30g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B000GIQT2O?tag=macrosaver02-20", asin: "B000GIQT2O" },
     ]
   },
   {
@@ -3043,6 +3219,7 @@ export const products = [
     servings: 140,
     nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 2, sodiumMilligrams: 130, servingSize: "1 scoop (32g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00ZFONQZW?tag=macrosaver02-20", asin: "B00ZFONQZW" },
     ]
   },
   {
@@ -3054,6 +3231,7 @@ export const products = [
     servings: 146,
     nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 2, sodiumMilligrams: 140, servingSize: "1 scoop (32g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B000GIUROA?tag=macrosaver02-20", asin: "B000GIUROA" },
     ]
   },
   {
@@ -3065,6 +3243,7 @@ export const products = [
     servings: 280,
     nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 2, sodiumMilligrams: 130, servingSize: "1 scoop (32g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GRLSRJ7R?tag=macrosaver02-20", asin: "B0GRLSRJ7R" },
     ]
   },
   {
@@ -3076,6 +3255,7 @@ export const products = [
     servings: 174,
     nutrition: { calories: 110, proteinGrams: 24, carbsGrams: 2, fatGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0HBNY578Y?tag=macrosaver02-20", asin: "B0HBNY578Y" },
     ]
   },
   {
@@ -3087,6 +3267,7 @@ export const products = [
     servings: 162,
     nutrition: { calories: 130, proteinGrams: 24, carbsGrams: 4, fatGrams: 2, servingSize: "1 scoop (33g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0HDPVLZDW?tag=macrosaver02-20", asin: "B0HDPVLZDW" },
     ]
   },
   {
@@ -3098,6 +3279,7 @@ export const products = [
     servings: 296,
     nutrition: { calories: 120, proteinGrams: 24, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop (30g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/s?k=Optimum%20Nutrition%20Gold%20Standard%20100%25%20Whey%20-%20Double%20Rich%20Chocolate%20(5%20Pound%2C%20Pack%20of%204)&tag=macrosaver02-20" },
     ]
   },
   {
@@ -3111,6 +3293,7 @@ export const products = [
     nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 2, fatGrams: 3, sugarGrams: 1, sodiumMilligrams: 350 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07C8Y17VT?tag=macrosaver02-20", asin: "B07C8Y17VT" },
     ]
   },
   {
@@ -3124,6 +3307,7 @@ export const products = [
     nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 3 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B008JGIZGS?tag=macrosaver02-20", asin: "B008JGIZGS" },
     ]
   },
   {
@@ -3137,6 +3321,7 @@ export const products = [
     nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 5 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DFHTW5HN?tag=macrosaver02-20", asin: "B0DFHTW5HN" },
     ]
   },
   {
@@ -3150,6 +3335,7 @@ export const products = [
     nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11.5 fl oz)" },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00MH5GGFO?tag=macrosaver02-20", asin: "B00MH5GGFO" },
     ]
   },
   {
@@ -3163,6 +3349,7 @@ export const products = [
     nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 2 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B008JGIZNQ?tag=macrosaver02-20", asin: "B008JGIZNQ" },
     ]
   },
   {
@@ -3176,6 +3363,7 @@ export const products = [
     nutrition: { calories: 160, proteinGrams: 30, servingSize: "1 bottle (11 fl oz)", carbsGrams: 4, fatGrams: 3 },
     nutritionNote: "Carbs, fat, and sugar were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B08NTY1787?tag=macrosaver02-20", asin: "B08NTY1787" },
     ]
   },
   {
@@ -3187,6 +3375,7 @@ export const products = [
     servings: 29,
     nutrition: { calories: 150, proteinGrams: 30, carbsGrams: 4, fatGrams: 2, sugarGrams: 1, sodiumMilligrams: 170, servingSize: "2 scoops (41g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0D4WTDZZR?tag=macrosaver02-20", asin: "B0D4WTDZZR" },
     ]
   },
   {
@@ -3199,6 +3388,7 @@ export const products = [
     nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
     nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F9SSMYQJ?tag=macrosaver02-20", asin: "B0F9SSMYQJ" },
     ]
   },
   {
@@ -3211,6 +3401,7 @@ export const products = [
     nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
     nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F9SVQ64Z?tag=macrosaver02-20", asin: "B0F9SVQ64Z" },
     ]
   },
   {
@@ -3223,6 +3414,7 @@ export const products = [
     nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
     nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F9SPBP2K?tag=macrosaver02-20", asin: "B0F9SPBP2K" },
     ]
   },
   {
@@ -3235,6 +3427,7 @@ export const products = [
     nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
     nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F9SYF96P?tag=macrosaver02-20", asin: "B0F9SYF96P" },
     ]
   },
   {
@@ -3247,6 +3440,7 @@ export const products = [
     nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
     nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F9SVTM8K?tag=macrosaver02-20", asin: "B0F9SVTM8K" },
     ]
   },
   {
@@ -3259,6 +3453,7 @@ export const products = [
     nutrition: { calories: 0, proteinGrams: 0, sugarGrams: 0, servingSize: "1 stick pack" },
     nutritionNote: "Sodium, potassium, and other electrolyte mineral amounts were not independently verified from this product's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0F9SXVCJN?tag=macrosaver02-20", asin: "B0F9SXVCJN" },
     ]
   },
   {
@@ -3271,6 +3466,7 @@ export const products = [
     servings: 12,
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DZPGC969?tag=macrosaver02-20", asin: "B0DZPGC969" },
     ]
   },
   {
@@ -3283,6 +3479,7 @@ export const products = [
     servings: 12,
     nutrition: { proteinGrams: 20, calories: 90, carbsGrams: 1, fatGrams: 0, sugarGrams: 0, servingSize: "1 can (11 fl oz)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0H5T78P49?tag=macrosaver02-20", asin: "B0H5T78P49" },
     ]
   },
   {
@@ -3295,6 +3492,7 @@ export const products = [
     nutrition: { proteinGrams: 20, calories: 80, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
     nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B00NLR1PX0?tag=macrosaver02-20", asin: "B00NLR1PX0" },
     ]
   },
   {
@@ -3307,6 +3505,7 @@ export const products = [
     nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 110 },
     nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0H73BXYY9?tag=macrosaver02-20", asin: "B0H73BXYY9" },
     ]
   },
   {
@@ -3319,6 +3518,7 @@ export const products = [
     servings: 20,
     nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B09BP3P58Q?tag=macrosaver02-20", asin: "B09BP3P58Q" },
     ]
   },
   {
@@ -3331,6 +3531,7 @@ export const products = [
     nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 110 },
     nutritionNote: "Calories are calculated from the listed protein amount; the remaining zero-value macros were not independently verified from this variant's label.",
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0H73S91BD?tag=macrosaver02-20", asin: "B0H73S91BD" },
     ]
   },
   {
@@ -3343,6 +3544,7 @@ export const products = [
     servings: 7,
     nutrition: { proteinGrams: 18, calories: 70, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, sodiumMilligrams: 110 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B076PL4TM8?tag=macrosaver02-20", asin: "B076PL4TM8" },
     ]
   },
   {
@@ -3580,6 +3782,7 @@ export const products = [
       servingSize: "1 scoop (9g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DJDQCJX2?tag=macrosaver02-20", asin: "B0DJDQCJX2" },
     ]
   },
   {
@@ -3600,6 +3803,7 @@ export const products = [
       servingSize: "1 scoop (9g)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GZT7HJ7G?tag=macrosaver02-20", asin: "B0GZT7HJ7G" },
     ]
   },
   {
@@ -3613,6 +3817,7 @@ export const products = [
       "Carbohydrates, fat, and sodium were not independently verified from this product's label.",
     nutrition: { proteinGrams: 25, calories: 150, sugarGrams: 3, servingSize: "1 scoop (39g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GPB5JVR6?tag=macrosaver02-20", asin: "B0GPB5JVR6" },
     ]
   },
   {
@@ -3626,6 +3831,7 @@ export const products = [
       "Sodium was not independently verified from this product's label.",
     nutrition: { proteinGrams: 25, calories: 130, carbsGrams: 3, fatGrams: 1.5, sugarGrams: 1 },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GP9BCKR9?tag=macrosaver02-20", asin: "B0GP9BCKR9" },
     ]
   },
   {
@@ -3639,6 +3845,7 @@ export const products = [
       "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 80, servingSize: "1 scoop (28.7g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07FXTPGH8?tag=macrosaver02-20", asin: "B07FXTPGH8" },
     ]
   },
   {
@@ -3652,6 +3859,7 @@ export const products = [
       "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 41, servingSize: "1 scoop (28.1g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FGKSR4X3?tag=macrosaver02-20", asin: "B0FGKSR4X3" },
     ]
   },
   {
@@ -3665,6 +3873,7 @@ export const products = [
       "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 80, servingSize: "1 scoop (28.4g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0C7YBHCM9?tag=macrosaver02-20", asin: "B0C7YBHCM9" },
     ]
   },
   {
@@ -3678,6 +3887,7 @@ export const products = [
       "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 0mg per serving.",
     nutrition: { proteinGrams: 0, calories: 20, carbsGrams: 3, sugarGrams: 1, sodiumMilligrams: 80, servingSize: "1 scoop (29.8g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0875JVWN3?tag=macrosaver02-20", asin: "B0875JVWN3" },
     ]
   },
   {
@@ -3691,6 +3901,7 @@ export const products = [
       "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 68, servingSize: "1 scoop (28.2g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B01N0V6C0J?tag=macrosaver02-20", asin: "B01N0V6C0J" },
     ]
   },
   {
@@ -3704,6 +3915,7 @@ export const products = [
       "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 41, servingSize: "1 scoop (28.1g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B083LKMBNJ?tag=macrosaver02-20", asin: "B083LKMBNJ" },
     ]
   },
   {
@@ -3717,6 +3929,7 @@ export const products = [
       "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 41, servingSize: "1 scoop (28.1g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FTJCJLZR?tag=macrosaver02-20", asin: "B0FTJCJLZR" },
     ]
   },
   {
@@ -3730,6 +3943,7 @@ export const products = [
       "Protein and fat are not listed on the supplement facts panel and are recorded as 0g. Caffeine: 274mg per serving.",
     nutrition: { proteinGrams: 0, calories: 15, carbsGrams: 1, sodiumMilligrams: 72, servingSize: "1 scoop (28.3g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07G3WXQS4?tag=macrosaver02-20", asin: "B07G3WXQS4" },
     ]
   },
   {
@@ -3749,6 +3963,7 @@ export const products = [
       servingSize: "25 g (about 1 scoop)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07F4K1XF3?tag=macrosaver02-20", asin: "B07F4K1XF3" },
     ]
   },
   {
@@ -3768,6 +3983,7 @@ export const products = [
       servingSize: "25 g (about 1 scoop)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07KYHP92Q?tag=macrosaver02-20", asin: "B07KYHP92Q" },
     ]
   },
   {
@@ -3787,6 +4003,7 @@ export const products = [
       servingSize: "25 g (about 1 scoop)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07F43RM55?tag=macrosaver02-20", asin: "B07F43RM55" },
     ]
   },
   {
@@ -3806,6 +4023,7 @@ export const products = [
       servingSize: "25 g (about 1 scoop)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07FNVR99K?tag=macrosaver02-20", asin: "B07FNVR99K" },
     ]
   },
   {
@@ -3825,6 +4043,7 @@ export const products = [
       servingSize: "25 g (about 1 scoop)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B07FHPGS4V?tag=macrosaver02-20", asin: "B07FHPGS4V" },
     ]
   },
   {
@@ -3844,6 +4063,7 @@ export const products = [
       servingSize: "25 g (about 1 scoop)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0BRM8CT4N?tag=macrosaver02-20", asin: "B0BRM8CT4N" },
     ]
   },
   {
@@ -3863,6 +4083,7 @@ export const products = [
       servingSize: "25 g (about 1 scoop)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B081ZV62BP?tag=macrosaver02-20", asin: "B081ZV62BP" },
     ]
   },
   {
@@ -3882,6 +4103,7 @@ export const products = [
       servingSize: "25 g (about 1 scoop)",
     },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B081ZV26B2?tag=macrosaver02-20", asin: "B081ZV26B2" },
     ]
   },
   {
@@ -3893,6 +4115,7 @@ export const products = [
     servings: 68,
     nutrition: { calories: 0, proteinGrams: 0, creatineGrams: 5, carbsGrams: 0, fatGrams: 0, sugarGrams: 0, servingSize: "7g" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GFPV95CC?tag=macrosaver02-20", asin: "B0GFPV95CC" },
     ]
   },
   {
@@ -3904,6 +4127,7 @@ export const products = [
     servings: 18,
     nutrition: { calories: 110, proteinGrams: 20, carbsGrams: 3, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 150, servingSize: "1 scoop (29g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DHT1K42Y?tag=macrosaver02-20", asin: "B0DHT1K42Y" },
     ]
   },
   {
@@ -3915,6 +4139,7 @@ export const products = [
     servings: 18,
     nutrition: { calories: 100, proteinGrams: 20, carbsGrams: 3, fatGrams: 0.5, sugarGrams: 1, sodiumMilligrams: 60, servingSize: "1 scoop (30g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DHSZP5DR?tag=macrosaver02-20", asin: "B0DHSZP5DR" },
     ]
   },
   {
@@ -3926,6 +4151,7 @@ export const products = [
     servings: 18,
     nutrition: { calories: 100, proteinGrams: 20, carbsGrams: 3, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 105, servingSize: "1 scoop (30g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FMZT6BX8?tag=macrosaver02-20", asin: "B0FMZT6BX8" },
     ]
   },
   {
@@ -3937,6 +4163,7 @@ export const products = [
     servings: 21,
     nutrition: { calories: 100, proteinGrams: 20, carbsGrams: 3, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 160, servingSize: "1 scoop (28g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DZKWRDDY?tag=macrosaver02-20", asin: "B0DZKWRDDY" },
     ]
   },
   {
@@ -3948,6 +4175,7 @@ export const products = [
     servings: 21,
     nutrition: { calories: 100, proteinGrams: 20, carbsGrams: 2, fatGrams: 0.5, sugarGrams: 1, sodiumMilligrams: 130, servingSize: "1 scoop (28g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DZL7HKF3?tag=macrosaver02-20", asin: "B0DZL7HKF3" },
     ]
   },
   {
@@ -3959,6 +4187,7 @@ export const products = [
     servings: 18,
     nutrition: { calories: 100, proteinGrams: 20, carbsGrams: 3, fatGrams: 0.5, sugarGrams: 1, sodiumMilligrams: 70, servingSize: "1 scoop (32g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0FN139CVK?tag=macrosaver02-20", asin: "B0FN139CVK" },
     ]
   },
   {
@@ -3970,6 +4199,7 @@ export const products = [
     servings: 21,
     nutrition: { calories: 100, proteinGrams: 20, carbsGrams: 2, fatGrams: 0.5, sugarGrams: 1, sodiumMilligrams: 125, servingSize: "1 scoop (28g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0DZKLQN8S?tag=macrosaver02-20", asin: "B0DZKLQN8S" },
     ]
   },
   {
@@ -3981,6 +4211,7 @@ export const products = [
     servings: 18,
     nutrition: { calories: 100, proteinGrams: 20, carbsGrams: 2, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 75, servingSize: "1 scoop (28.4g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GJ6LGFYT?tag=macrosaver02-20", asin: "B0GJ6LGFYT" },
     ]
   },
   {
@@ -3992,6 +4223,7 @@ export const products = [
     servings: 18,
     nutrition: { calories: 100, proteinGrams: 20, carbsGrams: 2, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 80, servingSize: "1 scoop (29.6g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GJ6PBZL8?tag=macrosaver02-20", asin: "B0GJ6PBZL8" },
     ]
   },
   {
@@ -4003,6 +4235,7 @@ export const products = [
     servings: 18,
     nutrition: { calories: 100, proteinGrams: 20, carbsGrams: 2, fatGrams: 1, sugarGrams: 1, sodiumMilligrams: 75, servingSize: "1 scoop (28.4g)" },
     offers: [
+      { retailer: "Amazon", url: "https://www.amazon.com/dp/B0GJ6X4TQ4?tag=macrosaver02-20", asin: "B0GJ6X4TQ4" },
     ]
   }
 ];
