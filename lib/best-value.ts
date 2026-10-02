@@ -61,7 +61,9 @@ export const BEST_VALUE_ARTICLES: BestValueArticle[] = [
     intro:
       "This list is limited to products with \"whey\" in their own product name — we're not classifying formulas ourselves, just filtering to what the label already claims. They're ranked by protein concentration (grams of protein per gram of serving), the number that shows how much of each scoop is actually protein versus filler.",
     category: "protein",
-    filter: (product) => /whey/i.test(product.name),
+    // Everyday retail sizes only: no multipacks, 10 lb bulk tubs, or sub-1 lb trial sizes.
+    filter: (product) =>
+      /whey/i.test(product.name) && !/pack of|10 (lb|pound)|0\.68/i.test(product.name),
     powderOnly: true,
     sortBy: "proteinConcentration",
     sortDirection: "desc",
