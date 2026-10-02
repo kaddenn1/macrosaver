@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import QuickPicks from "@/components/QuickPicks";
 import {
   BEST_VALUE_ARTICLES,
   getBestValueArticleBySlug,
@@ -229,6 +230,7 @@ function RankedListArticle({ article, slug }: { article: BestValueArticle; slug:
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(itemListJsonLd) }} />
       <ArticleShell title={article.title} intro={article.intro} category={article.category}>
+        <QuickPicks slug={slug} />
         {article.decisionGuide && (
           <section className="mb-10" aria-labelledby="decision-guide-heading">
             <h2 id="decision-guide-heading" className="text-xl font-black text-white mb-4">
@@ -348,6 +350,7 @@ function BrandComparisonArticlePage({ article, slug }: { article: BrandCompariso
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: serializeJsonLd(breadcrumbJsonLd) }} />
       <ArticleShell title={article.title} intro={article.intro} category={article.category}>
+        <QuickPicks slug={slug} />
         <div className="pb-16 grid grid-cols-1 sm:grid-cols-2 gap-8">
           <BrandColumn stats={statsA} metricLabel="Protein / g Serving" metricFormat="decimal" />
           <BrandColumn stats={statsB} metricLabel="Protein / g Serving" metricFormat="decimal" />

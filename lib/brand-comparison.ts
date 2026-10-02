@@ -21,7 +21,7 @@ export const BRAND_COMPARISON_ARTICLES: BrandComparisonArticle[] = [
     slug: "optimum-nutrition-vs-dymatize",
     title: "Optimum Nutrition vs. Dymatize: Value Comparison",
     metaDescription:
-      "Optimum Nutrition and Dymatize whey protein compared on protein concentration, using every product from each brand in our catalog.",
+      "Optimum Nutrition Gold Standard whey and Dymatize Elite Casein compared on protein concentration, using every product from each brand in our catalog.",
     intro:
       "A head-to-head on nutrition density, not taste, mixability, or price — we don't have reliable data on the first two, and the last one changes too often to track. Every Optimum Nutrition and Dymatize protein product in our catalog is included below, compared on protein concentration (grams of protein per gram of serving).",
     category: "protein",

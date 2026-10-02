@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "test": "node --experimental-strip-types --test tests/macrosaver-engine.test.ts",
+    "test": "node --experimental-strip-types --test tests/macrosaver-engine.test.ts tests/quick-picks.test.ts",
     "validate:data": "node --experimental-strip-types scripts/validate-catalog.ts",
     "audit:index-quality": "node --experimental-strip-types scripts/audit-index-quality.ts",
     "check": "npm run validate:data && npm test && npm run lint && npm run typecheck && npm run build"
