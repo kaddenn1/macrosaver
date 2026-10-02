@@ -7,4 +7,4 @@ export const SITE_NAME = "MacroSaver";
  * problem, so the exact required disclosure only renders once this flips true for a new or
  * reinstated account. Flip this — and only this — when that happens.
  */
-export const AMAZON_ASSOCIATE_ACTIVE = false;
+export const AMAZON_ASSOCIATE_ACTIVE = true;
