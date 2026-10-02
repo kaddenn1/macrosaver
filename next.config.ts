@@ -5,11 +5,11 @@ const isDevelopment = process.env.NODE_ENV === "development";
 // Impact.com affiliate tracking script loaded in app/layout.tsx.
 const contentSecurityPolicy = [
   "default-src 'self'",
-  `script-src 'self' 'unsafe-inline' https://*.impactcdn.com${isDevelopment ? " 'unsafe-eval'" : ""}`,
+  `script-src 'self' 'unsafe-inline' https://*.impactcdn.com https://www.googletagmanager.com${isDevelopment ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://*.impactcdn.com https://*.impactradius-event.com",
+  "img-src 'self' data: blob: https://*.impactcdn.com https://*.impactradius-event.com https://www.googletagmanager.com https://*.google-analytics.com",
   "font-src 'self' data:",
-  `connect-src 'self' https://*.impactcdn.com https://*.impactradius-event.com${isDevelopment ? " ws: wss:" : ""}`,
+  `connect-src 'self' https://*.impactcdn.com https://*.impactradius-event.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com${isDevelopment ? " ws: wss:" : ""}`,
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
