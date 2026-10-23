@@ -9,38 +9,86 @@ export type ProductOverview = {
   relatedBestValueSlug?: string;
 };
 
-// Hand-written for our 15 most complete, best-documented product pages (dated price
-// or verified nutrition, real image, not a buried flavor variant). Deliberately not
+// Hand-written for our most complete, best-documented product pages (verified
+// nutrition, real image, not a buried flavor variant). Deliberately not
 // generated for the full catalog — see macrosaver-fixes.md and the SEO diagnostic:
 // thin, templated copy across hundreds of pages is worse than none at all.
 export const PRODUCT_OVERVIEWS: ProductOverview[] = [
   {
     productId: "1",
     summary:
-      "Gold Standard 100% Whey is Optimum Nutrition's flagship whey blend, mixing whey isolate, concentrate, and peptides. This is the 5 lb tub of Double Rich Chocolate, priced for buyers who want the larger size over a 2 lb tub of the same flavor.",
-    bestFor: "Shoppers who go through protein powder quickly enough that a 74-serving tub is worth the bigger upfront price.",
+      "Gold Standard 100% Whey is Optimum Nutrition's flagship whey blend, mixing whey isolate, concentrate, and peptides. This is the 74-serving, 5 lb tub of Double Rich Chocolate.",
+    bestFor: "Regular whey users who already know they like Double Rich Chocolate and prefer a 74-serving container.",
     pros: [
       "24g protein per scoop at a moderate 120 calories",
       "Low sugar (1g) and low fat (1.5g) per serving",
-      "One of the best-known, most reviewed whey powders on the market",
+      "0.80g of protein per gram of serving, tied for the top concentration in our whey ranking",
     ],
     cons: [
-      "No retailer offer currently in the catalog — check price on Amazon",
       "5 lb is a bigger commitment than 2 lb if you haven't tried the flavor first",
+      "Contains dairy and uses artificial flavoring and sweeteners",
     ],
-    relatedBestValueSlug: "highest-protein-concentration",
+    relatedBestValueSlug: "highest-protein-whey",
+  },
+  {
+    productId: "10",
+    summary:
+      "The 2 lb Double Rich Chocolate tub uses the same whey isolate, concentrate, and peptide blend as the larger Gold Standard sizes, packaged as 29 servings.",
+    bestFor: "First-time Gold Standard buyers who want to try a standard-size tub before committing to the 5 lb version.",
+    pros: [
+      "24g protein in a 30g scoop for 120 calories",
+      "Only 1g sugar and 3g carbs per serving",
+      "0.80g of protein per gram of serving, tied for the top concentration in our whey ranking",
+    ],
+    cons: [
+      "The 29-serving container needs replacing sooner than the 5 lb version",
+      "Contains dairy and uses artificial flavoring and sweeteners",
+    ],
+    relatedBestValueSlug: "highest-protein-whey",
+  },
+  {
+    productId: "176",
+    summary:
+      "Myprotein Clear Whey Isolate is mixed as a lighter, juice-style protein drink rather than a creamy shake. This Peach Mango listing contains 20 servings.",
+    bestFor: "Shoppers who want a clear, fruit-flavored alternative to traditional chocolate or vanilla whey shakes.",
+    pros: [
+      "20g protein for 80 calories per serving",
+      "0.80g of protein per gram of serving with 0g listed sugar",
+      "Juice-style format offers a different drinking experience from traditional whey",
+    ],
+    cons: [
+      "One serving supplies 4g less protein than Gold Standard's 24g scoop",
+      "Carbs, fat, and sodium were not independently verified from this product's label",
+    ],
+    relatedBestValueSlug: "best-value-clear-protein-powder",
+  },
+  {
+    productId: "228",
+    summary:
+      "This is the 148-serving, 10 lb Double Rich Chocolate version of Optimum Nutrition's Gold Standard whey blend. Its per-serving label matches the smaller tubs in the same product line.",
+    bestFor: "Frequent whey users who already know they like this flavor and can use a 148-serving package.",
+    pros: [
+      "24g protein in a 30g scoop for 120 calories",
+      "Only 1g sugar and 3g carbs per serving",
+      "0.80g of protein per gram of serving, tied for the top concentration in our whey ranking",
+    ],
+    cons: [
+      "A 148-serving package is a substantial commitment to one flavor",
+      "Contains dairy and uses artificial flavoring and sweeteners",
+    ],
+    relatedBestValueSlug: "highest-protein-whey",
   },
   {
     productId: "8",
     summary:
       "Premier Protein's powder line pairs a high 30g protein-per-scoop figure with a mild vanilla milkshake flavor. This is the 2.51 lb tub, Premier's larger powder size.",
-    bestFor: "Shoppers who want the highest protein-per-scoop number in our catalog without paying isolate-tier prices.",
+    bestFor: "Shoppers prioritizing a high 30g protein-per-scoop figure in a vanilla-flavored powder.",
     pros: [
       "30g protein per serving, among the higher counts we track",
       "Only 1g sugar and 3g carbs per serving",
     ],
     cons: [
-      "Single retailer offer",
+      "The larger tub is a bigger flavor commitment than a smaller trial size",
       "170mg sodium per serving is on the higher side for a protein powder",
     ],
     relatedBestValueSlug: "highest-protein-concentration",
@@ -52,8 +100,8 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     bestFor: "Anyone who wants unflavored creatine to mix into an existing shake or drink rather than a pre-flavored version.",
     pros: [
       "Zero calories, sugar, carbs, or sodium per serving",
-      "Largest, typically lowest-cost-per-serving size in the Nutricost lineup we track",
-      "Price was verified directly at the retailer, not an undated snapshot",
+      "Standard 5g creatine serving with no added flavoring",
+      "The 1kg container supplies substantially more servings than the 500g version",
     ],
     cons: [
       "Unflavored only — a flavored creatine means picking a different size/flavor in the same lineup",
@@ -82,7 +130,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     bestFor: "Shoppers who want a well-known, widely available electrolyte mix over a newer or smaller brand.",
     pros: [
       "500mg sodium per stick for meaningful electrolyte replacement",
-      "Price was verified directly at the retailer",
+      "Single-serving stick packs are convenient to carry and mix away from home",
       "Nine flavors in the line if you want to compare or switch it up",
     ],
     cons: [
@@ -97,7 +145,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
     bestFor: "Anyone who wants to add fiber to an existing drink or meal without adding its own flavor, sugar, or calories.",
     pros: [
       "Zero fat, sugar, and sodium",
-      "250-serving container lowers the effective cost of adding fiber daily",
+      "Large 250-serving container",
       "Community-endorsed pick in our bariatric-relevant lineup",
     ],
     cons: [
@@ -126,7 +174,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Bariatric Fusion's version of the same chewable calcium citrate format as BariatricPal's, in a smaller 60-count package.",
     bestFor: "Shoppers comparing calcium citrate chew brands side by side rather than committing to the first one they find.",
     pros: [
-      "Lower total price than the 90-count alternative, useful for trying the format before committing to a bigger container",
+      "Smaller 60-count package is a shorter initial commitment than the 90-count alternative",
       "15 calories, 0g sugar per chew",
     ],
     cons: [
@@ -144,10 +192,42 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Distinct use case from whey — a bedtime protein rather than a duplicate of your post-workout shake",
     ],
     cons: [
-      "Highest per-tub price of the flagship products on this page",
-      "Single retailer offer",
+      "This is casein rather than whey, so it is not a like-for-like substitute for every shopper",
+      "The serving is measured as two scoops",
     ],
     relatedBestValueSlug: "highest-protein-concentration",
+  },
+  {
+    productId: "86",
+    summary:
+      "Elite Casein is Dymatize's slow-digesting milk-protein line. This Vanilla listing contains 55 servings and uses a two-scoop serving.",
+    bestFor: "Shoppers specifically comparing casein powders rather than looking for another fast-mixing whey product.",
+    pros: [
+      "25g protein for 120 calories per serving",
+      "0g listed sugar and 0.76g of protein per gram of serving",
+      "55 servings in the 4 lb container",
+    ],
+    cons: [
+      "The labeled serving is two scoops rather than one",
+      "Carbohydrates were estimated from calorie math rather than independently verified from the label",
+    ],
+    relatedBestValueSlug: "highest-protein-concentration",
+  },
+  {
+    productId: "92",
+    summary:
+      "Sports Research Flavored Creatine Monohydrate supplies a labeled 5g creatine dose in a fruit-punch 7g scoop, with 60 servings per container.",
+    bestFor: "Shoppers who prefer a flavored creatine drink over mixing an unflavored powder into something else.",
+    pros: [
+      "5g of creatine in each labeled serving",
+      "Only 5 calories and 0g listed sugar per scoop",
+      "Smallest labeled scoop among the flavored creatine products in our ranking",
+    ],
+    cons: [
+      "About 2g of each 7g scoop is something other than creatine",
+      "Fruit Punch is less flexible to mix than an unflavored powder",
+    ],
+    relatedBestValueSlug: "creatine-serving-size",
   },
   {
     productId: "103",
@@ -155,7 +235,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "MCT oil converted to a powder instead of liquid oil, meant to mix into coffee or shakes without the oil separating on top.",
     bestFor: "Shoppers who want MCT oil's format convenience in coffee or shakes over pouring liquid MCT oil.",
     pros: [
-      "Price was verified directly at the retailer",
+      "Powder format avoids the visible oil layer associated with liquid MCT",
       "Unflavored, so it doesn't change the taste of what you mix it into",
     ],
     cons: [
@@ -183,9 +263,8 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Collagen peptides aren't a complete protein the way whey or casein are — they're commonly used as a protein add-in for coffee or smoothies rather than a stand-alone shake. This is the unflavored version.",
     bestFor: "Shoppers who want to add protein to a drink without changing its flavor, not a complete post-workout protein source.",
     pros: [
-      "Price was verified directly at the retailer",
       "Unflavored and low-calorie (40 cal) per scoop",
-      "Qualifies for our bariatric-relevant protein-per-dollar ranking",
+      "Appears in our bariatric-relevant protein-concentration ranking",
     ],
     cons: [
       "Not a complete protein source — check with your care team if you're relying on it to hit a protein target",
@@ -199,9 +278,8 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "The flavored counterpart to Sports Research's unflavored collagen line, in Dark Chocolate, with a larger scoop size and slightly more protein per serving than the unflavored version.",
     bestFor: "Shoppers who want the same collagen format as the unflavored version but prefer an actual flavor.",
     pros: [
-      "Price was verified directly at the retailer",
       "11g protein per scoop, more than the unflavored version's 9g",
-      "Qualifies for our bariatric-relevant protein-per-dollar ranking",
+      "Appears in our bariatric-relevant protein-concentration ranking",
     ],
     cons: [
       "Same collagen limitation as the unflavored version — not a complete protein source",
@@ -220,7 +298,7 @@ export const PRODUCT_OVERVIEWS: ProductOverview[] = [
       "Eight flavors in the line if this specific one doesn't appeal to you",
     ],
     cons: [
-      "Priciest whey per-tub among the flagship products on this page",
+      "The cereal-inspired flavor is less neutral than standard chocolate or vanilla",
       "Single retailer offer",
     ],
     relatedBestValueSlug: "highest-protein-concentration",

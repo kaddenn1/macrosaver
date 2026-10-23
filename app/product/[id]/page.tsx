@@ -237,6 +237,34 @@ export default async function ProductPage({
               <p className="text-sm text-gray-300 leading-relaxed mb-5">{overview.summary}</p>
             )}
 
+            {overview && (
+              <section
+                aria-labelledby="quick-verdict-heading"
+                className="mb-5 rounded-xl border border-gray-800 bg-[#111] p-4"
+              >
+                <h2
+                  id="quick-verdict-heading"
+                  className={`text-[10px] font-black uppercase tracking-widest ${theme.text}`}
+                >
+                  Quick verdict
+                </h2>
+                <p className="mt-2 text-sm leading-relaxed text-gray-300">
+                  <span className="font-bold text-white">Best for: </span>
+                  {overview.bestFor}
+                </p>
+                {availableOffers[0] && (
+                  <a
+                    href={availableOffers[0].url}
+                    target="_blank"
+                    rel="nofollow sponsored noopener"
+                    className={`mt-4 inline-flex items-center rounded px-4 py-2 text-[10px] font-black uppercase tracking-widest text-black transition-transform hover:scale-[1.02] ${theme.bg} ${theme.hoverBg}`}
+                  >
+                    Check current price at {availableOffers[0].retailer} (paid link) →
+                  </a>
+                )}
+              </section>
+            )}
+
             {(() => {
               const line = getProductLine(product.id);
               if (!line) return null;
