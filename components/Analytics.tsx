@@ -13,7 +13,7 @@ declare global {
 /**
  * GA4 page views plus one aggregate `retailer_click` event per paid outbound link.
  * A single capture-phase listener covers every sponsored link on the site, so new buttons
- * are tracked without extra wiring. Only the retailer, ASIN, page and link text are sent —
+ * are tracked without extra wiring. Only the retailer, ASIN, product ID, placement, page and link text are sent —
  * never prices, and no per-user identifiers.
  */
 export default function Analytics() {
@@ -32,10 +32,15 @@ export default function Analytics() {
       const asin = link.href.match(/\/dp\/([A-Z0-9]{10})/)?.[1];
       const path = window.location.pathname;
       const section = path.split("/")[1] || "home";
+      const productId = path.match(/^\/product\/(\d+)/)?.[1];
+      const placement =
+        link.closest("[aria-labelledby]")?.getAttribute("aria-labelledby") ?? "other";
 
       window.gtag("event", "retailer_click", {
         retailer: host.includes("amazon.") ? "Amazon" : host,
         product_asin: asin,
+        product_id: productId,
+        placement,
         page_path: path,
         page_type: section,
         link_text: (link.textContent ?? "").trim().slice(0, 80),
